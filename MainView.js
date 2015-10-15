@@ -22,28 +22,35 @@ var MainView = React.createClass({
         onDrawerStateChanged={(e) => this.setState({drawerStateChangedOutput: JSON.stringify(e)})}
         drawerWidth={300}
         renderNavigationView={() => navigationView}>
-        <View style={styles.container}>
-          <Text style={styles.welcome}>Drag this screen right, from the left edge.</Text>
-        </View>
+          <Image source={require('image!lb')} style={styles.backgroundImage}>
+          </Image>
       </DrawerLayout>
     );
   }
 });
-/*<Image source={require('image!lb')} style={styles.splash}/>*/
+/*
+<View style={styles.container}>
+</View>
+<Text style={styles.welcome}>Drag this screen right, from the left edge.</Text>
+*/
 var styles = StyleSheet.create({
   container: {
     alignItems: 'center',
     justifyContent: 'center',
-    flex: 1
+    flex: 1,
+    backgroundColor: 'red',
   },
   welcome: {
     fontSize: 20,
     textAlign: 'center',
     margin: 10,
+    backgroundColor: 'blue',
   },
-  splash: {
-    width: 100,
-    height: 100
+  backgroundImage: {
+      flex: 1,
+      width: null,
+      height: null,
+      backgroundColor: 'transparent',
   },
 });
 
