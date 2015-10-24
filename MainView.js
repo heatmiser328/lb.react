@@ -40,6 +40,9 @@ var MainView = React.createClass({
       }
       this.state.drawer = !this.state.drawer;
   },
+  menuItemHandler(e) {
+    console.log('item selected');
+  },
   render() {
     return (
       <View style={styles.container}>
@@ -50,7 +53,7 @@ var MainView = React.createClass({
           onDrawerSlide={(e) => this.setState({drawerSlideOutput: JSON.stringify(e.nativeEvent)})}
           onDrawerStateChanged={(e) => this.setState({drawerStateChangedOutput: JSON.stringify(e)})}
           drawerWidth={300}
-          renderNavigationView={() => NavMenu}>
+          renderNavigationView={() => <NavMenu onSelected={this.menuItemHandler} /> }>
               <TitleBar logo={logo} title={title} onMenu={this.menuHandler}></TitleBar>
               <Image source={require('image!napolean')} style={styles.backgroundImage} />
         </DrawerLayout>

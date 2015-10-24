@@ -57,6 +57,7 @@ var BattleItem = React.createClass({
   },
   onPress() {
     console.log(this.props);
+    this.props.onSelected && this.props.onSelected(this.props.battleid);
   },
 
   render() {
@@ -74,27 +75,38 @@ var BattleItem = React.createClass({
   }
 });
 
-var createBattleItem = (battle, i) => {
-  return (
-      <BattleItem
-        key={i}
-        name={battle.name}
-        publisher={battle.publisher}
-        image={battle.image}
-        battleid={battle.id}
-      />
-  );
-}
+var NavMenu = React.createClass({
+  shouldComponentUpdate(nextProps, nextState) {
+    return false;
+  },
+  onPress() {
+    console.log(this.props);
+  },
 
-var NavMenu = (
-    <View style={styles.container}>
-      <ScrollView
-        automaticallyAdjustContentInsets={false}
-        scrollEventThrottle={200}
-        style={styles.scrollContainer}>
-          {battles.battles.map(createBattleItem)}
-      </ScrollView>
-    </View>
-);
+  render() {
+    return (
+      <View style={styles.container}>
+        <ScrollView
+          automaticallyAdjustContentInsets={false}
+          scrollEventThrottle={200}
+          style={styles.scrollContainer}>
+            {battles.battles.map((battle, i) => {
+              return (
+                  <BattleItem
+                    key={i}
+                    name={battle.name}
+                    publisher={battle.publisher}
+                    image={battle.image}
+                    battleid={battle.id}
+                    onSelected={this.props.onSelected}
+                  />
+              );
+
+            })}
+        </ScrollView>
+      </View>
+    );
+  }
+});
 
 module.exports = NavMenu;
