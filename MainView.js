@@ -1,26 +1,16 @@
 'use strict';
 
 var React = require('react-native');
-var { AppRegistry, StyleSheet, Text, View, Dimensions, ScrollView, Image, } = React;
-var { ToolbarAndroid, } = React;
-var TitleBar = require('./titleBar');
+var { StyleSheet, View, } = React;
 var DrawerLayout = require("./drawerLayout");
 var NavMenu = require('./navMenu');
-
-var logo = require('image!lb');
-var title = 'La Bataille Assistant';
+var LandingView = require('./landingView');
 
 var styles = StyleSheet.create({
   container: {
     flex: 1,
     //marginTop: 30,
     backgroundColor: 'rgba(0,0,0,0.01)',
-  },
-  backgroundImage: {
-      flex: 1,
-      width: null,
-      height: null,
-      backgroundColor: 'transparent',
   },
 });
 
@@ -30,7 +20,7 @@ var MainView = React.createClass({
         drawer: false
     }
   },
-  menuHandler() {
+  toggleDrawer() {
       if (!this.state.drawer) {
           let open = this.refs.drawer.openDrawer || this.refs.drawer.open;
           open();
@@ -40,8 +30,12 @@ var MainView = React.createClass({
       }
       this.state.drawer = !this.state.drawer;
   },
+  menuHandler() {
+    this.toggleDrawer();
+  },
   menuItemHandler(e) {
     console.log('item selected');
+    this.toggleDrawer();
   },
   render() {
     return (
@@ -54,8 +48,7 @@ var MainView = React.createClass({
           onDrawerStateChanged={(e) => this.setState({drawerStateChangedOutput: JSON.stringify(e)})}
           drawerWidth={300}
           renderNavigationView={() => <NavMenu onSelected={this.menuItemHandler} /> }>
-              <TitleBar logo={logo} title={title} onMenu={this.menuHandler}></TitleBar>
-              <Image source={require('image!napolean')} style={styles.backgroundImage} />
+            <LandingView onMenu={this.menuHandler}/>
         </DrawerLayout>
       </View>
     );

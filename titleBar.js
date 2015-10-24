@@ -3,6 +3,9 @@
 var React = require('react-native');
 var { StyleSheet, ToolbarAndroid, } = React;
 
+var logo = require('image!lb');
+var title = 'La Bataille Assistant';
+
 var styles = StyleSheet.create({
     toolbar: {
         backgroundColor: '#e9eaed',
@@ -21,9 +24,9 @@ var TitleBar = React.createClass({
             <ToolbarAndroid
                 //logo={this.props.logo}
                 //navIcon={require('image!ic_menu_black_24dp')}
-                navIcon={this.props.logo}
+                navIcon={logo}
                 style={styles.toolbar}
-                title={this.props.title}
+                title={title}
                 onIconClicked={this.menuHandler}
             />
         );
