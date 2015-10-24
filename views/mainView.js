@@ -9,7 +9,6 @@ var LandingView = require('./landingView');
 var styles = StyleSheet.create({
   container: {
     flex: 1,
-    //marginTop: 30,
     backgroundColor: 'rgba(0,0,0,0.01)',
   },
 });

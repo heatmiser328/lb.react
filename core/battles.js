@@ -1,6 +1,6 @@
 'use strict';
 
-var battles = require('./data/battles.json');
+var battles = require('./battles.json');
 
 module.exports = {
   battles: battles,

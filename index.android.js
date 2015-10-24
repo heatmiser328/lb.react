@@ -7,6 +7,6 @@
 var React = require('react-native');
 var {AppRegistry,} = React;
 
-var lb = require('./mainView');
+var lb = require('./views/mainView');
 
 AppRegistry.registerComponent('lb', () => lb);
