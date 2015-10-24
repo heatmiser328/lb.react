@@ -4,6 +4,7 @@ module.exports = {
 	"leipzig": require("image!leipzig"),
 	"friedland": require("image!friedland"),
 	"aspern_essling": require("image!aspern_essling"),
+	"neumarkt": require("image!neumarkt"),
 	"vauchamps": require("image!vauchamps"),
 	"auerstaedt": require("image!auerstaedt"),
 	"eylau": require("image!eylau"),

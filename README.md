@@ -9,6 +9,7 @@ http://www.reactnative.com/
 https://rnplay.org/apps/__63LQ
 https://github.com/ilansas/react-native-navigation-drawer/
 https://github.com/brentvatne/react-native-scrollable-tab-view
+https://github.com/rt2zz/react-native-drawer
 
 ## Local JSON
 duh: just require() it

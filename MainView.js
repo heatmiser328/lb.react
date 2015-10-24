@@ -1,97 +1,20 @@
 'use strict';
 
 var React = require('react-native');
-var { ScrollView, View, Text, Image, StyleSheet } = React;
-var DrawerLayout = require("./DrawerLayout");
-var battles = require('./data/battles.json');
-var icons = require('./icons');
+var { AppRegistry, StyleSheet, Text, View, Dimensions, ScrollView, Image, } = React;
+var { ToolbarAndroid, } = React;
+var TitleBar = require('./titleBar');
+var DrawerLayout = require("./drawerLayout");
+var NavMenu = require('./navMenu');
 
-var MainView = React.createClass({
-
-  getInitialState() {
-    return {};
-  },
-
-  render: function() {
-    var navigationView = (
-      <ScrollView
-        automaticallyAdjustContentInsets={false}
-        scrollEventThrottle={200}
-        style={styles.scrollContainer}>
-        {battles.map(createBattleItem)}
-      </ScrollView>
-    );
-
-    return (
-      <DrawerLayout
-        onDrawerSlide={(e) => this.setState({drawerSlideOutput: JSON.stringify(e.nativeEvent)})}
-        onDrawerStateChanged={(e) => this.setState({drawerStateChangedOutput: JSON.stringify(e)})}
-        drawerWidth={300}
-        renderNavigationView={() => navigationView}>
-          <LbView />
-      </DrawerLayout>
-    );
-  }
-});
-
-var LbView = React.createClass({
-
-  render() {
-    return (
-      <View style={styles.mainContainer}>
-        <View style={styles.titleContainer}>
-          <Text style={styles.title}>La Bataille Assistant</Text>
-        </View>
-        <Image source={require('image!lb')} style={styles.backgroundImage}>
-        </Image>
-      </View>
-    );
-  }
-});
-
-var BattleItem = React.createClass({
-  shouldComponentUpdate: function(nextProps, nextState) {
-    return false;
-  },
-  render: function() {
-    return (
-      <View style={[styles.battleItemContainer]}>
-        <Image style={styles.battleItemImage} source={icons[this.props.image]} />
-        <View style={styles.battleItemRightContainer}>
-          <Text style={styles.battleItemTitle}>{this.props.name}</Text>
-          <Text style={styles.battleItemPublisher}>{this.props.publisher}</Text>
-        </View>
-      </View>
-    );
-  }
-});
-
-function createBattleItem(battle) {
-    return <BattleItem name={battle.name} publisher={battle.publisher} image={battle.image} battleid={battle.id}/>;
-}
+var logo = require('image!lb');
+var title = 'La Bataille Assistant';
 
 var styles = StyleSheet.create({
-  mainContainer: {
-    //alignItems: 'flex-start',
-    //justifyContent: 'center',
+  container: {
     flex: 1,
-    flexDirection: 'row',
-    backgroundColor: 'transparent',
-  },
-  titleContainer: {
-    alignItems: 'flex-start',
-    flex: 1,
-    width: null,
-    height: 5,
-    backgroundColor: 'green',
-  },
-  title: {
-    fontSize: 20,
-    textAlign: 'left',
-    margin: 10,
-    width: null,
-    color: 'blue',
-    backgroundColor: 'gray',
+    //marginTop: 30,
+    backgroundColor: 'rgba(0,0,0,0.01)',
   },
   backgroundImage: {
       flex: 1,
@@ -99,43 +22,41 @@ var styles = StyleSheet.create({
       height: null,
       backgroundColor: 'transparent',
   },
-  scrollContainer: {
-    backgroundColor: 'gray',
-    flex: 1,
+});
+
+var MainView = React.createClass({
+  getInitialState() {
+    return {
+        drawer: false
+    }
   },
-  battleItemContainer: {
-    alignItems: 'flex-start',
-    justifyContent: 'flex-start',
-    flex: 1,
-    flexDirection: 'row',
-    margin: 7,
-    padding: 5,
-    backgroundColor: '#eaeaea',
-    borderRadius: 3,
+  menuHandler() {
+      if (!this.state.drawer) {
+          let open = this.refs.drawer.openDrawer || this.refs.drawer.open;
+          open();
+      } else {
+          let close = this.refs.drawer.closeDrawer || this.refs.drawer.close;
+          close();
+      }
+      this.state.drawer = !this.state.drawer;
   },
-  battleItemImage: {
-    //flex: 1,
-    //width: null,
-    //height: null,
-    width: 96,
-    height: 96,
-    resizeMode: 'contain',
-    //backgroundColor: 'transparent',
-  },
-  battleItemRightContainer: {
-    flex: 1,
-  },
-  battleItemTitle: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  battleItemPublisher: {
-    fontSize: 15,
-    textAlign: 'center',
-    margin: 10,
-    color: 'blue',
-  },
+  render() {
+    return (
+      <View style={styles.container}>
+        <DrawerLayout
+          ref="drawer"
+          onDrawerClosed={() => {this.state.drawer = false; console.log('closed');} }
+          onDrawerOpened={() => {this.state.drawer = true; console.log('opened');} }
+          onDrawerSlide={(e) => this.setState({drawerSlideOutput: JSON.stringify(e.nativeEvent)})}
+          onDrawerStateChanged={(e) => this.setState({drawerStateChangedOutput: JSON.stringify(e)})}
+          drawerWidth={300}
+          renderNavigationView={() => NavMenu}>
+              <TitleBar logo={logo} title={title} onMenu={this.menuHandler}></TitleBar>
+              <Image source={require('image!napolean')} style={styles.backgroundImage} />
+        </DrawerLayout>
+      </View>
+    );
+  }
 });
 
 module.exports = MainView;
