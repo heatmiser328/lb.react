@@ -3,6 +3,8 @@
 var React = require('react-native');
 var { View, Image, StyleSheet } = React;
 var TitleBar = require('./titleBar');
+var logo = require('image!lb');
+var title = 'La Bataille Assistant';
 
 var styles = StyleSheet.create({
   container: {
@@ -28,7 +30,7 @@ var LandingView = React.createClass({
   render() {
     return (
       <View style={styles.container}>
-        <TitleBar onMenu={this.menuHandler} />
+        <TitleBar logo={logo} title={title} onMenu={this.menuHandler} />
         <Image source={require('image!napolean')} style={styles.backgroundImage} />
       </View>
     );

@@ -3,9 +3,6 @@
 var React = require('react-native');
 var { StyleSheet, ToolbarAndroid, } = React;
 
-var logo = require('image!lb');
-var title = 'La Bataille Assistant';
-
 var styles = StyleSheet.create({
     toolbar: {
         backgroundColor: '#e9eaed',
@@ -15,19 +12,35 @@ var styles = StyleSheet.create({
 
 var TitleBar = React.createClass({
     menuHandler() {
-        console.log('menu');
+        //console.log('menu');
         this.props.onMenu && this.props.onMenu();
+    },
+    onActionSelected(position) {
+      this.props.onRefresh && this.props.onRefresh();
     },
 
     render() {
+        let actions = [];
+        if (this.props.onRefresh) {
+          actions.push({
+            title: 'refresh',
+            icon: require('image!ic_action_refresh'),
+            show: 'always'
+          });
+        }
+        //console.log(actions);
         return (
             <ToolbarAndroid
                 //logo={this.props.logo}
                 //navIcon={require('image!ic_menu_black_24dp')}
-                navIcon={logo}
+                navIcon={this.props.logo}
                 style={styles.toolbar}
-                title={title}
+                title={this.props.title}
+                subtitle={this.props.subtitle}
+                subtitleColor='blue'
                 onIconClicked={this.menuHandler}
+                actions={actions}
+                onActionSelected={this.onActionSelected}
             />
         );
     },

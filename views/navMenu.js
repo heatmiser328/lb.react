@@ -68,6 +68,41 @@ var styles = StyleSheet.create({
   },
 });
 
+var NavMenu = React.createClass({
+  shouldComponentUpdate(nextProps, nextState) {
+    return false;
+  },
+  onPress(e) {
+    //console.log(this.props);
+    this.props.onSelected && this.props.onSelected(e);
+  },
+
+  render() {
+    return (
+      <View style={styles.container}>
+        <ScrollView
+          automaticallyAdjustContentInsets={false}
+          scrollEventThrottle={200}
+          style={styles.scrollContainer}>
+            {battles.battles.map((battle, i) => {
+              return (
+                  <BattleItem
+                    key={i}
+                    name={battle.name}
+                    publisher={battle.publisher}
+                    image={battle.image}
+                    scenarios={battle.scenarios}
+                    battleid={battle.id}
+                    onSelected={this.onPress}
+                  />
+              );
+            })}
+        </ScrollView>
+      </View>
+    );
+  }
+});
+
 var BattleItem = React.createClass({
   shouldComponentUpdate(nextProps, nextState) {
     return false;
@@ -110,8 +145,9 @@ var ScenarioItem = React.createClass({
     return false;
   },
   onPress() {
-    console.log(this.props);
-    this.props.onSelected && this.props.onSelected(this.props.battleid);
+    //console.log(this.props);
+    let scenario = battles.scenario(this.props.scenarioid);
+    this.props.onSelected && this.props.onSelected(scenario);
   },
   render() {
     let startdt = moment(this.props.start);
@@ -125,42 +161,6 @@ var ScenarioItem = React.createClass({
           </Text>
         </View>
       </TouchableOpacity>
-    );
-  }
-});
-
-
-var NavMenu = React.createClass({
-  shouldComponentUpdate(nextProps, nextState) {
-    return false;
-  },
-  onPress(e) {
-    console.log(this.props);
-    this.props.onSelected && this.props.onSelected(e);
-  },
-
-  render() {
-    return (
-      <View style={styles.container}>
-        <ScrollView
-          automaticallyAdjustContentInsets={false}
-          scrollEventThrottle={200}
-          style={styles.scrollContainer}>
-            {battles.battles.map((battle, i) => {
-              return (
-                  <BattleItem
-                    key={i}
-                    name={battle.name}
-                    publisher={battle.publisher}
-                    image={battle.image}
-                    scenarios={battle.scenarios}
-                    battleid={battle.id}
-                    onSelected={this.onPress}
-                  />
-              );
-            })}
-        </ScrollView>
-      </View>
     );
   }
 });
