@@ -7,6 +7,7 @@ var TitleBar = require('../titleBar');
 var ScrollableTabView = require('react-native-scrollable-tab-view');
 var deviceWidth = Dimensions.get('window').width;
 var ScrollingTabBar = require('../scrollingTabBar');
+var TurnView = require('./turnView');
 var FireView = require('./fireView');
 var MeleeView = require('./meleeView');
 var MoraleView = require('./moraleView');
@@ -17,6 +18,9 @@ var styles = StyleSheet.create({
     flex: 1,
     //marginTop: 30,
     backgroundColor: 'rgba(0,0,0,0.01)',
+  },
+  turn: {
+    height: 50,
   },
 });
 
@@ -51,6 +55,7 @@ var BattleView = React.createClass({
           onMenu={this.menuHandler}
           onRefresh={this.refreshHandler} />
 
+        <TurnView st7le={styles.turn} current={this.props.current} />
         <ScrollableTabView
           style={{backgroundColor: '#fff'}}
           onChangeTab={this.onChangeTab}
