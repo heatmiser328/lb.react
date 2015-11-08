@@ -46,12 +46,15 @@ var BattleView = React.createClass({
   },
   render() {
     //console.log(this.props);
+    let battle = this.props.battle || {scenario: {}};
+console.log('battleView');
+console.log(battle);
     return (
       <View style={styles.container}>
         <TitleBar
-          logo={icons[this.props.battle.image]}
-          title={this.props.battle.name}
-          subtitle={this.props.battle.scenario.name}
+          logo={icons[battle.image]}
+          title={battle.name}
+          subtitle={battle.scenario.name}
           onMenu={this.menuHandler}
           onRefresh={this.refreshHandler} />
 

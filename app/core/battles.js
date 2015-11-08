@@ -16,10 +16,13 @@ module.exports = {
         return s.id === scenarioid;
       });
       return !!data.scenario;
-    }) || {};
-    data.name = battle.name;
-    data.image = battle.image;
-    
-    return data;
+    });
+    if (battle) {
+      data.id = battle.id;
+      data.name = battle.name;
+      data.image = battle.image;
+
+      return data;      
+    }
   }
 };

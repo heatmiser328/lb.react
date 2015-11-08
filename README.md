@@ -5,6 +5,8 @@ https://gist.github.com/davidgilbertson/9bee68548037fe00f2a8
 
 adb logcat *:S ReactNative:V ReactNativeJS:V
 
+debug: http://localhost:8081/debugger-ui
+
 ## Components
 http://www.reactnative.com/
 

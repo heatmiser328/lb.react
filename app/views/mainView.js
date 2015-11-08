@@ -6,6 +6,8 @@ var DrawerLayout = require("./drawerLayout");
 var NavMenu = require('./navMenu');
 var LandingView = require('./landingView');
 var BattleView = require('./battle/battleView');
+var Battles = require('../core/battles');
+var Current = require('../core/current');
 
 var styles = StyleSheet.create({
   container: {
@@ -18,8 +20,34 @@ var MainView = React.createClass({
   getInitialState() {
     return {
         drawer: false,
-        scenario: {}
+        scenario: null,
+        current: null,
     }
+  },
+  componentWillMount() {
+      this.fetchData();
+  },
+  fetchData() {
+      console.log('mainView: load current game');
+      //Current.clear()
+      //.then(() => {
+      Current.get()
+      .then((data) => {
+        if (data) {
+          let scenario = Battles.scenario(data.scenario);
+          if (scenario) {
+            this.setState({
+              scenario: scenario,
+              current: data
+            });
+            //this.refs.navigator.push({name: 'battle', index: 1});
+          }
+        } else {
+          console.log('mainView: no current game');
+        }
+      })
+      //})
+      .done();
   },
   toggleDrawer() {
       if (!this.state.drawer) {
@@ -35,10 +63,24 @@ var MainView = React.createClass({
     this.toggleDrawer();
   },
   menuItemHandler(e) {
-    //console.log('item selected');
-    this.setState({scenario: e});
-    this.toggleDrawer();
-    this.refs.navigator.push({name: 'battle', index: 1});
+    console.log('item selected');
+    console.log(e);
+    Current.reset(e)
+    .then((current) => {
+      return Current.save(current)
+      .then(() => {
+        this.setState({current: current, scenario: e});
+        this.toggleDrawer();
+        this.refs.navigator.push({name: 'battle', index: 1});
+      });
+    })
+    .done();
+  },
+  initialRoute() {
+    if (!this.state.current) {
+      return {name: 'landing', index: 0};
+    }
+    return {name: 'battle', index: 1};
   },
   render() {
     return (
@@ -54,17 +96,17 @@ var MainView = React.createClass({
 
           <Navigator
             ref="navigator"
-            initialRoute={{name: 'landing', index: 0}}
+            initialRoute={this.initialRoute()}
             renderScene={(route, navigator) => {
-                //console.log(route);
-                if (route.name == 'landing') {
+                //console.log(route.name);
+                if (!this.state.current) {
                     return (
                       <LandingView onMenu={this.menuHandler}/>
                     );
                 }
                 //console.log(this.state);
                 return (
-                  <BattleView battle={this.state.scenario} onMenu={this.menuHandler}/>
+                  <BattleView battle={this.state.scenario} current={this.state.current} onMenu={this.menuHandler}/>
                 );
               }
             }
