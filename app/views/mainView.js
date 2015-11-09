@@ -21,7 +21,7 @@ var MainView = React.createClass({
     return {
         drawer: false,
         scenario: null,
-        current: null,
+        current: false,
     }
   },
   componentWillMount() {
@@ -29,16 +29,16 @@ var MainView = React.createClass({
   },
   fetchData() {
       console.log('mainView: load current game');
-      //Current.clear()
+      //Current.remove()
       //.then(() => {
-      Current.get()
+      Current.load()
       .then((data) => {
         if (data) {
           let scenario = Battles.scenario(data.scenario);
           if (scenario) {
             this.setState({
               scenario: scenario,
-              current: data
+              current: true
             });
             //this.refs.navigator.push({name: 'battle', index: 1});
           }
@@ -66,13 +66,13 @@ var MainView = React.createClass({
     console.log('item selected');
     console.log(e);
     Current.reset(e)
-    .then((current) => {
-      return Current.save(current)
-      .then(() => {
-        this.setState({current: current, scenario: e});
+    .then(() => {
         this.toggleDrawer();
-        this.refs.navigator.push({name: 'battle', index: 1});
-      });
+        let scenario = Battles.scenario(e.scenario.id);
+        if (scenario) {
+            this.setState({current: true, scenario: scenario});
+            this.refs.navigator.push({name: 'battle', index: 1});
+        }
     })
     .done();
   },
@@ -106,7 +106,7 @@ var MainView = React.createClass({
                 }
                 //console.log(this.state);
                 return (
-                  <BattleView battle={this.state.scenario} current={this.state.current} onMenu={this.menuHandler}/>
+                  <BattleView battle={this.state.scenario} onMenu={this.menuHandler}/>
                 );
               }
             }

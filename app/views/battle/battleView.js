@@ -2,6 +2,7 @@
 
 var React = require('react-native');
 var { View, Dimensions, StyleSheet, } = React;
+var EventEmitter = require('EventEmitter');
 var icons = require('../icons');
 var TitleBar = require('../titleBar');
 var ScrollableTabView = require('react-native-scrollable-tab-view');
@@ -12,6 +13,7 @@ var FireView = require('./fireView');
 var MeleeView = require('./meleeView');
 var MoraleView = require('./moraleView');
 var GeneralView = require('./generalView');
+var Current = require('../../core/current');
 
 var styles = StyleSheet.create({
   container: {
@@ -25,19 +27,29 @@ var styles = StyleSheet.create({
 });
 
 var BattleView = React.createClass({
-  getInitialState: function() {
+  getInitialState() {
     return {
       selectedTab: 0,
+      battle: this.props.battle
     };
   },
+  componentWillMount: function() {
+      this.eventEmitter = new EventEmitter();
+  },
   shouldComponentUpdate(nextProps, nextState) {
-    return false;
+    return true;
   },
   menuHandler() {
     this.props.onMenu && this.props.onMenu();
   },
   refreshHandler() {
-    console.log('refresh');
+    console.log('Reset ' + this.props.battle.name);
+    Current.reset(this.props.battle)
+    .then((current) => {
+        // update the views?
+        this.eventEmitter.emit('reset');
+    })
+    .done();
   },
   onChangeTab({i, ref}) {
     setTimeout(() => {
@@ -46,9 +58,9 @@ var BattleView = React.createClass({
   },
   render() {
     //console.log(this.props);
-    let battle = this.props.battle || {scenario: {}};
-console.log('battleView');
-console.log(battle);
+    let battle = this.state.battle || {scenario: {}};
+    //console.log('battleView');
+    //console.log(battle);
     return (
       <View style={styles.container}>
         <TitleBar
@@ -58,16 +70,17 @@ console.log(battle);
           onMenu={this.menuHandler}
           onRefresh={this.refreshHandler} />
 
-        <TurnView st7le={styles.turn} current={this.props.current} />
+        <TurnView style={styles.turn} events={this.eventEmitter} />
+
         <ScrollableTabView
           style={{backgroundColor: '#fff'}}
           onChangeTab={this.onChangeTab}
           edgeHitWidth={deviceWidth / 2}
           renderTabBar={() => <ScrollingTabBar />} >
-          <FireView tabLabel="Fire" />
-          <MeleeView tabLabel="Melee" />
-          <MoraleView tabLabel="Morale" />
-          <GeneralView tabLabel="General" />
+          <FireView tabLabel="Fire" events={this.eventEmitter} />
+          <MeleeView tabLabel="Melee" events={this.eventEmitter} />
+          <MoraleView tabLabel="Morale" events={this.eventEmitter} />
+          <GeneralView tabLabel="General" events={this.eventEmitter} />
         </ScrollableTabView>
       </View>
     );

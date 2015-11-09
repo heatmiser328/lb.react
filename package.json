@@ -16,5 +16,11 @@
     "react-native": "^0.12.0",
     "react-native-fs": "^1.0.0",
     "react-native-scrollable-tab-view": "^0.1.10"
+  },
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "mocha": "^2.3.3",
+    "sandboxed-module": "^2.0.3",
+    "sinon": "^1.17.2"
   }
 }
