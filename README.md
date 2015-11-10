@@ -15,6 +15,10 @@ https://github.com/ilansas/react-native-navigation-drawer/
 https://github.com/brentvatne/react-native-scrollable-tab-view
 https://github.com/rt2zz/react-native-drawer
 https://github.com/johanneslumpe/react-native-fs
+https://github.com/andreaskeller/react-native-audioplayer
+https://github.com/ide/react-native-button
+https://github.com/Recr0ns/react-native-material-button
+https://github.com/APSL/react-native-button
 
 ## Local JSON
 duh: just require() it
