@@ -22,3 +22,7 @@ https://github.com/APSL/react-native-button
 
 ## Local JSON
 duh: just require() it
+
+# Building
+https://facebook.github.io/react-native/docs/signed-apk-android.html
+http://www.dahuatu.com/D6y1PVQ0Wn.html
