@@ -1,9 +1,9 @@
 'use strict'
 
 var React = require('react-native');
-var { View, Image, StyleSheet } = React;
+var { View, Text, Image, StyleSheet } = React;
+var Icons = require('../../icons');
 var TitleBar = require('./titleBar');
-var logo = require('image!lb');
 var title = 'La Bataille Assistant';
 
 var styles = StyleSheet.create({
@@ -28,10 +28,17 @@ var LandingView = React.createClass({
     this.props.onMenu && this.props.onMenu();
   },
   render() {
+    console.log('Landing');
+    console.log(Icons.splash);
+    let splash = require('../../resources/napolean.jpg');
+    let logo = Icons.logo;
+    console.log(splash);
+    //<TitleBar logo={logo} title={title} onMenu={this.menuHandler} />
     return (
+      //Icons.splash
       <View style={styles.container}>
-        <TitleBar logo={logo} title={title} onMenu={this.menuHandler} />
-        <Image source={require('image!napolean')} style={styles.backgroundImage} />
+        <Image source={splash} style={styles.backgroundImage} />
+        <Text>Landing</Text>
       </View>
     );
   }

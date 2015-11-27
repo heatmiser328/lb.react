@@ -3,11 +3,11 @@
 var React = require('react-native');
 var { View, Dimensions, StyleSheet, } = React;
 var EventEmitter = require('EventEmitter');
-var icons = require('../icons');
+var icons = require('../../../icons');
 var TitleBar = require('../titleBar');
 var ScrollableTabView = require('react-native-scrollable-tab-view');
 var deviceWidth = Dimensions.get('window').width;
-var ScrollingTabBar = require('../scrollingTabBar');
+var ScrollingTabBar = require('../../widgets/scrollingTabBar');
 var TurnView = require('./turnView');
 var FireView = require('./fireView');
 var MeleeView = require('./meleeView');
@@ -76,7 +76,8 @@ var BattleView = React.createClass({
           style={{backgroundColor: '#fff'}}
           onChangeTab={this.onChangeTab}
           edgeHitWidth={deviceWidth / 2}
-          renderTabBar={() => <ScrollingTabBar />} >
+          renderTabBar={() => <ScrollingTabBar />}          
+        >
           <FireView tabLabel="Fire" events={this.eventEmitter} />
           <MeleeView tabLabel="Melee" events={this.eventEmitter} />
           <MoraleView tabLabel="Morale" events={this.eventEmitter} />

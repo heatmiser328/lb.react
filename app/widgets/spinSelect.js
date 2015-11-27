@@ -1,7 +1,8 @@
 'use strict'
 
 var React = require('react-native');
-var { View, Text, TouchableOpacity, Image, StyleSheet } = React;
+var { View, Text, StyleSheet } = React;
+var SpinButton = require('./spinButton');
 
 var styles = StyleSheet.create({
   container: {
@@ -10,18 +11,6 @@ var styles = StyleSheet.create({
     paddingTop: 5,
     paddingBottom: 5,
     //backgroundColor: 'blue',
-  },
-  prevButton: {
-      flex: 10,
-      padding: 5,
-      //backgroundColor: 'red',
-      alignItems: 'center',
-  },
-  nextButton: {
-      flex: 10,
-      padding: 5,
-      //backgroundColor: 'red',
-      alignItems: 'center',
   },
   button: {
       width: 50,
@@ -36,18 +25,6 @@ var styles = StyleSheet.create({
   value: {
       fontSize: 18,
   },
-});
-
-var SpinButton = React.createClass({
-    render() {
-        let style = this.props.direction == 'prev' ? styles.prevButton : styles.nextButton;
-        let icon = this.props.direction == 'prev' ? require('image!ic_action_previous_item') : require('image!ic_action_next_item');
-        return (
-            <TouchableOpacity onPress={this.props.onPress} style={style}>
-                <Image source={icon} />
-            </TouchableOpacity>
-        );
-    }
 });
 
 var SpinSelect = React.createClass({

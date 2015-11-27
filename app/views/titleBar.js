@@ -2,6 +2,7 @@
 
 var React = require('react-native');
 var { StyleSheet, ToolbarAndroid, } = React;
+var Icons = require('../../icons');
 
 var styles = StyleSheet.create({
     toolbar: {
@@ -24,7 +25,7 @@ var TitleBar = React.createClass({
         if (this.props.onRefresh) {
           actions.push({
             title: 'refresh',
-            icon: require('image!ic_action_refresh'),
+            icon: Icons.refreshButton,
             show: 'always'
           });
         }

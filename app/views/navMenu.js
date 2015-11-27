@@ -3,7 +3,7 @@
 var React = require('react-native');
 var { View, Text, Image, ScrollView, ListView, TouchableOpacity, StyleSheet } = React;
 var battles = require('../core/battles.js');
-var icons = require('./icons');
+var icons = require('../../icons');
 var moment = require('moment');
 
 var styles = StyleSheet.create({

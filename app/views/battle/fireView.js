@@ -2,6 +2,7 @@
 
 var React = require('react-native');
 var { View, Text, StyleSheet } = React;
+var SpinNumeric = require('../../widgets/spinNumeric');
 var DiceRoll = require('../../widgets/diceRoll');
 
 var styles = StyleSheet.create({
@@ -10,6 +11,70 @@ var styles = StyleSheet.create({
     //marginTop: 30,
     backgroundColor: 'rgba(0,0,0,0.01)',
   },
+
+  fireContainer: {
+    flex: 1,
+    //flexDirection: 'row',
+    //alignItems: 'center',
+    //justifyContent: 'center',
+  },
+  fireHeader: {
+    fontSize: 14,
+    fontWeight: 'bold',
+    textAlign: 'center',
+  }
+
+});
+
+var FireAttacker = React.createClass({
+  render() {
+    return (
+      <View style={[styles.fireContainer, {backgroundColor: 'red'}]}>
+        <Text style={styles.fireHeader}>Attacker</Text>
+        <SpinNumeric value={this.props.value} min={1} onChanged={this.props.onChanged} />
+      </View>
+    );
+  }
+});
+
+var FireDefender = React.createClass({
+  render() {
+    return (
+      <View style={styles.fireContainer}>
+        <Text style={styles.fireHeader}>Defender</Text>
+      </View>
+    );
+  }
+});
+
+var Odds = React.createClass({
+  render() {
+    return (
+      <View>
+        <Text>Odds</Text>
+      </View>
+    );
+  }
+});
+
+var DiceModifiers = React.createClass({
+  render() {
+    return (
+      <View>
+        <Text>Dice Modifiers</Text>
+      </View>
+    );
+  }
+});
+
+var Results = React.createClass({
+  render() {
+    return (
+      <View>
+        <Text>Results</Text>
+      </View>
+    );
+  }
 });
 
 var FireView = React.createClass({
@@ -21,7 +86,9 @@ var FireView = React.createClass({
               {num: 1, low: 1, high: 6, color: 'blue'},
               {num: 1, low: 1, high: 6, color: 'blackw'},
               {num: 1, low: 1, high: 6, color: 'blackr'}
-          ]
+          ],
+          attack: 1,
+          defend: 1,
       };
   },
   shouldComponentUpdate(nextProps, nextState) {
@@ -34,10 +101,16 @@ var FireView = React.createClass({
     //console.log(this.props);
     return (
       <View style={styles.container}>
-        <Text>
-          Some fire combat stuff
-        </Text>
-        <DiceRoll dice={this.state.dice} onRoll={this.onResolve} onDie={this.onResolve}/>
+        <View style={{flex: 1, flexDirection: 'row'}}>
+          <FireAttacker style={styles.attacker} value={this.state.attack} />
+          <FireDefender style={styles.defender}/>
+        </View>
+        <View style={{flex: 1, flexDirection: 'row'}}>
+          <Odds style={{flex: 25}}/>
+          <DiceRoll style={{flex: 75}} dice={this.state.dice} onRoll={this.onResolve} onDie={this.onResolve}/>
+        </View>
+        <DiceModifiers />
+        <Results />
       </View>
     );
   }

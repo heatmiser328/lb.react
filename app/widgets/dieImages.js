@@ -7,7 +7,7 @@ var dielow = 1, diehigh = 6;
 var colors = ['blue', 'blackw', 'blue', 'green', 'red', 'white', 'yellow'];
 colors.forEach((color) => {
     range(dielow,diehigh+1).forEach((i) => {
-        let image = 'image!' + color + i.toString();
+        let image = '../../resources/dice/' + color + i.toString();
         images[image] = require(image);
     });
 });
@@ -20,54 +20,54 @@ module.exports = function(color, die) {
     return null;
 }
 */
-images['blackr1'] = require('image!blackr1');
-images['blackr2'] = require('image!blackr2');
-images['blackr3'] = require('image!blackr3');
-images['blackr4'] = require('image!blackr4');
-images['blackr5'] = require('image!blackr5');
-images['blackr6'] = require('image!blackr6');
+images['blackr1'] = require('../../resources/dice/blackr1.png');
+images['blackr2'] = require('../../resources/dice/blackr2.png');
+images['blackr3'] = require('../../resources/dice/blackr3.png');
+images['blackr4'] = require('../../resources/dice/blackr4.png');
+images['blackr5'] = require('../../resources/dice/blackr5.png');
+images['blackr6'] = require('../../resources/dice/blackr6.png');
 
-images['blackw1'] = require('image!blackw1');
-images['blackw2'] = require('image!blackw2');
-images['blackw3'] = require('image!blackw3');
-images['blackw4'] = require('image!blackw4');
-images['blackw5'] = require('image!blackw5');
-images['blackw6'] = require('image!blackw6');
+images['blackw1'] = require('../../resources/dice/blackw1.png');
+images['blackw2'] = require('../../resources/dice/blackw2.png');
+images['blackw3'] = require('../../resources/dice/blackw3.png');
+images['blackw4'] = require('../../resources/dice/blackw4.png');
+images['blackw5'] = require('../../resources/dice/blackw5.png');
+images['blackw6'] = require('../../resources/dice/blackw6.png');
 
-images['blue1'] = require('image!blue1');
-images['blue2'] = require('image!blue2');
-images['blue3'] = require('image!blue3');
-images['blue4'] = require('image!blue4');
-images['blue5'] = require('image!blue5');
-images['blue6'] = require('image!blue6');
+images['blue1'] = require('../../resources/dice/blue1.png');
+images['blue2'] = require('../../resources/dice/blue2.png');
+images['blue3'] = require('../../resources/dice/blue3.png');
+images['blue4'] = require('../../resources/dice/blue4.png');
+images['blue5'] = require('../../resources/dice/blue5.png');
+images['blue6'] = require('../../resources/dice/blue6.png');
 
-images['green1'] = require('image!green1');
-images['green2'] = require('image!green2');
-images['green3'] = require('image!green3');
-images['green4'] = require('image!green4');
-images['green5'] = require('image!green5');
-images['green6'] = require('image!green6');
+images['green1'] = require('../../resources/dice/green1.png');
+images['green2'] = require('../../resources/dice/green2.png');
+images['green3'] = require('../../resources/dice/green3.png');
+images['green4'] = require('../../resources/dice/green4.png');
+images['green5'] = require('../../resources/dice/green5.png');
+images['green6'] = require('../../resources/dice/green6.png');
 
-images['red1'] = require('image!red1');
-images['red2'] = require('image!red2');
-images['red3'] = require('image!red3');
-images['red4'] = require('image!red4');
-images['red5'] = require('image!red5');
-images['red6'] = require('image!red6');
+images['red1'] = require('../../resources/dice/red1.png');
+images['red2'] = require('../../resources/dice/red2.png');
+images['red3'] = require('../../resources/dice/red3.png');
+images['red4'] = require('../../resources/dice/red4.png');
+images['red5'] = require('../../resources/dice/red5.png');
+images['red6'] = require('../../resources/dice/red6.png');
 
-images['white1'] = require('image!white1');
-images['white2'] = require('image!white2');
-images['white3'] = require('image!white3');
-images['white4'] = require('image!white4');
-images['white5'] = require('image!white5');
-images['white6'] = require('image!white6');
+images['white1'] = require('../../resources/dice/white1.png');
+images['white2'] = require('../../resources/dice/white2.png');
+images['white3'] = require('../../resources/dice/white3.png');
+images['white4'] = require('../../resources/dice/white4.png');
+images['white5'] = require('../../resources/dice/white5.png');
+images['white6'] = require('../../resources/dice/white6.png');
 
-images['yellow1'] = require('image!yellow1');
-images['yellow2'] = require('image!yellow2');
-images['yellow3'] = require('image!yellow3');
-images['yellow4'] = require('image!yellow4');
-images['yellow5'] = require('image!yellow5');
-images['yellow6'] = require('image!yellow6');
+images['yellow1'] = require('../../resources/dice/yellow1.png');
+images['yellow2'] = require('../../resources/dice/yellow2.png');
+images['yellow3'] = require('../../resources/dice/yellow3.png');
+images['yellow4'] = require('../../resources/dice/yellow4.png');
+images['yellow5'] = require('../../resources/dice/yellow5.png');
+images['yellow6'] = require('../../resources/dice/yellow6.png');
 
 module.exports = function(image) {
     if (images.hasOwnProperty(image)) {

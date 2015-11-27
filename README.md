@@ -19,6 +19,7 @@ https://github.com/andreaskeller/react-native-audioplayer
 https://github.com/ide/react-native-button
 https://github.com/Recr0ns/react-native-material-button
 https://github.com/APSL/react-native-button
+http://stackoverflow.com/questions/29308937/trouble-requiring-image-module-in-react-native
 
 ## Local JSON
 duh: just require() it

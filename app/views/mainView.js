@@ -106,7 +106,8 @@ var MainView = React.createClass({
                 }
                 //console.log(this.state);
                 return (
-                  <BattleView battle={this.state.scenario} onMenu={this.menuHandler}/>
+                  <LandingView onMenu={this.menuHandler}/>
+                  //<BattleView battle={this.state.scenario} onMenu={this.menuHandler}/>
                 );
               }
             }
