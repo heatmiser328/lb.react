@@ -1,6 +1,6 @@
 module.exports = {
 	"logo": require('./resources/lb.jpg'),
-	"splash": 'foo',//require('./resources/napolean.jpg'),	
+	"splash": require('./resources/napolean.jpg'),	
 	"refreshButton": require('./resources/ic_action_refresh.png'),
 	"prevButton":	require('./resources/ic_action_previous_item.png'),
 	"nextButton": require('./resources/ic_action_next_item.png'),

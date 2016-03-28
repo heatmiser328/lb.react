@@ -14,17 +14,21 @@ var styles = StyleSheet.create({
   },
   button: {
       width: 50,
+      //backgroundColor: 'blue',
   },
   valueContainer: {
       flex: 90,
       width: 100,
+      height: 50,
       alignItems: 'center',
       //justifyContent: 'center',
       //backgroundColor: '#DCDCDC',
       padding: 5,
   },
   value: {
-      justifyContent: 'center',
+      //justifyContent: 'center',
+      alignItems: 'center',
+      //paddingLeft: 50,
       fontSize: 18,
       backgroundColor: '#DCDCDC',
   },
@@ -32,14 +36,13 @@ var styles = StyleSheet.create({
     flex: 1,
     padding: 4,
     marginRight: 1,
-    marginTop: 5,
-    fontSize: 18,    
+    //marginTop: 5,
+    fontSize: 18,
     borderWidth: 1,
     borderRadius: 4,
     borderColor: '#E6E5ED',
     backgroundColor: '#F8F8F9',
-    justifyContent: 'center',
-    height: 50
+    justifyContent: 'center'
   }
 });
 

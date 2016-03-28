@@ -10,7 +10,7 @@ var styles = StyleSheet.create({
   container: {
     flex: 1,
     //marginTop: 30,
-    backgroundColor: 'rgba(0,0,0,0.01)',
+    //backgroundColor: 'rgba(0,0,0,0.01)',
   },
   backgroundImage: {
       flex: 1,
@@ -32,13 +32,12 @@ var LandingView = React.createClass({
     console.log(Icons.splash);
     let splash = require('../../resources/napolean.jpg');
     let logo = Icons.logo;
-    console.log(splash);
-    //<TitleBar logo={logo} title={title} onMenu={this.menuHandler} />
+    //console.log(splash);
     return (
       //Icons.splash
       <View style={styles.container}>
-        <Image source={splash} style={styles.backgroundImage} />
-        <Text>Landing</Text>
+        <TitleBar logo={logo} title={title} onMenu={this.menuHandler} />
+        <Image source={Icons.splash} style={styles.backgroundImage} />        
       </View>
     );
   }

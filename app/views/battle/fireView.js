@@ -19,9 +19,14 @@ var styles = StyleSheet.create({
     //justifyContent: 'center',
   },
   fireHeader: {
-    fontSize: 14,
+    fontSize: 18,
     fontWeight: 'bold',
     textAlign: 'center',
+  },
+  label: {
+      fontSize: 16,
+      fontWeight: 'bold',
+      marginTop: 20
   }
 
 });
@@ -51,7 +56,7 @@ var Odds = React.createClass({
   render() {
     return (
       <View>
-        <Text>Odds</Text>
+        <Text style={styles.label}>Odds</Text>
       </View>
     );
   }
@@ -61,7 +66,7 @@ var DiceModifiers = React.createClass({
   render() {
     return (
       <View>
-        <Text>Dice Modifiers</Text>
+        <Text style={styles.label}>Dice Modifiers</Text>
       </View>
     );
   }
@@ -71,7 +76,7 @@ var Results = React.createClass({
   render() {
     return (
       <View>
-        <Text>Results</Text>
+        <Text style={styles.label}>Results</Text>
       </View>
     );
   }
@@ -107,10 +112,10 @@ var FireView = React.createClass({
         </View>
         <View style={{flex: 1, flexDirection: 'row'}}>
           <Odds style={{flex: 25}}/>
-          <DiceRoll style={{flex: 75}} dice={this.state.dice} onRoll={this.onResolve} onDie={this.onResolve}/>
+          <Results style={{flex: 75}} />
         </View>
+        <DiceRoll dice={this.state.dice} onRoll={this.onResolve} onDie={this.onResolve}/>
         <DiceModifiers />
-        <Results />
       </View>
     );
   }

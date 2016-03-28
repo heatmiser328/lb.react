@@ -1,13 +1,11 @@
 'use strict'
 
 var React = require('react-native');
-var { View, Dimensions, StyleSheet, } = React;
+var { View, StyleSheet, } = React;
 var EventEmitter = require('EventEmitter');
 var icons = require('../../../icons');
 var TitleBar = require('../titleBar');
 var ScrollableTabView = require('react-native-scrollable-tab-view');
-var deviceWidth = Dimensions.get('window').width;
-var ScrollingTabBar = require('../../widgets/scrollingTabBar');
 var TurnView = require('./turnView');
 var FireView = require('./fireView');
 var MeleeView = require('./meleeView');
@@ -29,7 +27,6 @@ var styles = StyleSheet.create({
 var BattleView = React.createClass({
   getInitialState() {
     return {
-      selectedTab: 0,
       battle: this.props.battle
     };
   },
@@ -52,15 +49,9 @@ var BattleView = React.createClass({
     .done();
   },
   onChangeTab({i, ref}) {
-    setTimeout(() => {
-      this.setState({selectedTab: i});
-    }, 500);
   },
   render() {
-    //console.log(this.props);
     let battle = this.state.battle || {scenario: {}};
-    //console.log('battleView');
-    //console.log(battle);
     return (
       <View style={styles.container}>
         <TitleBar
@@ -69,15 +60,10 @@ var BattleView = React.createClass({
           subtitle={battle.scenario.name}
           onMenu={this.menuHandler}
           onRefresh={this.refreshHandler} />
-
         <TurnView style={styles.turn} events={this.eventEmitter} />
-
         <ScrollableTabView
           style={{backgroundColor: '#fff'}}
-          onChangeTab={this.onChangeTab}
-          edgeHitWidth={deviceWidth / 2}
-          renderTabBar={() => <ScrollingTabBar />}          
-        >
+          onChangeTab={this.onChangeTab}>
           <FireView tabLabel="Fire" events={this.eventEmitter} />
           <MeleeView tabLabel="Melee" events={this.eventEmitter} />
           <MoraleView tabLabel="Morale" events={this.eventEmitter} />
