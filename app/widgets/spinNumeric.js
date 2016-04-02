@@ -6,15 +6,15 @@ var SpinButton = require('./spinButton');
 
 var styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 0.1,
     flexDirection: 'row',
     paddingTop: 5,
     paddingBottom: 5,
-    //backgroundColor: 'blue',
+    //backgroundColor: 'green',
   },
   button: {
       width: 50,
-      //backgroundColor: 'blue',
+      //backgroundColor: 'green',
   },
   valueContainer: {
       flex: 90,
@@ -23,6 +23,7 @@ var styles = StyleSheet.create({
       alignItems: 'center',
       //justifyContent: 'center',
       //backgroundColor: '#DCDCDC',
+      //backgroundColor: 'green',
       padding: 5,
   },
   value: {
@@ -42,15 +43,16 @@ var styles = StyleSheet.create({
     borderRadius: 4,
     borderColor: '#E6E5ED',
     backgroundColor: '#F8F8F9',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    textAlign: 'center'
   }
 });
 
 var SpinNumeric = React.createClass({
   getInitialState() {
+      console.log('SpinNumeric: initial');
     return {
-      value: this.props.value,
-      text: 'wth?'
+      value: this.props.value
     };
   },
   shouldComponentUpdate(nextProps, nextState) {
@@ -118,6 +120,7 @@ var SpinNumeric = React.createClass({
     console.log('SpinNumeric: ' + this.state.value);
     return (
       <View style={styles.container}>
+        <Text style={{marginTop: 10}}>{this.props.label || ''}</Text>
         <SpinButton style={styles.button} direction={'prev'} onPress={this.onPrev} />
         <View style={styles.valueContainer}>
             <TextInput style={styles.input}

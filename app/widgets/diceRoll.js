@@ -1,49 +1,11 @@
 'use strict'
 
 var React = require('react-native');
-var { View, Text, TouchableOpacity, Image, StyleSheet } = React;
+var { View, Text, TouchableOpacity, Image } = React;
 var Button = require('apsl-react-native-button');
 var Dice = require('../core/dice');
 var range = require('../core/range');
 var Images = require('./dieImages');
-
-var styles = StyleSheet.create({
-  container: {
-    //flex: 1,
-    flexDirection: 'row',
-    paddingTop: 5,
-    paddingBottom: 5,
-    //backgroundColor: 'blue',
-  },
-  die: {
-      //width: 50,
-  },
-  dieButton: {
-      flex: 1,
-      padding: 5,
-      //backgroundColor: 'red',
-      alignItems: 'center',
-  },
-  roll: {
-
-  },
-  rollButton: {
-      flex: 1,
-      width: 64,
-      height: 64,
-      padding: 5,
-      alignItems: 'center',
-      justifyContent: 'center',
-      marginRight: 25,
-      //padding: 15,
-      backgroundColor: '#3F51B5'
-  },
-  rollText: {
-      //paddingTop: 50,
-      fontSize: 18,
-      color: '#FFF'
-  }
-});
 
 var DieButton = React.createClass({
     shouldComponentUpdate(nextProps, nextState) {
@@ -53,10 +15,10 @@ var DieButton = React.createClass({
         this.props.onPress && this.props.onPress({die: this.props.die});
     },
     render() {
-        console.log(this.props.image);
+        //console.log(this.props.image);
         let image = Images(this.props.image);
         return (
-            <TouchableOpacity onPress={this.onPress} style={styles.dieButton}>
+            <TouchableOpacity style={{marginRight: 5}} onPress={this.onPress} >
                 <Image source={image} />
             </TouchableOpacity>
         );
@@ -109,14 +71,19 @@ var DiceRoll = React.createClass({
       this.props.onDie && this.props.onDie(this.state.dice.dice());
     },
     render() {
+        //style={{flex: 1,padding: 5, alignItems: 'center'}}
         return (
-          <View style={styles.container}>
-            {this.state.dice.map((die, i) => {
-                return (
-                    <DieButton style={styles.die} die={i+1} image={die.image()} onPress={this.onDie} />
-                );
-            })}
-            <Button style={styles.rollButton} textStyle={styles.rollText} onPress={this.onRoll} >
+          <View style={{flexDirection: 'row'}}>
+            <View style={{flex: 4, flexDirection: 'row', justifyContent: 'flex-end', marginTop: 5}}>
+                {this.state.dice.map((die, i) => {
+                    return (
+                        <DieButton die={i+1} image={die.image()} onPress={this.onDie} />
+                    );
+                })}
+            </View>
+            <Button
+                style={{flex: 1,height: 64,marginTop: 7,marginRight: 5,backgroundColor: '#3F51B5'}}
+                textStyle={{fontSize: 18,color: '#FFF'}} onPress={this.onRoll}>
                 Roll
             </Button>
           </View>

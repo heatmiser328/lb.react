@@ -7,14 +7,14 @@ var Icons = require('../../icons');
 var styles = StyleSheet.create({
   prevButton: {
       flex: 10,
-      marginTop: 10,
+      marginTop: 5,
       padding: 5,
       //backgroundColor: 'red',
       alignItems: 'center',
   },
   nextButton: {
       flex: 10,
-      marginTop: 10,
+      marginTop: 5,
       padding: 5,
       //backgroundColor: 'red',
       alignItems: 'center',

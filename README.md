@@ -21,6 +21,8 @@ https://github.com/Recr0ns/react-native-material-button
 https://github.com/APSL/react-native-button
 http://stackoverflow.com/questions/29308937/trouble-requiring-image-module-in-react-native
 
+https://github.com/xinthink/react-native-material-kit
+
 ## Local JSON
 duh: just require() it
 

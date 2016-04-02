@@ -1,9 +1,15 @@
 module.exports = {
 	"logo": require('./resources/lb.jpg'),
-	"splash": require('./resources/napolean.jpg'),	
+	"splash": require('./resources/napolean.jpg'),
 	"refreshButton": require('./resources/ic_action_refresh.png'),
 	"prevButton":	require('./resources/ic_action_previous_item.png'),
 	"nextButton": require('./resources/ic_action_next_item.png'),
+
+	"attackerLoss": require('./resources/attacker.png'),
+	"defenderLoss": require('./resources/defender.png'),
+	"wounded": require('./resources/ambulance.png'),
+	"mortal": require('./resources/tombstone.png'),
+	
 	"halle": require("./resources/halle.jpg"),
 	"raszyn": require("./resources/raszyn.jpg"),
 	"leipzig": require("./resources/leipzig.jpg"),
