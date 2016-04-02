@@ -183,8 +183,8 @@ function resolve(o, dice, defincr) {
 }
 
 module.exports = {
-    odds: table,//.map((o) => {return o.desc;}),
-    defaultOdds: table[4],//.desc,
+    odds: table.map((o) => {return o.desc;}),
+    defaultOdds: table[4].desc,
     calculate: calculate,
     resolve: resolve
 };

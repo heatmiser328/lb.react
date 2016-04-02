@@ -12,7 +12,7 @@ var DieButton = React.createClass({
       return true;
     },
     onPress() {
-        this.props.onPress && this.props.onPress({die: this.props.die});
+        this.props.onPress && this.props.onPress(this.props.die);
     },
     render() {
         //console.log(this.props.image);
@@ -27,48 +27,26 @@ var DieButton = React.createClass({
 
 var DiceRoll = React.createClass({
     getInitialState() {
-        let state = {
-            dice: new Dice.Dice(this.props.dice)
-        };
-        state.dice.each((die, i) => {
-            state[i] = {
-                value: die.value(),
-                image: die.image()
-            };
+        var dice = new Dice.Dice(this.props.dice);
+        dice.each((die,i) => {
+            if (i<this.props.values.length) {
+                die.value(this.props.values[i]);
+            }
         });
-
-        return state;
-    },
-    shouldComponentUpdate(nextProps, nextState) {
-        return true;
-    },
-    componentWillMount: function() {
+        return {
+            dice: dice
+        };
     },
     onRoll(e) {
       console.log('dice: roll');
       this.state.dice.roll();
-      let state = {};
-      this.state.dice.each((die, i) => {
-          state[i] = {
-              value: die.value(),
-              image: die.image()
-          };
-      });
-      this.setState(state);
-
       this.props.onRoll && this.props.onRoll(this.state.dice.dice());
     },
     onDie(e) {
       console.log('dice: die');
-      let die = this.state.dice.dieEx(e.die);
+      let die = this.state.dice.dieEx(e);
       die.increment();
-      let state = {};
-      state[e.die] = {
-          value: die.value(),
-          image: die.image()
-      };
-      this.setState(state);
-      this.props.onDie && this.props.onDie(this.state.dice.dice());
+      this.props.onDie && this.props.onDie(e, die.value());
     },
     render() {
         //style={{flex: 1,padding: 5, alignItems: 'center'}}
@@ -77,7 +55,7 @@ var DiceRoll = React.createClass({
             <View style={{flex: 4, flexDirection: 'row', justifyContent: 'flex-end', marginTop: 5}}>
                 {this.state.dice.map((die, i) => {
                     return (
-                        <DieButton die={i+1} image={die.image()} onPress={this.onDie} />
+                        <DieButton key={i} die={i+1} image={die.image()} onPress={this.onDie} />
                     );
                 })}
             </View>
