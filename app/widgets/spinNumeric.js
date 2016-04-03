@@ -54,7 +54,7 @@ var SpinNumeric = React.createClass({
         }
     },
     onChanged(e) {
-        console.log('spin: changed');
+        console.log('spin: changed = ' + e);
         try {
             let v = +e;
             this.props.onChanged && this.props.onChanged(v);
@@ -63,7 +63,7 @@ var SpinNumeric = React.createClass({
         }
     },
     render() {
-        //console.log(this.props);        
+        //console.log(this.props);
         return (
             <View style={{flex: 0.1,flexDirection: 'row',paddingTop: 5,paddingBottom: 5}}>
                 <Text style={{marginTop: 10}}>{this.props.label || ''}</Text>
@@ -74,9 +74,9 @@ var SpinNumeric = React.createClass({
                             borderColor: '#E6E5ED',backgroundColor: '#F8F8F9',justifyContent: 'center',textAlign: 'center'}}
                     keyboardType={'numeric'}
                     autoCorrect={false}
-                    defaultValue={(this.props.defaultValue || 1).toString()}
+                    defaultValue={(this.props.defaultValue || '').toString()}
                     onChangeText={this.onChanged}
-                    value={(this.props.value || 1).toString()}
+                    value={(this.props.value || '').toString()}
                 >
                     </TextInput>
                 </View>

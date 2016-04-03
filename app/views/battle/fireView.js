@@ -1,10 +1,12 @@
 'use strict'
 var React = require('react-native');
-var { View, Text, Picker, Image } = React;
-var Button = require('apsl-react-native-button');
-var SpinNumeric = require('../../widgets/spinNumeric');
+var { View, Text } = React;
+var FireAttackerView = require('./fireAttackerView');
+var FireDefenderView = require('./fireDefenderView');
+var OddsView = require('./oddsView');
+var ResultsView = require('./resultsView');
+var DiceModifiersView = require('./diceModifiersView');
 var DiceRoll = require('../../widgets/diceRoll');
-var Icons = require('../../../icons');
 var Fire = require('../../core/fire');
 var LeaderLoss = require('../../core/leaderloss');
 var Base6 = require('../../core/base6');
@@ -17,234 +19,6 @@ var dice = [
     {num: 1, low: 1, high: 6, color: 'blackr'}
 ];
 
-var FireAttackerView = React.createClass({
-    onQuickValue(v) {
-        return () => {
-            this.props.onChanged && this.props.onChanged(v);
-        }
-    },
-    onModifier(v) {
-        return () => {
-            this.props.onModifierChanged && this.props.onModifierChanged(v);
-        }
-    },
-
-    render() {
-        return (
-            <View style={{flex:1}}>
-                <Text style={{fontSize: 18,fontWeight: 'bold',textAlign: 'center'}}>Attacker</Text>
-                <View style={{flex: 1}}>
-                    <SpinNumeric value={this.props.value} min={1} onChanged={this.props.onChanged} />
-                </View>
-                <View style={{flex: 1, flexDirection: 'row'}}>
-                    {
-                        [4,6,9,12,16,18].map((v, i) => {
-                            return (
-                                <Button key={i}
-                                    style={{
-                                        flex: 1,
-                                        width: 16,
-                                        height: 32,
-                                        padding: 5,
-                                        alignItems: 'center',
-                                        justifyContent: 'center',
-                                        marginLeft: i == 0 ? 5 : 0,
-                                        marginTop: 10,
-                                        marginRight: 5,
-                                        //color: 'red',
-                                        backgroundColor: 'lightgray'
-                                        //backgroundColor: '#3F51B5'
-                                    }}
-                                    textStyle={{
-                                        color: 'black'
-                                    }}
-                                    onPress={this.onQuickValue(v)}
-                                >
-                                    {v.toString()}
-                                </Button>
-                            );
-                        })
-                    }
-                </View>
-                <View style={{flex: 1, flexDirection: 'row'}}>
-                    {
-                        ['1/3','1/2','3/2','Cannister'].map((v, i) => {
-                            return (
-                                <Button key={i}
-                                    style={{
-                                        flex: i != 3 ? 1 : 2,
-                                        //width: i != 3 ? 8 : 24,
-                                        height: 32,
-                                        padding: 5,
-                                        alignItems: 'center',
-                                        justifyContent: 'center',
-                                        marginLeft: i == 0 ? 5 : 0,
-                                        marginTop: 10,
-                                        marginRight: 5,
-                                        backgroundColor: 'lightgray'
-                                        //backgroundColor: '#3F51B5'
-                                    }}
-                                    textStyle={{
-                                        color: 'black'
-                                    }}
-                                    onPress={this.onModifier(v)}
-                                >
-                                    {v}
-                                </Button>
-                            );
-                        })
-                    }
-                </View>
-            </View>
-        );
-    }
-});
-
-var FireDefenderView = React.createClass({
-    onQuickValue(v) {
-        return () => {
-            this.props.onChanged && this.props.onChanged(v);
-        }
-    },
-    onIncrements(v) {
-        return () => {
-            this.props.onIncrementsChanged && this.props.onIncrementsChanged(v);
-        }
-    },
-
-    render() {
-        return (
-            <View style={{flex:1}}>
-                <Text style={{fontSize: 18,fontWeight: 'bold',textAlign: 'center'}}>Defender</Text>
-                <View style={{flex: 1}}>
-                    <SpinNumeric value={this.props.value} min={1} onChanged={this.props.onChanged} />
-                </View>
-                <View style={{flex: 1, flexDirection: 'row'}}>
-                    {
-                        [4,6,9,12,14,16].map((v, i) => {
-                            return (
-                                <Button key={i}
-                                    style={{
-                                        flex: 1,
-                                        width: 16,
-                                        height: 32,
-                                        padding: 5,
-                                        alignItems: 'center',
-                                        justifyContent: 'center',
-                                        marginLeft: i == 0 ? 5 : 0,
-                                        marginTop: 10,
-                                        marginRight: 5,
-                                        backgroundColor: 'lightgray'
-                                        //backgroundColor: '#3F51B5'
-                                    }}
-                                    textStyle={{
-                                        color: 'black'
-                                    }}
-                                    onPress={this.onQuickValue(v)}
-                                >
-                                    {v.toString()}
-                                </Button>
-                            );
-                        })
-                    }
-                </View>
-                <View style={{flex: 1}}>
-                    <SpinNumeric label={'Incr'} value={this.props.incr} min={1} onChanged={this.onIncrements} />
-                </View>
-            </View>
-        );
-    }
-});
-
-var OddsView = React.createClass({
-    onChanged(v) {
-        return () => {
-            this.props.onChanged && this.props.onChanged(v);
-        }
-    },
-    render() {
-        return (
-            <View style={{flex:1, flexDirection: 'row'}}>
-                <Text style={{flex: 1, fontSize: 16,fontWeight: 'bold', marginLeft: 5, marginTop: 15}}>Odds</Text>
-                <Picker style={{flex: 2, marginRight: 25}}
-                    selectedValue={this.props.value}
-                    onValueChange={this.onChanged}
-                >
-                    {Fire.odds.map((o,i) => {return (<Picker.Item key={i} label={o} value={o} />);})}
-                </Picker>
-            </View>
-        );
-    }
-});
-
-var ResultsView = React.createClass({
-    render() {
-        return (
-            <View style={{flex: 1, flexDirection: 'row', alignItems: 'center'}}>
-                <View style={{flex: 2, alignItems: 'center'}}>
-                    <Text style={{fontSize: 16, fontWeight: 'bold'}}>{this.props.value}</Text>
-                </View>
-                {this.props.leader
-                    ? <Image style={{flex: 1, resizeMode: 'contain'}} source={this.props.leader == 'A' ? Icons.attackerLoss : Icons.defenderLoss} />
-                    : <Text />
-                }
-                {this.props.leader
-                    ? (
-                        <View style={{flex: 3, alignItems: 'center'}}>
-                            <Text style={{fontSize: 16, fontWeight: 'bold'}}>{this.props.loss}</Text>
-                        </View>
-                    ) : <Text />
-                }
-                {this.props.leader
-                    ? <Image style={{flex: 1, resizeMode: 'contain'}} source={this.props.mortal ? Icons.mortal : Icons.wounded} />
-                    : <Text />
-                }
-            </View>
-        );
-    }
-});
-
-var DiceModifiersView = React.createClass({
-    onModifier(v) {
-        return () => {
-            this.props.onChange && this.props.onChange(+v);
-        }
-    },
-    render() {
-        return (
-            <View style={{flex: 1, flexDirection: 'row', alignItems: 'center'}}>
-            {
-                ['-6','-3','-1','+1','+3','+6'].map((v, i) => {
-                    return (
-                        <Button key={i}
-                            style={{
-                                flex: 1,
-                                //width: 16,
-                                height: 48,
-                                padding: 5,
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                marginLeft: i == 0 ? 5 : 0,
-                                marginTop: 10,
-                                marginRight: 5,
-                                backgroundColor: 'blue'
-                                //backgroundColor: '#3F51B5'
-                            }}
-                            textStyle={{
-                                color: 'white'
-                            }}
-                            onPress={this.onModifier(v)}
-                        >
-                            {v}
-                        </Button>
-                    )
-                })
-            }
-            </View>
-        );
-    }
-});
-
 var FireView = React.createClass({
     getInitialState() {
         return {
@@ -252,7 +26,10 @@ var FireView = React.createClass({
             defend: 1,
             incr: 1,
             odds: Fire.defaultOdds,
-            cannister: false,
+            mod13: false,
+            mod12: false,
+            mod32: false,
+            modCann: false,
             die1: 1,
             die2: 1,
             die3: 1,
@@ -268,13 +45,28 @@ var FireView = React.createClass({
         this.setState({attack: v});
         this.onResolve();
     },
-    onAttackerModifierChanged(v, s) {
-        /*
-        var a = this.state.attack;
-        if (v == 'Cannister') {
-            this.setState({cannister})
+    onAttackerModifierChanged(m, v) {
+        console.log(m + ' = ' + v);
+        if (m == 'Cannister') {
+            this.setState({modCann: v});
+        } else {
+            var state = {};
+            var a = this.state.attack;
+            if (m == '1/3') {
+                state.mod13 = v;
+                a = v ? a / 3 : a * 3;
+            }
+            else if (m == '1/2') {
+                state.mod12 = v;
+                a = v ? a / 2 : a * 2;
+            }
+            else if (m == '3/2') {
+                a = v ? a * 1.5 : a / 1.5;
+                state.mod32 = v;
+            }
+            state.attack = a;
+            this.setState(state);
         }
-        */
         this.onResolve();
     },
     onDefenderChanged(v) {
@@ -289,35 +81,31 @@ var FireView = React.createClass({
         this.setState({odds: v});
         this.onResolve();
     },
-    onDiceModifierChanged(v) {
+    onDiceModifierChanged(m, v) {
         var m = +v;
         var d = (this.state.die1 * 10) + this.state.die2;
         d = Base6.add(d, m);
         var d1 = Math.floor(d / 10);
         var d2 = d % 10;
-        //console.log(d + ' = ' + d1 + ' + ' + d2);
         this.setState({
-            die1: Math.floor(d / 10),
-            die2: d % 10
+            die1: d1,
+            die2: d2
         });
         this.onResolve();
     },
     onDieChanged(d,v) {
-        console.log(d + ' = ' + v);
         let state = {};
         state['die'+d] = v;
         this.setState(state);
         this.onResolve();
     },
     onDiceRoll(d) {
-        console.log(d);
         this.setState({die1: d[0].value,die2: d[1].value, die3: d[2].value, die4: d[3].value, die5: d[4].value});
         this.onResolve();
     },
     onResolve(e) {
-        console.log('fire: resolve');
         // calc odds
-        var odds = Fire.calculate(this.state.attack,  this.state.defend, this.state.cannister);
+        var odds = Fire.calculate(this.state.attack,  this.state.defend, this.state.modCann);
         // resolve fire
 		var fireDice = (this.state.die1*10) + this.state.die2;
 		var lossdie = this.state.die3;
@@ -339,7 +127,7 @@ var FireView = React.createClass({
             <View style={{flex: 1, marginTop: 5}}>
                 <View style={{flex: 2, flexDirection: 'row'}}>
                     <View style={{flex: 1}}>
-                        <FireAttackerView value={this.state.attack} onChanged={this.onAttackerChanged} onModifierChanged={this.onAttackerModifierChanged} />
+                        <FireAttackerView value={this.state.attack} mods={[this.state.mod13,this.state.mod12,this.state.mod32,this.state.modCann]} onChanged={this.onAttackerChanged} onModifierChanged={this.onAttackerModifierChanged} />
                     </View>
                     <View style={{flex: 1}}>
     					<FireDefenderView value={this.state.defend} incr={this.state.incr} onChanged={this.onDefenderChanged} onIncrementsChanged={this.onDefenderIncrementsChanged} />
@@ -347,7 +135,7 @@ var FireView = React.createClass({
                 </View>
                 <View style={{flex: .5, flexDirection: 'row'}}>
                     <View style={{flex: 1}}>
-                        <OddsView value={this.state.odds} onChanged={this.onOddsChanged} />
+                        <OddsView odds={Fire.odds} value={this.state.odds} onChanged={this.onOddsChanged} />
                     </View>
                     <View style={{flex: 3}}>
                         <ResultsView value={this.state.result} leader={this.state.leader} loss={this.state.loss} mortal={this.state.mortal} />

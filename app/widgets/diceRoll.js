@@ -27,14 +27,8 @@ var DieButton = React.createClass({
 
 var DiceRoll = React.createClass({
     getInitialState() {
-        var dice = new Dice.Dice(this.props.dice);
-        dice.each((die,i) => {
-            if (i<this.props.values.length) {
-                die.value(this.props.values[i]);
-            }
-        });
         return {
-            dice: dice
+            dice: new Dice.Dice(this.props.dice)
         };
     },
     onRoll(e) {
@@ -45,11 +39,17 @@ var DiceRoll = React.createClass({
     onDie(e) {
       console.log('dice: die');
       let die = this.state.dice.dieEx(e);
-      die.increment();
+      die.increment(true);
       this.props.onDie && this.props.onDie(e, die.value());
     },
     render() {
         //style={{flex: 1,padding: 5, alignItems: 'center'}}
+        this.state.dice.each((die,i) => {
+            if (i<this.props.values.length) {
+                die.value(this.props.values[i]);
+            }
+        });
+
         return (
           <View style={{flexDirection: 'row'}}>
             <View style={{flex: 4, flexDirection: 'row', justifyContent: 'flex-end', marginTop: 5}}>
@@ -60,7 +60,7 @@ var DiceRoll = React.createClass({
                 })}
             </View>
             <Button
-                style={{flex: 1,height: 64,marginTop: 7,marginRight: 5,backgroundColor: '#3F51B5'}}
+                style={{flex: 1,height: 64,marginTop: 7,marginRight: 80,backgroundColor: '#3F51B5'}}
                 textStyle={{fontSize: 18,color: '#FFF'}} onPress={this.onRoll}>
                 Roll
             </Button>
