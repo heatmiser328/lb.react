@@ -55,7 +55,7 @@ var BattleView = React.createClass({
     return (
       <View style={styles.container}>
         <TitleBar
-          logo={icons[battle.image]}
+          logo={icons[battle.image+'-sm']}
           title={battle.name}
           subtitle={battle.scenario.name}
           onMenu={this.menuHandler}

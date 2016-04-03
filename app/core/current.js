@@ -64,6 +64,7 @@ function reset(data) {
 	_current.scenario = data.scenario.id;
 	_current.turn = 1;
 	_current.phase = 0;
+	_current.player = 'imperial';
 	return write(_current);
 }
 
@@ -81,6 +82,7 @@ module.exports = {
 		return read()
 		.then((current) => {
         	_current = current;
+			_current.player = _current.player || 'imperial';
             return _current;
 		});
 	},
@@ -98,7 +100,7 @@ module.exports = {
 		var d = moment({year: gamedata.scenario.start.year, month: gamedata.scenario.start.month-1, day: gamedata.scenario.start.day, hour: gamedata.scenario.start.hour, minute: gamedata.scenario.start.minute});
 		var o = (_current.turn - 1) * TURN_MINS;
 		d.add(o, 'minutes');
-		let str = d.format("MMM DD, YYYY HH:mm A");
+		let str = d.format("MMM DD, YYYY HH:mm");
 		log.debug('turn: ' + str);
 		return str;
 	},
@@ -144,7 +146,12 @@ module.exports = {
 	prevPhase: function() {
 		if (--_current.phase < 0) {
 			_current.phase = Phases.count - 1;
-            this.prevTurn(false);
+			if (_current.player == 'imperial') {
+				this.prevTurn(false);
+				_current.player = 'coalition';
+			} else {
+				_current.player = 'imperial';
+			}
 		}
     	return write()
         .then(() => {
@@ -154,11 +161,19 @@ module.exports = {
 	nextPhase: function() {
 		if (++_current.phase >= Phases.count) {
 			_current.phase = 0;
-			this.nextTurn(false);
+			if (_current.player == 'coalition') {
+				this.nextTurn(false);
+				_current.player = 'imperial';
+			} else {
+				_current.player = 'coalition';
+			}
 		}
     	return write()
         .then(() => {
         	return this.phase();
 		});
+	},
+	player: function() {
+		return _current.player;
 	}
 };
