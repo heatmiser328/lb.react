@@ -44,23 +44,20 @@ var DiceRoll = React.createClass({
     },
     render() {
         //style={{flex: 1,padding: 5, alignItems: 'center'}}
-        this.state.dice.each((die,i) => {
-            if (i<this.props.values.length) {
-                die.value(this.props.values[i]);
-            }
-        });
-
         return (
-          <View style={{flexDirection: 'row'}}>
-            <View style={{flex: 4, flexDirection: 'row', justifyContent: 'flex-end', marginTop: 5}}>
+          <View style={{flex: 1, flexDirection: 'row', alignItems: 'center'}}>
+            <View style={{flex: 1, flexDirection: 'row', justifyContent: 'flex-end', marginTop: 5}}>
                 {this.state.dice.map((die, i) => {
+                    if (i<this.props.values.length) {
+                        die.value(this.props.values[i]);
+                    }
                     return (
                         <DieButton key={i} die={i+1} image={die.image()} onPress={this.onDie} />
                     );
                 })}
             </View>
             <Button
-                style={{flex: 1,height: 64,marginTop: 7,marginRight: 80,backgroundColor: '#3F51B5'}}
+                style={{width: 96,height: 64,marginTop: 12,marginRight: 5,backgroundColor: '#3F51B5'}}
                 textStyle={{fontSize: 18,color: '#FFF'}} onPress={this.onRoll}>
                 Roll
             </Button>

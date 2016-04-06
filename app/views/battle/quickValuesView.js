@@ -3,40 +3,41 @@ var React = require('react-native');
 var { View } = React;
 var Button = require('apsl-react-native-button');
 
-var DiceModifiersView = React.createClass({
-    onModifier(v) {
+var QuickValuesView = React.createClass({
+    onQuickValue(v) {
         return () => {
-            this.props.onChange && this.props.onChange(+v);
+            this.props.onChanged && this.props.onChanged(v);
         }
     },
     render() {
         return (
             <View style={{flex: 1, flexDirection: 'row', alignItems: 'center'}}>
             {
-                ['-6','-3','-1','+1','+3','+6'].map((v, i) => {
+                this.props.values.map((v, i) => {
                     return (
                         <Button key={i}
                             style={{
                                 flex: 1,
-                                //width: 16,
-                                height: 48,
+                                width: 16,
+                                height: 32,
                                 padding: 5,
                                 alignItems: 'center',
                                 justifyContent: 'center',
                                 marginLeft: i == 0 ? 5 : 0,
                                 marginTop: 10,
                                 marginRight: 5,
-                                backgroundColor: 'blue'
+                                //color: 'red',
+                                backgroundColor: 'lightgray'
                                 //backgroundColor: '#3F51B5'
                             }}
                             textStyle={{
-                                color: 'white'
+                                color: 'black'
                             }}
-                            onPress={this.onModifier(v)}
+                            onPress={this.onQuickValue(v)}
                         >
-                            {v}
+                            {v.toString()}
                         </Button>
-                    )
+                    );
                 })
             }
             </View>
@@ -44,4 +45,4 @@ var DiceModifiersView = React.createClass({
     }
 });
 
-module.exports = DiceModifiersView;
+module.exports = QuickValuesView;

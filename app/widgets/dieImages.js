@@ -1,8 +1,8 @@
 'use strict'
 
-var range = require('../core/range');
 var images = {};
 /*
+var range = require('../core/range');
 var dielow = 1, diehigh = 6;
 var colors = ['blue', 'blackw', 'blue', 'green', 'red', 'white', 'yellow'];
 colors.forEach((color) => {

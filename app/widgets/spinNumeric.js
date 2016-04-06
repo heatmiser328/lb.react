@@ -19,21 +19,14 @@ var SpinNumeric = React.createClass({
             }
             return v;
         }
-        if (neg)  {
-            for (var i=values.length; i>=0; i--) {
-                if (values[i] <= value) {
-                    return values[i];
-                }
-            }
-            return values[0];
-        }
 
-        for (var i=0; i<values.length; i++) {
-            if (values[i] >= value) {
-                return values[i];
-            }
+        var i = values.findIndex((v) => {return v==value;}) + (neg ? -1 : 1);
+        if (i < 0) {
+            i = 0;
+        } else if (i >= values.length) {
+            i = values.length - 1;
         }
-        return values[values.length-1];
+        return values[i];
     },
     onPrev() {
         console.log('spin: previous');

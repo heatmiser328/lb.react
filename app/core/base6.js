@@ -34,6 +34,7 @@ function op(lhs, rhs, add) {
 init();
 
 module.exports = {
+    values: values,
     add(l,r) {
         return op(l,r,true);
     },

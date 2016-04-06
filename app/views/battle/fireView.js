@@ -81,15 +81,13 @@ var FireView = React.createClass({
         this.setState({odds: v});
         this.onResolve();
     },
-    onDiceModifierChanged(m, v) {
+    onDiceModifierChanged(v) {
         var m = +v;
         var d = (this.state.die1 * 10) + this.state.die2;
         d = Base6.add(d, m);
-        var d1 = Math.floor(d / 10);
-        var d2 = d % 10;
         this.setState({
-            die1: d1,
-            die2: d2
+            die1: Math.floor(d / 10),
+            die2: d % 10
         });
         this.onResolve();
     },
