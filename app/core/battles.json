@@ -508,7 +508,7 @@
 	            }
 	        }
 	    ]
-	},	
+	},
 	{
 	    "id": 900,
 	    "name": "La Bataille de Friedland",
@@ -550,7 +550,7 @@
 	                "hour": 14,
 	                "minute": 0
 	            }
-	        },						
+	        },
 	        {
 	            "id": 912,
 	            "name": "Sortlack Wood",
@@ -568,7 +568,7 @@
 	                "hour": 13,
 	                "minute": 0
 	            }
-	        },									
+	        },
 	        {
 	            "id": 913,
 	            "name": "Ney's Late Afternoon Attack on Friedland",
@@ -586,7 +586,7 @@
 	                "hour": 19,
 	                "minute": 0
 	            }
-	        },			
+	        },
 	        {
 	            "id": 914,
 	            "name": "Early Morning Skirmish",
@@ -622,7 +622,7 @@
 	                "hour": 20,
 	                "minute": 40
 	            }
-	        }			
+	        }
 	    ]
 	},
 
@@ -869,7 +869,6 @@
 
 	]
   },
-
   {
 	"id": 1001,
 	"name": "La Bataille de Neumarkt",
@@ -891,6 +890,33 @@
 		  "month": 4,
 		  "day": 24,
 		  "hour": 15,
+		  "minute": 0
+		}
+	  }
+	]
+  },
+
+  {
+	"id": 1002,
+	"name": "La Bataille de Schoengrabern",
+	"publisher": "Marshal Enterprises",
+	"image": "schoengrabern",
+	"scenarios": [
+	  {
+		"id": 10021,
+		"name": "Prinz Bagration holds the Line",
+		"start": {
+		  "year": 1805,
+		  "month": 11,
+		  "day": 16,
+		  "hour": 16,
+		  "minute": 0
+		},
+		"end": {
+		  "year": 1805,
+		  "month": 11,
+		  "day": 16,
+		  "hour": 21,
 		  "minute": 0
 		}
 	  }

@@ -25,6 +25,8 @@ module.exports = {
 	"aspern_essling-sm": require("./resources/aspern_essling-sm.jpg"),
 	"neumarkt": require("./resources/neumarkt.jpg"),
 	"neumarkt-sm": require("./resources/neumarkt-sm.jpg"),
+	"schoengrabern": require("./resources/schoengrabern.png"),
+	"schoengrabern-sm": require("./resources/schoengrabern-sm.png"),		
 	"vauchamps": require("./resources/vauchamps.jpg"),
 	"vauchamps-sm": require("./resources/vauchamps-sm.jpg"),
 	"auerstaedt": require("./resources/auerstaedt.jpg"),

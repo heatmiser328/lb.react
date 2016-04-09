@@ -7,7 +7,8 @@
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "get-js": "curl \"http://localhost:8081/index.android.bundle?platform=android&dev=false&minify=true\" -o \"android/app/src/main/assets/index.android.bundle\"",
     "assemble": "cd android && gradlew assembleRelease && cd ..",
-    "install-rel": "cd android && gradlew installRelease && cd ..",
+    "install-dbg": "adb install -r android/app/build/outputs/apk/lb-debug-1.0.apk",    
+    "install-rel": "adb install -r android/app/build/outputs/apk/lb-release-1.0.apk",
     "logs": "adb logcat *:S ReactNative:V ReactNativeJS:V"
   },
   "dependencies": {

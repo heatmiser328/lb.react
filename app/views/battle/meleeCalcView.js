@@ -98,17 +98,6 @@ var MeleeCalcView = React.createClass({
                 <View style={{flex: 1}}>
                     <SpinNumeric label={'Total'} value={this.state.total} min={1} onChanged={this.onTotalChanged} />
                 </View>
-                <View style={{flex: 1, flexDirection: 'row', justifyContent:'center', alignItems:'center'}}>
-                    <Radio style={{marginLeft: 20}}
-                      radio_props={[{label: 'Attacker', value: 0 }, {label: 'Defender', value: 1 }]}
-                      initial={this.state.side}
-                      formHorizontal={true}
-                      labelHorizontal={true}
-                      buttonColor={'#2196f3'}
-                      animation={true}
-                      onPress={(value) => {this.setState({side:value})}}
-                    />
-                </View>
                 <View style={{flex: 1, flexDirection: 'row'}}>
                     {
                         ['1/3','1/2','3/2','2','Lance'].map((v, i) => {
@@ -127,6 +116,17 @@ var MeleeCalcView = React.createClass({
                         })
                     }
                 </View>
+                <View style={{flex: 1, flexDirection: 'row', justifyContent:'center', alignItems:'center'}}>
+                    <Radio style={{marginLeft: 20}}
+                      radio_props={[{label: 'Attacker', value: 0 }, {label: 'Defender', value: 1 }]}
+                      initial={this.state.side}
+                      formHorizontal={true}
+                      labelHorizontal={true}
+                      buttonColor={'#2196f3'}
+                      animation={true}
+                      onPress={(value) => {this.setState({side:value})}}
+                    />
+                </View>                
                 <View style={{flex: 1, flexDirection: 'row'}}>
                     <Button style={{flex:1, marginRight: 10}} onPress={this.props.onClose}>{'Cancel'}</Button>
                     <Button style={{flex:1, marginRight: 10}} onPress={this.onAdd}>{'Add'}</Button>

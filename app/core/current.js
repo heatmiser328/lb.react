@@ -9,7 +9,7 @@ var FILE = 'lb.app.current';
 var PATH = RNFS.DocumentDirectoryPath + '/' + FILE;
 var TURN_MINS = 20;
 
-var _current = null;
+var _current = {};
 
 function read() {
 	// read the file
@@ -48,7 +48,7 @@ function remove() {
 	log.debug('Remove Current from ' + PATH)
 	return RNFS.unlink(PATH)
 	.then((result) => {
-    	_current = null;
+    	_current = {};
     	let success = result[0], path = result[1];
 		log.debug('FILE DELETED', success, path);
 	})
@@ -81,7 +81,7 @@ module.exports = {
 	load: function() {
 		return read()
 		.then((current) => {
-        	_current = current;
+        	_current = current || {};
 			_current.player = _current.player || 'imperial';
             return _current;
 		});
