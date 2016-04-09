@@ -12,9 +12,9 @@ var SpinNumeric = React.createClass({
         let values = this.props.values;
         if (!values || values.length < 1) {
             let v = neg ? value - 1 : value + 1;
-            if (this.props.min && v < this.props.min) {
+            if (this.props.hasOwnProperty('min') && v < this.props.min) {
                 v = this.props.min;
-            } else if (this.props.max && v > this.props.max) {
+            } else if (this.props.hasOwnProperty('max') && v > this.props.max) {
                 v = this.props.max;
             }
             return v;
@@ -56,24 +56,31 @@ var SpinNumeric = React.createClass({
         }
     },
     render() {
-        //console.log(this.props);
+        let d = (this.props.hasOwnProperty('defaultValue') ? this.props.defaultValue : 1);
+        let v = (this.props.hasOwnProperty('value') ? this.props.value : 1);
+        if (this.props.integer) {
+            d = Math.floor(d).toString();
+            v = Math.floor(v).toString();
+        } else {
+            d = d.toFixed(1);
+            v = v.toFixed(1);
+        }
         return (
-            <View style={{flex: 0.1,flexDirection: 'row',paddingTop: 5,paddingBottom: 5}}>
-                <Text style={{marginTop: 10}}>{this.props.label || ''}</Text>
-                <SpinButton style={{width: 50}} direction={'prev'} onPress={this.onPrev} />
-                <View style={{flex: 90,width: 100,height: 50,alignItems: 'center',padding: 5}}>
-                <TextInput
-                    style={{flex: 1,padding: 4,marginRight: 1,fontSize: 18,borderWidth: 1,borderRadius: 4,
-                            borderColor: '#E6E5ED',backgroundColor: '#F8F8F9',justifyContent: 'center',textAlign: 'center'}}
-                    keyboardType={'numeric'}
-                    autoCorrect={false}
-                    defaultValue={(this.props.defaultValue || '').toString()}
-                    onChangeText={this.onChanged}
-                    value={(this.props.value || '').toString()}
-                >
-                    </TextInput>
+            <View style={{flex: 1,flexDirection: 'row',paddingTop: 5,paddingBottom: 5}}>
+                <Text style={{flex: 10,width:100,marginTop: 10}}>{this.props.label || ''}</Text>
+                <SpinButton style={{flex: 10, width: 50}} direction={'prev'} onPress={this.onPrev} />
+                <View style={{flex: 60,height: 50,alignItems: 'center',padding: 5}}>
+                    <TextInput
+                        style={{flex: 1, width: 100, fontSize: 18,borderWidth: 1,borderRadius: 4,
+                                borderColor: '#E6E5ED',backgroundColor: '#F8F8F9',justifyContent: 'center',textAlign: 'center'}}
+                        keyboardType={'numeric'}
+                        autoCorrect={false}
+                        onChangeText={this.onChanged}
+                        defaultValue={d}
+                        value={v}
+                    />
                 </View>
-                <SpinButton style={{width: 50}} direction={'next'} onPress={this.onNext} />
+                <SpinButton style={{flex: 10, width: 50}} direction={'next'} onPress={this.onNext} />
             </View>
         );
     }

@@ -41,16 +41,22 @@ var FireView = React.createClass({
             mortal: false
         };
     },
+    calcOdds(attack, defend, cannister) {
+        // calc odds
+        var odds = Fire.calculate(attack, defend, cannister);
+        return odds;
+    },
     onAttackerChanged(v) {
-        this.setState({attack: v});
+        var odds = this.calcOdds(v, this.state.defend, this.state.modCann);
+        this.setState({attack: v, odds: odds});
         this.onResolve();
     },
     onAttackerModifierChanged(m, v) {
-        console.log(m + ' = ' + v);
+        var state = {};
         if (m == 'Cannister') {
-            this.setState({modCann: v});
+            state.modCann = v;
+            state.attack = this.state.attack;
         } else {
-            var state = {};
             var a = this.state.attack;
             if (m == '1/3') {
                 state.mod13 = v;
@@ -65,12 +71,15 @@ var FireView = React.createClass({
                 state.mod32 = v;
             }
             state.attack = a;
-            this.setState(state);
+            state.modCann = this.state.modCann;
         }
+        state.odds = this.calcOdds(state.attack, this.state.defend, state.modCann);
+        this.setState(state);
         this.onResolve();
     },
     onDefenderChanged(v) {
-        this.setState({defend: v});
+        var odds = this.calcOdds(this.state.attack, v, this.state.modCann);
+        this.setState({defend: v, odds: odds});
         this.onResolve();
     },
     onDefenderIncrementsChanged(v) {
@@ -102,17 +111,14 @@ var FireView = React.createClass({
         this.onResolve();
     },
     onResolve(e) {
-        // calc odds
-        var odds = Fire.calculate(this.state.attack,  this.state.defend, this.state.modCann);
         // resolve fire
 		var fireDice = (this.state.die1*10) + this.state.die2;
 		var lossdie = this.state.die3;
 		var durationdie1 = this.state.die4;
 		var durationdie2 = this.state.die5;
-		var results = Fire.resolve(odds, fireDice, this.state.incr);
+		var results = Fire.resolve(this.state.odds, fireDice, this.state.incr);
 		var lloss = LeaderLoss.resolve(fireDice, lossdie, durationdie1, durationdie2) || {};
         this.setState({
-            odds: odds,
             result: results,
             leader: lloss.leader,
             loss: lloss.result,

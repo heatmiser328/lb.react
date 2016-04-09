@@ -4,9 +4,7 @@ var { View, Text, Picker } = React;
 
 var OddsView = React.createClass({
     onChanged(v) {
-        return () => {
-            this.props.onChanged && this.props.onChanged(v);
-        }
+        this.props.onChanged && this.props.onChanged(v);
     },
     render() {
         return (

@@ -4,8 +4,9 @@ module.exports = (table) => {
     table = table || [];
     return {
         calculate(att, def, shift) {
-            var attadv = (att >= def);
-            var odds = 0;
+            shift = shift || 0;
+            let attadv = (att >= def);
+            let odds = 0;
             if (attadv == true) {
                 odds = att / def;
             }
@@ -27,12 +28,12 @@ module.exports = (table) => {
             }
             */
 
-            var o = odds * (attadv ? 1 : -1);
-            var index = -1;
+            let o = odds * (attadv ? 1 : -1);
+            let index = -1;
             for (var i=0; i<table.length; i++) {
-                var tableentry = table[i];
-                var value = tableentry.value;
-                var nextvalue = (i+1 < table.length) ? table[i+1].value : value;
+                let tableentry = table[i];
+                let value = tableentry.value;
+                let nextvalue = (i+1 < table.length) ? table[i+1].value : value;
 
                 if ((i+1 == table.length && o >= value) ||
                     (i == 0 && o < value) ||
@@ -41,7 +42,6 @@ module.exports = (table) => {
                     break;
                 }
             }
-
             if (index > -1) {
                 index += shift;
                 if (index < 0) {

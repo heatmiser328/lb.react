@@ -12,26 +12,26 @@ module.exports = {
                 mortal: false
             };
             if (lossdie == 1) {
-            	result.result = "Head Wound";
+            	result.result = 'Head';
                 result.mortal = true;
             }
             else if (lossdie == 2) {
-            	result.result = "Chest Wound";
+            	result.result = 'Chest';
                 result.mortal = true;
             }
             else if (lossdie == 3) {
             	var duration = durationdie1 + durationdie2;
-            	result.result = "Leg Wound: " + duration + " hours out";
+            	result.result = 'Leg: ' + duration + ' hours out';
             }
             else if (lossdie == 4) {
             	var duration = durationdie1;
-            	result.result = "Arm Wound: " + duration + " hours out";
+            	result.result = 'Arm: ' + duration + ' hours out';
             }
             else if (lossdie == 5) {
-            	result.result = "Capture";
+            	result.result = 'Capture';
             }
             else {//if (lossdie == 6) {
-            	result.result = "Flesh Wound";
+            	result.result = 'Flesh Wound';
             }
         }
         return result;
