@@ -24,20 +24,14 @@ https://github.com/andreaskeller/react-native-audioplayer
 
 https://github.com/ide/react-native-button
 
-https://github.com/Recr0ns/react-native-material-button
-
 https://github.com/APSL/react-native-button
 
-http://stackoverflow.com/questions/29308937/trouble-requiring-image-module-in-react-native
-
-https://github.com/iwater/react-native-modal-android
-
 https://github.com/xinthink/react-native-material-kit
+
+https://github.com/Recr0ns/react-native-material-button
 
 ## Local JSON
 duh: just require() it
 
 # Building
 https://facebook.github.io/react-native/docs/signed-apk-android.html
-
-http://www.dahuatu.com/D6y1PVQ0Wn.html

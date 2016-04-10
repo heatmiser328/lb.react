@@ -23,11 +23,13 @@ function calculate(attack, defend) {
 }
 
 function resolve(o, dice) {
-    var idx = table.findIndex((v) => {return v.desc == o;});
-    var result = "NE";
+    let idx = table.findIndex((v) => {return v.desc == o;});
+    let result = "NE";
+    console.log(o);
+    console.log(idx);
     switch (idx)
     {
-        case -2: //1-2
+        case 0: //1-2
             if (dice <= 14) {
                 result = "AR";
             }
@@ -117,7 +119,7 @@ function resolve(o, dice) {
             }
             break;
 
-        case 1.5:		//1.5-1
+        case 2:		//1.5-1
             if 		(dice <= 12) {
                 result = "AD";
             }
@@ -166,7 +168,7 @@ function resolve(o, dice) {
             }
             break;
 
-        case 2:		//2-1
+        case 3:		//2-1
             if 		(dice <= 11) {
                 result = "AD";
             }
@@ -213,7 +215,7 @@ function resolve(o, dice) {
             }
             break;
 
-        case 2.5:		//2.5-1
+        case 4:		//2.5-1
             if 		(dice == 23) {
                 result = "1/4";
             }
@@ -247,7 +249,7 @@ function resolve(o, dice) {
             }
             break;
 
-        case 3:		//3-1
+        case 5:		//3-1
             if 		(dice == 16) {
                 result = "0/0*";
             }
@@ -282,7 +284,7 @@ function resolve(o, dice) {
             }
             break;
 
-        case 3.5:		//3.5-1
+        case 6:		//3.5-1
             if 		(dice == 12) {
                 result = "0/0";
             }
@@ -311,7 +313,7 @@ function resolve(o, dice) {
             }
             break;
 
-        case 4:		//4-1
+        case 7:		//4-1
             if 		(dice == 11) {
                 result = "2*/1";
             }
@@ -337,7 +339,7 @@ function resolve(o, dice) {
             }
             break;
 
-        case 4.5:		//4.5-1
+        case 8:		//4.5-1
             if 		(dice == 11) {
                 result = "3/2";
             }
@@ -355,7 +357,7 @@ function resolve(o, dice) {
             }
             break;
 
-        case 5:		//5-1
+        case 9:		//5-1
             if (dice >= 62) {
                 result = "DS";
             }

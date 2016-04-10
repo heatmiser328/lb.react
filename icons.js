@@ -11,6 +11,16 @@ module.exports = {
 	"arrowRight": require('./resources/arrow-right.png'),
 	"arrowDown": require('./resources/arrow-down.png'),
 
+	"NE": require('./resources/no-effect.jpg'), 
+	"1": require('./resources/1.png'),
+	"2": require('./resources/2.png'),
+	"3": require('./resources/3.png'),
+	"4": require('./resources/4.png'),
+	"5": require('./resources/5.png'),
+
+	"pass": require('./resources/pass.png'),
+	"fail": require('./resources/fail.jpg'),
+
 	"attackerLoss": require('./resources/attacker.png'),
 	"defenderLoss": require('./resources/defender.png'),
 	"wounded": require('./resources/ambulance.png'),

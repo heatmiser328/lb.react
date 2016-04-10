@@ -8,6 +8,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import com.rnfs.RNFSPackage;
+import com.sh3rawi.RNAudioPlayer.*;
 
 public class MainActivity extends ReactActivity {
 
@@ -37,7 +38,8 @@ public class MainActivity extends ReactActivity {
     protected List<ReactPackage> getPackages() {
         return Arrays.<ReactPackage>asList(
             new MainReactPackage(),
-            new RNFSPackage()
+            new RNFSPackage(),
+            new RNAudioPlayer()
         );
     }
 }

@@ -1,5 +1,7 @@
-// use this: https://github.com/andreaskeller/react-native-audioplayer
+var AudioPlayer = require('react-native-audioplayer');
+
 module.exports = {
 	play: function() {
+		AudioPlayer.play('droll.wav');
     }
 };

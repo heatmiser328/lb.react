@@ -1,12 +1,12 @@
 'use strict'
 var React = require('react-native');
-var { View, Text } = React;
+var { View, Text, Image } = React;
 var SpinNumeric = require('../../widgets/spinNumeric');
 var QuickValuesView = require('./quickValuesView');
-var ResultsView = require('./resultsView');
 var DiceModifiersView = require('./diceModifiersView');
 var DiceRoll = require('../../widgets/diceRoll');
 var Base6 = require('../../core/base6');
+var Icons = require('../../../icons');
 
 var dice = [
     {num: 1, low: 1, high: 6, color: 'red'},
@@ -52,10 +52,11 @@ var MoraleView = React.createClass({
     },
     onResolve(e) {
         let moraleDice = (this.state.die1*10) + this.state.die2;
-        this.setState({result: (moraleDice > this.state.morale) ? 'Pass' : 'False'});
+        this.setState({result: (moraleDice > this.state.morale) ? 'Pass' : 'Fail'});
     },
     render() {
         //console.log(this.props);
+        let icon = this.state.result == 'Fail' ? Icons['fail'] : Icons['pass'];
         return (
             <View style={{flex: 1, marginTop: 5}}>
                 <View style={{flex: 1, flexDirection: 'row'}}>
@@ -69,8 +70,10 @@ var MoraleView = React.createClass({
                     <QuickValuesView values={[16,26,36,46,56,66]} onChanged={this.onQuickValue}/>
                 </View>
                 <View style={{flex: 1, flexDirection: 'row'}}>
-                    <View style={{flex: 1}}>
-                        <ResultsView value={this.state.result} />
+                    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+                        <Image style={{height: 64, width: 64, resizeMode: 'stretch'}}
+                            source={icon}
+                        />
                     </View>
                     <View style={{flex: 1}}>
                         <DiceRoll dice={dice} values={[this.state.die1,this.state.die2]}
