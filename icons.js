@@ -8,6 +8,9 @@ module.exports = {
 	"prevButton":	require('./resources/ic_action_previous_item.png'),
 	"nextButton": require('./resources/ic_action_next_item.png'),
 
+	"arrowRight": require('./resources/arrow-right.png'),
+	"arrowDown": require('./resources/arrow-down.png'),
+
 	"attackerLoss": require('./resources/attacker.png'),
 	"defenderLoss": require('./resources/defender.png'),
 	"wounded": require('./resources/ambulance.png'),
@@ -26,7 +29,7 @@ module.exports = {
 	"neumarkt": require("./resources/neumarkt.jpg"),
 	"neumarkt-sm": require("./resources/neumarkt-sm.jpg"),
 	"schoengrabern": require("./resources/schoengrabern.png"),
-	"schoengrabern-sm": require("./resources/schoengrabern-sm.png"),		
+	"schoengrabern-sm": require("./resources/schoengrabern-sm.png"),
 	"vauchamps": require("./resources/vauchamps.jpg"),
 	"vauchamps-sm": require("./resources/vauchamps-sm.jpg"),
 	"auerstaedt": require("./resources/auerstaedt.jpg"),

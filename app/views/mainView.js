@@ -1,20 +1,13 @@
 'use strict';
 
 var React = require('react-native');
-var { StyleSheet, View, Navigator, Text, } = React;
+var { View, Navigator } = React;
 var DrawerLayout = require("./drawerLayout");
-var NavMenu = require('./navMenu');
+var NavMenu = require('./nav/navMenu');
 var LandingView = require('./landingView');
 var BattleView = require('./battle/battleView');
 var Battles = require('../core/battles');
 var Current = require('../core/current');
-
-var styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: 'rgba(0,0,0,0.01)',
-  },
-});
 
 var MainView = React.createClass({
   getInitialState() {
@@ -84,7 +77,7 @@ var MainView = React.createClass({
   },
   render() {
     return (
-      <View style={styles.container}>
+      <View style={{flex: 1,backgroundColor: 'rgba(0,0,0,0.01)'}}>
         <DrawerLayout
           ref="drawer"
           onDrawerClosed={() => {this.state.drawer = false; /*console.log('closed');*/} }
@@ -105,7 +98,7 @@ var MainView = React.createClass({
                     );
                 }
                 //console.log(this.state);
-                return (                  
+                return (
                   <BattleView battle={this.state.scenario} onMenu={this.menuHandler}/>
                 );
               }
