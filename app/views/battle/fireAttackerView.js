@@ -3,13 +3,9 @@ var React = require('react-native');
 var { View, Text, Switch } = React;
 var Button = require('apsl-react-native-button');
 var SpinNumeric = require('../../widgets/spinNumeric');
+var QuickValuesView = require('./quickValuesView');
 
 var FireAttackerView = React.createClass({
-    onQuickValue(v) {
-        return () => {
-            this.props.onChanged && this.props.onChanged(v);
-        }
-    },
     onModifier(m) {
         return (v) => {
             this.props.onModifierChanged && this.props.onModifierChanged(m, v);
@@ -23,35 +19,8 @@ var FireAttackerView = React.createClass({
                 <View style={{flex: 1}}>
                     <SpinNumeric value={this.props.value} min={1} onChanged={this.props.onChanged} />
                 </View>
-                <View style={{flex: 1, flexDirection: 'row'}}>
-                    {
-                        [4,6,9,12,16,18].map((v, i) => {
-                            return (
-                                <Button key={i}
-                                    style={{
-                                        flex: 1,
-                                        width: 16,
-                                        height: 32,
-                                        padding: 5,
-                                        alignItems: 'center',
-                                        justifyContent: 'center',
-                                        marginLeft: i == 0 ? 5 : 0,
-                                        marginTop: 10,
-                                        marginRight: 5,
-                                        //color: 'red',
-                                        backgroundColor: 'lightgray'
-                                        //backgroundColor: '#3F51B5'
-                                    }}
-                                    textStyle={{
-                                        color: 'black'
-                                    }}
-                                    onPress={this.onQuickValue(v)}
-                                >
-                                    {v.toString()}
-                                </Button>
-                            );
-                        })
-                    }
+                <View style={{flex: 1}}>
+                    <QuickValuesView values={[4,6,9,12,16,18]} onChanged={this.props.onChanged}/>
                 </View>
                 <View style={{flex: 1, flexDirection: 'row'}}>
                     {
@@ -63,6 +32,7 @@ var FireAttackerView = React.createClass({
                                     marginLeft: i == 0 ? 5 : 0,
                                     marginTop: 10,
                                     marginRight: i < 3 ? 5 : 10,
+                                    height: 32
                                 }}>
                                     <Text>{v}</Text>
                                     <Switch value={this.props.mods[i]} onValueChange={this.onModifier(v)} />

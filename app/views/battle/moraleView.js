@@ -58,10 +58,14 @@ var MoraleView = React.createClass({
         //console.log(this.props);
         return (
             <View style={{flex: 1, marginTop: 5}}>
-                <View style={{flex: 1}}>
-                    <SpinNumeric value={this.state.morale} values={Base6.values} min={11} onChanged={this.onMoraleChanged} />
-                </View>
                 <View style={{flex: 1, flexDirection: 'row'}}>
+                    <View style={{flex: 25}} />
+                    <View style={{flex: 50}}>
+                        <SpinNumeric value={this.state.morale} values={Base6.values} integer={true} onChanged={this.onMoraleChanged} />
+                    </View>
+                    <View style={{flex: 25}} />
+                </View>
+                <View style={{flex: 1}}>
                     <QuickValuesView values={[16,26,36,46,56,66]} onChanged={this.onQuickValue}/>
                 </View>
                 <View style={{flex: 1, flexDirection: 'row'}}>

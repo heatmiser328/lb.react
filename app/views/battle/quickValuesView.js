@@ -19,7 +19,7 @@ var QuickValuesView = React.createClass({
                             style={{
                                 flex: 1,
                                 width: 16,
-                                height: 32,
+                                height: 38,
                                 padding: 5,
                                 alignItems: 'center',
                                 justifyContent: 'center',
