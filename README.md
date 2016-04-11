@@ -1,4 +1,7 @@
 # lb.react
+Well, it's about as full featured as the others versions, but it still isn't quite right.
+
+The fully native android version is still the best (java and the adk). This react native version comes in second (and not a bit behind). The tabrisjs version is well behind the react version. Overall, the foray into multi-platform development hasn't gone as well as was hoped...
 
 ## Setup for Android
 https://gist.github.com/davidgilbertson/9bee68548037fe00f2a8
