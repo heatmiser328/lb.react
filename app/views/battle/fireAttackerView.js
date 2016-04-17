@@ -17,7 +17,7 @@ var FireAttackerView = React.createClass({
             <View style={{flex:1}}>
                 <Text style={{fontSize: 18,fontWeight: 'bold',textAlign: 'center'}}>Attacker</Text>
                 <View style={{flex: 1}}>
-                    <SpinNumeric value={this.props.value} min={1} onChanged={this.props.onChanged} />
+                    <SpinNumeric value={this.props.value} min={0} onChanged={this.props.onChanged} />
                 </View>
                 <View style={{flex: 1}}>
                     <QuickValuesView values={[4,6,9,12,16,18]} onChanged={this.props.onChanged}/>

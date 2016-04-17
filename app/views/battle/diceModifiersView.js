@@ -19,7 +19,7 @@ var DiceModifiersView = React.createClass({
                             style={{
                                 flex: 1,
                                 //width: 16,
-                                height: 48,
+                                height: 54,
                                 padding: 5,
                                 alignItems: 'center',
                                 justifyContent: 'center',

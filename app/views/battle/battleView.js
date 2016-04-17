@@ -56,8 +56,8 @@ var BattleView = React.createClass({
           initialPage={0}
          >
           <FireView tabLabel="Fire" events={this.eventEmitter} />
-          <MeleeView tabLabel="Melee" events={this.eventEmitter} />
           <MoraleView tabLabel="Morale" events={this.eventEmitter} />
+          <MeleeView tabLabel="Melee" events={this.eventEmitter} />
           <GeneralView tabLabel="General" events={this.eventEmitter} />
         </ScrollableTabView>
       </View>

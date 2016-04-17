@@ -8,11 +8,11 @@ import Radio, {RadioButton} from 'react-native-simple-radio-button';
 var MeleeCalcView = React.createClass({
     getInitialState() {
         return {
-            incr: 8,
-            loss: 0,
-            melee: 12,
-            lance: 0,
-            total: 12,
+            incr: '8',
+            loss: '0',
+            melee: '12',
+            lance: '0',
+            total: '12',
             '1/3': false,
             '1/2': false,
             '3/2': false,
@@ -22,8 +22,8 @@ var MeleeCalcView = React.createClass({
         };
     },
     calcTotal() {
-        let l = this.state.lance;
-        let m = this.state.melee * ((this.state.incr - this.state.loss) / this.state.incr);
+        let l = +this.state.lance;
+        let m = +this.state.melee * (((+this.state.incr) - (+this.state.loss)) / (+this.state.incr));
         if (this.state['1/3']) {
             m /= 3;
         }
@@ -40,7 +40,7 @@ var MeleeCalcView = React.createClass({
             l *= 2;
         }
         m += l;
-        this.setState({total: m});
+        this.setState({total: m.toFixed(1)});
     },
     onIncrChanged(v) {
         console.log('increment changed: ' + v);
@@ -126,7 +126,7 @@ var MeleeCalcView = React.createClass({
                       animation={true}
                       onPress={(value) => {this.setState({side:value})}}
                     />
-                </View>                
+                </View>
                 <View style={{flex: 1, flexDirection: 'row'}}>
                     <Button style={{flex:1, marginRight: 10}} onPress={this.props.onClose}>{'Cancel'}</Button>
                     <Button style={{flex:1, marginRight: 10}} onPress={this.onAdd}>{'Add'}</Button>

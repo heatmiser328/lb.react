@@ -22,8 +22,8 @@ var dice = [
 var MeleeView = React.createClass({
     getInitialState() {
         return {
-            attack: 1,
-            defend: 1,
+            attack: '1',
+            defend: '1',
             odds: Melee.defaultOdds,
             die1: 1,
             die2: 1,
@@ -37,12 +37,12 @@ var MeleeView = React.createClass({
         };
     },
     onAttackerChanged(v) {
-        let odds = Melee.calculate(v, this.state.defend);
+        let odds = Melee.calculate(+v, +this.state.defend);
         this.setState({attack: v, odds: odds});
         this.onResolve();
     },
     onDefenderChanged(v) {
-        let odds = Melee.calculate(this.state.attack, v);
+        let odds = Melee.calculate(+this.state.attack, +v);
         this.setState({defend: v, odds: odds});
         this.onResolve();
     },
@@ -86,11 +86,11 @@ var MeleeView = React.createClass({
     },
     onAddMelee(s, v) {
         if (s == 'attack') {
-            this.setState({attack: this.state.attack + v});
+            this.setState({attack: (+this.state.attack) + (+v)});
             this.onResolve();
         }
         else if (s == 'defend') {
-            this.setState({defend: this.state.defend + v});
+            this.setState({defend: (+this.state.defend) + (+v)});
             this.onResolve();
         }
     },

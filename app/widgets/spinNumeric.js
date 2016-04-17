@@ -4,10 +4,16 @@ var React = require('react-native');
 var { View, TextInput, Text } = React;
 var SpinButton = require('./spinButton');
 
+let format = (v, ib) => {
+    if (v != null && v != '') {
+        v = ib ? Math.floor(+v).toString() : (+v).toFixed(1);
+    } else {
+        v = '';
+    }
+    return v;
+}
+
 var SpinNumeric = React.createClass({
-    shouldComponentUpdate(nextProps, nextState) {
-        return true;
-    },
     nextValue(value, neg) {
         let values = this.props.values;
         if (!values || values.length < 1) {
@@ -32,7 +38,7 @@ var SpinNumeric = React.createClass({
         console.log('spin: previous');
         try {
             let v = this.nextValue(+this.props.value, true);
-            this.props.onChanged && this.props.onChanged(v);
+            this.props.onChanged && this.props.onChanged(v.toString());
         } catch(err) {
             console.error(err);
         }
@@ -41,7 +47,7 @@ var SpinNumeric = React.createClass({
         console.log('spin: next');
         try {
             let v = this.nextValue(+this.props.value);
-            this.props.onChanged && this.props.onChanged(v);
+            this.props.onChanged && this.props.onChanged(v.toString());
         } catch(err) {
             console.error(err);
         }
@@ -49,22 +55,12 @@ var SpinNumeric = React.createClass({
     onChanged(e) {
         console.log('spin: changed = ' + e);
         try {
-            let v = +e;
-            this.props.onChanged && this.props.onChanged(v);
+            this.props.onChanged && this.props.onChanged(e);
         } catch(err) {
             console.error(err);
         }
     },
     render() {
-        let d = (this.props.hasOwnProperty('defaultValue') ? this.props.defaultValue : 1);
-        let v = (this.props.hasOwnProperty('value') ? this.props.value : 1);
-        if (this.props.integer) {
-            d = Math.floor(d).toString();
-            v = Math.floor(v).toString();
-        } else {
-            d = d.toFixed(1);
-            v = v.toFixed(1);
-        }
         return (
             <View style={{flex: 1,flexDirection: 'row',paddingTop: 5,paddingBottom: 5}}>
                 {this.props.label
@@ -74,13 +70,17 @@ var SpinNumeric = React.createClass({
                 <SpinButton style={{flex: 10, width: 50}} direction={'prev'} onPress={this.onPrev} />
                 <View style={{flex: 60,height: 50,alignItems: 'center',padding: 5}}>
                     <TextInput
-                        style={{flex: 1, width: 100, fontSize: 18,borderWidth: 1,borderRadius: 4,
-                                borderColor: '#E6E5ED',backgroundColor: '#F8F8F9',justifyContent: 'center',textAlign: 'center'}}
+                        style={{flex: 1, width: 225, fontSize: 18,borderWidth: 1,borderRadius: 4,
+                                borderColor: '#E6E5ED',
+                                //backgroundColor: '#F8F8F9',
+                                //backgroundColor: 'red',
+                                justifyContent: 'center',
+                                textAlign: 'center'}}
                         keyboardType={'numeric'}
                         autoCorrect={false}
                         onChangeText={this.onChanged}
-                        defaultValue={d}
-                        value={v}
+                        defaultValue={this.props.defaultValue}
+                        value={this.props.value}
                     />
                 </View>
                 <SpinButton style={{flex: 10, width: 50}} direction={'next'} onPress={this.onNext} />

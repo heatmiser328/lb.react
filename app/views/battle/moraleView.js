@@ -16,7 +16,7 @@ var dice = [
 var MoraleView = React.createClass({
     getInitialState() {
         return {
-            morale: 11,
+            morale: '11',
             die1: 1,
             die2: 1,
             result: 'Fail'
@@ -52,7 +52,7 @@ var MoraleView = React.createClass({
     },
     onResolve(e) {
         let moraleDice = (this.state.die1*10) + this.state.die2;
-        this.setState({result: (moraleDice > this.state.morale) ? 'Pass' : 'Fail'});
+        this.setState({result: (moraleDice > (+this.state.morale)) ? 'Pass' : 'Fail'});
     },
     render() {
         //console.log(this.props);

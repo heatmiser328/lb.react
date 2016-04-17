@@ -22,9 +22,9 @@ var dice = [
 var FireView = React.createClass({
     getInitialState() {
         return {
-            attack: 1,
-            defend: 1,
-            incr: 1,
+            attack: '1',
+            defend: '1',
+            incr: '9',
             odds: Fire.defaultOdds,
             mod13: false,
             mod12: false,
@@ -43,7 +43,7 @@ var FireView = React.createClass({
     },
     calcOdds(attack, defend, cannister) {
         // calc odds
-        var odds = Fire.calculate(attack, defend, cannister);
+        var odds = Fire.calculate(+attack, +defend, cannister);
         return odds;
     },
     onAttackerChanged(v) {
@@ -57,7 +57,7 @@ var FireView = React.createClass({
             state.modCann = v;
             state.attack = this.state.attack;
         } else {
-            var a = this.state.attack;
+            var a = +this.state.attack;
             if (m == '1/3') {
                 state.mod13 = v;
                 a = v ? a / 3 : a * 3;
@@ -70,7 +70,7 @@ var FireView = React.createClass({
                 a = v ? a * 1.5 : a / 1.5;
                 state.mod32 = v;
             }
-            state.attack = a;
+            state.attack = a.toFixed(1);
             state.modCann = this.state.modCann;
         }
         state.odds = this.calcOdds(state.attack, this.state.defend, state.modCann);
@@ -83,6 +83,7 @@ var FireView = React.createClass({
         this.onResolve();
     },
     onDefenderIncrementsChanged(v) {
+        console.log('defender increments changed: ' + v);
         this.setState({incr: v});
         this.onResolve();
     },
@@ -116,7 +117,7 @@ var FireView = React.createClass({
 		var lossdie = this.state.die3;
 		var durationdie1 = this.state.die4;
 		var durationdie2 = this.state.die5;
-		var results = Fire.resolve(this.state.odds, fireDice, this.state.incr);
+		var results = Fire.resolve(this.state.odds, fireDice, +this.state.incr);
 		var lloss = LeaderLoss.resolve(fireDice, lossdie, durationdie1, durationdie2) || {};
         this.setState({
             result: results,

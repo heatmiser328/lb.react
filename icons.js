@@ -11,7 +11,7 @@ module.exports = {
 	"arrowRight": require('./resources/arrow-right.png'),
 	"arrowDown": require('./resources/arrow-down.png'),
 
-	"NE": require('./resources/no-effect.jpg'), 
+	"NE": require('./resources/no-effect.png'),
 	"1": require('./resources/1.png'),
 	"2": require('./resources/2.png'),
 	"3": require('./resources/3.png'),
@@ -25,6 +25,7 @@ module.exports = {
 	"defenderLoss": require('./resources/defender.png'),
 	"wounded": require('./resources/ambulance.png'),
 	"mortal": require('./resources/tombstone.png'),
+	"capture": require('./resources/capture.jpg'),
 
 	"halle": require("./resources/halle.jpg"),
 	"halle-sm": require("./resources/halle-sm.jpg"),
