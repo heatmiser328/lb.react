@@ -6,7 +6,7 @@ var Button = require('apsl-react-native-button');
 var QuickValuesView = React.createClass({
     onQuickValue(v) {
         return () => {
-            this.props.onChanged && this.props.onChanged(v);
+            this.props.onChanged && this.props.onChanged(v.toString());
         }
     },
     render() {

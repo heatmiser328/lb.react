@@ -22,8 +22,8 @@ var dice = [
 var MeleeView = React.createClass({
     getInitialState() {
         return {
-            attack: '1',
-            defend: '1',
+            attack: '0',
+            defend: '0',
             odds: Melee.defaultOdds,
             die1: 1,
             die2: 1,

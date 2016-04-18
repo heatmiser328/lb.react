@@ -6,14 +6,14 @@ var SpinNumeric = require('../../widgets/spinNumeric');
 
 var MeleeStrengthView = React.createClass({
     onReset() {
-        this.props.onChanged && this.props.onChanged(1);
+        this.props.onChanged && this.props.onChanged('0');
     },
     render() {
         return (
               <View style={{flex:1}}>
                   <Text style={{fontSize: 18,fontWeight: 'bold',textAlign: 'center'}}>{this.props.label}</Text>
                   <View style={{flex: 1}}>
-                      <SpinNumeric value={this.props.value} min={1} onChanged={this.props.onChanged} />
+                      <SpinNumeric value={this.props.value} min={0} onChanged={this.props.onChanged} />
                   </View>
                   <View style={{flex: 1, flexDirection: 'row'}}>
                       <Button style={{flex:2, marginLeft:15,backgroundColor: 'blue'}} textStyle={{color: 'white'}} onPress={this.props.onAdd}>
