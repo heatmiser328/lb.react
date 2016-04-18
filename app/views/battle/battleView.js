@@ -49,7 +49,7 @@ var BattleView = React.createClass({
           subtitle={battle.scenario.name}
           onMenu={this.menuHandler}
           onRefresh={this.refreshHandler} />
-        <TurnView events={this.eventEmitter} />
+        <TurnView logo={icons[battle.image]} events={this.eventEmitter} />
         <ScrollableTabView
           style={{backgroundColor: '#fff'}}
           onChangeTab={this.onChangeTab}

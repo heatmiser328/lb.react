@@ -173,6 +173,17 @@ module.exports = {
         	return this.phase();
 		});
 	},
+	nextPlayer() {
+		if (_current.player == 'coalition') {
+			_current.player = 'imperial';
+		} else {
+			_current.player = 'coalition';
+		}
+		return write()
+        .then(() => {
+        	return this.player();
+		});		
+	},
 	player: function() {
 		return _current.player;
 	}

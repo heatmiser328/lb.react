@@ -29,10 +29,10 @@ var TitleBar = React.createClass({
             show: 'always'
           });
         }
-        //console.log(actions);        
+        //console.log(actions);
         return (
             <ToolbarAndroid
-                navIcon={this.props.logo}
+                navIcon={Icons.menu}
                 style={styles.toolbar}
                 title={this.props.title}
                 subtitle={this.props.subtitle}

@@ -1,6 +1,7 @@
 module.exports = {
 	"logo": require('./resources/lb.jpg'),
 	"splash": require('./resources/napolean.jpg'),
+	"menu": require('./resources/hamburger.png'),	
 	"coalition": require('./resources/coalition.jpg'),
 	"imperial": require('./resources/imperial.jpg'),
 
@@ -11,7 +12,7 @@ module.exports = {
 	"arrowRight": require('./resources/arrow-right.png'),
 	"arrowDown": require('./resources/arrow-down.png'),
 
-	"NE": require('./resources/no-effect.png'),
+	"NE": require('./resources/no-effect.jpg'),
 	"1": require('./resources/1.png'),
 	"2": require('./resources/2.png'),
 	"3": require('./resources/3.png'),
