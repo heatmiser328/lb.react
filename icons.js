@@ -1,7 +1,9 @@
 module.exports = {
 	"logo": require('./resources/lb.jpg'),
 	"splash": require('./resources/napolean.jpg'),
-	"menu": require('./resources/hamburger.png'),	
+	"menu": require('./resources/hamburger.png'),
+	"info": require('./resources/info.png'),
+	
 	"coalition": require('./resources/coalition.jpg'),
 	"imperial": require('./resources/imperial.jpg'),
 

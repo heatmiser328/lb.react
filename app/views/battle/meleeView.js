@@ -86,11 +86,11 @@ var MeleeView = React.createClass({
     },
     onAddMelee(s, v) {
         if (s == 'attack') {
-            this.setState({attack: (+this.state.attack) + (+v)});
+            this.setState({attack: ((+this.state.attack) + (+v)).toString()});
             this.onResolve();
         }
         else if (s == 'defend') {
-            this.setState({defend: (+this.state.defend) + (+v)});
+            this.setState({defend: ((+this.state.defend) + (+v)).toString()});
             this.onResolve();
         }
     },

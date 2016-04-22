@@ -5,7 +5,8 @@ var { View, Navigator } = React;
 var DrawerLayout = require("./drawerLayout");
 var NavMenu = require('./nav/navMenu');
 var LandingView = require('./landingView');
-var BattleView = require('./battle/battleView');
+var BattleView = require('./battleView');
+var AboutView = require('./aboutView');
 var Battles = require('../core/battles');
 var Current = require('../core/current');
 
@@ -15,6 +16,7 @@ var MainView = React.createClass({
         drawer: false,
         scenario: null,
         current: false,
+        about: false
     }
   },
   componentWillMount() {
@@ -69,8 +71,15 @@ var MainView = React.createClass({
     })
     .done();
   },
+  aboutHandler() {
+      console.log('How about it!');
+      this.setState({about: true});
+  },
   initialRoute() {
-    if (!this.state.current) {
+    if (this.state.about) {
+        return {name: 'about', index: 2};
+    }
+    else if (!this.state.current) {
       return {name: 'landing', index: 0};
     }
     return {name: 'battle', index: 1};
@@ -92,14 +101,19 @@ var MainView = React.createClass({
             initialRoute={this.initialRoute()}
             renderScene={(route, navigator) => {
                 //console.log(route.name);
+                if (this.state.about) {
+                    return (
+                        <AboutView onClose={() => {this.setState({about: false});}} />
+                    );
+                }
                 if (!this.state.current) {
                     return (
-                      <LandingView onMenu={this.menuHandler}/>
+                      <LandingView onMenu={this.menuHandler} onAbout={this.aboutHandler}/>
                     );
                 }
                 //console.log(this.state);
                 return (
-                  <BattleView battle={this.state.scenario} onMenu={this.menuHandler}/>
+                  <BattleView battle={this.state.scenario} onMenu={this.menuHandler} onAbout={this.aboutHandler}/>
                 );
               }
             }

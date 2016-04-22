@@ -36,8 +36,8 @@ var LandingView = React.createClass({
     return (
       //Icons.splash
       <View style={styles.container}>
-        <TitleBar logo={logo} title={title} onMenu={this.menuHandler} />
-        <Image source={Icons.splash} style={styles.backgroundImage} />        
+        <TitleBar logo={logo} title={title} onAbout={this.props.onAbout} onMenu={this.menuHandler} />
+        <Image source={Icons.splash} style={styles.backgroundImage} />
       </View>
     );
   }
