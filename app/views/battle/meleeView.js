@@ -86,11 +86,15 @@ var MeleeView = React.createClass({
     },
     onAddMelee(s, v) {
         if (s == 'attack') {
-            this.setState({attack: ((+this.state.attack) + (+v)).toString()});
+            let attack = ((+this.state.attack) + (+v));
+            let odds = Melee.calculate(attack, +this.state.defend);
+            this.setState({attack: attack.toString(), odds: odds});
             this.onResolve();
         }
         else if (s == 'defend') {
-            this.setState({defend: ((+this.state.defend) + (+v)).toString()});
+            let defend = ((+this.state.defend) + (+v));
+            let odds = Melee.calculate(+this.state.attack, defend);
+            this.setState({defend: defend.toString(), odds: odds});
             this.onResolve();
         }
     },
