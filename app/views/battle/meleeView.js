@@ -76,7 +76,7 @@ var MeleeView = React.createClass({
 		let durationdie1 = this.state.die4;
 		let durationdie2 = this.state.die5;
 		let results = Melee.resolve(this.state.odds, meleeDice);
-		let lloss = LeaderLoss.resolve(meleeDice, lossdie, durationdie1, durationdie2) || {};
+		let lloss = LeaderLoss.resolve(meleeDice, lossdie, durationdie1, durationdie2, true) || {};
         this.setState({
             result: results,
             leader: lloss.leader,

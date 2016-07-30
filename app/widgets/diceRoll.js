@@ -32,12 +32,12 @@ var DiceRoll = React.createClass({
         };
     },
     onRoll(e) {
-      console.log('dice: roll');
+      //console.log('dice: roll');
       this.state.dice.roll();
       this.props.onRoll && this.props.onRoll(this.state.dice.dice());
     },
     onDie(e) {
-      console.log('dice: die');
+      //console.log('dice: die');
       let die = this.state.dice.dieEx(e);
       die.increment(true);
       this.props.onDie && this.props.onDie(e, die.value());

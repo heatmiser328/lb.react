@@ -28,8 +28,8 @@ var LandingView = React.createClass({
     this.props.onMenu && this.props.onMenu();
   },
   render() {
-    console.log('Landing');
-    console.log(Icons.splash);
+    //console.log('Landing');
+    //console.log(Icons.splash);
     let splash = require('../../resources/napolean.jpg');
     let logo = Icons.logo;
     //console.log(splash);

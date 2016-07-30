@@ -16,7 +16,7 @@ var OpenURLButton = React.createClass({
       if (supported) {
         Linking.openURL(this.props.url);
       } else {
-        console.log('Don\'t know how to open URI: ' + this.props.url);
+        //console.log('Don\'t know how to open URI: ' + this.props.url);
       }
     });
   },

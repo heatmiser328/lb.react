@@ -2,9 +2,9 @@
   "name": "lb",
   "version": "0.0.1",
   "private": true,
-  "scripts": {    
+  "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "run": "node node_modules/react-native/local-cli/cli.js run-android",
+    "debug": "node node_modules/react-native/local-cli/cli.js run-android",
     "get-js": "curl \"http://localhost:8081/index.android.bundle?platform=android&dev=false&minify=true\" -o \"android/app/src/main/assets/index.android.bundle\"",
     "assemble": "cd android && gradlew assembleRelease && cd ..",
     "install-dbg": "adb install -r android/app/build/outputs/apk/lb-debug-1.0.apk",

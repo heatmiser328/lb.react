@@ -35,7 +35,7 @@ var SpinNumeric = React.createClass({
         return values[i];
     },
     onPrev() {
-        console.log('spin: previous');
+        //console.log('spin: previous');
         try {
             let v = this.nextValue(+this.props.value, true);
             this.props.onChanged && this.props.onChanged(v.toString());
@@ -44,7 +44,7 @@ var SpinNumeric = React.createClass({
         }
     },
     onNext() {
-        console.log('spin: next');
+        //console.log('spin: next');
         try {
             let v = this.nextValue(+this.props.value);
             this.props.onChanged && this.props.onChanged(v.toString());
@@ -53,7 +53,7 @@ var SpinNumeric = React.createClass({
         }
     },
     onChanged(e) {
-        console.log('spin: changed = ' + e);
+        //console.log('spin: changed = ' + e);
         try {
             this.props.onChanged && this.props.onChanged(e);
         } catch(err) {

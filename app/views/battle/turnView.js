@@ -27,7 +27,7 @@ var TurnView = React.createClass({
         this.setState({turn: Current.turn(), phase: Current.phase(), player: Current.player()});
     },
     onPrevTurn() {
-        console.log('previous turn');
+        //console.log('previous turn');
         Current.prevTurn(this.props.current)
         .then((turn) => {
             this.setState({turn: turn});
@@ -35,7 +35,7 @@ var TurnView = React.createClass({
         .done();
     },
     onNextTurn() {
-        console.log('next turn');
+        //console.log('next turn');
         Current.nextTurn(this.props.current)
         .then((turn) => {
             this.setState({turn: turn});
@@ -43,7 +43,7 @@ var TurnView = React.createClass({
         .done();
     },
     onPrevPhase() {
-        console.log('previous phase');
+        //console.log('previous phase');
         Current.prevPhase(this.props.current)
         .then((phase) => {
             this.setState({turn: Current.turn(), phase: phase, player: Current.player()});
@@ -51,7 +51,7 @@ var TurnView = React.createClass({
         .done();
     },
     onNextPhase() {
-        console.log('next phase');
+        //console.log('next phase');
         Current.nextPhase(this.props.current)
         .then((phase) => {
             this.setState({turn: Current.turn(), phase: phase, player: Current.player()});
@@ -59,7 +59,7 @@ var TurnView = React.createClass({
         .done();
     },
     onNextPlayer() {
-        console.log('next player');
+        //console.log('next player');
         Current.nextPlayer()
         .then((player) => {
             this.setState({player: player});

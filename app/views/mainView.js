@@ -23,7 +23,7 @@ var MainView = React.createClass({
       this.fetchData();
   },
   fetchData() {
-      console.log('mainView: load current game');
+      //console.log('mainView: load current game');
       //Current.remove()
       //.then(() => {
       Current.load()
@@ -58,8 +58,8 @@ var MainView = React.createClass({
     this.toggleDrawer();
   },
   menuItemHandler(e) {
-    console.log('item selected');
-    console.log(e);
+    //console.log('item selected');
+    //console.log(e);
     Current.reset(e)
     .then(() => {
         this.toggleDrawer();
@@ -72,7 +72,7 @@ var MainView = React.createClass({
     .done();
   },
   aboutHandler() {
-      console.log('How about it!');
+      //console.log('How about it!');
       this.setState({about: true});
   },
   initialRoute() {

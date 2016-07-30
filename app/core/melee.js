@@ -25,8 +25,8 @@ function calculate(attack, defend) {
 function resolve(o, dice) {
     let idx = table.findIndex((v) => {return v.desc == o;});
     let result = "NE";
-    console.log(o);
-    console.log(idx);
+    //console.log(o);
+    //console.log(idx);
     switch (idx)
     {
         case 0: //1-2

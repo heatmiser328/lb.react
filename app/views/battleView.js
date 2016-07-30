@@ -29,7 +29,7 @@ var BattleView = React.createClass({
     this.props.onMenu && this.props.onMenu();
   },
   refreshHandler() {
-    console.log('Reset ' + this.props.battle.name);
+    //console.log('Reset ' + this.props.battle.name);
     Current.reset(this.props.battle)
     .then((current) => {
         // update the views?

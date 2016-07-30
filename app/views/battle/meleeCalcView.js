@@ -43,32 +43,32 @@ var MeleeCalcView = React.createClass({
         this.setState({total: m.toFixed(1)});
     },
     onIncrChanged(v) {
-        console.log('increment changed: ' + v);
+        //console.log('increment changed: ' + v);
         this.setState({incr: v});
         this.calcTotal();
     },
     onLossChanged(v) {
-        console.log('loss changed: ' + v);
+        //console.log('loss changed: ' + v);
         this.setState({loss: v});
         this.calcTotal();
     },
     onMeleeChanged(v) {
-        console.log('melee changed: ' + v);
+        //console.log('melee changed: ' + v);
         this.setState({melee: v});
         this.calcTotal();
     },
     onLanceChanged(v) {
-        console.log('lance changed: ' + v);
+        //console.log('lance changed: ' + v);
         this.setState({lance: v});
         this.calcTotal();
     },
     onTotalChanged(v) {
-        console.log('total changed: ' + v);
+        //console.log('total changed: ' + v);
         this.setState({total: v});
     },
     onModifier(m) {
         return (v) => {
-            console.log('modifier changed: ' + m + ' ' + v);
+            //console.log('modifier changed: ' + m + ' ' + v);
             let state = {};
             state[m] = v;
             this.setState(state);

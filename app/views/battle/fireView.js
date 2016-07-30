@@ -83,7 +83,7 @@ var FireView = React.createClass({
         this.onResolve();
     },
     onDefenderIncrementsChanged(v) {
-        console.log('defender increments changed: ' + v);
+        //console.log('defender increments changed: ' + v);
         this.setState({incr: v});
         this.onResolve();
     },
