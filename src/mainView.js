@@ -32,7 +32,7 @@ var MainView = React.createClass({
         //new Promise((a,r)=> a())
         .then((data) => {
             if (data) {
-                this.state.routes.battle.data = Battles.get(data.battle);
+                this.state.routes.battle.data = Battles.scenario(data.scenario);
                 log.debug('current battle ' + this.state.routes.battle.data.name);
                 this.refs.navigator.resetTo(this.state.routes.battle);
             } else {

@@ -1,20 +1,20 @@
 'use strict'
 
 var Store = require('../stores/current');
-var Battles = require('./battles.');
+var Battles = require('./battles');
 var Phases = require('./phases');
-var log = require('./log.js');
+var log = require('./log');
 var moment = require('moment');
 var TURN_MINS = 20;
 
 var _current = {};
 
 let maxTurns = () => {
-	var gamedata = Battles.scenario(_current.scenario);
-	var sd = moment({year: gamedata.scenario.start.year, month: gamedata.scenario.start.month-1, day: gamedata.scenario.start.day, hour: gamedata.scenario.start.hour, minute: gamedata.scenario.start.minute});
-	var ed = moment({year: gamedata.scenario.end.year, month: gamedata.scenario.end.month-1, day: gamedata.scenario.end.day, hour: gamedata.scenario.end.hour, minute: gamedata.scenario.end.minute});
-	var diff = ed.subtract(sd);
-	var mins = (diff.hours()*60) + diff.minutes();
+	let gamedata = Battles.scenario(_current.scenario);
+	let sd = new Date(gamedata.scenario.start.year, gamedata.scenario.start.month-1, gamedata.scenario.start.day, gamedata.scenario.start.hour, gamedata.scenario.start.minute);
+	let ed = new Date(gamedata.scenario.end.year, gamedata.scenario.end.month-1, gamedata.scenario.end.day, gamedata.scenario.end.hour, gamedata.scenario.end.minute);
+	let diff = moment.duration(ed.getTime() - sd.getTime());
+	let mins = (diff.hours()*60) + diff.minutes();
 	return (mins / TURN_MINS) + 1;
 }
 
@@ -45,7 +45,7 @@ module.exports = {
 	},
 	turn() {
 		var gamedata = Battles.scenario(_current.scenario);
-		var d = moment({year: gamedata.scenario.start.year, month: gamedata.scenario.start.month-1, day: gamedata.scenario.start.day, hour: gamedata.scenario.start.hour, minute: gamedata.scenario.start.minute});
+		var d = moment(new Date(gamedata.scenario.start.year, gamedata.scenario.start.month-1, gamedata.scenario.start.day, gamedata.scenario.start.hour, gamedata.scenario.start.minute));
 		var o = (_current.turn - 1) * TURN_MINS;
 		d.add(o, 'minutes');
 		let str = d.format("MMM DD, YYYY HH:mm");

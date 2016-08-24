@@ -5,18 +5,6 @@ var FILE = 'lb.app.current';
 var PATH = RNFS.DocumentDirectoryPath + '/' + FILE;
 var log = require('../services/log.js');
 
-function reset(data) {
-}
-
-function maxTurns() {
-	var gamedata = Battles.scenario(_current.scenario);
-	var sd = moment({year: gamedata.scenario.start.year, month: gamedata.scenario.start.month-1, day: gamedata.scenario.start.day, hour: gamedata.scenario.start.hour, minute: gamedata.scenario.start.minute});
-	var ed = moment({year: gamedata.scenario.end.year, month: gamedata.scenario.end.month-1, day: gamedata.scenario.end.day, hour: gamedata.scenario.end.hour, minute: gamedata.scenario.end.minute});
-	var diff = ed.subtract(sd);
-	var mins = (diff.hours()*60) + diff.minutes();
-	return (mins / TURN_MINS) + 1;
-}
-
 module.exports = {
 	load() {
 		// read the file

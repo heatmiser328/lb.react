@@ -7,9 +7,9 @@ var ScenarioNavMenuItem = React.createClass({
         this.props.onSelected && this.props.onSelected('battle', this.props.scenario.id);
     },
     render() {
-        let startdt = moment(new Date(this.props.scenario.start.year, this.props.scenario.start.month, this.props.scenario.start.day,
+        let startdt = moment(new Date(this.props.scenario.start.year, this.props.scenario.start.month-1, this.props.scenario.start.day,
                                 this.props.scenario.start.hour, this.props.scenario.start.minute));
-        let enddt = moment(new Date(this.props.scenario.end.year, this.props.scenario.end.month, this.props.scenario.end.day,
+        let enddt = moment(new Date(this.props.scenario.end.year, this.props.scenario.end.month-1, this.props.scenario.end.day,
                                 this.props.scenario.end.hour, this.props.scenario.end.minute));
         return (
             <TouchableOpacity onPress={this.onPress}>

@@ -65,7 +65,7 @@ var TitleBar = (props) => {
             }
             return (
                 <View style={{flex: 1, flexDirection: 'row', marginVertical: 10}}>
-                    <IconButton image={'refresh'} height={iconHeight} width={iconWidth} onPress={route.onRefresh} />
+                    <IconButton image={'refreshButton'} height={iconHeight} width={iconWidth} onPress={route.onRefresh} />
                     <IconButton image={'info'} height={iconHeight} width={iconWidth} onPress={route.onInfo} />
                 </View>
             );
