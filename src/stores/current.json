@@ -1,0 +1,7 @@
+{
+    battle: int,
+    scenario: int,
+    turn: 'string',
+    phase: int,
+    player: string
+}
