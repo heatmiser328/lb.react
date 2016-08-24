@@ -99,8 +99,9 @@ var MainView = React.createClass({
         }
 
         if (route.name == 'battle') {
+            console.log(route.data);
             this.state.routes.battle.title = route.data.name;
-            this.state.routes.battle.subtitle = route.data.desc;
+            this.state.routes.battle.subtitle = route.data.scenario.name;
             return (
                 <BattleView battle={route.data} events={this.eventEmitter} />
             );
