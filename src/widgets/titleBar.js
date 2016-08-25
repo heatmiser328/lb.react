@@ -32,13 +32,13 @@ var TitleBar = (props) => {
         Title(route, navigator, index, navState) {
             route = route || {};
             return (
-                <View style={{flex: 1, flexDirection:'row', justifyContent: 'flex-start', alignItems: 'center'}}>
+                <View style={{flex: 1, flexDirection:'column', justifyContent: 'center', alignItems: 'flex-start'}}>
                     <Text style={{
                           color: 'white',
-                          fontSize: 28,
+                          fontSize: 22,
                           fontWeight: 'bold',
                           //marginLeft: 10,
-                          marginVertical: 10,
+                          //marginVertical: 10,
                           //color: 'blue'
                         }}>
                       {renderTitle(route)}
@@ -47,8 +47,8 @@ var TitleBar = (props) => {
                         ? <Text style={{
                               color: 'white',
                               fontSize: 14,
-                              marginLeft: 10,
-                              marginVertical: 10,
+                              //marginLeft: 10,
+                              //marginVertical: 10,
                               //color: 'blue'
                             }}>
                             {renderSubTitle(route)}

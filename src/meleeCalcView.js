@@ -3,7 +3,7 @@ var React = require('react');
 import { View, Text, Switch } from 'react-native';
 var Button = require('apsl-react-native-button');
 var SpinNumeric = require('./widgets/spinNumeric');
-import Radio, {RadioButton} from 'react-native-simple-radio-button';
+import RadioForm from 'react-native-simple-radio-button';
 
 var MeleeCalcView = React.createClass({
     getInitialState() {
@@ -116,8 +116,8 @@ var MeleeCalcView = React.createClass({
                         })
                     }
                 </View>
-                <View style={{flex: 1, flexDirection: 'row', justifyContent:'center', alignItems:'center'}}>
-                    <Radio style={{marginLeft: 20}}
+                <View style={{flex: 1, justifyContent:'center', alignItems: 'center'}}>                    
+                    <RadioForm
                       radio_props={[{label: 'Attacker', value: 0 }, {label: 'Defender', value: 1 }]}
                       initial={this.state.side}
                       formHorizontal={true}
