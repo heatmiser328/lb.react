@@ -134,5 +134,8 @@ module.exports = {
 	},
 	player() {
 		return _current.player;
+	},
+	battle() {
+		return Battles.battle(_current.battle);
 	}
 };

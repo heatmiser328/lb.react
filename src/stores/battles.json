@@ -901,6 +901,121 @@
 	"name": "La Bataille de Schoengrabern",
 	"publisher": "Marshal Enterprises",
 	"image": "schoengrabern",
+	"attack": {
+		"armies": [
+			{
+				"nationality": "French",
+				"units": {
+					"Ligne": {
+						"Column": [6,7,8,11,12],
+						"Line": [3],
+						"Carre": [3],
+						"General": [6,7,8,11,12]
+					},
+					"Legere": {
+						"Column": [6,7,8,11,12],
+						"Line": [3],
+						"Skirmish": [3],
+						"Carre": [4],
+						"General": [6,7,8,11,12]
+					},
+					"Grenadier": {
+						"Column": [6,7,8,11,12],
+						"Line": [4],
+						"Skirmish": [4],
+						"Carre": [4],
+						"General": [6,7,8,11,12]
+					},
+					"Voltiguer": {
+						"Column": [6,7,8,11,12],
+						"Line": [4],
+						"Skirmish": [4],
+						"Carre": [4],
+						"General": [6,7,8,11,12]
+					},
+					"Artillery": {
+						"Unlimbered": [18]
+					},
+					"Cavalry": {
+						"Skirmish": [2]
+					}
+				}
+			},
+			{
+				"nationality": "Russian",
+				"units": {
+					"Musketeer": {
+						"Column": [4,5,6,8],
+						"Line": [2],
+						"Carre": [2],
+						"General": [4,5,6,8]
+					},
+					"Jaeger": {
+						"Column": [5,6,7],
+						"Line": [3],
+						"Skirmish": [3],
+						"Carre": [3],
+						"General": [5,6,7]
+					},
+					"Grenadier": {
+						"Column": [4,5,6,7,10],
+						"Line": [3],
+						"Carre": [3],
+						"General": [4,5,6,7,10]
+					},
+					"Artillery": {
+						"Unlimbered": [16]
+					},
+					"Cavalry": {
+						"Skirmish": [1,3,5]
+					}
+				}
+			}
+		]
+	},
+	"defense": {
+		"terrain": {
+			"Clear": {
+				"Column": 6,
+				"Line": 9,
+				"Carre": 4,
+				"Skirmish": 14,
+				"Disorder": 16,
+				"Rout": 16,
+				"Unlimbered Arty": 8,
+				"Limbered Arty": 6
+			},
+			"Pine Forest": {
+				"General": 10,
+				"Skirmish": 14,
+				"Disorder": 16,
+				"Rout": 16
+			},
+			"Hamlet": {
+				"General": 10,
+				"Skirmish": 12,
+				"Disorder": 16,
+				"Rout": 16,
+				"Unlimbered Arty": 8,
+				"Limbered Arty": 6
+			},
+			"Village": {
+				"General": 10,
+				"Skirmish": 12,
+				"Disorder": 16,
+				"Rout": 16,
+				"Unlimbered Arty": 9,
+				"Limbered Arty": 7
+			},
+			"Vineyard": {
+				"General": 10,
+				"Skirmish": 12,
+				"Disorder": 16,
+				"Rout": 16,
+				"Limbered Arty": 5
+			}
+		}
+	},
 	"scenarios": [
 	  {
 		"id": 10021,

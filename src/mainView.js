@@ -20,7 +20,7 @@ var MainView = React.createClass({
         return {
             drawer: false,
             routes: {
-                landing: {index: 0, name: 'landing', title: 'Welcome', subtitle: 'Select a battle', onMenu: this.navMenuHandler},
+                landing: {index: 0, name: 'landing', onMenu: this.navMenuHandler},
                 battle: {index: 1, name: 'battle', title: 'Battle', onMenu: this.navMenuHandler, onRefresh: this.onReset, onInfo: this.onAbout},
                 about: {index: 7, name: 'about', title: 'About'}
             },
@@ -99,6 +99,7 @@ var MainView = React.createClass({
         }
 
         if (route.name == 'battle') {
+            console.log(route.data);
             this.state.routes.battle.title = route.data.name;
             this.state.routes.battle.subtitle = route.data.scenario.name;
             return (
