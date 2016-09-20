@@ -58,7 +58,7 @@ var FireAttackerQuickAddView = React.createClass({
         this.state.formation = v;
         this.calcValue();
     },
-    onSizeChanged(v) {        
+    onSizeChanged(v) {
         this.state.size = v;
         this.calcValue();
     },
@@ -92,41 +92,43 @@ var FireAttackerQuickAddView = React.createClass({
             'Routed'
         ];
         return (
-            <View style={{flex:1, marginTop: 55}}>
-                <View style={{flex:1, flexDirection: 'row', justifyContent: 'center', alignItems: 'flex-start'}}>
+            <View style={{flex:1, flexDirection: 'row', justifyContent: 'center', alignItems: 'flex-start', marginTop: 55}}>
+                <View style={{flex:1}}>
                     <SelectList title={'Nationality'} titleonly={true}
                         items={nationalities.map((n) => {return {label: n, value: n};})}
                         selected={this.state.nationality}
                         onChanged={this.onNationalityChanged}/>
                 </View>
-                <View style={{flex:1, flexDirection: 'row', justifyContent: 'center', alignItems: 'flex-start'}}>
+                <View style={{flex:1}}>
                     <SelectList title={'Unit Type'} titleonly={true}
                         items={unittypes.map((t) => {return {label: t, value: t};})}
                         selected={this.state.unittype}
                         onChanged={this.onUnitTypeChanged}/>
                 </View>
-                <View style={{flex:1, flexDirection: 'row', justifyContent: 'center', alignItems: 'flex-start'}}>
+                <View style={{flex:1}}>
                     <SelectList title={'Formation'} titleonly={true}
                         items={formations.map((f) => {return {label: f, value: f};})}
                         selected={this.state.formation}
                         onChanged={this.onFormationChanged}/>
                 </View>
-                <View style={{flex: 1, alignSelf: 'stretch'}}>
-                    <Text style={{fontSize: 20, backgroundColor: 'silver', textAlign: 'center'}}>Size</Text>
+                <View style={{flex: 1, alignSelf: 'stretch', justifyContent: 'flex-start'}}>
+                    <Text style={{fontSize: 16, backgroundColor: 'silver', textAlign: 'center'}}>Size</Text>
+                    <View>
                     <SpinNumeric value={this.state.size} min={0} max={30} onChanged={this.onSizeChanged} />
+                    </View>
                 </View>
-                <View style={{flex:1, flexDirection: 'row', justifyContent: 'center', alignItems: 'flex-start'}}>
+                <View style={{flex:1}}>
                     <MultiSelectList title={'Modifiers'}
                         items={modifiers.map((m) => {return {name: m, selected: this.state.mods[m]};})}
                         onChanged={this.onModChanged}/>
                 </View>
                 <View style={{flex: 1, alignSelf: 'stretch'}}>
-                    <Text style={{fontSize: 20, backgroundColor: 'silver', textAlign: 'center'}}>Value</Text>
-                    <Text style={{fontSize: 20, fontWeight: 'bold', color: 'white', backgroundColor: 'gray', textAlign: 'center'}}>
+                    <Text style={{fontSize: 16, backgroundColor: 'silver', textAlign: 'center'}}>Value</Text>
+                    <Text style={{fontSize: 16, fontWeight: 'bold', color: 'white', backgroundColor: 'gray', textAlign: 'center'}}>
                         {this.state.value}
                     </Text>
                 </View>
-                <View style={{flex:1, flexDirection: 'row', justifyContent: 'center', alignItems: 'flex-start'}}>
+                <View style={{flex:.5}}>
                     <IconButton image={'add'} height={32} width={32} resizeMode='stretch' onPress={this.onAdd} />
                 </View>
             </View>

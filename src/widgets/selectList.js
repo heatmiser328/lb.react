@@ -6,7 +6,7 @@ var Checkbox = require('./checkbox');
 
 var SelectList = React.createClass({
     onSelected(item) {
-        return (b) => {            
+        return (b) => {
             this.props.onChanged && this.props.onChanged(b ? (item.value||item) : null);
         }
     },
@@ -14,7 +14,7 @@ var SelectList = React.createClass({
         let title = this.props.titleonly ? this.props.title : (this.props.selected || this.props.title);
         return (
             <View style={{flex: 1, alignSelf: 'stretch'}}>
-                <Text style={{fontSize: 20, backgroundColor: 'silver', textAlign: 'center'}}>{title}</Text>
+                <Text style={{fontSize: 16, backgroundColor: 'silver', textAlign: 'center'}}>{title}</Text>
                 <ScrollView
                     automaticallyAdjustContentInsets={false}
                     scrollEventThrottle={200}>

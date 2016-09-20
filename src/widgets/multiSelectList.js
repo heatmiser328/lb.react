@@ -14,11 +14,11 @@ var MultiSelectList = React.createClass({
     render() {
         return (
             <View style={{flex: 1}}>
-                <Text style={{fontSize: 20, backgroundColor: 'silver', textAlign: 'center'}}>{this.props.title}</Text>
+                <Text style={{fontSize: 16, backgroundColor: 'silver', textAlign: 'center'}}>{this.props.title}</Text>
                 <ScrollView
                     automaticallyAdjustContentInsets={false}
                     scrollEventThrottle={200}>
-                    {this.props.items.map((item,i) => {                        
+                    {this.props.items.map((item,i) => {
                         return (
                             <Checkbox key={i} label={item.name} selected={item.selected} onSelected={this.onSelected(item)}/>
                         );
