@@ -18,7 +18,7 @@ var MultiSelectList = React.createClass({
                 <ScrollView
                     automaticallyAdjustContentInsets={false}
                     scrollEventThrottle={200}>
-                    {this.props.items.map((item,i) => {
+                    {this.props.items.map((item,i) => {                        
                         return (
                             <Checkbox key={i} label={item.name} selected={item.selected} onSelected={this.onSelected(item)}/>
                         );

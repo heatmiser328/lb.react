@@ -10,6 +10,8 @@ module.exports = {
 	"refreshButton": require('./ic_action_refresh.png'),
 	"prevButton":	require('./ic_action_previous_item.png'),
 	"nextButton": require('./ic_action_next_item.png'),
+	"unchecked": require('./unchecked_checkbox.png'),
+	"checked": require('./checked_checkbox.png'),
 
 	"arrowRight": require('./arrow-right.png'),
 	"arrowDown": require('./arrow-down.png'),
