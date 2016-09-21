@@ -102,8 +102,16 @@ var MainView = React.createClass({
             this.state.routes.battle.title = route.data.name;
             this.state.routes.battle.subtitle = route.data.scenario.name;
             var FireAttackerQuickAddView = require('./fireAttackerQuickAddView');
+            var FireDefenderQuickAddView = require('./fireDefenderQuickAddView');
             return (
-                <FireAttackerQuickAddView events={this.eventEmitter} onAdd={(v) => console.log(v)} />
+                <View style={{flex: 1, flexDirection: 'row', marginTop: 55}}>
+                    <View style={{flex: 1}}>
+                        <FireAttackerQuickAddView events={this.eventEmitter} onAdd={(v) => console.log(v)} />
+                    </View>
+                    <View style={{flex: 1}}>
+                        <FireDefenderQuickAddView events={this.eventEmitter} onAdd={(v) => console.log(v)} />
+                    </View>                    
+                </View>
             );
             /*
             return (

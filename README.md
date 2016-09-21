@@ -18,10 +18,8 @@ React Native La Bataille Assistant app
 ##### defender:
 1. keep the spin input (as the total) and quick values buttons
 2. expand to include a "quick select" feature:
-	- nationality	(french,austrian,etc)
 	- terrain		(clear,forest,etc)
 	- formation		(column,line,etc)
-	- density		(# increments > 9)
 	- modifiers		(flank,arty w/infantry,etc)
 	- value			(read only?)
 	- select		(button to set value to the total)

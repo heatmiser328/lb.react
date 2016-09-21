@@ -14,102 +14,130 @@ let modifiers = [
 
 var FireDefenderQuickAddView = React.createClass({
     getInitialState() {
-        let battle = Current.battle();
-        return {
-            nationality: battle.nationalities[0],
+        let terrains = this.terrains();
+        let formations = this.formations(terrains[0]);
+        let state = {
             terrain: terrains[0],
             formation: formations[0],
-            density: '0',
             mods: {},
             value: '0'
         };
+        state.value = this.calcValue(state).toString();
+        return state;
     },
-    onNationalityChanged() {
-        // load unit types available for the nation
-        this.calcValue();
+    onTerrainChanged(v) {
+        this.state.terrain = v;
+        let formations = this.formations(this.state.terrain);
+        if (formations.indexOf(this.state.formation) < 0) {
+            this.state.formation = formations[0];
+        }
+        this.updateValue();
     },
-    onTerrainChanged() {
-        // load formations available for the terrain
-        this.calcValue();
-    },
-    onFormationChanged() {
-        this.calcValue();
-    },
-    onDensityChanged() {
-        this.calcValue();
+    onFormationChanged(v) {
+        this.state.formation = v;
+        this.updateValue();
     },
     onModChanged(m) {
        this.state.mods[m.name] = m.selected;
-       this.calcValue();
+       this.updateValue();
     },
     onAdd() {
         this.props.onAdd && this.props.onAdd(+this.state.value);
     },
-    calcValue() {
-        // calc the fire value
+    updateValue() {
+        this.state.value = this.calcValue().toString();
+        this.setState(this.state);
+    },
+    calcValue(state) {
+        // calc the defense value
+        state = state || this.state;
+        // the base defense value for the terrain/formation
+        let battle = Current.battle();
+        let value = battle.defense.terrain[state.terrain][state.formation];
+        if (state.mods['Arty w/Infantry'] && state.formation != 'Carre') {
+            value -= 2;
+        }
+        if (state.mods['Flank']) {
+            value = 6;
+        }
+        return value;
     },
     render() {
-        let defense = Current.battle().defense;
-        let nationalites = [];
-        let terrains = [];
-        let formations = [];
         return (
-            <View style={{flex:1}}>
-                {/* The headers */}
-                <View style={{flex:1, flexDirection: 'row', justifyContent: 'space-between'}}>
-                    <View style={{flex:1}}><Text>Nationality</Text></View>
-                    <View style={{flex:1}}><Text>Terrain</Text></View>
-                    <View style={{flex:1}}><Text>Formation</Text></View>
-                    <View style={{flex:1}}><Text>Density</Text></View>
-                    <View style={{flex:1}}><Text>Modifiers</Text></View>
-                    <View style={{flex:1}}><Text>Value</Text></View>
-                    <View style={{flex:1}}></View>
-                </View>
-
-                {/* The fields */}
-                <View style={{flex:1, flexDirection: 'row', justifyContent: 'space-between'}}>
-                    <View style={{flex:1}}>
-                        {/*[select list]*/}
-                        <SelectList title={'Nationality'} titleonly={true}
-                            items={nationalities.map((n) => {return {label: n, value: n};})}
-                            selected={this.state.nationality}
-                            onChanged={this.onNationalityChanged}/>
+            <View style={{flex: 1}}>
+                <View style={{flex:1, flexDirection: 'row', justifyContent: 'center', alignItems: 'flex-start'}}>
+                    <View style={{flex: 1, alignSelf: 'stretch'}}>
+                        <Text style={{fontSize: 16, backgroundColor: 'silver', textAlign: 'center'}}>Defense</Text>
+                        <Text style={{fontSize: 16, fontWeight: 'bold', color: 'white', backgroundColor: 'gray', textAlign: 'center'}}>
+                            {this.state.value}
+                        </Text>
                     </View>
+                    <View style={{flex:.5}}>
+                        <IconButton image={'add'} height={32} width={32} resizeMode='stretch' onPress={this.onAdd} />
+                    </View>
+                </View>
+                <View style={{flex:1, flexDirection: 'row', justifyContent: 'center', alignItems: 'flex-start'}}>
                     <View style={{flex:1}}>
-                        {/*[select list]*/}
                         <SelectList title={'Terrain'} titleonly={true}
-                            items={terrains.map((t) => {return {label: t, value: t};})}
-                            selected={this.state.unittype}
+                            items={this.terrains().map((t) => {return {label: t, value: t};})}
+                            selected={this.state.terrain}
                             onChanged={this.onTerrainChanged}/>
                     </View>
                     <View style={{flex:1}}>
-                        {/*[select list]*/}
                         <SelectList title={'Formation'} titleonly={true}
-                            items={formations.map((f) => {return {label: f, value: f};})}
+                            items={this.formations(this.state.terrain).map((f) => {return {label: f, value: f};})}
                             selected={this.state.formation}
                             onChanged={this.onFormationChanged}/>
                     </View>
                     <View style={{flex:1}}>
-                        {/*[spin input]*/}
-                        <SpinNumeric value={this.props.density} min={0} max={30} onChangeSize={this.props.onDensityChanged} />
-                    </View>
-                    <View style={{flex:1}}>
-                        {/*[multi-select list]*/}
                         <MultiSelectList title={'Modifiers'}
-                            items={modifiers.map((m) => {return {name: m, selected: this.state.mods[m.name]};})}
+                            items={modifiers.map((m) => {return {name: m, selected: this.state.mods[m]};})}
                             onChanged={this.onModChanged}/>
                     </View>
-                    <View style={{flex:1}}>
-                        {/*[text]*/}
-                        <Text style={{fontSize: 20, fontWeight: 'bold', color: 'white', backgroundColor: 'gray'}}>{this.state.value}</Text>
-                    </View>
-                    <View style={{flex:1}}>
-                        {/*[button]*/}
-                        <IconButton image={'menu'} height={16} width={16} resizeMode='stretch' onPress={this.onAdd} />
-                    </View>
+                </View>
+                {/*View style={{flex: 6}} />*/}
+            </View>
+        );
+        /*
+        return (
+            <View style={{flex:1, flexDirection: 'row', justifyContent: 'center', alignItems: 'flex-start'}}>
+                <View style={{flex:1}}>
+                    <SelectList title={'Terrain'} titleonly={true}
+                        items={this.terrains().map((t) => {return {label: t, value: t};})}
+                        selected={this.state.terrain}
+                        onChanged={this.onTerrainChanged}/>
+                </View>
+                <View style={{flex:1}}>
+                    <SelectList title={'Formation'} titleonly={true}
+                        items={this.formations(this.state.terrain).map((f) => {return {label: f, value: f};})}
+                        selected={this.state.formation}
+                        onChanged={this.onFormationChanged}/>
+                </View>
+                <View style={{flex:1}}>
+                    <MultiSelectList title={'Modifiers'}
+                        items={modifiers.map((m) => {return {name: m, selected: this.state.mods[m]};})}
+                        onChanged={this.onModChanged}/>
+                </View>
+                <View style={{flex: 1, alignSelf: 'stretch'}}>
+                    <Text style={{fontSize: 16, backgroundColor: 'silver', textAlign: 'center'}}>Defense</Text>
+                    <Text style={{fontSize: 16, fontWeight: 'bold', color: 'white', backgroundColor: 'gray', textAlign: 'center'}}>
+                        {this.state.value}
+                    </Text>
+                </View>
+                <View style={{flex:.5}}>
+                    <IconButton image={'add'} height={32} width={32} resizeMode='stretch' onPress={this.onAdd} />
                 </View>
             </View>
         );
+        */
+    },
+    terrains() {
+        let battle = Current.battle();
+        return Object.keys(battle.defense.terrain);
+    },
+    formations(terrain) {
+        let battle = Current.battle();
+        return Object.keys(battle.defense.terrain[terrain]);
     }
 });
 

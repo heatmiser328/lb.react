@@ -902,76 +902,156 @@
 	"publisher": "Marshal Enterprises",
 	"image": "schoengrabern",
 	"attack": {
-		"armies": [
-			{
-				"nationality": "French",
+		"armies": {
+			"French": {
 				"units": {
 					"Ligne": {
-						"Column": [6,7,8,11,12],
-						"Line": [3],
-						"Carre": [3],
-						"General": [6,7,8,11,12]
+						"Column": [
+							{density:6,factor:1},
+							{density:7,factor:1},
+							{density:8,factor:1},
+							{density:11,factor:1},
+							{density:12,factor:1}
+						],
+						"Line": [{density:4,factor:3}],
+						"Carre": [{density:8,factor:3}],
+						"General": [
+							{density:6,factor:1},
+							{density:7,factor:1},
+							{density:8,factor:1},
+							{density:11,factor:1},
+							{density:12,factor:1}
+						]
 					},
 					"Legere": {
-						"Column": [6,7,8,11,12],
-						"Line": [3],
-						"Skirmish": [3],
-						"Carre": [4],
-						"General": [6,7,8,11,12]
+						"Column": [
+							{density:6,factor:1},
+							{density:7,factor:1},
+							{density:8,factor:1},
+							{density:11,factor:1},
+							{density:12,factor:1}
+						],
+						"Line": [{density:4,factor:3}],
+						"Skirmish": [{density:3,factor:3}],
+						"Carre": [{density:8,factor:4}],
+						"General": [
+							{density:6,factor:1},
+							{density:7,factor:1},
+							{density:8,factor:1},
+							{density:11,factor:1},
+							{density:12,factor:1}
+						]
 					},
 					"Grenadier": {
-						"Column": [6,7,8,11,12],
-						"Line": [4],
-						"Skirmish": [4],
-						"Carre": [4],
-						"General": [6,7,8,11,12]
+						"Column": [
+							{density:6,factor:1},
+							{density:7,factor:1},
+							{density:8,factor:1},
+							{density:11,factor:1},
+							{density:12,factor:1}
+						],
+						"Line": [{density:4,factor:4}],
+						"Skirmish": [{density:3,factor:4}],
+						"Carre": [{density:8,factor:4}],
+						"General": [
+							{density:6,factor:1},
+							{density:7,factor:1},
+							{density:8,factor:1},
+							{density:11,factor:1},
+							{density:12,factor:1}
+						]
 					},
 					"Voltiguer": {
-						"Column": [6,7,8,11,12],
-						"Line": [4],
-						"Skirmish": [4],
-						"Carre": [4],
-						"General": [6,7,8,11,12]
+						"Column": [
+							{density:6,factor:1},
+							{density:7,factor:1},
+							{density:8,factor:1},
+							{density:11,factor:1},
+							{density:12,factor:1}
+						],
+						"Line": [{density:4,factor:4}],
+						"Skirmish": [{density:3,factor:4}],
+						"Carre": [{density:8,factor:4}],
+						"General": [
+							{density:6,factor:1},
+							{density:7,factor:1},
+							{density:8,factor:1},
+							{density:11,factor:1},
+							{density:12,factor:1}
+						]
 					},
 					"Artillery": {
-						"Unlimbered": [18]
+						"Unlimbered": [{density:18,factor:1}]
 					},
 					"Cavalry": {
-						"Skirmish": [2]
+						"Skirmish": [{density:2,factor:1}]
 					}
 				}
 			},
-			{
-				"nationality": "Russian",
+			"Russian": {
 				"units": {
 					"Musketeer": {
-						"Column": [4,5,6,8],
-						"Line": [2],
-						"Carre": [2],
-						"General": [4,5,6,8]
+						"Column": [
+							{density:4,factor:1},
+							{density:5,factor:1},
+							{density:6,factor:1},
+							{density:8,factor:1}
+						],
+						"Line": [{density:4,factor:2}],
+						"Carre": [{density:4,factor:2}],
+						"General": [
+							{density:4,factor:1},
+							{density:5,factor:1},
+							{density:6,factor:1},
+							{density:8,factor:1}
+						]
 					},
 					"Jaeger": {
-						"Column": [5,6,7],
-						"Line": [3],
-						"Skirmish": [3],
-						"Carre": [3],
-						"General": [5,6,7]
+						"Column": [
+							{density:5,factor:1},
+							{density:6,factor:1},
+							{density:7,factor:1}
+						],
+						"Line": [{density:4,factor:3}],
+						"Skirmish": [{density:3,factor:3}],
+						"Carre": [{density:4,factor:3}],
+						"General": [
+							{density:5,factor:1},
+							{density:6,factor:1},
+							{density:7,factor:1}
+						]
 					},
 					"Grenadier": {
-						"Column": [4,5,6,7,10],
-						"Line": [3],
-						"Carre": [3],
-						"General": [4,5,6,7,10]
+						"Column": [
+							{density:4,factor:1},
+							{density:5,factor:1},
+							{density:6,factor:1},
+							{density:7,factor:1},
+							{density:10,factor:1}
+						],
+						"Line": [{density:4,factor:3}],
+						"Carre": [{density:4,factor:3}],
+						"General": [
+							{density:4,factor:1},
+							{density:5,factor:1},
+							{density:6,factor:1},
+							{density:7,factor:1},
+							{density:10,factor:1}
+						]
 					},
 					"Artillery": {
-						"Unlimbered": [16]
+						"Unlimbered": [{density:16,factor:1}]
 					},
 					"Cavalry": {
-						"Skirmish": [1,3,5]
+						"Skirmish": [
+							{density:1,factor:1},
+							{density:3,factor:1},
+							{density:5,factor:1}
+						]
 					}
 				}
 			}
-		]
+		}
 	},
 	"defense": {
 		"terrain": {
