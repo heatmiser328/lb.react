@@ -41,6 +41,9 @@ var FireDefenderQuickAddView = React.createClass({
        this.state.mods[m.name] = m.selected;
        this.updateValue();
     },
+    onSet() {
+        this.props.onSet && this.props.onSet(+this.state.value);
+    },
     onAdd() {
         this.props.onAdd && this.props.onAdd(+this.state.value);
     },
@@ -66,17 +69,22 @@ var FireDefenderQuickAddView = React.createClass({
         return (
             <View style={{flex: 1}}>
                 <View style={{flex:1, flexDirection: 'row', justifyContent: 'center', alignItems: 'flex-start'}}>
-                    <View style={{flex: 1, alignSelf: 'stretch'}}>
+                    <View style={{flex: 4, alignSelf: 'stretch'}}>
                         <Text style={{fontSize: 16, backgroundColor: 'silver', textAlign: 'center'}}>Defense</Text>
                         <Text style={{fontSize: 16, fontWeight: 'bold', color: 'white', backgroundColor: 'gray', textAlign: 'center'}}>
                             {this.state.value}
                         </Text>
                     </View>
-                    <View style={{flex:.5}}>
-                        <IconButton image={'add'} height={32} width={32} resizeMode='stretch' onPress={this.onAdd} />
+                    <View style={{flex:1}}>
+                        <View style={{margin:2}}>
+                            <IconButton image={'equal'} height={32} width={32} resizeMode='stretch' onPress={this.onSet} />
+                        </View>
+                        <View style={{margin:2}}>
+                            <IconButton image={'add'} height={32} width={32} resizeMode='stretch' onPress={this.onAdd} />
+                        </View>
                     </View>
                 </View>
-                <View style={{flex:1, flexDirection: 'row', justifyContent: 'center', alignItems: 'flex-start'}}>
+                <View style={{flex:2, flexDirection: 'row', justifyContent: 'center', alignItems: 'flex-start'}}>
                     <View style={{flex:1}}>
                         <SelectList title={'Terrain'} titleonly={true}
                             items={this.terrains().map((t) => {return {label: t, value: t};})}
@@ -98,38 +106,6 @@ var FireDefenderQuickAddView = React.createClass({
                 {/*View style={{flex: 6}} />*/}
             </View>
         );
-        /*
-        return (
-            <View style={{flex:1, flexDirection: 'row', justifyContent: 'center', alignItems: 'flex-start'}}>
-                <View style={{flex:1}}>
-                    <SelectList title={'Terrain'} titleonly={true}
-                        items={this.terrains().map((t) => {return {label: t, value: t};})}
-                        selected={this.state.terrain}
-                        onChanged={this.onTerrainChanged}/>
-                </View>
-                <View style={{flex:1}}>
-                    <SelectList title={'Formation'} titleonly={true}
-                        items={this.formations(this.state.terrain).map((f) => {return {label: f, value: f};})}
-                        selected={this.state.formation}
-                        onChanged={this.onFormationChanged}/>
-                </View>
-                <View style={{flex:1}}>
-                    <MultiSelectList title={'Modifiers'}
-                        items={modifiers.map((m) => {return {name: m, selected: this.state.mods[m]};})}
-                        onChanged={this.onModChanged}/>
-                </View>
-                <View style={{flex: 1, alignSelf: 'stretch'}}>
-                    <Text style={{fontSize: 16, backgroundColor: 'silver', textAlign: 'center'}}>Defense</Text>
-                    <Text style={{fontSize: 16, fontWeight: 'bold', color: 'white', backgroundColor: 'gray', textAlign: 'center'}}>
-                        {this.state.value}
-                    </Text>
-                </View>
-                <View style={{flex:.5}}>
-                    <IconButton image={'add'} height={32} width={32} resizeMode='stretch' onPress={this.onAdd} />
-                </View>
-            </View>
-        );
-        */
     },
     terrains() {
         let battle = Current.battle();

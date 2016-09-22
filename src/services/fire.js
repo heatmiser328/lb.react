@@ -29,11 +29,10 @@ function calculate(attack, defend, cannister) {
 }
 
 function resolve(o, dice, defincr) {
-    if (defincr > 9) {
-        dice = Base6.add(dice, defincr - 9);
-    }
+    dice = Base6.add(dice, defincr);
     var idx = table.findIndex((v) => {return v.desc == o;});
     var result = "NE";
+    console.log(o + '/' + idx + '/' + dice);
     switch (idx)
     {
         case 0:		//1-3

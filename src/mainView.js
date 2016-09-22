@@ -101,23 +101,23 @@ var MainView = React.createClass({
         if (route.name == 'battle') {
             this.state.routes.battle.title = route.data.name;
             this.state.routes.battle.subtitle = route.data.scenario.name;
+            /*
             var FireAttackerQuickAddView = require('./fireAttackerQuickAddView');
             var FireDefenderQuickAddView = require('./fireDefenderQuickAddView');
             return (
                 <View style={{flex: 1, flexDirection: 'row', marginTop: 55}}>
-                    <View style={{flex: 1}}>
+                    <View style={{flex: 1, borderRightWidth: 1, borderRightColor: 'gray'}}>
                         <FireAttackerQuickAddView events={this.eventEmitter} onAdd={(v) => console.log(v)} />
                     </View>
                     <View style={{flex: 1}}>
                         <FireDefenderQuickAddView events={this.eventEmitter} onAdd={(v) => console.log(v)} />
-                    </View>                    
+                    </View>
                 </View>
             );
-            /*
+            */
             return (
                 <BattleView battle={route.data} events={this.eventEmitter} />
-            );
-            */
+            );            
         }
 
         if (route.name == 'about') {

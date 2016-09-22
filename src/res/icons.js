@@ -15,7 +15,8 @@ module.exports = {
 
 	"arrowRight": require('./arrow-right.png'),
 	"arrowDown": require('./arrow-down.png'),
-	"add": require('./add.png'),
+	"add": require('./addico.png'),
+	"equal": require('./equalico.png'),
 
 	"NE": require('./no-effect.jpg'),
 	"1": require('./1.png'),

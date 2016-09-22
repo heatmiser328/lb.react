@@ -4,6 +4,8 @@ import { View, Text, Switch } from 'react-native';
 var Button = require('apsl-react-native-button');
 var SpinNumeric = require('./widgets/spinNumeric');
 var QuickValuesView = require('./quickValuesView');
+var FireAttackerQuickAddView = require('./fireAttackerQuickAddView');
+var Current = require('./services/current');
 
 var FireAttackerView = React.createClass({
     onModifier(m) {
@@ -14,13 +16,10 @@ var FireAttackerView = React.createClass({
     render() {
         //(this.props.mods[i] ? (i < 3 ? 'x ' : '> ') : '') + v
         return (
-            <View style={{flex:1}}>
+            <View style={{flex:1, borderRightWidth: 1, borderRightColor: 'gray'}}>
                 <Text style={{fontSize: 18,fontWeight: 'bold',textAlign: 'center'}}>Attacker</Text>
                 <View style={{flex: 1}}>
                     <SpinNumeric value={this.props.value} min={0} onChanged={this.props.onChanged} />
-                </View>
-                <View style={{flex: 1}}>
-                    <QuickValuesView values={[4,6,9,12,16,18]} onChanged={this.props.onChanged}/>
                 </View>
                 <View style={{flex: 1, flexDirection: 'row'}}>
                     {
@@ -41,6 +40,23 @@ var FireAttackerView = React.createClass({
                         })
                     }
                 </View>
+                {this.renderValues()}
+            </View>
+        );
+    },
+    renderValues() {
+        let battle = Current.battle();
+        if (battle.hasOwnProperty('attack')) {
+            return (
+                <View style={{flex: 4}}>
+                    <FireAttackerQuickAddView events={this.props.events} onSet={this.props.onChanged} onAdd={this.props.onAdd} />
+                </View>
+            );
+        }
+
+        return (
+            <View style={{flex: 1}}>
+                <QuickValuesView values={[4,6,9,12,16,18]} onChanged={this.props.onChanged}/>
             </View>
         );
     }
