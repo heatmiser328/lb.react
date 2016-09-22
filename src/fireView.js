@@ -48,95 +48,84 @@ var FireView = React.createClass({
     },
     onAttackerAdd(v) {
         v = +this.state.attack + (+v);
-        let odds = this.calcOdds(v, this.state.defend, this.state.modCann);
-        this.setState({attack: v.toString(), odds: odds});
+        this.state.odds = this.calcOdds(v, this.state.defend, this.state.modCann);
+        this.state.attack = v.toString();
         this.onResolve();
     },
     onAttackerChanged(v) {
-        var odds = this.calcOdds(v, this.state.defend, this.state.modCann);
-        this.setState({attack: v.toString(), odds: odds});
+        this.state.odds = this.calcOdds(v, this.state.defend, this.state.modCann);
+        this.state.attack = v.toString();
         this.onResolve();
     },
     onAttackerModifierChanged(m, v) {
-        var state = {};
         if (m == 'Cannister') {
-            state.modCann = v;
-            state.attack = this.state.attack;
+            this.state.modCann = v;
         } else {
-            var a = +this.state.attack;
+            let a = +this.state.attack;
             if (m == '1/3') {
-                state.mod13 = v;
+                this.state.mod13 = v;
                 a = v ? a / 3 : a * 3;
             }
             else if (m == '1/2') {
-                state.mod12 = v;
+                this.state.mod12 = v;
                 a = v ? a / 2 : a * 2;
             }
             else if (m == '3/2') {
                 a = v ? a * 1.5 : a / 1.5;
-                state.mod32 = v;
+                this.state.mod32 = v;
             }
-            state.attack = a.toFixed(1);
-            state.modCann = this.state.modCann;
+            this.state.attack = a.toFixed(1);
         }
-        state.odds = this.calcOdds(state.attack, this.state.defend, state.modCann);
-        this.setState(state);
+        this.state.odds = this.calcOdds(this.state.attack, this.state.defend, this.state.modCann);
         this.onResolve();
     },
     onDefenderAdd(v) {
         v = +this.state.defend + (+v);
-        var odds = this.calcOdds(this.state.attack, v, this.state.modCann);
-        this.setState({defend: v.toString(), odds: odds});
+        this.state.odds = this.calcOdds(this.state.attack, v, this.state.modCann);
+        this.state.defend = v.toString();
         this.onResolve();
     },
     onDefenderChanged(v) {
-        let odds = this.calcOdds(this.state.attack, v, this.state.modCann);
-        this.setState({defend: v.toString(), odds: odds});
+        this.state.odds = this.calcOdds(this.state.attack, v, this.state.modCann);
+        this.state.defend = v.toString();
         this.onResolve();
     },
     onDefenderIncrementsChanged(v) {
         //console.log('defender increments changed: ' + v);
-        this.setState({incr: v});
+        this.state.incr = v;
         this.onResolve();
     },
     onOddsChanged(v) {
-        this.setState({odds: v});
+        this.state.odds = v;
         this.onResolve();
     },
     onDiceModifierChanged(v) {
-        var m = +v;
-        var d = (this.state.die1 * 10) + this.state.die2;
-        d = Base6.add(d, m);
-        this.setState({
-            die1: Math.floor(d / 10),
-            die2: d % 10
-        });
+        let d = Base6.add((this.state.die1 * 10) + this.state.die2, +v);
+        this.state.die1 = Math.floor(d / 10);
+        this.state.die2 = d % 10;
         this.onResolve();
     },
     onDieChanged(d,v) {
-        let state = {};
-        state['die'+d] = v;
-        this.setState(state);
+        this.state['die'+d] = v;
         this.onResolve();
     },
     onDiceRoll(d) {
-        this.setState({die1: d[0].value,die2: d[1].value, die3: d[2].value, die4: d[3].value, die5: d[4].value});
+        this.state.die1 = d[0].value;
+        this.state.die2 = d[1].value;
+        this.state.die3 = d[2].value;
+        this.state.die4 = d[3].value;
+        this.state.die5 = d[4].value;
         this.onResolve();
     },
-    onResolve(e) {
+    onResolve() {
         // resolve fire
-		var fireDice = (this.state.die1*10) + this.state.die2;
-		var lossdie = this.state.die3;
-		var durationdie1 = this.state.die4;
-		var durationdie2 = this.state.die5;
-		var results = Fire.resolve(this.state.odds, fireDice, +this.state.incr);
-		var lloss = LeaderLoss.resolve(fireDice, lossdie, durationdie1, durationdie2) || {};
-        this.setState({
-            result: results,
-            leader: lloss.leader,
-            loss: lloss.result,
-            mortal: lloss.mortal
-        });
+		let fireDice = (this.state.die1*10) + this.state.die2;
+        this.state.results = Fire.resolve(this.state.odds, fireDice, +this.state.incr);
+		let lloss = LeaderLoss.resolve(fireDice, this.state.die3, this.state.die4, this.state.die5) || {};
+        this.state.leader = lloss.leader;
+        this.state.loss = lloss.result;
+        this.state.mortal = lloss.mortal;
+        this.setState(this.state);
     },
     render() {
         //console.log(this.props);
@@ -150,7 +139,7 @@ var FireView = React.createClass({
     					<FireDefenderView value={this.state.defend} incr={this.state.incr} onAdd={this.onDefenderAdd} onChanged={this.onDefenderChanged} onIncrementsChanged={this.onDefenderIncrementsChanged} />
     				</View>
                 </View>
-                <View style={{flex: .5, flexDirection: 'row'}}>
+                <View style={{flex: .5, flexDirection: 'row', backgroundColor: 'whitesmoke'}}>
                     <View style={{flex: 1}}>
                         <OddsView odds={Fire.odds} value={this.state.odds} onChanged={this.onOddsChanged} />
                     </View>
@@ -158,11 +147,11 @@ var FireView = React.createClass({
                         <ResultsView value={this.state.result} leader={this.state.leader} loss={this.state.loss} mortal={this.state.mortal} />
                     </View>
                 </View>
-                <View style={{flex: .75}}>
+                <View style={{flex: .75, backgroundColor: 'whitesmoke'}}>
                     <DiceRoll dice={dice} values={[this.state.die1,this.state.die2,this.state.die3,this.state.die4,this.state.die5]}
                             onRoll={this.onDiceRoll} onDie={this.onDieChanged}/>
                 </View>
-                <View style={{flex: 1}}>
+                <View style={{flex: 1, backgroundColor: 'whitesmoke'}}>
                     <DiceModifiersView onChange={this.onDiceModifierChanged} />
                 </View>
             </View>
