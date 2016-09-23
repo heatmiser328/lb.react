@@ -6,6 +6,7 @@ var QuickValuesView = require('./quickValuesView');
 var DiceModifiersView = require('./diceModifiersView');
 var DiceRoll = require('./widgets/diceRoll');
 var Base6 = require('./services/base6');
+var Morale = require('./services/morale');
 var Icons = require('./res/icons');
 
 var dice = [
@@ -51,8 +52,8 @@ var MoraleView = React.createClass({
         this.onResolve();
     },
     onResolve(e) {
-        let moraleDice = (this.state.die1*10) + this.state.die2;
-        this.setState({result: (moraleDice > (+this.state.morale)) ? 'Pass' : 'Fail'});
+        let b = Morale.check(+this.state.morale,0,this.state.die1,this.state.die2);
+        this.setState({result: b ? 'Pass' : 'Fail'});
     },
     render() {
         //console.log(this.props);

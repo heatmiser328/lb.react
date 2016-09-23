@@ -1,6 +1,69 @@
 # lb.react
 React Native La Bataille Assistant app
 
+#### Reintroduce the Charge view?
+Yes, this was a drag before, but maybe we know better than our past self?
+
+redesign melee view to be a set of tabs:
+
+Assault		Charge		Resolution
+
+##### assault:
+odds selection		(pre-melee morale check modifiers)
+attack morale		(multiple?)
+defend morale		(multiple?)
+modifiers selection (infantry pre-melee morale modifiers)
+dice
+results
+
+###### Layout
+
+odds [multi select list]		
+		Attack							Defend
+attack [multi numeric/image list]	defend [multi numeric/image list]
+	try this...
+	[multi morale/result list]
+	< morale >  [image]
+	[	quick value buttons	]
+
+modifiers [multi select list]		modifiers [multi select list]
+					[dice]					
+				[dice modifiers]
+
+
+##### charge:
+1. carre realization
+nationality
+formation
+distance
+modifiers (from carre realization table)
+dice
+results
+
+2. stand
+modifiers	(cavalry charge modifiers)
+dice
+results
+
+###### Layout
+
+				radio (stand/carre)
+
+		Stand									Carre
+	modifiers [multi select list]			nationality [select list]
+											formation [select list]
+											< distance >
+											modifiers [multi select list]
+		[results]			[dice]									
+					[dice modifiers]
+
+
+##### resolution:
+what is now the melee view, unchanged(?)
+
+?try to incorporate melee value modifiers list into the melee calc view?
+
+
 #### Idea for fire combat ux
 (I know, previous efforts to support this kind of interface were dismal failures; but maybe a touch interface will be better? worth a try???)
 
