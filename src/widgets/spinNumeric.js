@@ -61,7 +61,7 @@ var SpinNumeric = React.createClass({
         return (
             <View style={{flex: 1,flexDirection: 'row',paddingTop: 5,paddingBottom: 5, alignItems: 'center'}}>
                 {this.props.label
-                    ? <Text style={{flex: 10,marginTop: 10}}>{this.props.label}</Text>
+                    ? <Text style={{flex: 20,marginTop: 10}}>{this.props.label}</Text>
                     : null
                 }
                 <SpinButton style={{flex: 10, width: 50}} direction={'prev'} onPress={this.onPrev} />

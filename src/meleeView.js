@@ -10,7 +10,7 @@ var MeleeResolutionView = require('./meleeResolutionView');
 var MeleeView = React.createClass({
     getInitialState() {
         return {
-            page: 1
+            page: 0
         };
     },
     componentDidMount() {

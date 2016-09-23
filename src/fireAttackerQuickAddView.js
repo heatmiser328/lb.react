@@ -146,19 +146,19 @@ var FireAttackerQuickAddView = React.createClass({
     },
     nationalities() {
         let battle = Current.battle();
-        return Object.keys(battle.attack.armies);
+        return Object.keys(battle.fire.attack.armies);
     },
     unittypes(nationality) {
         let battle = Current.battle();
-        return Object.keys(battle.attack.armies[nationality].units);
+        return Object.keys(battle.fire.attack.armies[nationality].units);
     },
     formations(nationality, unittype) {
         let battle = Current.battle();
-        return Object.keys(battle.attack.armies[nationality].units[unittype]);
+        return Object.keys(battle.fire.attack.armies[nationality].units[unittype]);
     },
     sizes(nationality, unittype, formation) {
         let battle = Current.battle();
-        return battle.attack.armies[nationality].units[unittype][formation];
+        return battle.fire.attack.armies[nationality].units[unittype][formation];
     },
     updateUnitTypes() {
         let unittypes = this.unittypes(this.state.nationality);

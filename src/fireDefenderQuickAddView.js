@@ -56,7 +56,7 @@ var FireDefenderQuickAddView = React.createClass({
         state = state || this.state;
         // the base defense value for the terrain/formation
         let battle = Current.battle();
-        let value = battle.defense.terrain[state.terrain][state.formation];
+        let value = battle.fire.defense.terrain[state.terrain][state.formation];
         if (state.mods['Arty w/Infantry'] && state.formation != 'Carre') {
             value -= 2;
         }
@@ -109,11 +109,11 @@ var FireDefenderQuickAddView = React.createClass({
     },
     terrains() {
         let battle = Current.battle();
-        return Object.keys(battle.defense.terrain);
+        return Object.keys(battle.fire.defense.terrain);
     },
     formations(terrain) {
         let battle = Current.battle();
-        return Object.keys(battle.defense.terrain[terrain]);
+        return Object.keys(battle.fire.defense.terrain[terrain]);
     }
 });
 

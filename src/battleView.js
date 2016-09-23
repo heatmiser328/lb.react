@@ -5,7 +5,10 @@ import { View, Text } from 'react-native';
 var ScrollableTabView = require('react-native-scrollable-tab-view');
 var TurnView = require('./turnView');
 var FireView = require('./fireView');
-var MeleeView = require('./meleeView');
+//var MeleeView = require('./meleeView');
+var MeleeAssaultView = require('./meleeAssaultView');
+var MeleeChargeView = require('./meleeChargeView');
+var MeleeResolutionView = require('./meleeResolutionView');
 var MoraleView = require('./moraleView');
 var GeneralView = require('./generalView');
 var Current = require('./services/current');
@@ -15,7 +18,7 @@ var BattleView = React.createClass({
     getInitialState() {
         return {
             battle: this.props.battle,
-            initialPage: 2
+            initialPage: 0
         };
     },
     componentWillMount: function() {
@@ -47,7 +50,9 @@ var BattleView = React.createClass({
                 >
                     <FireView tabLabel="Fire" events={this.props.events} />
                     <MoraleView tabLabel="Morale" events={this.props.events} />
-                    <MeleeView tabLabel="Melee" events={this.props.events} />
+                    <MeleeAssaultView tabLabel="Assault" events={this.props.events} />
+                    <MeleeChargeView tabLabel="Charge" events={this.props.events} />
+                    <MeleeResolutionView tabLabel="Melee" events={this.props.events} />
                     <GeneralView tabLabel="General" events={this.props.events} />
                 </ScrollableTabView>
             </View>

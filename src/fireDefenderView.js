@@ -27,7 +27,7 @@ var FireDefenderView = React.createClass({
     },
     renderValues() {
         let battle = Current.battle();
-        if (battle.hasOwnProperty('defense')) {
+        if (battle.hasOwnProperty('fire')) {
             return (
                 <View style={{flex: 4}}>
                     <FireDefenderQuickAddView events={this.eventEmitter} onSet={this.props.onChanged} onAdd={this.props.onAdd} />
@@ -36,7 +36,7 @@ var FireDefenderView = React.createClass({
         }
 
         return (
-            <View style={{flex: 1}}>
+            <View style={{flex: 4}}>
                 <QuickValuesView values={[4,6,9,12,14,16]} onChanged={this.props.onChanged}/>
             </View>
         );

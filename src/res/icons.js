@@ -12,6 +12,8 @@ module.exports = {
 	"nextButton": require('./ic_action_next_item.png'),
 	"unchecked": require('./unchecked_checkbox.png'),
 	"checked": require('./checked_checkbox.png'),
+	"radio-on": require('./radio-on.png'),
+	"radio-off": require('./radio-off.png'),
 
 	"arrowRight": require('./arrow-right.png'),
 	"arrowDown": require('./arrow-down.png'),
@@ -27,6 +29,11 @@ module.exports = {
 
 	"pass": require('./pass.png'),
 	"fail": require('./fail.jpg'),
+	"Stand": require('./stand.png'),
+	"Square": require('./square.png'),
+	"Carre": require('./square.png'),
+	"Disorder": require('./disorder.png'),
+	"Route": require('./route.png'),
 
 	"attackerLoss": require('./attacker.png'),
 	"defenderLoss": require('./defender.png'),

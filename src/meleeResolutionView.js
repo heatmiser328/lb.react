@@ -68,13 +68,13 @@ var MeleeResolutionView = React.createClass({
         this.state.die5 = d[4].value;
         this.onResolve();
     },
-    onResolve(e) {
+    onResolve() {
 		let meleeDice = (this.state.die1*10) + this.state.die2;
-		this.state.results = Melee.resolve(this.state.odds, meleeDice);
+		this.state.result = Melee.resolve(this.state.odds, meleeDice);
 		let lloss = LeaderLoss.resolve(meleeDice, this.state.die3, this.state.die4, this.state.die5, true) || {};
         this.state.leader = lloss.leader;
         this.state.loss = lloss.result;
-        this.state.mortal = lloss.mortal;
+        this.state.mortal = lloss.mortal;        
         this.setState(this.state);
     },
     onAddMelee(s, v) {
