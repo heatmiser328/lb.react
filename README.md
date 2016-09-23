@@ -50,11 +50,11 @@ results
 				radio (stand/carre)
 
 		Stand									Carre
-	modifiers [multi select list]			nationality [select list]
-											formation [select list]
-											< distance >
-											modifiers [multi select list]
-		[results]			[dice]									
+	< unit morale >						nationality [select list]
+	< leader >							formation [select list]
+	modifiers [multi select list]			< distance >
+										modifiers [multi select list]
+				[results]			[dice]									
 					[dice modifiers]
 
 

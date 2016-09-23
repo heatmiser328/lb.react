@@ -4,13 +4,13 @@ var React = require('react');
 import { View, Text } from 'react-native';
 var ScrollableTabView = require('react-native-scrollable-tab-view');
 var MeleeAssaultView = require('./meleeAssaultView');
-//var MeleeChargeView = require('./meleeChargeView');
+var MeleeChargeView = require('./meleeChargeView');
 var MeleeResolutionView = require('./meleeResolutionView');
 
 var MeleeView = React.createClass({
     getInitialState() {
         return {
-            page: 2
+            page: 1
         };
     },
     componentDidMount() {
@@ -29,7 +29,7 @@ var MeleeView = React.createClass({
                     onChangeTab={this.onChangeTab}
                     initialPage={this.state.page}>
                     <MeleeAssaultView tabLabel="Assault" events={this.props.events} />
-                    <Text tabLabel="Charge" events={this.props.events} />
+                    <MeleeChargeView tabLabel="Charge" events={this.props.events} />
                     <MeleeResolutionView tabLabel="Resolution" events={this.props.events} />
                 </ScrollableTabView>
             </View>
