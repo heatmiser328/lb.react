@@ -11,7 +11,7 @@ var LeaderLossView = React.createClass({
         return (
             <View style={{flex: 1, flexDirection: 'row', alignItems: 'center'}}>
                 {this.props.leader
-                    ? <Image style={{flex: 1, resizeMode: 'contain'}} source={this.props.leader == 'A' ? Icons.attackerLoss : Icons.defenderLoss} />
+                    ? <Image style={{flex: 1, height: 48, width: 8, resizeMode: 'stretch'}} source={this.props.leader == 'A' ? Icons.attackerLoss : Icons.defenderLoss} />
                     : <Text />
                 }
                 {this.props.leader
@@ -22,7 +22,7 @@ var LeaderLossView = React.createClass({
                     ) : <Text />
                 }
                 {this.props.leader
-                    ? <Image style={{flex: 1, resizeMode: 'contain'}} source={lossIcon} />
+                    ? <Image style={{flex: 1, height: 48, width: 8, resizeMode: 'stretch'}} source={lossIcon} />
                     : <Text />
                 }
             </View>

@@ -37,64 +37,57 @@ var MeleeResolutionView = React.createClass({
         };
     },
     onAttackerChanged(v) {
-        let odds = Melee.calculate(+v, +this.state.defend);
-        this.setState({attack: v, odds: odds});
+        this.state.attack = v;
+        this.state.odds = Melee.calculate(+v, +this.state.defend);
         this.onResolve();
     },
     onDefenderChanged(v) {
-        let odds = Melee.calculate(+this.state.attack, +v);
-        this.setState({defend: v, odds: odds});
+        this.state.defend = v;
+        this.state.odds = Melee.calculate(+this.state.attack, +v);
         this.onResolve();
     },
     onOddsChanged(v) {
-        this.setState({odds: v});
+        this.state.odds = v;
         this.onResolve();
     },
     onDiceModifierChanged(v) {
-        let m = +v;
-        let d = (this.state.die1 * 10) + this.state.die2;
-        d = Base6.add(d, m);
-        this.setState({
-            die1: Math.floor(d / 10),
-            die2: d % 10
-        });
+        let d = Base6.add((this.state.die1 * 10) + this.state.die2, +v);
+        this.state.die1 = Math.floor(d / 10);
+        this.state.die2 = d % 10;
         this.onResolve();
     },
     onDieChanged(d,v) {
-        let state = {};
-        state['die'+d] = v;
-        this.setState(state);
+        this.state['die'+d] = v;
         this.onResolve();
     },
     onDiceRoll(d) {
-        this.setState({die1: d[0].value,die2: d[1].value, die3: d[2].value, die4: d[3].value, die5: d[4].value});
+        this.state.die1 = d[0].value;
+        this.state.die2 = d[1].value;
+        this.state.die3 = d[2].value;
+        this.state.die4 = d[3].value;
+        this.state.die5 = d[4].value;
         this.onResolve();
     },
     onResolve(e) {
 		let meleeDice = (this.state.die1*10) + this.state.die2;
-		let lossdie = this.state.die3;
-		let durationdie1 = this.state.die4;
-		let durationdie2 = this.state.die5;
-		let results = Melee.resolve(this.state.odds, meleeDice);
-		let lloss = LeaderLoss.resolve(meleeDice, lossdie, durationdie1, durationdie2, true) || {};
-        this.setState({
-            result: results,
-            leader: lloss.leader,
-            loss: lloss.result,
-            mortal: lloss.mortal
-        });
+		this.state.results = Melee.resolve(this.state.odds, meleeDice);
+		let lloss = LeaderLoss.resolve(meleeDice, this.state.die3, this.state.die4, this.state.die5, true) || {};
+        this.state.leader = lloss.leader;
+        this.state.loss = lloss.result;
+        this.state.mortal = lloss.mortal;
+        this.setState(this.state);
     },
     onAddMelee(s, v) {
         if (s == 'attack') {
             let attack = ((+this.state.attack) + (+v));
-            let odds = Melee.calculate(attack, +this.state.defend);
-            this.setState({attack: attack.toString(), odds: odds});
+            this.state.odds = Melee.calculate(attack, +this.state.defend);
+            this.state.attack = attack.toString();
             this.onResolve();
         }
         else if (s == 'defend') {
             let defend = ((+this.state.defend) + (+v));
-            let odds = Melee.calculate(+this.state.attack, defend);
-            this.setState({defend: defend.toString(), odds: odds});
+            this.state.odds = Melee.calculate(+this.state.attack, defend);
+            this.state.defend = defend.toString();
             this.onResolve();
         }
     },
