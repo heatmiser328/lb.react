@@ -1262,6 +1262,17 @@
 					"Limbered Arty": 5
 				}
 			}
+		},
+		"artillery": {
+			"limber": {
+				"table": {
+					"French a pied": { "low": 4, "high": 6},
+					"Russian Light": { "low": 5, "high": 6}
+				},
+				"modifiers": [
+					{"name": "Leader", "mod": 1}
+				]
+			}
 		}
 	},
 	"melee": {
@@ -1290,6 +1301,17 @@
 		}
 	},
 	"charge": {
+		"recall": {
+			"table": {
+				"French": { "low": 2, "high": 6},
+				"French Allies": { "low": 2, "high": 6},
+				"Russian Light": { "low": 3, "high": 6},
+				"Russian Heavy": { "low": 2, "high": 6}
+			},
+			"modifiers": [
+				{"name": "Leader", "mod": 1}
+			]
+		},
 		"stand": {
 			"modifiers": [
 				{"name": "Charged in flank", "mod": -12},

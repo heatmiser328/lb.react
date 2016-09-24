@@ -3,6 +3,9 @@
 var React = require('react');
 import { View, Text } from 'react-native';
 var DiceRoll = require('./widgets/diceRoll');
+var ArtilleryView = require('./artilleryView');
+var Current = require('./services/current');
+
 var dice1 = [
     {num: 1, low: 1, high: 6, color: 'red'},
     {num: 1, low: 1, high: 6, color: 'white'}
@@ -30,15 +33,29 @@ var GeneralView = React.createClass({
     render() {
         //console.log(this.props);
         return (
-            <View style={{flex: 1, marginTop: 5, justifyContent: 'flex-start'}}>
-                <View style={{marginRight: 200}}>
+            <View style={{flex: 1, justifyContent: 'flex-start'}}>
+                {this.renderArtillery()}
+                <View style={{flex:1, marginRight: 200}}>
                     <DiceRoll dice={dice1} values={[this.state.die1,this.state.die2]} onRoll={this.onDice1Roll} />
                 </View>
-                <View style={{marginRight: 200}}>
+                <View style={{flex:1, marginRight: 200}}>
                     <DiceRoll dice={dice2} values={[this.state.die3]} onRoll={this.onDice2Roll} />
                 </View>
+                <View style={{flex:3}} />
             </View>
         );
+    },
+    renderArtillery() {
+        let battle = Current.battle();
+        if (battle.hasOwnProperty('fire') && battle.fire.hasOwnProperty('artillery')) {
+            return (
+                <View style={{flex:1}}>
+                    <ArtilleryView events={this.props.events} />
+                </View>
+            );
+        }
+
+        return null;
     }
 });
 
