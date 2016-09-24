@@ -19,16 +19,6 @@ var MeleeCalcView = React.createClass({
             side: this.props.side == 'attack' ? 0 : 1
         };
     },
-    calcTotal() {
-        let l = +this.state.lance;
-        let m = +this.state.melee * (((+this.state.incr) - (+this.state.loss)) / (+this.state.incr));
-        let mods = this.modifiers().filter((m) => this.state.mods[m.name]);
-        m = mods.filter((m) => m.name.indexOf('Lance') < 0).reduce((p,c) => p *= c.mod, m);
-        l = mods.filter((m) => m.name.indexOf('Lance') > -1).reduce((p,c) => p *= c.mod, l);
-        m += l;
-        this.state.total = m.toFixed(1);
-        this.setState(this.state);
-    },
     onIncrChanged(v) {
         //console.log('increment changed: ' + v);
         this.state.incr = v;
@@ -57,17 +47,31 @@ var MeleeCalcView = React.createClass({
         this.setState({side:v, mods: {}});
     },
     onModChanged(m) {
+        //console.log(m);
         this.state.mods[m.name] = m.selected;
         this.calcTotal();
+    },
+    calcTotal() {
+        let l = +this.state.lance;
+        let m = +this.state.melee * (((+this.state.incr) - (+this.state.loss)) / (+this.state.incr));
+        let mods = this.modifiers().filter((m) => this.state.mods[m.name]);
+        m = mods.filter((m) => m.name.indexOf('Lance') < 0).reduce((p,c) => p *= c.mod, m);
+        l = mods.filter((m) => m.name.indexOf('Lance') > -1).reduce((p,c) => p *= c.mod, l);
+        m += l;
+        this.state.total = m.toFixed(1);
+        this.setState(this.state);
     },
     onAdd() {
         let side = this.state.side == 0 ? 'attack' : 'defend';
         this.props.onAdd && this.props.onAdd(side, this.state.total);
     },
     render() {
+        //console.log(this.state);
         return (
-            <View style={{flex:1, justifyContent: 'center', margin: 20, borderRadius: 4, borderWidth: 2, borderColor: 'black', backgroundColor: 'whitesmoke'}}>
-                <Text style={{fontSize: 18,fontWeight: 'bold',textAlign: 'center'}}>{'Melee Calculator'}</Text>
+            <View style={{flex:1, justifyContent: 'center',
+                            marginLeft: 20, marginRight: 20, marginTop: 50, marginBottom: 50,
+                            borderRadius: 4, borderWidth: 2, borderColor: 'black', backgroundColor: 'whitesmoke'}}>
+                <Text style={{fontSize: 18,fontWeight: 'bold',backgroundColor: 'silver', textAlign: 'center'}}>{'Melee Calculator'}</Text>
                 <View style={{flex: 8, flexDirection: 'row', justifyContent: 'center'}}>
                     {/* values */}
                     <View style={{flex: 2, justifyContent: 'center'}}>
