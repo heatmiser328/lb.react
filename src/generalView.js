@@ -4,6 +4,7 @@ var React = require('react');
 import { View, Text } from 'react-native';
 var DiceRoll = require('./widgets/diceRoll');
 var ArtilleryView = require('./artilleryView');
+var CavalryRecallView = require('./cavalryRecallView');
 var Current = require('./services/current');
 
 var dice1 = [
@@ -35,13 +36,14 @@ var GeneralView = React.createClass({
         return (
             <View style={{flex: 1, justifyContent: 'flex-start'}}>
                 {this.renderArtillery()}
-                <View style={{flex:1, marginRight: 200}}>
+                {this.renderCavalryRecall()}
+                <View style={{flex:1, marginRight: 0}}>
                     <DiceRoll dice={dice1} values={[this.state.die1,this.state.die2]} onRoll={this.onDice1Roll} />
                 </View>
-                <View style={{flex:1, marginRight: 200}}>
+                <View style={{flex:1, marginRight: 0}}>
                     <DiceRoll dice={dice2} values={[this.state.die3]} onRoll={this.onDice2Roll} />
                 </View>
-                <View style={{flex:3}} />
+                <View style={{flex:1}} />                
             </View>
         );
     },
@@ -51,6 +53,18 @@ var GeneralView = React.createClass({
             return (
                 <View style={{flex:1}}>
                     <ArtilleryView events={this.props.events} />
+                </View>
+            );
+        }
+
+        return null;
+    },
+    renderCavalryRecall() {
+        let battle = Current.battle();
+        if (battle.hasOwnProperty('charge') && battle.charge.hasOwnProperty('recall')) {
+            return (
+                <View style={{flex:1}}>
+                    <CavalryRecallView events={this.props.events} />
                 </View>
             );
         }

@@ -8,7 +8,7 @@ var Icons = require('./res/icons');
 var Base6 = require('./services/base6');
 var Current = require('./services/current');
 
-var ArtilleryView = React.createClass({
+var CavalryRecallView = React.createClass({
     dice: [
         {num: 1, low: 1, high: 6, color: 'blue'}
     ],
@@ -39,15 +39,15 @@ var ArtilleryView = React.createClass({
     },
     onResolve() {
         let battle = Current.battle();
-        let table = battle.fire.artillery.limber.table[this.state.type] || {};
+        let table = battle.charge.recall.table[this.state.type] || {};
         let mod = this.modifiers().filter((m) => this.state.mods[m.name]).reduce((p,c) => p + c.mod, 0);
-        this.state.results = ((this.state.die1 + mod) >= table.low) ? 'Limber' : 'NE';
+        this.state.results = ((this.state.die1 + mod) >= table.low) ? 'Recall' : 'Continue';
         this.setState(this.state);
     },
     render() {
         return (
             <View style={{flex:1}}>
-                <Text style={{fontSize: 18,fontWeight: 'bold',backgroundColor: 'silver', textAlign: 'center'}}>Artillery Limber</Text>
+                <Text style={{fontSize: 18,fontWeight: 'bold',backgroundColor: 'silver', textAlign: 'center'}}>Cavalry Recall</Text>
                 <View style={{flex:1, flexDirection:'row'}}>
                     <View style={{flex:1}}>
                         <SelectList title={'Type'} titleonly={true}
@@ -74,12 +74,12 @@ var ArtilleryView = React.createClass({
     },
     types() {
         let battle = Current.battle();
-        return Object.keys(battle.fire.artillery.limber.table);
+        return Object.keys(battle.charge.recall.table);
     },
     modifiers() {
         let battle = Current.battle();
-        return battle.fire.artillery.limber.modifiers;
+        return battle.charge.recall.modifiers;
     }
 });
 
-module.exports = ArtilleryView;
+module.exports = CavalryRecallView;
