@@ -1,14 +1,14 @@
 {
   "name": "lb",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "debug": "node node_modules/react-native/local-cli/cli.js run-android",
     "get-js": "curl \"http://localhost:8081/index.android.bundle?platform=android&dev=false&minify=true\" -o \"android/app/src/main/assets/index.android.bundle\"",
     "build-rel": "cd android && gradlew assembleRelease && cd ..",
-    "install-dbg": "adb install -r android/app/build/outputs/apk/lb-debug-1.0.apk",
-    "install-rel": "adb install -r android/app/build/outputs/apk/lb-release-1.0.apk",
+    "install-dbg": "adb install -r android/app/build/outputs/apk/lb-debug-1.2.apk",
+    "install-rel": "adb install -r android/app/build/outputs/apk/lb-release-1.2.apk",
     "bridge": "adb reverse tcp:8081 tcp:8081",
     "menu": "adb shell input keyevent 82",
     "logs": "adb logcat *:S ReactNative:V ReactNativeJS:V"
@@ -22,7 +22,6 @@
     "react-native-audioplayer": "^0.2.0",
     "react-native-fs": "^1.5.1",
     "react-native-menu": "^0.20.1",
-    "react-native-scrollable-tab-view": "^0.5.3",
-    "react-native-simple-radio-button": "^2.2.0"
+    "react-native-scrollable-tab-view": "^0.5.3"
   }
 }

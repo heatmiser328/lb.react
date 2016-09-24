@@ -17,7 +17,7 @@ var FireAttackerView = React.createClass({
         //(this.props.mods[i] ? (i < 3 ? 'x ' : '> ') : '') + v
         return (
             <View style={{flex:1, borderRightWidth: 1, borderRightColor: 'gray'}}>
-                <Text style={{fontSize: 18,fontWeight: 'bold',textAlign: 'center'}}>Attacker</Text>
+                <Text style={{fontSize: 18,fontWeight: 'bold',backgroundColor: 'silver', textAlign: 'center'}}>Attacker</Text>
                 <View style={{flex: 1}}>
                     <SpinNumeric value={this.props.value} min={0} onChanged={this.props.onChanged} />
                 </View>

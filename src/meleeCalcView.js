@@ -67,7 +67,7 @@ var MeleeCalcView = React.createClass({
     render() {
         return (
             <View style={{flex:1, justifyContent: 'center', margin: 20, borderRadius: 4, borderWidth: 2, borderColor: 'black', backgroundColor: 'whitesmoke'}}>
-                <Text style={{fontSize: 18,fontWeight: 'bold',textAlign: 'center'}}>{'Melee Calculator'}</Text>
+                <Text style={{fontSize: 18,fontWeight: 'bold',backgroundColor: 'silver', textAlign: 'center'}}>{'Melee Calculator'}</Text>
                 <View style={{flex: 8, flexDirection: 'row', justifyContent: 'center'}}>
                     {/* values */}
                     <View style={{flex: 2, justifyContent: 'center'}}>
