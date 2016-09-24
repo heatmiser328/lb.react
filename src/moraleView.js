@@ -23,43 +23,35 @@ var MoraleView = React.createClass({
             result: 'Fail'
         };
     },
-    onQuickValue(v) {
-        this.setState({morale: v});
-        this.onResolve();
-    },
     onMoraleChanged(v) {
-        this.setState({morale: v});
+        this.state.morale = v;
         this.onResolve();
     },
     onDiceModifierChanged(v) {
-        let m = +v;
-        let d = (this.state.die1 * 10) + this.state.die2;
-        d = Base6.add(d, m);
-        this.setState({
-            die1: Math.floor(d / 10),
-            die2: d % 10
-        });
+        let d = Base6.add((this.state.die1 * 10) + this.state.die2, +v);
+        this.state.die1 = Math.floor(d / 10);
+        this.state.die2 = d % 10;
         this.onResolve();
     },
     onDieChanged(d,v) {
-        let state = {};
-        state['die'+d] = v;
-        this.setState(state);
+        this.state['die'+d] = v;
         this.onResolve();
     },
     onDiceRoll(d) {
-        this.setState({die1: d[0].value,die2: d[1].value});
+        this.state.die1 = d[0].value;
+        this.state.die2 = d[1].value;
         this.onResolve();
     },
     onResolve(e) {
         let b = Morale.check(+this.state.morale,0,this.state.die1,this.state.die2);
-        this.setState({result: b ? 'Pass' : 'Fail'});
+        this.state.result = b ? 'Pass' : 'Fail';
+        this.setState(this.state);
     },
     render() {
         //console.log(this.props);
         let icon = this.state.result == 'Fail' ? Icons['fail'] : Icons['pass'];
         return (
-            <View style={{flex: 1, marginTop: 5}}>
+            <View style={{flex: 1}}>
                 <View style={{flex: 1, flexDirection: 'row'}}>
                     <View style={{flex: 25}} />
                     <View style={{flex: 50}}>
@@ -68,7 +60,7 @@ var MoraleView = React.createClass({
                     <View style={{flex: 25}} />
                 </View>
                 <View style={{flex: 1}}>
-                    <QuickValuesView values={[16,26,36,46,56,66]} onChanged={this.onQuickValue}/>
+                    <QuickValuesView values={[16,26,36,46,56,66]} onChanged={this.onMoraleChanged}/>
                 </View>
                 <View style={{flex: 1, flexDirection: 'row'}}>
                     <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>

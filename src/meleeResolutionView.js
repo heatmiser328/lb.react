@@ -74,7 +74,7 @@ var MeleeResolutionView = React.createClass({
 		let lloss = LeaderLoss.resolve(meleeDice, this.state.die3, this.state.die4, this.state.die5, true) || {};
         this.state.leader = lloss.leader;
         this.state.loss = lloss.result;
-        this.state.mortal = lloss.mortal;        
+        this.state.mortal = lloss.mortal;
         this.setState(this.state);
     },
     onAddMelee(s, v) {
@@ -103,7 +103,7 @@ var MeleeResolutionView = React.createClass({
                       );
                   }
                   return (
-                      <View style={{flex: 1, marginTop: 5}}>
+                      <View style={{flex: 1}}>
                           <View style={{flex: 1, flexDirection: 'row'}}>
                               <View style={{flex: 1}}>
                                   <MeleeStrengthView label={'Attacker'} value={this.state.attack} onChanged={this.onAttackerChanged}

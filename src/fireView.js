@@ -130,7 +130,7 @@ var FireView = React.createClass({
     render() {
         //console.log(this.props);
         return (
-            <View style={{flex: 1, marginTop: 5}}>
+            <View style={{flex: 1}}>
                 <View style={{flex: 4, flexDirection: 'row'}}>
                     <View style={{flex: 1}}>
                         <FireAttackerView value={this.state.attack} mods={[this.state.mod13,this.state.mod12,this.state.mod32,this.state.modCann]} onAdd={this.onAttackerAdd} onChanged={this.onAttackerChanged} onModifierChanged={this.onAttackerModifierChanged} />
