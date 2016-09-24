@@ -120,7 +120,7 @@ var FireView = React.createClass({
     onResolve() {
         // resolve fire
 		let fireDice = (this.state.die1*10) + this.state.die2;
-        this.state.results = Fire.resolve(this.state.odds, fireDice, +this.state.incr);
+        this.state.result = Fire.resolve(this.state.odds, fireDice, +this.state.incr);
 		let lloss = LeaderLoss.resolve(fireDice, this.state.die3, this.state.die4, this.state.die5) || {};
         this.state.leader = lloss.leader;
         this.state.loss = lloss.result;
