@@ -1,66 +1,38 @@
 'use strict'
 var React = require('react');
-import { View, Text } from 'react-native';
+import { View, Text, Switch } from 'react-native';
+var FireAttackerValuesView = require('./fireAttackerValuesView');
 var SpinNumeric = require('./widgets/spinNumeric');
-var SelectList = require('./widgets/selectList');
-var MultiSelectList = require('./widgets/multiSelectList');
 var IconButton = require('./widgets/iconButton');
 var Current = require('./services/current');
 
-let modifiers = [
-    'Disorder',
-    'Range 2',
-    'Range 3',
-    'Square adjacent'
-    //,'Square coincident'
-];
-
 var FireAttackerQuickAddView = React.createClass({
     getInitialState() {
-        let nationalities = this.nationalities();
-        let unittypes = this.unittypes(nationalities[0]);
-        let formations = this.formations(nationalities[0], unittypes[0]);
-        let sizes = this.sizes(nationalities[0], unittypes[0], formations[0]);
-        let state = {
-            nationality: nationalities[0],
-            unittype: unittypes[0],
-            formation: formations[0],
-            size: sizes[0].density.toString(),
+        return {
+            size: '1',
+            factor: '1',
             mods: {},
-            value: '0'
+            value: '1'
         };
-        state.value = this.calcValue(state).toString();
-        return state;
-    },
-    onNationalityChanged(v) {
-        // load unit types available for the nation
-        this.state.nationality = v;
-        this.updateUnitTypes();
-        this.updateFormations();
-        this.updateSizes();
-
-        this.updateValue();
-    },
-    onUnitTypeChanged(v) {
-        // load formations available for the unit type
-        this.state.unittype = v;
-        this.updateFormations();
-        this.updateSizes();
-        this.updateValue();
-    },
-    onFormationChanged(v) {
-        // set max size for the formation (or null if col/general/dg/route)
-        this.state.formation = v;
-        this.updateSizes();
-        this.updateValue();
     },
     onSizeChanged(v) {
         this.state.size = v;
         this.updateValue();
     },
-    onModChanged(m) {
-       this.state.mods[m.name] = m.selected;
-       this.updateValue();
+    onFactorChanged(v) {
+        this.state.factor = v;
+        this.updateValue();
+    },
+    onEffectChanged(v) {
+        this.state.size = v.density.toString();
+        this.state.factor = v.factor.toString();
+        this.updateValue();
+    },
+    onModifier(m) {
+        return (v) => {
+            this.state.mods[m] = v;
+            this.updateValue();
+        }
     },
     onSet() {
         this.props.onSet && this.props.onSet(+this.state.value);
@@ -76,16 +48,14 @@ var FireAttackerQuickAddView = React.createClass({
         state = state || this.state;
 
         //value = size * fire multiplier * modifiers
-        let sizes = this.sizes(state.nationality, state.unittype, state.formation);
-        let factor = sizes && sizes.length > 0 ? sizes[0].factor : 1;
-        let value = +state.size * factor;
-        if (state.mods['Disorder']) {
+        let value = +state.size * +state.factor;
+        if (state.mods['1/2']) {
             value /= 2.0;
         }
-        if (state.mods['Range 2']) {
-            value /= 2.0;
+        if (state.mods['3/2']) {
+            value *= 1.5;
         }
-        if (state.mods['Square adjacent']) {
+        if (state.mods['1/3']) {
             value /= 3.0;
         }
         return value;
@@ -94,16 +64,16 @@ var FireAttackerQuickAddView = React.createClass({
         return (
             <View style={{flex:1}}>
                 <View style={{flex:1, flexDirection: 'row', justifyContent: 'center', alignItems: 'flex-start'}}>
-                    <View style={{flex:1}}>
-                        <SelectList title={'Nationality'} titleonly={true}
-                            items={this.nationalities().map((n) => {return {label: n, value: n};})}
-                            selected={this.state.nationality}
-                            onChanged={this.onNationalityChanged}/>
-                    </View>
                     <View style={{flex: 1, alignSelf: 'stretch', justifyContent: 'flex-start'}}>
                         <Text style={{fontSize: 16, backgroundColor: 'silver', textAlign: 'center'}}>Size</Text>
                         <View>
                         <SpinNumeric value={this.state.size} min={0} max={30} onChanged={this.onSizeChanged} />
+                        </View>
+                    </View>
+                    <View style={{flex: 1, alignSelf: 'stretch', justifyContent: 'flex-start'}}>
+                        <Text style={{fontSize: 16, backgroundColor: 'silver', textAlign: 'center'}}>Factor</Text>
+                        <View>
+                        <SpinNumeric value={this.state.factor} min={0} max={30} onChanged={this.onFactorChanged} />
                         </View>
                     </View>
                     <View style={{flex: 1, alignSelf: 'stretch'}}>
@@ -121,63 +91,21 @@ var FireAttackerQuickAddView = React.createClass({
                         </View>
                     </View>
                 </View>
-
-                <View style={{flex:2, flexDirection: 'row', justifyContent: 'center', alignItems: 'flex-start'}}>
-                    <View style={{flex:1}}>
-                        <SelectList title={'Unit Type'} titleonly={true}
-                            items={this.unittypes(this.state.nationality).map((t) => {return {label: t, value: t};})}
-                            selected={this.state.unittype}
-                            onChanged={this.onUnitTypeChanged}/>
-                    </View>
-                    <View style={{flex:1}}>
-                        <SelectList title={'Formation'} titleonly={true}
-                            items={this.formations(this.state.nationality,this.state.unittype).map((f) => {return {label: f, value: f};})}
-                            selected={this.state.formation}
-                            onChanged={this.onFormationChanged}/>
-                    </View>
-                    <View style={{flex:1}}>
-                        <MultiSelectList title={'Modifiers'}
-                            items={modifiers.map((m) => {return {name: m, selected: this.state.mods[m]};})}
-                            onChanged={this.onModChanged}/>
-                    </View>
+                <View style={{flex: .25, flexDirection: 'row'}}>
+                    {['1/3','1/2','3/2'].map((v, i) => {
+                        return (
+                            <View key={i} style={{flex: 1,flexDirection: 'row', alignItems: 'center'}}>
+                                <Text>{v}</Text>
+                                <Switch value={this.state.mods[v]} onValueChange={this.onModifier(v)} />
+                            </View>
+                        );
+                    })}
+                </View>
+                <View style={{flex:3}}>
+                    <FireAttackerValuesView events={this.props.events} onSelect={this.onEffectChanged} />
                 </View>
             </View>
         );
-    },
-    nationalities() {
-        let battle = Current.battle();
-        return Object.keys(battle.fire.attack.armies);
-    },
-    unittypes(nationality) {
-        let battle = Current.battle();
-        return Object.keys(battle.fire.attack.armies[nationality].units);
-    },
-    formations(nationality, unittype) {
-        let battle = Current.battle();
-        return Object.keys(battle.fire.attack.armies[nationality].units[unittype]);
-    },
-    sizes(nationality, unittype, formation) {
-        let battle = Current.battle();
-        return battle.fire.attack.armies[nationality].units[unittype][formation];
-    },
-    updateUnitTypes() {
-        let unittypes = this.unittypes(this.state.nationality);
-        if (unittypes.indexOf(this.state.unittype) < 0) {
-            this.state.unittype = unittypes[0];
-        }
-    },
-    updateFormations() {
-        let formations = this.formations(this.state.nationality, this.state.unittype);
-        if (formations.indexOf(this.state.formation) < 0) {
-            this.state.formation = formations[0];
-        }
-    },
-    updateSizes() {
-        let sizes = this.sizes(this.state.nationality, this.state.unittype, this.state.formation);
-        let size = sizes.find((s) => s.density == +this.state.size);
-        if (!size) {
-            this.state.size = sizes[0].density.toString();
-        }
     }
 });
 

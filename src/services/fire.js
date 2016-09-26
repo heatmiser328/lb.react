@@ -32,7 +32,7 @@ function resolve(o, dice, defincr) {
     dice = Base6.add(dice, defincr);
     var idx = table.findIndex((v) => {return v.desc == o;});
     var result = "NE";
-    console.log(o + '/' + idx + '/' + dice);
+    //console.log(o + '/' + idx + '/' + dice);
     switch (idx)
     {
         case 0:		//1-3

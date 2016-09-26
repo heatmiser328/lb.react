@@ -1,10 +1,12 @@
 'use strict'
 var React = require('react');
-import { View, Text } from 'react-native';
+import { View, Text, Image } from 'react-native';
 var Button = require('apsl-react-native-button');
 var SpinNumeric = require('./widgets/spinNumeric');
 var QuickValuesView = require('./quickValuesView');
-var FireDefenderQuickAddView = require('./fireDefenderQuickAddView');
+//var FireDefenderQuickAddView = require('./fireDefenderQuickAddView');
+var FireDefenderValuesView = require('./fireDefenderValuesView');
+var Icons = require('./res/icons');
 var Current = require('./services/current');
 
 var FireDefenderView = React.createClass({
@@ -29,15 +31,15 @@ var FireDefenderView = React.createClass({
         let battle = Current.battle();
         if (battle.hasOwnProperty('fire')) {
             return (
-                <View style={{flex: 4}}>
-                    <FireDefenderQuickAddView events={this.eventEmitter} onSet={this.props.onChanged} onAdd={this.props.onAdd} />
+                <View style={{flex: 5}}>                    
+                    <FireDefenderValuesView events={this.eventEmitter} onSelect={this.props.onChanged} />
                 </View>
             );
         }
-
         return (
-            <View style={{flex: 4}}>
+            <View style={{flex: 5}}>
                 <QuickValuesView values={[4,6,9,12,14,16]} onChanged={this.props.onChanged}/>
+                {/*<Image style={{flex:5, height: null, width: null, resizeMode: 'stretch'}} source={Icons[battle.image + '-fire-defence']} />*/}
             </View>
         );
     }

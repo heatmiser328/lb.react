@@ -1,6 +1,6 @@
 'use strict'
 var React = require('react');
-import { View, Text } from 'react-native';
+import { View, Text, Switch } from 'react-native';
 var FireAttackerView = require('./fireAttackerView');
 var FireDefenderView = require('./fireDefenderView');
 var OddsView = require('./oddsView');
@@ -26,10 +26,7 @@ var FireView = React.createClass({
             defend: '1',
             incr: '0',
             odds: Fire.defaultOdds,
-            mod13: false,
-            mod12: false,
-            mod32: false,
-            modCann: false,
+            cannister: false,
             die1: 1,
             die2: 1,
             die3: 1,
@@ -48,51 +45,34 @@ var FireView = React.createClass({
     },
     onAttackerAdd(v) {
         v = +this.state.attack + (+v);
-        this.state.odds = this.calcOdds(v, this.state.defend, this.state.modCann);
+        this.state.odds = this.calcOdds(v, this.state.defend, this.state.cannister);
         this.state.attack = v.toString();
         this.onResolve();
     },
     onAttackerChanged(v) {
-        this.state.odds = this.calcOdds(v, this.state.defend, this.state.modCann);
+        this.state.odds = this.calcOdds(v, this.state.defend, this.state.cannister);
         this.state.attack = v.toString();
-        this.onResolve();
-    },
-    onAttackerModifierChanged(m, v) {
-        if (m == 'Cannister') {
-            this.state.modCann = v;
-        } else {
-            let a = +this.state.attack;
-            if (m == '1/3') {
-                this.state.mod13 = v;
-                a = v ? a / 3 : a * 3;
-            }
-            else if (m == '1/2') {
-                this.state.mod12 = v;
-                a = v ? a / 2 : a * 2;
-            }
-            else if (m == '3/2') {
-                a = v ? a * 1.5 : a / 1.5;
-                this.state.mod32 = v;
-            }
-            this.state.attack = a.toFixed(1);
-        }
-        this.state.odds = this.calcOdds(this.state.attack, this.state.defend, this.state.modCann);
         this.onResolve();
     },
     onDefenderAdd(v) {
         v = +this.state.defend + (+v);
-        this.state.odds = this.calcOdds(this.state.attack, v, this.state.modCann);
+        this.state.odds = this.calcOdds(this.state.attack, v, this.state.cannister);
         this.state.defend = v.toString();
         this.onResolve();
     },
     onDefenderChanged(v) {
-        this.state.odds = this.calcOdds(this.state.attack, v, this.state.modCann);
+        this.state.odds = this.calcOdds(this.state.attack, v, this.state.cannister);
         this.state.defend = v.toString();
         this.onResolve();
     },
     onDefenderIncrementsChanged(v) {
         //console.log('defender increments changed: ' + v);
         this.state.incr = v;
+        this.onResolve();
+    },
+    onCannisterChanged(v) {
+        this.state.cannister = v;
+        this.state.odds = this.calcOdds(this.state.attack, this.state.defend, this.state.cannister);
         this.onResolve();
     },
     onOddsChanged(v) {
@@ -133,7 +113,7 @@ var FireView = React.createClass({
             <View style={{flex: 1}}>
                 <View style={{flex: 4, flexDirection: 'row'}}>
                     <View style={{flex: 1}}>
-                        <FireAttackerView value={this.state.attack} mods={[this.state.mod13,this.state.mod12,this.state.mod32,this.state.modCann]} onAdd={this.onAttackerAdd} onChanged={this.onAttackerChanged} onModifierChanged={this.onAttackerModifierChanged} />
+                        <FireAttackerView value={this.state.attack} mods={[this.state.mod13,this.state.mod12,this.state.mod32,this.state.cannister]} onAdd={this.onAttackerAdd} onChanged={this.onAttackerChanged} onModifierChanged={this.onAttackerModifierChanged} />
                     </View>
                     <View style={{flex: 1}}>
     					<FireDefenderView value={this.state.defend} incr={this.state.incr} onAdd={this.onDefenderAdd} onChanged={this.onDefenderChanged} onIncrementsChanged={this.onDefenderIncrementsChanged} />
@@ -143,7 +123,11 @@ var FireView = React.createClass({
                     <View style={{flex: 1}}>
                         <OddsView odds={Fire.odds} value={this.state.odds} onChanged={this.onOddsChanged} />
                     </View>
-                    <View style={{flex: 3}}>
+                    <View style={{flex: 1, flexDirection: 'row', alignItems: 'center'}}>
+                        <Text>Cannister</Text>
+                        <Switch value={this.state.cannister} onValueChange={this.onCannisterChanged} />
+                    </View>
+                    <View style={{flex: 2}}>
                         <ResultsView value={this.state.result} leader={this.state.leader} loss={this.state.loss} mortal={this.state.mortal} />
                     </View>
                 </View>
