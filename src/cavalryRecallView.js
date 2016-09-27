@@ -10,7 +10,7 @@ var Current = require('./services/current');
 
 var CavalryRecallView = React.createClass({
     dice: [
-        {num: 1, low: 1, high: 6, color: 'blue'}
+        {num: 1, low: 1, high: 6, color: 'yellow'}
     ],
     getInitialState() {
         let types = this.types();

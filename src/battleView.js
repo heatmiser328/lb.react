@@ -49,10 +49,10 @@ var BattleView = React.createClass({
                     onChangeTab={this.onChangeTab}
                     initialPage={this.state.initialPage}
                 >
+                    {b.melee ? <MeleeChargeView tabLabel="Charge" events={this.props.events} /> : null}
                     <FireView tabLabel="Fire" events={this.props.events} />
                     <MoraleView tabLabel="Morale" events={this.props.events} />
                     {b.melee ? <MeleeAssaultView tabLabel="Assault" events={this.props.events} /> : null}
-                    {b.melee ? <MeleeChargeView tabLabel="Charge" events={this.props.events} /> : null}
                     <MeleeResolutionView tabLabel="Melee" events={this.props.events} />
                     <GeneralView tabLabel="General" events={this.props.events} />
                 </ScrollableTabView>
