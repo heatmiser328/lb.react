@@ -1,0 +1,364 @@
+{
+	"fire": {
+		"attack": {
+			"French": {
+				"Ligne": {
+					"Column": {"label":"Printed","density":8,"factor":1},
+					"Line": {"label":"x3","density":4,"factor":3},
+					"Carre": {"label":"x3","density":8,"factor":3},
+					"General": {"label":"Printed","density":8,"factor":1}
+				},
+				"Legere": {
+					"Column": {"label":"Printed","density":8,"factor":1},
+					"Line": {"label":"x3","density":4,"factor":3},
+					"Carre": {"label":"x4","density":8,"factor":4},
+					"General": {"label":"Printed","density":8,"factor":1},
+					"Skirmish": {"label":"x3","density":8,"factor":3}
+				},
+				"Grenadier": {
+					"Column": {"label":"Printed","density":8,"factor":1},
+					"Line": {"label":"x3","density":4,"factor":3},
+					"Carre": {"label":"x4","density":8,"factor":4},
+					"General": {"label":"Printed","density":8,"factor":1},
+					"Skirmish": {"label":"x3","density":8,"factor":3}
+				},
+				"Voltiguer": {
+					"Column": {"label":"Printed","density":8,"factor":1},
+					"Line": {"label":"x3","density":4,"factor":3},
+					"Carre": {"label":"x4","density":8,"factor":4},
+					"General": {"label":"Printed","density":8,"factor":1},
+					"Skirmish": {"label":"x3","density":8,"factor":3}
+				},
+				"Guard": {
+					"Column": {"label":"Printed","density":8,"factor":1},
+					"Line": {"label":"x4","density":4,"factor":4},
+					"Carre": {"label":"x5","density":8,"factor":5},
+					"General": {"label":"Printed","density":8,"factor":1},
+					"Skirmish": {"label":"x4","density":8,"factor":4}
+				},
+
+				"Sassen": {
+					"Column": {"label":"Printed","density":8,"factor":1},
+					"Line": {"label":"x3","density":4,"factor":3},
+					"Carre": {"label":"x3","density":8,"factor":3},
+					"General": {"label":"Printed","density":8,"factor":1}
+				},
+				"Polska": {
+					"Column": {"label":"Printed","density":8,"factor":1},
+					"Line": {"label":"x3","density":4,"factor":3},
+					"Carre": {"label":"x4","density":8,"factor":4},
+					"General": {"label":"Printed","density":8,"factor":1}
+				},
+				"Wurzburg": {
+					"Column": {"label":"Printed","density":8,"factor":1},
+					"Line": {"label":"x2","density":4,"factor":2},
+					"Carre": {"label":"x2","density":8,"factor":2},
+					"General": {"label":"Printed","density":8,"factor":1}
+				}
+			},
+			"Russian": {
+				"Musketeer": {
+					"Column": {"label":"Printed","density":4,"factor":1},
+					"Line": {"label":"x2","density":4,"factor":2},
+					"Carre": {"label":"x2","density":4,"factor":2},
+					"General": {"label":"Printed","density":4,"factor":1}
+				},
+				"Jaeger": {
+					"Column": {"label":"Printed","density":3,"factor":1},
+					"Line": {"label":"x3","density":3,"factor":3},
+					"Carre": {"label":"x3","density":3,"factor":3},
+					"General": {"label":"Printed","density":4,"factor":1},
+					"Skirmish": {"label":"x3","density":3,"factor":3}
+				},
+				"Grenadier": {
+					"Column": {"label":"Printed","density":4,"factor":1},
+					"Line": {"label":"x3","density":4,"factor":3},
+					"Carre": {"label":"x3","density":4,"factor":3},
+					"General": {"label":"Printed","density":4,"factor":1}
+				},
+				"Gd Jaeger": {
+					"Column": {"label":"Printed","density":4,"factor":1},
+					"Line": {"label":"x4","density":4,"factor":4},
+					"Carre": {"label":"x4","density":3,"factor":4},
+					"General": {"label":"Printed","density":4,"factor":1},
+					"Skirmish": {"label":"x5","density":3,"factor":5}
+				},
+				"Guard": {
+					"Column": {"label":"Printed","density":6,"factor":1},
+					"Line": {"label":"x3","density":4,"factor":3},
+					"Carre": {"label":"x4","density":6,"factor":3},
+					"General": {"label":"Printed","density":6,"factor":1}
+				}
+			}
+		},
+		"defense": {
+			"terrain": {
+				"Clear": {
+					"Col": {"label":"6","value":6},
+					"Line": {"label":"9","value":9},
+					"Carre": {"label":"4","value":4},
+					"Gen": {"label":"","value":0},
+					"Skirm": {"label":"12","value":12},
+					"D/PgD": {"label":"14","value":14},
+					"Arty": {"label":"6/8","value":8}
+				},
+				"Forest": {
+					"Col": {"label":"","value":0},
+					"Line": {"label":"","value":0},
+					"Carre": {"label":"","value":0},
+					"Gen": {"label":"10","value":10},
+					"Skirm": {"label":"14","value":14},
+					"D/PgD": {"label":"16","value":16},
+					"Arty": {"label":"","value":0}
+				},
+				"Garten": {
+					"Col": {"label":"","value":0},
+					"Line": {"label":"","value":0},
+					"Carre": {"label":"","value":0},
+					"Gen": {"label":"10","value":10},
+					"Skirm": {"label":"14","value":14},
+					"D/PgD": {"label":"16","value":16},
+					"Arty": {"label":"6/8","value":8}
+				},
+				"Hamlet": {
+					"Col": {"label":"","value":0},
+					"Line": {"label":"","value":0},
+					"Carre": {"label":"","value":0},
+					"Gen": {"label":"10","value":10},
+					"Skirm": {"label":"12","value":12},
+					"D/PgD": {"label":"16","value":16},
+					"Arty": {"label":"6/8","value":8}
+				},
+				"Village": {
+					"Col": {"label":"","value":0},
+					"Line": {"label":"","value":0},
+					"Carre": {"label":"","value":0},
+					"Gen": {"label":"10","value":10},
+					"Skirm": {"label":"12","value":12},
+					"D/PgD": {"label":"16","value":16},
+					"Arty": {"label":"7/9","value":9}
+				},
+				"Village": {
+					"Col": {"label":"","value":0},
+					"Line": {"label":"","value":0},
+					"Carre": {"label":"","value":0},
+					"Gen": {"label":"12","value":12},
+					"Skirm": {"label":"14","value":14},
+					"D/PgD": {"label":"16","value":16},
+					"Arty": {"label":"8/10","value":10}
+				},
+				"Cegielnia": {
+					"Col": {"label":"","value":0},
+					"Line": {"label":"","value":0},
+					"Carre": {"label":"","value":0},
+					"Gen": {"label":"14","value":14},
+					"Skirm": {"label":"16","value":16},
+					"D/PgD": {"label":"16","value":16},
+					"Arty": {"label":"","value":0}
+				}
+			}
+		},
+		"artillery": {
+			"limber": {
+				"table": {
+					"French a Pied": { "low": 4, "high": 6},
+					"French a Cheval": { "low": 2, "high": 6},
+					"French Guard": { "low": 1, "high": 6},
+					"French Allied": { "low": 5, "high": 6},
+					"Russian Light": { "low": 5, "high": 6},
+					"Russian Horse": { "low": 4, "high": 6},
+					"Russian Position": { "low": 6, "high": 6},
+					"Russian Guard": { "low": 3, "high": 6}
+				},
+				"modifiers": [
+					{"name": "Arty Leader", "mod": 1},
+					{"name": "French Marechal", "mod": 1},
+					{"name": "Bagration", "mod": 1},
+					{"name": "Docturov", "mod": 1},
+					{"name": "Gortchakov", "mod": 1},
+					{"name": "Pernety", "mod": 2},
+					{"name": "Labroissiere", "mod": 2},
+					{"name": "Sernamont", "mod": 2},
+					{"name": "Koutaaissov", "mod": 2},
+					{"name": "Napoleon", "mod": 3}
+				]
+			}
+		}
+	},
+	"assault": {
+		"odds": [
+		    {"name": "1/2", "attmod": -6, "defmod": 6},
+			{"name": "1/1", "attmod": -3, "defmod": 3},
+		    {"name": "2/1", "attmod": 0, "defmod": 0},
+		    {"name": "3/1", "attmod": 3, "defmod": -3},
+		    {"name": "4/1", "attmod": 6, "defmod": -6},
+		    {"name": "5/1+", "attmod": 9, "defmod": -9}
+		],
+		"modifiers": [
+		    {"name": "Assaulted in flank", "type": "defend", "attmod": 12, "defmod": -12},
+		    {"name": "Assaulted in rear", "type": "defend", "attmod": 6, "defmod": -6},
+		    {"name": "In skirmish order", "type": "defend", "attmod": 99, "defmod": -6},
+		    {"name": "In Line", "type": "defend", "attmod": 0, "defmod": -3},
+			{"name": "Sassen In Line", "type": "defend", "attmod": 0, "defmod": 3},
+		    {"name": "In Carre", "type": "defend", "attmod": 0, "defmod": 6},
+		    {"name": "Disordered", "type": "defend", "attmod": 3, "defmod": -3},
+		    {"name": "Routed", "type": "defend", "attmod": 6, "defmod": -6},
+		    {"name": "Assaulting up a slope", "type": "attack", "attmod": -3, "defmod": 3},
+		    {"name": "Assaulting across a stream", "type": "attack", "attmod": -3, "defmod": 3},
+		    {"name": "Casualty due to defensive fire", "type": "attack", "attmod": -3, "defmod": 0}
+		]
+	},
+	"charge": {
+		"stand": {
+			"modifiers": [
+				{"name": "Charged in flank", "mod": -12},
+				{"name": "Charged in rear", "mod": -6},
+				{"name": "In Skirmish", "mod": -12},
+				{"name": "In Line", "mod": 3},
+				{"name": "Disorder", "mod": -6},
+				{"name": "Route", "mod": -12},
+				{"name": "Carre", "mod": 12},
+				{"name": "Across stream", "mod": 6},
+				{"name": "Lancers", "mod": -6},
+				{"name": "Heavy", "mod": -3}
+			]
+		},
+		"carre": {
+			"table": {
+				"French": {
+					"Column": {
+						"4": [
+							{"low": 11, "high": 66, "result": "Carre"}
+						],
+						"3": [
+							{"low": 11, "high": 66, "result": "Carre"}
+						],
+						"2": [
+							{"low": 11, "high": 43, "result": "Carre"},
+							{"low": 44, "high": 61, "result": "Disorder"},
+							{"low": 62, "high": 66, "result": "Route"}
+						],
+						"1": [
+							{"low": 11, "high": 31, "result": "Carre"},
+							{"low": 32, "high": 54, "result": "Disorder"},
+							{"low": 55, "high": 66, "result": "Route"}
+						]
+					},
+					"Line": {
+						"4": [
+							{"low": 11, "high": 64, "result": "Carre"},
+							{"low": 65, "high": 66, "result": "Disorder"}
+						],
+						"3": [
+							{"low": 11, "high": 45, "result": "Carre"},
+							{"low": 46, "high": 61, "result": "Disorder"},
+							{"low": 62, "high": 66, "result": "Route"}
+						],
+						"2": [
+							{"low": 11, "high": 32, "result": "Carre"},
+							{"low": 33, "high": 55, "result": "Disorder"},
+							{"low": 56, "high": 66, "result": "Route"}
+						],
+						"1": [
+							{"low": 11, "high": 22, "result": "Carre"},
+							{"low": 23, "high": 53, "result": "Disorder"},
+							{"low": 54, "high": 66, "result": "Route"}
+						]
+					}
+				},
+				"Russian": {
+					"Column": {
+						"4": [
+							{"low": 11, "high": 55, "result": "Carre"},
+							{"low": 56, "high": 64, "result": "Disorder"},
+							{"low": 65, "high": 66, "result": "Route"}
+						],
+						"3": [
+							{"low": 11, "high": 42, "result": "Carre"},
+							{"low": 43, "high": 56, "result": "Disorder"},
+							{"low": 61, "high": 66, "result": "Route"}
+						],
+						"2": [
+							{"low": 11, "high": 26, "result": "Carre"},
+							{"low": 31, "high": 46, "result": "Disorder"},
+							{"low": 51, "high": 66, "result": "Route"}
+						],
+						"1": [
+							{"low": 11, "high": 22, "result": "Carre"},
+							{"low": 23, "high": 52, "result": "Disorder"},
+							{"low": 53, "high": 66, "result": "Route"}
+						]
+					},
+					"Line": {
+						"4": [
+							{"low": 11, "high": 66, "result": "Carre"}
+						],
+						"3": [
+							{"low": 11, "high": 66, "result": "Carre"}
+						],
+						"2": [
+							{"low": 11, "high": 34, "result": "Carre"},
+							{"low": 35, "high": 55, "result": "Disorder"},
+							{"low": 56, "high": 66, "result": "Route"}
+						],
+						"1": [
+							{"low": 11, "high": 31, "result": "Carre"},
+							{"low": 32, "high": 46, "result": "Disorder"},
+							{"low": 51, "high": 66, "result": "Route"}
+						]
+					}
+				}
+			},
+			"modifiers": [
+				{"name": "Leader", "mod": -6},
+				{"name": "Jaeger", "mod": -3},
+				{"name": "Legere", "mod": -3},
+				{"name": "Grenadier", "mod": -3},
+				{"name": "Voltiguer", "mod": -3},
+				{"name": "Guard", "mod": -6},
+				{"name": "French Allies", "mod": 3},
+				{"name": "Light Cavalry", "mod": 3},
+				{"name": "Lancers", "mod": 6},
+				{"name": "Morale Level", "mod": 3}
+			]
+		},
+		"recall": {
+			"table": {
+				"French": { "low": 2, "high": 6},
+				"French Allies": { "low": 2, "high": 6},
+				"Russian Light": { "low": 3, "high": 6},
+				"Russian Heavy": { "low": 2, "high": 6}
+			},
+			"modifiers": [
+				{"name": "Cav Leader", "mod": 1}
+			]
+		}
+	},
+	"melee": {
+		"modifiers": {
+			"attack": [
+				{"name": "Assault in flank", "mod": 2},
+				{"name": "Assault in rear", "mod": 1.5},
+				{"name": "Skirmish order", "mod": 0.5},
+				{"name": "Disordered", "mod": 0.5},
+				{"name": "Charge 3 straight", "mod": 2},
+				{"name": "Heavy vs Light", "mod": 2},
+				{"name": "Tired", "mod": 0.5},
+				{"name": "Exhausted", "mod": 0.333},
+				{"name": "Preserve Readiness", "mod": 0.333},
+				{"name": "Cav vs Carre", "mod": 0.5},
+				{"name": "Inf vs Carre", "mod": 1.5},
+				{"name": "Across stream", "mod": 0.666},
+				{"name": "Lancers in Line", "mod": 2}
+			],
+			"defend": [
+				{"name": "Skirmish order", "mod": 0.5},
+				{"name": "Disordered", "mod": 0.5},
+				{"name": "Routed", "mod": 0.333},
+				{"name": "Cav Routed", "mod": 0.25},
+				{"name": "Tired", "mod": 0.5},
+				{"name": "Exhausted", "mod": 0.333}
+			]
+		}
+	}
+}

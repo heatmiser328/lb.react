@@ -1,0 +1,259 @@
+{
+	"fire": {
+		"attack": {
+			"Poles": {
+				"Line": {
+					"Column": {"label":"Printed","density":8,"factor":1},
+					"Line": {"label":"x3","density":4,"factor":3},
+					"Square": {"label":"x3","density":8,"factor":3},
+					"General": {"label":"Printed","density":8,"factor":1}
+				}
+			},
+			"Saxons": {
+				"Line": {
+					"Column": {"label":"Printed","density":6,"factor":1},
+					"Line": {"label":"x3","density":4,"factor":3},
+					"Square": {"label":"x3","density":6,"factor":3},
+					"General": {"label":"Printed","density":6,"factor":1}
+				}
+			},
+			"Allies": {
+				"Line": {
+					"Column": {"label":"Printed","density":6,"factor":1},
+					"Line": {"label":"x3","density":4,"factor":3},
+					"Square": {"label":"x3","density":6,"factor":3},
+					"General": {"label":"Printed","density":6,"factor":1}
+				}
+			},
+			"Austrian": {
+				"Line": {
+					"Column": {"label":"Printed","density":10,"factor":1},
+					"Line": {"label":"x2","density":4,"factor":2},
+					"Square": {"label":"x3","density":10,"factor":3},
+					"General": {"label":"Printed","density":10,"factor":1}
+				},
+				"Grenz": {
+					"Column": {"label":"Printed","density":9,"factor":1},
+					"Line": {"label":"x3","density":4,"factor":2},
+					"Square": {"label":"x3","density":9,"factor":3},
+					"General": {"label":"Printed","density":9,"factor":1},
+					"Skirmish": {"label":"x3","density":3,"factor":3}
+				}
+			}
+
+		},
+		"defense": {
+			"terrain": {
+				"Clear": {
+					"Col": {"label":"6","value":6},
+					"Line": {"label":"9","value":9},
+					"Carre": {"label":"4","value":4},
+					"Gen": {"label":"","value":0},
+					"Skirm": {"label":"12","value":12},
+					"D/PgD": {"label":"14","value":14},
+					"Arty": {"label":"6/8","value":8}
+				},
+				"Swamp": {
+					"Col": {"label":"","value":0},
+					"Line": {"label":"","value":0},
+					"Carre": {"label":"","value":0},
+					"Gen": {"label":"8","value":8},
+					"Skirm": {"label":"12","value":12},
+					"D/PgD": {"label":"14","value":14},
+					"Arty": {"label":"","value":0}
+				},
+				"Woods": {
+					"Col": {"label":"","value":0},
+					"Line": {"label":"","value":0},
+					"Carre": {"label":"","value":0},
+					"Gen": {"label":"10","value":10},
+					"Skirm": {"label":"14","value":14},
+					"D/PgD": {"label":"16","value":16},
+					"Arty": {"label":"","value":0}
+				},
+				"Garten": {
+					"Col": {"label":"","value":0},
+					"Line": {"label":"","value":0},
+					"Carre": {"label":"","value":0},
+					"Gen": {"label":"12","value":12},
+					"Skirm": {"label":"14","value":14},
+					"D/PgD": {"label":"16","value":16},
+					"Arty": {"label":"7/9","value":9}
+				},
+				"Village": {
+					"Col": {"label":"","value":0},
+					"Line": {"label":"","value":0},
+					"Carre": {"label":"","value":0},
+					"Gen": {"label":"12","value":12},
+					"Skirm": {"label":"14","value":14},
+					"D/PgD": {"label":"16","value":16},
+					"Arty": {"label":"8/10","value":10}
+				},
+				"Causeway": {
+					"Col": {"label":"6","value":6},
+					"Line": {"label":"","value":0},
+					"Carre": {"label":"","value":0},
+					"Gen": {"label":"","value":0},
+					"Skirm": {"label":"14","value":14},
+					"D/PgD": {"label":"12","value":12},
+					"Arty": {"label":"6/","value":6}
+				}
+			}
+		},
+		"artillery": {
+			"limber": {
+				"table": {
+					"Polish foot": { "low": 4, "high": 6},
+					"Polish horse": { "low": 2, "high": 6},
+					"Saxon foot": { "low": 5, "high": 6},
+					"Allied horse": { "low": 2, "high": 6},
+					"Austrian foot": { "low": 5, "high": 6},
+					"Austrian position": { "low": 6, "high": 6},
+					"Austrian horse": { "low": 5, "high": 6},
+
+				},
+				"modifiers": [
+					{"name": "Arty Leader", "mod": 1},
+					{"name": "Poniatowski", "mod": 1},
+					{"name": "Archduke Ferdinand", "mod": 1}
+				]
+			}
+		}
+	},
+	"assault": {
+		"odds": [
+			{"name": "1/3", "attmod": -9, "defmod": 9},
+		    {"name": "1/2", "attmod": -6, "defmod": 6},
+			{"name": "1/1", "attmod": -3, "defmod": 3},
+		    {"name": "2/1", "attmod": 0, "defmod": 0},
+		    {"name": "3/1", "attmod": 6, "defmod": -6},
+		    {"name": "4/1", "attmod": 9, "defmod": -9},
+		    {"name": "5/1+", "attmod": 12, "defmod": -12}
+		],
+		"modifiers": [
+		    {"name": "Assaulted in flank", "type": "defend", "attmod": 12, "defmod": -12},
+		    {"name": "Assaulted in rear", "type": "defend", "attmod": 6, "defmod": -6},
+		    {"name": "In skirmish order", "type": "defend", "attmod": 99, "defmod": -6},
+		    {"name": "In Line", "type": "defend", "attmod": 0, "defmod": -3},
+		    {"name": "In Carre", "type": "defend", "attmod": 6, "defmod": 0},
+		    {"name": "Disordered", "type": "defend", "attmod": 3, "defmod": -3},
+		    {"name": "Routed", "type": "defend", "attmod": 6, "defmod": -6},
+		    {"name": "Assaulting up a slope", "type": "attack", "attmod": -3, "defmod": 3},
+		    {"name": "Assaulting across a stream", "type": "attack", "attmod": -3, "defmod": 3},
+		    {"name": "Casualty due to defensive fire", "type": "attack", "attmod": -3, "defmod": 0}
+		]
+	},
+	"charge": {
+		"stand": {
+			"modifiers": [
+				{"name": "Charged in flank", "mod": -12},
+				{"name": "Charged in rear", "mod": -6},
+				{"name": "In Skirmish", "mod": -12},
+				{"name": "In Line", "mod": 3},
+				{"name": "Disorder", "mod": -6},
+				{"name": "Route", "mod": -12},
+				{"name": "Carre", "mod": 12},
+				{"name": "Across stream", "mod": 6},
+				{"name": "Lancers", "mod": -6},
+				{"name": "Heavy", "mod": -3},
+				{"name": "Battalion Masse", "mod": 4}
+			]
+		},
+		"carre": {
+			"table": {
+				"Polish": {
+					"All": {
+						"4": [
+							{"low": 11, "high": 61, "result": "Carre"},
+							{"low": 62, "high": 66, "result": "Disorder"}
+						],
+						"3": [
+							{"low": 11, "high": 53, "result": "Carre"},
+							{"low": 54, "high": 62, "result": "Disorder"},
+							{"low": 63, "high": 66, "result": "Route"}
+						],
+						"2": [
+							{"low": 11, "high": 42, "result": "Carre"},
+							{"low": 43, "high": 56, "result": "Disorder"},
+							{"low": 61, "high": 66, "result": "Route"}
+						],
+						"2": [
+							{"low": 11, "high": 33, "result": "Carre"},
+							{"low": 34, "high": 46, "result": "Disorder"},
+							{"low": 51, "high": 66, "result": "Route"}
+						]
+					}
+				},
+				"Austrian": {
+					"All": {
+						"4": [
+							{"low": 11, "high": 61, "result": "Carre"},
+							{"low": 62, "high": 63, "result": "Disorder"},
+							{"low": 64, "high": 66, "result": "Route"}
+						],
+						"3": [
+							{"low": 11, "high": 52, "result": "Carre"},
+							{"low": 53, "high": 55, "result": "Disorder"},
+							{"low": 56, "high": 66, "result": "Route"}
+						],
+						"2": [
+							{"low": 11, "high": 43, "result": "Carre"},
+							{"low": 44, "high": 46, "result": "Disorder"},
+							{"low": 51, "high": 66, "result": "Route"}
+						],
+						"2": [
+							{"low": 11, "high": 35, "result": "Carre"},
+							{"low": 36, "high": 43, "result": "Disorder"},
+							{"low": 44, "high": 66, "result": "Route"}
+						]
+					}
+				}
+			},
+			"modifiers": [
+				{"name": "Leader", "mod": -6},
+				{"name": "Light Cavalry", "mod": 3},
+				{"name": "Polish Line", "mod": 3},
+				{"name": "Polish Morale Level", "mod": 3},
+				{"name": "Austrian Grenz", "mod": 3},
+				{"name": "Lancers", "mod": 6},
+				{"name": "Austrian Morale Level", "mod": 6}
+			]
+		},
+		"recall": {
+			"table": {
+				"Polish": { "low": 2, "high": 6},
+				"Allies": { "low": 2, "high": 6},
+				"Austrian": { "low": 2, "high": 6}
+			},
+			"modifiers": [
+				{"name": "Cav Leader", "mod": 1}
+			]
+		}
+	},
+	"melee": {
+		"modifiers": {
+			"attack": [
+				{"name": "Assault in flank", "mod": 2},
+				{"name": "Assault in rear", "mod": 1.5},
+				{"name": "Skirmish order", "mod": 0.5},
+				{"name": "Disordered", "mod": 0.5},
+				{"name": "Charge 3 straight", "mod": 2},
+				{"name": "Heavy vs Light", "mod": 2},
+				{"name": "Tired", "mod": 0.5},
+				{"name": "Exhausted", "mod": 0.333},
+				{"name": "Preserve Readiness", "mod": 0.333},
+				{"name": "Cav vs Carre", "mod": 0.5},
+				{"name": "Inf vs Carre", "mod": 1.5},
+				{"name": "Across stream", "mod": 0.666},
+				{"name": "Lancers in Line", "mod": 2}
+			],
+			"defend": [
+				{"name": "Skirmish order", "mod": 0.5},
+				{"name": "Disordered", "mod": 0.5},
+				{"name": "Routed", "mod": 0.333},
+				{"name": "Tired", "mod": 0.5},
+				{"name": "Exhausted", "mod": 0.333}
+			]
+		}
+	}
+}

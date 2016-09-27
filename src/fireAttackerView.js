@@ -1,9 +1,8 @@
 'use strict'
 var React = require('react');
-import { View, Text, Image } from 'react-native';
-var Button = require('apsl-react-native-button');
+import { View, Text } from 'react-native';
 var SpinNumeric = require('./widgets/spinNumeric');
-var QuickValuesView = require('./quickValuesView');
+var FireAttackerBasicAddView = require('./fireAttackerBasicAddView');
 var FireAttackerQuickAddView = require('./fireAttackerQuickAddView');
 var Icons = require('./res/icons');
 var Current = require('./services/current');
@@ -32,8 +31,7 @@ var FireAttackerView = React.createClass({
 
         return (
             <View style={{flex: 5}}>
-                <QuickValuesView values={[4,6,9,12,16,18]} onChanged={this.props.onChanged}/>
-                {/*<Image style={{flex:5, height: null, width: null, resizeMode: 'stretch'}} source={Icons[battle.image + '-fire-attack']} />*/}
+                <FireAttackerBasicAddView events={this.props.events} value={this.props.value} onSet={this.props.onChanged} />
             </View>
         );
     }

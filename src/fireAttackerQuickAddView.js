@@ -41,7 +41,7 @@ var FireAttackerQuickAddView = React.createClass({
         this.props.onAdd && this.props.onAdd(+this.state.value);
     },
     updateValue() {
-        this.state.value = this.calcValue().toString();
+        this.state.value = this.calcValue().toFixed(1);
         this.setState(this.state);
     },
     calcValue(state) {

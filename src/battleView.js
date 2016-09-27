@@ -40,6 +40,7 @@ var BattleView = React.createClass({
     },
     render() {
         let battle = this.state.battle || {scenario: {}};
+        let b = Current.battle();
         return (
             <View style={{flex: 1,backgroundColor: 'rgba(0,0,0,0.01)'}}>
                 <TurnView logo={icons[battle.image]} events={this.props.events} />
@@ -50,8 +51,8 @@ var BattleView = React.createClass({
                 >
                     <FireView tabLabel="Fire" events={this.props.events} />
                     <MoraleView tabLabel="Morale" events={this.props.events} />
-                    <MeleeAssaultView tabLabel="Assault" events={this.props.events} />
-                    <MeleeChargeView tabLabel="Charge" events={this.props.events} />
+                    {b.melee ? <MeleeAssaultView tabLabel="Assault" events={this.props.events} /> : null}
+                    {b.melee ? <MeleeChargeView tabLabel="Charge" events={this.props.events} /> : null}
                     <MeleeResolutionView tabLabel="Melee" events={this.props.events} />
                     <GeneralView tabLabel="General" events={this.props.events} />
                 </ScrollableTabView>

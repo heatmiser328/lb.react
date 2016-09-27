@@ -5,24 +5,24 @@ var Current = require('./services/current');
 
 let nationalities = () => {
     let battle = Current.battle();
-    return Object.keys(battle.fire.attack.armies);
+    return Object.keys(battle.fire.attack);
 }
 let unittypes = (nationality) => {
     let battle = Current.battle();
-    return Object.keys(battle.fire.attack.armies[nationality].units);
+    return Object.keys(battle.fire.attack[nationality]);
 }
 let formations = (nationality) => {
     let battle = Current.battle();
     return unittypes(nationality).reduce((p,unittype) => {
         return p.concat(
-            Object.keys(battle.fire.attack.armies[nationality].units[unittype]).filter((f) => p.indexOf(f) < 0)
+            Object.keys(battle.fire.attack[nationality][unittype]).filter((f) => p.indexOf(f) < 0)
         );
     }, []);
 }
 let value = (nationality, unittype, formation) => {
     let battle = Current.battle();
     //console.log('>>>> '+nationality+'/'+unittype+'/'+formation);
-    return battle.fire.attack.armies[nationality].units[unittype][formation];
+    return battle.fire.attack[nationality][unittype][formation];
 }
 
 var FormationView = React.createClass({
@@ -78,7 +78,7 @@ var NationalityView = React.createClass({
 });
 
 var FireAttackerValuesView = React.createClass({
-    render() {        
+    render() {
         return (
             <View style={{flex:1, justifyContent: 'flex-start'}}>
                 <ScrollView
