@@ -373,6 +373,7 @@
 		    {"name": "Routed", "type": "defend", "attmod": 6, "defmod": -6},
 		    {"name": "Assaulting up a slope", "type": "attack", "attmod": -3, "defmod": 3},
 		    {"name": "Assaulting across a stream", "type": "attack", "attmod": -3, "defmod": 3},
+			{"name": "Casualty due to defensive fire", "type": "attack", "attmod": -3, "defmod": 0},
 		    {"name": "Attacker Casualty (15-16)", "type": "attack", "attmod": -6, "defmod": 0},
 			{"name": "Attacker Casualty (13-14)", "type": "attack", "attmod": -9, "defmod": 0},
 			{"name": "Attacker Casualty (11-12)", "type": "attack", "attmod": -12, "defmod": 0}

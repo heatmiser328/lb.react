@@ -2,7 +2,7 @@
 
 var battles = require('../stores/battles.json');
 var rules = {
-    //"aspern_essling": require('../stores/aspern_essling.json'),
+    "aspern_essling": require('../stores/aspern_essling.json'),
     "friedland": require('../stores/friedland.json'),
     "halle": require('../stores/halle.json'),
     "leipzig": require('../stores/leipzig.json'),

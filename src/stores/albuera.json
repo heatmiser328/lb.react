@@ -1,0 +1,280 @@
+
+{
+	"fire": {
+		"attack": {
+			"nationality": {
+				"branch": {
+					"formation": {"label":"string","density":increments,"factor":multiplier}
+				}
+			}
+		},
+		"defense": {
+			"terrain": {
+				
+				"Clear": {
+					"Col": {"label":"6","value":6},
+					"Line": {"label":"9","value":9},
+					"Carre": {"label":"4","value":4},
+					"Gen": {"label":"","value":0},
+					"Skirm": {"label":"14","value":14},
+					"D/PgD": {"label":"16","value":16},
+					"Arty": {"label":"6/8","value":8}
+				}
+	
+				"Brush": {
+					"Col": {"label":"6","value":6},
+					"Line": {"label":"9","value":9},
+					"Carre": {"label":"4","value":4},
+					"Gen": {"label":"","value":0},
+					"Skirm": {"label":"14","value":14},
+					"D/PgD": {"label":"16","value":16},
+					"Arty": {"label":"6/8","value":8}
+				}
+	
+				"Groves": {
+					"Col": {"label":"6","value":6},
+					"Line": {"label":"9","value":9},
+					"Carre": {"label":"4","value":4},
+					"Gen": {"label":"","value":0},
+					"Skirm": {"label":"14","value":14},
+					"D/PgD": {"label":"16","value":16},
+					"Arty": {"label":"6/8","value":8}
+				}
+	
+				"Village": {
+					"Col": {"label":"6","value":6},
+					"Line": {"label":"9","value":9},
+					"Carre": {"label":"4","value":4},
+					"Gen": {"label":"","value":0},
+					"Skirm": {"label":"14","value":14},
+					"D/PgD": {"label":"16","value":16},
+					"Arty": {"label":"6/8","value":8}
+				}
+						
+			}
+		},
+		"artillery": {
+			"limber": {
+				"table": {
+					
+					"French Foot": { "low": 4, "high": 6},
+					"French Horse": { "low": 2, "high": 6},
+					"British/KGL": { "low": 5, "high": 6},
+					"Portuguese": { "low": 6, "high": 6},
+					"Spanish": { "low": 6, "high": 6}
+				},
+				"modifiers": [
+					
+					{"name": "Soult", "mod": 3},
+					{"name": "Beresford", "mod": 2},
+					{"name": "Leader", "mod": 1}
+				]
+			}
+		}
+	},
+	"assault": {
+		"odds": [
+		    {"name": "1/2", "attmod": -6, "defmod": 6},
+			{"name": "1/1", "attmod": -3, "defmod": 3},
+		    {"name": "2/1", "attmod": 0, "defmod": 0},
+		    {"name": "3/1", "attmod": 3, "defmod": -3},
+		    {"name": "4/1", "attmod": 6, "defmod": -6},
+		    {"name": "5/1+", "attmod": 9, "defmod": -9}
+		],
+		"modifiers": [
+		    {"name": "Assaulted in flank", "type": "defend", "attmod": 12, "defmod": -12},
+		    {"name": "Assaulted in rear", "type": "defend", "attmod": 6, "defmod": -6},
+		    {"name": "In skirmish order", "type": "defend", "attmod": 99, "defmod": -6},
+		    {"name": "In Line", "type": "defend", "attmod": 0, "defmod": -3},
+		    {"name": "In Carre", "type": "defend", "attmod": 0, "defmod": 6},
+		    {"name": "Disordered", "type": "defend", "attmod": 3, "defmod": -3},
+		    {"name": "Routed", "type": "defend", "attmod": 6, "defmod": -6},
+		    {"name": "Assaulting up a slope", "type": "attack", "attmod": -3, "defmod": 3},
+		    {"name": "Assaulting across a stream", "type": "attack", "attmod": -3, "defmod": 3},
+		    {"name": "Casualty due to defensive fire", "type": "attack", "attmod": -3, "defmod": 0}
+		]
+	},
+	"charge": {
+		"stand": {
+			"modifiers": [
+				{"name": "Charged in flank", "mod": -12},
+				{"name": "Charged in rear", "mod": -6},
+				{"name": "In Skirmish", "mod": -12},
+				{"name": "In Line", "mod": 3},
+				{"name": "Disorder", "mod": -6},
+				{"name": "Route", "mod": -12},
+				{"name": "Carre", "mod": 12},
+				{"name": "Across stream", "mod": 6},
+				{"name": "Lancers", "mod": -6},
+				{"name": "Heavy", "mod": -3}
+			]
+		},
+		"carre": {
+			"table": {
+				
+				"French": { 
+					"All": {
+						
+						"4": [
+							
+							{"low": 11, "high": 61, "result": "Carre"},
+							{"low": 62, "high": 66, "result": "Desordre"}							
+						],
+						"3": [
+							
+							{"low": 11, "high": 55, "result": "Carre"},
+							{"low": 56, "high": 64, "result": "Desordre"},
+							{"low": 65, "high": 66, "result": "Plus Grande Desordre"}							
+						],
+						"2": [
+							
+							{"low": 11, "high": 45, "result": "Carre"},
+							{"low": 46, "high": 61, "result": "Desordre"},
+							{"low": 62, "high": 66, "result": "Plus Grande Desordre"}							
+						],
+						"1": [
+							
+							{"low": 11, "high": 35, "result": "Carre"},
+							{"low": 36, "high": 66, "result": "Plus Grande Desordre"}							
+						]
+					}					
+				},
+				"British/KGL/LLL": { 
+					"All": {
+						
+						"4": [
+							
+							{"low": 11, "high": 63, "result": "Carre"},
+							{"low": 64, "high": 66, "result": "Desordre"}							
+						],
+						"3": [
+							
+							{"low": 11, "high": 61, "result": "Carre"},
+							{"low": 62, "high": 65, "result": "Desordre"},
+							{"low": 66, "high": 66, "result": "Plus Grande Desordre"}							
+						],
+						"2": [
+							
+							{"low": 11, "high": 52, "result": "Carre"},
+							{"low": 53, "high": 63, "result": "Desordre"},
+							{"low": 64, "high": 66, "result": "Plus Grande Desordre"}							
+						],
+						"1": [
+							
+							{"low": 11, "high": 43, "result": "Carre"},
+							{"low": 44, "high": 66, "result": "Plus Grande Desordre"}							
+						]
+					}					
+				},
+				"Portuguese": { 
+					"All": {
+						
+						"4": [
+							
+							{"low": 11, "high": 44, "result": "Carre"},
+							{"low": 45, "high": 56, "result": "Desordre"},
+							{"low": 61, "high": 66, "result": "Plus Grande Desordre"}							
+						],
+						"3": [
+							
+							{"low": 11, "high": 41, "result": "Carre"},
+							{"low": 42, "high": 52, "result": "Desordre"},
+							{"low": 53, "high": 66, "result": "Plus Grande Desordre"}							
+						],
+						"2": [
+							
+							{"low": 11, "high": 25, "result": "Carre"},
+							{"low": 26, "high": 41, "result": "Desordre"},
+							{"low": 42, "high": 66, "result": "Plus Grande Desordre"}							
+						],
+						"1": [
+							
+							{"low": 11, "high": 21, "result": "Carre"},
+							{"low": 22, "high": 66, "result": "Plus Grande Desordre"}							
+						]
+					}					
+				},
+				"Spanish": { 
+					"All": {
+						
+						"4": [
+							
+							{"low": 11, "high": 33, "result": "Carre"},
+							{"low": 34, "high": 55, "result": "Desordre"},
+							{"low": 56, "high": 66, "result": "Plus Grande Desordre"}							
+						],
+						"3": [
+							
+							{"low": 11, "high": 31, "result": "Carre"},
+							{"low": 32, "high": 52, "result": "Desordre"},
+							{"low": 53, "high": 66, "result": "Plus Grande Desordre"}							
+						],
+						"2": [
+							
+							{"low": 11, "high": 24, "result": "Carre"},
+							{"low": 25, "high": 41, "result": "Desordre"},
+							{"low": 42, "high": 66, "result": "Plus Grande Desordre"}							
+						],
+						"1": [
+							
+							{"low": 11, "high": 21, "result": "Carre"},
+							{"low": 22, "high": 66, "result": "Plus Grande Desordre"}							
+						]
+					}					
+				}				
+			},
+			"modifiers": [
+				
+					{"name": "Leader", "mod": -6},
+					{"name": "Fr/Pol Grenadiers", "mod": -3},
+					{"name": "Line Formation", "mod": -3},
+					{"name": "Fr Lt / Brit Fus", "mod": -3},
+					{"name": "KGL/LLL", "mod": 3}
+			]
+		},
+		"recall": {
+			"table": {
+				
+					"French": { "low": 2, "high": 6},
+					"British": { "low": 5, "high": 6},
+					"Portuguese": { "low": 4, "high": 6},
+					"Spanish": { "low": 3, "high": 6}				
+			},
+			"modifiers": [
+				{"name": "Cav Leader", "mod": 1},
+				
+			]
+		}
+	},
+	"melee": {
+		"modifiers": {
+			"attack": [
+				{"name": "Assault in flank", "mod": 2},
+				{"name": "Assault in rear", "mod": 1.5},
+				{"name": "Skirmish order", "mod": 0.5},
+				{"name": "Disordered", "mod": 0.5},
+				{"name": "Charge 3 straight", "mod": 2},
+				{"name": "Heavy vs Light", "mod": 2},
+				{"name": "Tired", "mod": 0.5},
+				{"name": "Exhausted", "mod": 0.333},
+				{"name": "Preserve Readiness", "mod": 0.333},
+				{"name": "Cav vs Carre", "mod": 0.5},
+				{"name": "Inf vs Carre", "mod": 1.5},
+				{"name": "Across stream", "mod": 0.666},
+				{"name": "Lancers in Line", "mod": 2},
+				{"name": "Cav in General", "mod": 0.333}
+			],
+			"defend": [
+				{"name": "Skirmish order", "mod": 0.5},
+				{"name": "Disordered", "mod": 0.5},
+				{"name": "Routed", "mod": 0.333},
+				{"name": "Cav Routed", "mod": 0.25},
+				{"name": "Tired", "mod": 0.5},
+				{"name": "Exhausted", "mod": 0.333},
+				{"name": "Preserve Readiness", "mod": 0.333},
+				{"name": "Cav in General", "mod": 0.333}
+			]
+		}
+	}
+}		
+	

@@ -80,6 +80,10 @@
 				}
 			},
 			"modifiers": [
+				{"name": "Leader", "mod": -6},
+				{"name": "Light Cavalry", "mod": 3},
+				{"name": "Lancers", "mod": 6},
+				{"name": "Morale Level", "mod": 3},
 				{"name": "string", "mod": value}
 			]
 		},
@@ -108,7 +112,8 @@
 				{"name": "Cav vs Carre", "mod": 0.5},
 				{"name": "Inf vs Carre", "mod": 1.5},
 				{"name": "Across stream", "mod": 0.666},
-				{"name": "Lancers in Line", "mod": 2}
+				{"name": "Lancers in Line", "mod": 2},
+				{"name": "Cav in General", "mod": 0.333}
 			],
 			"defend": [
 				{"name": "Skirmish order", "mod": 0.5},
@@ -116,7 +121,9 @@
 				{"name": "Routed", "mod": 0.333},
 				{"name": "Cav Routed", "mod": 0.25},
 				{"name": "Tired", "mod": 0.5},
-				{"name": "Exhausted", "mod": 0.333}
+				{"name": "Exhausted", "mod": 0.333},
+				{"name": "Preserve Readiness", "mod": 0.333},
+				{"name": "Cav in General", "mod": 0.333}
 			]
 		}
 	}
