@@ -112,10 +112,10 @@ var FireView = React.createClass({
         return (
             <View style={{flex: 1}}>
                 <View style={{flex: 4, flexDirection: 'row'}}>
-                    <View style={{flex: 1}}>
+                    <View style={{flex: 3}}>
                         <FireAttackerView value={this.state.attack} mods={[this.state.mod13,this.state.mod12,this.state.mod32,this.state.cannister]} onAdd={this.onAttackerAdd} onChanged={this.onAttackerChanged} onModifierChanged={this.onAttackerModifierChanged} />
                     </View>
-                    <View style={{flex: 1}}>
+                    <View style={{flex: 2}}>
     					<FireDefenderView value={this.state.defend} incr={this.state.incr} onAdd={this.onDefenderAdd} onChanged={this.onDefenderChanged} onIncrementsChanged={this.onDefenderIncrementsChanged} />
     				</View>
                 </View>

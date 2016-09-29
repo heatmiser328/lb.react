@@ -115,13 +115,13 @@ var FireAttackerAdvancedAddView = React.createClass({
                     })}
                 </View>
                 <View style={{flex:3, flexDirection: 'row', justifyContent: 'center', alignItems: 'flex-start'}}>
-                    <View style={{flex:1}}>
+                    <View style={{flex:3}}>
                         <SelectList title={'Unit Type'} titleonly={true}
                             items={this.unittypes().map((t) => {return {label: t, value: t};})}
                             selected={this.state.unittype}
                             onChanged={this.onUnitTypeChanged}/>
                     </View>
-                    <View style={{flex:1}}>
+                    <View style={{flex:2}}>
                         <SelectList title={'Formation'} titleonly={true}
                             items={this.formations(this.state.unittype).map((f) => {return {label: f, value: f};})}
                             selected={this.state.formation}
@@ -136,22 +136,30 @@ var FireAttackerAdvancedAddView = React.createClass({
         return Object.keys(battle.fire.attack);
     },
     nationality(unittype) {
-        let battle = Current.battle();
-        return this.nationalities().find((n) => battle.fire.attack[n].hasOwnProperty(unittype));
+        //let battle = Current.battle();
+        //return this.nationalities().find((n) => battle.fire.attack[n].hasOwnProperty(unittype));
+        let idx = unittype.indexOf(':');
+        return unittype.substring(0,idx);
     },
     unittypes() {
         let battle = Current.battle();
-        return this.nationalities().reduce((p,c) => p.concat(Object.keys(battle.fire.attack[c]).filter((t) => p.indexOf(t) < 0)), []);
+        return this.nationalities().reduce((p,c) => p.concat(Object.keys(battle.fire.attack[c]).map((t) => c+':'+t).filter((t) => p.indexOf(t) < 0)), []);
+    },
+    unittype(unittype) {
+        let idx = unittype.indexOf(':');
+        return unittype.substring(idx+1);
     },
     formations(unittype) {
         let battle = Current.battle();
         let nationality = this.nationality(unittype);
-        return Object.keys(battle.fire.attack[nationality][unittype]);
+        let ut = this.unittype(unittype);
+        return Object.keys(battle.fire.attack[nationality][ut]);
     },
     size(unittype, formation) {
         let battle = Current.battle();
         let nationality = this.nationality(unittype);
-        return battle.fire.attack[nationality][unittype][formation];
+        let ut = this.unittype(unittype);
+        return battle.fire.attack[nationality][ut][formation];
     },
     updateFormations() {
         let formations = this.formations(this.state.unittype);
@@ -161,10 +169,10 @@ var FireAttackerAdvancedAddView = React.createClass({
     },
     updateSize() {
         let size = this.size(this.state.unittype, this.state.formation);
-        if (size.density != +this.state.size) {
+        //if (size.density != +this.state.size) {
             this.state.size = size.density.toString();
             this.state.factor = size.factor.toString();
-        }
+        //}
     }
 });
 
