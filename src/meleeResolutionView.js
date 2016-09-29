@@ -1,6 +1,6 @@
 'use strict'
 var React = require('react');
-import { View, Text, Navigator } from 'react-native';
+import { View, Text } from 'react-native';
 var MeleeStrengthView = require('./meleeStrengthView');
 var OddsView = require('./oddsView');
 var ResultsView = require('./meleeResultsView');
@@ -77,6 +77,20 @@ var MeleeResolutionView = React.createClass({
         this.state.mortal = lloss.mortal;
         this.setState(this.state);
     },
+    onSetMelee(s, v) {
+        if (s == 'attack') {
+            let attack = +v;
+            this.state.odds = Melee.calculate(attack, +this.state.defend);
+            this.state.attack = attack.toString();
+            this.onResolve();
+        }
+        else if (s == 'defend') {
+            let defend = +v;
+            this.state.odds = Melee.calculate(+this.state.attack, defend);
+            this.state.defend = defend.toString();
+            this.onResolve();
+        }
+    },
     onAddMelee(s, v) {
         if (s == 'attack') {
             let attack = ((+this.state.attack) + (+v));
@@ -93,52 +107,38 @@ var MeleeResolutionView = React.createClass({
     },
     render() {
         return (
-            <Navigator
-              ref="navigator"
-              initialRoute={{name: 'melee', index: 0}}
-              renderScene={(route, navigator) => {
-                  if (route.index == 1) {
-                      return (
-                          <MeleeCalcView side={route.side} onAdd={this.onAddMelee} onClose={() => {this.refs.navigator.pop();}}/>
-                      );
-                  }
-                  return (
+          <View style={{flex: 1}}>
+              <View style={{flex: 1, flexDirection: 'row'}}>
+                  <View style={{flex: 1}}>
+                      <MeleeStrengthView label={'Attacker'} value={this.state.attack} onChanged={this.onAttackerChanged} />
+                  </View>
+                  <View style={{flex: 1}}>
+                      <MeleeStrengthView label={'Defender'} value={this.state.defend} onChanged={this.onDefenderChanged} />
+                  </View>
+              </View>
+
+              <View style={{flex: 3}}>
+                <MeleeCalcView side={'attack'} onSet={this.onSetMelee}  onAdd={this.onAddMelee} />
+              </View>
+
+              <View style={{flex: 2}}>
+                  <View style={{flex: 1, flexDirection: 'row'}}>
                       <View style={{flex: 1}}>
-                          <View style={{flex: 1, flexDirection: 'row'}}>
-                              <View style={{flex: 1}}>
-                                  <MeleeStrengthView label={'Attacker'} value={this.state.attack} onChanged={this.onAttackerChanged}
-                                      onAdd={() => {
-                                          this.refs.navigator.push({name: 'calculator', index: 1, side: 'attack'});
-                                      }}
-                                    />
-                              </View>
-                              <View style={{flex: 1}}>
-                                  <MeleeStrengthView label={'Defender'} value={this.state.defend} onChanged={this.onDefenderChanged}
-                                      onAdd={() => {
-                                          this.refs.navigator.push({name: 'calculator', index: 1, side: 'defend'});
-                                      }}
-                                   />
-                              </View>
-                          </View>
-                          <View style={{flex: .5, flexDirection: 'row'}}>
-                              <View style={{flex: 1}}>
-                                  <OddsView odds={Melee.odds} value={this.state.odds} onChanged={this.onOddsChanged} />
-                              </View>
-                              <View style={{flex: 3}}>
-                                  <ResultsView value={this.state.result} leader={this.state.leader} loss={this.state.loss} mortal={this.state.mortal} />
-                              </View>
-                          </View>
-                          <View style={{flex: .75}}>
-                              <DiceRoll dice={dice} values={[this.state.die1,this.state.die2,this.state.die3,this.state.die4,this.state.die5]}
-                                      onRoll={this.onDiceRoll} onDie={this.onDieChanged}/>
-                          </View>
-                          <View style={{flex: 3}}>
-                              <DiceModifiersView onChange={this.onDiceModifierChanged} />
-                          </View>
+                          <OddsView odds={Melee.odds} value={this.state.odds} onChanged={this.onOddsChanged} />
                       </View>
-                  );
-              }}
-            />
+                      <View style={{flex: 3}}>
+                          <ResultsView value={this.state.result} leader={this.state.leader} loss={this.state.loss} mortal={this.state.mortal} />
+                      </View>
+                  </View>
+                  <View style={{flex: 1}}>
+                      <DiceRoll dice={dice} values={[this.state.die1,this.state.die2,this.state.die3,this.state.die4,this.state.die5]}
+                              onRoll={this.onDiceRoll} onDie={this.onDieChanged}/>
+                  </View>
+                  <View style={{flex: 1}}>
+                      <DiceModifiersView onChange={this.onDiceModifierChanged} />
+                  </View>
+              </View>
+          </View>
         );
     }
 });

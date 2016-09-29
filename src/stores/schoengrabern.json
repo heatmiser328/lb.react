@@ -28,6 +28,9 @@
 					"Skirmish": {"label":"x4","density":3,"factor":4},
 					"Carre": {"label":"x4","density":6,"factor":4},
 					"General": {"label":"Printed","density":6,"factor":1}
+				},
+				"Artillery": {
+					"Unlimbered": {"label":"18","density":18,"factor":1}
 				}
 			},
 			"Russian": {
@@ -49,6 +52,9 @@
 					"Line": {"label":"x3","density":4,"factor":3},
 					"Carre": {"label":"x3","density":4,"factor":3},
 					"General": {"label":"Printed","density":4,"factor":1}
+				},
+				"Artillery": {
+					"Unlimbered": {"label":"16","density":16,"factor":1}
 				}
 			}
 		},

@@ -3,7 +3,7 @@ var React = require('react');
 import { View, Text } from 'react-native';
 var SpinNumeric = require('./widgets/spinNumeric');
 var FireAttackerBasicAddView = require('./fireAttackerBasicAddView');
-var FireAttackerQuickAddView = require('./fireAttackerQuickAddView');
+var FireAttackerAdvancedAddView = require('./fireAttackerAdvancedAddView');
 var Icons = require('./res/icons');
 var Current = require('./services/current');
 
@@ -24,7 +24,7 @@ var FireAttackerView = React.createClass({
         if (battle.hasOwnProperty('fire')) {
             return (
                 <View style={{flex: 5}}>
-                    <FireAttackerQuickAddView events={this.props.events} onSet={this.props.onChanged} onAdd={this.props.onAdd} />
+                    <FireAttackerAdvancedAddView events={this.props.events} onSet={this.props.onChanged} onAdd={this.props.onAdd} />
                 </View>
             );
         }

@@ -16,7 +16,7 @@ var Checkbox = React.createClass({
                 <View style={{flex: 1, flexDirection: 'row', alignItems: 'center'}} >
                     {this.props.labelpos == 'left' ? this.renderLabel(this.props.label) : null}
                     <Image
-                        style={{marginTop: 5, marginLeft: 5, marginRight: 5, width: 16, height: 16, resizeMode: 'contain'}}
+                        style={{marginTop: 5, marginLeft: 5, marginRight: 5, width: 20, height: 20, resizeMode: 'contain'}}
                         source={Icons[this.props.selected ? 'checked' : 'unchecked']} />
                     {this.props.labelpos != 'left' ? this.renderLabel(this.props.label) : null}
                 </View>
@@ -24,7 +24,7 @@ var Checkbox = React.createClass({
         );
     },
     renderLabel(label) {
-        return (<Text style={{fontSize: 14, textAlign: 'left'}}>{label}</Text>)
+        return (<Text style={{fontSize: 18, textAlign: 'left'}}>{label}</Text>)
     }
 });
 

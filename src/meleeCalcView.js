@@ -1,10 +1,10 @@
 'use strict'
 var React = require('react');
 import { View, Text, Switch } from 'react-native';
-var Button = require('apsl-react-native-button');
 var SpinNumeric = require('./widgets/spinNumeric');
 var MultiSelectList = require('./widgets/multiSelectList');
 var RadioButtonGroup = require('./widgets/radioButtonGroup');
+var IconButton = require('./widgets/iconButton');
 var Current = require('./services/current');
 
 var MeleeCalcView = React.createClass({
@@ -64,12 +64,15 @@ var MeleeCalcView = React.createClass({
         let side = this.state.side == 0 ? 'attack' : 'defend';
         this.props.onAdd && this.props.onAdd(side, this.state.total);
     },
+    onSet() {
+        let side = this.state.side == 0 ? 'attack' : 'defend';
+        this.props.onSet && this.props.onSet(side, this.state.total);
+    },
     render() {
         return (
-            <View style={{flex:1, justifyContent: 'center', margin: 20, borderRadius: 4, borderWidth: 2, borderColor: 'black', backgroundColor: 'whitesmoke'}}>
-                <Text style={{fontSize: 18,fontWeight: 'bold',backgroundColor: 'silver', textAlign: 'center'}}>{'Melee Calculator'}</Text>
-                <View style={{flex: 8, flexDirection: 'row', justifyContent: 'center'}}>
-                    {/* values */}
+            <View style={{flex:1, justifyContent: 'center', marginLeft: 20, marginRight: 20, borderRadius: 4, borderWidth: 2, borderColor: 'black', backgroundColor: 'whitesmoke'}}>
+                <Text style={{fontSize: 18,fontWeight: 'bold',backgroundColor: 'silver', textAlign: 'center'}}>{'Calculator'}</Text>
+                <View style={{flex: 5, flexDirection: 'row', justifyContent: 'center'}}>
                     <View style={{flex: 2, justifyContent: 'center'}}>
                         <View style={{flex: 1, marginLeft: 5}}>
                             <SpinNumeric label={'Incr'} value={this.state.incr} min={1} integer={true} onChanged={this.onIncrChanged} />
@@ -86,24 +89,23 @@ var MeleeCalcView = React.createClass({
                         <View style={{flex: 1, marginLeft: 5}}>
                             <SpinNumeric label={'Total'} value={this.state.total} min={1} onChanged={this.onTotalChanged} />
                         </View>
+                        <View style={{flex: 1, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center'}}>
+                            <View style={{flex: 2, justifyContent:'center', alignItems: 'center'}}>
+                                <RadioButtonGroup buttons={[{label: 'Attacker', value: 0}, {label: 'Defender', value: 1}]} state={this.state.side}
+                                    onSelected={this.onSideChanged} />
+                            </View>
+                            <View style={{flex:.5, margin:2}}>
+                                <IconButton image={'equal'} height={32} width={32} resizeMode='stretch' onPress={this.onSet} />
+                            </View>
+                            <View style={{flex:.5, margin:2}}>
+                                <IconButton image={'add'} height={32} width={32} resizeMode='stretch' onPress={this.onAdd} />
+                            </View>
+                        </View>
                     </View>
-                    {/* modifiers */}
                     <View style={{flex: 1}}>
                         <MultiSelectList title={'Modifiers'}
                             items={this.modifiers().map((m) => {return {name: m.name, selected: this.state.mods[m.name]};})}
                             onChanged={this.onModChanged}/>
-                    </View>
-                </View>
-                <View style={{flex: 2, justifyContent:'center', alignItems: 'center'}}>
-                    <RadioButtonGroup buttons={[{label: 'Attacker', value: 0}, {label: 'Defender', value: 1}]} state={this.state.side}
-                        onSelected={this.onSideChanged} />
-                </View>
-                <View style={{flex: 1, flexDirection: 'row', justifyContent: 'space-between'}}>
-                    <View style={{flex: 1, marginLeft: 10, marginRight: 10}}>
-                        <Button style={{flex:1}} onPress={this.props.onClose}>{'Close'}</Button>
-                    </View>
-                    <View style={{flex: 1, marginLeft: 10, marginRight: 10}}>
-                        <Button style={{flex:1}} onPress={this.onAdd}>{'Add'}</Button>
                     </View>
                 </View>
             </View>

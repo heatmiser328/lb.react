@@ -7,31 +7,9 @@ var SelectList = require('./widgets/selectList');
 var OddsView = require('./oddsView');
 var DiceModifiersView = require('./diceModifiersView');
 var DiceRoll = require('./widgets/diceRoll');
+var Base6 = require('./services/base6');
 var Morale = require('./services/morale');
-
-// might come from selected battle?
-let odds = [
-    {name: '1/2', attmod: -6, defmod: 6},
-    {name: '1/1', attmod: -3, defmod: 3},
-    {name: '2/1', attmod: 0, defmod: 0},
-    {name: '3/1', attmod: 3, defmod: -3},
-    {name: '4/1', attmod: 6, defmod: -6},
-    {name: '5/1+', attmod: 9, defmod: -9}
-];
-
-let modifiers = [
-    {name: 'Assaulted in flank', type: 'defend', attmod: 12, defmod: -12},
-    {name: 'Assaulted in rear', type: 'defend', attmod: 6, defmod: -6},
-    {name: 'In skirmish order', type: 'defend', attmod: 99, defmod: -6},
-    {name: 'In Line', type: 'defend', attmod: 0, defmod: -3},
-    {name: 'In Carre', type: 'defend', attmod: 0, defmod: 6},
-    {name: 'Disordered', type: 'defend', attmod: 3, defmod: -3},
-    {name: 'Routed', type: 'defend', attmod: 6, defmod: -6},
-    {name: 'Assaulting up a slope', type: 'attack', attmod: -3, defmod: 3},
-    {name: 'Assaulting across a stream', type: 'attack', attmod: -3, defmod: 3},
-    {name: 'Casualty due to defensive fire', type: 'attack', attmod: -3, defmod: 0}
-];
-
+var Current = require('./services/current');
 
 var MeleeAssaultView = React.createClass({
     dice: [
@@ -41,6 +19,7 @@ var MeleeAssaultView = React.createClass({
         {num: 1, low: 1, high: 6, color: 'blackr'}
     ],
     getInitialState() {
+        let odds = this.odds();
         return {
             attack: [
                 {value: '11', result: ''},
@@ -104,9 +83,9 @@ var MeleeAssaultView = React.createClass({
     },
     onResolve(e) {
         // perform morale checks for both attacker and defender
-        let oddsmod = odds.find((o) => o.name == this.state.odds) || {};
-        let attmod = oddsmod.attmod + modifiers.filter((m) => m.type == 'attack' && this.state.attmods[m.name]).reduce((p,c) => p + c.attmod, 0);
-        let defmod = oddsmod.defmod + modifiers.filter((m) => m.type == 'defend' && this.state.defmods[m.name]).reduce((p,c) => p + c.defmod, 0);
+        let oddsmod = this.odds().find((o) => o.name == this.state.odds) || {};
+        let attmod = oddsmod.attmod + this.attackmodifiers().filter((m) => this.state.attmods[m.name]).reduce((p,c) => p + c.attmod, 0);
+        let defmod = oddsmod.defmod + this.defendmodifiers().filter((m) => this.state.defmods[m.name]).reduce((p,c) => p + c.defmod, 0);
         this.state.attack.filter((a) => a.value != '11').forEach((a) => {
             // adjust by selected modifiers
             a.result = Morale.check(+a.value,attmod,this.state.die1,this.state.die2);
@@ -127,7 +106,7 @@ var MeleeAssaultView = React.createClass({
                         </View>
                         <View style={{flex:2}}>
                             <MultiSelectList title={'Modifiers'}
-                                items={modifiers.filter((m) => m.type == 'attack').map((m) => {return {name: m.name, selected: this.state.attmods[m.name]};})}
+                                items={this.attackmodifiers().map((m) => {return {name: m.name, selected: this.state.attmods[m.name]};})}
                                 onChanged={this.onAttackerModChanged}/>
                         </View>
                     </View>
@@ -137,14 +116,14 @@ var MeleeAssaultView = React.createClass({
                         </View>
                         <View style={{flex:2}}>
                             <MultiSelectList title={'Modifiers'}
-                                items={modifiers.filter((m) => m.type == 'defend').map((m) => {return {name: m.name, selected: this.state.defmods[m.name]};})}
+                                items={this.defendmodifiers().map((m) => {return {name: m.name, selected: this.state.defmods[m.name]};})}
                                 onChanged={this.onDefenderModChanged}/>
                         </View>
                     </View>
                 </View>
                 <View style={{flex: .75, flexDirection: 'row', backgroundColor: 'whitesmoke'}}>
                     <View style={{flex:1}}>
-                        <OddsView odds={odds.map((o) => o.name)} value={this.state.odds} onChanged={this.onOddsChanged} />
+                        <OddsView odds={this.odds().map((o) => o.name)} value={this.state.odds} onChanged={this.onOddsChanged} />
                         {/*<SelectList title={'Odds'} titleonly={true} items={odds.map((o) => o.name)} selected={this.state.odds} onChanged={this.onOddsChanged} />*/}
                     </View>
                     <View style={{flex:3}}>
@@ -157,6 +136,20 @@ var MeleeAssaultView = React.createClass({
                 </View>
             </View>
         );
+    },
+    odds() {
+        let battle = Current.battle();
+        return battle.assault.odds;
+    },
+    modifiers() {
+        let battle = Current.battle();
+        return battle.assault.modifiers;
+    },
+    attackmodifiers() {
+        return this.modifiers().filter((m) => m.type == 'attack');
+    },
+    defendmodifiers() {
+        return this.modifiers().filter((m) => m.type == 'defend');
     }
 });
 

@@ -21,7 +21,7 @@ var BattleView = React.createClass({
             initialPage: 0
         };
     },
-    componentWillMount: function() {
+    componentWillMount() {
         this.props.events.addListener('menureset', this.onReset);
     },
     shouldComponentUpdate(nextProps, nextState) {

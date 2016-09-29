@@ -4,8 +4,7 @@ import { View, Text, Image } from 'react-native';
 var Button = require('apsl-react-native-button');
 var SpinNumeric = require('./widgets/spinNumeric');
 var QuickValuesView = require('./quickValuesView');
-//var FireDefenderQuickAddView = require('./fireDefenderQuickAddView');
-var FireDefenderValuesView = require('./fireDefenderValuesView');
+var FireDefenderAdvancedAddView = require('./fireDefenderAdvancedAddView');
 var Icons = require('./res/icons');
 var Current = require('./services/current');
 
@@ -20,7 +19,7 @@ var FireDefenderView = React.createClass({
                 <View style={{flex: 1}}>
                     <Text style={{textAlign: 'center'}}>Incr > 9</Text>
                     <View style={{marginTop: -10}}>
-                    <SpinNumeric value={this.props.incr} min={1} onChanged={this.props.onIncrementsChanged} />
+                        <SpinNumeric value={this.props.incr} min={1} onChanged={this.props.onIncrementsChanged} />
                     </View>
                 </View>
                 {this.renderValues()}
@@ -31,8 +30,8 @@ var FireDefenderView = React.createClass({
         let battle = Current.battle();
         if (battle.hasOwnProperty('fire')) {
             return (
-                <View style={{flex: 5}}>                    
-                    <FireDefenderValuesView events={this.eventEmitter} onSelect={this.props.onChanged} />
+                <View style={{flex: 5}}>
+                    <FireDefenderAdvancedAddView events={this.eventEmitter} onSet={this.props.onChanged} />
                 </View>
             );
         }
