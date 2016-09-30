@@ -13,3 +13,15 @@ React Native La Bataille Assistant app
 	[	odds	]	[ cannister]			[	results	]
 	[					dice							]
 	[					dice modifiers					]
+
+#### Redeisgn the assault view
+1. 1 or more attacker hexes with 1 or more stacked units
+2. 1 defender hex with 1 or more stacked units
+
+	[ list of unit morales 				[ attack defend radio ]
+		< morale >	[ result ]			[ 		modifiers 	  ]
+		[ 16 26 36 46 56 66 ]
+	]
+
+	[ 	odds	]	[	dice	]
+	[		dice modifiers		]

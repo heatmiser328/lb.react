@@ -21,7 +21,7 @@ var MeleeAssaultUnitList = React.createClass({
                     automaticallyAdjustContentInsets={false}
                     scrollEventThrottle={200}>
                     {this.props.items.map((item,i) => {
-                        let icon = (item.result ? Icons['pass'] : Icons['fail']);
+                        let icon = item.result != null ? (item.result ? Icons['pass'] : Icons['fail']) : null;                        
                         return (
                             <View key={i} style={{flex:1}}>
                                 <View style={{flex:1, flexDirection: 'row'}}>

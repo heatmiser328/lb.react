@@ -2,6 +2,7 @@
 var React = require('react');
 import { View, Text } from 'react-native';
 var MeleeAssaultUnitList = require('./meleeAssaultUnitList');
+var RadioButtonGroup = require('./widgets/radioButtonGroup');
 var MultiSelectList = require('./widgets/multiSelectList');
 var SelectList = require('./widgets/selectList');
 var OddsView = require('./oddsView');
@@ -14,50 +15,40 @@ var Current = require('./services/current');
 var MeleeAssaultView = React.createClass({
     dice: [
         {num: 1, low: 1, high: 6, color: 'red'},
-        {num: 1, low: 1, high: 6, color: 'white'},
-        {num: 1, low: 1, high: 6, color: 'blackw'},
-        {num: 1, low: 1, high: 6, color: 'blackr'}
+        {num: 1, low: 1, high: 6, color: 'white'}
     ],
     getInitialState() {
         let odds = this.odds();
         return {
-            attack: [
-                {value: '11', result: ''},
-                {value: '11', result: ''},
-                {value: '11', result: ''},
-                {value: '11', result: ''},
-                {value: '11', result: ''}
+            units: [
+                {value: '11', result: null},
+                {value: '11', result: null},
+                {value: '11', result: null},
+                {value: '11', result: null},
+                {value: '11', result: null}
             ],
-            attmods: {},
-            defend: [
-                {value: '11', result: ''},
-                {value: '11', result: ''},
-                {value: '11', result: ''},
-                {value: '11', result: ''},
-                {value: '11', result: ''}
-            ],
-            defmods: {},
+            mode: 0,
+            mods: {},
             odds: odds[1].name,
             die1: 1,
-            die2: 1,
-            die3: 1,
-            die4: 1
+            die2: 1
         };
     },
-    onAttackerChanged(i,v) {
-        this.state.attack[i].value = v;
+    onUnitChanged(i,v) {
+        this.state.units[i].value = v;
         this.onResolve();
     },
-    onAttackerModChanged(m) {
-       this.state.attmods[m.name] = m.selected;
-       this.onResolve();
+    onModeChanged(v) {
+        this.setState({mode:v, mods: {}, units: [
+                {value: '11', result: null},
+                {value: '11', result: null},
+                {value: '11', result: null},
+                {value: '11', result: null},
+                {value: '11', result: null}
+            ]});
     },
-    onDefenderChanged(i,v) {
-        this.state.defend[i].value = v;
-        this.onResolve();
-    },
-    onDefenderModChanged(m) {
-       this.state.defmods[m.name] = m.selected;
+    onModChanged(m) {
+       this.state.mods[m.name] = m.selected;
        this.onResolve();
     },
     onOddsChanged(v) {
@@ -77,62 +68,54 @@ var MeleeAssaultView = React.createClass({
     onDiceRoll(d) {
         this.state.die1 = d[0].value;
         this.state.die2 = d[1].value;
-        this.state.die3 = d[2].value;
-        this.state.die4 = d[3].value;
         this.onResolve();
     },
-    onResolve(e) {
+    onResolve() {
         // perform morale checks for both attacker and defender
         let oddsmod = this.odds().find((o) => o.name == this.state.odds) || {};
-        let attmod = oddsmod.attmod + this.attackmodifiers().filter((m) => this.state.attmods[m.name]).reduce((p,c) => p + c.attmod, 0);
-        let defmod = oddsmod.defmod + this.defendmodifiers().filter((m) => this.state.defmods[m.name]).reduce((p,c) => p + c.defmod, 0);
-        this.state.attack.filter((a) => a.value != '11').forEach((a) => {
-            // adjust by selected modifiers
-            a.result = Morale.check(+a.value,attmod,this.state.die1,this.state.die2);
-        });
-        this.state.defend.filter((d) => d.value != '11').forEach((d) => {
-            // adjust by selected modifiers
-            d.result = Morale.check(+d.value,defmod,this.state.die3,this.state.die4);
-        });
+        let attmod = oddsmod.attmod + this.modifiers().filter((m) => this.state.mods[m.name]).reduce((p,c) => p + c.attmod, 0);
+        let defmod = oddsmod.defmod + this.modifiers().filter((m) => this.state.mods[m.name]).reduce((p,c) => p + c.defmod, 0);
+        let mod = this.state.mode == 0 ? attmod : defmod;
+        this.state.units.filter((u) => u.value != '11').forEach((u) => {
+            u.result = Morale.check(+u.value,mod,this.state.die1,this.state.die2);
+        });        
         this.setState(this.state);
     },
     render() {
         return (
             <View style={{flex: 1}}>
-                <View style={{flex: 4, flexDirection: 'row'}}>
-                    <View style={{flex:1, borderRightWidth: 1, borderRightColor: 'gray'}}>
-                        <View style={{flex:3}}>
-                            <MeleeAssaultUnitList title={'Attack'} items={this.state.attack} onChanged={this.onAttackerChanged}/>
-                        </View>
-                        <View style={{flex:2}}>
-                            <MultiSelectList title={'Modifiers'}
-                                items={this.attackmodifiers().map((m) => {return {name: m.name, selected: this.state.attmods[m.name]};})}
-                                onChanged={this.onAttackerModChanged}/>
-                        </View>
-                    </View>
-                    <View style={{flex:1}}>
-                        <View style={{flex:3}}>
-                            <MeleeAssaultUnitList title={'Defend'} items={this.state.defend} onChanged={this.onDefenderChanged}/>
-                        </View>
-                        <View style={{flex:2}}>
-                            <MultiSelectList title={'Modifiers'}
-                                items={this.defendmodifiers().map((m) => {return {name: m.name, selected: this.state.defmods[m.name]};})}
-                                onChanged={this.onDefenderModChanged}/>
-                        </View>
-                    </View>
-                </View>
-                <View style={{flex: .75, flexDirection: 'row', backgroundColor: 'whitesmoke'}}>
-                    <View style={{flex:1}}>
-                        <OddsView odds={this.odds().map((o) => o.name)} value={this.state.odds} onChanged={this.onOddsChanged} />
-                        {/*<SelectList title={'Odds'} titleonly={true} items={odds.map((o) => o.name)} selected={this.state.odds} onChanged={this.onOddsChanged} />*/}
-                    </View>
+                <View style={{flex: 3.5, flexDirection: 'row'}}>
+                    {/* units */}
                     <View style={{flex:3}}>
-                        <DiceRoll dice={this.dice} values={[this.state.die1,this.state.die2,this.state.die3,this.state.die4]}
-                            onRoll={this.onDiceRoll} onDie={this.onDieChanged}/>
+                        <MeleeAssaultUnitList title={'Units'} items={this.state.units} onChanged={this.onUnitChanged}/>
+                    </View>
+                    {/* modifiers */}
+                    <View style={{flex:2}}>
+                        <View style={{flex: 3}}>
+                            <MultiSelectList title={'Modifiers'}
+                                items={this.modifiers().map((m) => {return {name: m.name, selected: this.state.mods[m.name]};})}
+                                onChanged={this.onModChanged} />
+                        </View>
+                        <View style={{flex:2}}>
+                            {/*<OddsView odds={this.odds().map((o) => o.name)} value={this.state.odds} onChanged={this.onOddsChanged} />*/}
+                            <SelectList title={'Odds'} titleonly={true} items={this.odds().map((o) => o.name)} selected={this.state.odds} onChanged={this.onOddsChanged} />
+                        </View>
+                        <View style={{flex:.5}}>
+                            <RadioButtonGroup buttons={[{label: 'Attacker', value: 0}, {label: 'Defender', value: 1}]} state={this.state.mode} onSelected={this.onModeChanged} />
+                        </View>
                     </View>
                 </View>
-                <View style={{flex: 1, backgroundColor: 'whitesmoke'}}>
-                    <DiceModifiersView onChange={this.onDiceModifierChanged} />
+                <View style={{flex: 1}}>
+                    <View style={{flex: .75, flexDirection: 'row', backgroundColor: 'whitesmoke'}}>
+                        <View style={{flex:2}}>
+                            <DiceRoll dice={this.dice} values={[this.state.die1,this.state.die2]}
+                                onRoll={this.onDiceRoll} onDie={this.onDieChanged}/>
+                        </View>
+                    </View>
+                    <View style={{flex: .75, backgroundColor: 'whitesmoke'}}>
+                        <DiceModifiersView onChange={this.onDiceModifierChanged} />
+                    </View>
+
                 </View>
             </View>
         );
@@ -144,12 +127,6 @@ var MeleeAssaultView = React.createClass({
     modifiers() {
         let battle = Current.battle();
         return battle.assault.modifiers;
-    },
-    attackmodifiers() {
-        return this.modifiers().filter((m) => m.type == 'attack');
-    },
-    defendmodifiers() {
-        return this.modifiers().filter((m) => m.type == 'defend');
     }
 });
 

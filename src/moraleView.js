@@ -60,7 +60,7 @@ var MoraleView = React.createClass({
                     <View style={{flex: 25}} />
                 </View>
                 <View style={{flex: 1}}>
-                    <QuickValuesView values={[16,26,36,46,56,66]} onChanged={this.onMoraleChanged}/>
+                    <QuickValuesView values={[16,26,36,46,56,66]} height={38} onChanged={this.onMoraleChanged}/>
                 </View>
                 <View style={{flex: 1, flexDirection: 'row'}}>
                     <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>

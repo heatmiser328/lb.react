@@ -1,7 +1,7 @@
 'use strict'
 var React = require('react');
-import { View } from 'react-native';
-var Button = require('apsl-react-native-button');
+import { View, TouchableOpacity, Text } from 'react-native';
+//var Button = require('apsl-react-native-button');
 
 var QuickValuesView = React.createClass({
     onQuickValue(v) {
@@ -14,6 +14,18 @@ var QuickValuesView = React.createClass({
             <View style={{flex: 1, flexDirection: 'row', alignItems: 'center'}}>
             {
                 this.props.values.map((v, i) => {
+                    return (
+                        <View key={i} style={{flex:1, backgroundColor: 'lightgray', alignItems: 'center',
+                            height: this.props.height,
+                            marginLeft: i == 0 ? 5 : 0,
+                            marginRight: 5,
+                            borderColor: 'black', borderWidth: 1, borderRadius:5}}>
+                            <TouchableOpacity onPress={this.onQuickValue(v)}>
+                                <Text style={{color: 'black', fontSize: 22, textAlign: 'center'}}>{v.toString()}</Text>
+                            </TouchableOpacity>
+                        </View>
+                    );
+                    /*
                     return (
                         <Button key={i}
                             style={{
@@ -38,6 +50,7 @@ var QuickValuesView = React.createClass({
                             {v.toString()}
                         </Button>
                     );
+                    */
                 })
             }
             </View>
