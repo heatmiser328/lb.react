@@ -32,6 +32,7 @@ var BattleView = React.createClass({
         Current.reset(this.props.battle)
         .then((current) => {
             // update the views?
+            this.setState({initialPage: 0});
             this.props.events.emit('reset');
         })
         .done();

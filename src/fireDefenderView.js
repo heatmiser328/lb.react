@@ -37,8 +37,10 @@ var FireDefenderView = React.createClass({
         }
         return (
             <View style={{flex: 5}}>
-                <QuickValuesView values={[4,6,9,12,14,16]} onChanged={this.props.onChanged}/>
-                {/*<Image style={{flex:5, height: null, width: null, resizeMode: 'stretch'}} source={Icons[battle.image + '-fire-defence']} />*/}
+                <View style={{flex:1}}>
+                    <QuickValuesView values={[4,6,9,12,14,16]} onChanged={this.props.onChanged}/>
+                </View>
+                <View style={{flex:5}} />
             </View>
         );
     }

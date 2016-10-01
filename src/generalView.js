@@ -35,15 +35,15 @@ var GeneralView = React.createClass({
         //console.log(this.props);
         return (
             <View style={{flex: 1, justifyContent: 'flex-start'}}>
-                {this.renderArtillery()}
-                {this.renderCavalryRecall()}
                 <View style={{flex:1, marginRight: 0}}>
                     <DiceRoll dice={dice1} values={[this.state.die1,this.state.die2]} onRoll={this.onDice1Roll} />
                 </View>
                 <View style={{flex:1, marginRight: 0}}>
                     <DiceRoll dice={dice2} values={[this.state.die3]} onRoll={this.onDice2Roll} />
                 </View>
-                <View style={{flex:1}} />                
+                {this.renderArtillery()}
+                {this.renderCavalryRecall()}
+                <View style={{flex:1}} />
             </View>
         );
     },
@@ -57,7 +57,7 @@ var GeneralView = React.createClass({
             );
         }
 
-        return null;
+        return <View style={{flex:1}}/>;
     },
     renderCavalryRecall() {
         let battle = Current.battle();
@@ -69,7 +69,7 @@ var GeneralView = React.createClass({
             );
         }
 
-        return null;
+        return <View style={{flex:1}}/>;
     }
 });
 

@@ -10,6 +10,7 @@ var DiceRoll = require('./widgets/diceRoll');
 var Fire = require('./services/fire');
 var LeaderLoss = require('./services/leaderloss');
 var Base6 = require('./services/base6');
+var Current = require('./services/current');
 
 var dice = [
     {num: 1, low: 1, high: 6, color: 'red'},
@@ -109,10 +110,11 @@ var FireView = React.createClass({
     },
     render() {
         //console.log(this.props);
+        let attsize = this.hasRules() ? 3 : 2;
         return (
             <View style={{flex: 1}}>
                 <View style={{flex: 4.5, flexDirection: 'row'}}>
-                    <View style={{flex: 3}}>
+                    <View style={{flex: attsize}}>
                         <FireAttackerView value={this.state.attack} mods={[this.state.mod13,this.state.mod12,this.state.mod32,this.state.cannister]} onAdd={this.onAttackerAdd} onChanged={this.onAttackerChanged} onModifierChanged={this.onAttackerModifierChanged} />
                     </View>
                     <View style={{flex: 2}}>
@@ -140,6 +142,10 @@ var FireView = React.createClass({
                 </View>
             </View>
         );
+    },
+    hasRules() {
+        let battle = Current.battle();
+        return battle.hasOwnProperty('fire');
     }
 });
 
