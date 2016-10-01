@@ -22,67 +22,67 @@
 					"General": {"label":"Printed","density":6,"factor":1}
 				},
 				"Provisoire": {
-					"Column": {"label":":Printed","density":6,"factor":1},
+					"Column": {"label":"Printed","density":6,"factor":1},
 					"Line": {"label":"x2","density":4,"factor":2},
 					"Carre": {"label":"x2","density":6,"factor":2},
 					"General": {"label":"Printed","density":6,"factor":1},
 					"Skirmish": {"label":"x2","density":3,"factor":2}
 				},
 				"Jeuene Garde": {
-					"Column": {"label":":Printed","density":8,"factor":1},
+					"Column": {"label":"Printed","density":8,"factor":1},
 					"Line": {"label":"x3","density":4,"factor":3},
 					"Carre": {"label":"x3","density":6,"factor":3},
 					"General": {"label":"Printed","density":6,"factor":1},
 					"Skirmish": {"label":"x3","density":3,"factor":3}
 				},
 				"Fusilier": {
-					"Column": {"label":":Printed","density":8,"factor":1},
+					"Column": {"label":"Printed","density":8,"factor":1},
 					"Line": {"label":"x4","density":4,"factor":4},
 					"Carre": {"label":"x4","density":6,"factor":4},
 					"General": {"label":"Printed","density":6,"factor":1},
 					"Skirmish": {"label":"x3","density":3,"factor":3}
 				},
 				"Velites": {
-					"Column": {"label":":Printed","density":8,"factor":1},
+					"Column": {"label":"Printed","density":8,"factor":1},
 					"Line": {"label":"x4","density":4,"factor":4},
 					"Carre": {"label":"x4","density":6,"factor":4},
 					"General": {"label":"Printed","density":6,"factor":1},
 					"Skirmish": {"label":"x3","density":3,"factor":3}
 				},
 				"Vieille Garde": {
-					"Column": {"label":":Printed","density":8,"factor":1},
+					"Column": {"label":"Printed","density":8,"factor":1},
 					"Line": {"label":"x5","density":4,"factor":5},
 					"Carre": {"label":"x5","density":6,"factor":5},
 					"General": {"label":"Printed","density":8,"factor":1},
 					"Skirmish": {"label":"x5","density":3,"factor":5}
 				},
 				"Polska": {
-					"Column": {"label":":Printed","density":8,"factor":1},
+					"Column": {"label":"Printed","density":8,"factor":1},
 					"Line": {"label":"x3","density":4,"factor":3},
 					"Carre": {"label":"x3","density":8,"factor":3},
 					"General": {"label":"Printed","density":8,"factor":1}
 				},
 				"Italienne": {
-					"Column": {"label":":Printed","density":5,"factor":1},
+					"Column": {"label":"Printed","density":5,"factor":1},
 					"Line": {"label":"x2","density":4,"factor":2},
 					"Carre": {"label":"x3","density":5,"factor":3},
 					"General": {"label":"Printed","density":5,"factor":1}
 				},
 				"Leggio": {
-					"Column": {"label":":Printed","density":6,"factor":1},
+					"Column": {"label":"Printed","density":6,"factor":1},
 					"Line": {"label":"x3","density":4,"factor":3},
 					"Carre": {"label":"x3","density":8,"factor":3},
 					"General": {"label":"Printed","density":6,"factor":1},
 					"Skirmish": {"label":"x2","density":3,"factor":2}
 				},
 				"Rheinbund": {
-					"Column": {"label":":Printed","density":6,"factor":1},
+					"Column": {"label":"Printed","density":6,"factor":1},
 					"Line": {"label":"x2","density":4,"factor":2},
 					"Carre": {"label":"x2","density":6,"factor":2},
 					"General": {"label":"Printed","density":6,"factor":1}
 				},
 				"Leicht": {
-					"Column": {"label":":Printed","density":6,"factor":1},
+					"Column": {"label":"Printed","density":6,"factor":1},
 					"Line": {"label":"x2","density":4,"factor":2},
 					"Carre": {"label":"x2","density":6,"factor":2},
 					"General": {"label":"Printed","density":6,"factor":1},

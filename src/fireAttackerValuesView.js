@@ -14,7 +14,7 @@ var NationalityView = React.createClass({
     },
     render() {
         return (
-            <View style={{flex:1}}>
+            <View>
                 <Image source={Icons[this.props.nationality]} opacity={0.20} style={{flex: 1, width:null, height:null}} resizeMode='stretch'>
                     <View style={{flex: 1}}>
                         {this.props.units.map((unit,i) => {
@@ -99,7 +99,11 @@ var FireAttackerValuesView = React.createClass({
                 <ScrollView
                     automaticallyAdjustContentInsets={false}
                     scrollEventThrottle={200}>
-                    {this.nationalities().map((n,i) => <NationalityView key={i} nationality={n} units={this.units(n)} onSelect={this.props.onSelect} /> )}
+                    {this.nationalities().map((n,i) =>
+                        <View key={i}>
+                            <NationalityView nationality={n} units={this.units(n)} onSelect={this.props.onSelect} />
+                        </View>
+                    )}
                 </ScrollView>
             </View>
         );

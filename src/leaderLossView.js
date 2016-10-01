@@ -5,9 +5,15 @@ var Icons = require('./res/icons');
 
 var LeaderLossView = React.createClass({
     render() {
-        let lossIcon = (this.props.loss || '').toLowerCase() == 'capture'
-            ? Icons.capture
-            : (this.props.mortal ? Icons.mortal : Icons.wounded);
+        let loss = (this.props.loss || '').toLowerCase();
+        let lossIcon = null;
+        if (loss.startsWith('flesh')) {
+            lossIcon = null;
+        } else if (loss == 'capture') {
+            lossIcon = Icons.capture;
+        } else {
+            lossIcon = (this.props.mortal ? Icons.mortal : Icons.wounded);
+        }
         return (
             <View style={{flex: 1, flexDirection: 'row', alignItems: 'center'}}>
                 {this.props.leader
@@ -21,7 +27,7 @@ var LeaderLossView = React.createClass({
                         </View>
                     ) : <Text />
                 }
-                {this.props.leader
+                {this.props.leader && lossIcon
                     ? <Image style={{flex: 1, height: 48, width: 8, resizeMode: 'stretch'}} source={lossIcon} />
                     : <Text />
                 }

@@ -111,7 +111,7 @@ var FireView = React.createClass({
         //console.log(this.props);
         return (
             <View style={{flex: 1}}>
-                <View style={{flex: 4, flexDirection: 'row'}}>
+                <View style={{flex: 4.5, flexDirection: 'row'}}>
                     <View style={{flex: 3}}>
                         <FireAttackerView value={this.state.attack} mods={[this.state.mod13,this.state.mod12,this.state.mod32,this.state.cannister]} onAdd={this.onAttackerAdd} onChanged={this.onAttackerChanged} onModifierChanged={this.onAttackerModifierChanged} />
                     </View>
@@ -123,11 +123,11 @@ var FireView = React.createClass({
                     <View style={{flex: 1}}>
                         <OddsView odds={Fire.odds} value={this.state.odds} onChanged={this.onOddsChanged} />
                     </View>
-                    <View style={{flex: 1, flexDirection: 'row', alignItems: 'center'}}>
+                    <View style={{flex: .5, alignItems: 'center'}}>
                         <Text>Cannister</Text>
                         <Switch value={this.state.cannister} onValueChange={this.onCannisterChanged} />
                     </View>
-                    <View style={{flex: 2}}>
+                    <View style={{flex: 2.5}}>
                         <ResultsView value={this.state.result} leader={this.state.leader} loss={this.state.loss} mortal={this.state.mortal} />
                     </View>
                 </View>
