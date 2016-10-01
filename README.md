@@ -1,14 +1,14 @@
 # lb.react
 React Native La Bataille Assistant app
 
-#### Redeisgn the fire view (again)
+#### Redeisgn the fire view (again, and again)
 
 			Attack										Defend
 
-		<	total	>								<	total	>
-	< size > < factor> 	[ value ] [buttons]			<	density	>
+		<	total	>	[set/add buttons]			<	total	>
+	< size > < factor> 	[ value ] 					<	density	>
 	[	1/3	1/2	3/2 modifiers			]		[	terrain	]	[formation]
-	[	unit type ]	[ 	formation		]
+	[nationality unit type formation factor]
 
 	[	odds	]	[ cannister]			[	results	]
 	[					dice							]

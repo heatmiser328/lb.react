@@ -41,6 +41,12 @@ module.exports = {
 	"mortal": require('./tombstone.png'),
 	"capture": require('./capture.jpg'),
 
+	"French": require('./french_flag.jpg'),
+	"Polish": require('./polish_flag.png'),
+	"Russian": require('./russian_flag.png'),
+	"Austrian": require('./austrian_flag.png'),
+	"Prussian": require('./prussian_flag.png'),
+
 	"halle": require("./halle.jpg"),
 	"halle-sm": require("./halle-sm.jpg"),
 	"raszyn": require("./raszyn.jpg"),

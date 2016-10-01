@@ -3,6 +3,7 @@ var React = require('react');
 import { View, Text, Switch } from 'react-native';
 var SpinNumeric = require('./widgets/spinNumeric');
 var SelectList = require('./widgets/selectList');
+var FireAttackerValuesView = require('./fireAttackerValuesView');
 var IconButton = require('./widgets/iconButton');
 var Current = require('./services/current');
 
@@ -21,6 +22,11 @@ var FireAttackerAdvancedAddView = React.createClass({
         };
         state.value = this.calcValue(state).toString();
         return state;
+    },
+    onSelection(size) {
+        this.state.size = size.density.toString();
+        this.state.factor = size.factor.toString();
+        this.updateValue();
     },
     onUnitTypeChanged(v) {
         this.state.unittype = v || this.state.unittype;    // don't allow an uncheck
@@ -59,7 +65,6 @@ var FireAttackerAdvancedAddView = React.createClass({
     },
     calcValue(state) {
         state = state || this.state;
-
         //value = size * fire multiplier * modifiers
         let value = +state.size * +state.factor;
         if (state.mods['1/2']) {
@@ -77,25 +82,27 @@ var FireAttackerAdvancedAddView = React.createClass({
         return (
             <View style={{flex:1}}>
                 <View style={{flex:1, flexDirection: 'row', justifyContent: 'center', alignItems: 'flex-start'}}>
-                    <View style={{flex: 1, alignSelf: 'stretch', justifyContent: 'flex-start'}}>
+                    <View style={{flex: 2, alignSelf: 'stretch', justifyContent: 'flex-start'}}>
                         <Text style={{fontSize: 16, backgroundColor: 'silver', textAlign: 'center'}}>Size</Text>
                         <View>
                         <SpinNumeric value={this.state.size} min={0} max={30} onChanged={this.onSizeChanged} />
                         </View>
                     </View>
-                    <View style={{flex: 1, alignSelf: 'stretch', justifyContent: 'flex-start'}}>
+                    <View style={{flex: 2, alignSelf: 'stretch', justifyContent: 'flex-start'}}>
                         <Text style={{fontSize: 16, backgroundColor: 'silver', textAlign: 'center'}}>Factor</Text>
                         <View>
                         <SpinNumeric value={this.state.factor} min={0} max={30} onChanged={this.onFactorChanged} />
                         </View>
                     </View>
                     <View style={{flex: 1, alignSelf: 'stretch'}}>
-                        <Text style={{fontSize: 16, backgroundColor: 'silver', textAlign: 'center'}}>Value</Text>
+                        <Text style={{fontSize: 16, backgroundColor: 'silver', textAlign: 'center'}}>{' '}</Text>
+                        <View style={{marginTop: 20}}>
                         <Text style={{fontSize: 16, fontWeight: 'bold', color: 'white', backgroundColor: 'gray', textAlign: 'center'}}>
                             {this.state.value}
                         </Text>
+                        </View>
                     </View>
-                    <View style={{flex:.5}}>
+                    <View style={{flex:1}}>
                         <View style={{margin:2}}>
                             <IconButton image={'equal'} height={32} width={32} resizeMode='stretch' onPress={this.onSet} />
                         </View>
@@ -107,13 +114,18 @@ var FireAttackerAdvancedAddView = React.createClass({
                 <View style={{flex: .75, flexDirection: 'row'}}>
                     {['1/3','1/2','3/2'].map((v, i) => {
                         return (
-                            <View key={i} style={{flex: 1,flexDirection: 'row', alignItems: 'center'}}>
+                            <View key={i} style={{flex: 1,flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
                                 <Text>{v}</Text>
                                 <Switch value={this.state.mods[v]} onValueChange={this.onModifier(v)} />
                             </View>
                         );
                     })}
                 </View>
+                <View style={{flex:3}}>
+                    <FireAttackerValuesView onSelect={this.onSelection} />
+                </View>
+
+                {/*
                 <View style={{flex:3, flexDirection: 'row', justifyContent: 'center', alignItems: 'flex-start'}}>
                     <View style={{flex:3}}>
                         <SelectList title={'Unit Type'} titleonly={true}
@@ -128,6 +140,7 @@ var FireAttackerAdvancedAddView = React.createClass({
                             onChanged={this.onFormationChanged}/>
                     </View>
                 </View>
+                */}
             </View>
         );
     },

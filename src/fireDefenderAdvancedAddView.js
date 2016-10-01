@@ -64,7 +64,11 @@ var FireDefenderAdvancedAddView = React.createClass({
     },
     formations(terrain) {
         let battle = Current.battle();
-        return Object.keys(battle.fire.defense.terrain[terrain]).filter((f) => battle.fire.defense.terrain[terrain][f].label != '');
+        let t = battle.fire.defense.terrain[terrain];
+        if (t) {
+            return Object.keys(t).filter((f) => battle.fire.defense.terrain[terrain][f].label != '');
+        }
+        return [];
     }
 });
 
