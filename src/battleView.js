@@ -18,7 +18,7 @@ var BattleView = React.createClass({
     getInitialState() {
         return {
             battle: this.props.battle,
-            initialPage: 3
+            initialPage: 0
         };
     },
     componentWillMount() {
