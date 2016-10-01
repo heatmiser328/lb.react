@@ -64,9 +64,7 @@ var MoraleView = React.createClass({
                 </View>
                 <View style={{flex: 1, flexDirection: 'row'}}>
                     <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-                        <Image style={{height: 64, width: 64, resizeMode: 'stretch'}}
-                            source={icon}
-                        />
+                        <Image style={{height: 64, width: 64, resizeMode: 'stretch'}} source={icon} />
                     </View>
                     <View style={{flex: 1}}>
                         <DiceRoll dice={dice} values={[this.state.die1,this.state.die2]}

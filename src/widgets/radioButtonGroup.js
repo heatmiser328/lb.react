@@ -12,21 +12,26 @@ var RadioButtonGroup = React.createClass({
     },
     render() {
         let dir = this.props.direction == 'vertical' ? 'column' : 'row';
+        let justify = dir == 'column' ? 'flex-start' : 'center';
+        let align = dir == 'column' ? 'flex-start' : 'center';
+        let margin = dir == 'column' ? 10 : 0;
         return (
-            <View style={{flex: 1, flexDirection: dir, justifyContent: 'center', alignItems: 'center', alignSelf: 'stretch'}}>
+            <View style={{flex: 1, alignSelf: 'stretch'}}>
                 {this.renderLabel()}
-                {this.props.buttons.map((b,i) => {
-                    return (
-                        <RadioButton key={i} label={b.label} labelpos={b.labelpos} selected={b.value==this.props.state} onSelected={this.onSelected(b)} />
-                    );
-                })}
+                <View style={{flex: 1, flexDirection: dir, margin: margin, justifyContent: justify, alignItems: align, alignSelf: 'stretch'}}>
+                    {this.props.buttons.map((b,i) => {
+                        return (
+                            <RadioButton key={i} label={b.label} labelpos={b.labelpos} selected={b.value==this.props.state} onSelected={this.onSelected(b)} />
+                        );
+                    })}
+                </View>
             </View>
         );
     },
     renderLabel() {
         if (this.props.title) {
             return (
-                <Text style={{fontSize: 16, backgroundColor: 'silver', textAlign: 'center'}}>{title}</Text>
+                <Text style={{fontSize: 16, backgroundColor: 'silver', textAlign: 'center'}}>{this.props.title}</Text>
             );
         }
         return null;
