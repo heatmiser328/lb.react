@@ -23,7 +23,8 @@ var MeleeAssaultView = React.createClass({
         let odds = this.odds();
         return {
             morale: '11',
-            mode: 0,
+            leader: '0',
+            mode: 1,
             mods: {},
             odds: odds[1].name,
             die1: 1,
@@ -35,8 +36,12 @@ var MeleeAssaultView = React.createClass({
         this.state.morale = v;
         this.onResolve();
     },
+    onLeaderChanged(v) {
+        this.state.leader = v;
+        this.onResolve();
+    },
     onModeChanged(v) {
-        this.setState({mode:v, mods: {}, result: null});
+        this.setState({mode:v, leader: '0', mods: {}, result: null});
     },
     onModChanged(m) {
        this.state.mods[m.name] = m.selected;
@@ -66,7 +71,7 @@ var MeleeAssaultView = React.createClass({
         let oddsmod = this.odds().find((o) => o.name == this.state.odds) || {};
         let attmod = oddsmod.attmod + this.modifiers().filter((m) => this.state.mods[m.name]).reduce((p,c) => p + c.attmod, 0);
         let defmod = oddsmod.defmod + this.modifiers().filter((m) => this.state.mods[m.name]).reduce((p,c) => p + c.defmod, 0);
-        let mod = this.state.mode == 0 ? attmod : defmod;
+        let mod = (this.state.mode == 0 ? attmod : defmod) + (+this.state.leader);
         this.state.result = Morale.check(+this.state.morale,mod,this.state.die1,this.state.die2);
         this.setState(this.state);
     },
@@ -74,19 +79,20 @@ var MeleeAssaultView = React.createClass({
         let icon = this.state.result != null ? (this.state.result ? Icons['pass'] : Icons['fail']) : null;
         return (
             <View style={{flex: 1}}>
-                <View style={{flex:1, flexDirection: 'row'}}>
+                <View style={{flex:.75, flexDirection: 'row'}}>
                     <View style={{flex:1}}>
-                        <View style={{flex:1, flexDirection: 'row'}}>
-                            <View style={{flex:2}}>
-                                <SpinNumeric value={this.state.morale} values={Base6.values} integer={true} onChanged={this.onMoraleChanged} />
-                            </View>
-                            <View style={{flex:1}}>
-                                <RadioButtonGroup buttons={[{label: 'Attacker', value: 0}, {label: 'Defender', value: 1}]} state={this.state.mode} onSelected={this.onModeChanged} />
-                            </View>
+                        {/*<Text style={{backgroundColor:'silver', alignSelf:'stretch', textAlign:'center'}}>Morale</Text>*/}
+                        <View style={{marginLeft:5}}>
+                        <SpinNumeric label={'Morale'} value={this.state.morale} values={Base6.values} integer={true} onChanged={this.onMoraleChanged} />
                         </View>
-                        <View style={{flex: 1}}>
-                            <QuickValuesView values={[16,26,36,46,56]} onChanged={this.onMoraleChanged}/>
+                        <QuickValuesView values={[16,26,36,46,56]} onChanged={this.onMoraleChanged}/>
+                    </View>
+                    <View style={{flex:1}}>
+                        {/*<Text style={{backgroundColor:'silver', alignSelf:'stretch', textAlign:'center'}}>Leader</Text>*/}
+                        <View style={{marginLeft:5}}>
+                        <SpinNumeric label={'Leader'} value={this.state.leader} integer={true} onChanged={this.onLeaderChanged} />
                         </View>
+                        <QuickValuesView values={[-3,0,3,6,12]} onChanged={this.onLeaderChanged}/>
                     </View>
                 </View>
                 <View style={{flex:2.5, flexDirection: 'row'}}>
@@ -103,10 +109,13 @@ var MeleeAssaultView = React.createClass({
                 </View>
                 <View style={{flex: 1}}>
                     <View style={{flex: .75, flexDirection: 'row', backgroundColor: 'whitesmoke'}}>
+                        <View style={{flex:1, alignItems: 'center', justifyContent: 'center'}}>
+                            <RadioButtonGroup buttons={[{label: 'Defender', value: 1},{label: 'Attacker', value: 0}]} state={this.state.mode} onSelected={this.onModeChanged} />
+                        </View>
                         <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
                             <Image style={{height: 64, width: 64, resizeMode: 'stretch'}} source={icon} />
                         </View>
-                        <View style={{flex:2}}>
+                        <View style={{flex:1}}>
                             <DiceRoll dice={this.dice} values={[this.state.die1,this.state.die2]}
                                 onRoll={this.onDiceRoll} onDie={this.onDieChanged}/>
                         </View>
@@ -114,7 +123,6 @@ var MeleeAssaultView = React.createClass({
                     <View style={{flex: .75, backgroundColor: 'whitesmoke'}}>
                         <DiceModifiersView onChange={this.onDiceModifierChanged} />
                     </View>
-
                 </View>
             </View>
         );

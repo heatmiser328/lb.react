@@ -65,7 +65,6 @@ var MeleeChargeStandView = React.createClass({
         return (
             <View style={{flex: 1}}>
                 <View style={{flex:4, flexDirection:'row'}}>
-                    {/*morale*/}
                     <View style={{flex:3, justifyContent: 'flex-start'}}>
                         <View style={{flex:1, marginLeft: 5}}>
                             <SpinNumeric label={'Morale'} value={this.state.morale} values={Base6.values} integer={true} onChanged={this.onMoraleChanged} />
@@ -74,11 +73,13 @@ var MeleeChargeStandView = React.createClass({
                             <QuickValuesView values={[16,26,36,46,56]} onChanged={this.onMoraleChanged}/>
                         </View>
                         <View style={{flex:1, marginLeft: 5}}>
-                            <SpinNumeric label={'Leader'} value={this.state.leader} min={0} max={36} integer={true} onChanged={this.onLeaderChanged} />
+                            <SpinNumeric label={'Leader'} value={this.state.leader} integer={true} onChanged={this.onLeaderChanged} />
                         </View>
-                        <View style={{flex:4}} />
+                        <View style={{flex: 1}}>
+                            <QuickValuesView values={[-3,0,3,6,12]} onChanged={this.onLeaderChanged}/>
+                        </View>
+                        <View style={{flex:3}} />
                     </View>
-                    {/*modifiers*/}
                     <View style={{flex:2}}>
                         <MultiSelectList title={'Modifiers'}
                             items={this.modifiers().map((m) => {return {name: m.name, selected: this.state.mods[m.name]};})}
