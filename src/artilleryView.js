@@ -1,8 +1,8 @@
 'use strict'
 var React = require('react');
 import { View, Text, Image } from 'react-native';
+var RadioButtonGroup = require('./widgets/radioButtonGroup');
 var MultiSelectList = require('./widgets/multiSelectList');
-var SelectList = require('./widgets/selectList');
 var DiceRoll = require('./widgets/diceRoll');
 var Icons = require('./res/icons');
 var Base6 = require('./services/base6');
@@ -50,10 +50,10 @@ var ArtilleryView = React.createClass({
                 <Text style={{fontSize: 18,fontWeight: 'bold',backgroundColor: 'silver', textAlign: 'center'}}>Artillery Limber</Text>
                 <View style={{flex:1, flexDirection:'row'}}>
                     <View style={{flex:1}}>
-                        <SelectList title={'Type'} titleonly={true}
-                            items={this.types().map((t) => {return {label: t, value: t};})}
-                            selected={this.state.type}
-                            onChanged={this.onTypeChanged}/>
+                        <RadioButtonGroup title={'Type'} direction={'vertical'}
+                            buttons={this.types().map((t) => {return {label:t,value:t};})}
+                            state={this.state.type}
+                            onSelected={this.onTypeChanged}/>
                     </View>
                     <View style={{flex:1}}>
                         <MultiSelectList title={'Modifiers'}
@@ -62,7 +62,7 @@ var ArtilleryView = React.createClass({
                     </View>
                     <View style={{flex:2, flexDirection: 'row', backgroundColor: 'whitesmoke'}}>
                         <View style={{flex:1, justifyContent: 'center', alignItems:'center'}}>
-                            <Text style={{fontWeight: 'bold'}}>{this.state.results}</Text>
+                            <Text style={{fontSize: 18, fontWeight: 'bold'}}>{this.state.results}</Text>
                         </View>
                         <View style={{flex:1}}>
                             <DiceRoll dice={this.dice} values={[this.state.die1]} onRoll={this.onDiceRoll} onDie={this.onDieChanged}/>

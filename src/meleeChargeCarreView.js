@@ -3,7 +3,7 @@ var React = require('react');
 import { View, Text, Image } from 'react-native';
 var SpinNumeric = require('./widgets/spinNumeric');
 var MultiSelectList = require('./widgets/multiSelectList');
-var SelectList = require('./widgets/selectList');
+var RadioButtonGroup = require('./widgets/radioButtonGroup');
 var QuickValuesView = require('./quickValuesView');
 var DiceModifiersView = require('./diceModifiersView');
 var DiceRoll = require('./widgets/diceRoll');
@@ -78,16 +78,16 @@ var MeleeChargeCarreView = React.createClass({
                     <View style={{flex:3, justifyContent: 'flex-start'}}>
                         <View style={{flex: 2, flexDirection: 'row'}}>
                             <View style={{flex:1}}>
-                                <SelectList title={'Nationality'} titleonly={true}
-                                    items={this.nationalities().map((n) => {return {label: n, value: n};})}
-                                    selected={this.state.nationality}
-                                    onChanged={this.onNationalityChanged}/>
+                                <RadioButtonGroup title={'Nationality'} direction={'vertical'}
+                                    buttons={this.nationalities().map((n) => {return {label:n,value:n};})}
+                                    state={this.state.nationality}
+                                    onSelected={this.onNationalityChanged}/>
                             </View>
                             <View style={{flex:1}}>
-                                <SelectList title={'Formation'} titleonly={true}
-                                    items={this.formations(this.state.nationality).map((f) => {return {label: f, value: f};})}
-                                    selected={this.state.formation}
-                                    onChanged={this.onFormationChanged}/>
+                                <RadioButtonGroup title={'Formation'} direction={'vertical'}
+                                    buttons={this.formations(this.state.nationality).map((f) => {return {label:f,value:f};})}
+                                    state={this.state.formation}
+                                    onSelected={this.onFormationChanged}/>
                             </View>
                         </View>
                         <View style={{flex:1, marginLeft: 5}}>
