@@ -18,12 +18,11 @@ var modifiers = [
     {"name": "Force March", "mod": -3}
 ];
 
-var dice = [
-    {num: 1, low: 1, high: 6, color: 'red'},
-    {num: 1, low: 1, high: 6, color: 'white'}
-];
-
 var MoraleView = React.createClass({
+    dice: [
+        {num: 1, low: 1, high: 6, diecolor: 'red', dotcolor:'white'},
+        {num: 1, low: 1, high: 6, diecolor: 'white', dotcolor:'black'}
+    ],
     getInitialState() {
         return {
             morale: '11',
@@ -89,7 +88,7 @@ var MoraleView = React.createClass({
                             <Image style={{height: 64, width: 64, resizeMode: 'stretch'}} source={icon} />
                         </View>
                         <View style={{flex: 1}}>
-                            <DiceRoll dice={dice} values={[this.state.die1,this.state.die2]}
+                            <DiceRoll dice={this.dice} values={[this.state.die1,this.state.die2]}
                                     onRoll={this.onDiceRoll} onDie={this.onDieChanged}/>
                         </View>
                     </View>

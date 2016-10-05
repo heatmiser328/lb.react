@@ -59,18 +59,21 @@ var SpinNumeric = React.createClass({
     },
     render() {
         return (
-            <View style={{flex: 1,flexDirection: 'row',paddingTop: 5,paddingBottom: 5, alignItems: 'center'}}>
+            <View style={{flex: 1,flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
                 {this.props.label
-                    ? <Text style={{flex: 20,marginTop: 10}}>{this.props.label}</Text>
+                    ? <View style={{flex: 1}}>
+                        <Text>{this.props.label}</Text>
+                    </View>
                     : null
                 }
-                <SpinButton style={{flex: 10, width: 50}} direction={'prev'} onPress={this.onPrev} />
-                <View style={{flex: 60,height: 50,alignItems: 'center',padding: 5}}>
+                <View style={{flex: 1}}>
+                    <SpinButton size={24} direction={'prev'} onPress={this.onPrev} />
+                </View>
+                <View style={{flex: 3, alignItems: 'center'}}>
                     <TextInput
-                        style={{flex: 60, width: 50, fontSize: 18,borderWidth: 1,borderRadius: 4,
-                                borderColor: '#E6E5ED',
+                        style={{alignSelf: 'stretch', fontSize: 18,
+                                //borderWidth: 1,borderRadius: 4,borderColor: '#E6E5ED',
                                 //backgroundColor: '#F8F8F9',
-                                //backgroundColor: 'red',
                                 justifyContent: 'center',
                                 textAlign: 'center'}}
                         keyboardType={'numeric'}
@@ -80,7 +83,9 @@ var SpinNumeric = React.createClass({
                         value={this.props.value}
                     />
                 </View>
-                <SpinButton style={{flex: 10, width: 50}} direction={'next'} onPress={this.onNext} />
+                <View style={{flex: 1}}>
+                    <SpinButton size={24} direction={'next'} onPress={this.onNext} />
+                </View>
             </View>
         );
     }

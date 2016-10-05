@@ -1,33 +1,16 @@
 'use strict'
 
 var React = require('react');
-import { TouchableOpacity, Image, StyleSheet } from 'react-native';
-var Icons = require('../res/icons');
+import { TouchableOpacity } from 'react-native';
+var Arrow = require('./arrow');
 
-var styles = StyleSheet.create({
-  prevButton: {
-      flex: 10,
-      marginTop: 5,
-      padding: 5,
-      //backgroundColor: 'red',
-      alignItems: 'center',
-  },
-  nextButton: {
-      flex: 10,
-      marginTop: 5,
-      padding: 5,
-      //backgroundColor: 'red',
-      alignItems: 'center',
-  },
-});
 
 var SpinButton = React.createClass({
     render() {
-        let style = this.props.direction == 'prev' ? styles.prevButton : styles.nextButton;
-        let icon = this.props.direction == 'prev' ? Icons.prevButton : Icons.nextButton;
+        let dir = this.props.direction == 'prev' ? 'left' : 'right';
         return (
-            <TouchableOpacity onPress={this.props.onPress} style={style}>
-                <Image source={icon} />
+            <TouchableOpacity onPress={this.props.onPress} style={{flex: 1, justifyContent:'center',alignItems: 'center'}}>
+                <Arrow size={this.props.size} direction={dir} />
             </TouchableOpacity>
         );
     }

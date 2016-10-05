@@ -8,13 +8,7 @@ module.exports = {
 	"imperial": require('./imperial.jpg'),
 
 	"refreshButton": require('./ic_action_refresh.png'),
-	"prevButton":	require('./ic_action_previous_item.png'),
-	"nextButton": require('./ic_action_next_item.png'),
-	"radio-on": require('./radio-on.png'),
-	"radio-off": require('./radio-off.png'),
 
-	"arrowRight": require('./arrow-right.png'),
-	"arrowDown": require('./arrow-down.png'),
 	"add": require('./addico.png'),
 	"equal": require('./equalico.png'),
 

@@ -2,17 +2,21 @@
 var Sound = require('./sound.js');
 var range = require('./range.js');
 
-function Die(low, high, color) {
+function Die(low, high, diecolor, dotcolor) {
 	var self = this;
     var value = low;
-    color = color || 'white';
+    diecolor = diecolor || 'white';
+	dotcolor = dotcolor || 'black'
 
 	function randomBetween(low, high) {
 		return Math.floor(Math.random()*(high-low+1)) + low;
 	}
 
-    self.image = function() {
-    	return color + value.toString();
+    self.color = function() {
+    	return {
+			die: diecolor,
+			dot: dotcolor
+		};
     }
 
     self.value = function(d) {
@@ -46,10 +50,10 @@ function Die(low, high, color) {
 function Dice(opts) {
 	var self = this;
     var dice = [];
-    opts = opts || [{num: 1, low: 1, high: 6, color: 'white'}];
+    opts = opts || [{num: 1, low: 1, high: 6, diecolor: 'white', dotcolor: 'black'}];
 	opts.forEach((opt) => {
 		range(opt.num).forEach((i) => {
-	    	dice.push(new Die(opt.low, opt.high, opt.color));
+	    	dice.push(new Die(opt.low, opt.high, opt.diecolor, opt.dotcolor));
         });
 	});
 
@@ -73,7 +77,7 @@ function Dice(opts) {
         return dice.map((die) => {
         	return {
             	value: die.value(),
-                image: die.image()
+                color: die.color()
             };
         });
     }

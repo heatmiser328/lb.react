@@ -11,15 +11,14 @@ var Melee = require('./services/melee');
 var LeaderLoss = require('./services/leaderloss');
 var Base6 = require('./services/base6');
 
-var dice = [
-    {num: 1, low: 1, high: 6, color: 'red'},
-    {num: 1, low: 1, high: 6, color: 'white'},
-    {num: 1, low: 1, high: 6, color: 'blue'},
-    {num: 1, low: 1, high: 6, color: 'blackw'},
-    {num: 1, low: 1, high: 6, color: 'blackr'}
-];
-
 var MeleeResolutionView = React.createClass({
+    dice: [
+        {num: 1, low: 1, high: 6, diecolor: 'red', dotcolor:'white'},
+        {num: 1, low: 1, high: 6, diecolor: 'white', dotcolor:'black'},
+        {num: 1, low: 1, high: 6, diecolor: 'blue', dotcolor:'white'},
+        {num: 1, low: 1, high: 6, diecolor: 'black', dotcolor:'white'},
+        {num: 1, low: 1, high: 6, diecolor: 'black', dotcolor:'red'}
+    ],
     getInitialState() {
         return {
             attack: '0',
@@ -131,7 +130,7 @@ var MeleeResolutionView = React.createClass({
                       </View>
                   </View>
                   <View style={{flex: 1}}>
-                      <DiceRoll dice={dice} values={[this.state.die1,this.state.die2,this.state.die3,this.state.die4,this.state.die5]}
+                      <DiceRoll dice={this.dice} values={[this.state.die1,this.state.die2,this.state.die3,this.state.die4,this.state.die5]}
                               onRoll={this.onDiceRoll} onDie={this.onDieChanged}/>
                   </View>
                   <View style={{flex: 1}}>

@@ -16,8 +16,8 @@ var Current = require('./services/current');
 
 var MeleeAssaultView = React.createClass({
     dice: [
-        {num: 1, low: 1, high: 6, color: 'red'},
-        {num: 1, low: 1, high: 6, color: 'white'}
+        {num: 1, low: 1, high: 6, diecolor: 'red', dotcolor:'white'},
+        {num: 1, low: 1, high: 6, diecolor: 'white', dotcolor:'black'}
     ],
     getInitialState() {
         let odds = this.odds();

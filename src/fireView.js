@@ -13,11 +13,11 @@ var Base6 = require('./services/base6');
 var Current = require('./services/current');
 
 var dice = [
-    {num: 1, low: 1, high: 6, color: 'red'},
-    {num: 1, low: 1, high: 6, color: 'white'},
-    {num: 1, low: 1, high: 6, color: 'blue'},
-    {num: 1, low: 1, high: 6, color: 'blackw'},
-    {num: 1, low: 1, high: 6, color: 'blackr'}
+    {num: 1, low: 1, high: 6, diecolor: 'red', dotcolor:'white'},
+    {num: 1, low: 1, high: 6, diecolor: 'white', dotcolor:'black'},
+    {num: 1, low: 1, high: 6, diecolor: 'blue', dotcolor:'white'},
+    {num: 1, low: 1, high: 6, diecolor: 'black', dotcolor:'white'},
+    {num: 1, low: 1, high: 6, diecolor: 'black', dotcolor:'red'}
 ];
 
 var FireView = React.createClass({

@@ -10,7 +10,7 @@ var Current = require('./services/current');
 
 var ArtilleryView = React.createClass({
     dice: [
-        {num: 1, low: 1, high: 6, color: 'green'}
+        {num: 1, low: 1, high: 6, diecolor: 'green', dotcolor:'white'}
     ],
     getInitialState() {
         let types = this.types();

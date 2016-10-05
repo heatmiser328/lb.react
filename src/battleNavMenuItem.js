@@ -2,6 +2,7 @@
 
 var React = require('react');
 import { View, TouchableOpacity, Text, Image, ListView } from 'react-native';
+var Arrow = require('./widgets/arrow');
 var ScenarioNavMenuItem = require('./scenarioNavMenuItem');
 var icons = require('./res/icons');
 
@@ -26,8 +27,9 @@ var BattleNavMenuItem = React.createClass({
                         backgroundColor: '#eaeaea',
                         borderRadius: 3
                     }}>
-                        <Image style={{width: 28, height: 96, resizeMode: 'contain'}}
-                            source={this.state.expanded ? icons['arrowDown'] : icons['arrowRight']} />
+                        <View style={{marginTop: 40, marginRight: 5}}>
+                            <Arrow size={18} direction={this.state.expanded ? 'down' : 'right'} />
+                        </View>
                         <Image style={{
                             //flex: 1,
                             //width: null,
