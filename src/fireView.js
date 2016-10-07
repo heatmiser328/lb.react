@@ -1,12 +1,12 @@
 'use strict'
 var React = require('react');
 import { View, Text, Switch } from 'react-native';
+import {DiceRoll} from 'react-native-dice';
 var FireAttackerView = require('./fireAttackerView');
 var FireDefenderView = require('./fireDefenderView');
 var OddsView = require('./oddsView');
 var ResultsView = require('./fireResultsView');
 var DiceModifiersView = require('./diceModifiersView');
-var DiceRoll = require('./widgets/diceRoll');
 var Fire = require('./services/fire');
 var LeaderLoss = require('./services/leaderloss');
 var Base6 = require('./services/base6');

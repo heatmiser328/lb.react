@@ -1,10 +1,8 @@
 'use strict'
 var React = require('react');
 import { View, Text, Switch } from 'react-native';
-var SpinNumeric = require('./widgets/spinNumeric');
-var MultiSelectList = require('./widgets/multiSelectList');
-var RadioButtonGroup = require('./widgets/radioButtonGroup');
-var IconButton = require('./widgets/iconButton');
+import {SpinNumeric,MultiSelectList,RadioButtonGroup,IconButton} from 'react-native-app-nub';
+var Icons = require('./res/icons');
 var Current = require('./services/current');
 
 var MeleeCalcView = React.createClass({
@@ -73,7 +71,7 @@ var MeleeCalcView = React.createClass({
             <View style={{flex:1, justifyContent: 'center', marginLeft: 20, marginRight: 20, borderRadius: 4, borderWidth: 2, borderColor: 'black', backgroundColor: 'whitesmoke'}}>
                 <View style={{flex: 5, flexDirection: 'row', justifyContent: 'center'}}>
                     <View style={{flex: 2, justifyContent: 'center'}}>
-                        <Text style={{fontSize: 16,fontWeight: 'bold',backgroundColor: 'silver', textAlign: 'center'}}>{'Calculator'}</Text>                
+                        <Text style={{fontSize: 16,fontWeight: 'bold',backgroundColor: 'silver', textAlign: 'center'}}>{'Calculator'}</Text>
                         <View style={{flex: 1, marginLeft: 5}}>
                             <SpinNumeric label={'Incr'} value={this.state.incr} min={1} integer={true} onChanged={this.onIncrChanged} />
                         </View>
@@ -95,10 +93,10 @@ var MeleeCalcView = React.createClass({
                                     onSelected={this.onSideChanged} />
                             </View>
                             <View style={{flex:.5, margin:2}}>
-                                <IconButton image={'equal'} height={32} width={32} resizeMode='stretch' onPress={this.onSet} />
+                                <IconButton image={Icons['equal']} height={32} width={32} resizeMode='stretch' onPress={this.onSet} />
                             </View>
                             <View style={{flex:.5, margin:2}}>
-                                <IconButton image={'add'} height={32} width={32} resizeMode='stretch' onPress={this.onAdd} />
+                                <IconButton image={Icons['add']} height={32} width={32} resizeMode='stretch' onPress={this.onAdd} />
                             </View>
                         </View>
                     </View>

@@ -1,11 +1,10 @@
 'use strict'
 var React = require('react');
 import { View, Text, Image } from 'react-native';
-var SpinNumeric = require('./widgets/spinNumeric');
-var MultiSelectList = require('./widgets/multiSelectList');
+import {SpinNumeric,MultiSelectList} from 'react-native-app-nub';
+import {DiceRoll} from 'react-native-dice';
 var QuickValuesView = require('./quickValuesView');
 var DiceModifiersView = require('./diceModifiersView');
-var DiceRoll = require('./widgets/diceRoll');
 var Icons = require('./res/icons');
 var Morale = require('./services/morale');
 var Base6 = require('./services/base6');
@@ -88,7 +87,6 @@ var MeleeChargeStandView = React.createClass({
                 </View>
                 <View style={{flex: .75, flexDirection: 'row', backgroundColor: 'whitesmoke'}}>
                     <View style={{flex:1, justifyContent: 'center', alignItems:'flex-end'}}>
-                        {/* images for stand,disorder*/}
                         {/*<Text>{this.state.results}</Text>*/}
                         <Image style={{height: 64, width: 64, resizeMode: 'stretch'}} source={Icons[this.state.results]} />
                     </View>

@@ -1,7 +1,7 @@
 'use strict'
 var React = require('react');
 import { View, Text } from 'react-native';
-var SpinNumeric = require('./widgets/spinNumeric');
+import {SpinNumeric} from 'react-native-app-nub';
 var FireAttackerBasicAddView = require('./fireAttackerBasicAddView');
 var FireAttackerAdvancedAddView = require('./fireAttackerAdvancedAddView');
 var Icons = require('./res/icons');

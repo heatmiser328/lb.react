@@ -1,9 +1,9 @@
 'use strict'
 var React = require('react');
 import { View, Text, Switch } from 'react-native';
+import {SpinNumeric,IconButton} from 'react-native-app-nub';
 var FireAttackerValuesView = require('./fireAttackerValuesView');
-var SpinNumeric = require('./widgets/spinNumeric');
-var IconButton = require('./widgets/iconButton');
+var Icons = require('./res/icons');
 var Current = require('./services/current');
 
 var FireAttackerQuickAddView = React.createClass({
@@ -84,10 +84,10 @@ var FireAttackerQuickAddView = React.createClass({
                     </View>
                     <View style={{flex:.5}}>
                         <View style={{margin:2}}>
-                            <IconButton image={'equal'} height={32} width={32} resizeMode='stretch' onPress={this.onSet} />
+                            <IconButton image={Icons['equal']} height={32} width={32} resizeMode='stretch' onPress={this.onSet} />
                         </View>
                         <View style={{margin:2}}>
-                            <IconButton image={'add'} height={32} width={32} resizeMode='stretch' onPress={this.onAdd} />
+                            <IconButton image={Icons['add']} height={32} width={32} resizeMode='stretch' onPress={this.onAdd} />
                         </View>
                     </View>
                 </View>

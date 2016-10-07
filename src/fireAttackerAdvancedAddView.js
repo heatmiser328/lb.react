@@ -1,11 +1,10 @@
 'use strict'
 var React = require('react');
 import { View, Text, Switch } from 'react-native';
-var SpinNumeric = require('./widgets/spinNumeric');
-var SelectList = require('./widgets/selectList');
+import {SpinNumeric,SelectList,IconButton} from 'react-native-app-nub';
 var FireAttackerValuesView = require('./fireAttackerValuesView');
 var QuickValuesView = require('./quickValuesView');
-var IconButton = require('./widgets/iconButton');
+var Icons = require('./res/icons');
 var Current = require('./services/current');
 
 var FireAttackerAdvancedAddView = React.createClass({
@@ -59,13 +58,13 @@ var FireAttackerAdvancedAddView = React.createClass({
             <View style={{flex:1}}>
                 <View style={{flex:1, flexDirection: 'row', justifyContent: 'center', alignItems: 'flex-start'}}>
                     <View style={{flex: 1, alignItems: 'center', marginTop:15}}>
-                        <IconButton image={'equal'} height={32} width={32} resizeMode='stretch' onPress={this.onSet} />
+                        <IconButton image={Icons['equal']} height={32} width={32} resizeMode='stretch' onPress={this.onSet} />
                     </View>
                     <View style={{flex: 2, alignSelf: 'stretch', justifyContent: 'flex-start'}}>
                         <SpinNumeric value={this.state.value} min={0} max={100} onChanged={this.onValueChanged} />
                     </View>
                     <View style={{flex: 1, alignItems: 'center', marginTop: 15}}>
-                        <IconButton image={'add'} height={32} width={32} resizeMode='stretch' onPress={this.onAdd} />
+                        <IconButton image={Icons['add']} height={32} width={32} resizeMode='stretch' onPress={this.onAdd} />
                     </View>
                 </View>
                 <View style={{flex: .75, flexDirection: 'row'}}>

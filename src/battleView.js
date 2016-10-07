@@ -12,20 +12,16 @@ var MeleeResolutionView = require('./meleeResolutionView');
 var MoraleView = require('./moraleView');
 var GeneralView = require('./generalView');
 var Current = require('./services/current');
-var icons = require('./res/icons');
+var Icons = require('./res/icons');
 
 var BattleView = React.createClass({
     getInitialState() {
         return {
-            battle: this.props.battle,
             initialPage: 0
         };
     },
     componentWillMount() {
         this.props.events.addListener('menureset', this.onReset);
-    },
-    shouldComponentUpdate(nextProps, nextState) {
-        return true;
     },
     onReset() {
         //console.log('Reset ' + this.props.battle.name);
@@ -40,11 +36,11 @@ var BattleView = React.createClass({
     onChangeTab({i, ref}) {
     },
     render() {
-        let battle = this.state.battle || {scenario: {}};
+        let battle = this.props.battle || {};
         let b = Current.battle();
         return (
             <View style={{flex: 1,backgroundColor: 'rgba(0,0,0,0.01)'}}>
-                <TurnView logo={icons[battle.image]} events={this.props.events} />
+                <TurnView logo={Icons[battle.image]} events={this.props.events} />
                 <ScrollableTabView
                     style={{backgroundColor: '#fff'}}
                     onChangeTab={this.onChangeTab}

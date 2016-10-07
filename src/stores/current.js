@@ -3,7 +3,8 @@
 var RNFS = require('react-native-fs');
 var FILE = 'lb.app.current';
 var PATH = RNFS.DocumentDirectoryPath + '/' + FILE;
-var log = require('../services/log.js');
+import {Log} from 'react-native-app-nub';
+var log = Log;
 
 module.exports = {
 	load() {

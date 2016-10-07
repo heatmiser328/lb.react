@@ -1,3 +1,4 @@
+'use strict';
 var React = require('react');
 import { View, TouchableOpacity, Text } from 'react-native';
 var moment = require('moment');

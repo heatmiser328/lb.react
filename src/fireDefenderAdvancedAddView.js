@@ -1,8 +1,7 @@
 'use strict'
 var React = require('react');
 import { View, Text } from 'react-native';
-var SpinNumeric = require('./widgets/spinNumeric');
-var RadioButtonGroup = require('./widgets/radioButtonGroup');
+import {SpinNumeric,RadioButtonGroup} from 'react-native-app-nub';
 var Current = require('./services/current');
 
 var FireDefenderAdvancedAddView = React.createClass({
@@ -51,7 +50,7 @@ var FireDefenderAdvancedAddView = React.createClass({
                         <RadioButtonGroup title={'Formation'} direction={'vertical'}
                             buttons={this.formations(this.state.terrain).map((f) => {return {label:f,value:f};})}
                             state={this.state.formation}
-                            onSelected={this.onFormationChanged}/>                            
+                            onSelected={this.onFormationChanged}/>
                     </View>
                 </View>
                 {/*View style={{flex: 6}} />*/}

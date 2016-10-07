@@ -1,13 +1,14 @@
+import { Icons } from 'react-native-app-nub';
+
 module.exports = {
 	"logo": require('./logo.png'),
 	"splash": require('./napolean.jpg'),
-	"menu": require('./hamburger.png'),
-	"info": require('./info.png'),
+	"menu": Icons['menu-dark'],
+	"info": Icons['info-dark'],
+	"refresh": Icons['refresh-dark'],
 
 	"coalition": require('./coalition.jpg'),
 	"imperial": require('./imperial.jpg'),
-
-	"refreshButton": require('./ic_action_refresh.png'),
 
 	"add": require('./addico.png'),
 	"equal": require('./equalico.png'),

@@ -1,10 +1,8 @@
 'use strict'
 var React = require('react');
 import { View, Text } from 'react-native';
-var SpinNumeric = require('./widgets/spinNumeric');
-var SelectList = require('./widgets/selectList');
-var MultiSelectList = require('./widgets/multiSelectList');
-var IconButton = require('./widgets/iconButton');
+import {SpinNumeric,SelectList,MultiSelectList,IconButton} from 'react-native-app-nub';
+var Icons = require('./res/icons');
 var Current = require('./services/current');
 
 let modifiers = [
@@ -77,10 +75,10 @@ var FireDefenderQuickAddView = React.createClass({
                     </View>
                     <View style={{flex:1}}>
                         <View style={{margin:2}}>
-                            <IconButton image={'equal'} height={32} width={32} resizeMode='stretch' onPress={this.onSet} />
+                            <IconButton image={Icons['equal']} height={32} width={32} resizeMode='stretch' onPress={this.onSet} />
                         </View>
                         <View style={{margin:2}}>
-                            <IconButton image={'add'} height={32} width={32} resizeMode='stretch' onPress={this.onAdd} />
+                            <IconButton image={Icons['add']} height={32} width={32} resizeMode='stretch' onPress={this.onAdd} />
                         </View>
                     </View>
                 </View>

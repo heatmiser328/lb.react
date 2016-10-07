@@ -1,9 +1,10 @@
 'use strict'
 
+import {Log} from 'react-native-app-nub';
 var Store = require('../stores/current');
 var Battles = require('./battles');
 var Phases = require('./phases');
-var log = require('./log');
+var log = Log;
 var moment = require('moment');
 var TURN_MINS = 20;
 

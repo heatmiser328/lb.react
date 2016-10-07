@@ -1,14 +1,11 @@
 'use strict'
 var React = require('react');
 import { View, Text, Image } from 'react-native';
-var SpinNumeric = require('./widgets/spinNumeric');
-var RadioButtonGroup = require('./widgets/radioButtonGroup');
-var MultiSelectList = require('./widgets/multiSelectList');
-var SelectList = require('./widgets/selectList');
+import {SpinNumeric,RadioButtonGroup,MultiSelectList,SelectList} from 'react-native-app-nub';
+import {DiceRoll} from 'react-native-dice';
 var QuickValuesView = require('./quickValuesView');
 var OddsView = require('./oddsView');
 var DiceModifiersView = require('./diceModifiersView');
-var DiceRoll = require('./widgets/diceRoll');
 var Icons = require('./res/icons');
 var Base6 = require('./services/base6');
 var Morale = require('./services/morale');

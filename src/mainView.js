@@ -2,18 +2,15 @@
 
 var React = require('react');
 import { View, Text, Navigator } from 'react-native';
-var DrawerLayout = require('./widgets/drawerLayout');
-var NavMenu = require('./widgets/navMenu');
+import {DrawerLayout, NavMenu, TitleBar, LandingView, AboutView, Log} from 'react-native-app-nub';
 var BattleNavMenuItem = require('./battleNavMenuItem');
-var TitleBar = require('./widgets/titleBar');
 import { MenuContext } from 'react-native-menu';
 var EventEmitter = require('EventEmitter');
-var LandingView = require('./landingView');
-var AboutView = require('./aboutView');
+var Icons = require('./res/icons');
 var BattleView = require('./battleView');
 var Battles = require('./services/battles');
 var Current = require('./services/current');
-var log = require('./services/log');
+var log = Log;
 
 var MainView = React.createClass({
     getInitialState() {
@@ -24,7 +21,7 @@ var MainView = React.createClass({
                 battle: {index: 1, name: 'battle', title: 'Battle', onMenu: this.navMenuHandler, onRefresh: this.onReset, onInfo: this.onAbout},
                 about: {index: 7, name: 'about', title: 'About'}
             },
-            version: '0.0.1'
+            version: '1.2.0'
         };
     },
     fetchBattle() {
@@ -92,42 +89,50 @@ var MainView = React.createClass({
     renderScene(route, navigator) {
         route = route || {};
         log.debug('render scene ' + route.name);
-        if (route.name == 'landing') {
-            return (
-                <LandingView events={this.eventEmitter} />
-            );
-        }
-
         if (route.name == 'battle') {
             this.state.routes.battle.title = route.data.name;
             this.state.routes.battle.subtitle = route.data.scenario.name;
-            /*
-            var FireAttackerQuickAddView = require('./fireAttackerQuickAddView');
-            var FireDefenderQuickAddView = require('./fireDefenderQuickAddView');
-            return (
-                <View style={{flex: 1, flexDirection: 'row', marginTop: 55}}>
-                    <View style={{flex: 1, borderRightWidth: 1, borderRightColor: 'gray'}}>
-                        <FireAttackerQuickAddView events={this.eventEmitter} onAdd={(v) => console.log(v)} />
-                    </View>
-                    <View style={{flex: 1}}>
-                        <FireDefenderQuickAddView events={this.eventEmitter} onAdd={(v) => console.log(v)} />
-                    </View>
-                </View>
-            );
-            */
             return (
                 <BattleView battle={route.data} events={this.eventEmitter} />
-            );            
+            );
         }
 
         if (route.name == 'about') {
             return (
-                <AboutView version={this.state.version} events={this.eventEmitter} onClose={() => {navigator.pop();}} />
+                <AboutView logo={Icons.logo}
+                    title={'About La Bataille Assistant'}
+                    version={this.state.version}
+                    releasedate={'October 6, 2016'}
+                    description={'A no frills assistant for the La Bataille conglomeration of wargames.'}
+                    credit={{
+                        description: 'All glory to them that made it possible!',
+                        links: [
+                            {label: 'Marshal Enterprises', url: 'http://www.labataille.me/Home_Page.php'},
+                            {label: 'Clash of Arms', url: 'http://www.clashofarms.com/'}
+                        ]
+                    }}
+                    additionalinfo={{
+                        description: 'And of course check out the discussions and extras',
+                        links: [
+                            {label: 'ConsimWorld Forum', url: 'http://talk.consimworld.com/WebX?13@@.ee6c73b/31887'},
+                            {label: 'La Bataille Extras', url: 'http://labataille.us/'}
+                        ]
+                    }}
+                    dependencies={[
+                        {description: 'apsl-react-native-button', url: ''},
+                        {description: 'react-native-scrollable-tab-view', url: ''},
+                        {description: 'react-native-audioplayer', url: ''},
+                        {description: 'react-native-fs', url: ''},
+                        {description: 'react-native-menu', url: ''},
+                        {description: 'moment', url: ''}
+                    ]}
+                    events={this.eventEmitter} onClose={() => {navigator.pop();}}
+                />
             );
         }
 
         return (
-            <LandingView events={this.eventEmitter} />
+            <LandingView top={30} splash={Icons.splash} events={this.eventEmitter} />
         );
     },
     render() {
@@ -151,7 +156,7 @@ var MainView = React.createClass({
                             debugOverlay={false}
                             initialRoute={this.state.initialRoute}
                             renderScene={this.renderScene}
-                            navigationBar={<Navigator.NavigationBar style={{backgroundColor: 'blue'}} routeMapper={TitleBar()} />}
+                            navigationBar={<Navigator.NavigationBar style={{backgroundColor: 'blue'}} routeMapper={TitleBar({menu: Icons.menu, refresh: Icons.refresh, info: Icons.info})} />}
                         />
                     </MenuContext>
                 </DrawerLayout>

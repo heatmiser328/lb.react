@@ -1,18 +1,17 @@
 'use strict'
 var React = require('react');
 import { View, Text, Image } from 'react-native';
-var SpinNumeric = require('./widgets/spinNumeric');
+import {SpinNumeric,MultiSelectList} from 'react-native-app-nub';
+import {DiceRoll} from 'react-native-dice';
 var QuickValuesView = require('./quickValuesView');
-var MultiSelectList = require('./widgets/multiSelectList');
 var DiceModifiersView = require('./diceModifiersView');
-var DiceRoll = require('./widgets/diceRoll');
 var Base6 = require('./services/base6');
 var Morale = require('./services/morale');
 var Icons = require('./res/icons');
 
 var modifiers = [
     {"name": "Disorder", "mod": -3},
-    {"name": "Route", "mod": -6},
+    {"name": "Rout", "mod": -6},
     {"name": "50% Losses", "mod": -6},
     {"name": "Road Col", "mod": -6},
     {"name": "Force March", "mod": -3}
