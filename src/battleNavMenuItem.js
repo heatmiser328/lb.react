@@ -2,7 +2,7 @@
 
 var React = require('react');
 import { View, TouchableOpacity, Text, Image, ListView } from 'react-native';
-import {Arrow} from 'react-native-app-nub';
+import {Arrow} from 'app-nub.react';
 var ScenarioNavMenuItem = require('./scenarioNavMenuItem');
 var Icons = require('./res/icons');
 

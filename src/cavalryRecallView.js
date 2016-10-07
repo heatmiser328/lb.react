@@ -1,8 +1,8 @@
 'use strict'
 var React = require('react');
 import { View, Text, Image } from 'react-native';
-import {RadioButtonGroup,MultiSelectList} from 'react-native-app-nub';
-import {DiceRoll} from 'react-native-dice';
+import {RadioButtonGroup,MultiSelectList} from 'app-nub.react';
+import {DiceRoll} from 'dice.react';
 var Icons = require('./res/icons');
 var Base6 = require('./services/base6');
 var Current = require('./services/current');

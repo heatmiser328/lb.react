@@ -2,7 +2,7 @@
 
 var React = require('react');
 import { View, Text } from 'react-native';
-import {DiceRoll} from 'react-native-dice';
+import {DiceRoll} from 'dice.react';
 var ArtilleryView = require('./artilleryView');
 var CavalryRecallView = require('./cavalryRecallView');
 var Current = require('./services/current');

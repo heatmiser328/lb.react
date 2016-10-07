@@ -1,7 +1,7 @@
 'use strict'
 var React = require('react');
 import { View, Text, Switch } from 'react-native';
-import {SpinNumeric,MultiSelectList,RadioButtonGroup,IconButton} from 'react-native-app-nub';
+import {SpinNumeric,MultiSelectList,RadioButtonGroup,IconButton} from 'app-nub.react';
 var Icons = require('./res/icons');
 var Current = require('./services/current');
 

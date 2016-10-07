@@ -1,7 +1,7 @@
 'use strict'
 var React = require('react');
 import { View, Text, Image } from 'react-native';
-import {SpinNumeric} from 'react-native-app-nub';
+import {SpinNumeric} from 'app-nub.react';
 var QuickValuesView = require('./quickValuesView');
 var FireDefenderAdvancedAddView = require('./fireDefenderAdvancedAddView');
 var Icons = require('./res/icons');

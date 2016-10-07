@@ -2,7 +2,7 @@
 
 var React = require('react');
 import { View, Text, Navigator } from 'react-native';
-import {DrawerLayout, NavMenu, TitleBar, LandingView, AboutView, Log} from 'react-native-app-nub';
+import {DrawerLayout, NavMenu, TitleBar, LandingView, AboutView, Log} from 'app-nub.react';
 var BattleNavMenuItem = require('./battleNavMenuItem');
 import { MenuContext } from 'react-native-menu';
 var EventEmitter = require('EventEmitter');

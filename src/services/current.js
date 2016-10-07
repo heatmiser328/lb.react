@@ -1,7 +1,7 @@
 'use strict'
 
-import {Log} from 'react-native-app-nub';
-var Store = require('../stores/current');
+import {Store,Log} from 'react-native-app-nub';
+var store = Store('lb.app.current');
 var Battles = require('./battles');
 var Phases = require('./phases');
 var log = Log;
@@ -21,7 +21,7 @@ let maxTurns = () => {
 
 module.exports = {
 	load() {
-		return Store.load()
+		return store.load()
 		.then((current) => {
         	_current = current || {};
 			_current.player = _current.player || 'imperial';
@@ -29,16 +29,22 @@ module.exports = {
 		});
 	},
 	save() {
-		return Store.save(_current);
+		return store.save(_current);
 	},
 	remove() {
-		return Store.remove()
+		return store.remove()
 		.then(() => {
 			_current = null;
 		});
 	},
 	reset(data) {
-		return Store.reset(data)
+		let current = {};
+		current.battle = data.id;
+		current.scenario = data.scenario.id;
+		current.turn = 1;
+		current.phase = 0;
+		current.player = 'imperial';
+		return store.save(current)
 		.then((current) => {
 			_current = current;
 			return _current;

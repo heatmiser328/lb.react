@@ -1,8 +1,8 @@
 'use strict'
 var React = require('react');
 import { View, Text, Image } from 'react-native';
-import {SpinNumeric,MultiSelectList} from 'react-native-app-nub';
-import {DiceRoll} from 'react-native-dice';
+import {SpinNumeric,MultiSelectList} from 'app-nub.react';
+import {DiceRoll} from 'dice.react';
 var QuickValuesView = require('./quickValuesView');
 var DiceModifiersView = require('./diceModifiersView');
 var Icons = require('./res/icons');

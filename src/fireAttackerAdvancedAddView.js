@@ -1,7 +1,7 @@
 'use strict'
 var React = require('react');
 import { View, Text, Switch } from 'react-native';
-import {SpinNumeric,SelectList,IconButton} from 'react-native-app-nub';
+import {SpinNumeric,SelectList,IconButton} from 'app-nub.react';
 var FireAttackerValuesView = require('./fireAttackerValuesView');
 var QuickValuesView = require('./quickValuesView');
 var Icons = require('./res/icons');

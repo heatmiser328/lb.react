@@ -1,7 +1,7 @@
 'use strict'
 var React = require('react');
 import { View, Text } from 'react-native';
-import {SpinNumeric,RadioButtonGroup} from 'react-native-app-nub';
+import {SpinNumeric,RadioButtonGroup} from 'app-nub.react';
 var Current = require('./services/current');
 
 var FireDefenderAdvancedAddView = React.createClass({
