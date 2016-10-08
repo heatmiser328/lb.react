@@ -1,7 +1,7 @@
 'use strict'
 var React = require('react');
 import { View, Text } from 'react-native';
-import {SpinNumeric} from 'app-nub.react';
+import {SpinNumeric} from 'react-native-app-nub';
 
 var MeleeStrengthView = React.createClass({
     render() {

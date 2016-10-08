@@ -1,4 +1,4 @@
-import { Icons } from 'app-nub.react';
+import { Icons } from 'react-native-app-nub';
 
 module.exports = {
 	"logo": require('./logo.png'),

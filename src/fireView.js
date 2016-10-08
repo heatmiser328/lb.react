@@ -1,7 +1,7 @@
 'use strict'
 var React = require('react');
 import { View, Text, Switch } from 'react-native';
-import {DiceRoll} from 'dice.react';
+import {DiceRoll} from 'react-native-dice';
 var FireAttackerView = require('./fireAttackerView');
 var FireDefenderView = require('./fireDefenderView');
 var OddsView = require('./oddsView');

@@ -2,7 +2,7 @@
 
 var React = require('react');
 import { View, Text, Navigator } from 'react-native';
-import {DrawerLayout, NavMenu, TitleBar, LandingView, AboutView, Log} from 'app-nub.react';
+import {DrawerLayout, NavMenu, TitleBar, LandingView, AboutView, Log} from 'react-native-app-nub';
 var BattleNavMenuItem = require('./battleNavMenuItem');
 import { MenuContext } from 'react-native-menu';
 var EventEmitter = require('EventEmitter');
@@ -156,7 +156,7 @@ var MainView = React.createClass({
                             debugOverlay={false}
                             initialRoute={this.state.initialRoute}
                             renderScene={this.renderScene}
-                            navigationBar={<Navigator.NavigationBar style={{backgroundColor: 'blue'}} routeMapper={TitleBar({menu: Icons.menu, refresh: Icons.refresh, info: Icons.info})} />}
+                            navigationBar={<Navigator.NavigationBar style={{backgroundColor: 'blue'}} routeMapper={TitleBar({menu: Icons.menu, refresh: Icons.refresh, info: Icons.info, textcolor: 'white'})} />}
                         />
                     </MenuContext>
                 </DrawerLayout>

@@ -2,7 +2,7 @@
 
 var React = require('react');
 import { View, Text, Image, TouchableOpacity } from 'react-native';
-import {SpinSelect} from 'app-nub.react';
+import {SpinSelect} from 'react-native-app-nub';
 var Icons = require('./res/icons');
 var Current = require('./services/current');
 
