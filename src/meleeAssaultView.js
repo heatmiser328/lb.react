@@ -76,18 +76,20 @@ var MeleeAssaultView = React.createClass({
         let icon = this.state.result != null ? (this.state.result ? Icons['pass'] : Icons['fail']) : null;
         return (
             <View style={{flex: 1}}>
-                <View style={{flex:.75, flexDirection: 'row'}}>
-                    <View style={{flex:1}}>
-                        {/*<Text style={{backgroundColor:'silver', alignSelf:'stretch', textAlign:'center'}}>Morale</Text>*/}
+                <View style={{flex:1, flexDirection: 'row'}}>
+                    <View style={{flex:1, borderRightWidth:1,borderRightColor:'gray'}}>
+                        <Text style={{backgroundColor:'silver', alignSelf:'stretch', textAlign:'center'}}>Morale</Text>
                         <View style={{marginLeft:5}}>
-                        <SpinNumeric label={'Morale'} value={this.state.morale} values={Base6.values} integer={true} onChanged={this.onMoraleChanged} />
+                        {/*label={'Morale'}*/}
+                        <SpinNumeric value={this.state.morale} values={Base6.values} integer={true} onChanged={this.onMoraleChanged} />
                         </View>
                         <QuickValuesView values={[16,26,36,46,56]} onChanged={this.onMoraleChanged}/>
                     </View>
                     <View style={{flex:1}}>
-                        {/*<Text style={{backgroundColor:'silver', alignSelf:'stretch', textAlign:'center'}}>Leader</Text>*/}
+                        <Text style={{backgroundColor:'silver', alignSelf:'stretch', textAlign:'center'}}>Leader</Text>
                         <View style={{marginLeft:5}}>
-                        <SpinNumeric label={'Leader'} value={this.state.leader} integer={true} onChanged={this.onLeaderChanged} />
+                        {/*label={'Leader'} */}
+                        <SpinNumeric value={this.state.leader} integer={true} onChanged={this.onLeaderChanged} />
                         </View>
                         <QuickValuesView values={[-3,0,3,6,12]} onChanged={this.onLeaderChanged}/>
                     </View>
@@ -106,13 +108,13 @@ var MeleeAssaultView = React.createClass({
                 </View>
                 <View style={{flex: 1}}>
                     <View style={{flex: .75, flexDirection: 'row', backgroundColor: 'whitesmoke'}}>
-                        <View style={{flex:1, alignItems: 'center', justifyContent: 'center'}}>
+                        <View style={{flex:2, alignItems: 'center', justifyContent: 'center'}}>
                             <RadioButtonGroup buttons={[{label: 'Defender', value: 1},{label: 'Attacker', value: 0}]} state={this.state.mode} onSelected={this.onModeChanged} />
                         </View>
                         <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
                             <Image style={{height: 64, width: 64, resizeMode: 'stretch'}} source={icon} />
                         </View>
-                        <View style={{flex:1}}>
+                        <View style={{flex:2}}>
                             <DiceRoll dice={this.dice} values={[this.state.die1,this.state.die2]}
                                 onRoll={this.onDiceRoll} onDie={this.onDieChanged}/>
                         </View>

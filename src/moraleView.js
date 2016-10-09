@@ -71,7 +71,7 @@ var MoraleView = React.createClass({
                             <SpinNumeric value={this.state.morale} values={Base6.values} integer={true} onChanged={this.onMoraleChanged} />
                         </View>
                         <View style={{flex:1}}>
-                            <QuickValuesView values={[16,26,36,46,56,66]} height={38} onChanged={this.onMoraleChanged}/>
+                            <QuickValuesView values={[16,26,36,46,56]} height={48} onChanged={this.onMoraleChanged}/>
                         </View>
                         <View style={{flex:5}} />
                     </View>
