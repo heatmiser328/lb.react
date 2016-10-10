@@ -1,7 +1,6 @@
 'use strict'
 var React = require('react');
-import { View } from 'react-native';
-var Button = require('apsl-react-native-button');
+import { View,TouchableOpacity,Text } from 'react-native';
 
 var DiceModifiersView = React.createClass({
     onModifier(v) {
@@ -15,7 +14,7 @@ var DiceModifiersView = React.createClass({
             {
                 ['-6','-3','-1','+1','+3','+6'].map((v, i) => {
                     return (
-                        <Button key={i}
+                        <TouchableOpacity key={i} onPress={this.onModifier(v)}
                             style={{
                                 flex: 1,
                                 //width: 16,
@@ -26,16 +25,14 @@ var DiceModifiersView = React.createClass({
                                 marginLeft: i == 0 ? 5 : 0,
                                 marginTop: 10,
                                 marginRight: 5,
-                                backgroundColor: 'blue'
+                                backgroundColor: 'blue',
                                 //backgroundColor: '#3F51B5'
-                            }}
-                            textStyle={{
-                                color: 'white'
-                            }}
-                            onPress={this.onModifier(v)}
-                        >
-                            {v}
-                        </Button>
+                                borderColor: 'black',
+                                borderWidth: 1,
+                                borderRadius:5
+                            }}>
+                            <Text style={{color: 'white', fontSize: 22, textAlign: 'center', alignSelf:'center'}}>{v}</Text>
+                        </TouchableOpacity>
                     )
                 })
             }

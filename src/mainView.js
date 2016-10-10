@@ -119,7 +119,6 @@ var MainView = React.createClass({
                         ]
                     }}
                     dependencies={[
-                        {description: 'apsl-react-native-button', url: ''},
                         {description: 'react-native-scrollable-tab-view', url: ''},
                         {description: 'react-native-audioplayer', url: ''},
                         {description: 'react-native-fs', url: ''},

@@ -21,7 +21,7 @@ module.exports = {
 	"5": require('./5.png'),
 
 	"pass": require('./pass.png'),
-	"fail": require('./fail.jpg'),
+	"fail": require('./fail.png'),
 	"Stand": require('./stand.png'),
 	"Square": require('./square.png'),
 	"Carre": require('./square.png'),
