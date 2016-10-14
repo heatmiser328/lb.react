@@ -102,7 +102,7 @@ var MeleeChargeCarreView = React.createClass({
                 </View>
                 <View style={{flex: .75, flexDirection: 'row', backgroundColor: 'whitesmoke'}}>
                     <View style={{flex:1, justifyContent: 'center', alignItems:'flex-end'}}>
-                        {/* images for square,disorder,route*/}
+                        {/* images for square,disorder,rout*/}
                         {/*<Text>{this.state.results}</Text>*/}
                         <Image style={{height: 64, width: 64, resizeMode: 'stretch'}} source={Icons[this.state.results]} />
                     </View>

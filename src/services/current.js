@@ -45,7 +45,7 @@ module.exports = {
 		current.phase = 0;
 		current.player = 'imperial';
 		return store.save(current)
-		.then((current) => {
+		.then(() => {
 			_current = current;
 			return _current;
 		});

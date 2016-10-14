@@ -370,7 +370,7 @@
 		    {"name": "In Line", "type": "defend", "attmod": 0, "defmod": -3},
 		    {"name": "In Carre", "type": "defend", "attmod": 6, "defmod": 0},
 		    {"name": "Disordered", "type": "defend", "attmod": 3, "defmod": -3},
-		    {"name": "Routed", "type": "defend", "attmod": 6, "defmod": -6},
+		    {"name": "Routd", "type": "defend", "attmod": 6, "defmod": -6},
 		    {"name": "Assaulting up a slope", "type": "attack", "attmod": -3, "defmod": 3},
 		    {"name": "Assaulting across a stream", "type": "attack", "attmod": -3, "defmod": 3},
 			{"name": "Casualty due to defensive fire", "type": "attack", "attmod": -3, "defmod": 0},
@@ -387,7 +387,7 @@
 				{"name": "In Skirmish", "mod": -12},
 				{"name": "In Line", "mod": 3},
 				{"name": "Disorder", "mod": -6},
-				{"name": "Route", "mod": -12},
+				{"name": "Rout", "mod": -12},
 				{"name": "Carre", "mod": 12},
 				{"name": "Across stream", "mod": 6},
 				{"name": "Lancers", "mod": -6},
@@ -408,12 +408,12 @@
 						"2": [
 							{"low": 11, "high": 36, "result": "Carre"},
 							{"low": 41, "high": 61, "result": "Disorder"},
-							{"low": 62, "high": 66, "result": "Route"}
+							{"low": 62, "high": 66, "result": "Rout"}
 						],
 						"1": [
 							{"low": 11, "high": 24, "result": "Carre"},
 							{"low": 25, "high": 51, "result": "Disorder"},
-							{"low": 52, "high": 66, "result": "Route"}
+							{"low": 52, "high": 66, "result": "Rout"}
 						]
 					},
 					"Line": {
@@ -424,17 +424,17 @@
 						"3": [
 							{"low": 11, "high": 42, "result": "Carre"},
 							{"low": 43, "high": 54, "result": "Disorder"},
-							{"low": 55, "high": 66, "result": "Route"}
+							{"low": 55, "high": 66, "result": "Rout"}
 						],
 						"2": [
 							{"low": 11, "high": 25, "result": "Carre"},
 							{"low": 26, "high": 52, "result": "Disorder"},
-							{"low": 53, "high": 66, "result": "Route"}
+							{"low": 53, "high": 66, "result": "Rout"}
 						],
 						"1": [
 							{"low": 11, "high": 15, "result": "Carre"},
 							{"low": 16, "high": 44, "result": "Disorder"},
-							{"low": 45, "high": 66, "result": "Route"}
+							{"low": 45, "high": 66, "result": "Rout"}
 						]
 					}
 				},
@@ -447,39 +447,39 @@
 						"3": [
 							{"low": 11, "high": 56, "result": "Carre"},
 							{"low": 61, "high": 63, "result": "Disorder"},
-							{"low": 64, "high": 66, "result": "Route"}
+							{"low": 64, "high": 66, "result": "Rout"}
 						],
 						"2": [
 							{"low": 11, "high": 33, "result": "Carre"},
 							{"low": 34, "high": 56, "result": "Disorder"},
-							{"low": 61, "high": 66, "result": "Route"}
+							{"low": 61, "high": 66, "result": "Rout"}
 						],
 						"1": [
 							{"low": 11, "high": 24, "result": "Carre"},
 							{"low": 25, "high": 51, "result": "Disorder"},
-							{"low": 52, "high": 66, "result": "Route"}
+							{"low": 52, "high": 66, "result": "Rout"}
 						]
 					},
 					"Line": {
 						"4": [
 							{"low": 11, "high": 53, "result": "Carre"},
 							{"low": 54, "high": 63, "result": "Disorder"},
-							{"low": 64, "high": 66, "result": "Route"}
+							{"low": 64, "high": 66, "result": "Rout"}
 						],
 						"3": [
 							{"low": 11, "high": 36, "result": "Carre"},
 							{"low": 41, "high": 51, "result": "Disorder"},
-							{"low": 52, "high": 66, "result": "Route"}
+							{"low": 52, "high": 66, "result": "Rout"}
 						],
 						"2": [
 							{"low": 11, "high": 25, "result": "Carre"},
 							{"low": 26, "high": 52, "result": "Disorder"},
-							{"low": 53, "high": 66, "result": "Route"}
+							{"low": 53, "high": 66, "result": "Rout"}
 						],
 						"1": [
 							{"low": 11, "high": 15, "result": "Carre"},
 							{"low": 16, "high": 44, "result": "Disorder"},
-							{"low": 45, "high": 66, "result": "Route"}
+							{"low": 45, "high": 66, "result": "Rout"}
 						]
 					}
 				},
@@ -495,12 +495,12 @@
 						"2": [
 							{"low": 11, "high": 45, "result": "Carre"},
 							{"low": 46, "high": 55, "result": "Disorder"},
-							{"low": 56, "high": 66, "result": "Route"}
+							{"low": 56, "high": 66, "result": "Rout"}
 						],
 						"1": [
 							{"low": 11, "high": 31, "result": "Carre"},
 							{"low": 32, "high": 52, "result": "Disorder"},
-							{"low": 53, "high": 66, "result": "Route"}
+							{"low": 53, "high": 66, "result": "Rout"}
 						]
 					},
 					"Line": {
@@ -510,17 +510,17 @@
 						"3": [
 							{"low": 11, "high": 53, "result": "Carre"},
 							{"low": 54, "high": 62, "result": "Disorder"},
-							{"low": 63, "high": 66, "result": "Route"}
+							{"low": 63, "high": 66, "result": "Rout"}
 						],
 						"2": [
 							{"low": 11, "high": 32, "result": "Carre"},
 							{"low": 33, "high": 53, "result": "Disorder"},
-							{"low": 54, "high": 66, "result": "Route"}
+							{"low": 54, "high": 66, "result": "Rout"}
 						],
 						"1": [
 							{"low": 11, "high": 22, "result": "Carre"},
 							{"low": 23, "high": 44, "result": "Disorder"},
-							{"low": 45, "high": 66, "result": "Route"}
+							{"low": 45, "high": 66, "result": "Rout"}
 						]
 					}
 				},
@@ -529,22 +529,22 @@
 						"4": [
 							{"low": 11, "high": 52, "result": "Carre"},
 							{"low": 53, "high": 64, "result": "Disorder"},
-							{"low": 65, "high": 66, "result": "Route"}
+							{"low": 65, "high": 66, "result": "Rout"}
 						],
 						"3": [
 							{"low": 11, "high": 36, "result": "Carre"},
 							{"low": 41, "high": 53, "result": "Disorder"},
-							{"low": 54, "high": 66, "result": "Route"}
+							{"low": 54, "high": 66, "result": "Rout"}
 						],
 						"2": [
 							{"low": 11, "high": 23, "result": "Carre"},
 							{"low": 24, "high": 43, "result": "Disorder"},
-							{"low": 44, "high": 66, "result": "Route"}
+							{"low": 44, "high": 66, "result": "Rout"}
 						],
 						"1": [
 							{"low": 11, "high": 15, "result": "Carre"},
 							{"low": 16, "high": 36, "result": "Disorder"},
-							{"low": 41, "high": 66, "result": "Route"}
+							{"low": 41, "high": 66, "result": "Rout"}
 						]
 					},
 					"Line": {
@@ -557,12 +557,12 @@
 						"2": [
 							{"low": 11, "high": 32, "result": "Carre"},
 							{"low": 33, "high": 55, "result": "Disorder"},
-							{"low": 56, "high": 66, "result": "Route"}
+							{"low": 56, "high": 66, "result": "Rout"}
 						],
 						"1": [
 							{"low": 11, "high": 31, "result": "Carre"},
 							{"low": 32, "high": 45, "result": "Disorder"},
-							{"low": 46, "high": 66, "result": "Route"}
+							{"low": 46, "high": 66, "result": "Rout"}
 						]
 					}
 				},
@@ -572,22 +572,22 @@
 						"4": [
 							{"low": 11, "high": 62, "result": "Carre"},
 							{"low": 63, "high": 65, "result": "Disorder"},
-							{"low": 66, "high": 66, "result": "Route"}
+							{"low": 66, "high": 66, "result": "Rout"}
 						],
 						"3": [
 							{"low": 11, "high": 44, "result": "Carre"},
 							{"low": 45, "high": 61, "result": "Disorder"},
-							{"low": 62, "high": 66, "result": "Route"}
+							{"low": 62, "high": 66, "result": "Rout"}
 						],
 						"2": [
 							{"low": 11, "high": 31, "result": "Carre"},
 							{"low": 32, "high": 54, "result": "Disorder"},
-							{"low": 55, "high": 66, "result": "Route"}
+							{"low": 55, "high": 66, "result": "Rout"}
 						],
 						"1": [
 							{"low": 11, "high": 24, "result": "Carre"},
 							{"low": 25, "high": 45, "result": "Disorder"},
-							{"low": 46, "high": 66, "result": "Route"}
+							{"low": 46, "high": 66, "result": "Rout"}
 						]
 					}
 				}
@@ -649,8 +649,8 @@
 			"defend": [
 				{"name": "Skirmish order", "mod": 0.5},
 				{"name": "Disordered", "mod": 0.5},
-				{"name": "Routed", "mod": 0.333},
-				{"name": "Cav Routed", "mod": 0.25},
+				{"name": "Routd", "mod": 0.333},
+				{"name": "Cav Routd", "mod": 0.25},
 				{"name": "Tired", "mod": 0.5},
 				{"name": "Exhausted", "mod": 0.333}
 			]

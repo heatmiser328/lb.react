@@ -8,7 +8,8 @@ var rules = {
     "leipzig": require('../stores/leipzig.json'),
     "neumarkt": require('../stores/neumarkt.json'),
     "raszyn": require('../stores/raszyn.json'),
-    "schoengrabern": require('../stores/schoengrabern.json')
+    "schoengrabern": require('../stores/schoengrabern.json'),
+	"austerlitz": require('../stores/austerlitz.json')
 };
 
 

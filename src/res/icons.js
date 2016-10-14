@@ -26,7 +26,7 @@ module.exports = {
 	"Square": require('./square.png'),
 	"Carre": require('./square.png'),
 	"Disorder": require('./disorder.png'),
-	"Route": require('./route.png'),
+	"Rout": require('./rout.png'),
 
 	"attackerLoss": require('./attacker.png'),
 	"defenderLoss": require('./defender.png'),
@@ -47,6 +47,7 @@ module.exports = {
 	"aspern_essling": require("./aspern_essling.jpg"),
 	"neumarkt": require("./neumarkt.jpg"),
 	"schoengrabern": require("./schoengrabern.png"),
+	"austerlitz": require("./austerlitz.png"),
 	"vauchamps": require("./vauchamps.jpg"),
 	"auerstaedt": require("./auerstaedt.jpg"),
 	"eylau": require("./eylau.jpg"),

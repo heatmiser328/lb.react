@@ -35,25 +35,6 @@
 					"Carre": {"label":"x5","density":8,"factor":5},
 					"General": {"label":"Printed","density":8,"factor":1},
 					"Skirmish": {"label":"x4","density":8,"factor":4}
-				},
-
-				"Sassen": {
-					"Column": {"label":"Printed","density":8,"factor":1},
-					"Line": {"label":"x3","density":4,"factor":3},
-					"Carre": {"label":"x3","density":8,"factor":3},
-					"General": {"label":"Printed","density":8,"factor":1}
-				},
-				"Polska": {
-					"Column": {"label":"Printed","density":8,"factor":1},
-					"Line": {"label":"x3","density":4,"factor":3},
-					"Carre": {"label":"x4","density":8,"factor":4},
-					"General": {"label":"Printed","density":8,"factor":1}
-				},
-				"Wurzburg": {
-					"Column": {"label":"Printed","density":8,"factor":1},
-					"Line": {"label":"x2","density":4,"factor":2},
-					"Carre": {"label":"x2","density":8,"factor":2},
-					"General": {"label":"Printed","density":8,"factor":1}
 				}
 			},
 			"Russian": {
@@ -63,10 +44,10 @@
 					"Carre": {"label":"x2","density":4,"factor":2},
 					"General": {"label":"Printed","density":4,"factor":1}
 				},
-				"Jaeger": {
+				"Egerskii": {
 					"Column": {"label":"Printed","density":3,"factor":1},
-					"Line": {"label":"x3","density":3,"factor":3},
-					"Carre": {"label":"x3","density":3,"factor":3},
+					"Line": {"label":"x2","density":4,"factor":2},
+					"Carre": {"label":"x2","density":3,"factor":2},
 					"General": {"label":"Printed","density":4,"factor":1},
 					"Skirmish": {"label":"x3","density":3,"factor":3}
 				},
@@ -88,8 +69,39 @@
 					"Line": {"label":"x3","density":4,"factor":3},
 					"Carre": {"label":"x4","density":6,"factor":3},
 					"General": {"label":"Printed","density":6,"factor":1}
+				},
+				"Dragoon": {
+					"Skirm": {"label":"x2","density":3,"factor":2}
 				}
-			}
+			},
+            "Austrian": {
+				"Linie": {
+					"Column": {"label":"Printed","density":8,"factor":1},
+                    "Line": {"label":"x3","density":4,"factor":3},
+                    "Carre": {"label":"x3","density":8,"factor":3},
+                    "General": {"label":"Printed","density":8,"factor":1}
+				},
+                "Grenz": {
+					"Column": {"label":"Printed","density":6,"factor":1},
+                    "Line": {"label":"x3","density":4,"factor":3},
+                    "Carre": {"label":"x3","density":6,"factor":3},
+                    "General": {"label":"Printed","density":6,"factor":1},
+                    "Skirmish": {"label":"x3","density":3,"factor":3}
+				},
+                "Jaeger": {
+					"Column": {"label":"Printed","density":6,"factor":1},
+                    "Line": {"label":"x2","density":4,"factor":2},
+                    "Carre": {"label":"x2","density":6,"factor":2},
+                    "General": {"label":"Printed","density":6,"factor":1},
+                    "Skirmish": {"label":"x2","density":3,"factor":2}
+				},
+                "6. Batt": {
+					"Column": {"label":"Printed","density":6,"factor":1},
+					"Line": {"label":"x2","density":6,"factor":2},
+                    "Carre": {"label":"x2","density":6,"factor":2},
+                    "General": {"label":"Printed","density":6,"factor":1}
+				}
+            }
 		},
 		"defense": {
 			"terrain": {
@@ -102,6 +114,15 @@
 					"D/PgD": {"label":"14","value":14},
 					"Arty": {"label":"6/8","value":8}
 				},
+				"Froz Lake": {
+					"Col": {"label":"4","value":4},
+					"Line": {"label":"4","value":4},
+					"Carre": {"label":"4","value":4},
+					"Gen": {"label":"","value":0},
+					"Skirm": {"label":"4","value":4},
+					"D/PgD": {"label":"4","value":4},
+					"Arty": {"label":"4","value":4}
+				},
 				"Forest": {
 					"Col": {"label":"","value":0},
 					"Line": {"label":"","value":0},
@@ -111,21 +132,30 @@
 					"D/PgD": {"label":"16","value":16},
 					"Arty": {"label":"","value":0}
 				},
-				"Garten": {
+				"Orchard": {
 					"Col": {"label":"","value":0},
 					"Line": {"label":"","value":0},
 					"Carre": {"label":"","value":0},
 					"Gen": {"label":"10","value":10},
 					"Skirm": {"label":"14","value":14},
 					"D/PgD": {"label":"16","value":16},
-					"Arty": {"label":"6/8","value":8}
+					"Arty": {"label":"","value":0}
+				},
+				"Pheasantry": {
+					"Col": {"label":"","value":0},
+					"Line": {"label":"","value":0},
+					"Carre": {"label":"","value":0},
+					"Gen": {"label":"10","value":10},
+					"Skirm": {"label":"14","value":14},
+					"D/PgD": {"label":"16","value":16},
+					"Arty": {"label":"8/10","value":10}
 				},
 				"Hamlet": {
 					"Col": {"label":"","value":0},
 					"Line": {"label":"","value":0},
 					"Carre": {"label":"","value":0},
 					"Gen": {"label":"10","value":10},
-					"Skirm": {"label":"12","value":12},
+					"Skirm": {"label":"14","value":12},
 					"D/PgD": {"label":"16","value":16},
 					"Arty": {"label":"6/8","value":8}
 				},
@@ -134,26 +164,44 @@
 					"Line": {"label":"","value":0},
 					"Carre": {"label":"","value":0},
 					"Gen": {"label":"10","value":10},
-					"Skirm": {"label":"12","value":12},
+					"Skirm": {"label":"14","value":12},
 					"D/PgD": {"label":"16","value":16},
 					"Arty": {"label":"7/9","value":9}
 				},
-				"Village": {
+				"Redoubt": {
 					"Col": {"label":"","value":0},
 					"Line": {"label":"","value":0},
 					"Carre": {"label":"","value":0},
-					"Gen": {"label":"12","value":12},
-					"Skirm": {"label":"14","value":14},
-					"D/PgD": {"label":"16","value":16},
+					"Gen": {"label":"10/6","value":10},
+					"Skirm": {"label":"","value":0},
+					"D/PgD": {"label":"14","value":14},
 					"Arty": {"label":"8/10","value":10}
 				},
-				"Cegielnia": {
+				"Pheas Wall": {
+					"Col": {"label":"+2","value":0},
+					"Line": {"label":"+2","value":0},
+					"Carre": {"label":"+2","value":0},
+					"Gen": {"label":"+2","value":0},
+					"Skirm": {"label":"+2","value":0},
+					"D/PgD": {"label":"+2","value":0},
+					"Arty": {"label":"+2","value":0}
+				},
+				"Vineyard": {
+					"Col": {"label":"","value":0},
+					"Line": {"label":"","value":0},
+					"Carre": {"label":"","value":0},
+					"Gen": {"label":"10","value":10},
+					"Skirm": {"label":"12","value":12},
+					"D/PgD": {"label":"16","value":16},
+					"Arty": {"label":"","value":0}
+				},
+				"Chateaux": {
 					"Col": {"label":"","value":0},
 					"Line": {"label":"","value":0},
 					"Carre": {"label":"","value":0},
 					"Gen": {"label":"14","value":14},
-					"Skirm": {"label":"16","value":16},
-					"D/PgD": {"label":"16","value":16},
+					"Skirm": {"label":"14","value":14},
+					"D/PgD": {"label":"","value":0},
 					"Arty": {"label":"","value":0}
 				}
 			}
@@ -161,25 +209,25 @@
 		"artillery": {
 			"limber": {
 				"table": {
-					"French a Pied": { "low": 4, "high": 6},
-					"French a Cheval": { "low": 2, "high": 6},
-					"French Guard": { "low": 1, "high": 6},
-					"French Allied": { "low": 5, "high": 6},
 					"Russian Light": { "low": 5, "high": 6},
 					"Russian Horse": { "low": 4, "high": 6},
 					"Russian Position": { "low": 6, "high": 6},
-					"Russian Guard": { "low": 3, "high": 6}
+					"Russian Guard": { "low": 3, "high": 6},
+					"Austrian Brigade": { "low": 4, "high": 6},
+					"Austrian Position": { "low": 5, "high": 6},
+					"Austrian Kavalrie": { "low": 4, "high": 6},
+					"French a Pied": { "low": 4, "high": 6},
+					"French a Cheval": { "low": 2, "high": 6},
+					"French a Guard": { "low": 1, "high": 6},
+					"French Allies": { "low": 5, "high": 6}
 				},
 				"modifiers": [
 					{"name": "Arty Leader", "mod": 1},
-					{"name": "French Marechal", "mod": 1},
+					{"name": "French Marechals", "mod": 1},
 					{"name": "Bagration", "mod": 1},
 					{"name": "Docturov", "mod": 1},
-					{"name": "Gortchakov", "mod": 1},
-					{"name": "Pernety", "mod": 2},
-					{"name": "Labroissiere", "mod": 2},
-					{"name": "Sernamont", "mod": 2},
-					{"name": "Koutaaissov", "mod": 2},
+					{"name": "Songis", "mod": 2},
+					{"name": "Muller-Zakomelski", "mod": 2},
 					{"name": "Napoleon", "mod": 3}
 				]
 			}
@@ -199,12 +247,13 @@
 		    {"name": "Assaulted in rear", "type": "defend", "attmod": 6, "defmod": -6},
 		    {"name": "In skirmish order", "type": "defend", "attmod": 99, "defmod": -6},
 		    {"name": "In Line", "type": "defend", "attmod": 0, "defmod": -3},
-			{"name": "Sassen In Line", "type": "defend", "attmod": 0, "defmod": 3},
 		    {"name": "In Carre", "type": "defend", "attmod": 0, "defmod": 6},
 		    {"name": "Disordered", "type": "defend", "attmod": 3, "defmod": -3},
-		    {"name": "Routd", "type": "defend", "attmod": 6, "defmod": -6},
+		    {"name": "Routed", "type": "defend", "attmod": 6, "defmod": -6},
 		    {"name": "Assaulting up a slope", "type": "attack", "attmod": -3, "defmod": 3},
 		    {"name": "Assaulting across a stream", "type": "attack", "attmod": -3, "defmod": 3},
+			{"name": "Assaulting across Pheasantry wall", "type": "attack", "attmod": -12, "defmod": 0},
+			{"name": "Assaulting across Redoubt", "type": "attack", "attmod": -12, "defmod": 0},
 		    {"name": "Casualty due to defensive fire", "type": "attack", "attmod": -3, "defmod": 0}
 		]
 	},
@@ -307,16 +356,63 @@
 							{"low": 51, "high": 66, "result": "Rout"}
 						]
 					}
+				},
+				"Austrian": {
+					"Column": {
+						"4": [
+							{"low": 11, "high": 56, "result": "Carre"},
+							{"low": 61, "high": 63, "result": "Disorder"},
+							{"low": 64, "high": 66, "result": "Rout"}
+						],
+						"3": [
+							{"low": 11, "high": 46, "result": "Carre"},
+							{"low": 51, "high": 56, "result": "Disorder"},
+							{"low": 61, "high": 66, "result": "Rout"}
+						],
+						"2": [
+							{"low": 11, "high": 36, "result": "Carre"},
+							{"low": 41, "high": 53, "result": "Disorder"},
+							{"low": 54, "high": 66, "result": "Rout"}
+						],
+						"1": [
+							{"low": 11, "high": 26, "result": "Carre"},
+							{"low": 31, "high": 46, "result": "Disorder"},
+							{"low": 51, "high": 66, "result": "Rout"}
+						]
+					},
+					"Line": {
+						"4": [
+							{"low": 11, "high": 64, "result": "Carre"},
+							{"low": 65, "high": 64, "result": "Disorder"}
+						],
+						"3": [
+							{"low": 11, "high": 54, "result": "Carre"},
+							{"low": 55, "high": 62, "result": "Disorder"},
+							{"low": 63, "high": 66, "result": "Rout"}
+						],
+						"2": [
+							{"low": 11, "high": 44, "result": "Carre"},
+							{"low": 45, "high": 55, "result": "Disorder"},
+							{"low": 56, "high": 66, "result": "Rout"}
+						],
+						"1": [
+							{"low": 11, "high": 34, "result": "Carre"},
+							{"low": 35, "high": 46, "result": "Disorder"},
+							{"low": 51, "high": 66, "result": "Rout"}
+						]
+					}
 				}
 			},
 			"modifiers": [
-				{"name": "Leader", "mod": -6},
-				{"name": "Jaeger", "mod": -3},
+				{"name": "French Leader", "mod": -6},
 				{"name": "Legere", "mod": -3},
 				{"name": "Grenadier", "mod": -3},
-				{"name": "Voltiguer", "mod": -3},
+				{"name": "Voltiguers", "mod": -3},
 				{"name": "Guard", "mod": -6},
-				{"name": "French Allies", "mod": 3},
+				{"name": "French Allies", "mod": 2},
+				{"name": "Russian Ldr (-6)", "mod": 0},
+				{"name": "Austrian Ldr (-?)", "mod": 0},
+				{"name": "Egerskii", "mod": 3},
 				{"name": "Light Cavalry", "mod": 3},
 				{"name": "Lancers", "mod": 6},
 				{"name": "Morale Level", "mod": 3}
@@ -325,9 +421,11 @@
 		"recall": {
 			"table": {
 				"French": { "low": 2, "high": 6},
-				"French Allies": { "low": 2, "high": 6},
 				"Russian Light": { "low": 3, "high": 6},
-				"Russian Heavy": { "low": 2, "high": 6}
+				"Russian Heavy": { "low": 2, "high": 6},
+				"Russian Cossaques": { "low": 5, "high": 6},
+				"Austrian Light": { "low": 3, "high": 6},
+				"Austrian Heavy": { "low": 2, "high": 6}
 			},
 			"modifiers": [
 				{"name": "Cav Leader", "mod": 1}
@@ -349,7 +447,10 @@
 				{"name": "Cav vs Carre", "mod": 0.5},
 				{"name": "Inf vs Carre", "mod": 1.5},
 				{"name": "Across stream", "mod": 0.666},
-				{"name": "Lancers in Line", "mod": 2}
+				{"name": "Across Pheasantry wall", "mod": 0.5},
+				{"name": "Across Redoubt", "mod": 0.5},
+				{"name": "Lancers in Line", "mod": 2},
+				{"name": "Cav in General", "mod": 0.333}
 			],
 			"defend": [
 				{"name": "Skirmish order", "mod": 0.5},
@@ -357,7 +458,10 @@
 				{"name": "Routd", "mod": 0.333},
 				{"name": "Cav Routd", "mod": 0.25},
 				{"name": "Tired", "mod": 0.5},
-				{"name": "Exhausted", "mod": 0.333}
+				{"name": "Exhausted", "mod": 0.333},
+				{"name": "Preserve Readiness", "mod": 0.333},
+				{"name": "Chateaux", "mod": 1.5},
+				{"name": "Cav in General", "mod": 0.333}
 			]
 		}
 	}
