@@ -73,8 +73,8 @@ var MeleeChargeCarreView = React.createClass({
             <View style={{flex: 1}}>
                 <View style={{flex:4, flexDirection:'row'}}>
                     {/*morale*/}
-                    <View style={{flex:3, justifyContent: 'flex-start'}}>
-                        <View style={{flex: 2, flexDirection: 'row'}}>
+                    <View style={{flex:4, justifyContent: 'flex-start', borderRightWidth: 1, borderRightColor: 'gray'}}>
+                        <View style={{flex: 1, flexDirection: 'row'}}>
                             <View style={{flex:1}}>
                                 <RadioButtonGroup title={'Nationality'} direction={'vertical'}
                                     buttons={this.nationalities().map((n) => {return {label:n,value:n};})}
@@ -87,11 +87,13 @@ var MeleeChargeCarreView = React.createClass({
                                     state={this.state.formation}
                                     onSelected={this.onFormationChanged}/>
                             </View>
+                            <View style={{flex:1}}>
+                                <RadioButtonGroup title={'Distance'} direction={'vertical'}
+                                    buttons={['4','3','2','1'].map((d) => {return {label:d,value:d};})}
+                                    state={this.state.distance}
+                                    onSelected={this.onDistanceChanged}/>
+                            </View>
                         </View>
-                        <View style={{flex:1, marginLeft: 5}}>
-                            <SpinNumeric label={'Distance'} value={this.state.distance} min={1} max={4} integer={true} onChanged={this.onDistanceChanged} />
-                        </View>
-                        <View style={{flex:6}} />
                     </View>
                     {/*modifiers*/}
                     <View style={{flex:2}}>
