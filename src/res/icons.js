@@ -36,8 +36,11 @@ module.exports = {
 
 	"French": require('./french_flag.jpg'),
 	"Polish": require('./polish_flag.png'),
+	"Saxons": require('./saxony_flag.png'),
+	"Dutch": require('./dutch_flag.png'),
 	"Russian": require('./russian_flag.png'),
 	"Austrian": require('./austrian_flag.png'),
+	"Hungarian": require('./hungary_flag.png'),	
 	"Prussian": require('./prussian_flag.png'),
 
 	"halle": require("./halle.jpg"),

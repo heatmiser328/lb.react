@@ -1,7 +1,7 @@
 {
 	"fire": {
 		"attack": {
-			"Poles": {
+			"Polish": {
 				"Line": {
 					"Column": {"label":"Printed","density":8,"factor":1},
 					"Line": {"label":"x3","density":4,"factor":3},
@@ -17,7 +17,7 @@
 					"General": {"label":"Printed","density":6,"factor":1}
 				}
 			},
-			"Allies": {
+			"Dutch": {
 				"Line": {
 					"Column": {"label":"Printed","density":6,"factor":1},
 					"Line": {"label":"x3","density":4,"factor":3},
@@ -39,8 +39,15 @@
 					"General": {"label":"Printed","density":9,"factor":1},
 					"Skirmish": {"label":"x3","density":3,"factor":3}
 				}
+			},
+			"Hungarian": {
+				"Line": {
+					"Column": {"label":"Printed","density":10,"factor":1},
+					"Line": {"label":"x2","density":4,"factor":2},
+					"Square": {"label":"x3","density":10,"factor":3},
+					"General": {"label":"Printed","density":10,"factor":1}
+				},
 			}
-
 		},
 		"defense": {
 			"terrain": {
