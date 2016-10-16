@@ -40,13 +40,13 @@ var FireDefenderAdvancedAddView = React.createClass({
         return (
             <View style={{flex: 1}}>
                 <View style={{flex:2, flexDirection: 'row', justifyContent: 'center', alignItems: 'flex-start'}}>
-                    <View style={{flex:1}}>
+                    <View style={{flex:4}}>
                         <RadioButtonGroup title={'Terrain'} direction={'vertical'}
                             buttons={this.terrains().map((t) => {return {label:t,value:t};})}
                             state={this.state.terrain}
                             onSelected={this.onTerrainChanged}/>
                     </View>
-                    <View style={{flex:1}}>
+                    <View style={{flex:3}}>
                         <RadioButtonGroup title={'Formation'} direction={'vertical'}
                             buttons={this.formations(this.state.terrain).map((f) => {return {label:f,value:f};})}
                             state={this.state.formation}

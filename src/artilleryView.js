@@ -48,18 +48,20 @@ var ArtilleryView = React.createClass({
             <View style={{flex:1}}>
                 <Text style={{fontSize: 18,fontWeight: 'bold',backgroundColor: 'silver', textAlign: 'center'}}>Artillery Limber</Text>
                 <View style={{flex:1, flexDirection:'row'}}>
-                    <View style={{flex:1}}>
-                        <RadioButtonGroup title={'Type'} direction={'vertical'}
-                            buttons={this.types().map((t) => {return {label:t,value:t};})}
-                            state={this.state.type}
-                            onSelected={this.onTypeChanged}/>
+                    <View style={{flex:4, flexDirection:'row'}}>
+                        <View style={{flex:1}}>
+                            <RadioButtonGroup title={'Type'} direction={'vertical'}
+                                buttons={this.types().map((t) => {return {label:t,value:t};})}
+                                state={this.state.type}
+                                onSelected={this.onTypeChanged}/>
+                        </View>
+                        <View style={{flex:1}}>
+                            <MultiSelectList title={'Modifiers'}
+                                items={this.modifiers().map((m) => {return {name: m.name, selected: this.state.mods[m.name]};})}
+                                onChanged={this.onModChanged}/>
+                        </View>
                     </View>
-                    <View style={{flex:1}}>
-                        <MultiSelectList title={'Modifiers'}
-                            items={this.modifiers().map((m) => {return {name: m.name, selected: this.state.mods[m.name]};})}
-                            onChanged={this.onModChanged}/>
-                    </View>
-                    <View style={{flex:2, flexDirection: 'row', backgroundColor: 'whitesmoke'}}>
+                    <View style={{flex:3, flexDirection: 'row', backgroundColor: 'whitesmoke'}}>
                         <View style={{flex:1, justifyContent: 'center', alignItems:'center'}}>
                             <Text style={{fontSize: 18, fontWeight: 'bold'}}>{this.state.results}</Text>
                         </View>

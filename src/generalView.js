@@ -51,25 +51,25 @@ var GeneralView = React.createClass({
         let battle = Current.battle();
         if (battle.hasOwnProperty('fire') && battle.fire.hasOwnProperty('artillery')) {
             return (
-                <View style={{flex:1}}>
+                <View style={{flex:3}}>
                     <ArtilleryView events={this.props.events} />
                 </View>
             );
         }
 
-        return <View style={{flex:1}}/>;
+        return <View style={{flex:3}}/>;
     },
     renderCavalryRecall() {
         let battle = Current.battle();
         if (battle.hasOwnProperty('charge') && battle.charge.hasOwnProperty('recall')) {
             return (
-                <View style={{flex:1}}>
+                <View style={{flex:3}}>
                     <CavalryRecallView events={this.props.events} />
                 </View>
             );
         }
 
-        return <View style={{flex:1}}/>;
+        return <View style={{flex:3}}/>;
     }
 });
 
