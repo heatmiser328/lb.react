@@ -18,7 +18,7 @@ var FireDefenderView = React.createClass({
                 <View style={{flex: 1}}>
                     <Text style={{textAlign: 'center'}}>Incr > 9</Text>
                     <View style={{marginTop: -10}}>
-                        <SpinNumeric value={this.props.incr} min={1} onChanged={this.props.onIncrementsChanged} />
+                        <SpinNumeric value={this.props.incr} min={0} onChanged={this.props.onIncrementsChanged} />
                     </View>
                 </View>
                 {this.renderValues()}
@@ -29,17 +29,17 @@ var FireDefenderView = React.createClass({
         let battle = Current.battle();
         if (battle.hasOwnProperty('fire')) {
             return (
-                <View style={{flex: 5}}>
+                <View style={{flex: 4}}>
                     <FireDefenderAdvancedAddView events={this.eventEmitter} onSet={this.props.onChanged} />
                 </View>
             );
         }
         return (
-            <View style={{flex: 5}}>
+            <View style={{flex: 4}}>
                 <View style={{flex:1}}>
                     <QuickValuesView values={[4,6,9,12,14,16]} onChanged={this.props.onChanged}/>
                 </View>
-                <View style={{flex:5}} />
+                <View style={{flex:4}} />
             </View>
         );
     }
