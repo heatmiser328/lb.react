@@ -1,6 +1,6 @@
 'use strict'
 var React = require('react');
-import { View, Text, Switch } from 'react-native';
+import { View, Text, Switch, ScrollView } from 'react-native';
 import {DiceRoll} from 'react-native-dice';
 var FireAttackerView = require('./fireAttackerView');
 var FireDefenderView = require('./fireDefenderView');
@@ -113,6 +113,65 @@ var FireView = React.createClass({
         let attsize = this.hasRules() ? 3 : 2;
         return (
             <View style={{flex: 1}}>
+                <View style={{flex: 1, backgroundColor: 'whitesmoke', justifyContent:'flex-start'}}>
+                    <View style={{flex: .75}}>
+                        <DiceRoll dice={dice} values={[this.state.die1,this.state.die2,this.state.die3,this.state.die4,this.state.die5]}
+                                onRoll={this.onDiceRoll} onDie={this.onDieChanged}/>
+                    </View>
+                    <View style={{flex: 1, backgroundColor: 'whitesmoke'}}>
+                        <DiceModifiersView onChange={this.onDiceModifierChanged} />
+                    </View>
+                    <View style={{flex:1}}>
+                        <View style={{flex:1, flexDirection: 'row'}}>
+                            <View style={{flex:1}}>
+                                <Text style={{fontSize: 18,fontWeight: 'bold',backgroundColor: 'silver', textAlign: 'center'}}>Odds</Text>
+                            </View>
+                            <View style={{flex:1}}>
+                                <Text style={{fontSize: 18,fontWeight: 'bold',backgroundColor: 'silver', textAlign: 'center'}}>Result</Text>
+                            </View>
+                            <View style={{flex:1}}>
+                                <Text style={{fontSize: 18,fontWeight: 'bold',backgroundColor: 'silver', textAlign: 'center'}}>Leader</Text>
+                            </View>
+                            <View style={{flex:1}}>
+                                <Text style={{fontSize: 18,fontWeight: 'bold',backgroundColor: 'silver', textAlign: 'center'}}>Dur</Text>
+                            </View>
+                            <View style={{flex:1}}>
+                                <Text style={{fontSize: 18,fontWeight: 'bold',backgroundColor: 'silver', textAlign: 'center'}}>Cond</Text>
+                            </View>
+                        </View>
+                        <View style={{flex:1}}>
+                            <ScrollView
+                                automaticallyAdjustContentInsets={false}
+                                scrollEventThrottle={200}>
+                                {Fire.resolvePossible((this.state.die1*10) + this.state.die2).map((res,i) => {
+                                    let ll = LeaderLoss.resolve((this.state.die1*10) + this.state.die2, this.state.die3, this.state.die4, this.state.die5) || {};
+                                    return (
+                                        <View key={i} style={{flex:1, flexDirection: 'row'}}>
+                                            <View style={{flex:1}}>
+                                                <Text style={{fontSize: 16,textAlign: 'center'}}>{res.odds}</Text>
+                                            </View>
+                                            <View style={{flex:1}}>
+                                                <Text style={{fontSize: 16,textAlign: 'center'}}>{res.result}</Text>
+                                            </View>
+                                            <View style={{flex:1}}>
+                                                <Text style={{fontSize: 16,textAlign: 'center'}}>{ll.leader}</Text>
+                                            </View>
+                                            <View style={{flex:1}}>
+                                                <Text style={{fontSize: 16,textAlign: 'center'}}>{ll.result}</Text>
+                                            </View>
+                                            <View style={{flex:1}}>
+                                                <Text style={{fontSize: 16,textAlign: 'center'}}>{ll.mortal ? 'Mortal' : ''}</Text>
+                                            </View>
+
+                                        </View>
+                                    );
+                                })}
+                            </ScrollView>
+                        </View>
+                    </View>
+                </View>
+                <View style={{flex:1}} />
+                {/*
                 <View style={{flex: 4.5, flexDirection: 'row'}}>
                     <View style={{flex: attsize}}>
                         <FireAttackerView value={this.state.attack} mods={[this.state.mod13,this.state.mod12,this.state.mod32,this.state.cannister]} onAdd={this.onAttackerAdd} onChanged={this.onAttackerChanged} onModifierChanged={this.onAttackerModifierChanged} />
@@ -121,7 +180,7 @@ var FireView = React.createClass({
     					<FireDefenderView value={this.state.defend} incr={this.state.incr} onAdd={this.onDefenderAdd} onChanged={this.onDefenderChanged} onIncrementsChanged={this.onDefenderIncrementsChanged} />
     				</View>
                 </View>
-                <View style={{flex: .5, flexDirection: 'row', backgroundColor: 'whitesmoke'}}>
+                <View style={{flex: 1, flexDirection: 'row'}}>
                     <View style={{flex: 1}}>
                         <OddsView odds={Fire.odds} value={this.state.odds} onChanged={this.onOddsChanged} />
                     </View>
@@ -133,13 +192,7 @@ var FireView = React.createClass({
                         <ResultsView value={this.state.result} leader={this.state.leader} loss={this.state.loss} mortal={this.state.mortal} />
                     </View>
                 </View>
-                <View style={{flex: .75, backgroundColor: 'whitesmoke'}}>
-                    <DiceRoll dice={dice} values={[this.state.die1,this.state.die2,this.state.die3,this.state.die4,this.state.die5]}
-                            onRoll={this.onDiceRoll} onDie={this.onDieChanged}/>
-                </View>
-                <View style={{flex: 1, backgroundColor: 'whitesmoke'}}>
-                    <DiceModifiersView onChange={this.onDiceModifierChanged} />
-                </View>
+                */}
             </View>
         );
     },

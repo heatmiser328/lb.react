@@ -30,7 +30,7 @@ function calculate(attack, defend, cannister) {
 
 function resolve(o, dice, defincr) {
     dice = Base6.add(dice, defincr);
-    var idx = table.findIndex((v) => {return v.desc == o;});
+    var idx = table.findIndex((v) => v.desc == o);
     var result = "NE";
     //console.log(o + '/' + idx + '/' + dice);
     switch (idx)
@@ -185,5 +185,15 @@ module.exports = {
     odds: table.map((o) => {return o.desc;}),
     defaultOdds: table[4].desc,
     calculate: calculate,
-    resolve: resolve
+    resolve: resolve,
+    resolvePossible(dice) {
+        let results = [];
+        table.map((t) => t.desc).forEach((o) => {
+            let result = resolve(o,dice,0);
+            if (result != "NE") {
+                results.push({odds: o, result: result});
+            }
+        });
+        return results;
+    }
 };
