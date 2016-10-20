@@ -122,7 +122,7 @@ var FireView = React.createClass({
                         <DiceModifiersView onChange={this.onDiceModifierChanged} />
                     </View>
                     <View style={{flex:1}}>
-                        <View style={{flex:1, flexDirection: 'row'}}>
+                        <View style={{flexDirection: 'row'}}>
                             <View style={{flex:1}}>
                                 <Text style={{fontSize: 18,fontWeight: 'bold',backgroundColor: 'silver', textAlign: 'center'}}>Odds</Text>
                             </View>
