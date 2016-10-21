@@ -17,7 +17,7 @@ var Icons = require('./res/icons');
 var BattleView = React.createClass({
     getInitialState() {
         return {
-            initialPage: 1
+            initialPage: 0
         };
     },
     componentWillMount() {

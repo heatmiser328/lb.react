@@ -29,13 +29,13 @@ var FireDefenderView = React.createClass({
         let battle = Current.battle();
         if (battle.hasOwnProperty('fire')) {
             return (
-                <View style={{flex: 4}}>
+                <View style={{flex: 2}}>
                     <FireDefenderAdvancedAddView events={this.eventEmitter} onSet={this.props.onChanged} />
                 </View>
             );
         }
         return (
-            <View style={{flex: 4}}>
+            <View style={{flex: 2}}>
                 <View style={{flex:1}}>
                     <QuickValuesView values={[4,6,9,12,14,16]} onChanged={this.props.onChanged}/>
                 </View>

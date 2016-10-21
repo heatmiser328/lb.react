@@ -70,19 +70,27 @@ var FireAttackerAdvancedAddView = React.createClass({
                 <View style={{flex: .75, flexDirection: 'row'}}>
                     {['1/3','1/2','3/2'].map((v, i) => {
                         return (
-                            <View key={i} style={{flex: 1,flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
+                            <View key={i} style={{flex: 1,flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
                                 <Text>{v}</Text>
                                 <Switch value={this.state.mods[v]} onValueChange={this.onModifier(v)} />
                             </View>
                         );
                     })}
                 </View>
-                <View style={{flex:1}}>
+                <View style={{flex:1.5}}>
                     <QuickValuesView values={[4,6,9,12,16,18]} onChanged={this.onValueChanged}/>
                 </View>
+                {/*
+                <View style={{flex: .5, alignItems: 'center'}}>
+                    <Text>Cannister</Text>
+                    <Switch value={this.state.mods['cannister']} onValueChange={this.onModifier('cannister')} />
+                </View>
+                */}
+                {/*
                 <View style={{flex:4}}>
                     <FireAttackerValuesView />
                 </View>
+                */}
             </View>
         );
     }
