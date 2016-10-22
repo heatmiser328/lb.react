@@ -29,6 +29,7 @@ var FireView = React.createClass({
             incr: '0',
             odds: Fire.defaultOdds,
             cannister: false,
+            selected: 0,
             die1: 1,
             die2: 1,
             die3: 1,
@@ -39,6 +40,9 @@ var FireView = React.createClass({
             loss: '',
             mortal: false
         };
+    },
+    componentDidUpdate() {
+        this._scrollView.scrollTo({x:0, y: this.state.selected * 18, animated: true});
     },
     calcOdds(attack, defend, cannister) {
         // calc odds
@@ -111,6 +115,7 @@ var FireView = React.createClass({
     },
     render() {
         //console.log(this.props);
+        this.state.selected = 0;
         let attsize = this.hasRules() ? 3 : 2;
         return (
             <View style={{flex: 1}}>
@@ -149,12 +154,13 @@ var FireView = React.createClass({
                         </View>
                         <View style={{flex:1}}>
                             <ScrollView
+                                ref={view => this._scrollView = view}
                                 automaticallyAdjustContentInsets={false}
                                 scrollEventThrottle={200}>
                                 {Fire.resolvePossible((this.state.die1*10) + this.state.die2).map((res,i) => {
                                     let ll = LeaderLoss.resolve((this.state.die1*10) + this.state.die2, this.state.die3, this.state.die4, this.state.die5) || {};
                                     let text = res.odds == this.state.odds ? 'white' : 'black';
-                                    let background = res.odds == this.state.odds ? 'tomato' : 'transparent';
+                                    let background = res.odds == this.state.odds ? 'goldenrod' : 'transparent';
                                     let loss = (ll.result || '').toLowerCase();
                                     let lossIcon = null;
                                     if (loss.startsWith('flesh')) {
@@ -163,6 +169,9 @@ var FireView = React.createClass({
                                         lossIcon = Icons.capture;
                                     } else {
                                         lossIcon = (ll.mortal ? Icons.mortal : Icons.wounded);
+                                    }
+                                    if (res.odds == this.state.odds) {
+                                        this.state.selected = i;
                                     }
 
                                     return (
