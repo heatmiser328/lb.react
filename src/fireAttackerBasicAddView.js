@@ -58,7 +58,7 @@ var FireAttackerBasicAddView = React.createClass({
                     })}
                 </View>
                 <QuickValuesView values={[4,6,9,12,16,18]} onChanged={this.props.onSet}/>
-                <View style={{flex: 5}} />
+                <View style={{flex: 2}} />
             </View>
         );
     }

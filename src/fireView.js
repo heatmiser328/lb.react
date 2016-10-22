@@ -1,15 +1,12 @@
 'use strict'
 var React = require('react');
-import { View, Text, Switch, Image, ScrollView } from 'react-native';
+import { View, Text, Switch } from 'react-native';
 import {DiceRoll} from 'react-native-dice';
 var FireAttackerView = require('./fireAttackerView');
 var FireDefenderView = require('./fireDefenderView');
-var OddsView = require('./oddsView');
-var ResultsView = require('./fireResultsView');
 var DiceModifiersView = require('./diceModifiersView');
-var Icons = require('./res/icons');
+var FireResultsView = require('./fireResultsView');
 var Fire = require('./services/fire');
-var LeaderLoss = require('./services/leaderloss');
 var Base6 = require('./services/base6');
 var Current = require('./services/current');
 
@@ -26,23 +23,14 @@ var FireView = React.createClass({
         return {
             attack: '1',
             defend: '1',
-            incr: '0',
             odds: Fire.defaultOdds,
             cannister: false,
-            selected: 0,
             die1: 1,
             die2: 1,
             die3: 1,
             die4: 1,
-            die5: 1,
-            result: '',
-            leader: '',
-            loss: '',
-            mortal: false
+            die5: 1
         };
-    },
-    componentDidUpdate() {
-        this._scrollView.scrollTo({x:0, y: this.state.selected * 18, animated: true});
     },
     calcOdds(attack, defend, cannister) {
         // calc odds
@@ -71,18 +59,9 @@ var FireView = React.createClass({
         this.state.defend = v.toString();
         this.onResolve();
     },
-    onDefenderIncrementsChanged(v) {
-        //console.log('defender increments changed: ' + v);
-        this.state.incr = v;
-        this.onResolve();
-    },
     onCannisterChanged(v) {
         this.state.cannister = v;
         this.state.odds = this.calcOdds(this.state.attack, this.state.defend, this.state.cannister);
-        this.onResolve();
-    },
-    onOddsChanged(v) {
-        this.state.odds = v;
         this.onResolve();
     },
     onDiceModifierChanged(v) {
@@ -104,129 +83,50 @@ var FireView = React.createClass({
         this.onResolve();
     },
     onResolve() {
-        // resolve fire
-		let fireDice = (this.state.die1*10) + this.state.die2;
-        this.state.result = Fire.resolve(this.state.odds, fireDice, +this.state.incr);
-		let lloss = LeaderLoss.resolve(fireDice, this.state.die3, this.state.die4, this.state.die5) || {};
-        this.state.leader = lloss.leader;
-        this.state.loss = lloss.result;
-        this.state.mortal = lloss.mortal;
         this.setState(this.state);
     },
     render() {
         //console.log(this.props);
-        this.state.selected = 0;
         let attsize = this.hasRules() ? 3 : 2;
         return (
             <View style={{flex: 1}}>
-                <View style={{flex: 1, flexDirection: 'row'}}>
-                    <View style={{flex: attsize}}>
-                        <View style={{flex:5}}>
-                            <FireAttackerView value={this.state.attack} mods={[this.state.mod13,this.state.mod12,this.state.mod32,this.state.cannister]} onAdd={this.onAttackerAdd} onChanged={this.onAttackerChanged} onModifierChanged={this.onAttackerModifierChanged} />
-                        </View>
+                <View style={{flex: 1, backgroundColor: 'whitesmoke', justifyContent:'flex-start'}}>
+                    <View style={{flex: .75, flexDirection: 'row', alignItems: 'center', marginTop:5}}>
                         <View style={{flex: 1, alignItems: 'center'}}>
                             <Text>Cannister</Text>
                             <Switch value={this.state.cannister} onValueChange={this.onCannisterChanged} />
                         </View>
-                    </View>
-                    <View style={{flex: 2}}>
-                        <FireDefenderView value={this.state.defend} incr={this.state.incr} onAdd={this.onDefenderAdd} onChanged={this.onDefenderChanged} onIncrementsChanged={this.onDefenderIncrementsChanged} />
-                    </View>
-                </View>
-                <View style={{flex: 1, backgroundColor: 'whitesmoke', justifyContent:'flex-start'}}>
-                    <View style={{flex:2}}>
-                        <View style={{flexDirection: 'row'}}>
-                            <View style={{flex:1}}>
-                                <Text style={{fontSize: 18,fontWeight: 'bold',backgroundColor: 'silver', textAlign: 'center'}}>Odds</Text>
-                            </View>
-                            <View style={{flex:1}}>
-                                <Text style={{fontSize: 18,fontWeight: 'bold',backgroundColor: 'silver', textAlign: 'center'}}>Result</Text>
-                            </View>
-                            <View style={{flex:.5}}>
-                                <Text style={{fontSize: 18,fontWeight: 'bold',backgroundColor: 'silver', textAlign: 'center'}}>Leader</Text>
-                            </View>
-                            <View style={{flex:2}}>
-                                <Text style={{fontSize: 18,fontWeight: 'bold',backgroundColor: 'silver', textAlign: 'center'}}>Duration</Text>
-                            </View>
-                            <View style={{flex:.5}}>
-                                <Text style={{fontSize: 18,fontWeight: 'bold',backgroundColor: 'silver', textAlign: 'center'}}>Cond</Text>
-                            </View>
+                        <View style={{flex: 4}}>
+                            <DiceRoll dice={dice} values={[this.state.die1,this.state.die2,this.state.die3,this.state.die4,this.state.die5]}
+                                onRoll={this.onDiceRoll} onDie={this.onDieChanged}/>
                         </View>
-                        <View style={{flex:1}}>
-                            <ScrollView
-                                ref={view => this._scrollView = view}
-                                automaticallyAdjustContentInsets={false}
-                                scrollEventThrottle={200}>
-                                {Fire.resolvePossible((this.state.die1*10) + this.state.die2).map((res,i) => {
-                                    let ll = LeaderLoss.resolve((this.state.die1*10) + this.state.die2, this.state.die3, this.state.die4, this.state.die5) || {};
-                                    let text = res.odds == this.state.odds ? 'white' : 'black';
-                                    let background = res.odds == this.state.odds ? 'goldenrod' : 'transparent';
-                                    let loss = (ll.result || '').toLowerCase();
-                                    let lossIcon = null;
-                                    if (loss.startsWith('flesh')) {
-                                        lossIcon = null;
-                                    } else if (loss == 'capture') {
-                                        lossIcon = Icons.capture;
-                                    } else {
-                                        lossIcon = (ll.mortal ? Icons.mortal : Icons.wounded);
-                                    }
-                                    if (res.odds == this.state.odds) {
-                                        this.state.selected = i;
-                                    }
-
-                                    return (
-                                        <View key={i} style={{flex:1, flexDirection: 'row', backgroundColor: background}}>
-                                            <View style={{flex:1}}>
-                                                <Text style={{fontSize: 16,textAlign: 'center', color:text}}>{res.odds}</Text>
-                                            </View>
-                                            <View style={{flex:1}}>
-                                                <Text style={{fontSize: 16,textAlign: 'center', color:text}}>{res.result}</Text>
-                                            </View>
-                                            <View style={{flex:.5, justifyContent: 'center'}}>
-                                                {ll.leader
-                                                    ? <Image style={{flex: 1, alignSelf:'center', height: 28, width: 28, resizeMode: 'stretch'}} source={ll.leader == 'A' ? Icons.attackerLoss : Icons.defenderLoss} />
-                                                    : <Text />
-                                                }
-                                                {/*<Text style={{fontSize: 16,textAlign: 'center', color:text}}>{ll.leader}</Text>*/}
-                                            </View>
-                                            <View style={{flex:2}}>
-                                                <Text style={{fontSize: 16,textAlign: 'center', color:text}}>{ll.result}</Text>
-                                            </View>
-                                            <View style={{flex:.5, justifyContent: 'center'}}>
-                                                {ll.leader && lossIcon
-                                                    ? <Image style={{flex: 1, alignSelf:'center', height: 28, width: 28, resizeMode: 'stretch'}} source={lossIcon} />
-                                                    : <Text />
-                                                }
-                                                {/*<Text style={{fontSize: 16,textAlign: 'center', color:text}}>{ll.mortal ? 'Mortal' : ''}</Text>*/}
-                                            </View>
-                                        </View>
-                                    );
-                                })}
-                            </ScrollView>
-                        </View>
-                    </View>
-                    <View style={{flex: .75, flexDirection: 'row'}}>
-                        <DiceRoll dice={dice} values={[this.state.die1,this.state.die2,this.state.die3,this.state.die4,this.state.die5]}
-                            onRoll={this.onDiceRoll} onDie={this.onDieChanged}/>
                     </View>
                     <View style={{flex: 1}}>
                         <DiceModifiersView onChange={this.onDiceModifierChanged} />
                     </View>
-                </View>
-                {/*
-                <View style={{flex: 1, flexDirection: 'row'}}>
-                    <View style={{flex: 1}}>
-                        <OddsView odds={Fire.odds} value={this.state.odds} onChanged={this.onOddsChanged} />
-                    </View>
-                    <View style={{flex: .5, alignItems: 'center'}}>
-                        <Text>Cannister</Text>
-                        <Switch value={this.state.cannister} onValueChange={this.onCannisterChanged} />
-                    </View>
-                    <View style={{flex: 2.5}}>
-                        <ResultsView value={this.state.result} leader={this.state.leader} loss={this.state.loss} mortal={this.state.mortal} />
+                    <View style={{flex:2}}>
+                        <FireResultsView odds={this.state.odds}
+                            firedice={(this.state.die1*10) + this.state.die2}
+                            lossdie={this.state.die3}
+                            durationdie1={this.state.die4}
+                            durationdie2={this.state.die5}
+                        />
                     </View>
                 </View>
-                */}
+                <View style={{flex:1, flexDirection:'row'}}>
+                    <View style={{flex:attsize}}>
+                        <FireAttackerView value={this.state.attack}
+                            onAdd={this.onAttackerAdd}
+                            onChanged={this.onAttackerChanged}
+                            onModifierChanged={this.onAttackerModifierChanged} />
+                    </View>
+                    <View style={{flex:2}}>
+                        <FireDefenderView value={this.state.defend}
+                            onAdd={this.onDefenderAdd}
+                            onChanged={this.onDefenderChanged}
+                            onIncrementsChanged={this.onDefenderIncrementsChanged} />
+                    </View>
+                </View>
             </View>
         );
     },

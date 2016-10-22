@@ -4,7 +4,6 @@ import { View, Text, Image } from 'react-native';
 import {SpinNumeric,RadioButtonGroup,MultiSelectList,SelectList} from 'react-native-app-nub';
 import {DiceRoll} from 'react-native-dice';
 var QuickValuesView = require('./quickValuesView');
-var OddsView = require('./oddsView');
 var DiceModifiersView = require('./diceModifiersView');
 var Icons = require('./res/icons');
 var Base6 = require('./services/base6');
@@ -96,7 +95,6 @@ var MeleeAssaultView = React.createClass({
                 </View>
                 <View style={{flex:2.5, flexDirection: 'row'}}>
                     <View style={{flex:2}}>
-                        {/*<OddsView odds={this.odds().map((o) => o.name)} value={this.state.odds} onChanged={this.onOddsChanged} />*/}
                         {/*<SelectList title={'Odds'} titleonly={true} items={this.odds().map((o) => o.name)} selected={this.state.odds} onChanged={this.onOddsChanged} />*/}
                         <RadioButtonGroup title={'Odds'} direction={'vertical'} buttons={this.odds().map((o) => {return {label:o.name,value:o.name};})} state={this.state.odds} onSelected={this.onOddsChanged} />
                     </View>

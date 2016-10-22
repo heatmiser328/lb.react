@@ -2,9 +2,8 @@
 var React = require('react');
 import { View, Text } from 'react-native';
 import {SpinNumeric} from 'react-native-app-nub';
-var FireAttackerBasicAddView = require('./fireAttackerBasicAddView');
 var FireAttackerAdvancedAddView = require('./fireAttackerAdvancedAddView');
-var Icons = require('./res/icons');
+var FireAttackerBasicAddView = require('./fireAttackerBasicAddView');
 var Current = require('./services/current');
 
 var FireAttackerView = React.createClass({
@@ -23,14 +22,14 @@ var FireAttackerView = React.createClass({
         let battle = Current.battle();
         if (battle.hasOwnProperty('fire')) {
             return (
-                <View style={{flex: 5}}>
+                <View style={{flex: 3}}>
                     <FireAttackerAdvancedAddView events={this.props.events} onSet={this.props.onChanged} onAdd={this.props.onAdd} />
                 </View>
             );
         }
 
         return (
-            <View style={{flex: 5}}>
+            <View style={{flex: 3}}>
                 <FireAttackerBasicAddView events={this.props.events} value={this.props.value} onSet={this.props.onChanged} />
             </View>
         );

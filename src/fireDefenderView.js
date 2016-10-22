@@ -1,10 +1,9 @@
 'use strict'
 var React = require('react');
-import { View, Text, Image } from 'react-native';
+import { View, Text } from 'react-native';
 import {SpinNumeric} from 'react-native-app-nub';
-var QuickValuesView = require('./quickValuesView');
 var FireDefenderAdvancedAddView = require('./fireDefenderAdvancedAddView');
-var Icons = require('./res/icons');
+var QuickValuesView = require('./quickValuesView');
 var Current = require('./services/current');
 
 var FireDefenderView = React.createClass({
@@ -15,12 +14,6 @@ var FireDefenderView = React.createClass({
                 <View style={{flex: 1}}>
                     <SpinNumeric value={this.props.value} min={0} onChanged={this.props.onChanged} />
                 </View>
-                <View style={{flex: 1}}>
-                    <Text style={{textAlign: 'center'}}>Incr > 9</Text>
-                    <View style={{marginTop: -10}}>
-                        <SpinNumeric value={this.props.incr} min={0} onChanged={this.props.onIncrementsChanged} />
-                    </View>
-                </View>
                 {this.renderValues()}
             </View>
         );
@@ -29,13 +22,13 @@ var FireDefenderView = React.createClass({
         let battle = Current.battle();
         if (battle.hasOwnProperty('fire')) {
             return (
-                <View style={{flex: 2}}>
+                <View style={{flex: 3}}>
                     <FireDefenderAdvancedAddView events={this.eventEmitter} onSet={this.props.onChanged} />
                 </View>
             );
         }
         return (
-            <View style={{flex: 2}}>
+            <View style={{flex: 3}}>
                 <View style={{flex:1}}>
                     <QuickValuesView values={[4,6,9,12,14,16]} onChanged={this.props.onChanged}/>
                 </View>

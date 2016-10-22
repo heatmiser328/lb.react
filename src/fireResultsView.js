@@ -1,34 +1,92 @@
 'use strict'
 var React = require('react');
-import { View, Text, Image } from 'react-native';
-var LeaderLossView = require('./leaderLossView');
+import { View, Text, Image, ScrollView } from 'react-native';
 var Icons = require('./res/icons');
+var Fire = require('./services/fire');
+var LeaderLoss = require('./services/leaderloss');
 
 var ResultsView = React.createClass({
+    getInitialState() {
+        return {
+            selected: 0
+        };
+    },
+    componentDidUpdate() {
+        this._scrollView.scrollTo({x:0, y: this.state.selected * 18, animated: true});
+    },
     render() {
-        //<Text style={{fontSize: 16, fontWeight: 'bold'}}>{this.props.value}</Text>
-        let value = this.props.value || 'NE';
-        let iconStyle = /*value == 'NE'
-            ? {height: 48, width: 128, resizeMode: 'stretch'}
-            :*/ {height: 48, width: 48, resizeMode: 'stretch'}
+        this.state.selected = 0;
         return (
-            <View style={{flex: 1, flexDirection: 'row', alignItems: 'center'}}>
-                <View style={{flex: .5, alignItems: 'center'}}>
-                    {/*<View style={{
-                        flex: 1,
-                        height: 48, width: 48,
-                        backgroundColor: value == 'NE' ? 'gray' : 'red',
-                        borderRadius: 5,
-                        borderColor: 'black',
-                        borderWidth: 1
-                    }}>
-                        <Text style={{fontSize: 38, fontWeight: 'bold', fontFamily:'sans-serif-black',color: 'white', textAlign:'center', alignSelf:'center'}}>
-                            {value}
-                        </Text>
-                    </View>*/}
-                    <Image style={iconStyle} source={Icons[value]}/>
+            <View style={{flex:1}}>
+                <View style={{flexDirection: 'row'}}>
+                    <View style={{flex:1}}>
+                        <Text style={{fontSize: 18,fontWeight: 'bold',backgroundColor: 'silver', textAlign: 'center'}}>Odds</Text>
+                    </View>
+                    <View style={{flex:1}}>
+                        <Text style={{fontSize: 18,fontWeight: 'bold',backgroundColor: 'silver', textAlign: 'center'}}>Result</Text>
+                    </View>
+                    <View style={{flex:.5}}>
+                        <Text style={{fontSize: 18,fontWeight: 'bold',backgroundColor: 'silver', textAlign: 'center'}}>Leader</Text>
+                    </View>
+                    <View style={{flex:2}}>
+                        <Text style={{fontSize: 18,fontWeight: 'bold',backgroundColor: 'silver', textAlign: 'center'}}>Duration</Text>
+                    </View>
+                    <View style={{flex:.5}}>
+                        <Text style={{fontSize: 18,fontWeight: 'bold',backgroundColor: 'silver', textAlign: 'center'}}>Cond</Text>
+                    </View>
                 </View>
-                <LeaderLossView style={{flex: 1}} leader={this.props.leader} loss={this.props.loss} mortal={this.props.mortal} />
+                <View style={{flex:1}}>
+                    <ScrollView
+                        ref={view => this._scrollView = view}
+                        automaticallyAdjustContentInsets={false}
+                        scrollEventThrottle={200}>
+                        {Fire.resolvePossible(this.props.firedice).map((res,i) => {
+                            let ll = LeaderLoss.resolve(this.props.firedice, this.props.lossdie, this.props.durationdie1, this.props.durationdie2) || {};
+                            let text = res.odds == this.props.odds ? 'white' : 'black';
+                            let background = res.odds == this.props.odds ? 'goldenrod' : 'transparent';
+                            let loss = (ll.result || '').toLowerCase();
+                            let lossIcon = null;
+                            if (loss.startsWith('flesh')) {
+                                lossIcon = null;
+                            } else if (loss == 'capture') {
+                                lossIcon = Icons.capture;
+                            } else {
+                                lossIcon = (ll.mortal ? Icons.mortal : Icons.wounded);
+                            }
+                            if (res.odds == this.props.odds) {
+                                this.state.selected = i;
+                            }
+
+                            return (
+                                <View key={i} style={{flex:1, flexDirection: 'row', backgroundColor: background}}>
+                                    <View style={{flex:1}}>
+                                        <Text style={{fontSize: 16,textAlign: 'center', color:text}}>{res.odds}</Text>
+                                    </View>
+                                    <View style={{flex:1}}>
+                                        <Text style={{fontSize: 16,textAlign: 'center', color:text}}>{res.result}</Text>
+                                    </View>
+                                    <View style={{flex:.5, justifyContent: 'center'}}>
+                                        {ll.leader
+                                            ? <Image style={{flex: 1, alignSelf:'center', height: 28, width: 28, resizeMode: 'stretch'}} source={ll.leader == 'A' ? Icons.attackerLoss : Icons.defenderLoss} />
+                                            : <Text />
+                                        }
+                                        {/*<Text style={{fontSize: 16,textAlign: 'center', color:text}}>{ll.leader}</Text>*/}
+                                    </View>
+                                    <View style={{flex:2}}>
+                                        <Text style={{fontSize: 16,textAlign: 'center', color:text}}>{ll.result}</Text>
+                                    </View>
+                                    <View style={{flex:.5, justifyContent: 'center'}}>
+                                        {ll.leader && lossIcon
+                                            ? <Image style={{flex: 1, alignSelf:'center', height: 28, width: 28, resizeMode: 'stretch'}} source={lossIcon} />
+                                            : <Text />
+                                        }
+                                        {/*<Text style={{fontSize: 16,textAlign: 'center', color:text}}>{ll.mortal ? 'Mortal' : ''}</Text>*/}
+                                    </View>
+                                </View>
+                            );
+                        })}
+                    </ScrollView>
+                </View>
             </View>
         );
     }

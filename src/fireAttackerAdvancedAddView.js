@@ -81,13 +81,7 @@ var FireAttackerAdvancedAddView = React.createClass({
                     <QuickValuesView values={[4,6,9,12,16,18]} onChanged={this.onValueChanged}/>
                 </View>
                 {/*
-                <View style={{flex: .5, alignItems: 'center'}}>
-                    <Text>Cannister</Text>
-                    <Switch value={this.state.mods['cannister']} onValueChange={this.onModifier('cannister')} />
-                </View>
-                */}
-                {/*
-                <View style={{flex:4}}>
+                <View style={{flex:1}}>
                     <FireAttackerValuesView />
                 </View>
                 */}
