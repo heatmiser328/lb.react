@@ -71,7 +71,23 @@ var MeleeChargeCarreView = React.createClass({
     render() {
         return (
             <View style={{flex: 1}}>
-                <View style={{flex:4, flexDirection:'row'}}>
+                <View style={{flex:1, marginTop: 5, backgroundColor: 'whitesmoke'}}>
+                    <View style={{flex: .75, flexDirection: 'row'}}>
+                        <View style={{flex:1, justifyContent: 'center', alignItems:'flex-end'}}>
+                            {/* images for square,disorder,rout*/}
+                            {/*<Text>{this.state.results}</Text>*/}
+                            <Image style={{height: 64, width: 64, resizeMode: 'stretch'}} source={Icons[this.state.results]} />
+                        </View>
+                        <View style={{flex:3}}>
+                            <DiceRoll dice={this.dice} values={[this.state.die1,this.state.die2]}
+                                onRoll={this.onDiceRoll} onDie={this.onDieChanged}/>
+                        </View>
+                    </View>
+                    <View style={{flex: 1}}>
+                        <DiceModifiersView onChange={this.onDiceModifierChanged} />
+                    </View>
+                </View>
+                <View style={{flex:3, flexDirection:'row'}}>
                     {/*morale*/}
                     <View style={{flex:4, justifyContent: 'flex-start', borderRightWidth: 1, borderRightColor: 'gray'}}>
                         <View style={{flex: 1, flexDirection: 'row'}}>
@@ -101,20 +117,6 @@ var MeleeChargeCarreView = React.createClass({
                             items={this.modifiers().map((m) => {return {name: m.name, selected: this.state.mods[m.name]};})}
                             onChanged={this.onModChanged}/>
                     </View>
-                </View>
-                <View style={{flex: .75, flexDirection: 'row', backgroundColor: 'whitesmoke'}}>
-                    <View style={{flex:1, justifyContent: 'center', alignItems:'flex-end'}}>
-                        {/* images for square,disorder,rout*/}
-                        {/*<Text>{this.state.results}</Text>*/}
-                        <Image style={{height: 64, width: 64, resizeMode: 'stretch'}} source={Icons[this.state.results]} />
-                    </View>
-                    <View style={{flex:3}}>
-                        <DiceRoll dice={this.dice} values={[this.state.die1,this.state.die2]}
-                            onRoll={this.onDiceRoll} onDie={this.onDieChanged}/>
-                    </View>
-                </View>
-                <View style={{flex: 1, backgroundColor: 'whitesmoke'}}>
-                    <DiceModifiersView onChange={this.onDiceModifierChanged} />
                 </View>
             </View>
         );

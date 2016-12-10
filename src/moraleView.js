@@ -65,6 +65,20 @@ var MoraleView = React.createClass({
         let icon = this.state.result == 'Fail' ? Icons['fail'] : Icons['pass'];
         return (
             <View style={{flex: 1}}>
+                <View style={{flex:1, marginTop: 5, backgroundColor: 'whitesmoke'}}>
+                    <View style={{flex: 1, flexDirection: 'row'}}>
+                        <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+                            <Image style={{height: 64, width: 64, resizeMode: 'stretch'}} source={icon} />
+                        </View>
+                        <View style={{flex: 1}}>
+                            <DiceRoll dice={this.dice} values={[this.state.die1,this.state.die2]}
+                                    onRoll={this.onDiceRoll} onDie={this.onDieChanged}/>
+                        </View>
+                    </View>
+                    <View style={{flex: 1}}>
+                        <DiceModifiersView onChange={this.onDiceModifierChanged} />
+                    </View>
+                </View>
                 <View style={{flex: 3, flexDirection: 'row'}}>
                     <View style={{flex: 2, justifyContent: 'flex-start'}}>
                         <View style={{flex:1}}>
@@ -79,20 +93,6 @@ var MoraleView = React.createClass({
                         <MultiSelectList title={'Modifiers'}
                             items={modifiers.map((m) => {return {name: m.name, selected: this.state.mods[m.name]};})}
                             onChanged={this.onModChanged}/>
-                    </View>
-                </View>
-                <View style={{flex:1, justifyContent: 'flex-start'}}>
-                    <View style={{flex: 1, flexDirection: 'row'}}>
-                        <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-                            <Image style={{height: 64, width: 64, resizeMode: 'stretch'}} source={icon} />
-                        </View>
-                        <View style={{flex: 1}}>
-                            <DiceRoll dice={this.dice} values={[this.state.die1,this.state.die2]}
-                                    onRoll={this.onDiceRoll} onDie={this.onDieChanged}/>
-                        </View>
-                    </View>
-                    <View style={{flex: 1}}>
-                        <DiceModifiersView onChange={this.onDiceModifierChanged} />
                     </View>
                 </View>
             </View>

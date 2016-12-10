@@ -107,6 +107,18 @@ var MeleeResolutionView = React.createClass({
     render() {
         return (
           <View style={{flex: 1}}>
+              <View style={{flex: 1.75, backgroundColor: 'whitesmoke'}}>
+                  <View style={{flex: 1}}>
+                      <ResultsView value={this.state.result} leader={this.state.leader} loss={this.state.loss} mortal={this.state.mortal} />
+                  </View>
+                  <View style={{flex: 1}}>
+                      <DiceRoll dice={this.dice} values={[this.state.die1,this.state.die2,this.state.die3,this.state.die4,this.state.die5]}
+                              onRoll={this.onDiceRoll} onDie={this.onDieChanged}/>
+                  </View>
+                  <View style={{flex: 1}}>
+                      <DiceModifiersView onChange={this.onDiceModifierChanged} />
+                  </View>
+              </View>
               <View style={{flex: 1, flexDirection: 'row'}}>
                   <View style={{flex: 2}}>
                       <MeleeStrengthView label={'Attacker'} value={this.state.attack} onChanged={this.onAttackerChanged} />
@@ -120,18 +132,6 @@ var MeleeResolutionView = React.createClass({
               </View>
               <View style={{flex: 3}}>
                 <MeleeCalcView side={'attack'} onSet={this.onSetMelee}  onAdd={this.onAddMelee} />
-              </View>
-              <View style={{flex: 2}}>
-                  <View style={{flex: 1}}>
-                      <ResultsView value={this.state.result} leader={this.state.leader} loss={this.state.loss} mortal={this.state.mortal} />
-                  </View>
-                  <View style={{flex: 1}}>
-                      <DiceRoll dice={this.dice} values={[this.state.die1,this.state.die2,this.state.die3,this.state.die4,this.state.die5]}
-                              onRoll={this.onDiceRoll} onDie={this.onDieChanged}/>
-                  </View>
-                  <View style={{flex: 1}}>
-                      <DiceModifiersView onChange={this.onDiceModifierChanged} />
-                  </View>
               </View>
           </View>
         );

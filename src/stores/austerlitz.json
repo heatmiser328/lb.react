@@ -455,8 +455,8 @@
 			"defend": [
 				{"name": "Skirmish order", "mod": 0.5},
 				{"name": "Disordered", "mod": 0.5},
-				{"name": "Routd", "mod": 0.333},
-				{"name": "Cav Routd", "mod": 0.25},
+				{"name": "Routed", "mod": 0.333},
+				{"name": "Cav Routed", "mod": 0.25},
 				{"name": "Tired", "mod": 0.5},
 				{"name": "Exhausted", "mod": 0.333},
 				{"name": "Preserve Readiness", "mod": 0.333},

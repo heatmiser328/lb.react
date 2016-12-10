@@ -17,7 +17,7 @@ var MainView = React.createClass({
         return {
             drawer: false,
             routes: {
-                landing: {index: 0, name: 'landing', onMenu: this.navMenuHandler},
+                landing: {index: 0, name: 'landing', title: 'La Bataille Assistant', subtitle: 'Select a battle', onMenu: this.navMenuHandler},
                 battle: {index: 1, name: 'battle', title: 'Battle', onMenu: this.navMenuHandler, onRefresh: this.onReset, onInfo: this.onAbout},
                 about: {index: 7, name: 'about', title: 'About'}
             },
@@ -28,7 +28,7 @@ var MainView = React.createClass({
         Current.load()
         //new Promise((a,r)=> a())
         .then((data) => {
-            if (data) {
+            if (data && data.scenario) {
                 this.state.routes.battle.data = Battles.scenario(data.scenario);
                 log.debug('current battle ' + this.state.routes.battle.data.name);
                 this.refs.navigator.resetTo(this.state.routes.battle);

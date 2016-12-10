@@ -144,7 +144,7 @@
 		    {"name": "In Line", "type": "defend", "attmod": 0, "defmod": -3},
 		    {"name": "In Carre", "type": "defend", "attmod": 6, "defmod": 0},
 		    {"name": "Disordered", "type": "defend", "attmod": 3, "defmod": -3},
-		    {"name": "Routd", "type": "defend", "attmod": 6, "defmod": -6},
+		    {"name": "Routed", "type": "defend", "attmod": 6, "defmod": -6},
 		    {"name": "Assaulting up a slope", "type": "attack", "attmod": -3, "defmod": 3},
 		    {"name": "Assaulting across a stream", "type": "attack", "attmod": -3, "defmod": 3},
 		    {"name": "Casualty due to defensive fire", "type": "attack", "attmod": -3, "defmod": 0}
@@ -257,7 +257,7 @@
 			"defend": [
 				{"name": "Skirmish order", "mod": 0.5},
 				{"name": "Disordered", "mod": 0.5},
-				{"name": "Routd", "mod": 0.333},
+				{"name": "Routed", "mod": 0.333},
 				{"name": "Tired", "mod": 0.5},
 				{"name": "Exhausted", "mod": 0.333}
 			]

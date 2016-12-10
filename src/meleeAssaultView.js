@@ -75,6 +75,24 @@ var MeleeAssaultView = React.createClass({
         let icon = this.state.result != null ? (this.state.result ? Icons['pass'] : Icons['fail']) : null;
         return (
             <View style={{flex: 1}}>
+                <View style={{flex: 1, marginTop: 5, backgroundColor: 'whitesmoke'}}>
+                    <View style={{flex: .75, flexDirection: 'row'}}>
+                        <View style={{flex:2, alignItems: 'center', justifyContent: 'center'}}>
+                            <RadioButtonGroup buttons={[{label: 'Defender', value: 1},{label: 'Attacker', value: 0}]} state={this.state.mode} onSelected={this.onModeChanged} />
+                        </View>
+                        <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+                            <Image style={{height: 64, width: 64, resizeMode: 'stretch'}} source={icon} />
+                        </View>
+                        <View style={{flex:2}}>
+                            <DiceRoll dice={this.dice} values={[this.state.die1,this.state.die2]}
+                                onRoll={this.onDiceRoll} onDie={this.onDieChanged}/>
+                        </View>
+                    </View>
+                    <View style={{flex: .75}}>
+                        <DiceModifiersView onChange={this.onDiceModifierChanged} />
+                    </View>
+                </View>
+
                 <View style={{flex:1, flexDirection: 'row'}}>
                     <View style={{flex:1, borderRightWidth:1,borderRightColor:'gray'}}>
                         <Text style={{backgroundColor:'silver', alignSelf:'stretch', textAlign:'center'}}>Morale</Text>
@@ -102,23 +120,6 @@ var MeleeAssaultView = React.createClass({
                         <MultiSelectList title={'Modifiers'}
                             items={this.modifiers().map((m) => {return {name: m.name, selected: this.state.mods[m.name]};})}
                             onChanged={this.onModChanged} />
-                    </View>
-                </View>
-                <View style={{flex: 1}}>
-                    <View style={{flex: .75, flexDirection: 'row', backgroundColor: 'whitesmoke'}}>
-                        <View style={{flex:2, alignItems: 'center', justifyContent: 'center'}}>
-                            <RadioButtonGroup buttons={[{label: 'Defender', value: 1},{label: 'Attacker', value: 0}]} state={this.state.mode} onSelected={this.onModeChanged} />
-                        </View>
-                        <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-                            <Image style={{height: 64, width: 64, resizeMode: 'stretch'}} source={icon} />
-                        </View>
-                        <View style={{flex:2}}>
-                            <DiceRoll dice={this.dice} values={[this.state.die1,this.state.die2]}
-                                onRoll={this.onDiceRoll} onDie={this.onDieChanged}/>
-                        </View>
-                    </View>
-                    <View style={{flex: .75, backgroundColor: 'whitesmoke'}}>
-                        <DiceModifiersView onChange={this.onDiceModifierChanged} />
                     </View>
                 </View>
             </View>
