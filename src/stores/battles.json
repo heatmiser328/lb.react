@@ -4,6 +4,7 @@
 	    "name": "La Bataille d' Halle",
 	    "publisher": "Marshal Enterprises",
 	    "image": "halle",
+		"sides": ["French", "Prussian"],
 	    "scenarios": [
 	        {
 	            "id": 2,
@@ -66,6 +67,7 @@
 	    "name": "La Bataille de Raszyn",
 	    "publisher": "Marshal Enterprises",
 	    "image": "raszyn",
+		"sides": ["Polish", "Austrian"],
 	    "scenarios": [
 	        {
 	            "id": 6,
@@ -128,6 +130,7 @@
 	    "name": "La Bataille de Leipzig",
 	    "publisher": "Marshal Enterprises",
 	    "image": "leipzig",
+		"sides": ["French", "PrussianAustrianRussian"],
 	    "scenarios": [
 	        {
 	            "id": 10,
@@ -514,6 +517,7 @@
 	    "name": "La Bataille de Friedland",
 	    "publisher": "Marshal Enterprises",
 	    "image": "friedland",
+		"sides": ["French", "Russian"],
 	    "scenarios": [
 	        {
 	            "id": 910,
@@ -631,6 +635,7 @@
 	"name": "La Bataille d' Aspern-Essling",
 	"publisher": "Marshal Enterprises",
 	"image": "aspern_essling",
+	"sides": ["French", "Austrian"],
 	"scenarios": [
 	  {
 		"id": 920,
@@ -874,6 +879,7 @@
 	"name": "La Bataille de Neumarkt",
 	"publisher": "Marshal Enterprises",
 	"image": "neumarkt",
+	"sides": ["French", "Austrian"],
 	"scenarios": [
 	  {
 		"id": 1050,
@@ -901,6 +907,7 @@
 	"name": "La Bataille de Schoengrabern",
 	"publisher": "Marshal Enterprises",
 	"image": "schoengrabern",
+	"sides": ["French", "Russian"],
 	"scenarios": [
 	  {
 		"id": 10021,
@@ -928,6 +935,7 @@
 	    "name": "La Bataille d' Austerlitz",
 	    "publisher": "Marshal Enterprises",
 	    "image": "austerlitz",
+		"sides": ["French", "AustrianRussian"],
 	    "scenarios": [
 	        {
 	            "id": 10031,
@@ -1100,6 +1108,7 @@
 	    "name": "La Bataille de Vauchamps",
 	    "publisher": "Marshal Enterprises / ATO",
 	    "image": "vauchamps",
+		"sides": ["French", "Prussian"],
 	    "scenarios": [
 	        {
 	            "id": 32,
@@ -1162,6 +1171,7 @@
 	    "name": "La Bataille d' Auerstaedt",
 	    "publisher": "Clash of Arms",
 	    "image": "auerstaedt",
+		"sides": ["French", "Prussian"],
 	    "scenarios": [
 	        {
 	            "id": 36,
@@ -1206,6 +1216,7 @@
 	    "name": "La Bataille de Preussesch-Eylau",
 	    "publisher": "Clash of Arms",
 	    "image": "eylau",
+		"sides": ["French", "PrussianRussian"],
 	    "scenarios": [
 	        {
 	            "id": 39,
@@ -1304,6 +1315,7 @@
 	    "name": "La Bataille de Talavera",
 	    "publisher": "Clash of Arms",
 	    "image": "talavera",
+		"sides": ["French", "AngloSpanish"],
 	    "scenarios": [
 	        {
 	            "id": 45,
@@ -1402,6 +1414,7 @@
 	    "name": "La Bataille d'Albuera",
 	    "publisher": "Clash of Arms",
 	    "image": "albuera",
+		"sides": ["French", "AngloSpanish"],
 	    "scenarios": [
 	        {
 	            "id": 51,
@@ -1428,6 +1441,7 @@
 	    "name": "La Bataille de Ligny",
 	    "publisher": "Clash of Arms",
 	    "image": "ligny",
+		"sides": ["French", "Prussian"],
 	    "scenarios": [
 	        {
 	            "id": 53,
@@ -1508,6 +1522,7 @@
 	    "name": "La Bataille des Quatre Bras",
 	    "publisher": "Clash of Arms",
 	    "image": "quatrebras",
+		"sides": ["French", "British"],
 	    "scenarios": [
 	        {
 	            "id": 58,
@@ -1552,6 +1567,7 @@
 	    "name": "La Bataille de Mont St. Jean",
 	    "publisher": "Clash of Arms",
 	    "image": "montstjean",
+		"sides": ["French", "AngloPrussian"],
 	    "scenarios": [
 	        {
 	            "id": 61,
@@ -1668,6 +1684,7 @@
 	    "name": "La Bataille de Wavre",
 	    "publisher": "Clash of Arms",
 	    "image": "wavre",
+		"sides": ["French", "Prussian"],
 	    "scenarios": [
 	        {
 	            "id": 68,
@@ -1730,6 +1747,7 @@
 	    "name": "La Bataille de Corunna-Espagnol",
 	    "publisher": "Clash of Arms",
 	    "image": "corunna",
+		"sides": ["French", "British"],
 	    "scenarios": [
 	        {
 	            "id": 72,
@@ -1792,6 +1810,7 @@
 	    "name": "La Bataille de Luetzen",
 	    "publisher": "Clash of Arms",
 	    "image": "luetzen",
+		"sides": ["French", "PrussianRussian"],
 	    "scenarios": [
 	        {
 	            "id": 76,
@@ -1872,6 +1891,7 @@
 	    "name": "La Bataille d'Orthez",
 	    "publisher": "Clash of Arms",
 	    "image": "orthez",
+		"sides": ["French", "British"],
 	    "scenarios": [
 	        {
 	            "id": 81,
@@ -1934,6 +1954,7 @@
 	    "name": "La Bataille de la Moscowa",
 	    "publisher": "Clash of Arms",
 	    "image": "moscowa",
+		"sides": ["French", "Russian"],
 	    "scenarios": [
 	        {
 	            "id": 84,

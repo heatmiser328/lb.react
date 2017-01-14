@@ -32,6 +32,7 @@ module.exports = {
             data.id = battle.id;
             data.name = battle.name;
             data.image = battle.image;
+            data.sides = battle.sides || ['imperial','coalition'];
 
             return data;
         }

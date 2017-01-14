@@ -7,9 +7,6 @@ module.exports = {
 	"info": Icons['info-dark'],
 	"refresh": Icons['refresh-dark'],
 
-	"coalition": require('./coalition.jpg'),
-	"imperial": require('./imperial.jpg'),
-
 	"add": require('./addico.png'),
 	"equal": require('./equalico.png'),
 
@@ -42,6 +39,14 @@ module.exports = {
 	"Austrian": require('./austrian_flag.png'),
 	"Hungarian": require('./hungary_flag.png'),	
 	"Prussian": require('./prussian_flag.png'),
+	"British": require('./british_flag_1.jpg'),
+	"AustrianRussian": require('./austrian_russian.png'),
+	"PrussianAustrianRussian": require('./prussian_austrian_russian.png'),
+	"PrussianRussian": require('./prussian_russian.png'),
+	"AngloPrussian": require('./anglo_prussian.png'),
+	"AngloSpanish": require('./anglo_spanish.png'),
+	"imperial": require('./imperial.jpg'),
+	"coalition": require('./coalition.jpg'),	
 
 	"halle": require("./halle.jpg"),
 	"raszyn": require("./raszyn.jpg"),

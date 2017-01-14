@@ -61,7 +61,8 @@ var TurnView = React.createClass({
         .done();
     },
     render() {
-        //console.log(this.props);
+        //console.log(this.props);        
+        let side = Current.scenario().sides[this.state.player];
         return (
             <View style={{flexDirection: 'row', height: 90, marginTop: 60, marginLeft: 10, marginRight: 10}}>
                 <View style={{flex: 1}}>
@@ -73,7 +74,7 @@ var TurnView = React.createClass({
                 </View>
                 <View style={{flex: 1}}>
                     <TouchableOpacity onPress={this.onNextPlayer} >
-                        <Image style={{width: 96,height: 88,resizeMode: 'contain'}} source={Icons[this.state.player]}/>
+                        <Image style={{width: 96,height: 88,resizeMode: 'contain'}} source={Icons[side]}/>
                     </TouchableOpacity>
                 </View>
             </View>

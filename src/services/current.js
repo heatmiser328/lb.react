@@ -24,7 +24,9 @@ module.exports = {
 		return store.load()
 		.then((current) => {
         	_current = current || {};
-			_current.player = _current.player || 'imperial';
+			_current.player = _current.player || 0;
+			if (_current.player == 'imperial') { _current.player = 0;}
+			else if (_current.player == 'coalition') { _current.player = 1;}
             return _current;
 		});
 	},
@@ -43,7 +45,7 @@ module.exports = {
 		current.scenario = data.scenario.id;
 		current.turn = 1;
 		current.phase = 0;
-		current.player = 'imperial';
+		current.player = 0;
 		return store.save(current)
 		.then(() => {
 			_current = current;
@@ -101,11 +103,11 @@ module.exports = {
 	prevPhase() {
 		if (--_current.phase < 0) {
 			_current.phase = Phases.count - 1;
-			if (_current.player == 'imperial') {
+			if (_current.player == 0) {
 				this.prevTurn(false);
-				_current.player = 'coalition';
+				_current.player = 1;
 			} else {
-				_current.player = 'imperial';
+				_current.player = 0;
 			}
 		}
     	return this.save()
@@ -116,11 +118,11 @@ module.exports = {
 	nextPhase() {
 		if (++_current.phase >= Phases.count) {
 			_current.phase = 0;
-			if (_current.player == 'coalition') {
+			if (_current.player == 1) {
 				this.nextTurn(false);
-				_current.player = 'imperial';
+				_current.player = 0;
 			} else {
-				_current.player = 'coalition';
+				_current.player = 1;
 			}
 		}
     	return this.save()
@@ -129,10 +131,10 @@ module.exports = {
 		});
 	},
 	nextPlayer() {
-		if (_current.player == 'coalition') {
-			_current.player = 'imperial';
+		if (_current.player == 1) {
+			_current.player = 0;
 		} else {
-			_current.player = 'coalition';
+			_current.player = 1;
 		}
 		return this.save()
         .then(() => {
@@ -144,5 +146,8 @@ module.exports = {
 	},
 	battle() {
 		return Battles.battle(_current.battle);
+	},
+	scenario() {
+		return Battles.scenario(_current.scenario);		
 	}
 };
