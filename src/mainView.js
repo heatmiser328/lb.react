@@ -30,10 +30,10 @@ var MainView = React.createClass({
         .then((data) => {
             if (data && data.scenario) {
                 this.state.routes.battle.data = Battles.scenario(data.scenario);
-                log.debug('current battle ' + this.state.routes.battle.data.name);
+                //log.debug('current battle ' + this.state.routes.battle.data.name);
                 this.refs.navigator.resetTo(this.state.routes.battle);
             } else {
-                log.debug('mainView: no current game');
+                //log.debug('mainView: no current game');
             }
         })
         .done();
@@ -80,7 +80,7 @@ var MainView = React.createClass({
         }
     },
     onReset() {
-        log.debug('reset game');
+        //log.debug('reset game');
         this.eventEmitter.emit('menureset');
     },
     onAbout() {
@@ -88,7 +88,7 @@ var MainView = React.createClass({
     },
     renderScene(route, navigator) {
         route = route || {};
-        log.debug('render scene ' + route.name);
+        //log.debug('render scene ' + route.name);
         if (route.name == 'battle') {
             this.state.routes.battle.title = route.data.name;
             this.state.routes.battle.subtitle = route.data.scenario.name;
