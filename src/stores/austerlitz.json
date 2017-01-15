@@ -114,15 +114,6 @@
 					"D/PgD": {"label":"14","value":14},
 					"Arty": {"label":"6/8","value":8}
 				},
-				"Froz Lake": {
-					"Col": {"label":"4","value":4},
-					"Line": {"label":"4","value":4},
-					"Carre": {"label":"4","value":4},
-					"Gen": {"label":"","value":0},
-					"Skirm": {"label":"4","value":4},
-					"D/PgD": {"label":"4","value":4},
-					"Arty": {"label":"4","value":4}
-				},
 				"Forest": {
 					"Col": {"label":"","value":0},
 					"Line": {"label":"","value":0},
@@ -131,24 +122,6 @@
 					"Skirm": {"label":"14","value":14},
 					"D/PgD": {"label":"16","value":16},
 					"Arty": {"label":"","value":0}
-				},
-				"Orchard": {
-					"Col": {"label":"","value":0},
-					"Line": {"label":"","value":0},
-					"Carre": {"label":"","value":0},
-					"Gen": {"label":"10","value":10},
-					"Skirm": {"label":"14","value":14},
-					"D/PgD": {"label":"16","value":16},
-					"Arty": {"label":"","value":0}
-				},
-				"Pheasantry": {
-					"Col": {"label":"","value":0},
-					"Line": {"label":"","value":0},
-					"Carre": {"label":"","value":0},
-					"Gen": {"label":"10","value":10},
-					"Skirm": {"label":"14","value":14},
-					"D/PgD": {"label":"16","value":16},
-					"Arty": {"label":"8/10","value":10}
 				},
 				"Hamlet": {
 					"Col": {"label":"","value":0},
@@ -167,14 +140,32 @@
 					"Skirm": {"label":"14","value":12},
 					"D/PgD": {"label":"16","value":16},
 					"Arty": {"label":"7/9","value":9}
-				},
-				"Redoubt": {
+				},				
+				"Orchard": {
 					"Col": {"label":"","value":0},
 					"Line": {"label":"","value":0},
 					"Carre": {"label":"","value":0},
-					"Gen": {"label":"10/6","value":10},
-					"Skirm": {"label":"","value":0},
-					"D/PgD": {"label":"14","value":14},
+					"Gen": {"label":"10","value":10},
+					"Skirm": {"label":"14","value":14},
+					"D/PgD": {"label":"16","value":16},
+					"Arty": {"label":"","value":0}
+				},
+				"Vineyard": {
+					"Col": {"label":"","value":0},
+					"Line": {"label":"","value":0},
+					"Carre": {"label":"","value":0},
+					"Gen": {"label":"10","value":10},
+					"Skirm": {"label":"12","value":12},
+					"D/PgD": {"label":"16","value":16},
+					"Arty": {"label":"","value":0}
+				},				
+				"Pheasantry": {
+					"Col": {"label":"","value":0},
+					"Line": {"label":"","value":0},
+					"Carre": {"label":"","value":0},
+					"Gen": {"label":"10","value":10},
+					"Skirm": {"label":"14","value":14},
+					"D/PgD": {"label":"16","value":16},
 					"Arty": {"label":"8/10","value":10}
 				},
 				"Pheas Wall": {
@@ -186,15 +177,6 @@
 					"D/PgD": {"label":"+2","value":0},
 					"Arty": {"label":"+2","value":0}
 				},
-				"Vineyard": {
-					"Col": {"label":"","value":0},
-					"Line": {"label":"","value":0},
-					"Carre": {"label":"","value":0},
-					"Gen": {"label":"10","value":10},
-					"Skirm": {"label":"12","value":12},
-					"D/PgD": {"label":"16","value":16},
-					"Arty": {"label":"","value":0}
-				},
 				"Chateaux": {
 					"Col": {"label":"","value":0},
 					"Line": {"label":"","value":0},
@@ -203,7 +185,25 @@
 					"Skirm": {"label":"14","value":14},
 					"D/PgD": {"label":"","value":0},
 					"Arty": {"label":"","value":0}
-				}
+				},
+				"Redoubt": {
+					"Col": {"label":"","value":0},
+					"Line": {"label":"","value":0},
+					"Carre": {"label":"","value":0},
+					"Gen": {"label":"10/6","value":10},
+					"Skirm": {"label":"","value":0},
+					"D/PgD": {"label":"14","value":14},
+					"Arty": {"label":"8/10","value":10}
+				},				
+				"Froz Lake": {
+					"Col": {"label":"4","value":4},
+					"Line": {"label":"4","value":4},
+					"Carre": {"label":"4","value":4},
+					"Gen": {"label":"","value":0},
+					"Skirm": {"label":"4","value":4},
+					"D/PgD": {"label":"4","value":4},
+					"Arty": {"label":"4","value":4}
+				}				
 			}
 		},
 		"artillery": {
