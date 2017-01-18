@@ -955,13 +955,13 @@
 	                "minute": 20
 	            },
 				"victory": [
-					{"low": 17, "high": 99, "label": "French Decisive"},
-					{"low": 14, "high": 16, "label": "French Substantial"},
-					{"low": 11, "high": 13, "label": "French Marginal"},
-					{"low": 9, "high": 10, "label": "Draw"},
-					{"low": 7, "high": 8, "label": "Coalition Marginal"},
-					{"low": 5, "high": 6, "label": "Coalition Substantial"},
-					{"low": -99, "high": 4, "label": "Coalition Decisive"}
+					{"low": 17, "high": 99, "level": "French Decisive"},
+					{"low": 14, "high": 16, "level": "French Substantial"},
+					{"low": 11, "high": 13, "level": "French Marginal"},
+					{"low": 9, "high": 10, "level": "Draw"},
+					{"low": 7, "high": 8, "level": "Coalition Marginal"},
+					{"low": 5, "high": 6, "level": "Coalition Substantial"},
+					{"low": -99, "high": 4, "level": "Coalition Decisive"}
 				]
 	        },
 	        {

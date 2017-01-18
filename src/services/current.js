@@ -46,6 +46,11 @@ module.exports = {
 		current.turn = 1;
 		current.phase = 0;
 		current.player = 0;
+		current.victory = {
+			"0": 0,
+			"1": 0
+		};
+		
 		return store.save(current)
 		.then(() => {
 			_current = current;
@@ -144,6 +149,22 @@ module.exports = {
 	player() {
 		return _current.player;
 	},
+	victory(plyr, vp) {
+		if (typeof vp != 'undefined') {
+			_current.victory[plyr.toString()] = vp;
+		}
+		return _current.victory[plyr.toString()];
+	},
+	victoryLevel() {
+		let vp = _current.victory['0'] - _current.victory['1'];
+		let s = this.scenario();
+		if (s.scenario.hasOwnProperty('victory')) {
+			let v = s.scenario.victory.find((v) => vp >= v.low && vp <= vp.high) || {level:''};
+			return v.level;
+		}
+		return vp.toString();
+	},
+	
 	battle() {
 		return Battles.battle(_current.battle);
 	},

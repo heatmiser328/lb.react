@@ -3,5 +3,9 @@
     scenario: int,
     turn: 'string',
     phase: int,
-    player: string
+    player: string,
+    victory: {
+        "0": int,
+        "1": int
+    }
 }
