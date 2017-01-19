@@ -5,7 +5,7 @@ import {DiceRoll} from 'react-native-dice';
 var FireAttackerView = require('./fireAttackerView');
 var FireDefenderView = require('./fireDefenderView');
 var DiceModifiersView = require('./diceModifiersView');
-var FireResultsView = require('./fireResultsView');
+var CombatResultsView = require('./combatResultsView');
 var Fire = require('./services/fire');
 var Base6 = require('./services/base6');
 var Current = require('./services/current');
@@ -106,8 +106,9 @@ var FireView = React.createClass({
                         <DiceModifiersView onChange={this.onDiceModifierChanged} />
                     </View>
                     <View style={{flex:2}}>
-                        <FireResultsView odds={this.state.odds}
-                            firedice={(this.state.die1*10) + this.state.die2}
+                        <CombatResultsView odds={this.state.odds}
+                            results={Fire.resolvePossible((this.state.die1*10) + this.state.die2)}
+                            combatdice={(this.state.die1*10) + this.state.die2}
                             lossdie={this.state.die3}
                             durationdie1={this.state.die4}
                             durationdie2={this.state.die5}

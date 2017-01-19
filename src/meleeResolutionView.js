@@ -4,11 +4,10 @@ import { View, Text } from 'react-native';
 import {DiceRoll} from 'react-native-dice';
 var MeleeStrengthView = require('./meleeStrengthView');
 var OddsView = require('./oddsView');
-var ResultsView = require('./meleeResultsView');
+var CombatResultsView = require('./combatResultsView');
 var DiceModifiersView = require('./diceModifiersView');
 var MeleeCalcView = require('./meleeCalcView');
 var Melee = require('./services/melee');
-var LeaderLoss = require('./services/leaderloss');
 var Base6 = require('./services/base6');
 
 var MeleeResolutionView = React.createClass({
@@ -17,7 +16,9 @@ var MeleeResolutionView = React.createClass({
         {num: 1, low: 1, high: 6, diecolor: 'white', dotcolor:'black'},
         {num: 1, low: 1, high: 6, diecolor: 'blue', dotcolor:'white'},
         {num: 1, low: 1, high: 6, diecolor: 'black', dotcolor:'white'},
-        {num: 1, low: 1, high: 6, diecolor: 'black', dotcolor:'red'}
+        {num: 1, low: 1, high: 6, diecolor: 'black', dotcolor:'red'},
+        {num: 1, low: 1, high: 6, diecolor: 'purple', dotcolor:'white'},
+        {num: 1, low: 1, high: 6, diecolor: 'yellow', dotcolor:'black'}        
     ],
     getInitialState() {
         return {
@@ -29,10 +30,8 @@ var MeleeResolutionView = React.createClass({
             die3: 1,
             die4: 1,
             die5: 1,
-            result: '',
-            leader: '',
-            loss: '',
-            mortal: false
+            die6: 1,
+            die7: 1,
         };
     },
     onAttackerChanged(v) {
@@ -65,16 +64,9 @@ var MeleeResolutionView = React.createClass({
         this.state.die3 = d[2].value;
         this.state.die4 = d[3].value;
         this.state.die5 = d[4].value;
+        this.state.die6 = d[5].value;
+        this.state.die7 = d[6].value;        
         this.onResolve();
-    },
-    onResolve() {
-		let meleeDice = (this.state.die1*10) + this.state.die2;
-		this.state.result = Melee.resolve(this.state.odds, meleeDice);
-		let lloss = LeaderLoss.resolve(meleeDice, this.state.die3, this.state.die4, this.state.die5, true) || {};
-        this.state.leader = lloss.leader;
-        this.state.loss = lloss.result;
-        this.state.mortal = lloss.mortal;
-        this.setState(this.state);
     },
     onSetMelee(s, v) {
         if (s == 'attack') {
@@ -104,34 +96,47 @@ var MeleeResolutionView = React.createClass({
             this.onResolve();
         }
     },
+    onResolve() {
+        this.setState(this.state);
+    },    
     render() {
         return (
-          <View style={{flex: 1}}>
-              <View style={{flex: 1.75, backgroundColor: 'whitesmoke'}}>
-                  <View style={{flex: 1}}>
-                      <ResultsView value={this.state.result} leader={this.state.leader} loss={this.state.loss} mortal={this.state.mortal} />
-                  </View>
-                  <View style={{flex: 1}}>
-                      <DiceRoll dice={this.dice} values={[this.state.die1,this.state.die2,this.state.die3,this.state.die4,this.state.die5]}
-                              onRoll={this.onDiceRoll} onDie={this.onDieChanged}/>
-                  </View>
-                  <View style={{flex: 1}}>
-                      <DiceModifiersView onChange={this.onDiceModifierChanged} />
-                  </View>
+            <View style={{flex: 1}}>
+              <View style={{flex: 1, backgroundColor: 'whitesmoke'}}>
+                <View style={{flex: .75, flexDirection: 'row', alignItems: 'center', marginTop:5}}>
+                    <DiceRoll dice={this.dice} values={[this.state.die1,this.state.die2,this.state.die3,this.state.die4,this.state.die5,this.state.die6,this.state.die7]}
+                        onRoll={this.onDiceRoll} onDie={this.onDieChanged}/>
+                </View>
+                <View style={{flex: 1}}>
+                    <DiceModifiersView onChange={this.onDiceModifierChanged} />
+                </View>
+                <View style={{flex:2}}>
+                    <CombatResultsView odds={this.state.odds}
+                        results={Melee.resolvePossible((this.state.die1*10) + this.state.die2)}
+                        combatdice={(this.state.die1*10) + this.state.die2}
+                        lossdie={this.state.die3}
+                        durationdie1={this.state.die4}
+                        durationdie2={this.state.die5}
+                        melee={true}
+                        moraledice={(this.state.die6*10) + this.state.die7}                            
+                    />
+                </View>              
               </View>
-              <View style={{flex: 1, flexDirection: 'row'}}>
-                  <View style={{flex: 2}}>
-                      <MeleeStrengthView label={'Attacker'} value={this.state.attack} onChanged={this.onAttackerChanged} />
-                  </View>
-                  <View style={{flex: 1}}>
-                      <OddsView odds={Melee.odds} value={this.state.odds} onChanged={this.onOddsChanged} />
-                  </View>
-                  <View style={{flex: 2}}>
-                      <MeleeStrengthView label={'Defender'} value={this.state.defend} onChanged={this.onDefenderChanged} />
-                  </View>
-              </View>
-              <View style={{flex: 3}}>
-                <MeleeCalcView side={'attack'} onSet={this.onSetMelee}  onAdd={this.onAddMelee} />
+              <View style={{flex:1.25}}>
+                <View style={{flex: 1, flexDirection: 'row'}}>
+                    <View style={{flex: 2}}>
+                        <MeleeStrengthView label={'Attacker'} value={this.state.attack} onChanged={this.onAttackerChanged} />
+                    </View>
+                    <View style={{flex: 1}}>
+                        <OddsView odds={Melee.odds} value={this.state.odds} onChanged={this.onOddsChanged} />
+                    </View>
+                    <View style={{flex: 2}}>
+                        <MeleeStrengthView label={'Defender'} value={this.state.defend} onChanged={this.onDefenderChanged} />
+                    </View>
+                </View>
+                <View style={{flex: 3.25}}>
+                    <MeleeCalcView side={'attack'} onSet={this.onSetMelee}  onAdd={this.onAddMelee} />
+                </View>
               </View>
           </View>
         );

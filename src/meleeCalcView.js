@@ -72,23 +72,8 @@ var MeleeCalcView = React.createClass({
                         borderRadius: 4, borderWidth: 2, borderColor: 'black', backgroundColor: 'whitesmoke'}}>
                 <View style={{flex: 5, flexDirection: 'row', justifyContent: 'center'}}>
                     <View style={{flex: 2, justifyContent: 'center'}}>
-                        <Text style={{fontSize: 16,fontWeight: 'bold',backgroundColor: 'silver', textAlign: 'center'}}>{'Calculator'}</Text>
-                        <View style={{flex: 1, marginLeft: 5}}>
-                            <SpinNumeric label={'Incr'} value={this.state.incr} min={1} integer={true} onChanged={this.onIncrChanged} />
-                        </View>
-                        <View style={{flex: 1, marginLeft: 5}}>
-                            <SpinNumeric label={'Loss'} value={this.state.loss} min={0}  max={this.props.incr} integer={true} onChanged={this.onLossChanged} />
-                        </View>
-                        <View style={{flex: 1, marginLeft: 5}}>
-                            <SpinNumeric label={'Melee'} value={this.state.melee} min={1} integer={true} onChanged={this.onMeleeChanged} />
-                        </View>
-                        <View style={{flex: 1, marginLeft: 5}}>
-                            <SpinNumeric label={'Lance'} value={this.state.lance} min={0} integer={true} onChanged={this.onLanceChanged} />
-                        </View>
-                        <View style={{flex: 1, marginLeft: 5}}>
-                            <SpinNumeric label={'Total'} value={this.state.total} min={1} onChanged={this.onTotalChanged} />
-                        </View>
-                        <View style={{flex: 1, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center'}}>
+                        {/*<Text style={{fontSize: 16,fontWeight: 'bold',backgroundColor: 'silver', textAlign: 'center'}}>{'Calculator'}</Text>*/}
+                        <View style={{flex: 1, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', backgroundColor: 'silver'}}>
                             <View style={{flex: 2, justifyContent:'center', alignItems: 'center'}}>
                                 <RadioButtonGroup buttons={[{label: 'Attacker', value: 0}, {label: 'Defender', value: 1}]} state={this.state.side}
                                     onSelected={this.onSideChanged} />
@@ -98,6 +83,23 @@ var MeleeCalcView = React.createClass({
                             </View>
                             <View style={{flex:.5, margin:2}}>
                                 <IconButton image={Icons['add']} height={32} width={32} resizeMode='stretch' onPress={this.onAdd} />
+                            </View>
+                        </View>      
+                        <View style={{flex:6}}>
+                            <View style={{flex: 1, marginLeft: 5}}>
+                                <SpinNumeric label={'Incr'} value={this.state.incr} min={1} integer={true} onChanged={this.onIncrChanged} />
+                            </View>
+                            <View style={{flex: 1, marginLeft: 5}}>
+                                <SpinNumeric label={'Loss'} value={this.state.loss} min={0}  max={this.props.incr} integer={true} onChanged={this.onLossChanged} />
+                            </View>
+                            <View style={{flex: 1, marginLeft: 5}}>
+                                <SpinNumeric label={'Melee'} value={this.state.melee} min={1} integer={true} onChanged={this.onMeleeChanged} />
+                            </View>
+                            <View style={{flex: 1, marginLeft: 5}}>
+                                <SpinNumeric label={'Lance'} value={this.state.lance} min={0} integer={true} onChanged={this.onLanceChanged} />
+                            </View>
+                            <View style={{flex: 1, marginLeft: 5}}>
+                                <SpinNumeric label={'Total'} value={this.state.total} min={1} onChanged={this.onTotalChanged} />
                             </View>
                         </View>
                     </View>

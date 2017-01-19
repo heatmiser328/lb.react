@@ -383,5 +383,16 @@ module.exports = {
     odds: table.map((o) => {return o.desc;}),
     defaultOdds: table[1].desc,
     calculate: calculate,
-    resolve: resolve
+    resolve: resolve,
+    resolvePossible(dice) {
+        let results = [];
+        table.map((t) => t.desc).forEach((o) => {
+            let result = resolve(o,dice);
+            if (result != "NE") {
+                results.push({odds: o, result: result});
+            }
+        });
+        return results;
+    }
+    
 };
