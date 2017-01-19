@@ -5,6 +5,7 @@ import { View, Text } from 'react-native';
 import {DiceRoll} from 'react-native-dice';
 var ArtilleryView = require('./artilleryView');
 var CavalryRecallView = require('./cavalryRecallView');
+var VictoryView = require('./victoryView');
 var Current = require('./services/current');
 
 var dice1 = [
@@ -35,15 +36,13 @@ var GeneralView = React.createClass({
         //console.log(this.props);
         return (
             <View style={{flex: 1, justifyContent: 'flex-start'}}>
-                <View style={{flex:1, marginRight: 0}}>
+                <View style={{flex:1, flexDirection: 'row', marginRight: 0}}>
                     <DiceRoll dice={dice1} values={[this.state.die1,this.state.die2]} onRoll={this.onDice1Roll} />
-                </View>
-                <View style={{flex:1, marginRight: 0}}>
                     <DiceRoll dice={dice2} values={[this.state.die3]} onRoll={this.onDice2Roll} />
                 </View>
                 {this.renderArtillery()}
                 {this.renderCavalryRecall()}
-                <View style={{flex:1}} />
+                {this.renderVictory()}                
             </View>
         );
     },
@@ -70,6 +69,17 @@ var GeneralView = React.createClass({
         }
 
         return <View style={{flex:3}}/>;
+    },
+    renderVictory() {
+		let s = Current.scenario();
+		if (s.scenario.hasOwnProperty('victory')) {
+            return (
+                <View style={{flex:2}}>
+                    <VictoryView events={this.props.events} />
+                </View>
+            );
+        }
+        return <View style={{flex:2}}/>;
     }
 });
 

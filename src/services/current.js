@@ -27,6 +27,7 @@ module.exports = {
 			_current.player = _current.player || 0;
 			if (_current.player == 'imperial') { _current.player = 0;}
 			else if (_current.player == 'coalition') { _current.player = 1;}
+			_current.victory = _current.victory || {"0": 0, "1": 0};
             return _current;
 		});
 	},
@@ -158,13 +159,9 @@ module.exports = {
 	victoryLevel() {
 		let vp = _current.victory['0'] - _current.victory['1'];
 		let s = this.scenario();
-		if (s.scenario.hasOwnProperty('victory')) {
-			let v = s.scenario.victory.find((v) => vp >= v.low && vp <= vp.high) || {level:''};
-			return v.level;
-		}
-		return vp.toString();
-	},
-	
+		let v = s.scenario.victory.find((v) => vp >= v.low && vp <= v.high) || {level:''};		
+		return v.level;
+	},	
 	battle() {
 		return Battles.battle(_current.battle);
 	},
