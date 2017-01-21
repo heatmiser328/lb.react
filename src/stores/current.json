@@ -1,11 +1,11 @@
 {
-    battle: int,
-    scenario: int,
-    turn: 'string',
-    phase: int,
-    player: string,
-    victory: {
-        "0": int,
-        "1": int
+    "battle": "int",
+    "scenario": "int",
+    "turn": "int",
+    "phase": "int",
+    "player": "int",
+    "victory": {
+        "0": "int",
+        "1": "int"
     }
 }

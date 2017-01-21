@@ -16,16 +16,14 @@
     "test-dev": "mocha --require tests/mocks/loader.js --require react-native-mock/mock --compilers js:babel-core/register -w "
   },
   "dependencies": {
-    "react-native-app-nub": "https://git@github.com/jcapuano328/react-native-app-nub.git",
-    "react-native-dice": "https://git@github.com/jcapuano328/react-native-dice.git",
-    "apsl-react-native-button": "^3.0.0",
     "moment": "^2.14.1",
-    "react": "^15.3.2",
-    "react-native": "^0.34.0",
+    "react": "^15.4.1",
+    "react-native": "^0.39.2",
     "react-native-audioplayer": "^0.2.0",
-    "react-native-fs": "^1.5.1",
-    "react-native-menu": "^0.20.1",
-    "react-native-scrollable-tab-view": "^0.5.3"
+    "react-native-dice": "https://git@github.com/jcapuano328/react-native-dice.git",
+    "react-native-nub": "file:../../../react-native-nub",
+    "react-native-scrollable-tab-view": "^0.5.3",
+    "reselect": "^2.5.4"
   },
   "devDependencies": {
     "babel-core": "^6.17.0",

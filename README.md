@@ -1,25 +1,13 @@
 # lb.react
 React Native La Bataille Assistant app
 
-#### another fire view idea
+http://redux.js.org/docs/recipes/ComputingDerivedData.html
 
-The flow would be to roll the dice to see the possible results, then input the attack/defend/odds to see which you might get.
-The idea being, you will intuit if it is worth the bother to figure the odds...
+Reselect: computed/derived data
 
-                                attacker                                                                               defender
+https://github.com/reactjs/reselect
 
-                                < value >                                                                              < value >
-                =             < value > +                                                                          < incr >
-                [              modifiers ]
-                [quick values ]
 
-attacker quick add (lose the listing of fire effects)                              defender quick add (unchanged)
-
-                matrix/list of possible results (based on current dice value)
-                                Odds - Result
-                                (IF you had odds of "blah" you would have results of "blah")
-
-                (highlight the result that would be in effect for the current odds, based on attack/defend values)
 
 #### Testing...
 

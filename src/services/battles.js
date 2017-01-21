@@ -16,11 +16,7 @@ var rules = {
 module.exports = {
     battles: battles,
     battle(battleid) {
-        let battle = battles.find((b,i) => b.id == battleid);
-        if (battle && battle.image && rules[battle.image]) {
-            return rules[battle.image];
-        }
-        return {};
+        return battles.find((b,i) => b.id == battleid) || {scenarios:[]};
     },
     scenario(scenarioid) {
         var data = {};
@@ -36,5 +32,12 @@ module.exports = {
 
             return data;
         }
-    }
+    },
+    rules(battleid) {
+        let battle = this.battle(battleid);
+        if (battle && battle.image && rules[battle.image]) {
+            return rules[battle.image];
+        }
+        return {};
+    }    
 };
