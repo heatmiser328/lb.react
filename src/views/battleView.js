@@ -6,8 +6,8 @@ import TurnView from './turnView';
 import ChargeView from './chargeView';
 import FireView from './fireView';
 import MoraleView from './moraleView';
-/*
 import AssaultView from './assaultView';
+/*
 var MeleeResolutionView = require('./meleeResolutionView');
 var GeneralView = require('./generalView');
 */
@@ -23,10 +23,7 @@ var BattleView = React.createClass({
     onChangeTab() {
     },
     render() {        
-        /*        
-        
-        
-        {this.props.battle.rules.melee ? <AssaultView tabLabel="Assault" /> : null}
+        /*                    
         <MeleeResolutionView tabLabel="Melee" />
         <GeneralView tabLabel="General" />
         */
@@ -41,9 +38,10 @@ var BattleView = React.createClass({
                     {this.props.battle.rules.melee ? <ChargeView tabLabel="Charge" /> : null}
                     <FireView tabLabel="Fire" />
                     <MoraleView tabLabel="Morale" />
-                    <View tabLabel="Assault" />
+                    {this.props.battle.rules.melee ? <AssaultView tabLabel="Assault" /> : null}
                     <View tabLabel="Melee" />
-                    <View tabLabel="General" />                
+                    <View tabLabel="General" />
+                    {this.props.battle.victory ? <View tabLabel="Victory" /> : null}
                 </ScrollableTabView>
             </View>
         );

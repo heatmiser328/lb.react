@@ -4,7 +4,7 @@ var phases = [
 	"Movement",
 	"Defensive Fire",
 	"Offensive Fire",
-	"Melee Assault",
+	"Assault/Melee",
 	"Rally",
 	"Rout",
 	"Readiness Recovery"
