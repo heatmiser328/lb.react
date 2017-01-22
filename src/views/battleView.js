@@ -32,7 +32,7 @@ var BattleView = React.createClass({
                     onChangeTab={this.onChangeTab}
                     initialPage={this.state.initialPage}                    
                 >
-                    {this.props.battle.rules.melee ? <ChargeView tabLabel="Charge" /> : null}
+                    {this.props.battle.rules.charge ? <ChargeView tabLabel="Charge" /> : null}
                     <FireView tabLabel="Fire" />
                     <MoraleView tabLabel="Morale" />
                     {this.props.battle.rules.melee ? <AssaultView tabLabel="Assault" /> : null}

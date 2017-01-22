@@ -3,6 +3,7 @@ import { View } from 'react-native';
 import ScrollableTabView from 'react-native-scrollable-tab-view';
 import ChargeStandView from './chargeStandView';
 import ChargeCarreView from './chargeCarreView';
+import ChargeRecallView from './chargeRecallView';
 
 var ChargeView = React.createClass({
     getInitialState() {
@@ -26,7 +27,8 @@ var ChargeView = React.createClass({
                     onChangeTab={this.onChangeTab}
                     initialPage={this.state.page}>
                     <ChargeStandView tabLabel="Stand" />
-                    <ChargeCarreView tabLabel="Form Square" />
+                    <ChargeCarreView tabLabel="Form Square" />                    
+                    <ChargeRecallView tabLabel="Recall" />
                 </ScrollableTabView>
             </View>
         );
