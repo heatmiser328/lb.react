@@ -953,16 +953,7 @@
 	                "day": 2,
 	                "hour": 9,
 	                "minute": 20
-	            },
-				"victory": [
-					{"low": 17, "high": 99, "level": "French Decisive"},
-					{"low": 14, "high": 16, "level": "French Substantial"},
-					{"low": 11, "high": 13, "level": "French Marginal"},
-					{"low": 9, "high": 10, "level": "Draw"},
-					{"low": 7, "high": 8, "level": "Coalition Marginal"},
-					{"low": 5, "high": 6, "level": "Coalition Substantial"},
-					{"low": -99, "high": 4, "level": "Coalition Decisive"}
-				]
+	            }
 	        },
 	        {
 	            "id": 10032,
@@ -1106,7 +1097,16 @@
 	                "day": 2,
 	                "hour": 16,
 	                "minute": 0
-	            }
+	            },
+				"victory": [
+					{"low": 17, "high": 99, "level": "French Decisive"},
+					{"low": 14, "high": 16, "level": "French Substantial"},
+					{"low": 11, "high": 13, "level": "French Marginal"},
+					{"low": 9, "high": 10, "level": "Draw"},
+					{"low": 7, "high": 8, "level": "Coalition Marginal"},
+					{"low": 5, "high": 6, "level": "Coalition Substantial"},
+					{"low": -99, "high": 4, "level": "Coalition Decisive"}
+				]				
 	        }			
 	    ]
 	},

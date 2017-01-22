@@ -7,10 +7,8 @@ import ChargeView from './chargeView';
 import FireView from './fireView';
 import MoraleView from './moraleView';
 import AssaultView from './assaultView';
-/*
-var MeleeResolutionView = require('./meleeResolutionView');
-var GeneralView = require('./generalView');
-*/
+import MeleeView from './meleeView';
+//var GeneralView = require('./generalView');
 import Icons from '../res';
 import getGame from '../selectors/game';
 
@@ -24,7 +22,6 @@ var BattleView = React.createClass({
     },
     render() {        
         /*                    
-        <MeleeResolutionView tabLabel="Melee" />
         <GeneralView tabLabel="General" />
         */
         return (
@@ -39,7 +36,7 @@ var BattleView = React.createClass({
                     <FireView tabLabel="Fire" />
                     <MoraleView tabLabel="Morale" />
                     {this.props.battle.rules.melee ? <AssaultView tabLabel="Assault" /> : null}
-                    <View tabLabel="Melee" />
+                    <MeleeView tabLabel="Melee" />
                     <View tabLabel="General" />
                     {this.props.battle.victory ? <View tabLabel="Victory" /> : null}
                 </ScrollableTabView>

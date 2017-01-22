@@ -1,15 +1,13 @@
-'use strict';
-
-var battles = require('../stores/battles.json');
+var battles = require('../data/battles.json');
 var rules = {
-    "aspern_essling": require('../stores/aspern_essling.json'),
-    "friedland": require('../stores/friedland.json'),
-    "halle": require('../stores/halle.json'),
-    "leipzig": require('../stores/leipzig.json'),
-    "neumarkt": require('../stores/neumarkt.json'),
-    "raszyn": require('../stores/raszyn.json'),
-    "schoengrabern": require('../stores/schoengrabern.json'),
-	"austerlitz": require('../stores/austerlitz.json')
+    "aspern_essling": require('../data/aspern_essling.json'),
+    "friedland": require('../data/friedland.json'),
+    "halle": require('../data/halle.json'),
+    "leipzig": require('../data/leipzig.json'),
+    "neumarkt": require('../data/neumarkt.json'),
+    "raszyn": require('../data/raszyn.json'),
+    "schoengrabern": require('../data/schoengrabern.json'),
+	"austerlitz": require('../data/austerlitz.json')
 };
 
 
