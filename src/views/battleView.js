@@ -8,7 +8,7 @@ import FireView from './fireView';
 import MoraleView from './moraleView';
 import AssaultView from './assaultView';
 import MeleeView from './meleeView';
-//var GeneralView = require('./generalView');
+import GeneralView from './generalView';
 import Icons from '../res';
 import getGame from '../selectors/game';
 
@@ -21,9 +21,6 @@ var BattleView = React.createClass({
     onChangeTab() {
     },
     render() {        
-        /*                    
-        <GeneralView tabLabel="General" />
-        */
         return (
             <View style={{flex: 1,backgroundColor: 'rgba(0,0,0,0.01)'}}>
                 <TurnView logo={Icons[this.props.battle.image]} />
@@ -37,7 +34,7 @@ var BattleView = React.createClass({
                     <MoraleView tabLabel="Morale" />
                     {this.props.battle.rules.melee ? <AssaultView tabLabel="Assault" /> : null}
                     <MeleeView tabLabel="Melee" />
-                    <View tabLabel="General" />
+                    <GeneralView tabLabel="General" />
                     {this.props.battle.victory ? <View tabLabel="Victory" /> : null}
                 </ScrollableTabView>
             </View>

@@ -83,7 +83,6 @@ var ChargeRecallView = React.createClass({
     }
 });
 
-
 const mapStateToProps = (state) => ({
     rules: getRules(state)
 });
