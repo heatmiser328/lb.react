@@ -18,8 +18,8 @@ const navBarOpts = {
     },    
     textcolor: 'white',
     menu: 'menu',
-    left: 'back',
-    onBack: Actions.pop,
+    //left: 'back',
+    //onBack: Actions.pop,
     rightButtons: rightButtons
 };
 
