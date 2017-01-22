@@ -4,8 +4,8 @@ import { connect } from 'react-redux';
 import ScrollableTabView from 'react-native-scrollable-tab-view';
 import TurnView from './turnView';
 import ChargeView from './chargeView';
+import FireView from './fireView';
 /*
-var FireView = require('./fireView');
 var MeleeAssaultView = require('./meleeAssaultView');
 
 var MeleeResolutionView = require('./meleeResolutionView');
@@ -25,7 +25,7 @@ var BattleView = React.createClass({
     },
     render() {        
         /*        
-        <FireView tabLabel="Fire" />
+        
         <MoraleView tabLabel="Morale" />
         {this.props.battle.rules.melee ? <MeleeAssaultView tabLabel="Assault" /> : null}
         <MeleeResolutionView tabLabel="Melee" />
@@ -40,7 +40,7 @@ var BattleView = React.createClass({
                     initialPage={this.state.initialPage}                    
                 >
                     {this.props.battle.rules.melee ? <ChargeView tabLabel="Charge" /> : null}
-                    <View tabLabel="Fire" />
+                    <FireView tabLabel="Fire" />
                     <View tabLabel="Morale" />
                     <View tabLabel="Assault" />
                     <View tabLabel="Melee" />
