@@ -9,6 +9,7 @@ import MoraleView from './moraleView';
 import AssaultView from './assaultView';
 import MeleeView from './meleeView';
 import GeneralView from './generalView';
+import VictoryView from './victoryView';
 import Icons from '../res';
 import getGame from '../selectors/game';
 
@@ -35,7 +36,7 @@ var BattleView = React.createClass({
                     {this.props.battle.rules.melee ? <AssaultView tabLabel="Assault" /> : null}
                     <MeleeView tabLabel="Melee" />
                     <GeneralView tabLabel="General" />
-                    {this.props.battle.victory ? <View tabLabel="Victory" /> : null}
+                    {this.props.battle.victory ? <VictoryView tabLabel="Victory" /> : null}
                 </ScrollableTabView>
             </View>
         );
