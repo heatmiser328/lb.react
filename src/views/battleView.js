@@ -5,11 +5,10 @@ import ScrollableTabView from 'react-native-scrollable-tab-view';
 import TurnView from './turnView';
 import ChargeView from './chargeView';
 import FireView from './fireView';
+import MoraleView from './moraleView';
 /*
-var MeleeAssaultView = require('./meleeAssaultView');
-
+import AssaultView from './assaultView';
 var MeleeResolutionView = require('./meleeResolutionView');
-var MoraleView = require('./moraleView');
 var GeneralView = require('./generalView');
 */
 import Icons from '../res';
@@ -26,8 +25,8 @@ var BattleView = React.createClass({
     render() {        
         /*        
         
-        <MoraleView tabLabel="Morale" />
-        {this.props.battle.rules.melee ? <MeleeAssaultView tabLabel="Assault" /> : null}
+        
+        {this.props.battle.rules.melee ? <AssaultView tabLabel="Assault" /> : null}
         <MeleeResolutionView tabLabel="Melee" />
         <GeneralView tabLabel="General" />
         */
@@ -41,7 +40,7 @@ var BattleView = React.createClass({
                 >
                     {this.props.battle.rules.melee ? <ChargeView tabLabel="Charge" /> : null}
                     <FireView tabLabel="Fire" />
-                    <View tabLabel="Morale" />
+                    <MoraleView tabLabel="Morale" />
                     <View tabLabel="Assault" />
                     <View tabLabel="Melee" />
                     <View tabLabel="General" />                
