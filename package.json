@@ -21,7 +21,7 @@
     "react-native": "^0.39.2",
     "react-native-audioplayer": "^0.2.0",
     "react-native-dice": "https://git@github.com/jcapuano328/react-native-dice.git",
-    "react-native-nub": "file:../../../react-native-nub",
+    "react-native-nub": "https://git@github.com/jcapuano328/react-native-nub.git",
     "react-native-scrollable-tab-view": "^0.5.3",
     "reselect": "^2.5.4"
   },
