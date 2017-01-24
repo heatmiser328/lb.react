@@ -40,7 +40,9 @@ export const remove = () => (dispatch) => {
     });
 }
 
-export const reset = (e) => (dispatch) => {
+export const reset = (e) => (dispatch,getState) => {
+    const {current} = getState();
+    e = e || {id: current.battle, scenario: {id: current.scenario}};
     return Current.reset(e)
     .then((data) => {
         dispatch({type: types.SET_CURRENT, value: data});
