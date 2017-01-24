@@ -123,15 +123,6 @@
 					"D/PgD": {"label":"16","value":16},
 					"Arty": {"label":"","value":0}
 				},
-				"Hamlet": {
-					"Col": {"label":"","value":0},
-					"Line": {"label":"","value":0},
-					"Carre": {"label":"","value":0},
-					"Gen": {"label":"10","value":10},
-					"Skirm": {"label":"14","value":12},
-					"D/PgD": {"label":"16","value":16},
-					"Arty": {"label":"6/8","value":8}
-				},
 				"Village": {
 					"Col": {"label":"","value":0},
 					"Line": {"label":"","value":0},
@@ -186,6 +177,15 @@
 					"D/PgD": {"label":"","value":0},
 					"Arty": {"label":"","value":0}
 				},
+				"Hamlet": {
+					"Col": {"label":"","value":0},
+					"Line": {"label":"","value":0},
+					"Carre": {"label":"","value":0},
+					"Gen": {"label":"10","value":10},
+					"Skirm": {"label":"14","value":12},
+					"D/PgD": {"label":"16","value":16},
+					"Arty": {"label":"6/8","value":8}
+				},				
 				"Redoubt": {
 					"Col": {"label":"","value":0},
 					"Line": {"label":"","value":0},

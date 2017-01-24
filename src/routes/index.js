@@ -7,7 +7,7 @@ import {reset as refresh} from '../actions/current';
 import Icons from '../res';
 
 const rightButtons = [
-    {image:'refresh', onPress: () => console.log('Press refresh!')},
+    {image:'refresh', onPress: (props) => props.refresh()},
     {image:'info', onPress: () => Actions.about() }
 ];
 
@@ -26,11 +26,11 @@ const navBarOpts = {
 const navBarOptsAbout = {
     ...navBarOpts,
     left: 'back',
-    onBack: Actions.pop
+    onBack: Actions.pop,
+    rightButtons: []
 };
 
-
-const NavBarMain = NavBar(navBarOpts);
+const NavBarMain = connect(null, {refresh})(NavBar(navBarOpts));
 const NavBarAbout = NavBar(navBarOptsAbout);
 
 export default Actions.create(

@@ -32,9 +32,9 @@ var BattleView = React.createClass({
                 >
                     {this.props.battle.rules.charge ? <ChargeView tabLabel="Charge" /> : null}
                     <FireView tabLabel="Fire" />
-                    <MoraleView tabLabel="Morale" />
                     {this.props.battle.rules.melee ? <AssaultView tabLabel="Assault" /> : null}
                     <MeleeView tabLabel="Melee" />
+                    <MoraleView tabLabel="Morale" />                    
                     <GeneralView tabLabel="General" />
                     {this.props.battle.victory ? <VictoryView tabLabel="Victory" /> : null}
                 </ScrollableTabView>
