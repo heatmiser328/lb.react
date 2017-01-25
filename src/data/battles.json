@@ -22,7 +22,16 @@
 	                "day": 17,
 	                "hour": 16,
 	                "minute": 0
-	            }
+	            },
+				"victory": [
+					{"side": "French", "level": "Decisive", "conditions": "Drive the Prussians from the field prior to 1:00 PM, with only the use of DuPont’s Division; the light cavalry brigade; and associated batteries. Additionally, the French must exit 25 increments off the map edge towards is the Prussian Line of Communications"},
+					{"side": "French", "level": "Tactical", "conditions": "Drive the Prussians from the field prior to 2:00 PM. Additionally you must exit 25 increments off the map edge that is the Prussian line of communications"},
+					{"side": "French", "level": "Marginal", "conditions": "Drive the Prussians from the field prior to 4:00 PM (historical). Additionally, you must exit 20 increments off the map edge that is the Prussian Line of Communications"},
+					{"side": "", "level": "Draw", "conditions": "Prussians inflict at least 10 increments of casualties on the French; and do not permit the French to exit any combat formation off of the map, toward your line of communications, prior to 1:00 PM"},
+					{"side": "Prussian", "level": "Marginal", "conditions": "Prussians inflict more casualties on the French than they suffer; and do not permit the French to exit any combat formation off of the map, towards the Prussian line of communications, prior to 3:00 PM"},
+					{"side": "Prussian", "level": "Tactical", "conditions": "Prussians inflict 6 more increments of casualties on the French than they suffer; and do not permit the French to exit any combat formation off of the map, towards the Prussian line of communications"},
+					{"side": "Prussian", "level": " Decisive", "conditions": "Prussians inflict 12 more increments of casualties on the French than they suffer; and do not permit the French to exit any combat formation off of the map, towards the Prussian line of communications"}
+				]
 	        },
 	        {
 	            "id": 3,
@@ -40,7 +49,16 @@
 	                "day": 17,
 	                "hour": 16,
 	                "minute": 0
-	            }
+	            },
+				"victory": [
+					{"side": "French", "level": "Decisive", "conditions": "Drive the Prussians from the field prior to 1:00 PM, with only the use of DuPont’s Division; the light cavalry brigade; and associated batteries. Additionally, the French must exit 25 increments off the map edge towards is the Prussian Line of Communications"},
+					{"side": "French", "level": "Tactical", "conditions": "Drive the Prussians from the field prior to 2:00 PM. Additionally you must exit 25 increments off the map edge that is the Prussian line of communications"},
+					{"side": "French", "level": "Marginal", "conditions": "Drive the Prussians from the field prior to 4:00 PM (historical). Additionally, you must exit 20 increments off the map edge that is the Prussian Line of Communications"},
+					{"side": "", "level": "Draw", "conditions": "Prussians inflict at least 10 increments of casualties on the French; and do not permit the French to exit any combat formation off of the map, toward your line of communications, prior to 1:00 PM"},
+					{"side": "Prussian", "level": "Marginal", "conditions": "Prussians inflict more casualties on the French than they suffer; and do not permit the French to exit any combat formation off of the map, towards the Prussian line of communications, prior to 3:00 PM"},
+					{"side": "Prussian", "level": "Tactical", "conditions": "Prussians inflict 6 more increments of casualties on the French than they suffer; and do not permit the French to exit any combat formation off of the map, towards the Prussian line of communications"},
+					{"side": "Prussian", "level": "Decisive", "conditions": "Prussians inflict 12 more increments of casualties on the French than they suffer; and do not permit the French to exit any combat formation off of the map, towards the Prussian line of communications"}
+				]				
 	        },
 	        {
 	            "id": 4,
@@ -58,7 +76,16 @@
 	                "day": 17,
 	                "hour": 16,
 	                "minute": 0
-	            }
+	            },
+				"victory": [
+					{"side": "French", "level": "Decisive", "conditions": "Place the Prussians on Level Two and exit 30 increments, using only Dupont and Grouchy Divisions, off the road that is designated the line of communications before 2:00 PM"},
+					{"side": "French", "level": "Tactical", "conditions": "Place Prussians on Level One and exit 30 steps off the road that is designated as the line of communications before 3:00 PM"},
+					{"side": "French", "level": "Marginal", "conditions": "Exit 25 steps from the field off the road that is designated as the line of communications prior to 4:00 PM"},
+					{"side": "", "level": "Draw", "conditions": "Prussians inflict at least 25 increments of casualties on the French"},
+					{"side": "Prussian", "level": "Marginal", "conditions": "Prussians inflict 12 more increments loss on the French, than they suffer"},
+					{"side": "Prussian", "level": "Tactical", "conditions": "Prussians inflict 18 more increments loss on the French, than they suffer"},
+					{"side": "Prussian", "level": "Decisive", "conditions": "Prussians inflict 24 more increments loss on the French than they suffer"}
+				]				
 	        }
 	    ]
 	},
@@ -85,7 +112,16 @@
 	                "day": 17,
 	                "hour": 21,
 	                "minute": 40
-	            }
+	            },
+				"victory": [
+					{"side": "Polish", "level": "Decisive", "conditions": "There are no Austrian combat formations on the north side of the Utrata River, at the end of the 9:40 PM turn"},
+					{"side": "Polish", "level": "Tactical", "conditions": "Hold all town hexes of Raszyn and the IV Armeekorps is on a morale level at the end of the 9:40 PM turn"},
+					{"side": "Polish", "level": "Marginal", "conditions": "The VII Armeekorps ends the scenario on a morale level, or the Polish hold at least 1 hex of Raszyn at the end of the scenario"},
+					{"side": "", "level": "Draw", "conditions": "Any one or more of the following events: 1) Polish hold a town hex south of the Utrata River, 2) Austrian Leader Ferdinand d’Este suffers a Leader Casualty, 3) 80 increments of the VII Armeekorps in good order, exit off the north map edge, 4) Polish finish the scenario on a morale level"},
+					{"side": "Austrian", "level": "Marginal", "conditions": "No Polish Combat formations south of the Utrata River. Hold all town hexes of Dawidy, Raszyn and of Michalowice and exit 120 increments off of the north map edge by the end of the scenario"},
+					{"side": "Austrian", "level": "Tactical", "conditions": "No Polish Combat Formations south of the Utrata River hold Dawidy and Raszyn and end the scenario with the Polish Contingent on a Morale Level"},
+					{"side": "Austrian", "level": "Decisive", "conditions": "Capture all of Raszyn by the end of the scenario. This is the historical result"}					
+				]				
 	        },
 	        {
 	            "id": 7,
@@ -103,7 +139,15 @@
 	                "day": 17,
 	                "hour": 21,
 	                "minute": 40
-	            }
+	            },
+				"victory": [
+					{"side": "Polish", "level": "Decisive", "conditions": "Hold all three causeways (every hex) and all Raszyn town hexes and put the VII Armeekorps on Morale Level One or more at the end of the 9:40 pm turn"},
+					{"side": "Polish", "level": "Tactical", "conditions": "Hold Raszyn Causeway, all Raszyn town hexes and put the VII Armeekorps on Morale Level One or more at the end of the 9:40 turn"},
+					{"side": "Polish", "level": "Marginal", "conditions": "Put the VII Armeekorps on Morale Level One or more at any time"},					
+					{"side": "Austrian", "level": "Marginal", "conditions": "Capture the Raszyn causeway by the end of the 9:40 turn"},
+					{"side": "Austrian", "level": "Tactical", "conditions": "Capture one causeway, all Raszyn town hexes and put the Polish Contingent on Morale Level One by the end of the 9:40 turn"},
+					{"side": "Austrian", "level": "Decisive", "conditions": "Capture all hexes of two causeways, all Raszyn town hexes and put the Polish Contingent on Morale Level Two by the end of the 9:40 turn"}										
+				]								
 	        },
 	        {
 	            "id": 8,
@@ -121,7 +165,16 @@
 	                "day": 17,
 	                "hour": 21,
 	                "minute": 40
-	            }
+	            },
+				"victory": [
+					
+					{"side": "Polish", "level": "Decisive", "conditions": "Hold two causeways (every hex) and two Raszyn town hexes and put the VII Armeekorps on Morale Level One or more at the end of the 9:40 turn"},
+					{"side": "Polish", "level": "Tactical", "conditions": "Hold a tw0 Raszyn town hexes and put the VII Armeekorps on Morale Level One or more at the end of the 9:40 turn"},
+					{"side": "Polish", "level": "Marginal", "conditions": "Put the VII Armeekorps on Morale Level One or more at any time"},					
+					{"side": "Austrian", "level": "Marginal", "conditions": "Capture all the Raszyn causeway hexes and all Raszyn town hexes by the end of the 9:40 turn"},
+					{"side": "Austrian", "level": "Tactical", "conditions": "Capture two causeways, all Raszyn town hexes and put the Polish Contingent on Morale Level One at any time"},
+					{"side": "Austrian", "level": " Decisive", "conditions": "Capture all hexes of the three causeways, all Raszyn town hexes and put the Polish Contingent on Morale Level Two at any time"}
+				]				
 	        }
 	    ]
 	},
@@ -535,7 +588,16 @@
 	                "day": 14,
 	                "hour": 20,
 	                "minute": 40
-	            }
+	            },				
+				"victory": [
+					{"side": "French", "level": "Decisive", "conditions": "Hold the church hex in Friedland, all hexes of Sortlack and the Cegielnia at games end"},
+					{"side": "French", "level": "Substantial", "conditions": "Put any three Russian divisions on level two and hold 6 hexes of Friedland until the end of the scenario"},
+					{"side": "French", "level": "Marginal", "conditions": "Hold all hexes of Sortlack until the end of the scenario"},					
+					{"side": "Russian", "level": "Marginal", "conditions": "Hold the Church hex in Friedland until the end of the scenario"},
+					{"side": "Russian", "level": "Substantial", "conditions": "Place Ney’s Corps d’ Armee on Level Two at any time"},
+					{"side": "Russian", "level": "Decisive", "conditions": "Hold a hex of Sortlack until the end of the scenario and place Ney’s Corps on Level Two at any time; or kill or capture Napoleon"},
+					{"side": "Russian", "level": "", "conditions": "The Coalition may improve their victory level by one if at any time they occupy, even for a turn, hex 1D or 2C"}
+				]				
 	        },
 	        {
 	            "id": 911,
@@ -553,7 +615,16 @@
 	                "day": 14,
 	                "hour": 14,
 	                "minute": 0
-	            }
+	            },
+				"victory": [
+					{"side": "French", "level": "Decisive", "conditions": ""},
+					{"side": "French", "level": "Substantial", "conditions": ""},
+					{"side": "French", "level": "Marginal", "conditions": ""},
+					{"side": "", "level": "Draw", "conditions": ""},
+					{"side": "Russian", "level": "Marginal", "conditions": ""},
+					{"side": "Russian", "level": "Substantial", "conditions": ""},
+					{"side": "Russian", "level": "Decisive", "conditions": ""}
+				]				
 	        },
 	        {
 	            "id": 912,
@@ -571,7 +642,16 @@
 	                "day": 14,
 	                "hour": 13,
 	                "minute": 0
-	            }
+	            },
+				"victory": [
+					{"side": "French", "level": "Decisive", "conditions": ""},
+					{"side": "French", "level": "Substantial", "conditions": ""},
+					{"side": "French", "level": "Marginal", "conditions": ""},
+					{"side": "", "level": "Draw", "conditions": ""},
+					{"side": "Russian", "level": "Marginal", "conditions": ""},
+					{"side": "Russian", "level": "Substantial", "conditions": ""},
+					{"side": "Russian", "level": "Decisive", "conditions": ""}
+				]				
 	        },
 	        {
 	            "id": 913,
@@ -589,7 +669,16 @@
 	                "day": 14,
 	                "hour": 19,
 	                "minute": 0
-	            }
+	            },
+				"victory": [
+					{"side": "French", "level": "Decisive", "conditions": ""},
+					{"side": "French", "level": "Substantial", "conditions": ""},
+					{"side": "French", "level": "Marginal", "conditions": ""},
+					{"side": "", "level": "Draw", "conditions": ""},
+					{"side": "Russian", "level": "Marginal", "conditions": ""},
+					{"side": "Russian", "level": "Substantial", "conditions": ""},
+					{"side": "Russian", "level": "Decisive", "conditions": ""}
+				]				
 	        },
 	        {
 	            "id": 914,
@@ -607,7 +696,16 @@
 	                "day": 14,
 	                "hour": 8,
 	                "minute": 40
-	            }
+	            },
+				"victory": [
+					{"side": "French", "level": "Decisive", "conditions": ""},
+					{"side": "French", "level": "Substantial", "conditions": ""},
+					{"side": "French", "level": "Marginal", "conditions": ""},
+					{"side": "", "level": "Draw", "conditions": ""},
+					{"side": "Russian", "level": "Marginal", "conditions": ""},
+					{"side": "Russian", "level": "Substantial", "conditions": ""},
+					{"side": "Russian", "level": "Decisive", "conditions": ""}
+				]				
 	        },
 	        {
 	            "id": 915,
@@ -625,7 +723,16 @@
 	                "day": 14,
 	                "hour": 20,
 	                "minute": 40
-	            }
+	            },
+				"victory": [
+					{"side": "French", "level": "Decisive", "conditions": ""},
+					{"side": "French", "level": "Substantial", "conditions": ""},
+					{"side": "French", "level": "Marginal", "conditions": ""},
+					{"side": "", "level": "Draw", "conditions": ""},
+					{"side": "Russian", "level": "Marginal", "conditions": ""},
+					{"side": "Russian", "level": "Substantial", "conditions": ""},
+					{"side": "Russian", "level": "Decisive", "conditions": ""}
+				]				
 	        }
 	    ]
 	},
