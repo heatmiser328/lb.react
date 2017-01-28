@@ -1,11 +1,72 @@
 {
-    "victory": [
-        {"side": "", "level": "Decisive", "conditions": ""},
-        {"side": "", "level": "Tactical", "conditions": ""},
-        {"side": "", "level": "Marginal", "conditions": ""},
-        {"side": "", "level": "Draw", "conditions": ""},
-        {"side": "", "level": "Marginal", "conditions": ""},
-        {"side": "", "level": "Tactical", "conditions": ""},
-        {"side": "", "level": "Decisive", "conditions": ""}
-    ]
+	"id": int,
+	"name": string,
+	"publisher": string,
+	"image": string,
+	"sides": [string],
+	"scenarios": [
+		{
+			"id": int,
+			"name": string,
+			"start": {
+				"year": int,
+				"month": int,
+				"day": int,
+				"hour": int,
+				"minute": int
+			},
+			"end": {
+				"year": int,
+				"month": int,
+				"day": int,
+				"hour": int,
+				"minute": int
+			},
+			"victory": [
+				{
+					"side": string,
+					"level": "Decisive",
+					"conditions": string,
+					"low": int,
+					"high": int
+				}, {
+					"side": string,
+					"level": "Substantial",
+					"conditions": string,
+					"low": int,
+					"high": int
+				}, {
+					"side": string,
+					"level": "Marginal",
+					"conditions": string,
+					"low": int,
+					"high": int
+				}, {
+					"side": string,
+					"level": "Draw",
+					"conditions": string,
+					"low": int,
+					"high": int
+				}, {
+					"side": string,
+					"level": "Marginal",
+					"conditions": string,
+					"low": int,
+					"high": int
+				}, {
+					"side": string,
+					"level": "Substantial",
+					"conditions": string,
+					"low": int,
+					"high": int
+				}, {
+					"side": string,
+					"level": "Decisive",
+					"conditions": string,
+					"low": int,
+					"high": int
+				}
+			]
+		}
+	]
 }

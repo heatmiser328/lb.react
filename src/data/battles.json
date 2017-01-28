@@ -601,7 +601,7 @@
 	        },
 	        {
 	            "id": 911,
-	            "name": "The Koenigsberg Road",
+	            "name": "The Königsberg Road",
 	            "start": {
 	                "year": 1807,
 	                "month": 6,
@@ -617,13 +617,12 @@
 	                "minute": 0
 	            },
 				"victory": [
-					{"side": "French", "level": "Decisive", "conditions": ""},
-					{"side": "French", "level": "Substantial", "conditions": ""},
-					{"side": "French", "level": "Marginal", "conditions": ""},
-					{"side": "", "level": "Draw", "conditions": ""},
-					{"side": "Russian", "level": "Marginal", "conditions": ""},
-					{"side": "Russian", "level": "Substantial", "conditions": ""},
-					{"side": "Russian", "level": "Decisive", "conditions": ""}
+					{"side": "French", "level": "Decisive", "conditions": "Capture six hexes of Heinrichsdorf at the end of the scenario"},
+					{"side": "French", "level": "Substantial", "conditions": "Capture four hexes of Heinrichsdorf at the end of the scenario"},
+					{"side": "French", "level": "Marginal", "conditions": "Capture two hexes of Heinrichsdorf at the end of the scenario"},					
+					{"side": "Russian", "level": "Marginal", "conditions": "Exit 12 increments (not Cossaque) off the board on the Route de Königsberg"},
+					{"side": "Russian", "level": "Substantial", "conditions": "Capture six hexes of Heinrichsdorf at the end of the scenario"},
+					{"side": "Russian", "level": "Decisive", "conditions": "Exit 12 increments (not Cossaque) off the board on the Route de Königsberg and capture six hexes of Heinrichsdorf at the end of the scenario"}
 				]				
 	        },
 	        {
@@ -644,13 +643,12 @@
 	                "minute": 0
 	            },
 				"victory": [
-					{"side": "French", "level": "Decisive", "conditions": ""},
-					{"side": "French", "level": "Substantial", "conditions": ""},
-					{"side": "French", "level": "Marginal", "conditions": ""},
-					{"side": "", "level": "Draw", "conditions": ""},
-					{"side": "Russian", "level": "Marginal", "conditions": ""},
-					{"side": "Russian", "level": "Substantial", "conditions": ""},
-					{"side": "Russian", "level": "Decisive", "conditions": ""}
+					{"side": "French", "level": "Decisive", "conditions": "Capture all hexes of Sortlack and hold at the end of the scenario"},
+					{"side": "French", "level": "Substantial", "conditions": "Put the 2nd Russian Division on Level One at any time"},
+					{"side": "French", "level": "Marginal", "conditions": "Hold all hexes of Posthenen at the end of the scenario"},					
+					{"side": "Russian", "level": "Marginal", "conditions": "Capture Posthenen and hold at the end of the scenario"},
+					{"side": "Russian", "level": "Substantial", "conditions": "Capture 1D and hold at the end of the scenario"},
+					{"side": "Russian", "level": "Decisive", "conditions": "Capture FO and hold at the end of the scenario"}
 				]				
 	        },
 	        {
@@ -671,13 +669,12 @@
 	                "minute": 0
 	            },
 				"victory": [
-					{"side": "French", "level": "Decisive", "conditions": ""},
-					{"side": "French", "level": "Substantial", "conditions": ""},
-					{"side": "French", "level": "Marginal", "conditions": ""},
-					{"side": "", "level": "Draw", "conditions": ""},
-					{"side": "Russian", "level": "Marginal", "conditions": ""},
-					{"side": "Russian", "level": "Substantial", "conditions": ""},
-					{"side": "Russian", "level": "Decisive", "conditions": ""}
+					{"side": "French", "level": "Decisive", "conditions": "Hold any hex of Friedland and all the hexes of Sortlack at game’s end. Note the movement of the 3e Division and its effect on the victory conditions"},
+					{"side": "French", "level": "Substantial", "conditions": "Place any three Russian Divisions on Level Two"},
+					{"side": "French", "level": "Marginal", "conditions": "Hold all hexes of Sortlack until the end of the scenario"},					
+					{"side": "Russian", "level": "Marginal", "conditions": "Hold all hexes of Friedland"},
+					{"side": "Russian", "level": "Substantial", "conditions": "Hold all hexes of Friedland and not engage the Russian Guard"},
+					{"side": "Russian", "level": "Decisive", "conditions": "Hold a hex of Sortlack and all hexes of Friedland until the game’s end. Note movement of the 14th Division and its effect on the victory conditions"}
 				]				
 	        },
 	        {
@@ -698,13 +695,12 @@
 	                "minute": 40
 	            },
 				"victory": [
-					{"side": "French", "level": "Decisive", "conditions": ""},
-					{"side": "French", "level": "Substantial", "conditions": ""},
-					{"side": "French", "level": "Marginal", "conditions": ""},
-					{"side": "", "level": "Draw", "conditions": ""},
-					{"side": "Russian", "level": "Marginal", "conditions": ""},
-					{"side": "Russian", "level": "Substantial", "conditions": ""},
-					{"side": "Russian", "level": "Decisive", "conditions": ""}
+					{"side": "French", "level": "Decisive", "conditions": "Rout and or eliminate 8 Russian battalions at the end of any Russian morale recovery phase"},					
+					{"side": "French", "level": "Substantial", "conditions": "Occupy all hexes of Posthenen at the end of the scenario"},
+					{"side": "French", "level": "Marginal", "conditions": "Occupy any one hex of Posthenen at the end of the scenario"},
+					{"side": "Russian", "level": "Marginal", "conditions": "Occupy any one hex of Posthenen at the end of the scenario"},
+					{"side": "Russian", "level": "Substantial", "conditions": "Occupy all hexes of Posthenen at the end of the scenario"},
+					{"side": "Russian", "level": "Decisive", "conditions": "Occupy hex 1D at the end of the scenario"}
 				]				
 	        },
 	        {
@@ -725,13 +721,12 @@
 	                "minute": 40
 	            },
 				"victory": [
-					{"side": "French", "level": "Decisive", "conditions": ""},
-					{"side": "French", "level": "Substantial", "conditions": ""},
-					{"side": "French", "level": "Marginal", "conditions": ""},
-					{"side": "", "level": "Draw", "conditions": ""},
-					{"side": "Russian", "level": "Marginal", "conditions": ""},
-					{"side": "Russian", "level": "Substantial", "conditions": ""},
-					{"side": "Russian", "level": "Decisive", "conditions": ""}
+					{"side": "French", "level": "Decisive", "conditions": "Cross the Alle Fluß within 6 hexes of Friedland with 100 increments"},
+					{"side": "French", "level": "Substantial", "conditions": "Put any three Russian divisions on Level Two and hold 6 hexes of Friedland until the end of the scenario"},
+					{"side": "French", "level": "Marginal", "conditions": "Capture all the hexes of Friedland by the end of the scenario"},					
+					{"side": "Russian", "level": "Marginal", "conditions": "Retreat 200 increments to the East Side of the Alle Fluß , all must be in good order"},
+					{"side": "Russian", "level": "Substantial", "conditions": "Retreat 300 increments to the East Side of the Alle Fluß, all must be in good"},
+					{"side": "Russian", "level": "Decisive", "conditions": "Retreat 450 increments to the East Side of the Alle Fluß, all must be in order"}
 				]				
 	        }
 	    ]
@@ -760,7 +755,16 @@
 		  "day": 21,
 		  "hour": 22,
 		  "minute": 0
-		}
+		},
+		"victory": [
+			{"side": "French", "level": "Decisive", "conditions": "Hold 9-11 hexes of Aspern and 11-13 hexes of Essling"},
+			{"side": "French", "level": "Substantial", "conditions": "Hold 8-9 hexes of Aspern and 9-10 hexes of Essling"},
+			{"side": "French", "level": "Marginal", "conditions": "Hold 6-7 hexes of Aspern and 7-8 hexes of Essling"},
+			{"side": "", "level": "Draw", "conditions": "Any other result"},
+			{"side": "Austrian", "level": "Marginal", "conditions": "Hold 6-7 hexes of Aspern and 7-8 hexes of Essling"},
+			{"side": "Austrian", "level": "Substantial", "conditions": "Hold 8-9 hexes of Aspern and 9-10 hexes of Essling"},
+			{"side": "Austrian", "level": "Decisive", "conditions": "Hold all of 11 or 12 Aspern or 13 Essling, or get 50 factors within 6 hexes of the bridge to Lobau"}
+		]		
 	  },
 	  {
 		"id": 921,
@@ -778,7 +782,16 @@
 		  "day": 22,
 		  "hour": 18,
 		  "minute": 0
-		}
+		},
+		"victory": [
+			{"side": "French", "level": "Decisive", "conditions": "Hold 11 hexes of Essling, 13 hexes of Aspern, and 4 hexes of Brietenlee"},
+			{"side": "French", "level": "Substantial", "conditions": "Hold 11 hexes of Aspern and 13 hexes of Essling"},
+			{"side": "French", "level": "Marginal", "conditions": "Hold 6 hexes of Aspern and 7 hexes of Essling"},
+			{"side": "", "level": "Draw", "conditions": "The French hold 3 hexes of Aspern and 4 of Essling"},
+			{"side": "Austrian", "level": "Marginal", "conditions": "Hold 6 hexes of Aspern and 7 hexes of Essling"},
+			{"side": "Austrian", "level": "Substantial", "conditions": "Hold 8 hexes of Aspern and 9 hexes of Essling"},
+			{"side": "Austrian", "level": "Decisive", "conditions": "Hold all of 11 Aspern and 13 Essling, have infantry units south of the elevated road"}
+		]		
 	  },
 	  {
 		"id": 922,
@@ -796,7 +809,16 @@
 		  "day": 22,
 		  "hour": 18,
 		  "minute": 0
-		}
+		},
+		"victory": [
+			{"side": "French", "level": "Decisive", "conditions": "Hold 11 hexes of Essling, 13 hexes of Aspern, and 4 hexes of Brietenlee"},
+			{"side": "French", "level": "Substantial", "conditions": "Hold 11 hexes of Aspern and 13 hexes of Essling"},
+			{"side": "French", "level": "Marginal", "conditions": "Hold 6 hexes of Aspern and 7 hexes of Essling"},
+			{"side": "", "level": "Draw", "conditions": "The French hold 3 hexes of Aspern and 4 of Essling"},
+			{"side": "Austrian", "level": "Marginal", "conditions": "Hold 6 hexes of Aspern and 7 hexes of Essling"},
+			{"side": "Austrian", "level": "Substantial", "conditions": "Hold 8 hexes of Aspern and 9 hexes of Essling"},
+			{"side": "Austrian", "level": "Decisive", "conditions": "Hold all of 11 Aspern and 13 Essling, have infantry units south of the elevated road"}
+		]				
 	  },
 	  {
 		"id": 923,
@@ -814,7 +836,14 @@
 		  "day": 21,
 		  "hour": 14,
 		  "minute": 0
-		}
+		},
+		"victory": [
+			{"side": "French", "level": "Decisive", "conditions": "Hold all hexes of Kagran"},
+			{"side": "French", "level": "Substantial", "conditions": "Hold all hexes of Stadlau"},			
+			{"side": "", "level": "Draw", "conditions": "Any other result"},			
+			{"side": "Austrian", "level": "Substantial", "conditions": "Hold all hexes of Stadlau"},
+			{"side": "Austrian", "level": "Decisive", "conditions": "Hold all the 'Shorelin' hexes"}
+		]				
 	  },
 	  {
 		"id": 924,
@@ -832,7 +861,15 @@
 		  "day": 22,
 		  "hour": 14,
 		  "minute": 0
-		}
+		},
+		"victory": [
+			{"side": "French", "level": "Decisive", "conditions": "Hold all hexes of Aspern and Church"},
+			{"side": "French", "level": "Substantial", "conditions": "Hold 6 hexes of Aspern and Church"},
+			{"side": "French", "level": "Marginal", "conditions": "Hold 4 hexes of Aspern"},			
+			{"side": "Austrian", "level": "Marginal", "conditions": "Hold 4 hexes of Aspern"},
+			{"side": "Austrian", "level": "Substantial", "conditions": "Hold 6 hexes of Aspern and Church"},
+			{"side": "Austrian", "level": "Decisive", "conditions": "Hold all hexes of Aspern and Church"}
+		]		
 	  },
 	  {
 		"id": 925,
@@ -850,7 +887,15 @@
 		  "day": 21,
 		  "hour": 19,
 		  "minute": 0
-		}
+		},
+		"victory": [
+			{"side": "French", "level": "Decisive", "conditions": "Hold all hexes of Aspern and Church"},
+			{"side": "French", "level": "Substantial", "conditions": "Hold 6 hexes of Aspern and Church"},
+			{"side": "French", "level": "Marginal", "conditions": "Hold 4 hexes of Aspern"},			
+			{"side": "Austrian", "level": "Marginal", "conditions": "Hold 4 hexes of Aspern"},
+			{"side": "Austrian", "level": "Substantial", "conditions": "Hold 6 hexes of Aspern and Church"},
+			{"side": "Austrian", "level": "Decisive", "conditions": "Hold all hexes of Aspern and Church"}
+		]		
 	  },
 	  {
 		"id": 926,
@@ -868,7 +913,15 @@
 		  "day": 21,
 		  "hour": 19,
 		  "minute": 0
-		}
+		},
+		"victory": [
+			{"side": "French", "level": "Decisive", "conditions": "Don't allow any 2 Austrian infantry units within 6 hexes of the road/dike"},
+			{"side": "French", "level": "Substantial", "conditions": "Don't allow any 2 Austrian infantry units within 4 hexes of the road"},
+			{"side": "French", "level": "Marginal", "conditions": "Don't allow any 2 Austrian infantry units within 2 hexes of the road"},
+			{"side": "Austrian", "level": "Marginal", "conditions": "Get any 2 Austrian infantry within 5 hexes of the road"},
+			{"side": "Austrian", "level": "Substantial", "conditions": "Get any 2 Austrian infantry within 3 hexes of the road"},
+			{"side": "Austrian", "level": "Decisive", "conditions": "Hold 2 hexes of the road with Austrian infantry"}
+		]
 	  },
 	  {
 		"id": 927,
@@ -886,7 +939,12 @@
 		  "day": 22,
 		  "hour": 17,
 		  "minute": 0
-		}
+		},
+		"victory": [
+			{"side": "French", "level": "Victory", "conditions": "Hold 5 hexes of Essling"},
+			{"side": "", "level": "Draw", "conditions": "Any other result"},
+			{"side": "Austrian", "level": "Victory", "conditions": "Hold 3 hexes of Essling or capture the Granary"}
+		]				
 	  },
 	  {
 		"id": 928,
@@ -904,7 +962,12 @@
 		  "day": 22,
 		  "hour": 9,
 		  "minute": 0
-		}
+		},
+		"victory": [
+			{"side": "French", "level": "Decisive", "conditions": "Hold all hexes of Essling"},
+			{"side": "", "level": "Draw", "conditions": "Any other result"},
+			{"side": "Austrian", "level": "Decisive", "conditions": "Hold all hexes of Essling"}
+		]				
 	  },
 	  {
 		"id": 929,
@@ -922,7 +985,15 @@
 		  "day": 22,
 		  "hour": 13,
 		  "minute": 0
-		}
+		},
+		"victory": [
+			{"side": "French", "level": "Decisive", "conditions": "Exit 50 increments of infantry off the North map edge"},
+			{"side": "French", "level": "Substantial", "conditions": "Place Division Brady and Weber on Morale Level 2"},
+			{"side": "French", "level": "Marginal", "conditions": "Hold all hexes of the Aspern-Essling road"},
+			{"side": "Austrian", "level": "Marginal", "conditions": "Place II Corps d'Armee on Morale Level 1"},
+			{"side": "Austrian", "level": "Substantial", "conditions": "Place II Corps d'Armee on Morale Level 2"},
+			{"side": "Austrian", "level": "Decisive", "conditions": "Hold 2 hexes of the Aspern-Essling road"}
+		]
 	  },
 	  {
 		"id": 930,
@@ -940,7 +1011,15 @@
 		  "day": 22,
 		  "hour": 16,
 		  "minute": 0
-		}
+		},
+		"victory": [
+			{"side": "French", "level": "Decisive", "conditions": "Hold all 7 hexes of Breitenlee"},
+			{"side": "French", "level": "Substantial", "conditions": "Hold 5 hexes of Breitenlee"},
+			{"side": "French", "level": "Marginal", "conditions": "Hold 3 hexes of Breitenlee"},
+			{"side": "Austrian", "level": "Marginal", "conditions": "Hold 3 hexes of Breitenlee"},
+			{"side": "Austrian", "level": "Substantial", "conditions": "Hold 5 hexes of Breitenlee"},
+			{"side": "Austrian", "level": "Decisive", "conditions": "Hold all 7 hexes of Breitenlee"}
+		]
 	  },
 	  {
 		"id": 931,
@@ -958,7 +1037,15 @@
 		  "day": 21,
 		  "hour": 23,
 		  "minute": 0
-		}
+		},
+		"victory": [
+			{"side": "French", "level": "Decisive", "conditions": "Hold all hexes of Essling"},
+			{"side": "French", "level": "Substantial", "conditions": "Hold 4 hexes of Essling"},
+			{"side": "French", "level": "Marginal", "conditions": "Hold 2 hexes of Essling"},
+			{"side": "Austrian", "level": "Marginal", "conditions": "Hold any hex of Essling"},
+			{"side": "Austrian", "level": "Substantial", "conditions": "Hold 3 hexes of Essling"},
+			{"side": "Austrian", "level": "Decisive", "conditions": "Hold all of Essling"}
+		]
 	  },
 	  {
 		"id": 932,
@@ -976,9 +1063,12 @@
 		  "day": 22,
 		  "hour": 15,
 		  "minute": 0
-		}
+		},
+		"victory": [
+			{"side": "French", "level": "Victory", "conditions": "Prevent Austrian victory"},
+			{"side": "Austrian", "level": "Victory", "conditions": "Place 30 increments South of the road"}
+		]		
 	  }
-
 	]
   },
   {
@@ -986,7 +1076,7 @@
 	"name": "La Bataille de Neumarkt",
 	"publisher": "Marshal Enterprises",
 	"image": "neumarkt",
-	"sides": ["French", "Austrian"],
+	"sides": ["Austrian","French"],
 	"scenarios": [
 	  {
 		"id": 1050,
@@ -1004,7 +1094,16 @@
 		  "day": 24,
 		  "hour": 15,
 		  "minute": 0
-		}
+		},
+		"victory": [
+			{"side": "Austrian", "low": 7, "high": 99, "level": "Decisive"},
+			{"side": "Austrian", "low": 6, "high": 6, "level": "Substantial"},
+			{"side": "Austrian", "low": 5, "high": 5, "level": "Marginal"},
+			{"side": "", "low": 3, "high": 4, "level": "Draw"},
+			{"side": "French", "low": 2, "high": 2, "level": "Marginal"},
+			{"side": "French", "low": 1, "high": 1, "level": "Substantial"},
+			{"side": "French", "low": -99, "high": 0, "level": "Decisive"}
+		]				
 	  }
 	]
   },
@@ -1032,7 +1131,15 @@
 		  "day": 16,
 		  "hour": 21,
 		  "minute": 0
-		}
+		},
+		"victory": [
+			{"side": "French", "level": "Decisive", "conditions": "Capture all hexes of Guntersdorf"},
+			{"side": "French", "level": "Substantial", "conditions": "Capture two hexes of Guntersdorf"},
+			{"side": "French", "level": "Marginal", "conditions": "Capture one hex of Guntersdorf"},
+			{"side": "Russian", "level": "Marginal", "conditions": "Hold four hexes of Guntersdorf"},
+			{"side": "Russian", "level": "Substantial", "conditions": "Hold five hexes of Guntersdorf"},
+			{"side": "Russian", "level": "Decisive", "conditions": "Hold all hexes of Guntersdorf"}
+		]				
 	  }
 	]
   },
@@ -1206,13 +1313,13 @@
 	                "minute": 0
 	            },
 				"victory": [
-					{"low": 17, "high": 99, "level": "French Decisive"},
-					{"low": 14, "high": 16, "level": "French Substantial"},
-					{"low": 11, "high": 13, "level": "French Marginal"},
-					{"low": 9, "high": 10, "level": "Draw"},
-					{"low": 7, "high": 8, "level": "Coalition Marginal"},
-					{"low": 5, "high": 6, "level": "Coalition Substantial"},
-					{"low": -99, "high": 4, "level": "Coalition Decisive"}
+					{"side": "French", "low": 17, "high": 99, "level": "Decisive"},
+					{"side": "French", "low": 14, "high": 16, "level": "Substantial"},
+					{"side": "French", "low": 11, "high": 13, "level": "Marginal"},
+					{"side": "", "low": 9, "high": 10, "level": "Draw"},
+					{"side": "AustrianRussian", "low": 7, "high": 8, "level": "Marginal"},
+					{"side": "AustrianRussian", "low": 5, "high": 6, "level": "Substantial"},
+					{"side": "AustrianRussian", "low": -99, "high": 4, "level": "Decisive"}
 				]				
 	        }			
 	    ]

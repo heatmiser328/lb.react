@@ -8,6 +8,6 @@ export default createSelector(
     (game,vp1,vp2) => {
 		let vp = vp1 - vp2;		
 		let v = game.victory.find((v) => vp >= v.low && vp <= v.high) || {level:''};		
-		return v.level;        
+    return {side: v.side, level: v.level};
     }    
 );
