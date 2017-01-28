@@ -65,15 +65,20 @@ var CombatResultsView = React.createClass({
     },
     
     renderLeaderLoss() {
-        let ll = LeaderLoss.resolve(this.props.combatdice, this.props.lossdie, this.props.durationdie1, this.props.durationdie2, this.props.melee) || {};
-        let loss = (ll.result || '').toLowerCase();
+        let ll = LeaderLoss.resolve(this.props.combatdice, this.props.lossdie, this.props.durationdie1, this.props.durationdie2, this.props.melee);
+        let loss = ll.result;
         let lossIcon = null;
-        if (loss.startsWith('flesh')) {
+        if (loss.startsWith('Flesh')) {
             lossIcon = null;
-        } else if (loss == 'capture') {
+        } else if (loss == 'Capture') {
             lossIcon = Icons.capture;
+        } else if (ll.mortal) {
+            //lossIcon = (ll.mortal ? Icons.mortal : Icons.wounded);
+            lossIcon = Icons.mortal;
+            loss = ll.result;         
         } else {
-            lossIcon = (ll.mortal ? Icons.mortal : Icons.wounded);
+            lossIcon = (ll.result == 'Leg' ? Icons.leg : Icons.arm);
+            loss = ll.duration;
         }
         return (
             //<LeaderLossView style={{flex: 1}} leader={ll.leader} loss={loss} mortal={ll.mortal} />
@@ -81,20 +86,20 @@ var CombatResultsView = React.createClass({
                 <View style={{flex:1,alignSelf: 'stretch'}}>
                     <Text style={{fontSize: 18,fontWeight: 'bold',backgroundColor: 'silver', textAlign: 'center'}}>Leader Loss</Text>
                 </View>            
-                <View style={{flex:2}}/>
-                <View style={{flex:1, flexDirection:'row'}}>            
+                {/*<View style={{flex:2}}/>*/}
+                <View style={{flex:5, flexDirection:'row', justifyContent:'center', alignItems: 'center'}}>            
                     <View style={{flex:3, alignItems:'center'}}>
-                        <Text style={{fontSize: 16,textAlign: 'center'}}>{ll.result}</Text>
+                        <Text style={{fontSize: 16,textAlign: 'center'}}>{loss}</Text>
                     </View>
                     <View style={{flex:2, justifyContent: 'center'}}>
                         {ll.leader && lossIcon
-                            ? <Image style={{flex: 1, alignSelf:'center', height: 64, width: 64, resizeMode: 'stretch'}} source={lossIcon} />
+                            ? <Image style={{flex: 1, alignSelf:'center', height: 64, width: 64, resizeMode: 'contain'}} source={lossIcon} />
                             : null
                         }
                         {/*<Text style={{fontSize: 16,textAlign: 'center'}}>{ll.mortal ? 'Mortal' : ''}</Text>*/}
                     </View>             
                 </View>
-                <View style={{flex:2}}/>
+                {/*<View style={{flex:2}}/>*/}
             </View>
         );
     },
@@ -128,7 +133,7 @@ var CombatResultsView = React.createClass({
                                     <View style={{flex:1}}>
                                         <Text style={{fontSize: 16,textAlign: 'center'}}>{res.modifier}</Text>
                                     </View>
-                                    <View style={{flex:1, justifyContent:'center'}}>
+                                    <View style={{flex:1, justifyContent:'center', alignItems:'center'}}>
                                         <Image style={{height: 28, width: 28, resizeMode: 'stretch'}} source={icon} />
                                     </View>
                                 </View>

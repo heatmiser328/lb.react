@@ -31,6 +31,8 @@ module.exports = {
 	"wounded": require('./ambulance.png'),
 	"mortal": require('./tombstone.png'),
 	"capture": require('./capture.jpg'),
+	"arm": require('./arm.png'),
+	"leg": require('./leg.png'),
 
 	"French": require('./french_flag.jpg'),
 	"Polish": require('./polish_flag.png'),

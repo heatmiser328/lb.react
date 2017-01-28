@@ -3,12 +3,13 @@
 module.exports = {
     resolve(dice, lossdie, durationdie1, durationdie2, melee) {
     	var loss = melee ? (dice <= 12 || dice >= 64) : (dice >= 64);
-        var result = null;
+        var result = {result: ''};
 
         if (loss) {
             result = {
                 leader: melee && dice <= 12 ? 'A' : 'D',
                 result: '',
+                duration: '',
                 mortal: false
             };
             if (lossdie == 1) {
@@ -21,11 +22,13 @@ module.exports = {
             }
             else if (lossdie == 3) {
             	var duration = durationdie1 + durationdie2;
-            	result.result = 'Leg: ' + duration + ' hours out';
+            	result.result = 'Leg';
+                result.duration = duration + ' hours out';
             }
             else if (lossdie == 4) {
             	var duration = durationdie1;
-            	result.result = 'Arm: ' + duration + ' hours out';
+            	result.result = 'Arm'
+                result.duration = duration + ' hours out';
             }
             else if (lossdie == 5) {
             	result.result = 'Capture';
