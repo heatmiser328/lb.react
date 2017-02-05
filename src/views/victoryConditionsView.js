@@ -16,7 +16,7 @@ var VictoryConditionsView = React.createClass({
                             <Image style={{width: 64,height: 64,resizeMode: 'contain'}} source={Icons[v.side]}/>
                             <Text style={{fontWeight:'bold',fontSize:18,textAlign:'center'}}>{v.level}</Text>
                         </View>
-                        <View style={{flex:4}}>
+                        <View style={{flex:4, justifyContent:'center'}}>
                             <Text >{v.conditions}</Text>
                         </View>                        
                     </View>

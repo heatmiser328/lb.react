@@ -1167,7 +1167,11 @@
 	                "day": 2,
 	                "hour": 9,
 	                "minute": 20
-	            }
+	            },
+				"victory": [
+					{"side": "French", "level": "Victory", "conditions": "Prevent a Coalition Victory"},
+					{"side": "AustrianRussian", "level": "Victory", "conditions": "Hold any two village hexes of Telnitz at end of scenario"}
+				]				
 	        },
 	        {
 	            "id": 10032,
@@ -1185,7 +1189,13 @@
 	                "day": 2,
 	                "hour": 11,
 	                "minute": 40
-	            }
+	            },
+				"victory": [
+					{"side": "French", "level": "Tactical", "conditions": "Place either Langeron or Przybyczewsky's Column on a morale level"},
+					{"side": "French", "level": "Marginal", "conditions": "Hold any one hex of Sokolnitz at the end of the scenario"},
+					{"side": "AustrianRussian", "level": "Marginal", "conditions": "Hold all hexes of Sokolnitz, the Schloss, and three Pheasantry hexes at the end of the scenario"},
+					{"side": "AustrianRussian", "level": "Tactical", "conditions": "Push all French units beyond scenario borders"}
+				]								
 	        },
 	        {
 	            "id": 10033,
@@ -1203,7 +1213,13 @@
 	                "day": 2,
 	                "hour": 12,
 	                "minute": 0
-	            }
+	            },
+				"victory": [
+					{"side": "French", "level": "Tactical", "conditions": "Hold any hex of Telnitz at the end of the scenario"},
+					{"side": "French", "level": "Marginal", "conditions": "Attack the village with any five combat units on the 11:00, 11:20, or 11:40 turn"},
+					{"side": "AustrianRussian", "level": "Marginal", "conditions": "Hold all hexes of Telnitz"},
+					{"side": "AustrianRussian", "level": "Tactical", "conditions": "Eliminate 60% of all French units in this scenario"}
+				]				
 	        },
 	        {
 	            "id": 10034,
@@ -1221,7 +1237,15 @@
 	                "day": 2,
 	                "hour": 12,
 	                "minute": 0
-	            }
+	            },
+				"victory": [
+					{"side": "French", "level": "Decisive", "conditions": "Kill or Capture the Tsar"},
+					{"side": "French", "level": "Tactical", "conditions": "Hold all the hexes of Pratze, Blaskowitz, and all hexes of Stare Vinohrady at the end of the scenario"},
+					{"side": "French", "level": "Marginal", "conditions": "Hold all the hexes of Pratze and of Stare Vinohrady at the end of the scenario"},
+					{"side": "AustrianRussian", "level": "Marginal", "conditions": "Prevent the French Marginal"},
+					{"side": "AustrianRussian", "level": "Tactical", "conditions": "Prevent the French Tactical"},
+					{"side": "AustrianRussian", "level": "Decisive", "conditions": "Place Soult's Corps on Level Two. (2 battalions from LeGrand are routed"}
+				]				
 	        },
 	        {
 	            "id": 10035,
@@ -1239,7 +1263,15 @@
 	                "day": 2,
 	                "hour": 12,
 	                "minute": 0
-	            }
+	            },
+				"victory": [
+					{"side": "French", "level": "Decisive", "conditions": "Place Bagration on Level Two at the end of the scenario"},
+					{"side": "French", "level": "Tactical", "conditions": "Hold all hexes of Holubitz, Krug, and Posoritz by the end of the scenario"},
+					{"side": "French", "level": "Marginal", "conditions": "Place Bagration on Level One at the end of the scenario"},
+					{"side": "AustrianRussian", "level": "Marginal", "conditions": "Hold any hexes of Holubitz, Krug, and Posoritz by the end of the scenario"},
+					{"side": "AustrianRussian", "level": "Tactical", "conditions": "Hold all hexes of Holubitz, Krug, or Posoritz by the end of the scenario"},
+					{"side": "AustrianRussian", "level": "Decisive", "conditions": "Place V Corps on morale level one"}
+				]								
 	        },
 	        {
 	            "id": 10036,
@@ -1257,7 +1289,15 @@
 	                "day": 2,
 	                "hour": 16,
 	                "minute": 0
-	            }
+	            },
+				"victory": [
+					{"side": "French", "level": "Decisive", "conditions": "30 increments of Vandamme's Division must reach Exit by 1300"},
+					{"side": "French", "level": "Tactical", "conditions": "30 increments of Vandamme's Division must reach Exit by 1400"},
+					{"side": "French", "level": "Marginal", "conditions": "Eliminate 32 increments of the Russian Guard"},
+					{"side": "AustrianRussian", "level": "Marginal", "conditions": "Eliminate 20 increments of the French Guard"},
+					{"side": "AustrianRussian", "level": "Tactical", "conditions": "Eliminate 35 increments of the French Guard"},
+					{"side": "AustrianRussian", "level": "Decisive", "conditions": "Kill or capture Napoleon or Eliminate 30 increments of the French Guard"}
+				]				
 	        },
 	        {
 	            "id": 10037,
@@ -1275,7 +1315,14 @@
 	                "day": 2,
 	                "hour": 16,
 	                "minute": 0
-	            }
+	            },
+				"victory": [
+					{"side": "French", "level": "Decisive", "conditions": "Place Bagration on Morale Level Three"},
+					{"side": "French", "level": "Tactical", "conditions": "Exit 25 cavalry increments off the map at the Route d'Olmutz and 25 increments off the map at the Route d'Austerlitz"},
+					{"side": "French", "level": "Marginal", "conditions": "Hold the exit road hexes for the Route d'Olmutz and the Route d'Austerlitz"},
+					{"side": "AustrianRussian", "level": "Marginal", "conditions": "Prevent French Marginal Victory"},
+					{"side": "AustrianRussian", "level": "Tactical", "conditions": "Exit 20 increments off the map at the Route d'Olmutz on last turn of the scenario"}
+				]				
 	        },
 	        {
 	            "id": 10038,
@@ -1293,7 +1340,15 @@
 	                "day": 2,
 	                "hour": 16,
 	                "minute": 0
-	            }
+	            },
+				"victory": [
+					{"side": "French", "level": "Decisive", "conditions": "Prevent any of the Coalition Victory conditions"},
+					{"side": "French", "level": "Tactical", "conditions": "Place II and III Colonne on Morale Level Three at the end of the scenario"},
+					{"side": "French", "level": "Marginal", "conditions": "Capture all hexes of Telnitz, Sokolnitz, Castle, and Pheasantry at the end of the scenario"},
+					{"side": "AustrianRussian", "level": "Marginal", "conditions": "Exit 60 increments off the Southern Map Edge or hold Augezd"},
+					{"side": "AustrianRussian", "level": "Tactical", "conditions": "Exit 75 increments off the Southern Map Edge"},
+					{"side": "AustrianRussian", "level": "Decisive", "conditions": "Exit 75 increments off the Eastern Map Edge"}
+				]								
 	        },
 	        {
 	            "id": 100310,
