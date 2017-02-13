@@ -74,16 +74,21 @@ Each view includes a panel of dice at the top, the number of which varies based 
 Psuedo-random sometimes doesn't seem very random at all. Occasionally a dice roll will produce the same results twice in a row. I've tried a fair number of approaches over the years without any better results, so I decided to settle on this. Done.
 
 #### Charge
-The first tab displays the views, in a set of nested tabs, that handle the various activities related to cavalry charges: infantry standing for forming square and recall.
+The first tab displays the views, in a set of nested tabs, that handle the various activities related to cavalry charges: infantry standing or forming square and recall.
 
 ##### Stand
 ![Stand](https://github.com/jcapuano328/lb.react/raw/master/doc/Charge.Stand.png "Stand")
+
 Enter the morale of the target and any applicable leader rating, select any appropriate modifiers, roll the dice and apply the result. The 
+
 ##### Form Square
 ![Form Square](https://github.com/jcapuano328/lb.react/raw/master/doc/Charge.FormSquare.png "Form Square")
+
 Select the nationality and formation of the target, distance of the cavalry to the target, the appropriate modifiers, roll the dice and apply the result. Only those nationalities, formations, and modifiers specific to the scenario will be presented.
+
 ##### Recall
 ![Recall](https://github.com/jcapuano328/lb.react/raw/master/doc/Charge.Recall.png "Recall")
+
 Choose the type of cavalry, appropriate modifiers, roll the dice and apply the results. There seems to be a trend developing...
 
 #### Fire
