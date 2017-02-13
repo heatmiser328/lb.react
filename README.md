@@ -1,7 +1,7 @@
 # lb.react
 React Native La Bataille Assistant app
 
-### Objective the first
+## Objective the first
 To work with interesting technologies I'll probably never get to use professionally! Right now that means React Native.
 
 - [React Native] (https://facebook.github.io/react-native/)
@@ -16,33 +16,33 @@ And some other bits that help make this work:
 - [React Native File System] (https://github.com/johanneslumpe/react-native-fs)
 - [React Native Audio Player] (https://github.com/andreaskeller/react-native-audioplayer)
 
-#### While I do like testing... I just haven't bothered with it for this project. But, when I do test:
+### While I do like testing... I just haven't bothered with it for this project. But, when I do test:
 
-##### This is good for React components
+#### This is good for React components
 - [Jest](https://facebook.github.io/jest/)
 
-##### But I still prefer this set
+#### But I still prefer this set
 - [Mocha] (https://mochajs.org/)
 - [Chai] (http://chaijs.com/)
 - [Sinon] (http://sinonjs.org/)
 - [Sandboxed Module] (https://github.com/felixge/node-sandboxed-module)
 
-### Objective the second
+## Objective the second
 Get charts off the game table and streamline play.
 
-#### La Bataille
+### La Bataille
 I credit the [Premier Rules] (http://www.labataille.me/Rules_and_Charts.html) from Marshal Enterprises with pulling me back to these games, and 
 this assistant reflects that perspective. However, it should "work" with any of the rule sets from [Clash of Arms] (http://clashofarms.com/) as well.
 
-#### The App
-##### What the app Isn't
+### The App
+#### What the app Isn't
 It is not a game! La Bataille is a series of board games, each depicting a battle from the Era of Napoleon I. Get some and play.
 
-##### What the app Is
+#### What the app Is
 It is an Assistant for the board games. It's purpose is to streamline game play on the table. It has no maps, no counters: just interfaces to nearly eliminate the need for dice or charts on the table.
 (Yes some will dearly miss the dice and not trust the psuedo-random die generator, but can't have an assistant without letting go a little).
 
-##### Navigation
+#### Navigation
 To get started, a game and scenario must be selected. The "hamburger" icon pulls out navigation menu, listing the games available (nearly all of them) and the scenarios.
 ![Battles](https://github.com/jcapuano328/lb.react/raw/master/doc/Navigation.1.png "Battle Navigation")
 
@@ -52,7 +52,7 @@ To get started, a game and scenario must be selected. The "hamburger" icon pulls
 
 Selecting a scenario will load the details and display the main view.
 
-##### Main View
+#### Main View
 The main view displays the title, scenario, and a tab of the views.
 
 ![Main](https://github.com/jcapuano328/lb.react/raw/master/doc/Main.png "Main")
@@ -61,41 +61,52 @@ The lowercase "i" on the right displays an About view, while the "recycle" butto
 
 Scroll between the views by swiping left or right or touching the tab title.
 
-##### Turn
+#### Turn
 ![Turn](https://github.com/jcapuano328/lb.react/raw/master/doc/Turn.png "Turn, Phase, Player")
 
 The Turn widget is on the top of the main view. The left and right arrows will navigate to the previous or next Turn or Phase. Navigating "past" the final phase of a player turn will move to the first phase and the next player. The "Player" icon on the right will display the battle flag for the phasing player. Touch the icon to switch to the other player. Navigating "past" the final phase of a turn will move to the first phase of the next turn and the first player. (you get the idea).
 
-##### Charge
+#### Dice
+![Dice](https://github.com/jcapuano328/lb.react/raw/master/doc/Dice.png "Dice")
 
-###### Stand
+Each view includes a panel of dice at the top, the number of which varies based on the requirements of the activity. The "Roll" button will generate psuedo-random results for each die. Tap a die to increment it's value by 1. The big blue buttons will adjust the 2 left-most dice as base-6: +6 on the dice 3 and 6 (36) will yield dice 4 and 6 (46). Most of the dice-related activities in La Bataille are base-6, and the modifiers behave accordingly. As the dice values are changed, the associated activity will adjust the results accordingly.
+
+Psuedo-random sometimes doesn't seem very random at all. Occasionally a dice roll will produce the same results twice in a row. I've tried a fair number of approaches over the years without any better results, so I decided to settle on this. Done.
+
+#### Charge
+The first tab displays the views, in a set of nested tabs, that handle the various activities related to cavalry charges: infantry standing for forming square and recall.
+
+##### Stand
 ![Stand](https://github.com/jcapuano328/lb.react/raw/master/doc/Charge.Stand.png "Stand")
-###### Form Square
+Enter the morale of the target and any applicable leader rating, select any appropriate modifiers, roll the dice and apply the result. The 
+##### Form Square
 ![Form Square](https://github.com/jcapuano328/lb.react/raw/master/doc/Charge.FormSquare.png "Form Square")
-###### Recall
+Select the nationality and formation of the target, distance of the cavalry to the target, the appropriate modifiers, roll the dice and apply the result. Only those nationalities, formations, and modifiers specific to the scenario will be presented.
+##### Recall
 ![Recall](https://github.com/jcapuano328/lb.react/raw/master/doc/Charge.Recall.png "Recall")
+Choose the type of cavalry, appropriate modifiers, roll the dice and apply the results. There seems to be a trend developing...
 
-##### Fire
+#### Fire
 ![Fire](https://github.com/jcapuano328/lb.react/raw/master/doc/Fire.png "Fire")
 
-##### Assault
+#### Assault
 ![Assault](https://github.com/jcapuano328/lb.react/raw/master/doc/Assault.png "Assault")
 
-##### Melee
+#### Melee
 ![Melee](https://github.com/jcapuano328/lb.react/raw/master/doc/Melee.png "Melee")
 
-##### Morale
+#### Morale
 ![Morale](https://github.com/jcapuano328/lb.react/raw/master/doc/Morale.png "Morale")
 
-##### General Stuff
+#### General Die rolls
 ![General](https://github.com/jcapuano328/lb.react/raw/master/doc/General.png "General Dice, Artillery Limber")
 
-##### Victory
+#### Victory
 ![Victory](https://github.com/jcapuano328/lb.react/raw/master/doc/Victory.png "Victory")
 
 
 
-### Get some games!
+## Get some games!
 - [Marshal Enterprises] (http://www.labataille.me/Home_Page.php)
   - Both free print and play as well as "professionally" published games
 - [Clash of Arms] (http://clashofarms.com/)
