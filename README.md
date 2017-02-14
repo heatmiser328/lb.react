@@ -44,9 +44,8 @@ It is an Assistant for the board games. It's purpose is to streamline game play 
 
 #### Navigation
 To get started, a game and scenario must be selected. The "hamburger" icon pulls out navigation menu, listing the games available (nearly all of them) and the scenarios.
-![Battles](https://github.com/jcapuano328/lb.react/raw/master/doc/Navigation.1.png "Battle Navigation")
 
-![Scenarios](https://github.com/jcapuano328/lb.react/raw/master/doc/Navigation.2.png "Scenario Navigation")
+| ![Battles](https://github.com/jcapuano328/lb.react/raw/master/doc/Navigation.1.png "Battle Navigation") | ![Scenarios](https://github.com/jcapuano328/lb.react/raw/master/doc/Navigation.2.png "Scenario Navigation") |
 
 (There is a quirk with the component I'm using that can cause the scenario list to scroll out of view; will probably fix that one day...)
 
@@ -93,6 +92,17 @@ Choose the type of cavalry, appropriate modifiers, roll the dice and apply the r
 
 #### Fire
 ![Fire](https://github.com/jcapuano328/lb.react/raw/master/doc/Fire.png "Fire")
+
+Fire combat resolution in LB can be time consuming. Experienced players tend to "know" the fire table and can guess when a loss might be pending. A typical approach is to throw the dice and if the number "seems" high enough, calculate the odds and consult the table. The assistant takes a similar approach. The results are listed under the dice, consisting of the a list of odds and results the current dice would yield. If the player guesses a combat might fall in the range of the results, they can then enter the specific fire and defense values and the actual result (if any) will be highlighted in the list.
+
+##### Dice
+The red and white dice are the fire combat dice used to consult the table. The blue die in the leader casualty die, while the 2 black dice are the leader casualty duration dice. The purple and yellow dice are for any morale check that might result from the fire.
+
+##### Attack/Defend values
+The attacker fire value can be entered directly into the numeric input; use the left/right buttons to increment/decrement the value by 1. A rudimentary "calculator" is beneath the input: touch one of the quick value buttons (4,6,9,etc), adjust the value, and touch the equals button to set the attacker value or the plus button to add to the existing value. 
+
+The defender value can also be entered directly into the numeric input. Beneath the input are a list of terrain and formations: make the appropriate selections and the value will be defaulted accordingly. The available selections will vary from game to game.
+
 
 #### Assault
 ![Assault](https://github.com/jcapuano328/lb.react/raw/master/doc/Assault.png "Assault")
