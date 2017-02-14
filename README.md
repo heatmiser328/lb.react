@@ -78,12 +78,12 @@ The first tab displays the views, in a set of nested tabs, that handle the vario
 ##### Stand
 ![Stand](https://github.com/jcapuano328/lb.react/raw/master/doc/Charge.Stand.png "Stand")
 
-Enter the morale of the target and any applicable leader rating, select any appropriate modifiers, roll the dice and apply the result. The 
+Enter the morale of the target and any applicable leader rating, select any appropriate modifiers, roll the dice and apply the result. The results are displayed as a pass/fail icon.
 
 ##### Form Square
 ![Form Square](https://github.com/jcapuano328/lb.react/raw/master/doc/Charge.FormSquare.png "Form Square")
 
-Select the nationality and formation of the target, distance of the cavalry to the target, the appropriate modifiers, roll the dice and apply the result. Only those nationalities, formations, and modifiers specific to the scenario will be presented.
+Select the nationality and formation of the target, distance of the cavalry to the target, the appropriate modifiers, roll the dice and apply the result. Only those nationalities, formations, and modifiers specific to the scenario will be presented. The results are displayed as icons: square, disorder, and rout.
 
 ##### Recall
 ![Recall](https://github.com/jcapuano328/lb.react/raw/master/doc/Charge.Recall.png "Recall")
@@ -95,6 +95,8 @@ Choose the type of cavalry, appropriate modifiers, roll the dice and apply the r
 
 Fire combat resolution in LB can be time consuming. Experienced players tend to "know" the fire table and can guess when a loss might be pending. A typical approach is to throw the dice and if the number "seems" high enough, calculate the odds and consult the table. The assistant takes a similar approach. The results are listed under the dice, consisting of the a list of odds and results the current dice would yield. If the player guesses a combat might fall in the range of the results, they can then enter the specific fire and defense values and the actual result (if any) will be highlighted in the list.
 
+The object is to quickly proceed down a line of fires, rolling dice and applying results while keeping attention on the game, not the app.
+
 ##### Dice
 The red and white dice are the fire combat dice used to consult the table. The blue die in the leader casualty die, while the 2 black dice are the leader casualty duration dice. The purple and yellow dice are for any morale check that might result from the fire.
 
@@ -103,9 +105,20 @@ The attacker fire value can be entered directly into the numeric input; use the 
 
 The defender value can also be entered directly into the numeric input. Beneath the input are a list of terrain and formations: make the appropriate selections and the value will be defaulted accordingly. The available selections will vary from game to game.
 
+##### Leader loss
+In the event of a leader casualty, the outcome will be presented with icons and appropriate text in center of the result area.
+
+##### Morale
+A list of morale check outcomes is presented and can be consulted in the event a fire combat yields a more check. The table presents the morale value that would pass/fail for the given morale dice, along with a few modified results.
 
 #### Assault
 ![Assault](https://github.com/jcapuano328/lb.react/raw/master/doc/Assault.png "Assault")
+
+Prior to melee, attacking infantry "assaults" the defenders. The assault process is basically a specially modified morale check. This view helps to quickly resolve defender and attacker morale checks. The odds table and modifier list are particular to assault, but otherwise it is a standard morale check.
+
+Quick the quick values buttons (16,26,etc) and the increment/decrement buttons to enter the correct morale and leadership modifier, choose the odds ratio and all applicable modifiers, roll the dice and apply the results. The results are displayed as a pass/fail icon. 
+
+This view might benefit from a "predictive" table, as does the fire view, but the number of assaults in any given turn is usually far fewer than fires so it remains in its current form.
 
 #### Melee
 ![Melee](https://github.com/jcapuano328/lb.react/raw/master/doc/Melee.png "Melee")
