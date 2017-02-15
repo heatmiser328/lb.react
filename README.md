@@ -116,22 +116,47 @@ A list of morale check outcomes is presented and can be consulted in the event a
 
 Prior to melee, attacking infantry "assaults" the defenders. The assault process is basically a specially modified morale check. This view helps to quickly resolve defender and attacker morale checks. The odds table and modifier list are particular to assault, but otherwise it is a standard morale check.
 
-Quick the quick values buttons (16,26,etc) and the increment/decrement buttons to enter the correct morale and leadership modifier, choose the odds ratio and all applicable modifiers, roll the dice and apply the results. The results are displayed as a pass/fail icon. 
+Enter directly or touch a quick values button (16,26,etc) and the increment/decrement buttons to enter the correct morale and leadership modifier, choose the odds ratio and all applicable modifiers, roll the dice and apply the results. The results are displayed as a pass/fail icon. 
 
 This view might benefit from a "predictive" table, as does the fire view, but the number of assaults in any given turn is usually far fewer than fires so it remains in its current form.
 
 #### Melee
 ![Melee](https://github.com/jcapuano328/lb.react/raw/master/doc/Melee.png "Melee")
 
+If Fire Combat is time consuming, Melee is more so. This view is very similar to the Fire view in that it presents a set of results corresponding to the dice roll, allowing the player to guess-timate the combat odds and decide if an outcome is likely. The actual odds can either be selected or calculated by entering the attacker and defender melee values. Since melee values are proportional to losses, a simplistic "calculator" is included at the bottom of the view, complete with modifiers, to lessen the math burden.
+
+The combat results, leader casualty, and morale results function the same as on the Fire view.
+
+##### Dice
+The red and white dice are the melee combat dice used to consult the table. The blue die in the leader casualty die, while the 2 black dice are the leader casualty duration dice. The purple and yellow dice are for any morale check that might result from the melee.
+
 #### Morale
 ![Morale](https://github.com/jcapuano328/lb.react/raw/master/doc/Morale.png "Morale")
 
-#### General Die rolls
+The Morale View is for ad hoc morale checks (opportunity charge, overstacking, etc) and rally checks.
+
+The numeric entry and modifier selection should be familiar by now. A listing of results is presented based on the dice to allow the player to quickly determine the outcome of the roll. When in doubt, enter the correct morale and modifiers. The result is displayed as a pass/fail icon.
+
+#### General
 ![General](https://github.com/jcapuano328/lb.react/raw/master/doc/General.png "General Dice, Artillery Limber")
 
-#### Victory
-![Victory](https://github.com/jcapuano328/lb.react/raw/master/doc/Victory.png "Victory")
+The General view is just a place to stick some dice for miscellaneous rolls: reinforcements, command, whatever the game/scenario might call for.
 
+And I needed a place to stick the artillery limber rolls, so that's there too. The artillery types and modifiers are specific to the game/scenario being played.
+
+
+#### Victory
+There are generally 2 types of victory determinations:
+- Conditions
+- Point Tally
+
+![Victory Conditions](https://github.com/jcapuano328/lb.react/raw/master/doc/Victory.1.png "Victory Conditions")
+
+The conditions mode just lists the conditions in effect for the scenario. The player can consult them as the game progresses.
+
+![Victory Points](https://github.com/jcapuano328/lb.react/raw/master/doc/Victory.2.png "Victory Points")
+
+The point tally mode allows the player to track the points awarded to each side. The view will display the current level in effect based on the point totals.
 
 
 ## Get some games!
