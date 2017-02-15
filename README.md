@@ -144,19 +144,18 @@ The General view is just a place to stick some dice for miscellaneous rolls: rei
 
 And I needed a place to stick the artillery limber rolls, so that's there too. The artillery types and modifiers are specific to the game/scenario being played.
 
-
 #### Victory
 There are generally 2 types of victory determinations:
 - Conditions
 - Point Tally
 
-![Victory Conditions](https://github.com/jcapuano328/lb.react/raw/master/doc/Victory.1.png "Victory Conditions")
-
 The conditions mode just lists the conditions in effect for the scenario. The player can consult them as the game progresses.
 
-![Victory Points](https://github.com/jcapuano328/lb.react/raw/master/doc/Victory.2.png "Victory Points")
+![Victory Conditions](https://github.com/jcapuano328/lb.react/raw/master/doc/Victory.1.png "Victory Conditions")
 
 The point tally mode allows the player to track the points awarded to each side. The view will display the current level in effect based on the point totals.
+
+![Victory Points](https://github.com/jcapuano328/lb.react/raw/master/doc/Victory.2.png "Victory Points")
 
 
 ## Get some games!
