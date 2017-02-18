@@ -1,5 +1,7 @@
 var battles = require('../data/battles.json');
 var rules = {
+    "auerstaedt": require('../data/auerstaedt.json'),
+    "eylau": require('../data/eylau.json'),
     "aspern_essling": require('../data/aspern_essling.json'),
     "friedland": require('../data/friedland.json'),
     "halle": require('../data/halle.json'),

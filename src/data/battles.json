@@ -1467,7 +1467,15 @@
 	                "day": 14,
 	                "hour": 19,
 	                "minute": 0
-	            }
+	            },
+				"victory": [
+					{"side": "French", "level": "Decisive", "conditions": "Capture the King or Queen of Prussia"},
+					{"side": "French", "level": "Overwhelming", "conditions": "No Hohenzollern infantry are left on the field of battle in good order by 7pm"},
+					{"side": "French", "level": "Victory", "conditions": "Control all hexes of Hassenhausen and have no Hohenzollern units east of that town by 7pm"},
+					{"side": "Prussian", "level": "Victory", "conditions": "Place the French III Corps on Level II, control five villages on the map, and have no more than 3 divisions on or above Level II by 7pm"},
+					{"side": "Prussian", "level": "Overwhelming", "conditions": "Place the French III Corps on Level III and force Marshal Davout to leave the field of battle by 7pm"},
+					{"side": "Prussian", "level": "Decisive", "conditions": "Only by beating L'Emperuer can the forces of despotism gain a decisive result"}
+				]				
 	        },
 	        {
 	            "id": 37,
@@ -1512,7 +1520,11 @@
 	                "day": 7,
 	                "hour": 19,
 	                "minute": 0
-	            }
+	            },
+				"victory": [
+					{"side": "French", "level": "Victory", "conditions": "Control all of Feiheit, the Chateau, the Church, at 2/3 of Preussisch-Eylau"},
+					{"side": "PrussianRussian", "level": "Victory", "conditions": "Control 2/3 of Preussisch-Eylau or place the French IV Corps on Level 2"}
+				]
 	        },
 	        {
 	            "id": 40,
@@ -1530,7 +1542,11 @@
 	                "day": 8,
 	                "hour": 11,
 	                "minute": 0
-	            }
+	            },
+				"victory": [
+					{"side": "French", "level": "Victory", "conditions": "Occupy Anklappen at any time"},
+					{"side": "PrussianRussian", "level": "Victory", "conditions": "Deny the French"}
+				]				
 	        },
 	        {
 	            "id": 41,
@@ -1548,7 +1564,11 @@
 	                "day": 8,
 	                "hour": 12,
 	                "minute": 40
-	            }
+	            },
+				"victory": [
+					{"side": "French", "level": "Victory", "conditions": "Place at least 1 Russian division on Level 3"},
+					{"side": "PrussianRussian", "level": "Victory", "conditions": "Deny the French"}
+				]
 	        },
 	        {
 	            "id": 42,
@@ -1566,7 +1586,16 @@
 	                "day": 8,
 	                "hour": 20,
 	                "minute": 0
-	            }
+	            },
+				"victory": [
+					{"side": "French", "level": "Decisive", "conditions": "Drive all Russian and Prussian infantry from the field by 8pm"},
+					{"side": "French", "level": "Overwhelming", "conditions": "Capture/destroy 30 Russian or Prussian batteries and place 3 Russian divisions on Level 3 by 8pm"},
+					{"side": "French", "level": "Victory", "conditions": "Be last to occupy all hexes of Schmoditten, Schloditten, Anklappen, Althoff, Mollwitten, Klein Sausgarten, Serpallen and all towns that begin in French control"},
+					{"side": "", "level": "Draw", "conditions": "If both sides can claim a victory"},
+					{"side": "PrussianRussian", "level": "Victory", "conditions": "Place on French Corps on Level 3 and control Schmoditten, Kutschitten, and Lampasch by 8pm"},
+					{"side": "PrussianRussian", "level": "Overwhelming", "conditions": "Be last to occupy all towns on map except Althoff and place 2 French Corps on Level 3 by 8pm"},
+					{"side": "PrussianRussian", "level": "Decisive", "conditions": "Kill or capture the Empereur of the French"}
+				]
 	        },
 	        {
 	            "id": 43,

@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, Image, ScrollView } from 'react-native';
+import { connect } from 'react-redux';
 import {SpinNumeric,MultiSelectList} from 'react-native-nub';
 import {DiceRoll} from 'react-native-dice';
 import DiceModifiersView from './diceModifiersView';
@@ -7,14 +8,7 @@ import QuickValuesView from './quickValuesView';
 import Base6 from '../services/base6';
 import Morale from '../services/morale';
 import Icons from '../res';
-
-var modifiers = [
-    {"name": "Disorder", "mod": -3},
-    {"name": "Rout", "mod": -6},
-    {"name": "50% Losses", "mod": -6},
-    {"name": "Road Col", "mod": -6},
-    {"name": "Force March", "mod": -3}
-];
+import getRules from '../selectors/rules';
 
 var MoraleView = React.createClass({
     dice: [
@@ -54,7 +48,7 @@ var MoraleView = React.createClass({
         this.onResolve();
     },
     onResolve(e) {
-        let mod = modifiers.filter((m) => this.state.mods[m.name]).reduce((p,c) => p + c.mod, 0);
+        let mod = this.modifiers().filter((m) => this.state.mods[m.name]).reduce((p,c) => p + c.mod, 0);
         let b = Morale.check(+this.state.morale,mod,this.state.die1,this.state.die2);
         this.state.result = b ? 'Pass' : 'Fail';
         this.setState(this.state);
@@ -88,7 +82,7 @@ var MoraleView = React.createClass({
                         </View>
                         <View style={{flex:4}}>
                             <MultiSelectList title={'Modifiers'}
-                                items={modifiers.map((m) => {return {name: m.name, selected: this.state.mods[m.name]};})}
+                                items={this.modifiers().map((m) => {return {name: m.name, selected: this.state.mods[m.name]};})}
                                 onChanged={this.onModChanged}/>                        
                         </View>
                     </View>
@@ -131,7 +125,27 @@ var MoraleView = React.createClass({
                 </View>
             </View>
         );
-    }
+    },
+    modifiers() {        
+        if (!this.props.rules || !this.props.rules.hasOwnProperty('morale')) {
+            // defaults
+            return [
+                {"name": "Disorder", "mod": -3},
+                {"name": "Rout", "mod": -6},
+                {"name": "50% Losses", "mod": -6},
+                {"name": "Road Col", "mod": -6},
+                {"name": "Force March", "mod": -3}
+            ];
+        }
+        return this.props.rules.morale.modifiers;
+    }    
 });
 
-module.exports = MoraleView;
+const mapStateToProps = (state) => ({
+    rules: getRules(state)
+});
+
+module.exports = connect(
+  mapStateToProps
+)(MoraleView);
+

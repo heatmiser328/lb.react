@@ -42,28 +42,37 @@ It is not a game! La Bataille is a series of board games, each depicting a battl
 It is an Assistant for the board games. It's purpose is to streamline game play on the table. It has no maps, no counters: just interfaces to nearly eliminate the need for dice or charts on the table.
 (Yes some will dearly miss the dice and not trust the psuedo-random die generator, but can't have an assistant without letting go a little).
 
-#### Navigation
-To get started, a game and scenario must be selected. The "hamburger" icon pulls out navigation menu, listing the games available (nearly all of them) and the scenarios.
+#### A note on the UI design
+The goal was to have each "activity" represented entirely in it's own view; no pop ups (aside from the numeric keypad) or tedious navigation necessary to complete a game function. The layout was targeted to a 7 inch tablet (because that's what I like on my game table!). The side effect is, it does not scale down well to a phone; just can't cram all of the information into such a small area.
 
-| ![Battles](https://github.com/jcapuano328/lb.react/raw/master/doc/Navigation.1.png "Battle Navigation") | ![Scenarios](https://github.com/jcapuano328/lb.react/raw/master/doc/Navigation.2.png "Scenario Navigation") |
+#### A note on platforms
+React Native can happily target both Android and iOS. It's pretty hard to develop for iOS without a Mac, and I don't have a Mac. So, I know it will build for and run on Android. I trust the Facebook folks and believe it will build for and run on iOS. When I have some money I don't want anymore, I'll rent a Mac and find out for sure.
+
+
+Now, on with the show...
+
+#### Navigation
+To get started, a game and scenario must be selected. The "hamburger" icon pulls out the navigation menu, listing the games available (nearly all of those published) and their scenarios.
+
+| ![Battles](https://github.com/jcapuano328/lb.react/raw/master/doc/Navigation.1.png "Battle Navigation") | | ![Scenarios](https://github.com/jcapuano328/lb.react/raw/master/doc/Navigation.2.png "Scenario Navigation") |
 
 (There is a quirk with the component I'm using that can cause the scenario list to scroll out of view; will probably fix that one day...)
 
 Selecting a scenario will load the details and display the main view.
 
 #### Main View
-The main view displays the title, scenario, and a tab of the views.
+The main view displays the title, scenario, and a tab of the activity views.
 
 ![Main](https://github.com/jcapuano328/lb.react/raw/master/doc/Main.png "Main")
 
 The lowercase "i" on the right displays an About view, while the "recycle" button will reset the current game to the first turn.
 
-Scroll between the views by swiping left or right or touching the tab title.
+Scroll between the activity views by swiping left or right or touching the tab title.
 
 #### Turn
 ![Turn](https://github.com/jcapuano328/lb.react/raw/master/doc/Turn.png "Turn, Phase, Player")
 
-The Turn widget is on the top of the main view. The left and right arrows will navigate to the previous or next Turn or Phase. Navigating "past" the final phase of a player turn will move to the first phase and the next player. The "Player" icon on the right will display the battle flag for the phasing player. Touch the icon to switch to the other player. Navigating "past" the final phase of a turn will move to the first phase of the next turn and the first player. (you get the idea).
+The Turn widget is on the top of the main view. The left and right arrows will navigate to the previous or next Turn or Phase. Navigating "past" the final phase of a player turn will move to the first phase and the next player. The "Player" icon on the right will display the battle flag for the current player. Touch the icon to switch to the other player. Navigating "past" the final phase of a turn will move to the first phase of the next turn and the first player. (you get the idea).
 
 #### Dice
 ![Dice](https://github.com/jcapuano328/lb.react/raw/master/doc/Dice.png "Dice")
