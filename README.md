@@ -27,6 +27,57 @@ And some other bits that help make this work:
 - [Sinon] (http://sinonjs.org/)
 - [Sandboxed Module] (https://github.com/felixge/node-sandboxed-module)
 
+### Working with the code
+Start [here] (https://facebook.github.io/react-native/docs/getting-started.html#content) and install the necessary dependencies. There are a lot of bits to get set up if you don't already have them.
+
+When ready, grab the repo:
+
+```
+git clone https://github.com/jcapuano328/lb.react
+cd lb.react
+npm install
+```
+
+#### A note on platforms
+React Native can happily target both Android and iOS. It's pretty hard to develop for iOS without a Mac, and I don't have a Mac. So, I know it will build for and run on Android. I trust the Facebook folks and believe it will build for and run on iOS. When I have some money I don't want anymore, I'll rent a Mac and find out for sure.
+
+#### Android
+
+##### Build
+
+Release
+```
+npm run build-rel
+```
+
+Debug
+```
+npm run build-dbg
+```
+
+##### Install on a device
+
+Release
+```
+npm run install-rel
+```
+
+Debug
+```
+npm run install-dbg
+```
+
+##### Debug on an emulator
+```
+npm run debug
+```
+
+#### iOS
+I dunno, but if you know React Native, you'll know what to do.
+
+There are 2 dependencies, [React Native File System] (https://github.com/johanneslumpe/react-native-fs) and [React Native Audio Player] (https://github.com/andreaskeller/react-native-audioplayer) that each require platform specific modifications to build properly. The notes on the respective sites will explain how to configure for an iOS build.
+
+
 ## Objective the second
 Get charts off the game table and streamline play.
 
@@ -44,9 +95,6 @@ It is an Assistant for the board games. It's purpose is to streamline game play 
 
 #### A note on the UI design
 The goal was to have each "activity" represented entirely in it's own view; no pop ups (aside from the numeric keypad) or tedious navigation necessary to complete a game function. The layout was targeted to a 7 inch tablet (because that's what I like on my game table!). The side effect is, it does not scale down well to a phone; just can't cram all of the information into such a small area.
-
-#### A note on platforms
-React Native can happily target both Android and iOS. It's pretty hard to develop for iOS without a Mac, and I don't have a Mac. So, I know it will build for and run on Android. I trust the Facebook folks and believe it will build for and run on iOS. When I have some money I don't want anymore, I'll rent a Mac and find out for sure.
 
 
 Now, on with the show...

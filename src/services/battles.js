@@ -2,12 +2,15 @@ var battles = require('../data/battles.json');
 var rules = {
     "auerstaedt": require('../data/auerstaedt.json'),
     "eylau": require('../data/eylau.json'),
-    "aspern_essling": require('../data/aspern_essling.json'),
-    "friedland": require('../data/friedland.json'),
+    "talavera": require('../data/talavera.json'),
+    "albuera": require('../data/albuera.json'),
+
     "halle": require('../data/halle.json'),
+    "raszyn": require('../data/raszyn.json'),    
     "leipzig": require('../data/leipzig.json'),
+    "friedland": require('../data/friedland.json'),
     "neumarkt": require('../data/neumarkt.json'),
-    "raszyn": require('../data/raszyn.json'),
+    "aspern_essling": require('../data/aspern_essling.json'),
     "schoengrabern": require('../data/schoengrabern.json'),
 	"austerlitz": require('../data/austerlitz.json')
 };

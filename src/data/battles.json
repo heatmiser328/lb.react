@@ -1613,7 +1613,16 @@
 	                "day": 8,
 	                "hour": 22,
 	                "minute": 0
-	            }
+	            },
+				"victory": [
+					{"side": "French", "level": "Decisive", "conditions": "Drive all Russian and Prussian infantry from the field by 8pm"},
+					{"side": "French", "level": "Overwhelming", "conditions": "Capture/destroy 30 Russian or Prussian batteries and place 3 Russian divisions on Level 3 by 8pm"},
+					{"side": "French", "level": "Victory", "conditions": "Be last to occupy all hexes of Schmoditten, Schloditten, Anklappen, Althoff, Mollwitten, Klein Sausgarten, Serpallen and all towns that begin in French control"},
+					{"side": "", "level": "Draw", "conditions": "If both sides can claim a victory"},
+					{"side": "PrussianRussian", "level": "Victory", "conditions": "Place on French Corps on Level 3 and control Schmoditten, Kutschitten, and Lampasch by 8pm"},
+					{"side": "PrussianRussian", "level": "Overwhelming", "conditions": "Be last to occupy all towns on map except Althoff and place 2 French Corps on Level 3 by 8pm"},
+					{"side": "PrussianRussian", "level": "Decisive", "conditions": "Kill or capture the Empereur of the French"}
+				]				
 	        }
 	    ]
 	},
@@ -1640,7 +1649,11 @@
 	                "day": 28,
 	                "hour": 1,
 	                "minute": 0
-	            }
+	            },
+				"victory": [
+					{"side": "French", "level": "Victory", "conditions": "Capture and hold hex ST"},
+					{"side": "AngloSpanish", "level": "Victory", "conditions": "Prevent capture of hex ST"}
+				]				
 	        },
 	        {
 	            "id": 46,
@@ -1658,7 +1671,11 @@
 	                "day": 28,
 	                "hour": 9,
 	                "minute": 0
-	            }
+	            },
+				"victory": [
+					{"side": "French", "level": "Victory", "conditions": "Capture hex LA by 9am"},
+					{"side": "AngloSpanish", "level": "Victory", "conditions": "Prevent capture of hex LA"}
+				]								
 	        },
 	        {
 	            "id": 47,
@@ -1676,7 +1693,11 @@
 	                "day": 28,
 	                "hour": 17,
 	                "minute": 20
-	            }
+	            },
+				"victory": [
+					{"side": "French", "level": "Victory", "conditions": "Completely clear Talavera of Spanish troops"},
+					{"side": "AngloSpanish", "level": "Victory", "conditions": "Hold any part of Talavera"}
+				]								
 	        },
 	        {
 	            "id": 48,
@@ -1694,7 +1715,14 @@
 	                "day": 28,
 	                "hour": 20,
 	                "minute": 0
-	            }
+	            },
+				"victory": [
+					{"side": "French", "level": "Overwhelming Victory", "conditions": "Exit a Corps off the map at the Route de Oropesa, no worse than morale level 1"},
+					{"side": "French", "level": "Victory", "conditions": "Clear Talavera of all enemy troops or place the Army of Portugal on morale level 2 or higher"},
+					{"side": "", "level": "Defeat", "conditions": "If both sides can claim a level of victory"},
+					{"side": "AngloSpanish", "level": "Victory", "conditions": "Place both French Corps on morale level 1"},
+					{"side": "AngloSpanish", "level": "Overwhelming Victory", "conditions": "Place both French Corps on morale level 2 or higher, or capture the King of Spain"}
+				]				
 	        },
 	        {
 	            "id": 49,
@@ -1712,7 +1740,14 @@
 	                "day": 28,
 	                "hour": 20,
 	                "minute": 0
-	            }
+	            },
+				"victory": [
+					{"side": "French", "level": "Overwhelming Victory", "conditions": "Exit a Corps off the map at the Route de Oropesa, no worse than morale level 1"},
+					{"side": "French", "level": "Victory", "conditions": "Clear Talavera of all enemy troops or place the Army of Portugal on morale level 2 or higher"},
+					{"side": "", "level": "Defeat", "conditions": "If both sides can claim a level of victory"},
+					{"side": "AngloSpanish", "level": "Victory", "conditions": "Place both French Corps on morale level 1"},
+					{"side": "AngloSpanish", "level": "Overwhelming Victory", "conditions": "Place both French Corps on morale level 2 or higher, or capture the King of Spain"}
+				]
 	        }
 	    ]
 	},
@@ -1739,7 +1774,14 @@
 	                "day": 16,
 	                "hour": 21,
 	                "minute": 20
-	            }
+	            },
+				"victory": [
+					{"side": "French", "level": "Overwhelming Victory", "conditions": "Clear the map of good order enemy units"},
+					{"side": "French", "level": "Victory", "conditions": "Exit 5 good order battalions with greater than 50% strength off the Camino de Badajoz"},
+					{"side": "", "level": "Defeat", "conditions": "If both sides can claim a level of victory"},
+					{"side": "AngloSpanish", "level": "Victory", "conditions": "Hold the village of Albuera while maintaining the English contingent on a morale level no higher than 2"},
+					{"side": "AngloSpanish", "level": "Overwhelming Victory", "conditions": "Hold the village of Albuera while maintaining the English contingent on a morale level no higher than 1"}
+				]				
 	        }
 	    ]
 	},
