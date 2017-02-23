@@ -96,6 +96,7 @@ It is an Assistant for the board games. It's purpose is to streamline game play 
 #### A note on the UI design
 The goal was to have each "activity" represented entirely in it's own view; no pop ups (aside from the numeric keypad) or tedious navigation necessary to complete a game function. The layout was targeted to a 7 inch tablet (because that's what I like on my game table!). The side effect is, it does not scale down well to a phone; just can't cram all of the information into such a small area.
 
+The "advanced" UI relies on the special rules and charts for a game. That is a lot of boring data entry, so only a sub-set of games are represented. As more make it to the table, more of the data entry will be completed. So as to still support the games that have not been "databased", a "basic" UI is presented when the full UI cannot be used.
 
 Now, on with the show...
 
@@ -214,6 +215,33 @@ The point tally mode allows the player to track the points awarded to each side.
 
 ![Victory Points](https://github.com/jcapuano328/lb.react/raw/master/doc/Victory.2.png "Victory Points")
 
+### Basic UI
+
+The basic UI kicks in when a particular game does not have special rules entered. It reduces to the 3 basic functions, fire, melee, and morale, along with a general dice view.
+
+For the most part the views work the same, the difference being that they rely on the organic computer sitting atop the shoulders to do more of the pre-processing.
+
+#### Fire
+![Fire](https://github.com/jcapuano328/lb.react/raw/master/doc/Basic.Fire.png "Fire")
+
+Just a simpler version of the view. You figure out the fire values and enter them as needed. Dice and results are the same.
+
+#### Melee
+![Melee](https://github.com/jcapuano328/lb.react/raw/master/doc/Basic.Melee.png "Melee")
+
+For the most part, it is the lack of game specific modifiers that is missing in this "basic" view. The calculator, dice, and results are the same.
+
+
+#### Morale
+![Morale](https://github.com/jcapuano328/lb.react/raw/master/doc/Basic.Morale.png "Morale")
+
+Again, basically the same as the advanced view, but with fewer modifiers.
+
+
+#### General
+![General](https://github.com/jcapuano328/lb.react/raw/master/doc/Basic.General.png "General Dice")
+
+The basic view is just a place for miscellaneous dice rolls.
 
 ## Get some games!
 - [Marshal Enterprises] (http://www.labataille.me/Home_Page.php)

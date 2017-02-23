@@ -37,7 +37,7 @@ var BattleView = React.createClass({
                     <MeleeView tabLabel="Melee" />
                     <MoraleView tabLabel="Morale" />                    
                     <GeneralView tabLabel="General" />
-                    {this.props.battle.hasOwnProperty('victory') ? <VictoryView tabLabel="Victory" /> : null}
+                    {this.props.battle.hasOwnProperty('victory') && this.props.battle.victory ? <VictoryView tabLabel="Victory" /> : null}
                 </ScrollableTabView>
             </View>
         );
