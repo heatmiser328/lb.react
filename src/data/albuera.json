@@ -1,0 +1,300 @@
+
+{
+	"fire": {
+		"attack": {
+		},
+		"defense": {
+			"terrain": {
+				
+				"Clear": {
+					"Col": {"label":"6","value":6},
+					"Line": {"label":"9","value":9},
+					"Prone": {"label":"15","value":15},
+					"CavLn": {"label":"8","value":8},
+					"Carre": {"label":"4","value":4},
+					"Skirm": {"label":"14","value":14},
+					"CavSkirm": {"label":"12","value":12},
+					"D/PgD": {"label":"10","value":10},
+					"Arty": {"label":"6/8","value":8},
+					"Road": {"label":"4","value":4}
+				},	
+				"Brush": {
+					"Col": {"label":"7","value":7},
+					"Line": {"label":"10","value":10},
+					"Prone": {"label":"16","value":16},
+					"CavLn": {"label":"9","value":9},
+					"Carre": {"label":"4","value":4},
+					"Skirm": {"label":"14","value":14},
+					"CavSkirm": {"label":"12","value":12},
+					"D/PgD": {"label":"16","value":16},
+					"Arty": {"label":"6/8","value":8},
+					"Road": {"label":"4","value":4}
+				},	
+				"Groves": {
+					"Gen": {"label":"12","value":12},
+					"Skirm": {"label":"16","value":16},
+					"CavSkirm": {"label":"14","value":14},
+					"D/PgD": {"label":"20","value":20},
+					"Arty": {"label":"6/12","value":12},
+					"Road": {"label":"4","value":4}
+				},	
+				"Village": {
+					"Gen": {"label":"16","value":16},
+					"Skirm": {"label":"20","value":20},					
+					"D/PgD": {"label":"20","value":20},
+					"Arty": {"label":"6/12","value":12},
+					"Road": {"label":"4","value":4}					
+				}						
+			}
+		},
+		"artillery": {
+			"limber": {
+				"table": {					
+					"French a Pied": { "low": 4, "high": 6},
+					"French a Cheval": { "low": 2, "high": 6},
+					"British": { "low": 5, "high": 6},
+					"KGL": { "low": 5, "high": 6},
+					"Portuguese": { "low": 6, "high": 6},
+					"Spanish": { "low": 6, "high": 6}
+				},
+				"modifiers": [					
+					{"name": "Soult", "mod": 3},
+					{"name": "Beresford", "mod": 2},
+					{"name": "Arty Leader (adds arty bonus)", "mod": 0},
+					{"name": "Leader", "mod": 1}
+				]
+			}
+		}
+	},
+	"assault": {
+		"odds": [
+			{"name": "1/3", "attmod": -18, "defmod": 18},
+		    {"name": "1/2", "attmod": -6, "defmod": 9},
+			{"name": "1/1", "attmod": 0, "defmod": 0},
+		    {"name": "2/1", "attmod": 3, "defmod": -3},
+		    {"name": "3/1", "attmod": 9, "defmod": -9},
+		    {"name": "4/1", "attmod": 12, "defmod": -12},
+			{"name": "5/1", "attmod": 18, "defmod": -18},
+		    {"name": "6/1+", "attmod": 24, "defmod": -24}			
+		],
+		"modifiers": [
+		    {"name": "Assaulted in flank", "type": "defend", "attmod": 12, "defmod": -12},
+		    {"name": "Assaulted in rear", "type": "defend", "attmod": 6, "defmod": -6},
+		    {"name": "In skirmish order", "type": "defend", "attmod": 99, "defmod": -6},
+		    {"name": "In Carre", "type": "defend", "attmod": 0, "defmod": 6},
+		    {"name": "Disordered", "type": "defend", "attmod": 3, "defmod": -3},
+		    {"name": "Routed", "type": "defend", "attmod": 6, "defmod": -6},
+		    {"name": "Assaulting up a slope", "type": "attack", "attmod": -3, "defmod": 0},
+			{"name": "Assaulting up a major slope", "type": "attack", "attmod": -6, "defmod": 0},
+		    {"name": "French adjacent to British rifles", "type": "attack", "attmod": -6, "defmod": 0},
+		    {"name": "Casualty due to defensive fire", "type": "attack", "attmod": -3, "defmod": 0}
+		]
+	},
+	"charge": {
+		"stand": {
+			"modifiers": [
+				{"name": "Charged in flank", "mod": -12},
+				{"name": "Charged in rear", "mod": -6},
+				{"name": "In Skirmish", "mod": -12},
+				{"name": "In Line", "mod": 3},
+				{"name": "Disorder", "mod": -6},
+				{"name": "Rout", "mod": -12},
+				{"name": "Carre", "mod": 12},
+				{"name": "Across stream", "mod": 6},
+				{"name": "Lancers", "mod": -6},
+				{"name": "Heavy", "mod": -3}
+			]
+		},
+		"carre": {
+			"table": {
+				
+				"French": { 
+					"All": {						
+						"4": [							
+							{"low": 11, "high": 61, "result": "Carre"},
+							{"low": 62, "high": 66, "result": "Disorder"}							
+						],
+						"3": [							
+							{"low": 11, "high": 55, "result": "Carre"},
+							{"low": 56, "high": 64, "result": "Disorder"},
+							{"low": 65, "high": 66, "result": "Rout"}							
+						],
+						"2": [							
+							{"low": 11, "high": 45, "result": "Carre"},
+							{"low": 46, "high": 61, "result": "Disorder"},
+							{"low": 62, "high": 66, "result": "Rout"}							
+						],
+						"1": [							
+							{"low": 11, "high": 35, "result": "Carre"},
+							{"low": 36, "high": 66, "result": "Rout"}							
+						]
+					}					
+				},
+				"British/KGL/LLL": { 
+					"All": {						
+						"4": [							
+							{"low": 11, "high": 63, "result": "Carre"},
+							{"low": 64, "high": 66, "result": "Disorder"}							
+						],
+						"3": [							
+							{"low": 11, "high": 61, "result": "Carre"},
+							{"low": 62, "high": 65, "result": "Disorder"},
+							{"low": 66, "high": 66, "result": "Rout"}							
+						],
+						"2": [							
+							{"low": 11, "high": 52, "result": "Carre"},
+							{"low": 53, "high": 63, "result": "Disorder"},
+							{"low": 64, "high": 66, "result": "Rout"}							
+						],
+						"1": [							
+							{"low": 11, "high": 43, "result": "Carre"},
+							{"low": 44, "high": 66, "result": "Rout"}							
+						]
+					}					
+				},
+				"KGL": { 
+					"All": {						
+						"4": [							
+							{"low": 11, "high": 63, "result": "Carre"},
+							{"low": 64, "high": 66, "result": "Disorder"}							
+						],
+						"3": [							
+							{"low": 11, "high": 61, "result": "Carre"},
+							{"low": 62, "high": 65, "result": "Disorder"},
+							{"low": 66, "high": 66, "result": "Rout"}							
+						],
+						"2": [							
+							{"low": 11, "high": 52, "result": "Carre"},
+							{"low": 53, "high": 63, "result": "Disorder"},
+							{"low": 64, "high": 66, "result": "Rout"}							
+						],
+						"1": [							
+							{"low": 11, "high": 43, "result": "Carre"},
+							{"low": 44, "high": 66, "result": "Rout"}							
+						]
+					}					
+				},
+				"LLL": { 
+					"All": {						
+						"4": [							
+							{"low": 11, "high": 63, "result": "Carre"},
+							{"low": 64, "high": 66, "result": "Disorder"}							
+						],
+						"3": [							
+							{"low": 11, "high": 61, "result": "Carre"},
+							{"low": 62, "high": 65, "result": "Disorder"},
+							{"low": 66, "high": 66, "result": "Rout"}							
+						],
+						"2": [							
+							{"low": 11, "high": 52, "result": "Carre"},
+							{"low": 53, "high": 63, "result": "Disorder"},
+							{"low": 64, "high": 66, "result": "Rout"}							
+						],
+						"1": [							
+							{"low": 11, "high": 43, "result": "Carre"},
+							{"low": 44, "high": 66, "result": "Rout"}							
+						]
+					}					
+				},				
+				"Portuguese": { 
+					"All": {						
+						"4": [							
+							{"low": 11, "high": 44, "result": "Carre"},
+							{"low": 45, "high": 56, "result": "Disorder"},
+							{"low": 61, "high": 66, "result": "Rout"}							
+						],
+						"3": [							
+							{"low": 11, "high": 41, "result": "Carre"},
+							{"low": 42, "high": 52, "result": "Disorder"},
+							{"low": 53, "high": 66, "result": "Rout"}							
+						],
+						"2": [							
+							{"low": 11, "high": 25, "result": "Carre"},
+							{"low": 26, "high": 41, "result": "Disorder"},
+							{"low": 42, "high": 66, "result": "Rout"}							
+						],
+						"1": [							
+							{"low": 11, "high": 21, "result": "Carre"},
+							{"low": 22, "high": 66, "result": "Rout"}							
+						]
+					}					
+				},
+				"Spanish": { 
+					"All": {						
+						"4": [							
+							{"low": 11, "high": 33, "result": "Carre"},
+							{"low": 34, "high": 55, "result": "Disorder"},
+							{"low": 56, "high": 66, "result": "Rout"}							
+						],
+						"3": [							
+							{"low": 11, "high": 31, "result": "Carre"},
+							{"low": 32, "high": 52, "result": "Disorder"},
+							{"low": 53, "high": 66, "result": "Rout"}							
+						],
+						"2": [							
+							{"low": 11, "high": 24, "result": "Carre"},
+							{"low": 25, "high": 41, "result": "Disorder"},
+							{"low": 42, "high": 66, "result": "Rout"}							
+						],
+						"1": [							
+							{"low": 11, "high": 21, "result": "Carre"},
+							{"low": 22, "high": 66, "result": "Rout"}							
+						]
+					}					
+				}				
+			},
+			"modifiers": [				
+				{"name": "Leader", "mod": -6},
+				{"name": "French Grenadiers", "mod": -3},
+				{"name": "Polish Grenadiers", "mod": -3},
+				{"name": "In Line", "mod": -3},
+				{"name": "Legere", "mod": -3},
+				{"name": "Fusiliers", "mod": -3},
+				{"name": "KGL", "mod": 3},
+				{"name": "LLL", "mod": 3}
+			]
+		},
+		"recall": {
+			"table": {				
+					"French": { "low": 2, "high": 6},
+					"British": { "low": 5, "high": 6},
+					"Portuguese": { "low": 4, "high": 6},
+					"Spanish": { "low": 3, "high": 6}				
+			},
+			"modifiers": [
+				{"name": "Leader", "mod": 1}				
+			]
+		}
+	},
+	"melee": {
+		"modifiers": {
+			"attack": [
+				{"name": "Assault in flank", "mod": 2},
+				{"name": "Assault in rear", "mod": 1.5},
+				{"name": "Skirmish order", "mod": 0.5},
+				{"name": "Disordered", "mod": 0.5},
+				{"name": "Charge 3 straight", "mod": 2},
+				{"name": "Heavy vs Light", "mod": 2},
+				{"name": "Tired", "mod": 0.5},
+				{"name": "Exhausted", "mod": 0.333},
+				{"name": "Preserve Readiness", "mod": 0.333},
+				{"name": "Cav vs Carre", "mod": 0.5},
+				{"name": "Inf vs Carre", "mod": 1.5},
+				{"name": "Across stream", "mod": 0.666},
+				{"name": "Lancers in Line", "mod": 2},
+				{"name": "Cav in General", "mod": 0.333}
+			],
+			"defend": [
+				{"name": "Skirmish order", "mod": 0.5},
+				{"name": "Disordered", "mod": 0.5},
+				{"name": "Routed", "mod": 0.333},
+				{"name": "Cav Routed", "mod": 0.25},
+				{"name": "Tired", "mod": 0.5},
+				{"name": "Exhausted", "mod": 0.333},
+				{"name": "Preserve Readiness", "mod": 0.333},
+				{"name": "Cav in General", "mod": 0.333}
+			]
+		}
+	}
+}		
+	

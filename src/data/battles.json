@@ -1,0 +1,2450 @@
+[
+	{
+	    "id": 1,
+	    "name": "La Bataille d' Halle",
+	    "publisher": "Marshal Enterprises",
+	    "image": "halle",
+		"sides": ["French", "Prussian"],
+	    "scenarios": [
+	        {
+	            "id": 2,
+	            "name": "Largely Historical",
+	            "start": {
+	                "year": 1806,
+	                "month": 10,
+	                "day": 17,
+	                "hour": 9,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1806,
+	                "month": 10,
+	                "day": 17,
+	                "hour": 16,
+	                "minute": 0
+	            },
+				"victory": [
+					{"side": "French", "level": "Decisive", "conditions": "Drive the Prussians from the field prior to 1:00 PM, with only the use of DuPont’s Division; the light cavalry brigade; and associated batteries. Additionally, the French must exit 25 increments off the map edge towards is the Prussian Line of Communications"},
+					{"side": "French", "level": "Tactical", "conditions": "Drive the Prussians from the field prior to 2:00 PM. Additionally you must exit 25 increments off the map edge that is the Prussian line of communications"},
+					{"side": "French", "level": "Marginal", "conditions": "Drive the Prussians from the field prior to 4:00 PM (historical). Additionally, you must exit 20 increments off the map edge that is the Prussian Line of Communications"},
+					{"side": "", "level": "Draw", "conditions": "Prussians inflict at least 10 increments of casualties on the French; and do not permit the French to exit any combat formation off of the map, toward your line of communications, prior to 1:00 PM"},
+					{"side": "Prussian", "level": "Marginal", "conditions": "Prussians inflict more casualties on the French than they suffer; and do not permit the French to exit any combat formation off of the map, towards the Prussian line of communications, prior to 3:00 PM"},
+					{"side": "Prussian", "level": "Tactical", "conditions": "Prussians inflict 6 more increments of casualties on the French than they suffer; and do not permit the French to exit any combat formation off of the map, towards the Prussian line of communications"},
+					{"side": "Prussian", "level": " Decisive", "conditions": "Prussians inflict 12 more increments of casualties on the French than they suffer; and do not permit the French to exit any combat formation off of the map, towards the Prussian line of communications"}
+				]
+	        },
+	        {
+	            "id": 3,
+	            "name": "Before the Saale",
+	            "start": {
+	                "year": 1806,
+	                "month": 10,
+	                "day": 17,
+	                "hour": 9,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1806,
+	                "month": 10,
+	                "day": 17,
+	                "hour": 16,
+	                "minute": 0
+	            },
+				"victory": [
+					{"side": "French", "level": "Decisive", "conditions": "Drive the Prussians from the field prior to 1:00 PM, with only the use of DuPont’s Division; the light cavalry brigade; and associated batteries. Additionally, the French must exit 25 increments off the map edge towards is the Prussian Line of Communications"},
+					{"side": "French", "level": "Tactical", "conditions": "Drive the Prussians from the field prior to 2:00 PM. Additionally you must exit 25 increments off the map edge that is the Prussian line of communications"},
+					{"side": "French", "level": "Marginal", "conditions": "Drive the Prussians from the field prior to 4:00 PM (historical). Additionally, you must exit 20 increments off the map edge that is the Prussian Line of Communications"},
+					{"side": "", "level": "Draw", "conditions": "Prussians inflict at least 10 increments of casualties on the French; and do not permit the French to exit any combat formation off of the map, toward your line of communications, prior to 1:00 PM"},
+					{"side": "Prussian", "level": "Marginal", "conditions": "Prussians inflict more casualties on the French than they suffer; and do not permit the French to exit any combat formation off of the map, towards the Prussian line of communications, prior to 3:00 PM"},
+					{"side": "Prussian", "level": "Tactical", "conditions": "Prussians inflict 6 more increments of casualties on the French than they suffer; and do not permit the French to exit any combat formation off of the map, towards the Prussian line of communications"},
+					{"side": "Prussian", "level": "Decisive", "conditions": "Prussians inflict 12 more increments of casualties on the French than they suffer; and do not permit the French to exit any combat formation off of the map, towards the Prussian line of communications"}
+				]				
+	        },
+	        {
+	            "id": 4,
+	            "name": "Revision of the Engaged Forces",
+	            "start": {
+	                "year": 1806,
+	                "month": 10,
+	                "day": 17,
+	                "hour": 9,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1806,
+	                "month": 10,
+	                "day": 17,
+	                "hour": 16,
+	                "minute": 0
+	            },
+				"victory": [
+					{"side": "French", "level": "Decisive", "conditions": "Place the Prussians on Level Two and exit 30 increments, using only Dupont and Grouchy Divisions, off the road that is designated the line of communications before 2:00 PM"},
+					{"side": "French", "level": "Tactical", "conditions": "Place Prussians on Level One and exit 30 steps off the road that is designated as the line of communications before 3:00 PM"},
+					{"side": "French", "level": "Marginal", "conditions": "Exit 25 steps from the field off the road that is designated as the line of communications prior to 4:00 PM"},
+					{"side": "", "level": "Draw", "conditions": "Prussians inflict at least 25 increments of casualties on the French"},
+					{"side": "Prussian", "level": "Marginal", "conditions": "Prussians inflict 12 more increments loss on the French, than they suffer"},
+					{"side": "Prussian", "level": "Tactical", "conditions": "Prussians inflict 18 more increments loss on the French, than they suffer"},
+					{"side": "Prussian", "level": "Decisive", "conditions": "Prussians inflict 24 more increments loss on the French than they suffer"}
+				]				
+	        }
+	    ]
+	},
+	{
+	    "id": 5,
+	    "name": "La Bataille de Raszyn",
+	    "publisher": "Marshal Enterprises",
+	    "image": "raszyn",
+		"sides": ["Polish", "Austrian"],
+	    "scenarios": [
+	        {
+	            "id": 6,
+	            "name": "Largely Historical",
+	            "start": {
+	                "year": 1809,
+	                "month": 4,
+	                "day": 17,
+	                "hour": 14,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1809,
+	                "month": 4,
+	                "day": 17,
+	                "hour": 21,
+	                "minute": 40
+	            },
+				"victory": [
+					{"side": "Polish", "level": "Decisive", "conditions": "There are no Austrian combat formations on the north side of the Utrata River, at the end of the 9:40 PM turn"},
+					{"side": "Polish", "level": "Tactical", "conditions": "Hold all town hexes of Raszyn and the IV Armeekorps is on a morale level at the end of the 9:40 PM turn"},
+					{"side": "Polish", "level": "Marginal", "conditions": "The VII Armeekorps ends the scenario on a morale level, or the Polish hold at least 1 hex of Raszyn at the end of the scenario"},
+					{"side": "", "level": "Draw", "conditions": "Any one or more of the following events: 1) Polish hold a town hex south of the Utrata River, 2) Austrian Leader Ferdinand d’Este suffers a Leader Casualty, 3) 80 increments of the VII Armeekorps in good order, exit off the north map edge, 4) Polish finish the scenario on a morale level"},
+					{"side": "Austrian", "level": "Marginal", "conditions": "No Polish Combat formations south of the Utrata River. Hold all town hexes of Dawidy, Raszyn and of Michalowice and exit 120 increments off of the north map edge by the end of the scenario"},
+					{"side": "Austrian", "level": "Tactical", "conditions": "No Polish Combat Formations south of the Utrata River hold Dawidy and Raszyn and end the scenario with the Polish Contingent on a Morale Level"},
+					{"side": "Austrian", "level": "Decisive", "conditions": "Capture all of Raszyn by the end of the scenario. This is the historical result"}					
+				]				
+	        },
+	        {
+	            "id": 7,
+	            "name": "Polish Reinforcements",
+	            "start": {
+	                "year": 1809,
+	                "month": 4,
+	                "day": 17,
+	                "hour": 14,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1809,
+	                "month": 4,
+	                "day": 17,
+	                "hour": 21,
+	                "minute": 40
+	            },
+				"victory": [
+					{"side": "Polish", "level": "Decisive", "conditions": "Hold all three causeways (every hex) and all Raszyn town hexes and put the VII Armeekorps on Morale Level One or more at the end of the 9:40 pm turn"},
+					{"side": "Polish", "level": "Tactical", "conditions": "Hold Raszyn Causeway, all Raszyn town hexes and put the VII Armeekorps on Morale Level One or more at the end of the 9:40 turn"},
+					{"side": "Polish", "level": "Marginal", "conditions": "Put the VII Armeekorps on Morale Level One or more at any time"},					
+					{"side": "Austrian", "level": "Marginal", "conditions": "Capture the Raszyn causeway by the end of the 9:40 turn"},
+					{"side": "Austrian", "level": "Tactical", "conditions": "Capture one causeway, all Raszyn town hexes and put the Polish Contingent on Morale Level One by the end of the 9:40 turn"},
+					{"side": "Austrian", "level": "Decisive", "conditions": "Capture all hexes of two causeways, all Raszyn town hexes and put the Polish Contingent on Morale Level Two by the end of the 9:40 turn"}										
+				]								
+	        },
+	        {
+	            "id": 8,
+	            "name": "Czaikisten Pontooners",
+	            "start": {
+	                "year": 1809,
+	                "month": 4,
+	                "day": 17,
+	                "hour": 14,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1809,
+	                "month": 4,
+	                "day": 17,
+	                "hour": 21,
+	                "minute": 40
+	            },
+				"victory": [
+					
+					{"side": "Polish", "level": "Decisive", "conditions": "Hold two causeways (every hex) and two Raszyn town hexes and put the VII Armeekorps on Morale Level One or more at the end of the 9:40 turn"},
+					{"side": "Polish", "level": "Tactical", "conditions": "Hold a tw0 Raszyn town hexes and put the VII Armeekorps on Morale Level One or more at the end of the 9:40 turn"},
+					{"side": "Polish", "level": "Marginal", "conditions": "Put the VII Armeekorps on Morale Level One or more at any time"},					
+					{"side": "Austrian", "level": "Marginal", "conditions": "Capture all the Raszyn causeway hexes and all Raszyn town hexes by the end of the 9:40 turn"},
+					{"side": "Austrian", "level": "Tactical", "conditions": "Capture two causeways, all Raszyn town hexes and put the Polish Contingent on Morale Level One at any time"},
+					{"side": "Austrian", "level": " Decisive", "conditions": "Capture all hexes of the three causeways, all Raszyn town hexes and put the Polish Contingent on Morale Level Two at any time"}
+				]				
+	        }
+	    ]
+	},
+	{
+	    "id": 9,
+	    "name": "La Bataille de Leipzig",
+	    "publisher": "Marshal Enterprises",
+	    "image": "leipzig",
+		"sides": ["French", "PrussianAustrianRussian"],
+	    "scenarios": [
+	        {
+	            "id": 10,
+	            "name": "The Southern Battle",
+	            "start": {
+	                "year": 1813,
+	                "month": 10,
+	                "day": 16,
+	                "hour": 9,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1813,
+	                "month": 10,
+	                "day": 16,
+	                "hour": 18,
+	                "minute": 0
+	            }
+	        },
+	        {
+	            "id": 11,
+	            "name": "Murat Reaches for the Tsar",
+	            "start": {
+	                "year": 1813,
+	                "month": 10,
+	                "day": 16,
+	                "hour": 15,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1813,
+	                "month": 10,
+	                "day": 16,
+	                "hour": 17,
+	                "minute": 20
+	            }
+	        },
+	        {
+	            "id": 12,
+	            "name": "Markkleeberg: The Desparate Crossing",
+	            "start": {
+	                "year": 1813,
+	                "month": 10,
+	                "day": 16,
+	                "hour": 9,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1813,
+	                "month": 10,
+	                "day": 16,
+	                "hour": 12,
+	                "minute": 0
+	            }
+	        },
+	        {
+	            "id": 13,
+	            "name": "The Wachau Cauldron",
+	            "start": {
+	                "year": 1813,
+	                "month": 10,
+	                "day": 16,
+	                "hour": 9,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1813,
+	                "month": 10,
+	                "day": 16,
+	                "hour": 18,
+	                "minute": 0
+	            }
+	        },
+	        {
+	            "id": 14,
+	            "name": "Liebertwolkwitz: Lauriston's Last Line: Teil A",
+	            "start": {
+	                "year": 1813,
+	                "month": 10,
+	                "day": 16,
+	                "hour": 9,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1813,
+	                "month": 10,
+	                "day": 16,
+	                "hour": 12,
+	                "minute": 0
+	            }
+	        },
+	        {
+	            "id": 15,
+	            "name": "Liebertwolkwitz: Lauriston's Last Line: Teil B",
+	            "start": {
+	                "year": 1813,
+	                "month": 10,
+	                "day": 16,
+	                "hour": 12,
+	                "minute": 20
+	            },
+	            "end": {
+	                "year": 1813,
+	                "month": 10,
+	                "day": 16,
+	                "hour": 18,
+	                "minute": 0
+	            }
+	        },
+	        {
+	            "id": 16,
+	            "name": "Doelitz: Largely Historical",
+	            "start": {
+	                "year": 1813,
+	                "month": 10,
+	                "day": 16,
+	                "hour": 9,
+	                "minute": 40
+	            },
+	            "end": {
+	                "year": 1813,
+	                "month": 10,
+	                "day": 16,
+	                "hour": 18,
+	                "minute": 0
+	            }
+	        },
+	        {
+	            "id": 17,
+	            "name": "Doelitz: Schwarzenberg's Plan",
+	            "start": {
+	                "year": 1813,
+	                "month": 10,
+	                "day": 16,
+	                "hour": 9,
+	                "minute": 40
+	            },
+	            "end": {
+	                "year": 1813,
+	                "month": 10,
+	                "day": 16,
+	                "hour": 18,
+	                "minute": 0
+	            }
+	        },
+	        {
+	            "id": 18,
+	            "name": "Doelitz: Retake Doelitz!",
+	            "start": {
+	                "year": 1813,
+	                "month": 10,
+	                "day": 16,
+	                "hour": 14,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1813,
+	                "month": 10,
+	                "day": 16,
+	                "hour": 17,
+	                "minute": 0
+	            }
+	        },
+	        {
+	            "id": 19,
+	            "name": "Lindenau: Largely Historical",
+	            "start": {
+	                "year": 1813,
+	                "month": 10,
+	                "day": 16,
+	                "hour": 10,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1813,
+	                "month": 10,
+	                "day": 16,
+	                "hour": 14,
+	                "minute": 40
+	            }
+	        },
+	        {
+	            "id": 20,
+	            "name": "Lindenau: Schwarzenberg's Caution",
+	            "start": {
+	                "year": 1813,
+	                "month": 10,
+	                "day": 16,
+	                "hour": 10,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1813,
+	                "month": 10,
+	                "day": 16,
+	                "hour": 14,
+	                "minute": 40
+	            }
+	        },
+	        {
+	            "id": 21,
+	            "name": "Lindenau: Screening Action",
+	            "start": {
+	                "year": 1813,
+	                "month": 10,
+	                "day": 16,
+	                "hour": 10,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1813,
+	                "month": 10,
+	                "day": 16,
+	                "hour": 14,
+	                "minute": 40
+	            }
+	        },
+	        {
+	            "id": 22,
+	            "name": "Lindenau: Napolean Breaks Out",
+	            "start": {
+	                "year": 1813,
+	                "month": 10,
+	                "day": 16,
+	                "hour": 10,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1813,
+	                "month": 10,
+	                "day": 16,
+	                "hour": 16,
+	                "minute": 40
+	            }
+	        },
+	        {
+	            "id": 23,
+	            "name": "Wiederitzsch: Largely Historical",
+	            "start": {
+	                "year": 1813,
+	                "month": 10,
+	                "day": 16,
+	                "hour": 16,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1813,
+	                "month": 10,
+	                "day": 16,
+	                "hour": 19,
+	                "minute": 40
+	            }
+	        },
+	        {
+	            "id": 24,
+	            "name": "Wiederitzsch: Attack on Wiederitzsch",
+	            "start": {
+	                "year": 1813,
+	                "month": 10,
+	                "day": 16,
+	                "hour": 16,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1813,
+	                "month": 10,
+	                "day": 16,
+	                "hour": 19,
+	                "minute": 40
+	            }
+	        },
+	        {
+	            "id": 25,
+	            "name": "Wiederitzsch: Moeckern and Wiederitzsch",
+	            "start": {
+	                "year": 1813,
+	                "month": 10,
+	                "day": 16,
+	                "hour": 13,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1813,
+	                "month": 10,
+	                "day": 16,
+	                "hour": 19,
+	                "minute": 40
+	            }
+	        },
+	        {
+	            "id": 26,
+	            "name": "Moeckern: Largely Historical",
+	            "start": {
+	                "year": 1813,
+	                "month": 10,
+	                "day": 16,
+	                "hour": 13,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1813,
+	                "month": 10,
+	                "day": 16,
+	                "hour": 19,
+	                "minute": 40
+	            }
+	        },
+	        {
+	            "id": 27,
+	            "name": "Moeckern: Optional Reinforcements and French Free Deployment",
+	            "start": {
+	                "year": 1813,
+	                "month": 10,
+	                "day": 16,
+	                "hour": 13,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1813,
+	                "month": 10,
+	                "day": 16,
+	                "hour": 19,
+	                "minute": 40
+	            }
+	        },
+	        {
+	            "id": 28,
+	            "name": "Moeckern: Cavalry Battles in Saxony",
+	            "start": {
+	                "year": 1813,
+	                "month": 10,
+	                "day": 16,
+	                "hour": 13,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1813,
+	                "month": 10,
+	                "day": 16,
+	                "hour": 17,
+	                "minute": 40
+	            }
+	        },
+	        {
+	            "id": 29,
+	            "name": "Moeckern: von Bluecher Vorwaerts!!!",
+	            "start": {
+	                "year": 1813,
+	                "month": 10,
+	                "day": 16,
+	                "hour": 11,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1813,
+	                "month": 10,
+	                "day": 16,
+	                "hour": 15,
+	                "minute": 0
+	            }
+	        },
+	        {
+	            "id": 30,
+	            "name": "Moeckern: In the Balance...Marmont's Counter Attack",
+	            "start": {
+	                "year": 1813,
+	                "month": 10,
+	                "day": 16,
+	                "hour": 17,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1813,
+	                "month": 10,
+	                "day": 17,
+	                "hour": 0,
+	                "minute": 0
+	            }
+	        }
+	    ]
+	},
+	{
+	    "id": 900,
+	    "name": "La Bataille de Friedland",
+	    "publisher": "Marshal Enterprises",
+	    "image": "friedland",
+		"sides": ["French", "Russian"],
+	    "scenarios": [
+	        {
+	            "id": 910,
+	            "name": "La Grand Bataille",
+	            "start": {
+	                "year": 1807,
+	                "month": 6,
+	                "day": 14,
+	                "hour": 9,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1807,
+	                "month": 6,
+	                "day": 14,
+	                "hour": 20,
+	                "minute": 40
+	            },				
+				"victory": [
+					{"side": "French", "level": "Decisive", "conditions": "Hold the church hex in Friedland, all hexes of Sortlack and the Cegielnia at games end"},
+					{"side": "French", "level": "Substantial", "conditions": "Put any three Russian divisions on level two and hold 6 hexes of Friedland until the end of the scenario"},
+					{"side": "French", "level": "Marginal", "conditions": "Hold all hexes of Sortlack until the end of the scenario"},					
+					{"side": "Russian", "level": "Marginal", "conditions": "Hold the Church hex in Friedland until the end of the scenario"},
+					{"side": "Russian", "level": "Substantial", "conditions": "Place Ney’s Corps d’ Armee on Level Two at any time"},
+					{"side": "Russian", "level": "Decisive", "conditions": "Hold a hex of Sortlack until the end of the scenario and place Ney’s Corps on Level Two at any time; or kill or capture Napoleon"},
+					{"side": "Russian", "level": "", "conditions": "The Coalition may improve their victory level by one if at any time they occupy, even for a turn, hex 1D or 2C"}
+				]				
+	        },
+	        {
+	            "id": 911,
+	            "name": "The Königsberg Road",
+	            "start": {
+	                "year": 1807,
+	                "month": 6,
+	                "day": 14,
+	                "hour": 9,
+	                "minute": 20
+	            },
+	            "end": {
+	                "year": 1807,
+	                "month": 6,
+	                "day": 14,
+	                "hour": 14,
+	                "minute": 0
+	            },
+				"victory": [
+					{"side": "French", "level": "Decisive", "conditions": "Capture six hexes of Heinrichsdorf at the end of the scenario"},
+					{"side": "French", "level": "Substantial", "conditions": "Capture four hexes of Heinrichsdorf at the end of the scenario"},
+					{"side": "French", "level": "Marginal", "conditions": "Capture two hexes of Heinrichsdorf at the end of the scenario"},					
+					{"side": "Russian", "level": "Marginal", "conditions": "Exit 12 increments (not Cossaque) off the board on the Route de Königsberg"},
+					{"side": "Russian", "level": "Substantial", "conditions": "Capture six hexes of Heinrichsdorf at the end of the scenario"},
+					{"side": "Russian", "level": "Decisive", "conditions": "Exit 12 increments (not Cossaque) off the board on the Route de Königsberg and capture six hexes of Heinrichsdorf at the end of the scenario"}
+				]				
+	        },
+	        {
+	            "id": 912,
+	            "name": "Sortlack Wood",
+	            "start": {
+	                "year": 1807,
+	                "month": 6,
+	                "day": 14,
+	                "hour": 10,
+	                "minute": 20
+	            },
+	            "end": {
+	                "year": 1807,
+	                "month": 6,
+	                "day": 14,
+	                "hour": 13,
+	                "minute": 0
+	            },
+				"victory": [
+					{"side": "French", "level": "Decisive", "conditions": "Capture all hexes of Sortlack and hold at the end of the scenario"},
+					{"side": "French", "level": "Substantial", "conditions": "Put the 2nd Russian Division on Level One at any time"},
+					{"side": "French", "level": "Marginal", "conditions": "Hold all hexes of Posthenen at the end of the scenario"},					
+					{"side": "Russian", "level": "Marginal", "conditions": "Capture Posthenen and hold at the end of the scenario"},
+					{"side": "Russian", "level": "Substantial", "conditions": "Capture 1D and hold at the end of the scenario"},
+					{"side": "Russian", "level": "Decisive", "conditions": "Capture FO and hold at the end of the scenario"}
+				]				
+	        },
+	        {
+	            "id": 913,
+	            "name": "Ney's Late Afternoon Attack on Friedland",
+	            "start": {
+	                "year": 1807,
+	                "month": 6,
+	                "day": 14,
+	                "hour": 16,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1807,
+	                "month": 6,
+	                "day": 14,
+	                "hour": 19,
+	                "minute": 0
+	            },
+				"victory": [
+					{"side": "French", "level": "Decisive", "conditions": "Hold any hex of Friedland and all the hexes of Sortlack at game’s end. Note the movement of the 3e Division and its effect on the victory conditions"},
+					{"side": "French", "level": "Substantial", "conditions": "Place any three Russian Divisions on Level Two"},
+					{"side": "French", "level": "Marginal", "conditions": "Hold all hexes of Sortlack until the end of the scenario"},					
+					{"side": "Russian", "level": "Marginal", "conditions": "Hold all hexes of Friedland"},
+					{"side": "Russian", "level": "Substantial", "conditions": "Hold all hexes of Friedland and not engage the Russian Guard"},
+					{"side": "Russian", "level": "Decisive", "conditions": "Hold a hex of Sortlack and all hexes of Friedland until the game’s end. Note movement of the 14th Division and its effect on the victory conditions"}
+				]				
+	        },
+	        {
+	            "id": 914,
+	            "name": "Early Morning Skirmish",
+	            "start": {
+	                "year": 1807,
+	                "month": 6,
+	                "day": 14,
+	                "hour": 3,
+	                "minute": 40
+	            },
+	            "end": {
+	                "year": 1807,
+	                "month": 6,
+	                "day": 14,
+	                "hour": 8,
+	                "minute": 40
+	            },
+				"victory": [
+					{"side": "French", "level": "Decisive", "conditions": "Rout and or eliminate 8 Russian battalions at the end of any Russian morale recovery phase"},					
+					{"side": "French", "level": "Substantial", "conditions": "Occupy all hexes of Posthenen at the end of the scenario"},
+					{"side": "French", "level": "Marginal", "conditions": "Occupy any one hex of Posthenen at the end of the scenario"},
+					{"side": "Russian", "level": "Marginal", "conditions": "Occupy any one hex of Posthenen at the end of the scenario"},
+					{"side": "Russian", "level": "Substantial", "conditions": "Occupy all hexes of Posthenen at the end of the scenario"},
+					{"side": "Russian", "level": "Decisive", "conditions": "Occupy hex 1D at the end of the scenario"}
+				]				
+	        },
+	        {
+	            "id": 915,
+	            "name": "Bennigsen Withdraws",
+	            "start": {
+	                "year": 1807,
+	                "month": 6,
+	                "day": 14,
+	                "hour": 9,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1807,
+	                "month": 6,
+	                "day": 14,
+	                "hour": 20,
+	                "minute": 40
+	            },
+				"victory": [
+					{"side": "French", "level": "Decisive", "conditions": "Cross the Alle Fluß within 6 hexes of Friedland with 100 increments"},
+					{"side": "French", "level": "Substantial", "conditions": "Put any three Russian divisions on Level Two and hold 6 hexes of Friedland until the end of the scenario"},
+					{"side": "French", "level": "Marginal", "conditions": "Capture all the hexes of Friedland by the end of the scenario"},					
+					{"side": "Russian", "level": "Marginal", "conditions": "Retreat 200 increments to the East Side of the Alle Fluß , all must be in good order"},
+					{"side": "Russian", "level": "Substantial", "conditions": "Retreat 300 increments to the East Side of the Alle Fluß, all must be in good"},
+					{"side": "Russian", "level": "Decisive", "conditions": "Retreat 450 increments to the East Side of the Alle Fluß, all must be in order"}
+				]				
+	        }
+	    ]
+	},
+
+  {
+	"id": 901,
+	"name": "La Bataille d' Aspern-Essling",
+	"publisher": "Marshal Enterprises",
+	"image": "aspern_essling",
+	"sides": ["French", "Austrian"],
+	"scenarios": [
+	  {
+		"id": 920,
+		"name": "Missed Opportunities Both Sides (Day One)",
+		"start": {
+		  "year": 1809,
+		  "month": 5,
+		  "day": 21,
+		  "hour": 12,
+		  "minute": 0
+		},
+		"end": {
+		  "year": 1809,
+		  "month": 5,
+		  "day": 21,
+		  "hour": 22,
+		  "minute": 0
+		},
+		"victory": [
+			{"side": "French", "level": "Decisive", "conditions": "Hold 9-11 hexes of Aspern and 11-13 hexes of Essling"},
+			{"side": "French", "level": "Substantial", "conditions": "Hold 8-9 hexes of Aspern and 9-10 hexes of Essling"},
+			{"side": "French", "level": "Marginal", "conditions": "Hold 6-7 hexes of Aspern and 7-8 hexes of Essling"},
+			{"side": "", "level": "Draw", "conditions": "Any other result"},
+			{"side": "Austrian", "level": "Marginal", "conditions": "Hold 6-7 hexes of Aspern and 7-8 hexes of Essling"},
+			{"side": "Austrian", "level": "Substantial", "conditions": "Hold 8-9 hexes of Aspern and 9-10 hexes of Essling"},
+			{"side": "Austrian", "level": "Decisive", "conditions": "Hold all of 11 or 12 Aspern or 13 Essling, or get 50 factors within 6 hexes of the bridge to Lobau"}
+		]		
+	  },
+	  {
+		"id": 921,
+		"name": "The Bloody Battle Continues (Day Two)",
+		"start": {
+		  "year": 1809,
+		  "month": 5,
+		  "day": 22,
+		  "hour": 5,
+		  "minute": 0
+		},
+		"end": {
+		  "year": 1809,
+		  "month": 5,
+		  "day": 22,
+		  "hour": 18,
+		  "minute": 0
+		},
+		"victory": [
+			{"side": "French", "level": "Decisive", "conditions": "Hold 11 hexes of Essling, 13 hexes of Aspern, and 4 hexes of Brietenlee"},
+			{"side": "French", "level": "Substantial", "conditions": "Hold 11 hexes of Aspern and 13 hexes of Essling"},
+			{"side": "French", "level": "Marginal", "conditions": "Hold 6 hexes of Aspern and 7 hexes of Essling"},
+			{"side": "", "level": "Draw", "conditions": "The French hold 3 hexes of Aspern and 4 of Essling"},
+			{"side": "Austrian", "level": "Marginal", "conditions": "Hold 6 hexes of Aspern and 7 hexes of Essling"},
+			{"side": "Austrian", "level": "Substantial", "conditions": "Hold 8 hexes of Aspern and 9 hexes of Essling"},
+			{"side": "Austrian", "level": "Decisive", "conditions": "Hold all of 11 Aspern and 13 Essling, have infantry units south of the elevated road"}
+		]		
+	  },
+	  {
+		"id": 922,
+		"name": "The Bridge To Destiny (For Better or Worse)",
+		"start": {
+		  "year": 1809,
+		  "month": 5,
+		  "day": 21,
+		  "hour": 12,
+		  "minute": 0
+		},
+		"end": {
+		  "year": 1809,
+		  "month": 5,
+		  "day": 22,
+		  "hour": 18,
+		  "minute": 0
+		},
+		"victory": [
+			{"side": "French", "level": "Decisive", "conditions": "Hold 11 hexes of Essling, 13 hexes of Aspern, and 4 hexes of Brietenlee"},
+			{"side": "French", "level": "Substantial", "conditions": "Hold 11 hexes of Aspern and 13 hexes of Essling"},
+			{"side": "French", "level": "Marginal", "conditions": "Hold 6 hexes of Aspern and 7 hexes of Essling"},
+			{"side": "", "level": "Draw", "conditions": "The French hold 3 hexes of Aspern and 4 of Essling"},
+			{"side": "Austrian", "level": "Marginal", "conditions": "Hold 6 hexes of Aspern and 7 hexes of Essling"},
+			{"side": "Austrian", "level": "Substantial", "conditions": "Hold 8 hexes of Aspern and 9 hexes of Essling"},
+			{"side": "Austrian", "level": "Decisive", "conditions": "Hold all of 11 Aspern and 13 Essling, have infantry units south of the elevated road"}
+		]				
+	  },
+	  {
+		"id": 923,
+		"name": "Davout's Alternative Crossing (Day One)",
+		"start": {
+		  "year": 1809,
+		  "month": 5,
+		  "day": 21,
+		  "hour": 10,
+		  "minute": 0
+		},
+		"end": {
+		  "year": 1809,
+		  "month": 5,
+		  "day": 21,
+		  "hour": 14,
+		  "minute": 0
+		},
+		"victory": [
+			{"side": "French", "level": "Decisive", "conditions": "Hold all hexes of Kagran"},
+			{"side": "French", "level": "Substantial", "conditions": "Hold all hexes of Stadlau"},			
+			{"side": "", "level": "Draw", "conditions": "Any other result"},			
+			{"side": "Austrian", "level": "Substantial", "conditions": "Hold all hexes of Stadlau"},
+			{"side": "Austrian", "level": "Decisive", "conditions": "Hold all the 'Shorelin' hexes"}
+		]				
+	  },
+	  {
+		"id": 924,
+		"name": "The Struggle for Aspern Continues (Day Two)",
+		"start": {
+		  "year": 1809,
+		  "month": 5,
+		  "day": 22,
+		  "hour": 4,
+		  "minute": 0
+		},
+		"end": {
+		  "year": 1809,
+		  "month": 5,
+		  "day": 22,
+		  "hour": 14,
+		  "minute": 0
+		},
+		"victory": [
+			{"side": "French", "level": "Decisive", "conditions": "Hold all hexes of Aspern and Church"},
+			{"side": "French", "level": "Substantial", "conditions": "Hold 6 hexes of Aspern and Church"},
+			{"side": "French", "level": "Marginal", "conditions": "Hold 4 hexes of Aspern"},			
+			{"side": "Austrian", "level": "Marginal", "conditions": "Hold 4 hexes of Aspern"},
+			{"side": "Austrian", "level": "Substantial", "conditions": "Hold 6 hexes of Aspern and Church"},
+			{"side": "Austrian", "level": "Decisive", "conditions": "Hold all hexes of Aspern and Church"}
+		]		
+	  },
+	  {
+		"id": 925,
+		"name": "'Conquer or Die' (Day One)",
+		"start": {
+		  "year": 1809,
+		  "month": 5,
+		  "day": 21,
+		  "hour": 13,
+		  "minute": 0
+		},
+		"end": {
+		  "year": 1809,
+		  "month": 5,
+		  "day": 21,
+		  "hour": 19,
+		  "minute": 0
+		},
+		"victory": [
+			{"side": "French", "level": "Decisive", "conditions": "Hold all hexes of Aspern and Church"},
+			{"side": "French", "level": "Substantial", "conditions": "Hold 6 hexes of Aspern and Church"},
+			{"side": "French", "level": "Marginal", "conditions": "Hold 4 hexes of Aspern"},			
+			{"side": "Austrian", "level": "Marginal", "conditions": "Hold 4 hexes of Aspern"},
+			{"side": "Austrian", "level": "Substantial", "conditions": "Hold 6 hexes of Aspern and Church"},
+			{"side": "Austrian", "level": "Decisive", "conditions": "Hold all hexes of Aspern and Church"}
+		]		
+	  },
+	  {
+		"id": 926,
+		"name": "Cavalry Attack in the Center",
+		"start": {
+		  "year": 1809,
+		  "month": 5,
+		  "day": 21,
+		  "hour": 15,
+		  "minute": 0
+		},
+		"end": {
+		  "year": 1809,
+		  "month": 5,
+		  "day": 21,
+		  "hour": 19,
+		  "minute": 0
+		},
+		"victory": [
+			{"side": "French", "level": "Decisive", "conditions": "Don't allow any 2 Austrian infantry units within 6 hexes of the road/dike"},
+			{"side": "French", "level": "Substantial", "conditions": "Don't allow any 2 Austrian infantry units within 4 hexes of the road"},
+			{"side": "French", "level": "Marginal", "conditions": "Don't allow any 2 Austrian infantry units within 2 hexes of the road"},
+			{"side": "Austrian", "level": "Marginal", "conditions": "Get any 2 Austrian infantry within 5 hexes of the road"},
+			{"side": "Austrian", "level": "Substantial", "conditions": "Get any 2 Austrian infantry within 3 hexes of the road"},
+			{"side": "Austrian", "level": "Decisive", "conditions": "Hold 2 hexes of the road with Austrian infantry"}
+		]
+	  },
+	  {
+		"id": 927,
+		"name": "Rapp Resolute!",
+		"start": {
+		  "year": 1809,
+		  "month": 5,
+		  "day": 22,
+		  "hour": 11,
+		  "minute": 0
+		},
+		"end": {
+		  "year": 1809,
+		  "month": 5,
+		  "day": 22,
+		  "hour": 17,
+		  "minute": 0
+		},
+		"victory": [
+			{"side": "French", "level": "Victory", "conditions": "Hold 5 hexes of Essling"},
+			{"side": "", "level": "Draw", "conditions": "Any other result"},
+			{"side": "Austrian", "level": "Victory", "conditions": "Hold 3 hexes of Essling or capture the Granary"}
+		]				
+	  },
+	  {
+		"id": 928,
+		"name": "Morning Attack on Essling (Day Two)",
+		"start": {
+		  "year": 1809,
+		  "month": 5,
+		  "day": 22,
+		  "hour": 6,
+		  "minute": 0
+		},
+		"end": {
+		  "year": 1809,
+		  "month": 5,
+		  "day": 22,
+		  "hour": 9,
+		  "minute": 0
+		},
+		"victory": [
+			{"side": "French", "level": "Decisive", "conditions": "Hold all hexes of Essling"},
+			{"side": "", "level": "Draw", "conditions": "Any other result"},
+			{"side": "Austrian", "level": "Decisive", "conditions": "Hold all hexes of Essling"}
+		]				
+	  },
+	  {
+		"id": 929,
+		"name": "Lannes Last Hurrah (Day Two)",
+		"start": {
+		  "year": 1809,
+		  "month": 5,
+		  "day": 22,
+		  "hour": 7,
+		  "minute": 0
+		},
+		"end": {
+		  "year": 1809,
+		  "month": 5,
+		  "day": 22,
+		  "hour": 13,
+		  "minute": 0
+		},
+		"victory": [
+			{"side": "French", "level": "Decisive", "conditions": "Exit 50 increments of infantry off the North map edge"},
+			{"side": "French", "level": "Substantial", "conditions": "Place Division Brady and Weber on Morale Level 2"},
+			{"side": "French", "level": "Marginal", "conditions": "Hold all hexes of the Aspern-Essling road"},
+			{"side": "Austrian", "level": "Marginal", "conditions": "Place II Corps d'Armee on Morale Level 1"},
+			{"side": "Austrian", "level": "Substantial", "conditions": "Place II Corps d'Armee on Morale Level 2"},
+			{"side": "Austrian", "level": "Decisive", "conditions": "Hold 2 hexes of the Aspern-Essling road"}
+		]
+	  },
+	  {
+		"id": 930,
+		"name": "In Napolean's Perfect World",
+		"start": {
+		  "year": 1809,
+		  "month": 5,
+		  "day": 22,
+		  "hour": 7,
+		  "minute": 0
+		},
+		"end": {
+		  "year": 1809,
+		  "month": 5,
+		  "day": 22,
+		  "hour": 16,
+		  "minute": 0
+		},
+		"victory": [
+			{"side": "French", "level": "Decisive", "conditions": "Hold all 7 hexes of Breitenlee"},
+			{"side": "French", "level": "Substantial", "conditions": "Hold 5 hexes of Breitenlee"},
+			{"side": "French", "level": "Marginal", "conditions": "Hold 3 hexes of Breitenlee"},
+			{"side": "Austrian", "level": "Marginal", "conditions": "Hold 3 hexes of Breitenlee"},
+			{"side": "Austrian", "level": "Substantial", "conditions": "Hold 5 hexes of Breitenlee"},
+			{"side": "Austrian", "level": "Decisive", "conditions": "Hold all 7 hexes of Breitenlee"}
+		]
+	  },
+	  {
+		"id": 931,
+		"name": "Evening Attack on Essling (Day One)",
+		"start": {
+		  "year": 1809,
+		  "month": 5,
+		  "day": 21,
+		  "hour": 20,
+		  "minute": 0
+		},
+		"end": {
+		  "year": 1809,
+		  "month": 5,
+		  "day": 21,
+		  "hour": 23,
+		  "minute": 0
+		},
+		"victory": [
+			{"side": "French", "level": "Decisive", "conditions": "Hold all hexes of Essling"},
+			{"side": "French", "level": "Substantial", "conditions": "Hold 4 hexes of Essling"},
+			{"side": "French", "level": "Marginal", "conditions": "Hold 2 hexes of Essling"},
+			{"side": "Austrian", "level": "Marginal", "conditions": "Hold any hex of Essling"},
+			{"side": "Austrian", "level": "Substantial", "conditions": "Hold 3 hexes of Essling"},
+			{"side": "Austrian", "level": "Decisive", "conditions": "Hold all of Essling"}
+		]
+	  },
+	  {
+		"id": 932,
+		"name": "Lannes Retreat (Day Two)",
+		"start": {
+		  "year": 1809,
+		  "month": 5,
+		  "day": 22,
+		  "hour": 12,
+		  "minute": 0
+		},
+		"end": {
+		  "year": 1809,
+		  "month": 5,
+		  "day": 22,
+		  "hour": 15,
+		  "minute": 0
+		},
+		"victory": [
+			{"side": "French", "level": "Victory", "conditions": "Prevent Austrian victory"},
+			{"side": "Austrian", "level": "Victory", "conditions": "Place 30 increments South of the road"}
+		]		
+	  }
+	]
+  },
+  {
+	"id": 1001,
+	"name": "La Bataille de Neumarkt",
+	"publisher": "Marshal Enterprises",
+	"image": "neumarkt",
+	"sides": ["Austrian","French"],
+	"scenarios": [
+	  {
+		"id": 1050,
+		"name": "Neumarkt-Sankt Veit",
+		"start": {
+		  "year": 1809,
+		  "month": 4,
+		  "day": 24,
+		  "hour": 9,
+		  "minute": 0
+		},
+		"end": {
+		  "year": 1809,
+		  "month": 4,
+		  "day": 24,
+		  "hour": 15,
+		  "minute": 0
+		},
+		"victory": [
+			{"side": "Austrian", "low": 7, "high": 99, "level": "Decisive"},
+			{"side": "Austrian", "low": 6, "high": 6, "level": "Substantial"},
+			{"side": "Austrian", "low": 5, "high": 5, "level": "Marginal"},
+			{"side": "", "low": 3, "high": 4, "level": "Draw"},
+			{"side": "French", "low": 2, "high": 2, "level": "Marginal"},
+			{"side": "French", "low": 1, "high": 1, "level": "Substantial"},
+			{"side": "French", "low": -99, "high": 0, "level": "Decisive"}
+		]				
+	  }
+	]
+  },
+
+  {
+	"id": 1002,
+	"name": "La Bataille de Schoengrabern",
+	"publisher": "Marshal Enterprises",
+	"image": "schoengrabern",
+	"sides": ["French", "Russian"],
+	"scenarios": [
+	  {
+		"id": 10021,
+		"name": "Prinz Bagration holds the Line",
+		"start": {
+		  "year": 1805,
+		  "month": 11,
+		  "day": 16,
+		  "hour": 16,
+		  "minute": 0
+		},
+		"end": {
+		  "year": 1805,
+		  "month": 11,
+		  "day": 16,
+		  "hour": 21,
+		  "minute": 0
+		},
+		"victory": [
+			{"side": "French", "level": "Decisive", "conditions": "Capture all hexes of Guntersdorf"},
+			{"side": "French", "level": "Substantial", "conditions": "Capture two hexes of Guntersdorf"},
+			{"side": "French", "level": "Marginal", "conditions": "Capture one hex of Guntersdorf"},
+			{"side": "Russian", "level": "Marginal", "conditions": "Hold four hexes of Guntersdorf"},
+			{"side": "Russian", "level": "Substantial", "conditions": "Hold five hexes of Guntersdorf"},
+			{"side": "Russian", "level": "Decisive", "conditions": "Hold all hexes of Guntersdorf"}
+		]				
+	  }
+	]
+  },
+  
+	{
+	    "id": 1003,
+	    "name": "La Bataille d' Austerlitz",
+	    "publisher": "Marshal Enterprises",
+	    "image": "austerlitz",
+		"sides": ["French", "AustrianRussian"],
+	    "scenarios": [
+	        {
+	            "id": 10031,
+	            "name": "Kienmayer's Dawn Attack",
+	            "start": {
+	                "year": 1805,
+	                "month": 12,
+	                "day": 2,
+	                "hour": 8,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1805,
+	                "month": 12,
+	                "day": 2,
+	                "hour": 9,
+	                "minute": 20
+	            },
+				"victory": [
+					{"side": "French", "level": "Victory", "conditions": "Prevent a Coalition Victory"},
+					{"side": "AustrianRussian", "level": "Victory", "conditions": "Hold any two village hexes of Telnitz at end of scenario"}
+				]				
+	        },
+	        {
+	            "id": 10032,
+	            "name": "Friant's Stand on the Goldbach",
+	            "start": {
+	                "year": 1805,
+	                "month": 12,
+	                "day": 2,
+	                "hour": 9,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1805,
+	                "month": 12,
+	                "day": 2,
+	                "hour": 11,
+	                "minute": 40
+	            },
+				"victory": [
+					{"side": "French", "level": "Tactical", "conditions": "Place either Langeron or Przybyczewsky's Column on a morale level"},
+					{"side": "French", "level": "Marginal", "conditions": "Hold any one hex of Sokolnitz at the end of the scenario"},
+					{"side": "AustrianRussian", "level": "Marginal", "conditions": "Hold all hexes of Sokolnitz, the Schloss, and three Pheasantry hexes at the end of the scenario"},
+					{"side": "AustrianRussian", "level": "Tactical", "conditions": "Push all French units beyond scenario borders"}
+				]								
+	        },
+	        {
+	            "id": 10033,
+	            "name": "Doctorov's Second Bid",
+	            "start": {
+	                "year": 1805,
+	                "month": 12,
+	                "day": 2,
+	                "hour": 9,
+	                "minute": 40
+	            },
+	            "end": {
+	                "year": 1805,
+	                "month": 12,
+	                "day": 2,
+	                "hour": 12,
+	                "minute": 0
+	            },
+				"victory": [
+					{"side": "French", "level": "Tactical", "conditions": "Hold any hex of Telnitz at the end of the scenario"},
+					{"side": "French", "level": "Marginal", "conditions": "Attack the village with any five combat units on the 11:00, 11:20, or 11:40 turn"},
+					{"side": "AustrianRussian", "level": "Marginal", "conditions": "Hold all hexes of Telnitz"},
+					{"side": "AustrianRussian", "level": "Tactical", "conditions": "Eliminate 60% of all French units in this scenario"}
+				]				
+	        },
+	        {
+	            "id": 10034,
+	            "name": "Sacre' Nom De Dieu! Forward!",
+	            "start": {
+	                "year": 1805,
+	                "month": 12,
+	                "day": 2,
+	                "hour": 8,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1805,
+	                "month": 12,
+	                "day": 2,
+	                "hour": 12,
+	                "minute": 0
+	            },
+				"victory": [
+					{"side": "French", "level": "Decisive", "conditions": "Kill or Capture the Tsar"},
+					{"side": "French", "level": "Tactical", "conditions": "Hold all the hexes of Pratze, Blaskowitz, and all hexes of Stare Vinohrady at the end of the scenario"},
+					{"side": "French", "level": "Marginal", "conditions": "Hold all the hexes of Pratze and of Stare Vinohrady at the end of the scenario"},
+					{"side": "AustrianRussian", "level": "Marginal", "conditions": "Prevent the French Marginal"},
+					{"side": "AustrianRussian", "level": "Tactical", "conditions": "Prevent the French Tactical"},
+					{"side": "AustrianRussian", "level": "Decisive", "conditions": "Place Soult's Corps on Level Two. (2 battalions from LeGrand are routed"}
+				]				
+	        },
+	        {
+	            "id": 10035,
+	            "name": "Hollabrunn Refought",
+	            "start": {
+	                "year": 1805,
+	                "month": 12,
+	                "day": 2,
+	                "hour": 9,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1805,
+	                "month": 12,
+	                "day": 2,
+	                "hour": 12,
+	                "minute": 0
+	            },
+				"victory": [
+					{"side": "French", "level": "Decisive", "conditions": "Place Bagration on Level Two at the end of the scenario"},
+					{"side": "French", "level": "Tactical", "conditions": "Hold all hexes of Holubitz, Krug, and Posoritz by the end of the scenario"},
+					{"side": "French", "level": "Marginal", "conditions": "Place Bagration on Level One at the end of the scenario"},
+					{"side": "AustrianRussian", "level": "Marginal", "conditions": "Hold any hexes of Holubitz, Krug, and Posoritz by the end of the scenario"},
+					{"side": "AustrianRussian", "level": "Tactical", "conditions": "Hold all hexes of Holubitz, Krug, or Posoritz by the end of the scenario"},
+					{"side": "AustrianRussian", "level": "Decisive", "conditions": "Place V Corps on morale level one"}
+				]								
+	        },
+	        {
+	            "id": 10036,
+	            "name": "For God, Russia and the Tsar",
+	            "start": {
+	                "year": 1805,
+	                "month": 12,
+	                "day": 2,
+	                "hour": 12,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1805,
+	                "month": 12,
+	                "day": 2,
+	                "hour": 16,
+	                "minute": 0
+	            },
+				"victory": [
+					{"side": "French", "level": "Decisive", "conditions": "30 increments of Vandamme's Division must reach Exit by 1300"},
+					{"side": "French", "level": "Tactical", "conditions": "30 increments of Vandamme's Division must reach Exit by 1400"},
+					{"side": "French", "level": "Marginal", "conditions": "Eliminate 32 increments of the Russian Guard"},
+					{"side": "AustrianRussian", "level": "Marginal", "conditions": "Eliminate 20 increments of the French Guard"},
+					{"side": "AustrianRussian", "level": "Tactical", "conditions": "Eliminate 35 increments of the French Guard"},
+					{"side": "AustrianRussian", "level": "Decisive", "conditions": "Kill or capture Napoleon or Eliminate 30 increments of the French Guard"}
+				]				
+	        },
+	        {
+	            "id": 10037,
+	            "name": "Prince Bagration Escapes",
+	            "start": {
+	                "year": 1805,
+	                "month": 12,
+	                "day": 2,
+	                "hour": 14,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1805,
+	                "month": 12,
+	                "day": 2,
+	                "hour": 16,
+	                "minute": 0
+	            },
+				"victory": [
+					{"side": "French", "level": "Decisive", "conditions": "Place Bagration on Morale Level Three"},
+					{"side": "French", "level": "Tactical", "conditions": "Exit 25 cavalry increments off the map at the Route d'Olmutz and 25 increments off the map at the Route d'Austerlitz"},
+					{"side": "French", "level": "Marginal", "conditions": "Hold the exit road hexes for the Route d'Olmutz and the Route d'Austerlitz"},
+					{"side": "AustrianRussian", "level": "Marginal", "conditions": "Prevent French Marginal Victory"},
+					{"side": "AustrianRussian", "level": "Tactical", "conditions": "Exit 20 increments off the map at the Route d'Olmutz on last turn of the scenario"}
+				]				
+	        },
+	        {
+	            "id": 10038,
+	            "name": "Soult's Encirclement",
+	            "start": {
+	                "year": 1805,
+	                "month": 12,
+	                "day": 2,
+	                "hour": 12,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1805,
+	                "month": 12,
+	                "day": 2,
+	                "hour": 16,
+	                "minute": 0
+	            },
+				"victory": [
+					{"side": "French", "level": "Decisive", "conditions": "Prevent any of the Coalition Victory conditions"},
+					{"side": "French", "level": "Tactical", "conditions": "Place II and III Colonne on Morale Level Three at the end of the scenario"},
+					{"side": "French", "level": "Marginal", "conditions": "Capture all hexes of Telnitz, Sokolnitz, Castle, and Pheasantry at the end of the scenario"},
+					{"side": "AustrianRussian", "level": "Marginal", "conditions": "Exit 60 increments off the Southern Map Edge or hold Augezd"},
+					{"side": "AustrianRussian", "level": "Tactical", "conditions": "Exit 75 increments off the Southern Map Edge"},
+					{"side": "AustrianRussian", "level": "Decisive", "conditions": "Exit 75 increments off the Eastern Map Edge"}
+				]
+	        },
+	        {
+	            "id": 100310,
+	            "name": "Largely Historical",
+	            "start": {
+	                "year": 1805,
+	                "month": 12,
+	                "day": 2,
+	                "hour": 8,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1805,
+	                "month": 12,
+	                "day": 2,
+	                "hour": 16,
+	                "minute": 0
+	            },
+				"victory": [
+					{"side": "French", "low": 17, "high": 99, "level": "Decisive"},
+					{"side": "French", "low": 14, "high": 16, "level": "Substantial"},
+					{"side": "French", "low": 11, "high": 13, "level": "Marginal"},
+					{"side": "", "low": 9, "high": 10, "level": "Draw"},
+					{"side": "AustrianRussian", "low": 7, "high": 8, "level": "Marginal"},
+					{"side": "AustrianRussian", "low": 5, "high": 6, "level": "Substantial"},
+					{"side": "AustrianRussian", "low": -99, "high": 4, "level": "Decisive"}
+				]
+	        }			
+	    ]
+	},
+  
+	{
+	    "id": 31,
+	    "name": "La Bataille de Vauchamps",
+	    "publisher": "Marshal Enterprises / ATO",
+	    "image": "vauchamps",
+		"sides": ["French", "PrussianRussian"],
+	    "scenarios": [
+	        {
+	            "id": 32,
+	            "name": "The Battle for Vauchamps",
+	            "start": {
+	                "year": 1814,
+	                "month": 2,
+	                "day": 14,
+	                "hour": 9,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1814,
+	                "month": 2,
+	                "day": 14,
+	                "hour": 11,
+	                "minute": 40
+	            },
+				"victory": [
+					{"side": "French", "level": "Automatic", "conditions": "All Prussian units eliminated"},
+					{"side": "French", "level": "Decisive", "conditions": "No Prussian units in Vauchamps or La Boularderie by 11:00am"},
+					{"side": "French", "level": "Substantial", "conditions": "No Prussian units in Vauchamps or La Boularderie by 11:20am"},
+					{"side": "French", "level": "Marginal", "conditions": "No Prussian units in Vauchamps or La Boularderie at end of game"},
+					{"side": "", "level": "Draw", "conditions": "Neither side achieves a victory level or both achieve same level"},
+					{"side": "PrussianRussian", "level": "Marginal", "conditions": "Have 1 unit in both Vauchamps and La Boularderie at end of 11:20am OR 1 unit in La Boularderie with no French adjacent by end of game"},
+					{"side": "PrussianRussian", "level": "Substantial", "conditions": "Have 1 unit in both Vauchamps and La Boularderie at end of 11:40am"},
+					{"side": "PrussianRussian", "level": "Decisive", "conditions": "Have 1 unit in both Vauchamps and La Boularderie at end of game"},
+					{"side": "PrussianRussian", "level": "Automatic", "conditions": "All French VI Corps units eliminated"}
+				]
+	        },
+	        {
+	            "id": 33,
+	            "name": "The Battle and Pursuit",
+	            "start": {
+	                "year": 1814,
+	                "month": 2,
+	                "day": 14,
+	                "hour": 9,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1814,
+	                "month": 2,
+	                "day": 14,
+	                "hour": 15,
+	                "minute": 40
+	            },
+				"victory": [
+					{"side": "French", "level": "Automatic", "conditions": "Both Coalition commands are at Morale Level 3 AND Bluecher is captured or killed"},
+					{"side": "French", "level": "Decisive", "conditions": "French units but no Coalition units in Vauchamps or La Boularderie by 1:00pm"},
+					{"side": "French", "level": "Substantial", "conditions": "French units but no Coalition units in Vauchamps, La Boularderie, or Fromentieres by 2:00pm"},
+					{"side": "French", "level": "Marginal", "conditions": "French units but no Coalition units in Vauchamps, La Boularderie, Fromentieres, or Champaubert by 3:40pm"},
+					{"side": "", "level": "Draw", "conditions": "Neither side achieves a victory level or both achieve same level"},
+					{"side": "PrussianRussian", "level": "Marginal", "conditions": "No French units in Vauchamps at the end of the 11:00am turn"},
+					{"side": "PrussianRussian", "level": "Substantial", "conditions": "No French units in Vauchamps at the end of the 12:00pm turn"},
+					{"side": "PrussianRussian", "level": "Decisive", "conditions": "No French units in Vauchamps at the end of the 1:00pm turn"},
+					{"side": "PrussianRussian", "level": "Automatic", "conditions": "Napolean is captured or killed"}
+				]				
+	        },
+	        {
+	            "id": 34,
+	            "name": "Alternate Historical Battle",
+	            "start": {
+	                "year": 1814,
+	                "month": 2,
+	                "day": 14,
+	                "hour": 9,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1814,
+	                "month": 2,
+	                "day": 14,
+	                "hour": 15,
+	                "minute": 40
+	            },
+				"victory": [
+					{"side": "French", "level": "Automatic", "conditions": "Both Coalition commands are at Morale Level 3 AND Bluecher is captured or killed"},
+					{"side": "French", "level": "Decisive", "conditions": "French units but no Coalition units in Vauchamps or La Boularderie by 1:00pm"},
+					{"side": "French", "level": "Substantial", "conditions": "French units but no Coalition units in Vauchamps, La Boularderie, or Fromentieres by 2:00pm"},
+					{"side": "French", "level": "Marginal", "conditions": "French units but no Coalition units in Vauchamps, La Boularderie, Fromentieres, or Champaubert by 3:40pm"},
+					{"side": "", "level": "Draw", "conditions": "Neither side achieves a victory level or both achieve same level"},
+					{"side": "PrussianRussian", "level": "Marginal", "conditions": "No French units in Vauchamps at the end of the 11:00am turn"},
+					{"side": "PrussianRussian", "level": "Substantial", "conditions": "No French units in Vauchamps at the end of the 12:00pm turn"},
+					{"side": "PrussianRussian", "level": "Decisive", "conditions": "No French units in Vauchamps at the end of the 1:00pm turn"},
+					{"side": "PrussianRussian", "level": "Automatic", "conditions": "Napolean is captured or killed"}
+				]				
+	        }
+	    ]
+	},
+	{
+	    "id": 35,
+	    "name": "La Bataille d' Auerstaedt",
+	    "publisher": "Clash of Arms",
+	    "image": "auerstaedt",
+		"sides": ["French", "Prussian"],
+	    "scenarios": [
+	        {
+	            "id": 36,
+	            "name": "Historical Battle",
+	            "start": {
+	                "year": 1806,
+	                "month": 10,
+	                "day": 14,
+	                "hour": 6,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1806,
+	                "month": 10,
+	                "day": 14,
+	                "hour": 19,
+	                "minute": 0
+	            },
+				"victory": [
+					{"side": "French", "level": "Decisive", "conditions": "Capture the King or Queen of Prussia"},
+					{"side": "French", "level": "Overwhelming", "conditions": "No Hohenzollern infantry are left on the field of battle in good order by 7pm"},
+					{"side": "French", "level": "Victory", "conditions": "Control all hexes of Hassenhausen and have no Hohenzollern units east of that town by 7pm"},
+					{"side": "Prussian", "level": "Victory", "conditions": "Place the French III Corps on Level II, control five villages on the map, and have no more than 3 divisions on or above Level II by 7pm"},
+					{"side": "Prussian", "level": "Overwhelming", "conditions": "Place the French III Corps on Level III and force Marshal Davout to leave the field of battle by 7pm"},
+					{"side": "Prussian", "level": "Decisive", "conditions": "Only by beating L'Emperuer can the forces of despotism gain a decisive result"}
+				]				
+	        },
+	        {
+	            "id": 37,
+	            "name": "The Duke of Brunswick",
+	            "start": {
+	                "year": 1806,
+	                "month": 10,
+	                "day": 14,
+	                "hour": 10,
+	                "minute": 20
+	            },
+	            "end": {
+	                "year": 1806,
+	                "month": 10,
+	                "day": 14,
+	                "hour": 19,
+	                "minute": 0
+	            }
+	        }
+	    ]
+	},
+	{
+	    "id": 38,
+	    "name": "La Bataille de Preussesch-Eylau",
+	    "publisher": "Clash of Arms",
+	    "image": "eylau",
+		"sides": ["French", "PrussianRussian"],
+	    "scenarios": [
+	        {
+	            "id": 39,
+	            "name": "The Opening Moves",
+	            "start": {
+	                "year": 1807,
+	                "month": 2,
+	                "day": 7,
+	                "hour": 14,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1807,
+	                "month": 2,
+	                "day": 7,
+	                "hour": 19,
+	                "minute": 0
+	            },
+				"victory": [
+					{"side": "French", "level": "Victory", "conditions": "Control all of Feiheit, the Chateau, the Church, at 2/3 of Preussisch-Eylau"},
+					{"side": "PrussianRussian", "level": "Victory", "conditions": "Control 2/3 of Preussisch-Eylau or place the French IV Corps on Level 2"}
+				]
+	        },
+	        {
+	            "id": 40,
+	            "name": "The Assault of the VII Corps",
+	            "start": {
+	                "year": 1807,
+	                "month": 2,
+	                "day": 8,
+	                "hour": 8,
+	                "minute": 40
+	            },
+	            "end": {
+	                "year": 1807,
+	                "month": 2,
+	                "day": 8,
+	                "hour": 11,
+	                "minute": 0
+	            },
+				"victory": [
+					{"side": "French", "level": "Victory", "conditions": "Occupy Anklappen at any time"},
+					{"side": "PrussianRussian", "level": "Victory", "conditions": "Deny the French"}
+				]				
+	        },
+	        {
+	            "id": 41,
+	            "name": "Murat's Charge",
+	            "start": {
+	                "year": 1807,
+	                "month": 2,
+	                "day": 8,
+	                "hour": 10,
+	                "minute": 40
+	            },
+	            "end": {
+	                "year": 1807,
+	                "month": 2,
+	                "day": 8,
+	                "hour": 12,
+	                "minute": 40
+	            },
+				"victory": [
+					{"side": "French", "level": "Victory", "conditions": "Place at least 1 Russian division on Level 3"},
+					{"side": "PrussianRussian", "level": "Victory", "conditions": "Deny the French"}
+				]
+	        },
+	        {
+	            "id": 42,
+	            "name": "Grand Battle",
+	            "start": {
+	                "year": 1807,
+	                "month": 2,
+	                "day": 8,
+	                "hour": 7,
+	                "minute": 40
+	            },
+	            "end": {
+	                "year": 1807,
+	                "month": 2,
+	                "day": 8,
+	                "hour": 20,
+	                "minute": 0
+	            },
+				"victory": [
+					{"side": "French", "level": "Decisive", "conditions": "Drive all Russian and Prussian infantry from the field by 8pm"},
+					{"side": "French", "level": "Overwhelming", "conditions": "Capture/destroy 30 Russian or Prussian batteries and place 3 Russian divisions on Level 3 by 8pm"},
+					{"side": "French", "level": "Victory", "conditions": "Be last to occupy all hexes of Schmoditten, Schloditten, Anklappen, Althoff, Mollwitten, Klein Sausgarten, Serpallen and all towns that begin in French control"},
+					{"side": "", "level": "Draw", "conditions": "If both sides can claim a victory"},
+					{"side": "PrussianRussian", "level": "Victory", "conditions": "Place on French Corps on Level 3 and control Schmoditten, Kutschitten, and Lampasch by 8pm"},
+					{"side": "PrussianRussian", "level": "Overwhelming", "conditions": "Be last to occupy all towns on map except Althoff and place 2 French Corps on Level 3 by 8pm"},
+					{"side": "PrussianRussian", "level": "Decisive", "conditions": "Kill or capture the Empereur of the French"}
+				]
+	        },
+	        {
+	            "id": 43,
+	            "name": "La Bataille de Preussisch-Eylau",
+	            "start": {
+	                "year": 1807,
+	                "month": 2,
+	                "day": 7,
+	                "hour": 14,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1807,
+	                "month": 2,
+	                "day": 8,
+	                "hour": 22,
+	                "minute": 0
+	            },
+				"victory": [
+					{"side": "French", "level": "Decisive", "conditions": "Drive all Russian and Prussian infantry from the field by 8pm"},
+					{"side": "French", "level": "Overwhelming", "conditions": "Capture/destroy 30 Russian or Prussian batteries and place 3 Russian divisions on Level 3 by 8pm"},
+					{"side": "French", "level": "Victory", "conditions": "Be last to occupy all hexes of Schmoditten, Schloditten, Anklappen, Althoff, Mollwitten, Klein Sausgarten, Serpallen and all towns that begin in French control"},
+					{"side": "", "level": "Draw", "conditions": "If both sides can claim a victory"},
+					{"side": "PrussianRussian", "level": "Victory", "conditions": "Place on French Corps on Level 3 and control Schmoditten, Kutschitten, and Lampasch by 8pm"},
+					{"side": "PrussianRussian", "level": "Overwhelming", "conditions": "Be last to occupy all towns on map except Althoff and place 2 French Corps on Level 3 by 8pm"},
+					{"side": "PrussianRussian", "level": "Decisive", "conditions": "Kill or capture the Empereur of the French"}
+				]				
+	        }
+	    ]
+	},
+	{
+	    "id": 44,
+	    "name": "La Bataille de Talavera",
+	    "publisher": "Clash of Arms",
+	    "image": "talavera",
+		"sides": ["French", "AngloSpanish"],
+	    "scenarios": [
+	        {
+	            "id": 45,
+	            "name": "Ruffin's Night Attack",
+	            "start": {
+	                "year": 1809,
+	                "month": 7,
+	                "day": 27,
+	                "hour": 20,
+	                "minute": 20
+	            },
+	            "end": {
+	                "year": 1809,
+	                "month": 7,
+	                "day": 28,
+	                "hour": 1,
+	                "minute": 0
+	            },
+				"victory": [
+					{"side": "French", "level": "Victory", "conditions": "Capture and hold hex ST"},
+					{"side": "AngloSpanish", "level": "Victory", "conditions": "Prevent capture of hex ST"}
+				]				
+	        },
+	        {
+	            "id": 46,
+	            "name": "Marshal Victor's Morning Attack",
+	            "start": {
+	                "year": 1809,
+	                "month": 7,
+	                "day": 28,
+	                "hour": 5,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1809,
+	                "month": 7,
+	                "day": 28,
+	                "hour": 9,
+	                "minute": 0
+	            },
+				"victory": [
+					{"side": "French", "level": "Victory", "conditions": "Capture hex LA by 9am"},
+					{"side": "AngloSpanish", "level": "Victory", "conditions": "Prevent capture of hex LA"}
+				]								
+	        },
+	        {
+	            "id": 47,
+	            "name": "Marshal Jourdan's Plan",
+	            "start": {
+	                "year": 1809,
+	                "month": 7,
+	                "day": 28,
+	                "hour": 9,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1809,
+	                "month": 7,
+	                "day": 28,
+	                "hour": 17,
+	                "minute": 20
+	            },
+				"victory": [
+					{"side": "French", "level": "Victory", "conditions": "Completely clear Talavera of Spanish troops"},
+					{"side": "AngloSpanish", "level": "Victory", "conditions": "Hold any part of Talavera"}
+				]								
+	        },
+	        {
+	            "id": 48,
+	            "name": "The Afternoon Assault",
+	            "start": {
+	                "year": 1809,
+	                "month": 7,
+	                "day": 28,
+	                "hour": 11,
+	                "minute": 40
+	            },
+	            "end": {
+	                "year": 1809,
+	                "month": 7,
+	                "day": 28,
+	                "hour": 20,
+	                "minute": 0
+	            },
+				"victory": [
+					{"side": "French", "level": "Overwhelming Victory", "conditions": "Exit a Corps off the map at the Route de Oropesa, no worse than morale level 1"},
+					{"side": "French", "level": "Victory", "conditions": "Clear Talavera of all enemy troops or place the Army of Portugal on morale level 2 or higher"},
+					{"side": "", "level": "Defeat", "conditions": "If both sides can claim a level of victory"},
+					{"side": "AngloSpanish", "level": "Victory", "conditions": "Place both French Corps on morale level 1"},
+					{"side": "AngloSpanish", "level": "Overwhelming Victory", "conditions": "Place both French Corps on morale level 2 or higher, or capture the King of Spain"}
+				]				
+	        },
+	        {
+	            "id": 49,
+	            "name": "La Bataille d'Espagnol-Talavera",
+	            "start": {
+	                "year": 1809,
+	                "month": 7,
+	                "day": 28,
+	                "hour": 5,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1809,
+	                "month": 7,
+	                "day": 28,
+	                "hour": 20,
+	                "minute": 0
+	            },
+				"victory": [
+					{"side": "French", "level": "Overwhelming Victory", "conditions": "Exit a Corps off the map at the Route de Oropesa, no worse than morale level 1"},
+					{"side": "French", "level": "Victory", "conditions": "Clear Talavera of all enemy troops or place the Army of Portugal on morale level 2 or higher"},
+					{"side": "", "level": "Defeat", "conditions": "If both sides can claim a level of victory"},
+					{"side": "AngloSpanish", "level": "Victory", "conditions": "Place both French Corps on morale level 1"},
+					{"side": "AngloSpanish", "level": "Overwhelming Victory", "conditions": "Place both French Corps on morale level 2 or higher, or capture the King of Spain"}
+				]
+	        }
+	    ]
+	},
+	{
+	    "id": 50,
+	    "name": "La Bataille d'Albuera",
+	    "publisher": "Clash of Arms",
+	    "image": "albuera",
+		"sides": ["French", "AngloSpanish"],
+	    "scenarios": [
+	        {
+	            "id": 51,
+	            "name": "Soult Attacks Beresford",
+	            "start": {
+	                "year": 1811,
+	                "month": 5,
+	                "day": 16,
+	                "hour": 8,
+	                "minute": 40
+	            },
+	            "end": {
+	                "year": 1811,
+	                "month": 5,
+	                "day": 16,
+	                "hour": 21,
+	                "minute": 20
+	            },
+				"victory": [
+					{"side": "French", "level": "Overwhelming Victory", "conditions": "Clear the map of good order enemy units"},
+					{"side": "French", "level": "Victory", "conditions": "Exit 5 good order battalions with greater than 50% strength off the Camino de Badajoz"},
+					{"side": "", "level": "Defeat", "conditions": "If both sides can claim a level of victory"},
+					{"side": "AngloSpanish", "level": "Victory", "conditions": "Hold the village of Albuera while maintaining the English contingent on a morale level no higher than 2"},
+					{"side": "AngloSpanish", "level": "Overwhelming Victory", "conditions": "Hold the village of Albuera while maintaining the English contingent on a morale level no higher than 1"}
+				]				
+	        }
+	    ]
+	},
+	{
+	    "id": 52,
+	    "name": "La Bataille de Ligny",
+	    "publisher": "Clash of Arms",
+	    "image": "ligny",
+		"sides": ["French", "Prussian"],
+	    "scenarios": [
+	        {
+	            "id": 53,
+	            "name": "Girard's Assault",
+	            "start": {
+	                "year": 1815,
+	                "month": 6,
+	                "day": 16,
+	                "hour": 14,
+	                "minute": 40
+	            },
+	            "end": {
+	                "year": 1815,
+	                "month": 6,
+	                "day": 16,
+	                "hour": 18,
+	                "minute": 0
+	            }
+	        },
+	        {
+	            "id": 54,
+	            "name": "The Assault on Ligny",
+	            "start": {
+	                "year": 1815,
+	                "month": 6,
+	                "day": 16,
+	                "hour": 14,
+	                "minute": 20
+	            },
+	            "end": {
+	                "year": 1815,
+	                "month": 6,
+	                "day": 16,
+	                "hour": 17,
+	                "minute": 40
+	            }
+	        },
+	        {
+	            "id": 55,
+	            "name": "Theilman's Feint",
+	            "start": {
+	                "year": 1815,
+	                "month": 6,
+	                "day": 16,
+	                "hour": 17,
+	                "minute": 40
+	            },
+	            "end": {
+	                "year": 1815,
+	                "month": 6,
+	                "day": 16,
+	                "hour": 19,
+	                "minute": 20
+	            }
+	        },
+	        {
+	            "id": 56,
+	            "name": "The Grand Battle",
+	            "start": {
+	                "year": 1815,
+	                "month": 6,
+	                "day": 16,
+	                "hour": 13,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1815,
+	                "month": 6,
+	                "day": 16,
+	                "hour": 22,
+	                "minute": 20
+	            }
+	        }
+	    ]
+	},
+	{
+	    "id": 57,
+	    "name": "La Bataille des Quatre Bras",
+	    "publisher": "Clash of Arms",
+	    "image": "quatrebras",
+		"sides": ["French", "British"],
+	    "scenarios": [
+	        {
+	            "id": 58,
+	            "name": "Historical Battle",
+	            "start": {
+	                "year": 1815,
+	                "month": 6,
+	                "day": 16,
+	                "hour": 11,
+	                "minute": 20
+	            },
+	            "end": {
+	                "year": 1815,
+	                "month": 6,
+	                "day": 16,
+	                "hour": 21,
+	                "minute": 20
+	            }
+	        },
+	        {
+	            "id": 59,
+	            "name": "Optional Start",
+	            "start": {
+	                "year": 1815,
+	                "month": 6,
+	                "day": 16,
+	                "hour": 14,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1815,
+	                "month": 6,
+	                "day": 16,
+	                "hour": 21,
+	                "minute": 20
+	            }
+	        }
+	    ]
+	},
+	{
+	    "id": 60,
+	    "name": "La Bataille de Mont St. Jean",
+	    "publisher": "Clash of Arms",
+	    "image": "montstjean",
+		"sides": ["French", "AngloPrussian"],
+	    "scenarios": [
+	        {
+	            "id": 61,
+	            "name": "Chateuu Goumont",
+	            "start": {
+	                "year": 1815,
+	                "month": 6,
+	                "day": 18,
+	                "hour": 11,
+	                "minute": 20
+	            },
+	            "end": {
+	                "year": 1815,
+	                "month": 6,
+	                "day": 18,
+	                "hour": 20,
+	                "minute": 20
+	            }
+	        },
+	        {
+	            "id": 62,
+	            "name": "The Grand Battery",
+	            "start": {
+	                "year": 1815,
+	                "month": 6,
+	                "day": 18,
+	                "hour": 13,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1815,
+	                "month": 6,
+	                "day": 18,
+	                "hour": 13,
+	                "minute": 40
+	            }
+	        },
+	        {
+	            "id": 63,
+	            "name": "Papelotte",
+	            "start": {
+	                "year": 1815,
+	                "month": 6,
+	                "day": 18,
+	                "hour": 13,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1815,
+	                "month": 6,
+	                "day": 18,
+	                "hour": 22,
+	                "minute": 0
+	            }
+	        },
+	        {
+	            "id": 64,
+	            "name": "La Haye Saint",
+	            "start": {
+	                "year": 1815,
+	                "month": 6,
+	                "day": 18,
+	                "hour": 13,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1815,
+	                "month": 6,
+	                "day": 18,
+	                "hour": 18,
+	                "minute": 0
+	            }
+	        },
+	        {
+	            "id": 65,
+	            "name": "Plancenoit",
+	            "start": {
+	                "year": 1815,
+	                "month": 6,
+	                "day": 18,
+	                "hour": 16,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1815,
+	                "month": 6,
+	                "day": 18,
+	                "hour": 22,
+	                "minute": 0
+	            }
+	        },
+	        {
+	            "id": 66,
+	            "name": "Grand Battle",
+	            "start": {
+	                "year": 1815,
+	                "month": 6,
+	                "day": 18,
+	                "hour": 11,
+	                "minute": 20
+	            },
+	            "end": {
+	                "year": 1815,
+	                "month": 6,
+	                "day": 18,
+	                "hour": 22,
+	                "minute": 0
+	            }
+	        }
+	    ]
+	},
+	{
+	    "id": 67,
+	    "name": "La Bataille de Wavre",
+	    "publisher": "Clash of Arms",
+	    "image": "wavre",
+		"sides": ["French", "Prussian"],
+	    "scenarios": [
+	        {
+	            "id": 68,
+	            "name": "Historical A",
+	            "start": {
+	                "year": 1815,
+	                "month": 6,
+	                "day": 18,
+	                "hour": 15,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1815,
+	                "month": 6,
+	                "day": 19,
+	                "hour": 10,
+	                "minute": 0
+	            }
+	        },
+	        {
+	            "id": 69,
+	            "name": "Historical B",
+	            "start": {
+	                "year": 1815,
+	                "month": 6,
+	                "day": 19,
+	                "hour": 4,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1815,
+	                "month": 6,
+	                "day": 19,
+	                "hour": 12,
+	                "minute": 0
+	            }
+	        },
+	        {
+	            "id": 70,
+	            "name": "Historical C",
+	            "start": {
+	                "year": 1815,
+	                "month": 6,
+	                "day": 18,
+	                "hour": 4,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1815,
+	                "month": 6,
+	                "day": 18,
+	                "hour": 15,
+	                "minute": 0
+	            }
+	        }
+	    ]
+	},
+	{
+	    "id": 71,
+	    "name": "La Bataille de Corunna-Espagnol",
+	    "publisher": "Clash of Arms",
+	    "image": "corunna",
+		"sides": ["French", "British"],
+	    "scenarios": [
+	        {
+	            "id": 72,
+	            "name": "La Bataille de Piedralonga",
+	            "start": {
+	                "year": 1809,
+	                "month": 1,
+	                "day": 15,
+	                "hour": 11,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1809,
+	                "month": 1,
+	                "day": 15,
+	                "hour": 15,
+	                "minute": 0
+	            }
+	        },
+	        {
+	            "id": 73,
+	            "name": "La Bataille des Porte des Corruna",
+	            "start": {
+	                "year": 1809,
+	                "month": 1,
+	                "day": 18,
+	                "hour": 7,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1809,
+	                "month": 1,
+	                "day": 18,
+	                "hour": 12,
+	                "minute": 0
+	            }
+	        },
+	        {
+	            "id": 74,
+	            "name": "Main Battle",
+	            "start": {
+	                "year": 1809,
+	                "month": 1,
+	                "day": 16,
+	                "hour": 12,
+	                "minute": 20
+	            },
+	            "end": {
+	                "year": 1809,
+	                "month": 1,
+	                "day": 16,
+	                "hour": 19,
+	                "minute": 20
+	            }
+	        }
+	    ]
+	},
+	{
+	    "id": 75,
+	    "name": "La Bataille de Luetzen",
+	    "publisher": "Clash of Arms",
+	    "image": "luetzen",
+		"sides": ["French", "PrussianRussian"],
+	    "scenarios": [
+	        {
+	            "id": 76,
+	            "name": "Bluecher Impetuous",
+	            "start": {
+	                "year": 1813,
+	                "month": 5,
+	                "day": 2,
+	                "hour": 11,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1813,
+	                "month": 5,
+	                "day": 2,
+	                "hour": 12,
+	                "minute": 40
+	            }
+	        },
+	        {
+	            "id": 77,
+	            "name": "Bluecher Wary",
+	            "start": {
+	                "year": 1813,
+	                "month": 5,
+	                "day": 2,
+	                "hour": 11,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1813,
+	                "month": 5,
+	                "day": 2,
+	                "hour": 13,
+	                "minute": 40
+	            }
+	        },
+	        {
+	            "id": 78,
+	            "name": "Bluecher Circumspect",
+	            "start": {
+	                "year": 1813,
+	                "month": 5,
+	                "day": 2,
+	                "hour": 11,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1813,
+	                "month": 5,
+	                "day": 2,
+	                "hour": 13,
+	                "minute": 40
+	            }
+	        },
+	        {
+	            "id": 79,
+	            "name": "Grand Battle",
+	            "start": {
+	                "year": 1813,
+	                "month": 5,
+	                "day": 2,
+	                "hour": 11,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1813,
+	                "month": 5,
+	                "day": 2,
+	                "hour": 20,
+	                "minute": 40
+	            }
+	        }
+	    ]
+	},
+	{
+	    "id": 80,
+	    "name": "La Bataille d'Orthez",
+	    "publisher": "Clash of Arms",
+	    "image": "orthez",
+		"sides": ["French", "British"],
+	    "scenarios": [
+	        {
+	            "id": 81,
+	            "name": "Four on Four",
+	            "start": {
+	                "year": 1814,
+	                "month": 2,
+	                "day": 27,
+	                "hour": 8,
+	                "minute": 40
+	            },
+	            "end": {
+	                "year": 1814,
+	                "month": 2,
+	                "day": 27,
+	                "hour": 11,
+	                "minute": 40
+	            }
+	        },
+	        {
+	            "id": 82,
+	            "name": "The Battle for St. Boes",
+	            "start": {
+	                "year": 1814,
+	                "month": 2,
+	                "day": 27,
+	                "hour": 8,
+	                "minute": 40
+	            },
+	            "end": {
+	                "year": 1814,
+	                "month": 2,
+	                "day": 27,
+	                "hour": 13,
+	                "minute": 40
+	            }
+	        },
+	        {
+	            "id": 83,
+	            "name": "Grand Battle",
+	            "start": {
+	                "year": 1814,
+	                "month": 2,
+	                "day": 27,
+	                "hour": 8,
+	                "minute": 40
+	            },
+	            "end": {
+	                "year": 1814,
+	                "month": 2,
+	                "day": 27,
+	                "hour": 17,
+	                "minute": 40
+	            }
+	        }
+	    ]
+	},
+	{
+	    "id": 83,
+	    "name": "La Bataille de la Moscowa",
+	    "publisher": "Clash of Arms",
+	    "image": "moscowa",
+		"sides": ["French", "Russian"],
+	    "scenarios": [
+	        {
+	            "id": 84,
+	            "name": "Schevardino",
+	            "start": {
+	                "year": 1812,
+	                "month": 9,
+	                "day": 5,
+	                "hour": 15,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1812,
+	                "month": 9,
+	                "day": 5,
+	                "hour": 21,
+	                "minute": 40
+	            }
+	        },
+	        {
+	            "id": 85,
+	            "name": "Grand Battle",
+	            "start": {
+	                "year": 1812,
+	                "month": 9,
+	                "day": 7,
+	                "hour": 6,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1812,
+	                "month": 9,
+	                "day": 7,
+	                "hour": 21,
+	                "minute": 40
+	            }
+	        },
+	        {
+	            "id": 86,
+	            "name": "The Bagration Fleches",
+	            "start": {
+	                "year": 1812,
+	                "month": 9,
+	                "day": 7,
+	                "hour": 6,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1812,
+	                "month": 9,
+	                "day": 7,
+	                "hour": 12,
+	                "minute": 0
+	            }
+	        },
+	        {
+	            "id": 87,
+	            "name": "The Great Redoubt",
+	            "start": {
+	                "year": 1812,
+	                "month": 9,
+	                "day": 7,
+	                "hour": 9,
+	                "minute": 40
+	            },
+	            "end": {
+	                "year": 1812,
+	                "month": 9,
+	                "day": 7,
+	                "hour": 16,
+	                "minute": 0
+	            }
+	        },
+	        {
+	            "id": 88,
+	            "name": "Utitsa",
+	            "start": {
+	                "year": 1812,
+	                "month": 9,
+	                "day": 7,
+	                "hour": 9,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1812,
+	                "month": 9,
+	                "day": 7,
+	                "hour": 17,
+	                "minute": 0
+	            }
+	        },
+	        {
+	            "id": 89,
+	            "name": "Barclay in Command",
+	            "start": {
+	                "year": 1812,
+	                "month": 9,
+	                "day": 7,
+	                "hour": 6,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1812,
+	                "month": 9,
+	                "day": 7,
+	                "hour": 21,
+	                "minute": 40
+	            }
+	        }
+	    ]
+	}
+]

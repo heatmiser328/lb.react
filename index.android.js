@@ -1,6 +1,4 @@
-'use strict';
-import React, {AppRegistry} from 'react-native';
-var { View } = React;
-let lb = require('./src/mainView');
+import {AppRegistry} from 'react-native';
+import App from './src/app';
 
-AppRegistry.registerComponent('lb', () => lb);
+AppRegistry.registerComponent('lb', () => App);
