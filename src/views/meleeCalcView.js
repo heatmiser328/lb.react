@@ -1,10 +1,9 @@
 import React from 'react';
 import { View, Text, Switch } from 'react-native';
 import { connect } from 'react-redux';
-import {SpinNumeric,MultiSelectList,RadioButtonGroup,IconButton} from 'react-native-nub';
+import {SpinNumeric,MultiSelectList,RadioButtonGroup,IconButton,Style} from 'react-native-nub';
 import Icons from '../res';
 import getRules from '../selectors/rules';
-
 
 var MeleeCalcView = React.createClass({
     getInitialState() {
@@ -15,9 +14,25 @@ var MeleeCalcView = React.createClass({
             lance: '0',
             total: '12',
             mods: {},
-            side: this.props.side == 'attack' ? 0 : 1
+            side: this.props.side == 'attack' ? 0 : 1,
+            x: 0,
+            y: 0,
+            width: 0,
+            height: 0,
+            viewHeight: 100            
         };
     },
+    onLayout(e) {
+        if (this.state.width != e.nativeEvent.layout.width ||
+            this.state.height != e.nativeEvent.layout.height) {
+            this.setState({
+                x: e.nativeEvent.layout.x,
+                y: e.nativeEvent.layout.y,
+                width: e.nativeEvent.layout.width,
+                height: e.nativeEvent.layout.height
+            });
+        }
+    },    
     calcTotal() {
         let l = +this.state.lance;
         let m = +this.state.melee * (((+this.state.incr) - (+this.state.loss)) / (+this.state.incr));
@@ -68,24 +83,24 @@ var MeleeCalcView = React.createClass({
         this.props.onSet && this.props.onSet(side, this.state.total);
     },
     render() {
+        let iconSize = (Math.min(this.state.height, this.state.width)) || 32;
         return (
             <View style={{flex:1, justifyContent: 'center', marginLeft: 20, marginRight: 20,
                         borderRadius: 4, borderWidth: 2, borderColor: 'black', backgroundColor: 'whitesmoke'}}>
+                <View style={{flex: 1, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', backgroundColor: 'silver'}}>
+                    <View style={{flex: 2, justifyContent:'center', alignItems: 'center'}}>
+                        <RadioButtonGroup buttons={[{label: 'Attacker', value: 0}, {label: 'Defender', value: 1}]} state={this.state.side}
+                            onSelected={this.onSideChanged} />
+                    </View>
+                    <View style={{flex:.5, margin:2, alignItems: 'center'}} onLayout={this.onLayout}>
+                        <IconButton image={Icons['equal']} height={iconSize} width={iconSize} resizeMode='stretch' onPress={this.onSet} />
+                    </View>
+                    <View style={{flex:.5, margin:2, alignItems: 'center'}}>
+                        <IconButton image={Icons['add']} height={iconSize} width={iconSize} resizeMode='stretch' onPress={this.onAdd} />
+                    </View>
+                </View>                        
                 <View style={{flex: 5, flexDirection: 'row', justifyContent: 'center'}}>
-                    <View style={{flex: 2, justifyContent: 'center'}}>
-                        {/*<Text style={{fontSize: 16,fontWeight: 'bold',backgroundColor: 'silver', textAlign: 'center'}}>{'Calculator'}</Text>*/}
-                        <View style={{flex: 1, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', backgroundColor: 'silver'}}>
-                            <View style={{flex: 2, justifyContent:'center', alignItems: 'center'}}>
-                                <RadioButtonGroup buttons={[{label: 'Attacker', value: 0}, {label: 'Defender', value: 1}]} state={this.state.side}
-                                    onSelected={this.onSideChanged} />
-                            </View>
-                            <View style={{flex:.5, margin:2}}>
-                                <IconButton image={Icons['equal']} height={32} width={32} resizeMode='stretch' onPress={this.onSet} />
-                            </View>
-                            <View style={{flex:.5, margin:2}}>
-                                <IconButton image={Icons['add']} height={32} width={32} resizeMode='stretch' onPress={this.onAdd} />
-                            </View>
-                        </View>      
+                    <View style={{flex: 2, justifyContent: 'center'}}>                        
                         <View style={{flex:6}}>
                             <View style={{flex: 1, marginLeft: 5}}>
                                 <SpinNumeric label={'Incr'} value={this.state.incr} min={1} integer={true} onChanged={this.onIncrChanged} />
@@ -111,16 +126,16 @@ var MeleeCalcView = React.createClass({
                     </View>
                 </View>
             </View>
-        );
+        );        
     },
     modifiers() {        
         if (!this.props.rules || !this.props.rules.hasOwnProperty('melee')) {
             // defaults
             return [
-                {name: '1/3', mod: 0.333},
-                {name: '1/2', mod: 0.5},
-                {name: '3/2', mod: 1.5},
-                {name: '2', mod: 2},
+                {name: 'x1/3', mod: 0.333},
+                {name: 'x1/2', mod: 0.5},
+                {name: 'x3/2', mod: 1.5},
+                {name: 'x2', mod: 2},
                 {name: 'Lancers in Line', mod: 2}
             ];
         }

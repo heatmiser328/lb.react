@@ -1,5 +1,6 @@
 import React from 'react';
 import { View,TouchableOpacity,Text } from 'react-native';
+import {Style} from 'react-native-nub';
 
 var DiceModifiersView = React.createClass({
     onModifier(v) {
@@ -7,7 +8,7 @@ var DiceModifiersView = React.createClass({
             this.props.onChange && this.props.onChange(+v);
         }
     },
-    render() {
+    render() {        
         return (
             <View style={{flex: 1, flexDirection: 'row', alignItems: 'center'}}>
             {
@@ -17,20 +18,19 @@ var DiceModifiersView = React.createClass({
                             style={{
                                 flex: 1,
                                 //width: 16,
-                                height: 54,
-                                padding: 5,
+                                //height: 54,
+                                padding: Style.Padding.pad(5),
                                 alignItems: 'center',
                                 justifyContent: 'center',
-                                marginLeft: i == 0 ? 5 : 0,
-                                marginTop: 10,
-                                marginRight: 5,
+                                marginLeft: i == 0 ? 2 : 0,                                
+                                marginRight: 2,
                                 backgroundColor: 'blue',
                                 //backgroundColor: '#3F51B5'
                                 borderColor: 'black',
                                 borderWidth: 1,
                                 borderRadius:5
                             }}>
-                            <Text style={{color: 'white', fontSize: 22, textAlign: 'center', alignSelf:'center'}}>{v}</Text>
+                            <Text style={{color: 'white', fontSize: Style.Font.mediumlarge(), textAlign: 'center', alignSelf:'center'}}>{v}</Text>
                         </TouchableOpacity>
                     )
                 })

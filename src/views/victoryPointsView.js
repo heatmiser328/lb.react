@@ -1,28 +1,70 @@
 import React from 'react';
 import { View, Text, Image } from 'react-native';
 import { connect } from 'react-redux';
-import {SpinNumeric} from 'react-native-nub';
+import {SpinNumeric,Style} from 'react-native-nub';
 import Icons from '../res';
 import {setVictory,save} from '../actions/current';
 import getGame from '../selectors/game';
 import getVictory from '../selectors/victory';
 
 var VictoryLevel = React.createClass({
+    getInitialState() {
+        return {
+            x: 0,
+            y: 0,
+            width: 0,
+            height: 0,
+            viewHeight: 100
+        };
+    },
+    onLayout(e) {
+        if (this.state.width != e.nativeEvent.layout.width ||
+            this.state.height != e.nativeEvent.layout.height) {
+            this.setState({
+                x: e.nativeEvent.layout.x,
+                y: e.nativeEvent.layout.y,
+                width: e.nativeEvent.layout.width,
+                height: e.nativeEvent.layout.height
+            });
+        }
+    },        
     render() {
+        let iconsize = (Math.min(this.state.height, this.state.width) * 0.9) || 16;
         return (
-            <View style={{flex:1, flexDirection: 'row', justifyContent:'center',alignItems:'center'}}>
-                <Image style={{width: 64,height: 64,resizeMode: 'contain'}} source={Icons[this.props.side]}/>
-                <Text style={{fontWeight:'bold',fontSize:18,textAlign:'center', marginLeft: 20}}>{this.props.level}</Text>
+            <View style={{flex:1, flexDirection: 'row', justifyContent:'center',alignItems:'center'}} onLayout={this.onLayout}>
+                <Image style={{width: iconsize,height: iconsize,resizeMode: 'contain'}} source={Icons[this.props.side]}/>
+                <Text style={{fontSize:Style.Font.medium(),fontWeight:'bold',textAlign:'center', marginLeft: Style.Padding.pad(20)}}>{this.props.level}</Text>
             </View>            
         );
     }
 });
 
 var VictoryPoints = React.createClass({
+    getInitialState() {
+        return {
+            x: 0,
+            y: 0,
+            width: 0,
+            height: 0,
+            viewHeight: 100
+        };
+    },
+    onLayout(e) {
+        if (this.state.width != e.nativeEvent.layout.width ||
+            this.state.height != e.nativeEvent.layout.height) {
+            this.setState({
+                x: e.nativeEvent.layout.x,
+                y: e.nativeEvent.layout.y,
+                width: e.nativeEvent.layout.width,
+                height: e.nativeEvent.layout.height
+            });
+        }
+    },     
     render() {
+        let iconsize = (Math.min(this.state.height, this.state.width) * 0.9) || 16;        
         return (
-            <View style={{flex:1,flexDirection:'row'}}>
-                <Image style={{width: 64,height: 64,resizeMode: 'contain'}} source={Icons[this.props.side]}/>
+            <View style={{flex:1,flexDirection:'row'}} onLayout={this.onLayout}>
+                <Image style={{width: iconsize,height: iconsize,resizeMode: 'contain'}} source={Icons[this.props.side]}/>
                 <SpinNumeric value={this.props.value} min={0} onChanged={this.props.onChanged} />
             </View>
         );

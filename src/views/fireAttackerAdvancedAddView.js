@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, Switch } from 'react-native';
-import {SpinNumeric,SelectList,IconButton} from 'react-native-nub';
+import {SpinNumeric,SelectList,IconButton,Style} from 'react-native-nub';
 import QuickValuesView from './quickValuesView';
 import Icons from '../res';
 
@@ -8,9 +8,25 @@ var FireAttackerAdvancedAddView = React.createClass({
     getInitialState() {
         return {
             mods: {},
-            value: '1'
+            value: '1',
+            x: 0,
+            y: 0,
+            width: 0,
+            height: 0,
+            viewHeight: 100            
         };
     },
+    onLayout(e) {
+        if (this.state.width != e.nativeEvent.layout.width ||
+            this.state.height != e.nativeEvent.layout.height) {
+            this.setState({
+                x: e.nativeEvent.layout.x,
+                y: e.nativeEvent.layout.y,
+                width: e.nativeEvent.layout.width,
+                height: e.nativeEvent.layout.height
+            });
+        }
+    },        
     onValueChanged(v) {
         this.state.value = v;
         this.state.mods = {};
@@ -51,24 +67,25 @@ var FireAttackerAdvancedAddView = React.createClass({
         this.props.onAdd && this.props.onAdd(+this.state.value);
     },
     render() {
+        let iconSize = (Math.min(this.state.height, this.state.width)) || 32;
         return (
             <View style={{flex:1}}>
                 <View style={{flex:1, flexDirection: 'row', justifyContent: 'center', alignItems: 'flex-start'}}>
-                    <View style={{flex: 1, alignItems: 'center', marginTop:15}}>
-                        <IconButton image={Icons['equal']} height={32} width={32} resizeMode='stretch' onPress={this.onSet} />
+                    <View style={{flex: 1, alignItems: 'center', marginTop:15}} onLayout={this.onLayout}>
+                        <IconButton image={Icons['equal']} height={iconSize} width={iconSize} resizeMode='stretch' onPress={this.onSet} />
                     </View>
                     <View style={{flex: 2, alignSelf: 'stretch', justifyContent: 'flex-start'}}>
                         <SpinNumeric value={this.state.value} min={0} max={100} onChanged={this.onValueChanged} />
                     </View>
                     <View style={{flex: 1, alignItems: 'center', marginTop: 15}}>
-                        <IconButton image={Icons['add']} height={32} width={32} resizeMode='stretch' onPress={this.onAdd} />
+                        <IconButton image={Icons['add']} height={iconSize} width={iconSize} resizeMode='stretch' onPress={this.onAdd} />
                     </View>
                 </View>
                 <View style={{flex: .75, flexDirection: 'row'}}>
                     {['1/3','1/2','3/2'].map((v, i) => {
                         return (
                             <View key={i} style={{flex: 1,flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
-                                <Text>{v}</Text>
+                                <Text style={{fontSize: Style.Font.medium()}}>{v}</Text>
                                 <Switch value={this.state.mods[v]} onValueChange={this.onModifier(v)} />
                             </View>
                         );

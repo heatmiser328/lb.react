@@ -22,9 +22,25 @@ var ChargeStandView = React.createClass({
             mods: {},
             die1: 1,
             die2: 1,
-            results: ''
+            results: '',
+            x: 0,
+            y: 0,
+            width: 0,
+            height: 0,
+            viewHeight: 100            
         };
     },
+    onLayout(e) {
+        if (this.state.width != e.nativeEvent.layout.width /*||
+            this.state.height != e.nativeEvent.layout.height*/) {
+            this.setState({
+                x: e.nativeEvent.layout.x,
+                y: e.nativeEvent.layout.y,
+                width: e.nativeEvent.layout.width,
+                height: e.nativeEvent.layout.height
+            });
+        }
+    },            
     onMoraleChanged(v) {
         this.state.morale = v;
         this.onResolve();
@@ -61,15 +77,16 @@ var ChargeStandView = React.createClass({
         this.setState(this.state);
     },
     render() {
+        let iconsize = (Math.min(this.state.height, this.state.width) * 0.9) || 16;
         return (
             <View style={{flex: 1}}>
                 <View style={{flex: 1, marginTop: 5, backgroundColor: 'whitesmoke'}}>
                     <View style={{flex: .75, flexDirection: 'row'}}>
-                        <View style={{flex:1, justifyContent: 'center', alignItems:'flex-end'}}>
+                        <View style={{flex:2, justifyContent: 'center', alignItems:'center'}} onLayout={this.onLayout}>
                             {/*<Text>{this.state.results}</Text>*/}
-                            <Image style={{height: 64, width: 64, resizeMode: 'stretch'}} source={Icons[this.state.results]} />
+                            <Image style={{height: iconsize, width: iconsize, resizeMode: 'stretch'}} source={Icons[this.state.results]} />
                         </View>
-                        <View style={{flex:2}}>
+                        <View style={{flex:1}}>
                             <DiceRoll dice={this.dice} values={[this.state.die1,this.state.die2]}
                                 onRoll={this.onDiceRoll} onDie={this.onDieChanged}/>
                         </View>

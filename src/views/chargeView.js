@@ -1,6 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
 import ScrollableTabView from 'react-native-scrollable-tab-view';
+import {Style} from 'react-native-nub';
 import ChargeStandView from './chargeStandView';
 import ChargeCarreView from './chargeCarreView';
 import ChargeRecallView from './chargeRecallView';
@@ -24,6 +25,7 @@ var ChargeView = React.createClass({
                 <ScrollableTabView
                     ref="tab"
                     style={{backgroundColor: '#fff'}}
+                    tabBarTextStyle={{fontSize: Style.Font.medium()}}
                     onChangeTab={this.onChangeTab}
                     initialPage={this.state.page}>
                     <ChargeStandView tabLabel="Stand" />

@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, Image } from 'react-native';
 import { connect } from 'react-redux';
-import {RadioButtonGroup,MultiSelectList} from 'react-native-nub';
+import {RadioButtonGroup,MultiSelectList,Style} from 'react-native-nub';
 import {DiceRoll} from 'react-native-dice';
 import DiceModifiersView from './diceModifiersView';
 import Base6 from '../services/base6';
@@ -47,10 +47,10 @@ var ChargeRecallView = React.createClass({
             <View style={{flex:1}}>
                 <View style={{flex: 1, marginTop: 5, backgroundColor: 'whitesmoke'}}>
                     <View style={{flex: .75, flexDirection: 'row'}}>
-                        <View style={{flex:1, justifyContent: 'center', alignItems:'flex-end'}}>
-                            <Text style={{fontSize: 18, fontWeight: 'bold'}}>{this.state.results}</Text>
+                        <View style={{flex:3, justifyContent: 'center', alignItems:'center'}}>
+                            <Text style={{fontSize: Style.Font.mediumlarge(), fontWeight: 'bold'}}>{this.state.results}</Text>
                         </View>
-                        <View style={{flex:2}}>
+                        <View style={{flex:1}}>
                             <DiceRoll dice={this.dice} values={[this.state.die1,this.state.die2]}
                                 onRoll={this.onDiceRoll} onDie={this.onDieChanged}/>
                         </View>

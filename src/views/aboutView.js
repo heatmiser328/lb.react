@@ -9,7 +9,7 @@ const AboutView = (props) => {
             title={'About La Bataille Assistant'}
             version={props.version}
             releasedate={props.releasedate}
-            description={'A no frills assistant for the La Bataille conglomeration of wargames.'}
+            description={'A no frills assistant for the La Bataille system of wargames.'}
             credit={{
                 description: 'All glory to them that made it possible!',
                 links: [

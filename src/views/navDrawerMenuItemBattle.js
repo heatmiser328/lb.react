@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, TouchableOpacity, Text, Image, ListView } from 'react-native';
-import {Arrow} from 'react-native-nub';
+import {Arrow,Font} from 'react-native-nub';
 import ScenarioNavMenuItem from './navDrawerMenuItemScenario';
 
 var BattleNavMenuItem = React.createClass({
@@ -25,9 +25,11 @@ var BattleNavMenuItem = React.createClass({
                         backgroundColor: '#eaeaea',
                         borderRadius: 3
                     }}>
+                        {/*
                         <View style={{marginTop: 40, marginRight: 5}}>
                             <Arrow size={18} direction={this.state.expanded ? 'down' : 'right'} />
                         </View>
+                        */}
                         <Image style={{
                             //flex: 1,
                             //width: null,
@@ -38,25 +40,33 @@ var BattleNavMenuItem = React.createClass({
                             //backgroundColor: 'transparent',
                         }} source={this.props.icons[battle.image]} />
                         <View style={{flex: 1}}>
-                            <Text style={{fontSize: 20,textAlign: 'center',margin: 10}}>{battle.name}</Text>
-                            <Text style={{fontSize: 15,textAlign: 'center',margin: 10,color: 'blue'}}>{battle.publisher}</Text>
+                            <Text style={{fontSize: Font.large(),textAlign: 'center',margin: 10}}>{battle.name}</Text>
+                            <Text style={{fontSize: Font.medium(),textAlign: 'center',margin: 10,color: 'blue'}}>{battle.publisher}</Text>
                         </View>
                     </View>
-                    {this.state.expanded
-                        ? battle.scenarios.map((scenario,i) => {
-                            return (
-                                <ScenarioNavMenuItem key={i}
-                                    battle={battle.id}
-                                    scenario={scenario}
-                                    onSelected={this.props.onSelected || this.props.onPress}
-                                 />
-                            );
-                        })
-                        : <Text/>
-                    }
+                    {this.renderScenarios(battle)}
                 </View>
             </TouchableOpacity>
         );
+    },
+    renderScenarios(battle) {
+        if (true) {//this.state.expanded) {
+            return (
+                <View>
+                    {battle.scenarios.map((scenario,i) => {
+                        return (
+                            <ScenarioNavMenuItem key={i}
+                                battle={battle.id}
+                                scenario={scenario}
+                                onSelected={this.props.onSelected || this.props.onPress}
+                                />
+                        );
+                    })}                    
+                </View>
+            );
+
+        }
+        return <Text/>;                    
     }
 });
 

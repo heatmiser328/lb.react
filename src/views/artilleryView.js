@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, Image } from 'react-native';
 import { connect } from 'react-redux';
-import {RadioButtonGroup,MultiSelectList} from 'react-native-nub';
+import {RadioButtonGroup,MultiSelectList,Style} from 'react-native-nub';
 import {DiceRoll} from 'react-native-dice';
 import getRules from '../selectors/rules';
 
@@ -15,7 +15,7 @@ var ArtilleryView = React.createClass({
             type: types[0],
             mods: {},
             die1: 1,
-            results: ''
+            results: 'NE'
         };
     },
     onTypeChanged(v) {
@@ -43,7 +43,7 @@ var ArtilleryView = React.createClass({
     render() {
         return (
             <View style={{flex:1}}>
-                <Text style={{fontSize: 18,fontWeight: 'bold',backgroundColor: 'silver', textAlign: 'center'}}>Artillery Limber</Text>
+                <Text style={{fontSize: Style.Font.medium(),fontWeight: 'bold',backgroundColor: 'silver', textAlign: 'center'}}>Artillery Limber</Text>
                 <View style={{flex:1, flexDirection:'row'}}>
                     <View style={{flex:5, flexDirection:'row'}}>
                         <View style={{flex:1}}>
@@ -61,7 +61,7 @@ var ArtilleryView = React.createClass({
                     <View style={{flex:3, backgroundColor: 'whitesmoke', alignItems:'center', justifyContent: 'flex-end'}}>
                         <View style={{flex:.5}} />
                         <View style={{flex:1, alignItems:'center'}}>
-                            <Text style={{fontSize: 18, fontWeight: 'bold'}}>{this.state.results}</Text>
+                            <Text style={{fontSize: Style.Font.medium(), fontWeight: 'bold'}}>{this.state.results}</Text>
                             <DiceRoll dice={this.dice} values={[this.state.die1]} onRoll={this.onDiceRoll} onDie={this.onDieChanged}/>
                         </View>
                         <View style={{flex:3}} />

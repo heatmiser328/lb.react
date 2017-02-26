@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import {SpinNumeric} from 'react-native-nub';
+import {SpinNumeric,Style} from 'react-native-nub';
 import FireDefenderAdvancedAddView from './fireDefenderAdvancedAddView';
 import QuickValuesView from './quickValuesView';
 
@@ -8,7 +8,7 @@ var FireDefenderView = React.createClass({
     render() {
         return (
             <View style={{flex:1}}>
-                <Text style={{fontSize: 18,fontWeight: 'bold',backgroundColor: 'silver', textAlign: 'center'}}>Defender</Text>
+                <Text style={{fontSize: Style.Font.medium(),fontWeight: 'bold',backgroundColor: 'silver', textAlign: 'center'}}>Defender</Text>
                 <View style={{flex: 1}}>
                     <SpinNumeric value={this.props.value} min={0} onChanged={this.props.onChanged} />
                 </View>
@@ -26,10 +26,10 @@ var FireDefenderView = React.createClass({
         }
         return (
             <View style={{flex: 3}}>
+                <View style={{flex:1}} />
                 <View style={{flex:1}}>
                     <QuickValuesView values={[4,6,9,12,14,16]} onChanged={this.props.onChanged}/>
-                </View>
-                <View style={{flex:4}} />
+                </View>                
             </View>
         );
     }

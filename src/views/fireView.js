@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, Switch } from 'react-native';
 import { connect } from 'react-redux';
+import {Style} from 'react-native-nub';
 import {DiceRoll} from 'react-native-dice';
 import FireAttackerView from './fireAttackerView';
 import FireDefenderView from './fireDefenderView';
@@ -104,7 +105,7 @@ var FireView = React.createClass({
                     <View style={{flex: 1}}>
                         <DiceModifiersView onChange={this.onDiceModifierChanged} />
                     </View>
-                    <View style={{flex:2}}>                        
+                    <View style={{flex:2.15}}>                        
                         <CombatResultsView odds={this.state.odds}
                             results={Fire.resolvePossible((this.state.die1*10) + this.state.die2)}
                             combatdice={(this.state.die1*10) + this.state.die2}
@@ -115,7 +116,7 @@ var FireView = React.createClass({
                         />                        
                     </View>
                     <View style={{flex: 0.35, flexDirection: 'row', justifyContent: 'center', alignItems:'center'}}>
-                        <Text>Cannister</Text>
+                        <Text style={{fontSize: Style.Font.medium()}}>Cannister</Text>
                         <Switch value={this.state.cannister} onValueChange={this.onCannisterChanged} />
                     </View>                    
                 </View>

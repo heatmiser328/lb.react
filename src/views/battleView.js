@@ -2,6 +2,7 @@ import React from 'react';
 import { View } from 'react-native';
 import { connect } from 'react-redux';
 import ScrollableTabView from 'react-native-scrollable-tab-view';
+import {Style} from 'react-native-nub';
 import TurnView from './turnView';
 import ChargeView from './chargeView';
 import FireView from './fireView';
@@ -24,23 +25,27 @@ var BattleView = React.createClass({
     render() {        
         console.log('BattleView', this.props.battle.name, this.props.battle.rules);
         return (
-            <View style={{flex: 1,backgroundColor: 'rgba(0,0,0,0.01)'}}>
+            <View style={{flex: 1, marginTop: Style.Scaling.scale(44),backgroundColor: 'rgba(0,0,0,0.01)'}}>
                 <TurnView logo={Icons[this.props.battle.image]} />
                 <ScrollableTabView
                     style={{backgroundColor: '#fff'}}
+                    tabBarTextStyle={{fontSize: Style.Font.medium()}}
                     onChangeTab={this.onChangeTab}
                     initialPage={this.state.initialPage}                    
                 >
-                    {this.props.battle.rules.hasOwnProperty('charge') ? <ChargeView tabLabel="Charge" /> : null}
+                    {this.hasRules('charge') ? <ChargeView tabLabel="Charge" /> : null}
                     <FireView tabLabel="Fire" />
-                    {this.props.battle.rules.hasOwnProperty('melee') ? <AssaultView tabLabel="Assault" /> : null}
+                    {this.hasRules('melee') ? <AssaultView tabLabel="Assault" /> : null}
                     <MeleeView tabLabel="Melee" />
                     <MoraleView tabLabel="Morale" />                    
                     <GeneralView tabLabel="General" />
-                    {this.props.battle.hasOwnProperty('victory') && this.props.battle.victory ? <VictoryView tabLabel="Victory" /> : null}
+                    {this.hasRules('victory') && this.props.battle.victory ? <VictoryView tabLabel="Victory" /> : null}
                 </ScrollableTabView>
             </View>
         );
+    },
+    hasRules(type) {
+        return this.props.battle.rules.hasOwnProperty(type);
     }
 });
 

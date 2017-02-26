@@ -1,10 +1,11 @@
 import React from 'react';
 import { View, Text, Image, ScrollView } from 'react-native';
 import { connect } from 'react-redux';
-import {SpinNumeric,MultiSelectList} from 'react-native-nub';
+import {SpinNumeric,MultiSelectList,Font} from 'react-native-nub';
 import {DiceRoll} from 'react-native-dice';
 import DiceModifiersView from './diceModifiersView';
 import QuickValuesView from './quickValuesView';
+import MoraleTableView from './moraleTableView';
 import Base6 from '../services/base6';
 import Morale from '../services/morale';
 import Icons from '../res';
@@ -21,9 +22,25 @@ var MoraleView = React.createClass({
             mods: {},
             die1: 1,
             die2: 1,
-            result: 'Fail'
+            result: 'Fail',
+            x: 0,
+            y: 0,
+            width: 0,
+            height: 0,
+            viewHeight: 100            
         };
     },
+    onLayout(e) {
+        if (this.state.width != e.nativeEvent.layout.width /*||
+            this.state.height != e.nativeEvent.layout.height*/) {
+            this.setState({
+                x: e.nativeEvent.layout.x,
+                y: e.nativeEvent.layout.y,
+                width: e.nativeEvent.layout.width,
+                height: e.nativeEvent.layout.height
+            });
+        }
+    },        
     onMoraleChanged(v) {
         this.state.morale = v;
         this.onResolve();
@@ -56,13 +73,16 @@ var MoraleView = React.createClass({
     render() {
         //console.log(this.props);
         let icon = this.state.result == 'Fail' ? Icons['fail'] : Icons['pass'];
+        let iconsize = (Math.min(this.state.height, this.state.width) * 0.9) || 16;
         return (
             <View style={{flex: 1}}>
                 <View style={{flex:.75, marginTop: 5, backgroundColor: 'whitesmoke'}}>
                     <View style={{flex: 1, flexDirection: 'row'}}>
-                        <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-                            <Image style={{height: 64, width: 64, resizeMode: 'stretch'}} source={icon} />
+                        <View style={{flex:.35}} />
+                        <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}} onLayout={this.onLayout}>
+                            <Image style={{height: iconsize, width: iconsize, resizeMode: 'stretch'}} source={icon} />
                         </View>
+                        <View style={{flex:.35}} />
                         <View style={{flex: 1}}>
                             <DiceRoll dice={this.dice} values={[this.state.die1,this.state.die2]}
                                     onRoll={this.onDiceRoll} onDie={this.onDieChanged}/>
@@ -86,42 +106,7 @@ var MoraleView = React.createClass({
                                 onChanged={this.onModChanged}/>                        
                         </View>
                     </View>
-                    <View style={{flex:1, marginTop: 10}}>
-                        <View style={{flexDirection: 'row'}}>
-                            <View style={{flex:1}}>
-                                <Text style={{fontSize: 18,fontWeight: 'bold',backgroundColor: 'silver', textAlign: 'center'}}>Morale</Text>
-                            </View>
-                            <View style={{flex:1}}>
-                                <Text style={{fontSize: 18,fontWeight: 'bold',backgroundColor: 'silver', textAlign: 'center'}}>Mod</Text>
-                            </View>
-                            <View style={{flex:1}}>
-                                <Text style={{fontSize: 18,fontWeight: 'bold',backgroundColor: 'silver', textAlign: 'center'}}>Result</Text>
-                            </View>
-                        </View>
-                        <View style={{flex:2}}>
-                            <ScrollView
-                                ref={view => this._scrollView = view}
-                                automaticallyAdjustContentInsets={false}
-                                scrollEventThrottle={200}>
-                                {Morale.range((this.state.die1*10) + this.state.die2).map((res,i) => {
-                                    let icon = res.morale ? (!res.result ? Icons['fail'] : Icons['pass']) : null;
-                                    return (
-                                        <View key={i} style={{flex:1, flexDirection: 'row'}}>
-                                            <View style={{flex:1}}>
-                                                <Text style={{fontSize: 16,textAlign: 'center'}}>{res.morale}</Text>
-                                            </View>
-                                            <View style={{flex:1}}>
-                                                <Text style={{fontSize: 16,textAlign: 'center'}}>{res.modifier}</Text>
-                                            </View>
-                                            <View style={{flex:1, justifyContent:'center', alignItems:'center'}}>
-                                                <Image style={{height: 28, width: 28, resizeMode: 'stretch'}} source={icon} />
-                                            </View>
-                                        </View>
-                                    );
-                                })}
-                            </ScrollView>
-                        </View>
-                    </View>
+                    <MoraleTableView range={Morale.range((this.state.die1*10) + this.state.die2)} marginTop={10} />
                 </View>
             </View>
         );

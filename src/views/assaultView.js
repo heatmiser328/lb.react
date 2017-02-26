@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, Image } from 'react-native';
 import { connect } from 'react-redux';
-import {SpinNumeric,RadioButtonGroup,MultiSelectList,SelectList} from 'react-native-nub';
+import {SpinNumeric,RadioButtonGroup,MultiSelectList,SelectList,Style} from 'react-native-nub';
 import {DiceRoll} from 'react-native-dice';
 import QuickValuesView from './quickValuesView';
 import DiceModifiersView from './diceModifiersView';
@@ -17,17 +17,35 @@ var AssaultView = React.createClass({
     ],
     getInitialState() {
         let odds = this.odds();
+        let defodds = odds.find((o) => o.name == '1/1') || odds[1];
         return {
             morale: '11',
             leader: '0',
             mode: 1,
             mods: {},
-            odds: odds[1].name,
+            odds: defodds.name,
             die1: 1,
             die2: 1,
-            result: null
+            result: null,
+            x: 0,
+            y: 0,
+            width: 0,
+            height: 0,
+            viewHeight: 100            
         };
     },
+    onLayout(e) {
+        if (this.state.width != e.nativeEvent.layout.width /*||
+            this.state.height != e.nativeEvent.layout.height*/) {
+            this.setState({
+                x: e.nativeEvent.layout.x,
+                y: e.nativeEvent.layout.y,
+                width: e.nativeEvent.layout.width,
+                height: e.nativeEvent.layout.height
+            });
+        }
+    },        
+    
     onMoraleChanged(v) {
         this.state.morale = v;
         this.onResolve();
@@ -73,6 +91,7 @@ var AssaultView = React.createClass({
     },
     render() {
         let icon = this.state.result != null ? (this.state.result ? Icons['pass'] : Icons['fail']) : null;
+        let iconSize = (Math.min(this.state.height, this.state.width) * 0.9) || 16;
         return (
             <View style={{flex: 1}}>
                 <View style={{flex: 1, marginTop: 5, backgroundColor: 'whitesmoke'}}>
@@ -80,8 +99,8 @@ var AssaultView = React.createClass({
                         <View style={{flex:2, alignItems: 'center', justifyContent: 'center'}}>
                             <RadioButtonGroup buttons={[{label: 'Defender', value: 1},{label: 'Attacker', value: 0}]} state={this.state.mode} onSelected={this.onModeChanged} />
                         </View>
-                        <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-                            <Image style={{height: 64, width: 64, resizeMode: 'stretch'}} source={icon} />
+                        <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}} onLayout={this.onLayout}>
+                            <Image style={{height: iconSize, width: iconSize, resizeMode: 'stretch'}} source={icon} />
                         </View>
                         <View style={{flex:2}}>
                             <DiceRoll dice={this.dice} values={[this.state.die1,this.state.die2]}
@@ -94,12 +113,12 @@ var AssaultView = React.createClass({
                 </View>
                 <View style={{flex:1, flexDirection: 'row'}}>
                     <View style={{flex:1, borderRightWidth:1,borderRightColor:'gray'}}>
-                        <Text style={{backgroundColor:'silver', alignSelf:'stretch', textAlign:'center'}}>Morale</Text>
+                        <Text style={{fontSize: Style.Font.medium(), backgroundColor:'silver', alignSelf:'stretch', textAlign:'center'}}>Morale</Text>
                         <SpinNumeric value={this.state.morale} values={Base6.values} integer={true} onChanged={this.onMoraleChanged} />
                         <QuickValuesView values={[16,26,36,46,56]} onChanged={this.onMoraleChanged}/>
                     </View>
                     <View style={{flex:1}}>
-                        <Text style={{backgroundColor:'silver', alignSelf:'stretch', textAlign:'center'}}>Leader</Text>
+                        <Text style={{fontSize: Style.Font.medium(), backgroundColor:'silver', alignSelf:'stretch', textAlign:'center'}}>Leader</Text>
                         <SpinNumeric value={this.state.leader} integer={true} onChanged={this.onLeaderChanged} />
                         <QuickValuesView values={[-3,0,3,6,12]} onChanged={this.onLeaderChanged}/>
                     </View>                    
