@@ -1,7 +1,7 @@
 import React from 'react';
-import { View, Text, Image, TouchableOpacity, PixelRatio } from 'react-native';
+import { View, Text, Image, TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
-import {SpinSelect} from 'react-native-nub';
+import {Style,SpinSelect} from 'react-native-nub';
 import TurnPlayerView from './turnPlayerView';
 import Icons from '../res';
 import {prevTurn,nextTurn,prevPhase,nextPhase,save} from '../actions/current';
@@ -55,8 +55,8 @@ var TurnView = React.createClass({
         let iconwidth = this.state.width || 96;
         let iconheight = this.state.height || 88;
         return (
-            <View style={{flexDirection: 'row', height: this.getHeight(), marginTop: this.getMarginTop(), marginLeft: 5, marginRight: 5}}>
-                <View style={{flex: 1, marginRight: 2}} onLayout={this.onLayout}>
+            <View style={{flexDirection: 'row', alignItems:'center', height: Style.Scaling.scale(75), marginLeft: 5, marginRight: 5}}>
+                <View style={{flex: 1, justifyContent:'center', marginRight: 2}} onLayout={this.onLayout}>
                     <Image style={{width: iconwidth,height: iconheight,resizeMode: 'contain'}} source={this.props.logo}/>
                 </View>
                 <View style={{flex: 4}}>
@@ -68,43 +68,7 @@ var TurnView = React.createClass({
                 </View>
             </View>
         );
-    },
-    getHeight() {
-        let ratio = PixelRatio.get();        
-        switch(ratio) {
-            case 1:
-            return 60;
-            case 1.5:
-            return 70;
-            case 2:
-            return 80;
-            case 3:
-            return 90;
-            case 3.5:
-            return 100;
-            default:
-            break;            
-        }
-        return 75;
-    },
-    getMarginTop() {
-        let ratio = PixelRatio.get();        
-        switch(ratio) {
-            case 1:
-            return 20;
-            case 1.5:
-            return 30;
-            case 2:
-            return 40;
-            case 3:
-            return 50;
-            case 3.5:
-            return 60;
-            default:
-            break;            
-        }
-        return 45;
-    }    
+    }
 });
 
 const mapStateToProps = (state) => ({

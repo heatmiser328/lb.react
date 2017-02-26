@@ -96,7 +96,7 @@ var FireView = React.createClass({
             <View style={{flex: 1}}>                
                 <View style={{flex: 3, backgroundColor: 'whitesmoke', justifyContent:'flex-start'}}>
                     <View style={{flex: .75, flexDirection: 'row', alignItems: 'center', marginTop:5}}>
-                        <DiceRoll dice={this.dice} values={[this.state.die1,this.state.die2,this.state.die3,this.state.die4,this.state.die5,this.state.die6,this.state.die7]}
+                        <DiceRoll dice={this.dice} values={[this.state.die1,this.state.die2,this.state.die3,this.state.die4,this.state.die5,this.state.die6,this.state.die7]}                            
                             onRoll={this.onDiceRoll} onDie={this.onDieChanged}/>
                     </View>
                     <View style={{flex: 1}}>

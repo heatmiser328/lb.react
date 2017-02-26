@@ -129,10 +129,10 @@ var MeleeCalcView = React.createClass({
     },
     modifiers() {        
         return [
-            {name: '1/3', mod: 0.333},
-            {name: '1/2', mod: 0.5},
-            {name: '3/2', mod: 1.5},
-            {name: '2', mod: 2},
+            {name: 'x1/3', mod: 0.333},
+            {name: 'x1/2', mod: 0.5},
+            {name: 'x3/2', mod: 1.5},
+            {name: 'x2', mod: 2},
             {name: 'Lancers in Line', mod: 2}
         ];
     }

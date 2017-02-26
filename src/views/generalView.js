@@ -27,13 +27,13 @@ var GeneralView = React.createClass({
     render() {
         return (
             <View style={{flex: 1}}>
-                <View style={{flex: 1, flexDirection:'row', alignItems:'center', marginTop: 2}}>
+                <View style={{flex: 1, flexDirection:'row', alignItems:'center', marginTop: 2, marginBottom: 3}}>
                     <View style={{flex:1}} />
-                    <DiceRoll size={48} dice={this.dice2} values={[0,this.state.die3]} onRoll={this.onDice2Roll} />
+                    <DiceRoll dice={this.dice2} values={[0,this.state.die3]} onRoll={this.onDice2Roll} />
                 </View>
-                <View style={{flex: 1, flexDirection:'row', alignItems:'center'}}>
+                <View style={{flex: 1, flexDirection:'row', alignItems:'center', marginTop: 3}}>
                     <View style={{flex:1}} />    
-                    <DiceRoll size={48} dice={this.dice1} values={[this.state.die1,this.state.die2]} onRoll={this.onDice1Roll} />
+                    <DiceRoll dice={this.dice1} values={[this.state.die1,this.state.die2]} onRoll={this.onDice1Roll} />
                 </View>                
                 <View style={{flex:5}} />
             </View>
