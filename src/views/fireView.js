@@ -84,54 +84,54 @@ var FireView = React.createClass({
         this.state.die5 = d[4].value;
         this.state.die6 = d[5].value;
         this.state.die7 = d[6].value;
-        
+
         this.onResolve();
     },
     onResolve() {
         this.setState(this.state);
     },
     render() {
-        //console.log(this.props);        
+        //console.log(this.props);
         return (
-            <View style={{flex: 1}}>                
-                <View style={{flex: 3, backgroundColor: 'whitesmoke', justifyContent:'flex-start'}}>
-                    <View style={{flex: .75, flexDirection: 'row', alignItems: 'center', marginTop:5}}>
-                        <DiceRoll dice={this.dice} values={[this.state.die1,this.state.die2,this.state.die3,this.state.die4,this.state.die5,this.state.die6,this.state.die7]}                            
+            <View style={{flex: 1}}>
+                <View style={{flex: 1, backgroundColor: 'whitesmoke', justifyContent:'flex-start'}}>
+                    <View style={{flex: .75, flexDirection: 'row', alignItems: 'center', paddingTop:5}}>
+                        <DiceRoll dice={this.dice} values={[this.state.die1,this.state.die2,this.state.die3,this.state.die4,this.state.die5,this.state.die6,this.state.die7]}
                             onRoll={this.onDiceRoll} onDie={this.onDieChanged}/>
                     </View>
                     <View style={{flex: 1}}>
                         <DiceModifiersView onChange={this.onDiceModifierChanged} />
                     </View>
-                    <View style={{flex:2.15}}>                        
+                    <View style={{flex:2}}>
                         <CombatResultsView odds={this.state.odds}
                             results={Fire.resolvePossible((this.state.die1*10) + this.state.die2)}
                             combatdice={(this.state.die1*10) + this.state.die2}
                             lossdie={this.state.die3}
                             durationdie1={this.state.die4}
                             durationdie2={this.state.die5}
-                            moraledice={(this.state.die6*10) + this.state.die7}                            
-                        />                        
+                            moraledice={(this.state.die6*10) + this.state.die7}
+                        />
                     </View>
                     <View style={{flex: 0.35, flexDirection: 'row', justifyContent: 'center', alignItems:'center'}}>
                         <Text style={{fontSize: Font.medium()}}>Cannister</Text>
                         <Switch value={this.state.cannister} onValueChange={this.onCannisterChanged} />
-                    </View>                    
+                    </View>
                 </View>
-                <View style={{flex:2, flexDirection:'row'}}>
-                    <View style={{flex:1}}>                        
+                <View style={{flex:1, flexDirection:'row'}}>
+                    <View style={{flex:1}}>
                         <FireAttackerView value={this.state.attack}
                             onAdd={this.onAttackerAdd}
                             onChanged={this.onAttackerChanged}
-                            onModifierChanged={this.onAttackerModifierChanged} />                        
+                            onModifierChanged={this.onAttackerModifierChanged} />
                     </View>
-                    <View style={{flex:1}}>                        
+                    <View style={{flex:1}}>
                         <FireDefenderView value={this.state.defend}
                             onAdd={this.onDefenderAdd}
                             onChanged={this.onDefenderChanged}
                             onIncrementsChanged={this.onDefenderIncrementsChanged} />
-                        
+
                     </View>
-                </View>                
+                </View>
             </View>
         );
     }
