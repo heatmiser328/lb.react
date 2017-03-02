@@ -117,7 +117,7 @@ var FireView = React.createClass({
                         <Switch value={this.state.cannister} onValueChange={this.onCannisterChanged} />
                     </View>
                 </View>
-                <View style={{flex:1, flexDirection:'row'}}>
+                <View style={{flex:1.25, flexDirection:'row'}}>
                     <View style={{flex:1}}>
                         <FireAttackerView value={this.state.attack}
                             onAdd={this.onAttackerAdd}

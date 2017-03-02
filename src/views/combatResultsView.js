@@ -7,9 +7,9 @@ import MoraleTableView from './moraleTableView';
 import Morale from '../services/morale';
 
 var CombatResultsView = React.createClass({
-    render() {
+    render() {        
         return (
-            <View style={{flex:1, flexDirection:'row'}}>
+            <View style={{flex:1, flexDirection:'row'}} onLayout={this.onLayout}>
                 <View style={{flex:2}}>
                     <CombatTableView results={this.props.results} odds={this.props.odds} />
                 </View>
