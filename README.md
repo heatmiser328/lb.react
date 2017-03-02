@@ -47,7 +47,7 @@ It is an Assistant for the board games. It's purpose is to streamline game play 
 (Yes some will dearly miss the dice and not trust the psuedo-random die generator, but can't have an assistant without letting go a little).
 
 #### A note on the UI design
-The goal was to have each "activity" represented entirely in it's own view; no pop ups (aside from the numeric keypad) or tedious navigation necessary to complete a game function. The layout was targeted to a 7 inch tablet (because that's what I like on my game table!). The side effect is, it does not scale down well to a phone; just can't cram all of the information into such a small area.
+The goal was to have each "activity" represented entirely in it's own view; no pop ups (aside from the numeric keypad) or tedious navigation necessary to complete a game function. 
 
 The "advanced" UI relies on the special rules and charts for a game. That is a lot of boring data entry, so only a sub-set of games are represented. As more make it to the table, more of the data entry will be completed. So as to still support the games that have not been "databased", a "basic" UI is presented when the full UI cannot be used.
 
@@ -184,12 +184,10 @@ Just a simpler version of the view. You figure out the fire values and enter the
 
 For the most part, it is the lack of game specific modifiers that is missing in this "basic" view. The calculator, dice, and results are the same.
 
-
 #### Morale
 ![Morale](https://github.com/jcapuano328/lb.react/raw/master/doc/Basic.Morale.png "Morale")
 
 Again, basically the same as the advanced view, but with fewer modifiers.
-
 
 #### General
 ![General](https://github.com/jcapuano328/lb.react/raw/master/doc/Basic.General.png "General Dice")

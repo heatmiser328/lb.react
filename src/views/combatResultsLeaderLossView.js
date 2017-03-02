@@ -15,8 +15,8 @@ var CombatResultsLeaderLossView = React.createClass({
         };
     },
     onLayout(e) {
-        if (this.state.width != e.nativeEvent.layout.width /*||
-            this.state.height != e.nativeEvent.layout.height*/) {
+        if (this.state.width != e.nativeEvent.layout.width ||
+            this.state.height != e.nativeEvent.layout.height) {
             this.setState({
                 x: e.nativeEvent.layout.x,
                 y: e.nativeEvent.layout.y,
