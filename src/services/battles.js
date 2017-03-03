@@ -5,6 +5,8 @@ var rules = {
     "talavera": require('../data/talavera.json'),
     "albuera": require('../data/albuera.json'),
 
+    "vauchamps": require('../data/vauchamps.json'),
+
     "halle": require('../data/halle.json'),
     "raszyn": require('../data/raszyn.json'),    
     "leipzig": require('../data/leipzig.json'),
