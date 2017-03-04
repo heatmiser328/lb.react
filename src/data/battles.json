@@ -1348,7 +1348,7 @@
 					{"side": "AustrianRussian", "level": "Marginal", "conditions": "Exit 60 increments off the Southern Map Edge or hold Augezd"},
 					{"side": "AustrianRussian", "level": "Tactical", "conditions": "Exit 75 increments off the Southern Map Edge"},
 					{"side": "AustrianRussian", "level": "Decisive", "conditions": "Exit 75 increments off the Eastern Map Edge"}
-				]								
+				]
 	        },
 	        {
 	            "id": 100310,
@@ -1375,18 +1375,17 @@
 					{"side": "AustrianRussian", "low": 7, "high": 8, "level": "Marginal"},
 					{"side": "AustrianRussian", "low": 5, "high": 6, "level": "Substantial"},
 					{"side": "AustrianRussian", "low": -99, "high": 4, "level": "Decisive"}
-				]				
+				]
 	        }			
 	    ]
 	},
   
-
-  {
+	{
 	    "id": 31,
 	    "name": "La Bataille de Vauchamps",
 	    "publisher": "Marshal Enterprises / ATO",
 	    "image": "vauchamps",
-		"sides": ["French", "Prussian"],
+		"sides": ["French", "PrussianRussian"],
 	    "scenarios": [
 	        {
 	            "id": 32,
@@ -1404,7 +1403,18 @@
 	                "day": 14,
 	                "hour": 11,
 	                "minute": 40
-	            }
+	            },
+				"victory": [
+					{"side": "French", "level": "Automatic", "conditions": "All Prussian units eliminated"},
+					{"side": "French", "level": "Decisive", "conditions": "No Prussian units in Vauchamps or La Boularderie by 11:00am"},
+					{"side": "French", "level": "Substantial", "conditions": "No Prussian units in Vauchamps or La Boularderie by 11:20am"},
+					{"side": "French", "level": "Marginal", "conditions": "No Prussian units in Vauchamps or La Boularderie at end of game"},
+					{"side": "", "level": "Draw", "conditions": "Neither side achieves a victory level or both achieve same level"},
+					{"side": "PrussianRussian", "level": "Marginal", "conditions": "Have 1 unit in both Vauchamps and La Boularderie at end of 11:20am OR 1 unit in La Boularderie with no French adjacent by end of game"},
+					{"side": "PrussianRussian", "level": "Substantial", "conditions": "Have 1 unit in both Vauchamps and La Boularderie at end of 11:40am"},
+					{"side": "PrussianRussian", "level": "Decisive", "conditions": "Have 1 unit in both Vauchamps and La Boularderie at end of game"},
+					{"side": "PrussianRussian", "level": "Automatic", "conditions": "All French VI Corps units eliminated"}
+				]
 	        },
 	        {
 	            "id": 33,
@@ -1422,7 +1432,18 @@
 	                "day": 14,
 	                "hour": 15,
 	                "minute": 40
-	            }
+	            },
+				"victory": [
+					{"side": "French", "level": "Automatic", "conditions": "Both Coalition commands are at Morale Level 3 AND Bluecher is captured or killed"},
+					{"side": "French", "level": "Decisive", "conditions": "French units but no Coalition units in Vauchamps or La Boularderie by 1:00pm"},
+					{"side": "French", "level": "Substantial", "conditions": "French units but no Coalition units in Vauchamps, La Boularderie, or Fromentieres by 2:00pm"},
+					{"side": "French", "level": "Marginal", "conditions": "French units but no Coalition units in Vauchamps, La Boularderie, Fromentieres, or Champaubert by 3:40pm"},
+					{"side": "", "level": "Draw", "conditions": "Neither side achieves a victory level or both achieve same level"},
+					{"side": "PrussianRussian", "level": "Marginal", "conditions": "No French units in Vauchamps at the end of the 11:00am turn"},
+					{"side": "PrussianRussian", "level": "Substantial", "conditions": "No French units in Vauchamps at the end of the 12:00pm turn"},
+					{"side": "PrussianRussian", "level": "Decisive", "conditions": "No French units in Vauchamps at the end of the 1:00pm turn"},
+					{"side": "PrussianRussian", "level": "Automatic", "conditions": "Napolean is captured or killed"}
+				]				
 	        },
 	        {
 	            "id": 34,
@@ -1440,7 +1461,18 @@
 	                "day": 14,
 	                "hour": 15,
 	                "minute": 40
-	            }
+	            },
+				"victory": [
+					{"side": "French", "level": "Automatic", "conditions": "Both Coalition commands are at Morale Level 3 AND Bluecher is captured or killed"},
+					{"side": "French", "level": "Decisive", "conditions": "French units but no Coalition units in Vauchamps or La Boularderie by 1:00pm"},
+					{"side": "French", "level": "Substantial", "conditions": "French units but no Coalition units in Vauchamps, La Boularderie, or Fromentieres by 2:00pm"},
+					{"side": "French", "level": "Marginal", "conditions": "French units but no Coalition units in Vauchamps, La Boularderie, Fromentieres, or Champaubert by 3:40pm"},
+					{"side": "", "level": "Draw", "conditions": "Neither side achieves a victory level or both achieve same level"},
+					{"side": "PrussianRussian", "level": "Marginal", "conditions": "No French units in Vauchamps at the end of the 11:00am turn"},
+					{"side": "PrussianRussian", "level": "Substantial", "conditions": "No French units in Vauchamps at the end of the 12:00pm turn"},
+					{"side": "PrussianRussian", "level": "Decisive", "conditions": "No French units in Vauchamps at the end of the 1:00pm turn"},
+					{"side": "PrussianRussian", "level": "Automatic", "conditions": "Napolean is captured or killed"}
+				]				
 	        }
 	    ]
 	},

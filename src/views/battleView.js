@@ -23,7 +23,6 @@ var BattleView = React.createClass({
     onChangeTab() {
     },
     render() {        
-        console.log('BattleView', this.props.battle.name, this.props.battle.rules);
         return (
             <View style={{flex: 1, marginTop: Style.Scaling.scale(44),backgroundColor: 'rgba(0,0,0,0.01)'}}>
                 <TurnView logo={Icons[this.props.battle.image]} />
@@ -39,7 +38,7 @@ var BattleView = React.createClass({
                     <MeleeView tabLabel="Melee" />
                     <MoraleView tabLabel="Morale" />                    
                     <GeneralView tabLabel="General" />
-                    {this.hasRules('victory') && this.props.battle.victory ? <VictoryView tabLabel="Victory" /> : null}
+                    {this.props.battle.victory ? <VictoryView tabLabel="Victory" /> : null}
                 </ScrollableTabView>
             </View>
         );

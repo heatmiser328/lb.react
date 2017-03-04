@@ -16,8 +16,8 @@ var VictoryConditionsView = React.createClass({
         };
     },
     onLayout(e) {
-        if (this.state.width != e.nativeEvent.layout.width ||
-            this.state.height != e.nativeEvent.layout.height) {
+        if (this.state.width != e.nativeEvent.layout.width /*||
+            this.state.height != e.nativeEvent.layout.height*/) {
             this.setState({
                 x: e.nativeEvent.layout.x,
                 y: e.nativeEvent.layout.y,
@@ -27,7 +27,7 @@ var VictoryConditionsView = React.createClass({
         }
     },    
     render() {    
-        let iconsize = (Math.min(this.state.height, this.state.width) * 0.9) || 16;    
+        let iconsize = (Math.min(this.state.height, this.state.width) * 0.75) || 16;    
         return (
             <ScrollView contentContainerStyle={{flex:1, justifyContent:'flex-start', alignItems:'center', marginLeft:5, marginRight:5}}
                 automaticallyAdjustContentInsets={false}
@@ -39,7 +39,7 @@ var VictoryConditionsView = React.createClass({
                             <Text style={{fontSize:Style.Font.medium(),fontWeight:'bold',textAlign:'center'}}>{v.level}</Text>
                         </View>
                         <View style={{flex:4, justifyContent:'center'}}>
-                            <Text style={{fontSize: Style.Font.mediumsmall()}}>{v.conditions}</Text>
+                            <Text style={{fontSize: Style.Font.smallmedium()}}>{v.conditions}</Text>
                         </View>                        
                     </View>
                 )}
