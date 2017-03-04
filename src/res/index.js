@@ -7,6 +7,7 @@ module.exports = {
 	"info": Icons['info-dark'],
 	"refresh": Icons['refresh-dark'],
 	"back": Icons['chevron-left-dark'],
+	"config": Icons['gear-dark'],
 
 	"add": require('./addico.png'),
 	"equal": require('./equalico.png'),
@@ -26,8 +27,6 @@ module.exports = {
 	"Disorder": require('./disorder.png'),
 	"Rout": require('./rout.png'),
 
-	"attackerLoss": require('./attacker.png'),
-	"defenderLoss": require('./defender.png'),
 	"wounded": require('./ambulance.png'),
 	"mortal": require('./tombstone.png'),
 	"capture": require('./capture.jpg'),

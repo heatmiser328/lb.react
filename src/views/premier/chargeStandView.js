@@ -1,14 +1,12 @@
 import React from 'react';
 import { View, Text, Image } from 'react-native';
-import { connect } from 'react-redux';
 import {SpinNumeric,MultiSelectList} from 'react-native-nub';
 import {DiceRoll} from 'react-native-dice';
-import QuickValuesView from './quickValuesView';
-import DiceModifiersView from './diceModifiersView';
-import Icons from '../res';
-import Morale from '../services/morale';
-import Base6 from '../services/base6';
-import getRules from '../selectors/rules';
+import QuickValuesView from '../common/quickValuesView';
+import DiceModifiersView from '../common/diceModifiersView';
+import Icons from '../../res';
+import Morale from '../../services/morale';
+import Base6 from '../../services/base6';
 
 var ChargeStandView = React.createClass({
     dice: [
@@ -121,14 +119,8 @@ var ChargeStandView = React.createClass({
         );
     },
     modifiers() {        
-        return this.props.rules.charge.stand.modifiers;
+        return this.props.battle.rules.charge.stand.modifiers;
     }
 });
 
-const mapStateToProps = (state) => ({
-    rules: getRules(state)
-});
-
-module.exports = connect(
-  mapStateToProps
-)(ChargeStandView);
+module.exports = ChargeStandView;

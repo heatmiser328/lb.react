@@ -1,8 +1,8 @@
 import React from 'react';
 import { View, Text, Image } from 'react-native';
 import {Font} from 'react-native-nub';
-import Icons from '../res';
-import LeaderLoss from '../services/leaderloss';
+import Icons from '../../res';
+import LeaderLoss from '../../services/leaderloss';
 
 var CombatResultsLeaderLossView = React.createClass({
     getInitialState() {

@@ -1,9 +1,7 @@
 import React from 'react';
 import { View, ScrollView, Text, Image } from 'react-native';
-import { connect } from 'react-redux';
 import {Style} from 'react-native-nub';
-import Icons from '../res';
-import getGame from '../selectors/game';
+import Icons from '../../res';
 
 var VictoryConditionsView = React.createClass({
     getInitialState() {
@@ -27,7 +25,7 @@ var VictoryConditionsView = React.createClass({
         }
     },    
     render() {    
-        let iconsize = (Math.min(this.state.height, this.state.width) * 0.75) || 16;    
+        let iconsize = (Math.min(this.state.height, this.state.width) * 0.9) || 16;    
         return (
             <ScrollView contentContainerStyle={{flex:1, justifyContent:'flex-start', alignItems:'center', marginLeft:5, marginRight:5}}
                 automaticallyAdjustContentInsets={false}
@@ -48,12 +46,5 @@ var VictoryConditionsView = React.createClass({
     }
 });
 
-
-const mapStateToProps = (state) => ({
-    battle: getGame(state)
-});
-
-module.exports = connect(
-  mapStateToProps
-)(VictoryConditionsView);
+module.exports = VictoryConditionsView;
 

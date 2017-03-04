@@ -10,6 +10,7 @@ module.exports = {
 			if (current.player == 'imperial') { current.player = 0;}
 			else if (current.player == 'coalition') { current.player = 1;}
 			current.victory = current.victory || {"0": 0, "1": 0};
+			current.ruleset = current.ruleset || 1;
             return current;
 		});
 	},
@@ -21,6 +22,7 @@ module.exports = {
 	},
 	reset(data) {
 		let current = {
+			ruleset: data.ruleset,
 			battle: data.id,
 			scenario: data.scenario.id,
 			turn: 1,

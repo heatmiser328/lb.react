@@ -1,14 +1,12 @@
 import React from 'react';
 import { View, Text, Image } from 'react-native';
-import { connect } from 'react-redux';
 import {SpinNumeric,MultiSelectList,RadioButtonGroup} from 'react-native-nub';
 import {DiceRoll} from 'react-native-dice';
-import QuickValuesView from './quickValuesView';
-import DiceModifiersView from './diceModifiersView';
-import Icons from '../res';
-import Morale from '../services/morale';
-import Base6 from '../services/base6';
-import getRules from '../selectors/rules';
+import QuickValuesView from '../common/quickValuesView';
+import DiceModifiersView from '../common/diceModifiersView';
+import Icons from '../../res';
+import Morale from '../../services/morale';
+import Base6 from '../../services/base6';
 
 var ChargeCarreView = React.createClass({
     dice: [
@@ -43,8 +41,7 @@ var ChargeCarreView = React.createClass({
                 height: e.nativeEvent.layout.height
             });
         }
-    },        
-    
+    },            
     onNationalityChanged(v) {
         this.state.nationality = v;
         this.updateFormations();
@@ -78,7 +75,7 @@ var ChargeCarreView = React.createClass({
         this.onResolve();
     },
     onResolve() {        
-        let table = this.props.rules.charge.carre.table[this.state.nationality][this.state.formation][this.state.distance] || [];
+        let table = this.rules().table[this.state.nationality][this.state.formation][this.state.distance] || [];
         let mod = this.modifiers().filter((m) => this.state.mods[m.name]).reduce((p,c) => p + c.mod, 0);
         let dice = Base6.add((this.state.die1 * 10) + this.state.die2, mod);
         let result = table.find((t) => dice >= t.low && dice <= t.high) || {};
@@ -138,14 +135,17 @@ var ChargeCarreView = React.createClass({
             </View>
         );
     },
+    rules() {
+        return this.props.battle.rules.charge.carre;
+    },
     nationalities() {        
-        return Object.keys(this.props.rules.charge.carre.table);
+        return Object.keys(this.rules().table);
     },
     formations(nationality) {        
-        return Object.keys(this.props.rules.charge.carre.table[nationality]);
+        return Object.keys(this.rules().table[nationality]);
     },
     modifiers() {        
-        return this.props.rules.charge.carre.modifiers;
+        return this.rules().modifiers;
     },
     updateFormations() {
         let formations = this.formations(this.state.nationality);
@@ -155,10 +155,4 @@ var ChargeCarreView = React.createClass({
     }
 });
 
-const mapStateToProps = (state) => ({
-    rules: getRules(state)
-});
-
-module.exports = connect(
-  mapStateToProps
-)(ChargeCarreView);
+module.exports = ChargeCarreView;

@@ -1,9 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
-import { connect } from 'react-redux';
 import {DiceRoll} from 'react-native-dice';
-import ArtilleryView from './artilleryView';
-import getRules from '../selectors/rules';
 
 var GeneralView = React.createClass({
     dice1: [
@@ -39,26 +36,10 @@ var GeneralView = React.createClass({
                     <View style={{flex:1}} />    
                     <DiceRoll dice={this.dice1} values={[this.state.die1,this.state.die2]} onRoll={this.onDice1Roll} />
                 </View>                
-                {this.renderArtillery()}
+                {this.props.children}
             </View>
         );
-    },
-    renderArtillery() {
-        return (
-            <View style={{flex:6}}>
-                {(this.props.rules.hasOwnProperty('fire') && this.props.rules.fire.hasOwnProperty('artillery'))
-                    ? <ArtilleryView />
-                    : null
-                }                
-            </View>
-        );
-    },
+    }
 });
 
-const mapStateToProps = (state) => ({
-    rules: getRules(state)
-});
-
-module.exports = connect(
-  mapStateToProps
-)(GeneralView);
+module.exports = GeneralView;

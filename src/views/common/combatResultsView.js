@@ -3,7 +3,7 @@ import { View } from 'react-native';
 import CombatTableView from './combatResultsTableView';
 import LeaderLossView from './combatResultsLeaderLossView';
 import MoraleTableView from './moraleTableView';
-import Morale from '../services/morale';
+import Morale from '../../services/morale';
 
 var CombatResultsView = React.createClass({
     render() {

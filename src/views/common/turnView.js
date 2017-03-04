@@ -3,11 +3,11 @@ import { View, Text, Image, TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
 import {Style,SpinSelect} from 'react-native-nub';
 import TurnPlayerView from './turnPlayerView';
-import Icons from '../res';
-import {prevTurn,nextTurn,prevPhase,nextPhase,save} from '../actions/current';
-import getGame from '../selectors/game';
-import getTurn from '../selectors/turn';
-import getPhase from '../selectors/phase';
+import Icons from '../../res';
+import {prevTurn,nextTurn,prevPhase,nextPhase,save} from '../../actions/current';
+import getGame from '../../selectors/game';
+import getTurn from '../../selectors/turn';
+import getPhase from '../../selectors/phase';
 
 var TurnView = React.createClass({
     getInitialState() {
@@ -57,7 +57,7 @@ var TurnView = React.createClass({
         return (
             <View style={{flexDirection: 'row', alignItems:'center', height: Style.Scaling.scale(75), marginLeft: 5, marginRight: 5}}>
                 <View style={{flex: 1, justifyContent:'center', marginRight: 2}} onLayout={this.onLayout}>
-                    <Image style={{width: iconwidth,height: iconheight,resizeMode: 'contain'}} source={this.props.logo}/>
+                    <Image style={{width: iconwidth,height: iconheight,resizeMode: 'contain'}} source={Icons[this.props.logo]}/>
                 </View>
                 <View style={{flex: 4}}>
                     <SpinSelect value={this.props.turn} onPrev={this.onPrevTurn} onNext={this.onNextTurn} />

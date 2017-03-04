@@ -2,7 +2,7 @@ import React from 'react';
 import { View } from 'react-native';
 import {SpinNumeric,RadioButtonGroup} from 'react-native-nub';
 
-var FireDefenderAdvancedAddView = React.createClass({
+var FireDefenderDetailView = React.createClass({
     getInitialState() {
         let terrains = this.terrains();
         let formations = this.formations(terrains[0]);
@@ -30,7 +30,7 @@ var FireDefenderAdvancedAddView = React.createClass({
     },
     updateValue(state) {
         state = state || this.state;        
-        let value = this.props.rules.defense.terrain[state.terrain][state.formation].value;
+        let value = this.rules().terrain[state.terrain][state.formation].value;
         this.props.onSet && this.props.onSet(value);
     },
     render() {
@@ -54,16 +54,19 @@ var FireDefenderAdvancedAddView = React.createClass({
             </View>
         );
     },
+    rules() {
+        return this.props.battle.rules.fire.defense;
+    },
     terrains() {        
-        return Object.keys(this.props.rules.defense.terrain);
+        return Object.keys(this.rules().terrain);
     },
     formations(terrain) {        
-        let t = this.props.rules.defense.terrain[terrain];
+        let t = this.rules().terrain[terrain];
         if (t) {
-            return Object.keys(t).filter((f) => this.props.rules.defense.terrain[terrain][f].label != '');
+            return Object.keys(t).filter((f) => this.rules().terrain[terrain][f].label != '');
         }
         return [];
     }
 });
 
-module.exports = FireDefenderAdvancedAddView;
+module.exports = FireDefenderDetailView;

@@ -3,9 +3,9 @@ import { connect } from 'react-redux';
 import { Actions } from 'react-native-router-flux';
 import {NavDrawer} from 'react-native-nub';
 import BattleNavMenuItem from './navDrawerMenuItemBattle';
-import Icons from '../res';
-import Battles from '../services/battles';
-import {reset} from '../actions/current';
+import Icons from '../../res';
+import Battles from '../../services/battles';
+import {reset} from '../../actions/current';
 
 let NavigationDrawer = React.createClass({    
     onSelect(e) {

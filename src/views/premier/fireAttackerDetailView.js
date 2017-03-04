@@ -1,10 +1,10 @@
 import React from 'react';
 import { View, Text, Switch } from 'react-native';
 import {SpinNumeric,SelectList,IconButton,Style} from 'react-native-nub';
-import QuickValuesView from './quickValuesView';
-import Icons from '../res';
+import QuickValuesView from '../common/quickValuesView';
+import Icons from '../../res';
 
-var FireAttackerAdvancedAddView = React.createClass({
+var FireAttackerDetailView = React.createClass({
     getInitialState() {
         return {
             mods: {},
@@ -99,4 +99,4 @@ var FireAttackerAdvancedAddView = React.createClass({
     }
 });
 
-module.exports = FireAttackerAdvancedAddView;
+module.exports = FireAttackerDetailView;

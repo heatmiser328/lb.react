@@ -1,9 +1,9 @@
 import React from 'react';
 import { View, Image, TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
-import Icons from '../res';
-import {nextPlayer,save} from '../actions/current';
-import getPlayer from '../selectors/player';
+import Icons from '../../res';
+import {nextPlayer,save} from '../../actions/current';
+import getPlayer from '../../selectors/player';
 
 var TurnPlayerView = React.createClass({
     getInitialState() {

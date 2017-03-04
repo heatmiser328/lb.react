@@ -3,7 +3,7 @@ import { View, Text, Image } from 'react-native';
 import { connect } from 'react-redux';
 import {RadioButtonGroup,MultiSelectList,Style} from 'react-native-nub';
 import {DiceRoll} from 'react-native-dice';
-import getRules from '../selectors/rules';
+import getRules from '../../selectors/rules';
 
 var ArtilleryView = React.createClass({
     dice: [

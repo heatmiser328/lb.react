@@ -1,17 +1,15 @@
 import React from 'react';
 import { View } from 'react-native';
-import { connect } from 'react-redux';
 import VictoryPointsView from './victoryPointsView';
 import VictoryConditionsView from './victoryConditionsView';
-import getGame from '../selectors/game';
 
 var VictoryView = React.createClass({
     render() {        
         return (
             <View style={{flex:1}}>
                 {this.hasVPs() 
-                    ? <VictoryPointsView />
-                    : <VictoryConditionsView />
+                    ? <VictoryPointsView battle={this.props.battle} />
+                    : <VictoryConditionsView battle={this.props.battle} />
                 }
             </View>
         );
@@ -21,11 +19,5 @@ var VictoryView = React.createClass({
     }
 });
 
-const mapStateToProps = (state) => ({
-    battle: getGame(state)
-});
-
-module.exports = connect(
-  mapStateToProps
-)(VictoryView);
+module.exports = VictoryView;
 

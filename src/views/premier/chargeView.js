@@ -28,9 +28,9 @@ var ChargeView = React.createClass({
                     tabBarTextStyle={{fontSize: Style.Font.medium()}}
                     onChangeTab={this.onChangeTab}
                     initialPage={this.state.page}>
-                    <ChargeStandView tabLabel="Stand" />
-                    <ChargeCarreView tabLabel="Form Square" />                    
-                    <ChargeRecallView tabLabel="Recall" />
+                    <ChargeStandView tabLabel="Stand" battle={this.props.battle} />
+                    <ChargeCarreView tabLabel="Form Square" battle={this.props.battle} />
+                    <ChargeRecallView tabLabel="Recall" battle={this.props.battle} />
                 </ScrollableTabView>
             </View>
         );

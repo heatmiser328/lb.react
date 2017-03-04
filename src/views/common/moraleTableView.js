@@ -1,8 +1,8 @@
 import React from 'react';
 import { View, Text, Image, ScrollView } from 'react-native';
 import {Font} from 'react-native-nub';
-import Morale from '../services/morale';
-import Icons from '../res';
+import Morale from '../../services/morale';
+import Icons from '../../res';
 
 var MoraleTableView = React.createClass({
     getInitialState() {

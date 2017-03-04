@@ -6,8 +6,8 @@ import OddsView from './oddsView';
 import CombatResultsView from './combatResultsView';
 import DiceModifiersView from './diceModifiersView';
 import MeleeCalcView from './meleeCalcView';
-import Melee from '../services/melee';
-import Base6 from '../services/base6';
+import Melee from '../../services/melee';
+import Base6 from '../../services/base6';
 
 var MeleeView = React.createClass({
     dice: [
@@ -134,7 +134,7 @@ var MeleeView = React.createClass({
                     </View>
                 </View>
                 <View style={{flex: 3.25}}>
-                    <MeleeCalcView side={'attack'} onSet={this.onSetMelee}  onAdd={this.onAddMelee} />
+                    <MeleeCalcView side={'attack'} battle={this.props.battle} onSet={this.onSetMelee} onAdd={this.onAddMelee} />
                 </View>
               </View>
           </View>

@@ -42,7 +42,7 @@ export const remove = () => (dispatch) => {
 
 export const reset = (e) => (dispatch,getState) => {
     const {current} = getState();
-    e = e || {id: current.battle, scenario: {id: current.scenario}};
+    e = e || {id: current.battle, scenario: {id: current.scenario}, ruleset: current.ruleset};
     return Current.reset(e)
     .then((data) => {
         dispatch({type: types.SET_CURRENT, value: data});
@@ -75,4 +75,8 @@ export const nextPlayer = () => (dispatch) => {
 
 export const setVictory = (side, vp) => (dispatch) => {    
     dispatch({type: types.SET_VICTORY, value: {side: side, value: vp}});
+}
+
+export const setRuleSet = (v) => (dispatch) => {    
+    dispatch({type: types.SET_RULESET, value: v});
 }

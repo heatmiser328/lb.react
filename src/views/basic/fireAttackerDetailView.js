@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, Switch } from 'react-native';
 import {Style} from 'react-native-nub';
-import QuickValuesView from './quickValuesView';
+import QuickValuesView from '../common/quickValuesView';
 
 var FireAttackerBasicAddView = React.createClass({
     getInitialState() {

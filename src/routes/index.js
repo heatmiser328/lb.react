@@ -2,12 +2,13 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Actions, Scene } from 'react-native-router-flux';
 import {NavBar} from 'react-native-nub';
-import {HomeView,AboutView,BattleView} from '../views';
+import {HomeView,AboutView,BattleView,ConfigurationView} from '../views';
 import {reset as refresh} from '../actions/current';
 import Icons from '../res';
 
 const rightButtons = [
     {image:'refresh', onPress: (props) => props.refresh()},
+    {image:'config', onPress: () => Actions.config() },
     {image:'info', onPress: () => Actions.about() }
 ];
 
@@ -37,6 +38,7 @@ export default Actions.create(
     <Scene key="root" navBar={NavBarMain}>
         <Scene key="home" type="reset" component={HomeView} title="La Bataille Assistant" initial={true}/>
         <Scene key="battle" component={BattleView} title="" />
+        <Scene key="config" navBar={NavBarAbout} component={ConfigurationView} title="Configuration" />
         <Scene key="about" navBar={NavBarAbout} component={AboutView} title="About" />
     </Scene>
 );

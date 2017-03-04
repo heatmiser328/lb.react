@@ -1,11 +1,9 @@
 import React from 'react';
 import { View, Text, Image } from 'react-native';
-import { connect } from 'react-redux';
 import {RadioButtonGroup,MultiSelectList,Style} from 'react-native-nub';
 import {DiceRoll} from 'react-native-dice';
-import DiceModifiersView from './diceModifiersView';
-import Base6 from '../services/base6';
-import getRules from '../selectors/rules';
+import DiceModifiersView from '../common/diceModifiersView';
+import Base6 from '../../services/base6';
 
 var ChargeRecallView = React.createClass({
     dice: [
@@ -37,7 +35,7 @@ var ChargeRecallView = React.createClass({
         this.onResolve();
     },
     onResolve() {        
-        let table = this.props.rules.charge.recall.table[this.state.type] || {};
+        let table = this.rules().table[this.state.type] || {};
         let mod = this.modifiers().filter((m) => this.state.mods[m.name]).reduce((p,c) => p + c.mod, 0);
         this.state.results = ((this.state.die1 + mod) >= table.low) ? 'Recall' : 'Ride';
         this.setState(this.state);
@@ -75,18 +73,15 @@ var ChargeRecallView = React.createClass({
             </View>
         );
     },
+    rules() {
+        return this.props.battle.rules.charge.recall;
+    },    
     types() {        
-        return Object.keys(this.props.rules.charge.recall.table);
+        return Object.keys(this.rules().table);
     },
     modifiers() {        
-        return this.props.rules.charge.recall.modifiers;
+        return this.rules().modifiers;
     }
 });
 
-const mapStateToProps = (state) => ({
-    rules: getRules(state)
-});
-
-module.exports = connect(
-  mapStateToProps
-)(ChargeRecallView);
+module.exports = ChargeRecallView;

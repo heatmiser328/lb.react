@@ -1,9 +1,7 @@
 import React from 'react';
 import { View, Text, Switch } from 'react-native';
-import { connect } from 'react-redux';
 import {SpinNumeric,MultiSelectList,RadioButtonGroup,IconButton,Style} from 'react-native-nub';
-import Icons from '../res';
-import getRules from '../selectors/rules';
+import Icons from '../../res';
 
 var MeleeCalcView = React.createClass({
     getInitialState() {
@@ -128,8 +126,14 @@ var MeleeCalcView = React.createClass({
             </View>
         );        
     },
-    modifiers() {        
-        if (!this.props.rules || !this.props.rules.hasOwnProperty('melee')) {
+    rules() {
+        if (this.props.battle.rules && this.props.battle.rules.hasOwnProperty('melee')) {
+            return this.props.battle.rules.melee;
+        }
+    },
+    modifiers() {  
+        let rules = this.rules();      
+        if (!rules) {
             // defaults
             return [
                 {name: 'x1/3', mod: 0.333},
@@ -140,16 +144,10 @@ var MeleeCalcView = React.createClass({
             ];
         }
         if (this.state.side == 0) {
-            return this.props.rules.melee.modifiers['attack'];
+            return rules.modifiers['attack'];
         }
-        return this.props.rules.melee.modifiers['defend'];
+        return rules.modifiers['defend'];
     }
 });
 
-const mapStateToProps = (state) => ({
-    rules: getRules(state)
-});
-
-module.exports = connect(
-  mapStateToProps
-)(MeleeCalcView);
+module.exports = MeleeCalcView;

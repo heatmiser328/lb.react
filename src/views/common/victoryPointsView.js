@@ -2,10 +2,9 @@ import React from 'react';
 import { View, Text, Image } from 'react-native';
 import { connect } from 'react-redux';
 import {SpinNumeric,Style} from 'react-native-nub';
-import Icons from '../res';
-import {setVictory,save} from '../actions/current';
-import getGame from '../selectors/game';
-import getVictory from '../selectors/victory';
+import Icons from '../../res';
+import {setVictory,save} from '../../actions/current';
+import getVictory from '../../selectors/victory';
 
 var VictoryLevel = React.createClass({
     getInitialState() {
@@ -94,7 +93,6 @@ var VictoryPointsView = React.createClass({
 
 
 const mapStateToProps = (state) => ({
-    battle: getGame(state),
     vp1: state.current.victory['0'],
     vp2: state.current.victory['1'],
     level: getVictory(state)

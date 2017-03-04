@@ -1,14 +1,12 @@
 import React from 'react';
 import { View, Text, Image } from 'react-native';
-import { connect } from 'react-redux';
 import {SpinNumeric,RadioButtonGroup,MultiSelectList,SelectList,Style} from 'react-native-nub';
 import {DiceRoll} from 'react-native-dice';
-import QuickValuesView from './quickValuesView';
-import DiceModifiersView from './diceModifiersView';
-import Icons from '../res';
-import Base6 from '../services/base6';
-import Morale from '../services/morale';
-import getRules from '../selectors/rules';
+import QuickValuesView from '../common/quickValuesView';
+import DiceModifiersView from '../common/diceModifiersView';
+import Icons from '../../res';
+import Base6 from '../../services/base6';
+import Morale from '../../services/morale';
 
 var AssaultView = React.createClass({
     dice: [
@@ -136,18 +134,15 @@ var AssaultView = React.createClass({
             </View>
         );
     },
+    rules() {
+        return this.props.battle.rules.assault;
+    },
     odds() {        
-        return this.props.rules.assault.odds;
+        return this.rules().odds;
     },
     modifiers() {        
-        return this.props.rules.assault.modifiers;
+        return this.rules().modifiers;
     }
 });
 
-const mapStateToProps = (state) => ({
-    rules: getRules(state)
-});
-
-module.exports = connect(
-  mapStateToProps
-)(AssaultView);
+module.exports = AssaultView;

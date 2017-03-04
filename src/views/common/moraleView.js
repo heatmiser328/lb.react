@@ -1,15 +1,13 @@
 import React from 'react';
-import { View, Text, Image, ScrollView } from 'react-native';
-import { connect } from 'react-redux';
-import {SpinNumeric,MultiSelectList,Font} from 'react-native-nub';
+import { View, Image, ScrollView } from 'react-native';
+import {SpinNumeric,MultiSelectList} from 'react-native-nub';
 import {DiceRoll} from 'react-native-dice';
 import DiceModifiersView from './diceModifiersView';
 import QuickValuesView from './quickValuesView';
 import MoraleTableView from './moraleTableView';
-import Base6 from '../services/base6';
-import Morale from '../services/morale';
-import Icons from '../res';
-import getRules from '../selectors/rules';
+import Base6 from '../../services/base6';
+import Morale from '../../services/morale';
+import Icons from '../../res';
 
 var MoraleView = React.createClass({
     dice: [
@@ -70,8 +68,7 @@ var MoraleView = React.createClass({
         this.state.result = b ? 'Pass' : 'Fail';
         this.setState(this.state);
     },
-    render() {
-        //console.log(this.props);
+    render() {        
         let icon = this.state.result == 'Fail' ? Icons['fail'] : Icons['pass'];
         let iconsize = (Math.min(this.state.height, this.state.width) * 0.9) || 16;
         return (
@@ -111,8 +108,14 @@ var MoraleView = React.createClass({
             </View>
         );
     },
+    rules() {
+        if (this.props.battle.rules && this.props.battle.rules.hasOwnProperty('morale')) {
+            return this.props.battle.rules.morale;
+        }
+    },
     modifiers() {        
-        if (!this.props.rules || !this.props.rules.hasOwnProperty('morale')) {
+        let rules = this.rules();
+        if (!rules) {
             // defaults
             return [
                 {"name": "Disorder", "mod": -3},
@@ -122,15 +125,9 @@ var MoraleView = React.createClass({
                 {"name": "Force March", "mod": -3}
             ];
         }
-        return this.props.rules.morale.modifiers;
+        return rules.modifiers;
     }    
 });
 
-const mapStateToProps = (state) => ({
-    rules: getRules(state)
-});
-
-module.exports = connect(
-  mapStateToProps
-)(MoraleView);
+module.exports = MoraleView;
 

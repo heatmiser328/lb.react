@@ -7,9 +7,8 @@ import FireAttackerView from './fireAttackerView';
 import FireDefenderView from './fireDefenderView';
 import DiceModifiersView from './diceModifiersView';
 import CombatResultsView from './combatResultsView';
-import Fire from '../services/fire';
-import Base6 from '../services/base6';
-import getRules from '../selectors/rules';
+import Fire from '../../services/fire';
+import Base6 from '../../services/base6';
 
 var FireView = React.createClass({
     dice: [
@@ -94,7 +93,7 @@ var FireView = React.createClass({
     },
     render() {
         //console.log(this.props);
-        let attsize = this.hasRules() ? 3 : 2;
+        let attsize = this.props.attsize || 2;
         return (
             <View style={{flex: 1}}>                
                 <View style={{flex: 1, backgroundColor: 'whitesmoke', justifyContent:'flex-start'}}>
@@ -125,32 +124,22 @@ var FireView = React.createClass({
                         <FireAttackerView value={this.state.attack}
                             onAdd={this.onAttackerAdd}
                             onChanged={this.onAttackerChanged}
-                            onModifierChanged={this.onAttackerModifierChanged} 
-                            hasRules={this.hasRules()}
-                            rules={this.props.rules} />                        
+                            onModifierChanged={this.onAttackerModifierChanged}
+                            detailView={this.props.attackerDetail}
+                            battle={this.props.battle} />
                     </View>
                     <View style={{flex:2}}>                        
                         <FireDefenderView value={this.state.defend}
                             onAdd={this.onDefenderAdd}
                             onChanged={this.onDefenderChanged}
-                            onIncrementsChanged={this.onDefenderIncrementsChanged} 
-                            hasRules={this.hasRules()}
-                            rules={this.props.rules} />
-                        
+                            onIncrementsChanged={this.onDefenderIncrementsChanged}                             
+                            detailView={this.props.defenderDetail}
+                            battle={this.props.battle} />                        
                     </View>
                 </View>                
             </View>
         );
-    },
-    hasRules() {
-        return this.props.rules && this.props.rules.hasOwnProperty('fire');
     }
 });
 
-const mapStateToProps = (state) => ({
-    rules: getRules(state)
-});
-
-module.exports = connect(
-  mapStateToProps
-)(FireView);
+module.exports = FireView;

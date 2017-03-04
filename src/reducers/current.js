@@ -1,6 +1,7 @@
 import types from '../constants/actionTypes';
 
 const defaultState = {
+    ruleset: 1,
     battle: -1,
     current: -1,
     turn: 1,
@@ -26,6 +27,12 @@ module.exports = (state = defaultState, action) => {
     case types.SET_CURRENT:
         return {
             ...action.value
+        };
+
+    case types.SET_RULESET:    
+        return {
+            ...state,
+            ruleset: action.value            
         };
 
     case types.PREV_TURN:        
