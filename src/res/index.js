@@ -9,6 +9,14 @@ module.exports = {
 	"back": Icons['chevron-left-dark'],
 	"config": Icons['gear-dark'],
 
+	"draw": require('./draw-from-cup.png'),
+	"drawcup": require('./drawcup.png'),
+	"resetcup": require('./reset-draw-cup.png'),
+    "regroup": require('./regroup.png'),
+    "reinforcements": require('./reinforcements.png'),
+    "leader": require('./leader.png'),
+    "artillery": require('./artillery.png'),
+	
 	"add": require('./addico.png'),
 	"equal": require('./equalico.png'),
 

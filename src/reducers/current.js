@@ -10,6 +10,10 @@ const defaultState = {
     victory: {
         "0": 0,
         "1": 0
+    },
+    maneuver: {
+        mu: null,
+        cup: []
     }
 };
 
@@ -33,6 +37,24 @@ module.exports = (state = defaultState, action) => {
         return {
             ...state,
             ruleset: action.value            
+        };
+
+    case types.SET_MUCUP:    
+        return {
+            ...state,
+            maneuver: {
+                ...state.maneuver,
+                cup: action.value
+            }            
+        };
+
+    case types.SET_MU:
+        return {
+            ...state,
+            maneuver: {
+                ...state.maneuver,
+                mu: action.value
+            }            
         };
 
     case types.PREV_TURN:        

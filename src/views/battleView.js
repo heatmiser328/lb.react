@@ -5,7 +5,7 @@ import {Style} from 'react-native-nub';
 import TurnView from './common/turnView';
 import BasicView from './basic/battleView';
 import PremierView from './premier/battleView';
-//import FifthEdView from './fifth/battleView';
+import FifthEdView from './fifth/battleView';
 import getGame from '../selectors/game';
 
 var BattleView = React.createClass({
@@ -23,13 +23,12 @@ var BattleView = React.createClass({
         );
     },
     renderBattleView() {        
-        if (this.props.ruleset == 1) {
-            if (this.props.battle.rules) {
-                return <PremierView initialPage={this.state.initialPage} battle={this.props.battle}/>
+        if (this.props.battle.rules) {
+            if (this.props.ruleset == 1) {
+                return <PremierView initialPage={this.state.initialPage} battle={this.props.battle}/>            
+            } else if (this.props.ruleset == 5) {
+                return <FifthEdView initialPage={this.state.initialPage} battle={this.props.battle} />
             }
-            
-        //} else if (this.props.ruleset == 5) {
-        //    return <FifthEdView initialPage={this.state.initialPage} battle={this.props.battle} />
         }
         return <BasicView initialPage={this.state.initialPage} battle={this.props.battle} />
     }

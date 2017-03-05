@@ -7,7 +7,7 @@ import {setRuleSet,save} from '../actions/current';
 var ConfigurationView = React.createClass({
     rulesets: [
         {label:'Premier',value:1, disabled: false},
-        {label:'5th Edition',value:5, disabled: true},
+        {label:'5th Edition',value:5, disabled: false},
         {label:'Regulations XXX',value:3, disabled: true},
         {label:'Marie-Louise',value:4, disabled: true},
         {label:'Neutral',value:0, disabled: false}

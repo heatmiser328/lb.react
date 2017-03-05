@@ -3,6 +3,7 @@ import {toast} from './toast';
 import Current from '../services/current';
 import Battles from '../services/battles';
 import Phases from '../services/phases';
+import Maneuver from '../services/maneuver';
 import getGame from '../selectors/game';
 
 export const load = () => (dispatch) => {
@@ -79,4 +80,35 @@ export const setVictory = (side, vp) => (dispatch) => {
 
 export const setRuleSet = (v) => (dispatch) => {    
     dispatch({type: types.SET_RULESET, value: v});
+}
+
+
+export const resetMUCup = (v) => (dispatch) => {        
+    dispatch({type: types.SET_MUCUP, value: Maneuver.reset()});
+    dispatch({type: types.SET_MU, value: null});
+}
+
+export const addMUToCup = (v) => (dispatch,getState) => {        
+    const {current} = getState();
+    dispatch({type: types.SET_MUCUP, value: Maneuver.add(v,current.maneuver.cup)});
+}
+
+export const removeMUFromCup = (v) => (dispatch,getState) => {        
+    const {current} = getState();
+    dispatch({type: types.SET_MUCUP, value: Maneuver.remove(v,current.maneuver.cup)});
+}
+
+export const drawMUFromCup = (v) => (dispatch,getState) => {        
+    const {current} = getState();
+    let draw = Maneuver.draw(current.maneuver.cup);        
+    dispatch({type: types.SET_MUCUP, value: draw.cup});
+    dispatch({type: types.SET_MU, value: draw.mu});
+}
+
+export const setMUCup = (v) => (dispatch) => {    
+    dispatch({type: types.SET_MUCUP, value: v});
+}
+
+export const setMU = (v) => (dispatch) => {    
+    dispatch({type: types.SET_MU, value: v});
 }

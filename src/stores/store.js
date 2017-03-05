@@ -12,6 +12,7 @@ import rootReducer from '../reducers';
             duration: integer
         },
         current: { 
+            ruleset: int,
             battle: int,
             scenario: int,           
             turn: int,
@@ -20,7 +21,11 @@ import rootReducer from '../reducers';
             victory: {
                 "0": int,
                 "1": int
-            }
+            },
+			maneuver: {
+				cup: [],
+				mu: {}
+			}            
         }
     }
 */

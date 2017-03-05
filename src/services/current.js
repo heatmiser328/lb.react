@@ -11,6 +11,8 @@ module.exports = {
 			else if (current.player == 'coalition') { current.player = 1;}
 			current.victory = current.victory || {"0": 0, "1": 0};
 			current.ruleset = current.ruleset || 1;
+			current.maneuver = current.maneuver || {cup: [],mu: null};
+
             return current;
 		});
 	},
@@ -31,6 +33,10 @@ module.exports = {
 			victory: {
 				"0": 0,
 				"1": 0
+			},
+			maneuver: {
+				cup: [],
+				mu: null
 			}
 		};
 		
