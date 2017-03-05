@@ -1,11 +1,12 @@
 import { createSelector } from 'reselect';
 import Phases from '../services/phases';
 
+const getRuleSet = (state) => state.current.ruleset;
 const getPhase = (state) => state.current.phase;
 
 export default createSelector(
-    [getPhase],
-    (phase) => {
-        return Phases.get(phase);
+    [getRuleSet,getPhase],
+    (ruleset,phase) => {
+        return Phases.get(ruleset,phase);
     }    
 );

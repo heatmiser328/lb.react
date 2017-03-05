@@ -25,7 +25,7 @@ var VictoryConditionsView = React.createClass({
         }
     },    
     render() {    
-        let iconsize = (Math.min(this.state.height, this.state.width) * 0.9) || 16;    
+        let iconsize = (Math.min(this.state.height, this.state.width) * 0.75) || 16;    
         return (
             <ScrollView contentContainerStyle={{flex:1, justifyContent:'flex-start', alignItems:'center', marginLeft:5, marginRight:5}}
                 automaticallyAdjustContentInsets={false}
