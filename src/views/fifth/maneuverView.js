@@ -49,7 +49,7 @@ var ManeuverView = React.createClass({
                             <ScrollView contentContainerStyle={{flex:1, justifyContent:'flex-start', alignItems:'center'}}
                                 automaticallyAdjustContentInsets={false}
                                 scrollEventThrottle={200}>
-                                {this.props.battle.players.map((p,i) => 
+                                {this.sides().map((p,i) => 
                                     <View key={i} style={{paddingBottom: 5, justifyContent: 'center'}}>
                                         <ManeuverUnit item={{image: p}} size={64} onPress={this.onAdd(p)} />                                        
                                     </View>
@@ -91,10 +91,16 @@ var ManeuverView = React.createClass({
                 </View>            
             </View>
         );
+    },
+    sides() {        
+        if (this.props.battle.rules.maneuver) {
+            return this.props.battle.rules.maneuver.sides;
+        }
+        return this.props.battle.players;
     }
 });
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state) => ({    
     cup: state.current.maneuver.cup || [],
     mu: state.current.maneuver.mu
 });

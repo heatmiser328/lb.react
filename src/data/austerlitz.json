@@ -1,4 +1,11 @@
 {
+	"maneuver": {
+		"sides": [
+			"French",
+			"Russian",
+			"Austrian"
+		]
+	},	
 	"fire": {
 		"attack": {
 			"French": {

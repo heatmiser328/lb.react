@@ -43,7 +43,8 @@ export const remove = () => (dispatch) => {
 
 export const reset = (e) => (dispatch,getState) => {
     const {current} = getState();
-    e = e || {id: current.battle, scenario: {id: current.scenario}, ruleset: current.ruleset};
+    e = e || {id: current.battle, scenario: {id: current.scenario}};
+    e.ruleset = current.ruleset;
     return Current.reset(e)
     .then((data) => {
         dispatch({type: types.SET_CURRENT, value: data});
@@ -83,7 +84,6 @@ export const setVictory = (side, vp) => (dispatch) => {
 export const setRuleSet = (v) => (dispatch) => {    
     dispatch({type: types.SET_RULESET, value: v});
 }
-
 
 export const resetMUCup = (v) => (dispatch) => {        
     dispatch({type: types.SET_MUCUP, value: Maneuver.reset()});
