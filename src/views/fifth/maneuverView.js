@@ -24,7 +24,7 @@ var ManeuverView = React.createClass({
         }
     },    
     onDraw() {        
-        this.props.drawMUFromCup();
+        this.props.drawMUFromCup(true);
         this.props.save().done();
     },
     render() {                  

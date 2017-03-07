@@ -81,36 +81,36 @@ export const setVictory = (side, vp) => (dispatch) => {
     dispatch({type: types.SET_VICTORY, value: {side: side, value: vp}});
 }
 
-export const setRuleSet = (v) => (dispatch) => {    
-    dispatch({type: types.SET_RULESET, value: v});
+export const setRuleSet = (ruleset) => (dispatch) => {    
+    dispatch({type: types.SET_RULESET, value: ruleset});
 }
 
-export const resetMUCup = (v) => (dispatch) => {        
+export const resetMUCup = () => (dispatch) => {        
     dispatch({type: types.SET_MUCUP, value: Maneuver.reset()});
     dispatch({type: types.SET_MU, value: null});
 }
 
-export const addMUToCup = (v) => (dispatch,getState) => {        
+export const addMUToCup = (item) => (dispatch,getState) => {        
     const {current} = getState();
-    dispatch({type: types.SET_MUCUP, value: Maneuver.add(v,current.maneuver.cup)});
+    dispatch({type: types.SET_MUCUP, value: Maneuver.add(item,current.maneuver.cup)});
 }
 
-export const removeMUFromCup = (v) => (dispatch,getState) => {        
+export const removeMUFromCup = (item) => (dispatch,getState) => {        
     const {current} = getState();
-    dispatch({type: types.SET_MUCUP, value: Maneuver.remove(v,current.maneuver.cup)});
+    dispatch({type: types.SET_MUCUP, value: Maneuver.remove(item,current.maneuver.cup)});
 }
 
-export const drawMUFromCup = (v) => (dispatch,getState) => {        
+export const drawMUFromCup = (all) => (dispatch,getState) => {        
     const {current} = getState();
-    let draw = Maneuver.draw(current.maneuver.cup);        
+    let draw = Maneuver.draw(current.maneuver.cup, all);
     dispatch({type: types.SET_MUCUP, value: draw.cup});
     dispatch({type: types.SET_MU, value: draw.mu});
 }
 
-export const setMUCup = (v) => (dispatch) => {    
-    dispatch({type: types.SET_MUCUP, value: v});
+export const setMUCup = (cup) => (dispatch) => {    
+    dispatch({type: types.SET_MUCUP, value: cup});
 }
 
-export const setMU = (v) => (dispatch) => {    
-    dispatch({type: types.SET_MU, value: v});
+export const setMU = (mu) => (dispatch) => {    
+    dispatch({type: types.SET_MU, value: mu});
 }

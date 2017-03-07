@@ -34,8 +34,13 @@ module.exports = {
         } 
         return shuffle(cup)        
     },
-    draw(cup) {
+    draw(cup,all) {
         var item = shuffle(cup).shift();
+        if (all && item) {
+            // all = remove all of the same type
+            cup = cup.filter((i) => i.image != item.image);
+            delete item['number'];  // whack the number
+        }
         return {
             mu: item,
             cup: cup
