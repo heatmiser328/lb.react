@@ -1,3 +1,4 @@
+import {REHYDRATE} from 'react-native-nub';
 import types from '../constants/actionTypes';
 
 const defaultState = {
@@ -28,6 +29,23 @@ const nextTurn = (t,m) => {
 
 module.exports = (state = defaultState, action) => {
     switch (action.type) {
+    case REHYDRATE:
+        if (action.payload.current) {
+            let s = {
+                ...state,
+                ...action.payload.current
+            };        	
+			s.player = s.player || 0;
+			if (s.player == 'imperial') { s.player = 0;}
+			else if (s.player == 'coalition') { s.player = 1;}
+			s.victory = s.victory || {"0": 0, "1": 0};
+			s.ruleset = s.ruleset || 1;
+			s.maneuver = s.maneuver || {cup: [],mu: null};
+                        
+            return s;
+        }
+        return state;
+
     case types.SET_CURRENT:
         return {
             ...action.value

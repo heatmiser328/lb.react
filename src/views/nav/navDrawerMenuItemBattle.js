@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, TouchableOpacity, Text, Image, ListView } from 'react-native';
-import {Arrow,Font} from 'react-native-nub';
+import {Arrow,Style} from 'react-native-nub';
 import ScenarioNavMenuItem from './navDrawerMenuItemScenario';
 
 var BattleNavMenuItem = React.createClass({
@@ -40,8 +40,8 @@ var BattleNavMenuItem = React.createClass({
                             //backgroundColor: 'transparent',
                         }} source={this.props.icons[battle.image]} />
                         <View style={{flex: 1}}>
-                            <Text style={{fontSize: Font.large(),textAlign: 'center',margin: 10}}>{battle.name}</Text>
-                            <Text style={{fontSize: Font.medium(),textAlign: 'center',margin: 10,color: 'blue'}}>{battle.publisher}</Text>
+                            <Text style={{fontSize: Style.Font.large(),textAlign: 'center',margin: 10}}>{battle.name}</Text>
+                            <Text style={{fontSize: Style.Font.medium(),textAlign: 'center',margin: 10,color: 'blue'}}>{battle.publisher}</Text>
                         </View>
                     </View>
                     {this.renderScenarios(battle)}

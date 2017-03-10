@@ -3,29 +3,25 @@ import { connect } from 'react-redux';
 import { Actions } from 'react-native-router-flux';
 import {Landing} from 'react-native-nub';
 import {splash} from '../res';
-import {load} from '../actions/current';
+import getGame from '../selectors/game';            
 
 var HomeView = React.createClass({
-    componentWillMount() {
-        this.props.load()
-        .then((game) => {
-            if (game && game.name) {
-                Actions.battle({title: game.name, subtitle: game.scenario.name});                
-            }            
-        })
-        .done();
-    },    
-    render() {
+    componentDidUpdate() {
+        if (this.props.battle && this.props.battle.title) {
+            Actions.battle({title: this.props.battle.title, subtitle: this.props.battle.subtitle});
+        }
+    },
+    render() {        
         return (
             <Landing splash={splash} />
         );
     }
 });
 
-const mapDispatchToProps =  ({load});
+const mapStateToProps = (state) => ({
+    battle: getGame(state)
+});
 
 module.exports = connect(
-  null,
-  mapDispatchToProps
+  mapStateToProps
 )(HomeView);
-

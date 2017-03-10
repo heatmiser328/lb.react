@@ -4,28 +4,24 @@ import { connect } from 'react-redux';
 import {Style,IconButton} from 'react-native-nub';
 import Icons from '../../res';
 import ManeuverUnit from './maneuverUnit';
-import {resetMUCup,addMUToCup,removeMUFromCup,drawMUFromCup,save} from '../../actions/current';
+import {resetMUCup,addMUToCup,removeMUFromCup,drawMUFromCup} from '../../actions/current';
 
 var ManeuverView = React.createClass({
     onReset() {
-        this.props.resetMUCup();
-        this.props.save().done();        
+        this.props.resetMUCup();        
     },
     onAdd(player) {
         return (e) => {
-            this.props.addMUToCup(player);
-            this.props.save().done();
+            this.props.addMUToCup(player);            
         }
     },
     onRemove(item) {
         return (e) => {        
-            this.props.removeMUFromCup(item);
-            this.props.save().done();
+            this.props.removeMUFromCup(item);            
         }
     },    
     onDraw() {        
-        this.props.drawMUFromCup(true);
-        this.props.save().done();
+        this.props.drawMUFromCup(true);        
     },
     render() {                  
         let mu = this.props.mu || {};        
@@ -105,7 +101,7 @@ const mapStateToProps = (state) => ({
     mu: state.current.maneuver.mu
 });
 
-const mapDispatchToProps =  ({resetMUCup,addMUToCup,removeMUFromCup,drawMUFromCup,save});
+const mapDispatchToProps =  ({resetMUCup,addMUToCup,removeMUFromCup,drawMUFromCup});
 
 module.exports = connect(
   mapStateToProps,

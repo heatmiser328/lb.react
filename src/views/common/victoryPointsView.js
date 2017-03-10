@@ -3,7 +3,7 @@ import { View, Text, Image } from 'react-native';
 import { connect } from 'react-redux';
 import {SpinNumeric,Style} from 'react-native-nub';
 import Icons from '../../res';
-import {setVictory,save} from '../../actions/current';
+import {setVictory} from '../../actions/current';
 import getVictory from '../../selectors/victory';
 
 var VictoryLevel = React.createClass({
@@ -73,11 +73,9 @@ var VictoryPoints = React.createClass({
 var VictoryPointsView = React.createClass({
     onSide1VPChanged(v) {
         this.props.setVictory(0, +v);
-        this.props.save().done();
     },    
     onSide2VPChanged(v) {
-        this.props.setVictory(1, +v);
-        this.props.save().done();
+        this.props.setVictory(1, +v);        
     },    
     render() {        
         return (
@@ -98,7 +96,7 @@ const mapStateToProps = (state) => ({
     level: getVictory(state)
 });
 
-const mapDispatchToProps =  ({setVictory,save});
+const mapDispatchToProps =  ({setVictory});
 
 module.exports = connect(
   mapStateToProps,

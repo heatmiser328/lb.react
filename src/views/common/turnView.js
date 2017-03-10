@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import {Style,SpinSelect} from 'react-native-nub';
 import TurnPlayerView from './turnPlayerView';
 import Icons from '../../res';
-import {prevTurn,nextTurn,prevPhase,nextPhase,save} from '../../actions/current';
+import {prevTurn,nextTurn,prevPhase,nextPhase} from '../../actions/current';
 import getGame from '../../selectors/game';
 import getTurn from '../../selectors/turn';
 import getPhase from '../../selectors/phase';
@@ -32,23 +32,19 @@ var TurnView = React.createClass({
     },        
     onPrevTurn() {
         //console.log('previous turn');
-        this.props.prevTurn();
-        this.props.save().done();
+        this.props.prevTurn();        
     },
     onNextTurn() {
         //console.log('next turn');
-        this.props.nextTurn();
-        this.props.save().done();
+        this.props.nextTurn();        
     },
     onPrevPhase() {
         //console.log('previous phase');
-        this.props.prevPhase();
-        this.props.save().done();
+        this.props.prevPhase();        
     },
     onNextPhase() {
         //console.log('next phase');
-        this.props.nextPhase();
-        this.props.save().done();
+        this.props.nextPhase();        
     },
     render() {
         //console.log(this.props);
@@ -77,7 +73,7 @@ const mapStateToProps = (state) => ({
     phase: getPhase(state)
 });
 
-const mapDispatchToProps =  ({prevTurn,nextTurn,prevPhase,nextPhase,save});
+const mapDispatchToProps =  ({prevTurn,nextTurn,prevPhase,nextPhase});
 
 module.exports = connect(
   mapStateToProps,

@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { View, Text, Switch } from 'react-native';
 import {RadioButtonGroup,Style} from 'react-native-nub';
-import {setRuleSet,save} from '../actions/current';
+import {setRuleSet} from '../actions/current';
 
 var ConfigurationView = React.createClass({
     rulesets: [
@@ -13,8 +13,7 @@ var ConfigurationView = React.createClass({
         {label:'Neutral',value:0, disabled: false}
     ],
     onRulesChanged(v) {
-        this.props.setRuleSet(v);
-        this.props.save().done();
+        this.props.setRuleSet(v);        
     },    
     render() {
         return (
@@ -44,7 +43,7 @@ const mapStateToProps = (state) => ({
     ruleset: +state.current.ruleset
 });
 
-const mapDispatchToProps =  ({setRuleSet,save});
+const mapDispatchToProps =  ({setRuleSet});
 
 module.exports = connect(
   mapStateToProps, 
