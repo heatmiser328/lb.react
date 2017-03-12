@@ -53,6 +53,5 @@ fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots
 
-doc/todo
-doc/misc
+doc/*.txt
 trace.html
