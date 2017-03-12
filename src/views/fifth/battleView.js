@@ -18,7 +18,7 @@ var BattleView = React.createClass({
         return (
             <ScrollableTabView
                 style={{backgroundColor: '#fff'}}
-                tabBarTextStyle={{fontSize: Style.Font.medium()}}                
+                tabBarTextStyle={{fontSize: Style.Font.smallmedium()}}                
                 initialPage={this.props.initialPage}                    
             >
                 <ManeuverView tabLabel="Maneuver" battle={this.props.battle} />
