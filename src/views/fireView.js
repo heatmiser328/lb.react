@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, Switch } from 'react-native';
-import {Font} from 'react-native-nub';
+import {Style} from 'react-native-nub';
 import {DiceRoll} from 'react-native-dice';
 import FireAttackerView from './fireAttackerView';
 import FireDefenderView from './fireDefenderView';
@@ -113,7 +113,7 @@ var FireView = React.createClass({
                         />
                     </View>
                     <View style={{flex: 0.35, flexDirection: 'row', justifyContent: 'center', alignItems:'center'}}>
-                        <Text style={{fontSize: Font.medium()}}>Cannister</Text>
+                        <Text style={{fontSize: Style.Font.medium()}}>Cannister</Text>
                         <Switch value={this.state.cannister} onValueChange={this.onCannisterChanged} />
                     </View>
                 </View>

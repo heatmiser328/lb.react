@@ -29,9 +29,8 @@ const AboutView = (props) => {
                 {description: 'react-native-router-flux', url: 'https://github.com/aksonov/react-native-router-flux'},
                 {description: 'react-native-drawer', url: 'https://github.com/root-two/react-native-drawer'},
                 {description: 'react-native-scrollable-tab-view', url: ''},
-                {description: 'react-native-audioplayer', url: ''},
-                {description: 'react-native-fs', url: ''},
-                {description: 'react-native-menu', url: ''},
+                {description: 'react-native-sound', url: ''},
+                {description: 'redux-persist', url: ''},                
                 {description: 'moment', url: ''}                
             ]}
         />

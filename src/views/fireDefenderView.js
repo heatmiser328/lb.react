@@ -1,13 +1,13 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import {SpinNumeric,Font} from 'react-native-nub';
+import {SpinNumeric,Style} from 'react-native-nub';
 import QuickValuesView from './quickValuesView';
 
 var FireDefenderView = React.createClass({
     render() {
         return (
             <View style={{flex:1}}>
-                <Text style={{fontSize: Font.medium(),fontWeight: 'bold',backgroundColor: 'silver', textAlign: 'center'}}>Defender</Text>
+                <Text style={{fontSize: Style.Font.medium(),fontWeight: 'bold',backgroundColor: 'silver', textAlign: 'center'}}>Defender</Text>
                 <View style={{flex: 1}}>
                     <SpinNumeric value={this.props.value} min={0} onChanged={this.props.onChanged} />
                 </View>

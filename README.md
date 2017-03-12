@@ -47,7 +47,7 @@ The Turn widget is on the top of the main view. The left and right arrows will n
 #### Dice
 ![Dice](https://github.com/jcapuano328/lb.react/raw/basic-ux/doc/Dice.png "Dice")
 
-Each view includes a panel of dice at the top, the number of which varies based on the requirements of the activity. The "Roll" button will generate psuedo-random results for each die. Tap a die to increment it's value by 1. The big blue buttons will adjust the 2 left-most dice as base-6: +6 on the dice 3 and 6 (36) will yield dice 4 and 6 (46). Most of the dice-related activities in La Bataille are base-6, and the modifiers behave accordingly. As the dice values are changed, the associated activity will adjust the results accordingly.
+Each view includes a panel of dice at the top, the number of which varies based on the requirements of the activity. The "Roll" button will generate psuedo-random results for each die. Tap a die to increment it's value by 1. The big blue buttons will adjust the 2 left-most dice as base-6(-ish): +6 on the dice 3 and 6 (36) will yield dice 4 and 6 (46). Most of the dice-related activities in La Bataille are base-6, and the modifiers behave accordingly. As the dice values are changed, the associated activity will adjust the results accordingly.
 
 Psuedo-random sometimes doesn't seem very random at all. Occasionally a dice roll will produce the same results twice in a row. I've tried a fair number of approaches over the years without any better results, so I decided to settle on this. Done.
 
