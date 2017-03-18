@@ -16,23 +16,22 @@ const AboutView = (props) => {
                     {label: 'Marshal Enterprises', url: 'http://www.labataille.me/Home_Page.php'},
                     {label: 'Clash of Arms', url: 'http://www.clashofarms.com/'}
                 ]
-            }}            
+            }}
             additionalinfo={{
                 description: 'And of course check out the discussions and extras',
                 links: [
                     {label: 'ConsimWorld Forum', url: 'http://talk.consimworld.com/WebX?13@@.ee6c73b/31887'},
                     {label: 'La Bataille Extras', url: 'http://labataille.us/'}
-                ]                
+                ]
             }}
             dependencies={[
                 {description: 'react-redux', url: 'https://github.com/reactjs/react-redux'},
                 {description: 'react-native-router-flux', url: 'https://github.com/aksonov/react-native-router-flux'},
                 {description: 'react-native-drawer', url: 'https://github.com/root-two/react-native-drawer'},
                 {description: 'react-native-scrollable-tab-view', url: ''},
-                {description: 'react-native-audioplayer', url: ''},
-                {description: 'react-native-fs', url: ''},
-                {description: 'react-native-menu', url: ''},
-                {description: 'moment', url: ''}                
+                {description: 'react-native-sound', url: ''},                
+                {description: 'redux-persist', url: ''},
+                {description: 'moment', url: ''}
             ]}
         />
     );

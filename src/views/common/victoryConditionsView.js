@@ -31,7 +31,8 @@ var VictoryConditionsView = React.createClass({
                 automaticallyAdjustContentInsets={false}
                 scrollEventThrottle={200}>
                 {this.props.battle.victory.map((v,i) => 
-                    <View key={i} style={{flex:1, flexDirection:'row'}}>
+                    <View key={i} style={{flex:1, flexDirection:'row', paddingTop:2,paddingBottom:2
+                        ,borderBottomWidth:2,borderBottomColor:'gray'}}>
                         <View style={{flex:1, justifyContent:'center',alignItems:'center'}} onLayout={this.onLayout}>
                             <Image style={{width: iconsize,height: iconsize,resizeMode: 'contain'}} source={Icons[v.side]}/>
                             <Text style={{fontSize:Style.Font.medium(),fontWeight:'bold',textAlign:'center'}}>{v.level}</Text>
