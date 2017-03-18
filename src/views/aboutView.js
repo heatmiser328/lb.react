@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import moment from 'moment';
 import {About} from 'react-native-nub';
 import {logo} from '../res';
 
@@ -8,7 +9,7 @@ const AboutView = (props) => {
         <About logo={logo}
             title={'About La Bataille Assistant'}
             version={props.version}
-            releasedate={props.releasedate}
+            releasedate={moment(props.releasedate).format("MMMM Do YYYY, h:mm:ss a")}
             description={'A no frills assistant for the La Bataille system of wargames.'}
             credit={{
                 description: 'All glory to them that made it possible!',
