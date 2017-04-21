@@ -1,4 +1,9 @@
 {
+	"maneuver": {
+		"sides": [
+			"French"
+		]
+	},		
 	"fire": {
 		"attack": {
 			"nationality": {

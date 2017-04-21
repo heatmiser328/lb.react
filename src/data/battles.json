@@ -2231,8 +2231,17 @@
 	                "day": 2,
 	                "hour": 20,
 	                "minute": 40
-	            }
-	        }
+	            },
+				"victory": [
+					{"side": "French", "level": "Decisive", "conditions": "Put 3 Allied Lines on Morale Level 3 and do not have more than 1 French Corps on Morale Level 3 by the end of the last turn"},
+					{"side": "French", "level": "Overwhelming", "conditions": "Put 2 Allied Lines on Morale Level 3 and do not have more than 1 French Corps on Morale Level 3 by the end of the last turn"},
+					{"side": "French", "level": "Marginal", "conditions": "Put 1 Allied Line on Morale Level 3 and do not have more than 1 French Corps on Morale Level 3 by the end of the last turn"},
+					{"side": "", "level": "Draw", "conditions": "If both sides can claim a level of victory"},
+					{"side": "PrussianRussian", "level": "Marginal", "conditions": "At the end of the last turn hold both Goerschens"},
+					{"side": "PrussianRussian", "level": "Overwhelming", "conditions": "At the end of the last turn hold both Goerschens and Kaja, and place a French Corps on Morale Level 3"},
+					{"side": "PrussianRussian", "level": "Decisive", "conditions": "At the end of the last turn hold Luetzen, Starsiedel, Meuchen, Kaja, and both Goerschens, or, place 2 French Corps on Morale Level 3"}
+				]
+	        }		
 	    ]
 	},
 	{
