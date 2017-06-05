@@ -5,6 +5,10 @@ var rules = {
     "talavera": require('../data/talavera.json'),
     "albuera": require('../data/albuera.json'),
 
+    "ligny": require('../data/ligny.json'),
+    "quatrebras": require('../data/quatrebras.json'),
+    "ligny-quatrebras": require('../data/ligny-quatrebras.json'),
+
     "luetzen": require('../data/luetzen.json'),
 
     "vauchamps": require('../data/vauchamps.json'),

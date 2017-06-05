@@ -1,41 +1,56 @@
-'use strict'
+const leadercasualty = {
+    "premier": [
+		{"result": "Head", "die": 1, "mortal": true, duration:-1},
+		{"result": "Chest", "die": 2, "mortal": true, duration:-1},
+		{"result": "Leg", "die": 3, "mortal": false, "duration": 2, "unit": "hours"},
+		{"result": "Arm", "die": 4, "mortal": false, "duration": 1, "unit": "hours"},
+		{"result": "Capture", "die": 5, "mortal": false, duration:-1},
+		{"result": "Flesh", "die": 6, "mortal": false, duration:-1}
+
+    ],
+    "fifthed": [
+		{"result": "Head", "die": 1, "mortal": true, duration:-1},
+		{"result": "Torso", "die": 2, "mortal": true, duration:-1},
+		{"result": "Leg", "die": 3, "mortal": false, "duration": 2, "unit": "hours"},
+		{"result": "Arm", "die": 4, "mortal": false, "duration": 1, "unit": "hours"},
+		{"result": "Stun", "die": 5, "mortal": false, "duration": 1, "unit": "turns"},
+		{"result": "Flesh", "die": 6, "mortal": false, "duration": 0}
+	]    
+};
+
+const get = (ruleset) => {
+    switch(ruleset)
+    {
+        case 1:
+        return leadercasualty.premier;
+        case 5:
+        return leadercasualty.fifthed;
+        default:
+        break;			
+    }
+    return [];
+}
+
+const duration = (d, d1, d2, u) => {
+    if (d <= 0) {
+        return '';
+    }
+    return (d1 + (d > 1 ? d2 : 0)).toString() + ' ' + u + ' out';    
+}
 
 module.exports = {
-    resolve(dice, lossdie, durationdie1, durationdie2, melee) {
+    resolve(ruleset,dice, lossdie, durationdie1, durationdie2, melee) {
     	var loss = melee ? (dice <= 12 || dice >= 64) : (dice >= 64);
         var result = {result: ''};
 
         if (loss) {
+            const casualty = get(ruleset).find((lc) => lc.die == lossdie) || {};
             result = {
                 leader: melee && dice <= 12 ? 'A' : 'D',
-                result: '',
-                duration: '',
-                mortal: false
+                result: casualty.result,
+                duration: duration(casualty.duration, durationdie1, durationdie2, casualty.unit),
+                mortal: casualty.mortal
             };
-            if (lossdie == 1) {
-            	result.result = 'Head';
-                result.mortal = true;
-            }
-            else if (lossdie == 2) {
-            	result.result = 'Chest';
-                result.mortal = true;
-            }
-            else if (lossdie == 3) {
-            	var duration = durationdie1 + durationdie2;
-            	result.result = 'Leg';
-                result.duration = duration + ' hours out';
-            }
-            else if (lossdie == 4) {
-            	var duration = durationdie1;
-            	result.result = 'Arm'
-                result.duration = duration + ' hours out';
-            }
-            else if (lossdie == 5) {
-            	result.result = 'Capture';
-            }
-            else {//if (lossdie == 6) {
-            	result.result = 'Flesh Wound';
-            }
         }
         return result;
 	}

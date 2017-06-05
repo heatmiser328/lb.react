@@ -1862,7 +1862,15 @@
 	                "day": 16,
 	                "hour": 22,
 	                "minute": 20
-	            }
+	            },
+				"victory": [
+					{"side": "French", "level": "Decisive", "conditions": "No Prussian Infantry in good order west or north of the old Roman road, with at least elements of French cavalry in Marbais, Marbijoux, and Tilly at end of game. Or put 2 Prussian corps on Level 3 and kill/capture Bluecher"},
+					{"side": "French", "level": "Overwhelming", "conditions": "Place 1 Prussian corps on Level 3 and 1 other Prussian corps at least on Level 2, and control Aux Trois Barretes and Au Venerable at end of game"},
+					{"side": "French", "level": "Victory", "conditions": ""},
+					{"side": "Prussian", "level": "Victory", "conditions": ""},
+					{"side": "Prussian", "level": "Overwhelming ", "conditions": ""},
+					{"side": "Prussian", "level": "Decisive ", "conditions": ""}
+				]				
 	        }
 	    ]
 	},
@@ -1911,6 +1919,35 @@
 	        }
 	    ]
 	},
+
+	{
+	    "id": 59,
+	    "name": "La Bataille de Ligny et Quatre-Bras",
+	    "publisher": "Clash of Arms",
+	    "image": "ligny-quatrebras",
+		"sides": ["French", "AngloPrussian"],
+	    "scenarios": [
+	        {
+	            "id": 153,
+	            "name": "The Combined Battle",
+	            "start": {
+	                "year": 1815,
+	                "month": 6,
+	                "day": 16,
+	                "hour": 13,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1815,
+	                "month": 6,
+	                "day": 16,
+	                "hour": 22,
+	                "minute": 20
+	            }
+	        }
+	    ]
+	},
+	
 	{
 	    "id": 60,
 	    "name": "La Bataille de Mont St. Jean",
@@ -1920,7 +1957,7 @@
 	    "scenarios": [
 	        {
 	            "id": 61,
-	            "name": "Chateuu Goumont",
+	            "name": "Chateau Goumont",
 	            "start": {
 	                "year": 1815,
 	                "month": 6,

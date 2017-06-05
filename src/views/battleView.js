@@ -2,7 +2,6 @@ import React from 'react';
 import { View } from 'react-native';
 import { connect } from 'react-redux';
 import {Style} from 'react-native-nub';
-import TurnView from './common/turnView';
 import BasicView from './basic/battleView';
 import PremierView from './premier/battleView';
 import FifthEdView from './fifth/battleView';
@@ -16,8 +15,7 @@ var BattleView = React.createClass({
     },    
     render() {        
         return (
-            <View style={{flex: 1, marginTop: Style.Scaling.scale(44),backgroundColor: 'rgba(0,0,0,0.01)'}}>
-                <TurnView logo={this.props.battle.image} />
+            <View style={{flex: 1, marginTop: Style.Scaling.scale(44),backgroundColor: 'rgba(0,0,0,0.01)'}}>            
                 {this.renderBattleView()}
             </View>
         );

@@ -1,0 +1,319 @@
+{
+	"maneuver": {
+		"sides": [
+			"French", "British"
+		]
+	},		
+	"fire": {
+		"attack": {
+		},
+		"defense": {
+			"terrain": {
+				"Clear": {
+					"Col": {"label":"6","value":6},
+					"Line": {"label":"9","value":9},
+					"Carre": {"label":"6","value":6},					
+					"Skirm": {"label":"14","value":14},
+					"D": {"label":"10","value":10},
+					"PgD": {"label":"14","value":14},
+					"Arty": {"label":"6/8","value":8},
+					"Road": {"label":"9","value":9},
+					"CavLn": {"label":"8","value":8},
+					"CavSk": {"label":"12","value":12},
+					"CavPgD": {"label":"16","value":16},
+					"CavRd": {"label":"8","value":8}					
+				},
+				"Cultivated": {
+					"Col": {"label":"7","value":7},
+					"Line": {"label":"10","value":10},
+					"Carre": {"label":"7","value":7},					
+					"Skirm": {"label":"15","value":15},
+					"D": {"label":"14","value":14},
+					"PgD": {"label":"16","value":16},
+					"Arty": {"label":"8/10","value":10},
+					"Road": {"label":"10","value":10},
+					"CavLn": {"label":"9","value":9},
+					"CavSk": {"label":"13","value":13},
+					"CavPgD": {"label":"17","value":17},
+					"CavRd": {"label":"10","value":10}					
+				},
+				"Orchard": {
+					"Col": {"label":"7","value":7},
+					"Line": {"label":"10","value":10},
+					"Carre": {"label":"7","value":7},					
+					"Skirm": {"label":"15","value":15},
+					"D": {"label":"14","value":14},
+					"PgD": {"label":"16","value":16},
+					"Arty": {"label":"8/10","value":10},
+					"Road": {"label":"10","value":10},
+					"CavLn": {"label":"9","value":9},
+					"CavSk": {"label":"13","value":13},
+					"CavPgD": {"label":"17","value":17},
+					"CavRd": {"label":"10","value":10}					
+				},
+				"Hedge": {
+					"Col": {"label":"7","value":7},
+					"Line": {"label":"10","value":10},
+					"Carre": {"label":"7","value":7},					
+					"Skirm": {"label":"15","value":15},
+					"D": {"label":"14","value":14},
+					"PgD": {"label":"16","value":16},
+					"Arty": {"label":"8/10","value":10},
+					"Road": {"label":"10","value":10},
+					"CavLn": {"label":"9","value":9},
+					"CavSk": {"label":"13","value":13},
+					"CavPgD": {"label":"17","value":17},
+					"CavRd": {"label":"10","value":10}					
+				},
+				"Farmette": {
+					"Col": {"label":"7","value":7},
+					"Line": {"label":"10","value":10},
+					"Carre": {"label":"7","value":7},					
+					"Skirm": {"label":"15","value":15},
+					"D": {"label":"14","value":14},
+					"PgD": {"label":"16","value":16},
+					"Arty": {"label":"8/10","value":10},
+					"Road": {"label":"10","value":10},
+					"CavLn": {"label":"9","value":9},
+					"CavSk": {"label":"13","value":13},
+					"CavPgD": {"label":"17","value":17},
+					"CavRd": {"label":"10","value":10}					
+				},
+				"Dwelling": {
+					"Col": {"label":"7","value":7},
+					"Line": {"label":"10","value":10},
+					"Carre": {"label":"7","value":7},					
+					"Skirm": {"label":"15","value":15},
+					"D": {"label":"14","value":14},
+					"PgD": {"label":"16","value":16},
+					"Arty": {"label":"8/10","value":10},
+					"Road": {"label":"10","value":10},
+					"CavLn": {"label":"9","value":9},
+					"CavSk": {"label":"13","value":13},
+					"CavPgD": {"label":"17","value":17},
+					"CavRd": {"label":"10","value":10}					
+				},
+				"Woods": {
+					"Gen": {"label":"16","value":16},
+					"Skirm": {"label":"16","value":16},
+					"D": {"label":"16","value":16},
+					"PgD": {"label":"20","value":20},
+					"Arty": {"label":"12/10","value":10},
+					"Road": {"label":"10","value":10},
+					"CavGen": {"label":"14","value":14},
+					"CavSk": {"label":"14","value":14},
+					"CavPgD": {"label":"20","value":20}
+				},
+				"Town": {
+					"Gen": {"label":"16","value":16},
+					"Skirm": {"label":"16","value":16},
+					"D": {"label":"16","value":16},
+					"PgD": {"label":"20","value":20},
+					"Arty": {"label":"12/10","value":10},
+					"Road": {"label":"10","value":10},
+					"CavGen": {"label":"14","value":14},
+					"CavSk": {"label":"14","value":14},
+					"CavPgD": {"label":"20","value":20}
+				},
+				"SunkenRd": {
+					"Gen": {"label":"16","value":16},
+					"Skirm": {"label":"16","value":16},
+					"D": {"label":"16","value":16},
+					"PgD": {"label":"20","value":20},
+					"Arty": {"label":"12/10","value":10},
+					"Road": {"label":"10","value":10},
+					"CavGen": {"label":"14","value":14},
+					"CavSk": {"label":"14","value":14},
+					"CavPgD": {"label":"20","value":20}
+				},				
+				"GrFerme": {
+					"Carre": {"label":"20","value":20},
+					"D": {"label":"20","value":20},
+					"PgD": {"label":"20","value":20}
+				},
+				"Church": {
+					"Carre": {"label":"20","value":20},
+					"D": {"label":"20","value":20},
+					"PgD": {"label":"20","value":20}
+				},
+				"Marsh": {
+					"Gen": {"label":"16","value":16},
+					"Skirm": {"label":"16","value":16},
+					"D": {"label":"16","value":16},
+					"PgD": {"label":"16","value":16}
+				},
+				"TreeLine": {
+					"Gen": {"label":"16","value":16},
+					"Skirm": {"label":"16","value":16},
+					"D": {"label":"16","value":16},
+					"PgD": {"label":"20","value":20},
+					"CavGen": {"label":"14","value":14},
+					"CavSkirm": {"label":"14","value":14},
+					"CavPgD": {"label":"20","value":20},
+					"Arty": {"label":"12/10","value":10}
+				}				
+			}
+		},
+		"artillery": {
+			"limber": {
+				"table": {
+					"French Horse": { "low": 2, "high": 6},
+					"French Foot": { "low": 3, "high": 6},
+					"French Guard Horse": { "low": 1, "high": 6},
+
+					"Allied Horse": { "low": 3, "high": 6},
+					"British Foot": { "low": 4, "high": 6},
+					"KGL Foot": { "low": 4, "high": 6},
+					"Braunschweig Foot": { "low": 5, "high": 6},
+					"Hanoverian Foot": { "low": 5, "high": 6},
+					"Dutch-Belgian Foot": { "low": 5, "high": 6}
+				},
+				"modifiers": [
+					{"name": "Arty Leader", "mod": 2},
+					{"name": "Leader", "mod": 1}
+				]
+			}
+		}
+	},
+	"assault": {
+		"odds": [
+		    {"name": "1/2", "attmod": -6, "defmod": 6},
+			{"name": "1/1", "attmod": -3, "defmod": 3},
+		    {"name": "2/1", "attmod": 0, "defmod": 0},
+		    {"name": "3/1", "attmod": 3, "defmod": -3},
+		    {"name": "4/1", "attmod": 6, "defmod": -6},
+		    {"name": "5/1+", "attmod": 9, "defmod": -9}
+		],
+		"modifiers": [
+		    {"name": "Assaulted in flank", "type": "defend", "attmod": 3, "defmod": -3},
+		    {"name": "Assaulted in rear", "type": "defend", "attmod": 9, "defmod": -9},
+			{"name": "Grand Ferme", "type": "defend", "attmod": 0, "defmod": 6},
+			{"name": "Church", "type": "defend", "attmod": 0, "defmod": 6},
+			{"name": "Assaulting across a sunken road", "type": "attack", "attmod": 0, "defmod": 6},
+			{"name": "Disordered", "type": "defend", "attmod": 0, "defmod": -3},
+			{"name": "Assaulting up a slope", "type": "attack", "attmod": -3, "defmod": 3},			
+			{"name": "50% losses", "type": "attack", "attmod": -6, "defmod": -6},
+			{"name": "Mixed nationality stack", "type": "attack", "attmod": -6, "defmod": -6},
+			{"name": "Target <= 2 incr and Attacker >= 4 incr", "type": "attack", "attmod": 0, "defmod": -9},
+			{"name": "Road Column", "type": "attack", "attmod": 0, "defmod": -12}
+		]
+	},
+	"charge": {
+		"stand": {
+			"modifiers": [
+				{"name": "Charged in flank", "mod": -12},
+				{"name": "Charged in rear", "mod": -6},
+				{"name": "Lancers", "mod": -3},
+				{"name": "Heavy", "mod": -6},
+				{"name": "Road Column", "mod": -12}
+			]
+		},
+		"carre": {
+			"table": {
+				"French": {
+					"All": {
+						"4": [
+							{"low": 11, "high": 63, "result": "Carre"},
+							{"low": 64, "high": 66, "result": "Disorder"}
+						],
+						"3": [
+							{"low": 11, "high": 56, "result": "Carre"},
+							{"low": 61, "high": 65, "result": "Disorder"},
+							{"low": 66, "high": 66, "result": "Rout"}
+						],
+						"2": [
+							{"low": 11, "high": 46, "result": "Carre"},
+							{"low": 51, "high": 63, "result": "Disorder"},
+							{"low": 64, "high": 66, "result": "Rout"}
+						],			
+						"1": [
+							{"low": 11, "high": 43, "result": "Carre"},							
+							{"low": 44, "high": 66, "result": "Rout"}
+						]						
+					}
+				},
+				"Allies": {
+					"All": {
+						"4": [
+							{"low": 11, "high": 63, "result": "Carre"},
+							{"low": 64, "high": 65, "result": "Disorder"},
+							{"low": 66, "high": 66, "result": "Rout"}							
+						],
+						"3": [
+							{"low": 11, "high": 56, "result": "Carre"},
+							{"low": 61, "high": 64, "result": "Disorder"},
+							{"low": 65, "high": 66, "result": "Rout"}
+						],
+						"2": [
+							{"low": 11, "high": 46, "result": "Carre"},
+							{"low": 51, "high": 61, "result": "Disorder"},
+							{"low": 62, "high": 66, "result": "Rout"}
+						],			
+						"1": [
+							{"low": 11, "high": 41, "result": "Carre"},							
+							{"low": 42, "high": 66, "result": "Rout"}
+						]						
+					}
+				}				
+			},
+			"modifiers": [
+				{"name": "Leader", "mod": -6},
+				{"name": "Lancers", "mod": 12},
+				{"name": "Light Cavalry", "mod": 6},
+				{"name": "Hanovarian Landwehr", "mod": 7},
+				{"name": "Dutch Militia", "mod": 7},
+				{"name": "Braunschweig Line", "mod": 7},
+				{"name": "Hanovarian Regulars", "mod": 5},
+				{"name": "Belgian Line", "mod": 5},
+				{"name": "Braunschweig Leib", "mod": 4},
+				{"name": "Braunschweig Avant Garde", "mod": 4},
+				{"name": "Braunschweig Light", "mod": 4},
+				{"name": "Nassauers", "mod": 3}
+			]
+		},
+		"recall": {
+			"table": {
+				"French": { "low": 3, "high": 6},
+				"Polish": { "low": 3, "high": 6},
+				"British": { "low": 5, "high": 6},
+				"KGL": { "low": 4, "high": 6},
+				"Belgian": { "low": 3, "high": 6},
+				"Dutch": { "low": 4, "high": 6},
+				"Braunschweig": { "low": 4, "high": 6},
+				"Hanovarian": { "low": 5, "high": 6}
+			},
+			"modifiers": [
+				{"name": "Leader", "mod": 1}
+			]
+		}
+	},
+	"melee": {
+		"modifiers": {
+			"attack": [
+				{"name": "Assault in flank", "mod": 2},
+				{"name": "Assault in rear", "mod": 1.5},
+				{"name": "Skirmish order", "mod": 0.5},
+				{"name": "Disordered", "mod": 0.5},
+				{"name": "Charge 3 straight", "mod": 2},
+				{"name": "Heavy vs Light", "mod": 2},
+				{"name": "Tired", "mod": 0.5},
+				{"name": "Exhausted", "mod": 0.333},
+				{"name": "Preserve Readiness", "mod": 0.333},
+				{"name": "Cav vs Carre", "mod": 0.3},
+				{"name": "Inf vs Carre", "mod": 1.5},
+				{"name": "Cav in General", "mod": 0.333}
+			],
+			"defend": [
+				{"name": "Skirmish order", "mod": 0.5},
+				{"name": "Disordered", "mod": 0.5},
+				{"name": "Routed", "mod": 0.333},
+				{"name": "Tired", "mod": 0.5},
+				{"name": "Exhausted", "mod": 0.333},
+				{"name": "Preserve Readiness", "mod": 0.333},
+				{"name": "Cav in General", "mod": 0.333},
+				{"name": "Road Order", "mod": 0.5},
+				{"name": "Limbered Artillery", "mod": 0.5}
+			]
+		}
+	}
+}

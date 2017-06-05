@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { View, Text, Image } from 'react-native';
 import {Style} from 'react-native-nub';
 import Icons from '../../res';
@@ -27,19 +28,15 @@ var CombatResultsLeaderLossView = React.createClass({
     },    
     render() {        
         let size = this.props.size || Math.min(this.state.height, this.state.width) || 32;
-        let ll = LeaderLoss.resolve(this.props.combatdice, this.props.lossdie, this.props.durationdie1, this.props.durationdie2, this.props.melee);
+        let ll = LeaderLoss.resolve(this.props.ruleset,this.props.combatdice, this.props.lossdie, this.props.durationdie1, this.props.durationdie2, this.props.melee);
         let loss = ll.result;
         let lossIcon = null;
-        if (loss.startsWith('Flesh')) {
-            lossIcon = null;
-        } else if (loss == 'Capture') {
-            lossIcon = Icons.capture;
-        } else if (ll.mortal) {
-            //lossIcon = (ll.mortal ? Icons.mortal : Icons.wounded);
+        if (ll.mortal) {
             lossIcon = Icons.mortal;
-            loss = ll.result;         
+        } else if (loss.startsWith('Flesh')) {
+            lossIcon = Icons.flesh;
         } else {
-            lossIcon = (ll.result == 'Leg' ? Icons.leg : Icons.arm);
+            lossIcon = Icons[loss.toLocaleLowerCase()];
             loss = ll.duration;
         }
         return (
@@ -64,4 +61,10 @@ var CombatResultsLeaderLossView = React.createClass({
 
 });
 
-module.exports = CombatResultsLeaderLossView;
+const mapStateToProps = (state) => ({
+    ruleset: +state.current.ruleset    
+});
+
+module.exports = connect(
+  mapStateToProps
+)(CombatResultsLeaderLossView);

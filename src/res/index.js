@@ -45,6 +45,8 @@ module.exports = {
 	"capture": require('./capture.jpg'),
 	"arm": require('./arm.png'),
 	"leg": require('./leg.png'),
+	"stun": require('./stun.png'),
+	"flesh": require('./flesh.png'),
 
 	"French": require('./french_flag.jpg'),
 	"Polish": require('./polish_flag.png'),
@@ -80,6 +82,7 @@ module.exports = {
 	"albuera": require("./albuera.jpg"),
 	"ligny": require("./ligny.jpg"),
 	"quatrebras": require("./quatrebras.jpg"),
+	"ligny-quatrebras": require("./ligny-quatrebras.png"),
 	"montstjean": require("./montstjean.jpg"),
 	"wavre": require("./wavre.jpg"),
 	"corunna": require("./corunna.jpg"),

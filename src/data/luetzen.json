@@ -88,17 +88,17 @@
 			"limber": {
 				"table": {
 					"French Old Guard": { "low": 1, "high": 6},
-					"French Young Guard": { "low": 1, "high": 5},
-					"French Line Horse": { "low": 1, "high": 5},
-					"Italian Guard": { "low": 1, "high": 5},
-					"French Line Foot": { "low": 1, "high": 4},
-					"Russian Horse": { "low": 1, "high": 4},
-					"Russian Light": { "low": 1, "high": 3},
-					"Russian Cossack": { "low": 1, "high": 3},
-					"Russian Position": { "low": 1, "high": 2},
-					"Prussian Horse": { "low": 1, "high": 4},
-					"Prussian Foot": { "low": 1, "high": 3},
-					"Prussian Heavy": { "low": 1, "high": 2}
+					"French Young Guard": { "low": 2, "high": 6},
+					"French Line Horse": { "low": 2, "high": 6},
+					"Italian Guard": { "low": 2, "high": 6},
+					"French Line Foot": { "low": 3, "high": 6},
+					"Russian Horse": { "low": 3, "high": 6},
+					"Russian Light": { "low": 4, "high": 6},
+					"Russian Cossack": { "low": 4, "high": 6},
+					"Russian Position": { "low": 5, "high": 6},
+					"Prussian Horse": { "low": 3, "high": 6},
+					"Prussian Foot": { "low": 4, "high": 6},
+					"Prussian Heavy": { "low": 5, "high": 6}
 				},
 				"modifiers": [
 					{"name": "Arty Leader", "mod": 1},
