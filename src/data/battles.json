@@ -1877,7 +1877,7 @@
 	{
 	    "id": 57,
 	    "name": "La Bataille des Quatre Bras",
-	    "publisher": "Clash of Arms",
+	    "publisher": "Clash of Arms",				  
 	    "image": "quatrebras",
 		"sides": ["French", "British"],
 	    "scenarios": [

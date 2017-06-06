@@ -16,8 +16,7 @@ let phases = {
 	fifthed: [
 		"Command",		
 		"Maneuver",
-		"Combat",
-		"Reorganization"
+		"Turn Adjustment"
 	]
 };
 

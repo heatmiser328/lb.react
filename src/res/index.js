@@ -81,7 +81,7 @@ module.exports = {
 	"talavera": require("./talavera.jpg"),
 	"albuera": require("./albuera.jpg"),
 	"ligny": require("./ligny.jpg"),
-	"quatrebras": require("./quatrebras.jpg"),
+	"quatrebras": require("./quatrebras.png"),
 	"ligny-quatrebras": require("./ligny-quatrebras.png"),
 	"montstjean": require("./montstjean.jpg"),
 	"wavre": require("./wavre.jpg"),

@@ -246,7 +246,7 @@
 				{"name": "Rally Square: 4 hexes", "mod": 0},
 				{"name": "Rally Square: 3 hexes", "mod": -3},
 				{"name": "Rally Square: 2 hexes", "mod": -6},
-				{"name": "Rally Square: 1 hexes", "mod": -9}
+				{"name": "Rally Square: 1 hex", "mod": -9}
 			]
 		},
 		"carre": {

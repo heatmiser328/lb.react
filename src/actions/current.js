@@ -44,7 +44,7 @@ export const prevPhase = () => (dispatch,getState) => {
 export const nextPhase = () => (dispatch,getState) => {    
     const {current} = getState();
     const game = getGame(getState());
-    dispatch({type: types.NEXT_PHASE, value: {maxphases: Phases.count(current.ruleset), maxturns: game.maxturns}});
+    dispatch({type: types.NEXT_PHASE, value: {maxphases: Phases.count(current.ruleset), maxturns: game.maxturns, changeplayer: (current.ruleset!=5)}});
 }
 
 export const nextPlayer = () => (dispatch) => {    
