@@ -5,6 +5,7 @@ import {DiceRoll} from 'react-native-dice';
 import DiceModifiersView from './diceModifiersView';
 import QuickValuesView from './quickValuesView';
 import MoraleTableView from './moraleTableView';
+import MoraleLevelsView from './moraleLevelsView';
 import Base6 from '../../services/base6';
 import Morale from '../../services/morale';
 import Icons from '../../res';
@@ -71,6 +72,7 @@ var MoraleView = React.createClass({
     render() {        
         let icon = this.state.result == 'Fail' ? Icons['fail'] : Icons['pass'];
         let iconsize = (Math.min(this.state.height, this.state.width) * 0.9) || 16;
+        let levels = this.levels();
         return (
             <View style={{flex: 1}}>
                 <View style={{flex:.75, marginTop: 5, backgroundColor: 'whitesmoke'}}>
@@ -105,6 +107,12 @@ var MoraleView = React.createClass({
                     </View>
                     <MoraleTableView range={Morale.range((this.state.die1*10) + this.state.die2)} marginTop={10} />
                 </View>
+                {levels != null 
+                    ? <View style={{flex:1}}>
+                        <MoraleLevelsView levels={levels} />
+                    </View>
+                    : null
+                }
             </View>
         );
     },
@@ -126,7 +134,14 @@ var MoraleView = React.createClass({
             ];
         }
         return rules.modifiers;
-    }    
+    },
+    levels() {
+        let rules = this.rules();
+        if (rules) {
+            return rules.levels;
+        }
+        return null;
+    }
 });
 
 module.exports = MoraleView;
