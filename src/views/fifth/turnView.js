@@ -3,10 +3,11 @@ import { View, Text, Image, TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
 import {Style,SpinSelect} from 'react-native-nub';
 import Icons from '../../res';
-import {prevTurn,nextTurn,prevPhase,nextPhase} from '../../actions/current';
+import {prevTurn,nextTurn,prevPhase,nextPhase,prevSubPhase,nextSubPhase} from '../../actions/current';
 import getGame from '../../selectors/game';
 import getTurn from '../../selectors/turn';
 import getPhase from '../../selectors/phase';
+import getSubPhase from '../../selectors/subphase';
 
 var TurnView = React.createClass({
     getInitialState() {
@@ -45,6 +46,14 @@ var TurnView = React.createClass({
         //console.log('next phase');
         this.props.nextPhase();        
     },
+    onPrevSubPhase() {
+        //console.log('previous subphase');
+        this.props.prevSubPhase();        
+    },
+    onNextSubPhase() {
+        //console.log('next subphase');
+        this.props.nextSubPhase();        
+    },    
     render() {
         //console.log(this.props);
         let iconwidth = this.state.width || 96;
@@ -57,6 +66,7 @@ var TurnView = React.createClass({
                 <View style={{flex: 5}}>
                     <SpinSelect value={this.props.turn} onPrev={this.onPrevTurn} onNext={this.onNextTurn} />
                     <SpinSelect value={this.props.phase} onPrev={this.onPrevPhase} onNext={this.onNextPhase} />
+                    <SpinSelect value={this.props.subphase} onPrev={this.onPrevSubPhase} onNext={this.onNextSubPhase} />
                 </View>
             </View>
         );
@@ -65,10 +75,11 @@ var TurnView = React.createClass({
 
 const mapStateToProps = (state) => ({
     turn: getTurn(state),
-    phase: getPhase(state)
+    phase: getPhase(state),
+    subphase: getSubPhase(state)
 });
 
-const mapDispatchToProps =  ({prevTurn,nextTurn,prevPhase,nextPhase});
+const mapDispatchToProps =  ({prevTurn,nextTurn,prevPhase,nextPhase,prevSubPhase,nextSubPhase});
 
 module.exports = connect(
   mapStateToProps,

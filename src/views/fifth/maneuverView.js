@@ -41,7 +41,7 @@ var ManeuverView = React.createClass({
                     <Text style={{fontSize: Style.Font.medium(),fontWeight: 'bold',backgroundColor: 'silver', textAlign: 'center'}}>Available</Text>
                     <View style={{flex:1, flexDirection: 'row'}}>                    
                         {/*left*/}
-                        <View style={{flex:2}}>                        
+                        <View style={{flex:1}}>                        
                             <ScrollView contentContainerStyle={{flex:1, justifyContent:'flex-start', alignItems:'center'}}
                                 automaticallyAdjustContentInsets={false}
                                 scrollEventThrottle={200}>
