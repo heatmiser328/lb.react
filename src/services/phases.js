@@ -26,6 +26,7 @@ let phases = {
 			"Light Cav Initiative"		
 		],
 		"Maneuver": [
+			"Draw Chit",
 			"Charge a Cheval",
 			"Melee a Cheval",
 			"Movement",
