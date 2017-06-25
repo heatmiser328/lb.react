@@ -62,7 +62,7 @@ var ManeuverView = React.createClass({
                             </View>                        
                         </View>                        
                         {/*right*/}
-                        <View style={{flex:2}}>
+                        <View style={{flex:2.5}}>
                             <Image source={Icons.drawcup} resizeMode={'stretch'} style={{
                                 flex: 1,
                                 width: null,
