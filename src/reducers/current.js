@@ -62,7 +62,7 @@ module.exports = (state = defaultState, action) => {
             ...state,
             maneuver: {
                 ...state.maneuver,
-                cup: action.value
+                cup: [...action.value]
             }            
         };
 
@@ -71,7 +71,7 @@ module.exports = (state = defaultState, action) => {
             ...state,
             maneuver: {
                 ...state.maneuver,
-                mu: action.value
+                mu: {...action.value}
             }            
         };
 
