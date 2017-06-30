@@ -21,7 +21,7 @@ var ManeuverView = React.createClass({
         }
     },    
     onDraw() {        
-        this.props.drawMUFromCup(true);        
+        this.props.drawMUFromCup();//true);        
     },
     render() {                  
         let mu = this.props.mu || {};        
@@ -32,16 +32,16 @@ var ManeuverView = React.createClass({
                     <View style={{flex:2}}>
                         <Text style={{fontSize: Style.Font.medium(),fontWeight: 'bold',backgroundColor: 'silver', textAlign: 'center'}}>Current</Text>                        
                         <View style={{flex:1, justifyContent: 'center', alignItems:'center'}}>
-                            <ManeuverUnit item={mu} size={64} />
+                            <ManeuverUnit item={mu} size={88} />
                         </View>
                     </View>   
                 </View>
                 {/*bottom*/}
-                <View style={{flex:5}}>
+                <View style={{flex:6}}>
                     <Text style={{fontSize: Style.Font.medium(),fontWeight: 'bold',backgroundColor: 'silver', textAlign: 'center'}}>Available</Text>
                     <View style={{flex:1, flexDirection: 'row'}}>                    
                         {/*left*/}
-                        <View style={{flex:2}}>                        
+                        <View style={{flex:1}}>                        
                             <ScrollView contentContainerStyle={{flex:1, justifyContent:'flex-start', alignItems:'center'}}
                                 automaticallyAdjustContentInsets={false}
                                 scrollEventThrottle={200}>
@@ -62,7 +62,7 @@ var ManeuverView = React.createClass({
                             </View>                        
                         </View>                        
                         {/*right*/}
-                        <View style={{flex:2}}>
+                        <View style={{flex:2.5}}>
                             <Image source={Icons.drawcup} resizeMode={'stretch'} style={{
                                 flex: 1,
                                 width: null,

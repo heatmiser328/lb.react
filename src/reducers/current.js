@@ -62,7 +62,7 @@ module.exports = (state = defaultState, action) => {
             ...state,
             maneuver: {
                 ...state.maneuver,
-                cup: action.value
+                cup: [...action.value]
             }            
         };
 
@@ -71,7 +71,7 @@ module.exports = (state = defaultState, action) => {
             ...state,
             maneuver: {
                 ...state.maneuver,
-                mu: action.value
+                mu: {...action.value}
             }            
         };
 
@@ -134,7 +134,27 @@ module.exports = (state = defaultState, action) => {
             phase: phase,
             player: player
         };
-        
+
+    case types.PREV_SUBPHASE:
+        let subphase = state.subphase - 1;
+		if (subphase < 0) {
+			subphase = action.value - 1;
+		}
+        return {
+            ...state,
+            subphase: subphase
+        };           
+
+    case types.NEXT_SUBPHASE:
+        subphase = state.subphase + 1;
+		if (subphase >= action.value.maxphases) {
+			subphase =  0;
+		}
+        return {
+            ...state,
+            subphase: subphase
+        };
+
     case types.NEXT_PLAYER:
         return {
             ...state,

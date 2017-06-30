@@ -15,6 +15,7 @@ export const reset = (e) => (dispatch,getState) => {
         scenario: e.scenario.id,
         turn: 1,
         phase: 0,
+        subphase: 0,
         player: 0,
         victory: {
             "0": 0,
@@ -45,6 +46,16 @@ export const nextPhase = () => (dispatch,getState) => {
     const {current} = getState();
     const game = getGame(getState());
     dispatch({type: types.NEXT_PHASE, value: {maxphases: Phases.count(current.ruleset), maxturns: game.maxturns, changeplayer: (current.ruleset!=5)}});
+}
+
+export const prevSubPhase = () => (dispatch,getState) => {    
+    const {current} = getState();
+    dispatch({type: types.PREV_SUBPHASE, value: Phases.subcount(current.ruleset,current.phase)});
+}
+export const nextSubPhase = () => (dispatch,getState) => {    
+    const {current} = getState();
+    const game = getGame(getState());
+    dispatch({type: types.NEXT_SUBPHASE, value: {maxphases: Phases.subcount(current.ruleset,current.phase), maxturns: game.maxturns}});
 }
 
 export const nextPlayer = () => (dispatch) => {    

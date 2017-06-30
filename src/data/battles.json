@@ -1384,7 +1384,7 @@
   {
 	    "id": 31,
 	    "name": "La Bataille de Vauchamps",
-	    "publisher": "Marshal Enterprises / ATO",
+	    "publisher": "ATO",
 	    "image": "vauchamps",
 		"sides": ["French", "PrussianRussian"],
 	    "scenarios": [
@@ -1934,8 +1934,8 @@
 	                "year": 1815,
 	                "month": 6,
 	                "day": 16,
-	                "hour": 13,
-	                "minute": 0
+	                "hour": 11,
+	                "minute": 20
 	            },
 	            "end": {
 	                "year": 1815,

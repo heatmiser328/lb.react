@@ -67,6 +67,10 @@ module.exports = {
 	"imperial": require('./imperial.jpg'),
 	"coalition": require('./coalition.jpg'),	
 
+	"Clash of Arms": require('./coa-logo.png'),
+	//"Marshal Enterprises": require('./me-logo.png'),
+	"ATO": require('./ato-logo.png'),
+
 	"halle": require("./halle.jpg"),
 	"raszyn": require("./raszyn.jpg"),
 	"leipzig": require("./leipzig.jpg"),
