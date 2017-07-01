@@ -151,7 +151,7 @@
 		    {"name": "Casualty due to defensive fire", "type": "attack", "attmod": -3, "defmod": 0},
 
 			{"name": "Walled Farm/Church", "type": "attack", "attmod": -6, "defmod": 3},
-			{"name": "Sunken Road/Chevux de frise", "type": "attack", "attmod": -6, "defmod": 3},
+			{"name": "Sunken Road/Chevaux de frise", "type": "attack", "attmod": -6, "defmod": 3},
 			{"name": "Old Guard", "type": "attack", "attmod": 0, "defmod": -6}
 		]
 	},

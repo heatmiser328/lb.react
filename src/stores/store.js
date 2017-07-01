@@ -25,7 +25,10 @@ import rootReducer from '../reducers';
 			maneuver: {
 				cup: [],
 				mu: {}
-			}            
+			},
+            moralelevels: {
+                "formation": int // level
+            }
         }
     }
 */

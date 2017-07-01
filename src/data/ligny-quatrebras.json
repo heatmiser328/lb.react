@@ -229,7 +229,7 @@
 		    {"name": "Casualty due to defensive fire", "type": "attack", "attmod": -3, "defmod": 0},
 
 			{"name": "Walled Farm/Church", "type": "attack", "attmod": -6, "defmod": 3},
-			{"name": "Sunken Road/Chevux de frise", "type": "attack", "attmod": -6, "defmod": 3},
+			{"name": "Sunken Road/Chevaux de frise", "type": "attack", "attmod": -6, "defmod": 3},
 			{"name": "Old Guard", "type": "attack", "attmod": 0, "defmod": -6},
 			{"name": "50% losses", "type": "attack", "attmod": -6, "defmod": -6},
 			{"name": "Mixed nationality stack", "type": "attack", "attmod": -6, "defmod": -6}
@@ -406,5 +406,176 @@
 				{"name": "Limbered Artillery", "mod": 0.5}				
 			]
 		}
-	}
+	},
+	"morale": {
+		"levels": [
+			{
+				"image": "French",
+				"formation": "frimpgd",
+				"name": "Imperial Guard",
+				"levels": [
+					{"level": 0, "desc": "<7 battalions lost/routed", "mod": 0},
+					{"level": 1, "desc": "<7 battalions lost/routed", "mod": 0},
+					{"level": 2, "desc": "<7 battalions lost/routed", "mod": 0},
+					{"level": 3, "desc": "7+ battalions lost/routed", "mod": -9}
+				]
+			},			
+			{
+				"image": "French",
+				"formation": "fr1corps",
+				"name": "I Corps",
+				"levels": [
+					{"level": 0, "desc": "<7 battalions lost/routed", "mod": 0},
+					{"level": 1, "desc": "7-13 battalions lost/routed", "mod": -3},
+					{"level": 2, "desc": "14-20 battalions lost/routed", "mod": -6},
+					{"level": 3, "desc": "21+ battalions lost/routed", "mod": -9}
+				]
+			},
+			{
+				"image": "French",
+				"formation": "fr2corps7div",
+				"name": "II Corps/7th Div",
+				"levels": [
+					{"level": 0, "desc": "<4 battalions lost/routed", "mod": 0},
+					{"level": 1, "desc": "4-5 battalions lost/routed", "mod": -3},
+					{"level": 2, "desc": "6 battalions lost/routed", "mod": -6},
+					{"level": 3, "desc": "7+ battalions lost/routed", "mod": -9}
+				]
+			},
+			{
+				"image": "French",
+				"formation": "fr2corps",
+				"name": "II Corps",
+				"levels": [
+					{"level": 0, "desc": "<7 battalions lost/routed", "mod": 0},
+					{"level": 1, "desc": "7-13 battalions lost/routed", "mod": -3},
+					{"level": 2, "desc": "14-20 battalions lost/routed", "mod": -6},
+					{"level": 3, "desc": "21+ battalions lost/routed", "mod": -9}
+				]
+			},
+			{
+				"image": "French",
+				"formation": "fr3corps",
+				"name": "III Corps",
+				"levels": [
+					{"level": 0, "desc": "<7 battalions lost/routed", "mod": 0},
+					{"level": 1, "desc": "7-12 battalions lost/routed", "mod": -3},
+					{"level": 2, "desc": "13-19 battalions lost/routed", "mod": -6},
+					{"level": 3, "desc": "20+ battalions lost/routed", "mod": -9}
+				]
+			},
+			{
+				"image": "French",
+				"formation": "fr4corps",
+				"name": "IV Corps",
+				"levels": [
+					{"level": 0, "desc": "<6 battalions lost/routed", "mod": 0},
+					{"level": 1, "desc": "6-10 battalions lost/routed", "mod": -3},
+					{"level": 2, "desc": "11-16 battalions lost/routed", "mod": -6},
+					{"level": 3, "desc": "17+ battalions lost/routed", "mod": -9}
+				]
+			},
+			{
+				"image": "French",
+				"formation": "fr6corps",
+				"name": "VI Corps",
+				"levels": [
+					{"level": 0, "desc": "<5 battalions lost/routed", "mod": 0},
+					{"level": 1, "desc": "5-8 battalions lost/routed", "mod": -3},
+					{"level": 2, "desc": "9-12 battalions lost/routed", "mod": -6},
+					{"level": 3, "desc": "13+ battalions lost/routed", "mod": -9}
+				]
+			},
+			
+			{
+				"image": "Prussian",
+				"formation": "pr1korps",
+				"name": "I Korps",
+				"levels": [
+					{"level": 0, "desc": "<8 battalions lost/routed", "mod": 0},
+					{"level": 1, "desc": "8-12 battalions lost/routed", "mod": -3},
+					{"level": 2, "desc": "13-18 battalions lost/routed", "mod": -6},
+					{"level": 3, "desc": "19+ battalions lost/routed", "mod": -12}
+				]
+			},
+			{
+				"image": "Prussian",
+				"formation": "pr2korps",
+				"name": "II Korps",
+				"levels": [
+					{"level": 0, "desc": "<8 battalions lost/routed", "mod": 0},
+					{"level": 1, "desc": "8-13 battalions lost/routed", "mod": -3},
+					{"level": 2, "desc": "14-19 battalions lost/routed", "mod": -6},
+					{"level": 3, "desc": "20+ battalions lost/routed", "mod": -12}
+				]
+			},
+			{
+				"image": "Prussian",
+				"formation": "pr3korps",
+				"name": "III Korps",
+				"levels": [
+					{"level": 0, "desc": "<7 battalions lost/routed", "mod": 0},
+					{"level": 1, "desc": "7-12 battalions lost/routed", "mod": -3},
+					{"level": 2, "desc": "13-18 battalions lost/routed", "mod": -6},
+					{"level": 3, "desc": "19+ battalions lost/routed", "mod": -12}
+				]
+			},
+
+			{
+				"image": "BritishKGL",
+				"formation": "brkgl",
+				"name": "British/KGL",
+				"levels": [
+					{"level": 0, "desc": "<3 battalions lost/routed", "mod": 0},
+					{"level": 1, "desc": "4-6 battalions lost/routed", "mod": 0},
+					{"level": 2, "desc": "7-10 battalions lost/routed", "mod": -4},
+					{"level": 3, "desc": "11+ battalions lost/routed", "mod": -8}
+				]
+			},
+			{
+				"image": "Nassau",
+				"formation": "nassau",
+				"name": "Nassau",
+				"levels": [
+					{"level": 0, "desc": "<2 battalions lost/routed", "mod": 0},
+					{"level": 1, "desc": "2 battalions lost/routed", "mod": -1},
+					{"level": 2, "desc": "3 battalions lost/routed", "mod": -4},
+					{"level": 3, "desc": "4+ battalions lost/routed", "mod": -12}
+				]
+			},
+			{
+				"image": "Dutch-Belgian",
+				"formation": "db",
+				"name": "Dutch-Belgian",
+				"levels": [
+					{"level": 0, "desc": "<2 battalions lost/routed", "mod": 0},
+					{"level": 1, "desc": "2 battalions lost/routed", "mod": -3},
+					{"level": 2, "desc": "3 battalions lost/routed", "mod": -8},
+					{"level": 3, "desc": "4+ battalions lost/routed", "mod": -18}
+				]
+			},			
+			{
+				"image": "Brunswick",
+				"formation": "brunswick",
+				"name": "Brunswick",
+				"levels": [
+					{"level": 0, "desc": "<2 battalions lost/routed", "mod": 0},
+					{"level": 1, "desc": "3 battalions lost/routed", "mod": -1},
+					{"level": 2, "desc": "4 battalions lost/routed", "mod": -6},
+					{"level": 3, "desc": "5+ battalions lost/routed", "mod": -12}
+				]
+			},			
+			{
+				"image": "Hanovarian",
+				"formation": "hanovarian",
+				"name": "Hanovarian",
+				"levels": [
+					{"level": 0, "desc": "<2 battalions lost/routed", "mod": 0},
+					{"level": 1, "desc": "2-3 battalions lost/routed", "mod": -1},
+					{"level": 2, "desc": "4 battalions lost/routed", "mod": -6},
+					{"level": 3, "desc": "5+ battalions lost/routed", "mod": -12}
+				]
+			}			
+		]		
+	}	
 }

@@ -35,8 +35,7 @@ module.exports = {
             }
         ]        
         */
-        return battles.reduce((a, battle) => {
-            console.log('battlesByPublisher', a);
+        return battles.reduce((a, battle) => {            
             if (!a.find((p) => p.name == battle.publisher)) {
                 a.push({
                     name: battle.publisher, 

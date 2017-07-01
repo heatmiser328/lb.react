@@ -5,9 +5,20 @@ import Maneuver from '../services/maneuver';
 import getGame from '../selectors/game';
 
 export const reset = (e) => (dispatch,getState) => {
+    const game = getGame(getState());
     const {current} = getState();
     e = e || {id: current.battle, scenario: {id: current.scenario}};
     e.ruleset = current.ruleset;
+
+    const makeMoraleLevels = (levels) => {
+        let ml = {};
+        if (levels) {
+            levels.forEach((l) => {
+                ml[l.formation] = 0;
+            });
+        }
+        return ml;
+    };
 
     let data = {
         ruleset: e.ruleset,
@@ -24,7 +35,8 @@ export const reset = (e) => (dispatch,getState) => {
         maneuver: {
             cup: [],
             mu: null
-        }
+        },
+        moralelevels: makeMoraleLevels((game.rules.morale||{}).levels)
     };
     
     dispatch({type: types.SET_CURRENT, value: data});
@@ -98,4 +110,8 @@ export const setMUCup = (cup) => (dispatch) => {
 
 export const setMU = (mu) => (dispatch) => {    
     dispatch({type: types.SET_MU, value: mu});
+}
+
+export const setMoraleLevel = (formation, level) => (dispatch) => {    
+    dispatch({type: types.SET_MORALELEVEL, value: {formation: formation, level: level}});
 }

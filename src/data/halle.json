@@ -252,5 +252,31 @@
 				{"name": "Exhausted", "mod": 0.333}
 			]
 		}
-	}
+	},
+	"morale": {
+		"levels": [
+			{
+				"image": "French",
+				"formation": "fr1corps",
+				"name": "1ere Corps d'Armee",
+				"levels": [
+					{"level": 0, "desc": "< 4 battalions lost/routed", "mod": 0},
+					{"level": 1, "desc": "4 battalions lost/routed", "mod": -3},
+					{"level": 2, "desc": "8 battalions lost/routed", "mod": -6},
+					{"level": 3, "desc": "12 battalions lost/routed", "mod": -12}
+				]
+			},
+			{
+				"image": "Prussian",
+				"formation": "prreskorps",
+				"name": "Reserve Korps",
+				"levels": [
+					{"level": 0, "desc": "< 4 battalions lost/routed", "mod": 0},
+					{"level": 1, "desc": "4 battalions lost/routed", "mod": -3},
+					{"level": 2, "desc": "7 battalions lost/routed", "mod": -6},
+					{"level": 3, "desc": "11 battalions lost/routed", "mod": -12}
+				]
+			}
+		]		
+	}	
 }

@@ -53,6 +53,7 @@ var PublisherNavMenuItem = React.createClass({
                             <BattleNavMenuItem key={i}
                                 icons={this.props.icons}
                                 battle={battle}
+                                onPress={this.props.onPress}
                                 />
                         );
                     })}                    

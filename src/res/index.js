@@ -67,6 +67,12 @@ module.exports = {
 	"imperial": require('./imperial.jpg'),
 	"coalition": require('./coalition.jpg'),	
 
+	"BritishKGL": require('./britishkgl_ml.png'),	
+	"Nassau": require('./nassau_ml.png'),	
+	"Dutch-Belgian": require('./dutch-belgian_ml.png'),	
+	"Brunswick": require('./brunswick_ml.png'),	
+	"Hanovarian": require('./hanovarian_ml.png'),	
+
 	"Clash of Arms": require('./coa-logo.png'),
 	//"Marshal Enterprises": require('./me-logo.png'),
 	"ATO": require('./ato-logo.png'),

@@ -170,6 +170,15 @@ module.exports = (state = defaultState, action) => {
             }
         };
 
+    case types.SET_MORALELEVEL:    
+        return {
+            ...state,
+            moralelevels: {
+                ...state.moralelevels,
+                [action.value.formation]: action.value.level
+            }
+        };
+
     default:
         return state;
     }
