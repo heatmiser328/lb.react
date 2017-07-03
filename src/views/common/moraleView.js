@@ -92,7 +92,7 @@ var MoraleView = React.createClass({
                     </View>
                 </View>                
                 <View style={{flex: 3}}>
-                    <View style={{flex: 1, flexDirection: 'row'}}>
+                    <View style={{flex: 3, flexDirection: 'row'}}>
                         <View style={{flex: 2, justifyContent: 'flex-start'}}>
                             <View style={{flex:1}}>
                                 <SpinNumeric value={this.state.morale} values={Base6.values} integer={true} onChanged={this.onMoraleChanged} />
@@ -100,7 +100,7 @@ var MoraleView = React.createClass({
                             <View style={{flex:1}}>
                                 <QuickValuesView values={[16,26,36,46,56]} height={48} onChanged={this.onMoraleChanged}/>
                             </View>
-                            <View style={{flex:4}}>
+                            <View style={{flex:2}}>
                                 <MultiSelectList title={'Modifiers'}
                                     items={this.modifiers().map((m) => ({name: m.name, selected: this.state.mods[m.name]}))}
                                     onChanged={this.onModChanged}/>                        
@@ -109,8 +109,8 @@ var MoraleView = React.createClass({
                         <MoraleTableView range={Morale.range((this.state.die1*10) + this.state.die2)} marginTop={10} />
                     </View>
                     {levels != null 
-                        ? <View style={{flex:1}}>
-                            <MoraleLevelsView levels={levels} />
+                        ? <View style={{flex:2}}>
+                            <MoraleLevelsView battle={this.props.battle} levels={levels} />
                         </View>
                         : null
                     }                    

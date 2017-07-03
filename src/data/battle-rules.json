@@ -89,7 +89,7 @@
 				{"name": "Light Cavalry", "mod": 3},
 				{"name": "Lancers", "mod": 6},
 				{"name": "Morale Level", "mod": 3},
-				{"name": "string", "mod": value}
+				{"name": "string", "mod": int}
 			]
 		},
 		"recall": {
@@ -98,7 +98,7 @@
 			},
 			"modifiers": [
 				{"name": "Cav Leader", "mod": 1},
-				{"name": "string", "mod": value}
+				{"name": "string", "mod": int}
 			]
 		}
 	},
@@ -131,5 +131,21 @@
 				{"name": "Cav in General", "mod": 0.333}
 			]
 		}
-	}	
+	},
+	"morale": {
+		"modifiers": [
+			{"name": "string", "mod": int}
+		],
+		"levels": [
+            {
+				"image": string,
+				"army": string,
+				"formation": string,
+				"name": string,
+				"levels": [
+					{"level": int, "desc": string, "mod": int}
+				]
+			}			
+		]
+	}
 }

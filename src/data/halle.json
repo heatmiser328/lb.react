@@ -257,6 +257,7 @@
 		"levels": [
 			{
 				"image": "French",
+				"army": "french",
 				"formation": "fr1corps",
 				"name": "1ere Corps d'Armee",
 				"levels": [
@@ -268,6 +269,7 @@
 			},
 			{
 				"image": "Prussian",
+				"army": "prussian",
 				"formation": "prreskorps",
 				"name": "Reserve Korps",
 				"levels": [

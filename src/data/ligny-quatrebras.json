@@ -411,6 +411,7 @@
 		"levels": [
 			{
 				"image": "French",
+				"army": "french",
 				"formation": "frimpgd",
 				"name": "Imperial Guard",
 				"levels": [
@@ -422,6 +423,7 @@
 			},			
 			{
 				"image": "French",
+				"army": "french",
 				"formation": "fr1corps",
 				"name": "I Corps",
 				"levels": [
@@ -433,6 +435,7 @@
 			},
 			{
 				"image": "French",
+				"army": "french",
 				"formation": "fr2corps7div",
 				"name": "II Corps/7th Div",
 				"levels": [
@@ -444,6 +447,7 @@
 			},
 			{
 				"image": "French",
+				"army": "french",
 				"formation": "fr2corps",
 				"name": "II Corps",
 				"levels": [
@@ -455,6 +459,7 @@
 			},
 			{
 				"image": "French",
+				"army": "french",
 				"formation": "fr3corps",
 				"name": "III Corps",
 				"levels": [
@@ -466,6 +471,7 @@
 			},
 			{
 				"image": "French",
+				"army": "french",
 				"formation": "fr4corps",
 				"name": "IV Corps",
 				"levels": [
@@ -477,6 +483,7 @@
 			},
 			{
 				"image": "French",
+				"army": "french",
 				"formation": "fr6corps",
 				"name": "VI Corps",
 				"levels": [
@@ -489,6 +496,7 @@
 			
 			{
 				"image": "Prussian",
+				"army": "prussian",
 				"formation": "pr1korps",
 				"name": "I Korps",
 				"levels": [
@@ -500,6 +508,7 @@
 			},
 			{
 				"image": "Prussian",
+				"army": "prussian",
 				"formation": "pr2korps",
 				"name": "II Korps",
 				"levels": [
@@ -511,6 +520,7 @@
 			},
 			{
 				"image": "Prussian",
+				"army": "prussian",
 				"formation": "pr3korps",
 				"name": "III Korps",
 				"levels": [
@@ -523,6 +533,7 @@
 
 			{
 				"image": "BritishKGL",
+				"army": "british",
 				"formation": "brkgl",
 				"name": "British/KGL",
 				"levels": [
@@ -534,6 +545,7 @@
 			},
 			{
 				"image": "Nassau",
+				"army": "british",
 				"formation": "nassau",
 				"name": "Nassau",
 				"levels": [
@@ -545,6 +557,7 @@
 			},
 			{
 				"image": "Dutch-Belgian",
+				"army": "british",
 				"formation": "db",
 				"name": "Dutch-Belgian",
 				"levels": [
@@ -556,6 +569,7 @@
 			},			
 			{
 				"image": "Brunswick",
+				"army": "british",
 				"formation": "brunswick",
 				"name": "Brunswick",
 				"levels": [
@@ -567,6 +581,7 @@
 			},			
 			{
 				"image": "Hanovarian",
+				"army": "british",
 				"formation": "hanovarian",
 				"name": "Hanovarian",
 				"levels": [
