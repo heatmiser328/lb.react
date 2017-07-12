@@ -5,6 +5,7 @@ import routes from './routes';
 import { Provider } from 'react-redux';
 import store from './stores/store';
 import {NavDrawer} from './views';
+import codePush from "react-native-code-push";
 
 let App = React.createClass({    
     componentWillMount() {
@@ -21,4 +22,4 @@ let App = React.createClass({
     }
 });
 
-module.exports = App;
+module.exports = codePush({ checkFrequency: codePush.CheckFrequency.ON_APP_RESUME })(App);
