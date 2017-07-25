@@ -2,6 +2,7 @@ import React from 'react';
 import { View, ScrollView, Text, Image, TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
 import {Style,SpinSelect} from 'react-native-nub';
+import SelectableHeader from './selectableHeader';
 import Icons from '../../res';
 import {setMoraleLevel} from '../../actions/current';
 
@@ -40,9 +41,12 @@ var MoraleLevelView = React.createClass({
                     <Text style={{fontSize:Style.Font.medium(),fontWeight:'bold',textAlign:'left'}}>{this.props.level.name}</Text>
                 </View>         
                 <View style={{flex:1, justifyContent:'center'}}>
-                    <Text style={{fontSize:Style.Font.medium(),fontWeight:'bold',textAlign:'center'}}>{curlevel.mod.toString()}</Text>
+                    <Text style={{fontSize:Style.Font.medium(),fontWeight:'bold',textAlign:'left'}}>{curlevel.level.toString()}</Text>
+                </View>                         
+                <View style={{flex:1, justifyContent:'center'}}>
+                    <Text style={{fontSize:Style.Font.medium(),fontWeight:'bold',textAlign:'center'}}>{'('+curlevel.mod.toString()+')'}</Text>
                 </View>                                        
-                <View style={{flex:4, justifyContent:'center'}}>
+                <View style={{flex:3, justifyContent:'center'}}>
                     <SpinSelect value={curlevel.desc} 
                         onPrev={() =>this.props.onPress && this.props.onPress(this.props.level.formation, curlevel.level-1)} 
                         onNext={() =>this.props.onPress && this.props.onPress(this.props.level.formation, curlevel.level+1)} 
@@ -52,42 +56,9 @@ var MoraleLevelView = React.createClass({
         );
     },
     currentLevel(l) {
-        var cl = l.levels.find((lvl) => lvl.level == this.props.currentlevels[l.formation]);
-        if (cl) {
-            return cl;
-        }
-        return l.levels[0];
-    }
-});
-
-var MoraleBadgeView = React.createClass({
-    getInitialState() {
-        return {
-            x: 0,
-            y: 0,
-            width: 0,
-            height: 0,
-            viewHeight: 100
-        };
-    },
-    onLayout(e) {
-        if (this.state.width != e.nativeEvent.layout.width /*||
-            this.state.height != e.nativeEvent.layout.height*/) {
-            this.setState({
-                x: e.nativeEvent.layout.x,
-                y: e.nativeEvent.layout.y,
-                width: e.nativeEvent.layout.width,
-                height: e.nativeEvent.layout.height
-            });
-        }
-    },    
-    render() {    
-        let iconsize = 48;//(Math.min(this.state.height, this.state.width) * 0.75) || 16;    
-        return (
-            <TouchableOpacity style={{marginTop:2, marginBottom:2}}onPress={() =>this.props.onPress && this.props.onPress(this.props.badge)} >
-                <Image style={{width: iconsize,height: iconsize,resizeMode: 'contain'}} source={Icons[this.props.badge.image]}/>
-            </TouchableOpacity>            
-        );
+        var i = l.levels.findIndex((lvl) => lvl.level == this.props.currentlevels[l.formation]);
+        if (i < 0) { i = 0; }
+        return l.levels[i];
     }
 });
 
@@ -98,8 +69,8 @@ var MoraleLevelsView = React.createClass({
             selected: null
         };
     },    
-    onSelectBadge(b) {
-        this.setState({selected:b});
+    onSelectArmy(a) {
+        this.setState({selected:a});
     },
     onChangeLevel(formation, level) {        
         if (level < 0) {
@@ -116,25 +87,17 @@ var MoraleLevelsView = React.createClass({
         return (
             <View style={{flex:1}}>
                 <Text style={{fontSize: Style.Font.medium(),fontWeight: 'bold',backgroundColor: 'silver', textAlign: 'center'}}>Levels</Text>
-                <View style={{flex:1, flexDirection:'row'}}>
-                    <View style={{flex:1,borderRightWidth:2,borderRightColor:'gray'}}>
-                        <ScrollView contentContainerStyle={{marginLeft:5}}
-                            automaticallyAdjustContentInsets={false}
-                            scrollEventThrottle={200}>
-                            {badges.map((b,i) => 
-                                <MoraleBadgeView key={i} badge={b} onPress={this.onSelectBadge} />
-                            )}
-                        </ScrollView>                        
-                    </View>
-                    <View style={{flex:6}}>
-                        <ScrollView contentContainerStyle={{marginLeft:5, marginRight:5}}
-                            automaticallyAdjustContentInsets={false}
-                            scrollEventThrottle={200}>
-                            {levels.map((l,i) => 
-                                <MoraleLevelView key={i} currentlevels={this.props.currentlevels} level={l} final={i+1==levels.length} onPress={this.onChangeLevel} />
-                            )}
-                        </ScrollView>                        
-                    </View>
+                <View style={{flex:1}}>
+                <SelectableHeader items={badges}  selected={selected} onSelected={this.onSelectArmy} />
+                </View>
+                <View style={{flex:3}}>
+                <ScrollView contentContainerStyle={{marginLeft:5, marginRight:5}}
+                    automaticallyAdjustContentInsets={false}
+                    scrollEventThrottle={200}>
+                    {levels.map((l,i) => 
+                        <MoraleLevelView key={i} currentlevels={this.props.currentlevels} level={l} final={i+1==levels.length} onPress={this.onChangeLevel} />
+                    )}
+                </ScrollView>                
                 </View>
             </View>
         );
@@ -154,10 +117,10 @@ var MoraleLevelsView = React.createClass({
             return a;
         }, []);
         */
-        return this.sides().map((s) => ({image: s, army: s.toLowerCase()}));
+        return this.sides().map((s) => ({image: s, name: s.toLowerCase()}));
     },
-    levels(selected) {
-        return this.props.levels.filter((l) => l.army == selected.army);
+    levels(selected) {        
+        return this.props.levels.filter((l) => l.army == selected.name);
     }
 });
 
