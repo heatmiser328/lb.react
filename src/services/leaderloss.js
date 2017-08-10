@@ -40,7 +40,7 @@ const duration = (d, d1, d2, u) => {
 
 module.exports = {
     resolve(ruleset,dice, lossdie, durationdie1, durationdie2, melee) {
-    	var loss = melee ? (dice <= 12 || dice >= 64) : (dice >= 64);
+    	var loss = melee ? (dice <= 12 || dice >= 64) : (dice > 64);
         var result = {result: ''};
 
         if (loss) {
