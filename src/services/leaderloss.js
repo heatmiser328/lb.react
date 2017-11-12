@@ -2,7 +2,7 @@
 
 module.exports = {
     resolve(dice, lossdie, durationdie1, durationdie2, melee) {
-    	var loss = melee ? (dice <= 12 || dice >= 64) : (dice >= 64);
+    	var loss = melee ? (dice <= 12 || dice >= 64) : (dice > 64);
         var result = {result: ''};
 
         if (loss) {

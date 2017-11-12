@@ -11,7 +11,7 @@ var OddsView = React.createClass({
                     selectedValue={this.props.value}
                     onValueChange={this.props.onChanged}
                 >
-                    {this.props.odds.map((o,i) => {return (<Picker.Item key={i} label={o} value={o} />);})}
+                    {this.props.odds.map((o,i) => (<Picker.Item key={i} label={o} value={o} />))}
                 </Picker>
             </View>
         );

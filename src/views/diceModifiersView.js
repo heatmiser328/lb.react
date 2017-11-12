@@ -30,7 +30,7 @@ var DiceModifiersView = React.createClass({
                                 borderWidth: 1,
                                 borderRadius:5
                             }}>
-                            <Text style={{color: 'white', fontSize: Style.Font.mediumlarge(), textAlign: 'center', alignSelf:'center'}}>{v}</Text>
+                            <Text style={{color: 'white', fontSize: Style.Font.large(), textAlign: 'center', alignSelf:'center'}}>{v}</Text>
                         </TouchableOpacity>
                     )
                 })
