@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Actions } from 'react-native-router-flux';
 import {NavDrawer} from 'react-native-nub';
-import BattleNavMenuItem from './navDrawerMenuItemBattle';
+import PublisherNavMenuItem from './navDrawerMenuItemPublisher';
 import Icons from '../res';
 import Battles from '../services/battles';
 import {reset} from '../actions/current';
@@ -15,7 +15,7 @@ let NavigationDrawer = React.createClass({
     },    
     render () {
         return (            
-            <NavDrawer menuItem={BattleNavMenuItem} items={Battles.battles} icons={Icons} onSelect={this.onSelect} >
+            <NavDrawer menuItem={PublisherNavMenuItem} items={Battles.battlesByPublisher()} icons={Icons} onSelect={this.onSelect} >
                 {this.props.children}
             </NavDrawer>                
         );
