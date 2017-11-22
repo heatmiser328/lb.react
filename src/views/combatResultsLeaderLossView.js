@@ -45,11 +45,11 @@ var CombatResultsLeaderLossView = React.createClass({
         return (
             <View style={{flex:3, alignItems:'center'}}>
                 <View style={{flex:1,alignSelf: 'stretch'}}>
-                    <Text style={{fontSize: Style.Font.smallmedium(),fontWeight: 'bold',backgroundColor: 'silver', textAlign: 'center'}}>Leader Loss</Text>
+                    <Text style={{fontSize: Style.Font.large(),fontWeight: 'bold',backgroundColor: 'silver', textAlign: 'center'}}>Leader Loss</Text>
                 </View>            
                 <View style={{flex:5, flexDirection:'row', justifyContent:'center', alignItems: 'center'}}>            
                     <View style={{flex:3, alignItems:'center'}}>
-                        <Text style={{fontSize: Style.Font.medium(),textAlign: 'center'}}>{loss}</Text>
+                        <Text style={{fontSize: Style.Font.xtralarge(),textAlign: 'center'}}>{loss}</Text>
                     </View>
                     <View style={{flex:2, justifyContent: 'center'}} onLayout={this.onLayout}>
                         {ll.leader && lossIcon

@@ -47,7 +47,7 @@ var QuickValuesView = React.createClass({
                         padding: Style.Padding.pad(5),
                         borderColor: 'black', borderWidth: 1, borderRadius:5                    
                     }}>                            
-                        <Text style={{color: 'black', fontSize: Style.Font.large(), textAlign: 'center', alignSelf:'center'}}>{v.toString()}</Text>
+                        <Text style={{color: 'black', fontSize: Style.Font.xtralarge(), textAlign: 'center', alignSelf:'center'}}>{v.toString()}</Text>
                     </TouchableOpacity>
                 )}
             </View>                                         

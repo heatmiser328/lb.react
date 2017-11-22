@@ -17,10 +17,10 @@ var CombatResultsTableView = React.createClass({
             <View style={{flex:1}}>
                 <View style={{flexDirection: 'row'}}>
                     <View style={{flex:1}}>
-                        <Text style={{fontSize: Style.Font.smallmedium(),fontWeight: 'bold',backgroundColor: 'silver', textAlign: 'center'}}>Odds</Text>
+                        <Text style={{fontSize: Style.Font.large(),fontWeight: 'bold',backgroundColor: 'silver', textAlign: 'center'}}>Odds</Text>
                     </View>
                     <View style={{flex:1}}>
-                        <Text style={{fontSize: Style.Font.smallmedium(),fontWeight: 'bold',backgroundColor: 'silver', textAlign: 'center'}}>Result</Text>
+                        <Text style={{fontSize: Style.Font.large(),fontWeight: 'bold',backgroundColor: 'silver', textAlign: 'center'}}>Result</Text>
                     </View>
                 </View>
                 <View style={{flex:1}}>
@@ -38,10 +38,10 @@ var CombatResultsTableView = React.createClass({
                             return (
                                 <View key={i} style={{flex:1, flexDirection: 'row', backgroundColor: background}}>
                                     <View style={{flex:1}}>
-                                        <Text style={{fontSize: Style.Font.medium(),textAlign: 'center', color:text}}>{res.odds}</Text>
+                                        <Text style={{fontSize: Style.Font.xtralarge(),textAlign: 'center', color:text}}>{res.odds}</Text>
                                     </View>
                                     <View style={{flex:1}}>
-                                        <Text style={{fontSize: Style.Font.medium(),textAlign: 'center', color:text}}>{res.result}</Text>
+                                        <Text style={{fontSize: Style.Font.xtralarge(),textAlign: 'center', color:text}}>{res.result}</Text>
                                     </View>
                                 </View>
                             );

@@ -21,11 +21,11 @@ var BattleView = React.createClass({
     },
     render() {           
         return (
-            <View style={{flex: 1, marginTop: Style.Scaling.scale(44),backgroundColor: 'rgba(0,0,0,0.01)'}}>
+            <View style={{flex: 1, marginTop: Style.Scaling.titleBarHeight,backgroundColor: 'rgba(0,0,0,0.01)'}}>
                 <TurnView logo={Icons[this.props.battle.image]} />
                 <ScrollableTabView
                     style={{backgroundColor: '#fff'}}
-                    tabBarTextStyle={{fontSize: Style.Font.mediumlarge()}}
+                    tabBarTextStyle={{fontSize: Style.Font.large()}}
                     onChangeTab={this.onChangeTab}
                     initialPage={this.state.initialPage}                    
                 >

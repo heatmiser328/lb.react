@@ -31,13 +31,13 @@ var MoraleTableView = React.createClass({
             <View style={{flex:1, marginTop: this.props.marginTop}}>
                 <View style={{flexDirection: 'row'}}>
                     <View style={{flex:1}}>
-                        <Text style={{fontSize: Style.Font.smallmedium(),fontWeight: 'bold',backgroundColor: 'silver', textAlign: 'center'}}>Morale</Text>
+                        <Text style={{fontSize: Style.Font.large(),fontWeight: 'bold',backgroundColor: 'silver', textAlign: 'center'}}>Morale</Text>
                     </View>
                     <View style={{flex:1}}>
-                        <Text style={{fontSize: Style.Font.smallmedium(),fontWeight: 'bold',backgroundColor: 'silver', textAlign: 'center'}}>Mod</Text>
+                        <Text style={{fontSize: Style.Font.large(),fontWeight: 'bold',backgroundColor: 'silver', textAlign: 'center'}}>Mod</Text>
                     </View>
                     <View style={{flex:1}}>
-                        <Text style={{fontSize: Style.Font.smallmedium(),fontWeight: 'bold',backgroundColor: 'silver', textAlign: 'center'}}>Result</Text>
+                        <Text style={{fontSize: Style.Font.large(),fontWeight: 'bold',backgroundColor: 'silver', textAlign: 'center'}}>Result</Text>
                     </View>
                 </View>
                 <View style={{flex:2}}>
@@ -50,10 +50,10 @@ var MoraleTableView = React.createClass({
                             return (
                                 <View key={i} style={{flex:1, flexDirection: 'row'}}>
                                     <View style={{flex:1}}>
-                                        <Text style={{fontSize: Style.Font.medium(),textAlign: 'center'}}>{res.morale}</Text>
+                                        <Text style={{fontSize: Style.Font.xtralarge(),textAlign: 'center'}}>{res.morale}</Text>
                                     </View>
                                     <View style={{flex:1}}>
-                                        <Text style={{fontSize: Style.Font.medium(),textAlign: 'center'}}>{res.modifier}</Text>
+                                        <Text style={{fontSize: Style.Font.xtralarge(),textAlign: 'center'}}>{res.modifier}</Text>
                                     </View>
                                     <View style={{flex:1, justifyContent:'center', alignItems:'center'}} onLayout={this.onLayout}>
                                         <Image style={{height: size, width: size, resizeMode: 'stretch'}} source={icon} />
