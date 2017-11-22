@@ -1,15 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import moment from 'moment';
-import {About} from 'react-native-nub';
+//import {About} from 'react-native-nub';
+import About from './about';
 import {logo} from '../res';
 
 const AboutView = (props) => {
     return (
         <About logo={logo}
-            title={'About La Bataille Assistant'}
+            title={'La Bataille Assistant'}
             version={props.version}
-            releasedate={moment(props.releasedate).format("MMMM Do YYYY, h:mm:ss a")}
+            releasedate={moment(props.releasedate).format("MMMM Do YYYY, h:mm a")}
             description={'A no frills assistant for the La Bataille system of wargames.'}
             credit={{
                 description: 'All glory to them that made it possible!',
@@ -19,7 +20,7 @@ const AboutView = (props) => {
                 ]
             }}            
             additionalinfo={{
-                description: 'And of course check out the discussions and extras',
+                description: 'And of course check out the discussions and extras:',
                 links: [
                     {label: 'ConsimWorld Forum', url: 'http://talk.consimworld.com/WebX?13@@.ee6c73b/31887'},
                     {label: 'La Bataille Extras', url: 'http://labataille.us/'}

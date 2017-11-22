@@ -1383,7 +1383,7 @@
 	{
 	    "id": 31,
 	    "name": "La Bataille de Vauchamps",
-	    "publisher": "Marshal Enterprises / ATO",
+	    "publisher": "ATO",
 	    "image": "vauchamps",
 		"sides": ["French", "PrussianRussian"],
 	    "scenarios": [
