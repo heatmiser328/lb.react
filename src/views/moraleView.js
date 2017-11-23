@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, Image, ScrollView } from 'react-native';
 import { connect } from 'react-redux';
-import {SpinNumeric,MultiSelectList,Font} from 'react-native-nub';
+import {SpinNumeric,MultiSelectList,Style} from 'react-native-nub';
 import {DiceRoll} from 'react-native-dice';
 import DiceModifiersView from './diceModifiersView';
 import QuickValuesView from './quickValuesView';
@@ -93,19 +93,21 @@ var MoraleView = React.createClass({
                 </View>
                 <View style={{flex: 3, flexDirection: 'row'}}>
                     <View style={{flex: 2, justifyContent: 'flex-start'}}>
-                        <View style={{flex:1}}>
-                            <SpinNumeric value={this.state.morale} values={Base6.values} integer={true} onChanged={this.onMoraleChanged} />
+                        <View style={{flex:1, marginLeft:10, marginRight:10}}>
+                            <SpinNumeric fontSize={Style.Font.large()} value={this.state.morale} values={Base6.values} integer={true} onChanged={this.onMoraleChanged} />
                         </View>
                         <View style={{flex:1}}>
                             <QuickValuesView fit={true} values={[16,26,36,46,56]} height={48} onChanged={this.onMoraleChanged}/>
                         </View>
                         <View style={{flex:4}}>
                             <MultiSelectList title={'Modifiers'}
-                                items={this.modifiers().map((m) => {return {name: m.name, selected: this.state.mods[m.name]};})}
+                                labelFontSize={Style.Font.large()}
+                                itemFontSize={Style.Font.mediumlarge()}
+                                items={this.modifiers().map((m) => ({name: m.name, selected: this.state.mods[m.name]}))}
                                 onChanged={this.onModChanged}/>                        
                         </View>
                     </View>
-                    <MoraleTableView range={Morale.range((this.state.die1*10) + this.state.die2)} marginTop={10} />
+                    <MoraleTableView range={Morale.range((this.state.die1*10) + this.state.die2)} marginTop={0} />
                 </View>
             </View>
         );

@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, Switch } from 'react-native';
-import {SpinNumeric,MultiSelectList,RadioButtonGroup,IconButton,Font} from 'react-native-nub';
+import {SpinNumeric,MultiSelectList,RadioButtonGroup,IconButton,Style} from 'react-native-nub';
 import Icons from '../res';
 
 var MeleeCalcView = React.createClass({
@@ -88,7 +88,9 @@ var MeleeCalcView = React.createClass({
                         borderRadius: 4, borderWidth: 2, borderColor: 'black', backgroundColor: 'whitesmoke'}}>
                 <View style={{flex: 1, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', backgroundColor: 'silver'}}>
                     <View style={{flex: 2, justifyContent:'center', alignItems: 'center'}}>
-                        <RadioButtonGroup buttons={[{label: 'Attacker', value: 0}, {label: 'Defender', value: 1}]} state={this.state.side}
+                        <RadioButtonGroup buttons={[{label: 'Attacker', value: 0, fontSize: Style.Font.mediumlarge()}, 
+                                                    {label: 'Defender', value: 1, fontSize: Style.Font.mediumlarge()}]} 
+                            state={this.state.side}
                             onSelected={this.onSideChanged} />
                     </View>
                     <View style={{flex:.5, margin:2, alignItems: 'center'}} onLayout={this.onLayout}>
@@ -102,25 +104,26 @@ var MeleeCalcView = React.createClass({
                     <View style={{flex: 2, justifyContent: 'center'}}>                        
                         <View style={{flex:6}}>
                             <View style={{flex: 1, marginLeft: 5}}>
-                                <SpinNumeric label={'Incr'} value={this.state.incr} min={1} integer={true} onChanged={this.onIncrChanged} />
+                                <SpinNumeric label={'Incr'} labelFontSize={Style.Font.mediumlarge()} fontSize={Style.Font.large()} value={this.state.incr} min={1} integer={true} onChanged={this.onIncrChanged} />
                             </View>
                             <View style={{flex: 1, marginLeft: 5}}>
-                                <SpinNumeric label={'Loss'} value={this.state.loss} min={0}  max={this.props.incr} integer={true} onChanged={this.onLossChanged} />
+                                <SpinNumeric label={'Loss'} labelFontSize={Style.Font.mediumlarge()} fontSize={Style.Font.large()} value={this.state.loss} min={0}  max={this.props.incr} integer={true} onChanged={this.onLossChanged} />
                             </View>
                             <View style={{flex: 1, marginLeft: 5}}>
-                                <SpinNumeric label={'Melee'} value={this.state.melee} min={1} integer={true} onChanged={this.onMeleeChanged} />
+                                <SpinNumeric label={'Melee'} labelFontSize={Style.Font.mediumlarge()} fontSize={Style.Font.large()} value={this.state.melee} min={1} integer={true} onChanged={this.onMeleeChanged} />
                             </View>
                             <View style={{flex: 1, marginLeft: 5}}>
-                                <SpinNumeric label={'Lance'} value={this.state.lance} min={0} integer={true} onChanged={this.onLanceChanged} />
+                                <SpinNumeric label={'Lance'} labelFontSize={Style.Font.mediumlarge()} fontSize={Style.Font.large()} value={this.state.lance} min={0} integer={true} onChanged={this.onLanceChanged} />
                             </View>
                             <View style={{flex: 1, marginLeft: 5}}>
-                                <SpinNumeric label={'Total'} value={this.state.total} min={1} onChanged={this.onTotalChanged} />
+                                <SpinNumeric label={'Total'} labelFontSize={Style.Font.mediumlarge()} fontSize={Style.Font.large()} value={this.state.total} min={1} onChanged={this.onTotalChanged} />
                             </View>
                         </View>
                     </View>
                     <View style={{flex: 1}}>
-                        <MultiSelectList title={'Modifiers'}
-                            items={this.modifiers().map((m) => {return {name: m.name, selected: this.state.mods[m.name]};})}
+                        <MultiSelectList
+                            itemFontSize={Style.Font.mediumlarge()}
+                            items={this.modifiers().map((m) => ({name: m.name, selected: this.state.mods[m.name]}))}
                             onChanged={this.onModChanged}/>
                     </View>
                 </View>
