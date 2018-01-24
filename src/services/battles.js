@@ -20,7 +20,8 @@ var rules = {
     "neumarkt": require('../data/neumarkt.json'),
     "aspern_essling": require('../data/aspern_essling.json'),
     "schoengrabern": require('../data/schoengrabern.json'),
-	"austerlitz": require('../data/austerlitz.json')
+    "austerlitz": require('../data/austerlitz.json'),
+    "prusse": require('../data/prusse.json')
 };
 
 

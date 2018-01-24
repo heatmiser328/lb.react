@@ -85,6 +85,7 @@ module.exports = {
 	"neumarkt": require("./neumarkt.jpg"),
 	"schoengrabern": require("./schoengrabern.png"),
 	"austerlitz": require("./austerlitz.png"),
+	"prusse": require("./prusse.png"),	
 	"vauchamps": require("./vauchamps.jpg"),
 	"auerstaedt": require("./auerstaedt.jpg"),
 	"eylau": require("./eylau.jpg"),
