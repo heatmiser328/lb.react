@@ -37,11 +37,17 @@ var FireAttackerDetailView = React.createClass({
             this.state.mods[m] = v;
 
             let value = +this.state.value;
-            if (m == '1/3') {
+            if (m == '1/3') {                
                 if (v) {
                     value /= 3.0;
                 } else {
                     value *= 3.0;
+                }                
+            } else if (m == '2/3') {
+                if (v) {
+                    value *= 0.6667;
+                } else {
+                    value /= 0.6667;
                 }
             } else if (m == '1/2') {
                 if (v) {
@@ -82,7 +88,7 @@ var FireAttackerDetailView = React.createClass({
                     </View>
                 </View>
                 <View style={{flex: .75, flexDirection: 'row'}}>
-                    {['1/3','1/2','3/2'].map((v, i) => {
+                    {['1/3','1/2','2/3','3/2'].map((v, i) => {
                         return (
                             <View key={i} style={{flex: 1,flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
                                 <Text style={{fontSize: Style.Font.medium()}}>{v}</Text>

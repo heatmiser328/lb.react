@@ -32,6 +32,12 @@ var FireAttackerBasicAddView = React.createClass({
                 } else {
                     value *= 3.0;
                 }
+            } else if (m == '2/3') {
+                if (v) {
+                    value *= 0.6667;
+                } else {
+                    value /= 0.6667;
+                }
             }
             this.props.onSet && this.props.onSet(value.toFixed(1));
         }
@@ -40,7 +46,7 @@ var FireAttackerBasicAddView = React.createClass({
         return (
             <View style={{flex:1}}>
                 <View style={{flex: 1, flexDirection: 'row'}}>
-                    {['1/3','1/2','3/2'].map((v, i) => {
+                    {['1/3','1/2','2/3','3/2'].map((v, i) => {
                         return (
                             <View key={i} style={{
                                 flex: 1,//i != 3 ? 1 : 2,
