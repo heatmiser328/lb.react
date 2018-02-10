@@ -1,6 +1,6 @@
 {
   "name": "lbbasic",
-  "version": "1.0.16",
+  "version": "1.0.17",
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
@@ -12,8 +12,8 @@
     "install-dbg": "adb -d install -r android/app/build/outputs/apk/lbbasic-debug-1.0.apk",
     "install-stg": "adb -d install -r android/app/build/outputs/apk/lbbasic-releaseStaging-1.0.apk",
     "install-rel": "adb -d install -r android/app/build/outputs/apk/lbbasic-release-1.0.apk",
-    "push": "code-push release-react LaBatailleAssistant.Basic android --description v1.0.16",
-	  "promote": "code-push promote LaBatailleAssistant.Basic Staging Production --description v1.0.16 --mandatory",
+    "push": "code-push release-react LaBatailleAssistant.Basic android --description v1.0.17",
+	  "promote": "code-push promote LaBatailleAssistant.Basic Staging Production --description v1.0.17 --mandatory",
     "emulate-s3": "%ANDROID_HOME%/tools/emulator.exe -avd Galaxy_SIII",
     "emulate-nexus7": "%ANDROID_HOME%/tools/emulator.exe -avd Nexus_7",
     "bridge": "adb reverse tcp:8081 tcp:8081",

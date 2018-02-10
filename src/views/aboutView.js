@@ -15,7 +15,7 @@ const AboutView = (props) => {
             credit={{
                 description: 'All glory to them that made it possible!',
                 links: [
-                    {label: 'Marshal Enterprises', url: 'http://www.labataille.me/Home_Page.php'},
+                    {label: 'Marshal Enterprises', url: 'https://labataille.me/'},
                     {label: 'Clash of Arms', url: 'http://www.clashofarms.com/'}
                 ]
             }}            
