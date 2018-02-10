@@ -1,95 +1,5 @@
 [
 	{
-	    "id": 1,
-	    "name": "La Bataille d' Halle",
-	    "publisher": "Marshal Enterprises",
-	    "image": "halle",
-		"sides": ["French", "Prussian"],
-	    "scenarios": [
-	        {
-	            "id": 2,
-	            "name": "Largely Historical",
-	            "start": {
-	                "year": 1806,
-	                "month": 10,
-	                "day": 17,
-	                "hour": 9,
-	                "minute": 0
-	            },
-	            "end": {
-	                "year": 1806,
-	                "month": 10,
-	                "day": 17,
-	                "hour": 16,
-	                "minute": 0
-	            },
-				"victory": [
-					{"side": "French", "level": "Decisive", "conditions": "Drive the Prussians from the field prior to 1:00 PM, with only the use of DuPont’s Division; the light cavalry brigade; and associated batteries. Additionally, the French must exit 25 increments off the map edge towards is the Prussian Line of Communications"},
-					{"side": "French", "level": "Tactical", "conditions": "Drive the Prussians from the field prior to 2:00 PM. Additionally you must exit 25 increments off the map edge that is the Prussian line of communications"},
-					{"side": "French", "level": "Marginal", "conditions": "Drive the Prussians from the field prior to 4:00 PM (historical). Additionally, you must exit 20 increments off the map edge that is the Prussian Line of Communications"},
-					{"side": "", "level": "Draw", "conditions": "Prussians inflict at least 10 increments of casualties on the French; and do not permit the French to exit any combat formation off of the map, toward your line of communications, prior to 1:00 PM"},
-					{"side": "Prussian", "level": "Marginal", "conditions": "Prussians inflict more casualties on the French than they suffer; and do not permit the French to exit any combat formation off of the map, towards the Prussian line of communications, prior to 3:00 PM"},
-					{"side": "Prussian", "level": "Tactical", "conditions": "Prussians inflict 6 more increments of casualties on the French than they suffer; and do not permit the French to exit any combat formation off of the map, towards the Prussian line of communications"},
-					{"side": "Prussian", "level": " Decisive", "conditions": "Prussians inflict 12 more increments of casualties on the French than they suffer; and do not permit the French to exit any combat formation off of the map, towards the Prussian line of communications"}
-				]
-	        },
-	        {
-	            "id": 3,
-	            "name": "Before the Saale",
-	            "start": {
-	                "year": 1806,
-	                "month": 10,
-	                "day": 17,
-	                "hour": 9,
-	                "minute": 0
-	            },
-	            "end": {
-	                "year": 1806,
-	                "month": 10,
-	                "day": 17,
-	                "hour": 16,
-	                "minute": 0
-	            },
-				"victory": [
-					{"side": "French", "level": "Decisive", "conditions": "Drive the Prussians from the field prior to 1:00 PM, with only the use of DuPont’s Division; the light cavalry brigade; and associated batteries. Additionally, the French must exit 25 increments off the map edge towards is the Prussian Line of Communications"},
-					{"side": "French", "level": "Tactical", "conditions": "Drive the Prussians from the field prior to 2:00 PM. Additionally you must exit 25 increments off the map edge that is the Prussian line of communications"},
-					{"side": "French", "level": "Marginal", "conditions": "Drive the Prussians from the field prior to 4:00 PM (historical). Additionally, you must exit 20 increments off the map edge that is the Prussian Line of Communications"},
-					{"side": "", "level": "Draw", "conditions": "Prussians inflict at least 10 increments of casualties on the French; and do not permit the French to exit any combat formation off of the map, toward your line of communications, prior to 1:00 PM"},
-					{"side": "Prussian", "level": "Marginal", "conditions": "Prussians inflict more casualties on the French than they suffer; and do not permit the French to exit any combat formation off of the map, towards the Prussian line of communications, prior to 3:00 PM"},
-					{"side": "Prussian", "level": "Tactical", "conditions": "Prussians inflict 6 more increments of casualties on the French than they suffer; and do not permit the French to exit any combat formation off of the map, towards the Prussian line of communications"},
-					{"side": "Prussian", "level": "Decisive", "conditions": "Prussians inflict 12 more increments of casualties on the French than they suffer; and do not permit the French to exit any combat formation off of the map, towards the Prussian line of communications"}
-				]				
-	        },
-	        {
-	            "id": 4,
-	            "name": "Revision of the Engaged Forces",
-	            "start": {
-	                "year": 1806,
-	                "month": 10,
-	                "day": 17,
-	                "hour": 9,
-	                "minute": 0
-	            },
-	            "end": {
-	                "year": 1806,
-	                "month": 10,
-	                "day": 17,
-	                "hour": 16,
-	                "minute": 0
-	            },
-				"victory": [
-					{"side": "French", "level": "Decisive", "conditions": "Place the Prussians on Level Two and exit 30 increments, using only Dupont and Grouchy Divisions, off the road that is designated the line of communications before 2:00 PM"},
-					{"side": "French", "level": "Tactical", "conditions": "Place Prussians on Level One and exit 30 steps off the road that is designated as the line of communications before 3:00 PM"},
-					{"side": "French", "level": "Marginal", "conditions": "Exit 25 steps from the field off the road that is designated as the line of communications prior to 4:00 PM"},
-					{"side": "", "level": "Draw", "conditions": "Prussians inflict at least 25 increments of casualties on the French"},
-					{"side": "Prussian", "level": "Marginal", "conditions": "Prussians inflict 12 more increments loss on the French, than they suffer"},
-					{"side": "Prussian", "level": "Tactical", "conditions": "Prussians inflict 18 more increments loss on the French, than they suffer"},
-					{"side": "Prussian", "level": "Decisive", "conditions": "Prussians inflict 24 more increments loss on the French than they suffer"}
-				]				
-	        }
-	    ]
-	},
-	{
 	    "id": 5,
 	    "name": "La Bataille de Raszyn",
 	    "publisher": "Marshal Enterprises",
@@ -1380,6 +1290,170 @@
 	    ]
 	},
   
+	{
+	    "id": 1004,
+	    "name": "La Bataille pour la Prusse",
+	    "publisher": "Marshal Enterprises",
+	    "image": "prusse",
+		"sides": ["French", "Prussian"],
+	    "scenarios": [
+	        {
+	            "id": 10041,
+	            "name": "Saalfeld",
+	            "start": {
+	                "year": 1806,
+	                "month": 10,
+	                "day": 10,
+	                "hour": 10,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1806,
+	                "month": 10,
+	                "day": 10,
+	                "hour": 13,
+	                "minute": 0
+	            }
+	        },
+	        {
+	            "id": 10042,
+	            "name": "Jena - Historical",
+	            "start": {
+	                "year": 1806,
+	                "month": 10,
+	                "day": 14,
+	                "hour": 8,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1806,
+	                "month": 10,
+	                "day": 14,
+	                "hour": 15,
+	                "minute": 40
+	            }
+	        },
+	        {
+	            "id": 10043,
+	            "name": "Jena - Alternative",
+	            "start": {
+	                "year": 1806,
+	                "month": 10,
+	                "day": 14,
+	                "hour": 8,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1806,
+	                "month": 10,
+	                "day": 14,
+	                "hour": 17,
+	                "minute": 0
+	            }
+	        },
+	        {
+	            "id": 10043,
+	            "name": "Hassenhausen",
+	            "start": {
+	                "year": 1806,
+	                "month": 10,
+	                "day": 14,
+	                "hour": 6,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1806,
+	                "month": 10,
+	                "day": 14,
+	                "hour": 15,
+	                "minute": 0
+	            }
+	        },
+
+	        {
+	            "id": 10044,
+	            "name": "Halle - Largely Historical",
+	            "start": {
+	                "year": 1806,
+	                "month": 10,
+	                "day": 17,
+	                "hour": 9,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1806,
+	                "month": 10,
+	                "day": 17,
+	                "hour": 16,
+	                "minute": 0
+	            },
+				"victory": [
+					{"side": "French", "level": "Decisive", "conditions": "Drive the Prussians from the field prior to 1:00 PM, with only the use of DuPont’s Division; the light cavalry brigade; and associated batteries. Additionally, the French must exit 25 increments off the map edge towards is the Prussian Line of Communications"},
+					{"side": "French", "level": "Tactical", "conditions": "Drive the Prussians from the field prior to 2:00 PM. Additionally you must exit 25 increments off the map edge that is the Prussian line of communications"},
+					{"side": "French", "level": "Marginal", "conditions": "Drive the Prussians from the field prior to 4:00 PM (historical). Additionally, you must exit 20 increments off the map edge that is the Prussian Line of Communications"},
+					{"side": "", "level": "Draw", "conditions": "Prussians inflict at least 10 increments of casualties on the French; and do not permit the French to exit any combat formation off of the map, toward your line of communications, prior to 1:00 PM"},
+					{"side": "Prussian", "level": "Marginal", "conditions": "Prussians inflict more casualties on the French than they suffer; and do not permit the French to exit any combat formation off of the map, towards the Prussian line of communications, prior to 3:00 PM"},
+					{"side": "Prussian", "level": "Tactical", "conditions": "Prussians inflict 6 more increments of casualties on the French than they suffer; and do not permit the French to exit any combat formation off of the map, towards the Prussian line of communications"},
+					{"side": "Prussian", "level": " Decisive", "conditions": "Prussians inflict 12 more increments of casualties on the French than they suffer; and do not permit the French to exit any combat formation off of the map, towards the Prussian line of communications"}
+				]
+	        },
+	        {
+	            "id": 10045,
+	            "name": "Halle - Before the Saale",
+	            "start": {
+	                "year": 1806,
+	                "month": 10,
+	                "day": 17,
+	                "hour": 9,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1806,
+	                "month": 10,
+	                "day": 17,
+	                "hour": 16,
+	                "minute": 0
+	            },
+				"victory": [
+					{"side": "French", "level": "Decisive", "conditions": "Drive the Prussians from the field prior to 1:00 PM, with only the use of DuPont’s Division; the light cavalry brigade; and associated batteries. Additionally, the French must exit 25 increments off the map edge towards is the Prussian Line of Communications"},
+					{"side": "French", "level": "Tactical", "conditions": "Drive the Prussians from the field prior to 2:00 PM. Additionally you must exit 25 increments off the map edge that is the Prussian line of communications"},
+					{"side": "French", "level": "Marginal", "conditions": "Drive the Prussians from the field prior to 4:00 PM (historical). Additionally, you must exit 20 increments off the map edge that is the Prussian Line of Communications"},
+					{"side": "", "level": "Draw", "conditions": "Prussians inflict at least 10 increments of casualties on the French; and do not permit the French to exit any combat formation off of the map, toward your line of communications, prior to 1:00 PM"},
+					{"side": "Prussian", "level": "Marginal", "conditions": "Prussians inflict more casualties on the French than they suffer; and do not permit the French to exit any combat formation off of the map, towards the Prussian line of communications, prior to 3:00 PM"},
+					{"side": "Prussian", "level": "Tactical", "conditions": "Prussians inflict 6 more increments of casualties on the French than they suffer; and do not permit the French to exit any combat formation off of the map, towards the Prussian line of communications"},
+					{"side": "Prussian", "level": "Decisive", "conditions": "Prussians inflict 12 more increments of casualties on the French than they suffer; and do not permit the French to exit any combat formation off of the map, towards the Prussian line of communications"}
+				]				
+	        },
+	        {
+	            "id": 10046,
+	            "name": "Halle - Revision of the Engaged Forces",
+	            "start": {
+	                "year": 1806,
+	                "month": 10,
+	                "day": 17,
+	                "hour": 9,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1806,
+	                "month": 10,
+	                "day": 17,
+	                "hour": 16,
+	                "minute": 0
+	            },
+				"victory": [
+					{"side": "French", "level": "Decisive", "conditions": "Place the Prussians on Level Two and exit 30 increments, using only Dupont and Grouchy Divisions, off the road that is designated the line of communications before 2:00 PM"},
+					{"side": "French", "level": "Tactical", "conditions": "Place Prussians on Level One and exit 30 steps off the road that is designated as the line of communications before 3:00 PM"},
+					{"side": "French", "level": "Marginal", "conditions": "Exit 25 steps from the field off the road that is designated as the line of communications prior to 4:00 PM"},
+					{"side": "", "level": "Draw", "conditions": "Prussians inflict at least 25 increments of casualties on the French"},
+					{"side": "Prussian", "level": "Marginal", "conditions": "Prussians inflict 12 more increments loss on the French, than they suffer"},
+					{"side": "Prussian", "level": "Tactical", "conditions": "Prussians inflict 18 more increments loss on the French, than they suffer"},
+					{"side": "Prussian", "level": "Decisive", "conditions": "Prussians inflict 24 more increments loss on the French than they suffer"}
+				]				
+	        }
+	    ]
+	},
+	
 	{
 	    "id": 31,
 	    "name": "La Bataille de Vauchamps",

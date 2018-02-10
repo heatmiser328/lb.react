@@ -15,8 +15,8 @@ var MoraleTableView = React.createClass({
         };
     },
     onLayout(e) {
-        if (this.state.width != e.nativeEvent.layout.width /*||
-            this.state.height != e.nativeEvent.layout.height*/) {
+        if (this.state.width != e.nativeEvent.layout.width ||
+            this.state.height != e.nativeEvent.layout.height) {
             this.setState({
                 x: e.nativeEvent.layout.x,
                 y: e.nativeEvent.layout.y,
@@ -26,7 +26,7 @@ var MoraleTableView = React.createClass({
         }
     },    
     render() {
-        let size = this.props.size || Math.min(this.state.height, this.state.width) || 16;
+        let size = (this.props.size || Math.min(this.state.height, this.state.width) || 16);
         return (
             <View style={{flex:1, marginTop: this.props.marginTop}}>
                 <Text style={{fontSize: Style.Font.mediumlarge(),fontWeight: 'bold',backgroundColor: 'silver', textAlign: 'center'}}>Morale</Text>
@@ -40,10 +40,10 @@ var MoraleTableView = React.createClass({
                             return (
                                 <View key={i} style={{flex:1, flexDirection: 'row'}}>
                                     <View style={{flex:1}}>
-                                        <Text style={{fontSize: Style.Font.large(),textAlign: 'center'}}>{res.morale}</Text>
+                                        <Text style={{fontSize: Style.Font.mediumlarge(),textAlign: 'center'}}>{res.morale}</Text>
                                     </View>
                                     <View style={{flex:1}}>
-                                        <Text style={{fontSize: Style.Font.large(),textAlign: 'center'}}>{res.modifier}</Text>
+                                        <Text style={{fontSize: Style.Font.mediumlarge(),textAlign: 'center'}}>{res.modifier}</Text>
                                     </View>
                                     <View style={{flex:1, justifyContent:'center', alignItems:'center'}} onLayout={this.onLayout}>
                                         <Image style={{height: size, width: size, resizeMode: 'stretch'}} source={icon} />
