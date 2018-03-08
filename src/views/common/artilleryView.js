@@ -43,25 +43,27 @@ var ArtilleryView = React.createClass({
     render() {
         return (
             <View style={{flex:1}}>
-                <Text style={{fontSize: Style.Font.medium(),fontWeight: 'bold',backgroundColor: 'silver', textAlign: 'center'}}>Artillery Limber</Text>
+                <Text style={{fontSize: Style.Font.mediumlarge(),fontWeight: 'bold',backgroundColor: 'silver', textAlign: 'center'}}>Artillery Limber</Text>
                 <View style={{flex:1, flexDirection:'row'}}>
-                    <View style={{flex:5, flexDirection:'row'}}>
-                        <View style={{flex:1}}>
-                            <RadioButtonGroup title={'Type'} direction={'vertical'}
-                                buttons={this.types().map((t) => {return {label:t,value:t};})}
+                    <View style={{flex:9, flexDirection:'row'}}>
+                        <View style={{flex:3}}>
+                            <RadioButtonGroup title={'Type'} labelFontSize={Style.Font.mediumlarge()} direction={'vertical'}
+                                buttons={this.types().map((t) => ({label:t,value:t,fontSize: Style.Font.mediumlarge()}))}
                                 state={this.state.type}
                                 onSelected={this.onTypeChanged}/>
                         </View>
-                        <View style={{flex:1}}>
+                        <View style={{flex:2}}>
                             <MultiSelectList title={'Modifiers'}
-                                items={this.modifiers().map((m) => {return {name: m.name, selected: this.state.mods[m.name]};})}
+                                labelFontSize={Style.Font.mediumlarge()} 
+                                itemFontSize={Style.Font.mediumlarge()}                            
+                                items={this.modifiers().map((m) => ( {name: m.name, selected: this.state.mods[m.name]}))}
                                 onChanged={this.onModChanged}/>
                         </View>
                     </View>
-                    <View style={{flex:3, backgroundColor: 'whitesmoke', alignItems:'center', justifyContent: 'flex-end'}}>
+                    <View style={{flex:5, backgroundColor: 'whitesmoke', alignItems:'center', justifyContent: 'flex-end'}}>
                         <View style={{flex:.5}} />
                         <View style={{flex:1, alignItems:'center'}}>
-                            <Text style={{fontSize: Style.Font.medium(), fontWeight: 'bold'}}>{this.state.results}</Text>
+                            <Text style={{fontSize: Style.Font.large(), fontWeight: 'bold'}}>{this.state.results}</Text>
                             <DiceRoll dice={this.dice} values={[this.state.die1]} onRoll={this.onDiceRoll} onDie={this.onDieChanged}/>
                         </View>
                         <View style={{flex:3}} />

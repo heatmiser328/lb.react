@@ -25,7 +25,7 @@ var BadgeView = React.createClass({
         }
     },    
     render() {    
-        let iconsize = (Math.min(this.state.height, this.state.width) * 0.75) || Style.Scaling.scale(32);
+        let iconsize = (Math.min(this.state.height, this.state.width) * 0.95) || Style.Scaling.scale(32);
         let backcolor = this.props.selected ? 'gainsboro' : 'transparent';
         return (
             <TouchableOpacity style={{marginTop:2, marginBottom:2,backgroundColor:backcolor}} onPress={() =>this.props.onPress && this.props.onPress(this.props.item)} 

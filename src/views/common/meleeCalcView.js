@@ -6,18 +6,19 @@ import Icons from '../../res';
 var MeleeCalcView = React.createClass({
     getInitialState() {
         return {
+            x: 0,
+            y: 0,
+            width: 0,
+            height: 0,
+            viewHeight: 100,
+
             incr: '8',
             loss: '0',
             melee: '12',
             lance: '0',
             total: '12',
             mods: {},
-            side: this.props.side == 'attack' ? 0 : 1,
-            x: 0,
-            y: 0,
-            width: 0,
-            height: 0,
-            viewHeight: 100            
+            side: this.props.side == 'attack' ? 0 : 1
         };
     },
     onLayout(e) {
@@ -83,11 +84,13 @@ var MeleeCalcView = React.createClass({
     render() {
         let iconSize = (Math.min(this.state.height, this.state.width)) || 32;
         return (
-            <View style={{flex:1, justifyContent: 'center', marginLeft: 20, marginRight: 20,
+            <View style={{flex:1, justifyContent: 'center', marginLeft: 1, marginRight: 1,
                         borderRadius: 4, borderWidth: 2, borderColor: 'black', backgroundColor: 'whitesmoke'}}>
                 <View style={{flex: 1, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', backgroundColor: 'silver'}}>
                     <View style={{flex: 2, justifyContent:'center', alignItems: 'center'}}>
-                        <RadioButtonGroup buttons={[{label: 'Attacker', value: 0}, {label: 'Defender', value: 1}]} state={this.state.side}
+                        <RadioButtonGroup buttons={[{label: 'Attacker', value: 0, fontSize: Style.Font.mediumlarge()}, 
+                                                    {label: 'Defender', value: 1, fontSize: Style.Font.mediumlarge()}]} 
+                            state={this.state.side}
                             onSelected={this.onSideChanged} />
                     </View>
                     <View style={{flex:.5, margin:2, alignItems: 'center'}} onLayout={this.onLayout}>
@@ -101,30 +104,31 @@ var MeleeCalcView = React.createClass({
                     <View style={{flex: 2, justifyContent: 'center'}}>                        
                         <View style={{flex:6}}>
                             <View style={{flex: 1, marginLeft: 5}}>
-                                <SpinNumeric label={'Incr'} value={this.state.incr} min={1} integer={true} onChanged={this.onIncrChanged} />
+                                <SpinNumeric label={'Incr'} labelFontSize={Style.Font.mediumlarge()} fontSize={Style.Font.large()} value={this.state.incr} min={1} integer={true} onChanged={this.onIncrChanged} />
                             </View>
                             <View style={{flex: 1, marginLeft: 5}}>
-                                <SpinNumeric label={'Loss'} value={this.state.loss} min={0}  max={this.props.incr} integer={true} onChanged={this.onLossChanged} />
+                                <SpinNumeric label={'Loss'} labelFontSize={Style.Font.mediumlarge()} fontSize={Style.Font.large()} value={this.state.loss} min={0}  max={this.props.incr} integer={true} onChanged={this.onLossChanged} />
                             </View>
                             <View style={{flex: 1, marginLeft: 5}}>
-                                <SpinNumeric label={'Melee'} value={this.state.melee} min={1} integer={true} onChanged={this.onMeleeChanged} />
+                                <SpinNumeric label={'Melee'} labelFontSize={Style.Font.mediumlarge()} fontSize={Style.Font.large()} value={this.state.melee} min={1} integer={true} onChanged={this.onMeleeChanged} />
                             </View>
                             <View style={{flex: 1, marginLeft: 5}}>
-                                <SpinNumeric label={'Lance'} value={this.state.lance} min={0} integer={true} onChanged={this.onLanceChanged} />
+                                <SpinNumeric label={'Lance'} labelFontSize={Style.Font.mediumlarge()} fontSize={Style.Font.large()} value={this.state.lance} min={0} integer={true} onChanged={this.onLanceChanged} />
                             </View>
                             <View style={{flex: 1, marginLeft: 5}}>
-                                <SpinNumeric label={'Total'} value={this.state.total} min={1} onChanged={this.onTotalChanged} />
+                                <SpinNumeric label={'Total'} labelFontSize={Style.Font.mediumlarge()} fontSize={Style.Font.large()} value={this.state.total} min={1} onChanged={this.onTotalChanged} />
                             </View>
                         </View>
                     </View>
                     <View style={{flex: 1}}>
-                        <MultiSelectList title={'Modifiers'}
-                            items={this.modifiers().map((m) => {return {name: m.name, selected: this.state.mods[m.name]};})}
+                        <MultiSelectList
+                            itemFontSize={Style.Font.mediumlarge()}
+                            items={this.modifiers().map((m) => ({name: m.name, selected: this.state.mods[m.name]}))}
                             onChanged={this.onModChanged}/>
                     </View>
                 </View>
             </View>
-        );        
+        );
     },
     rules() {
         if (this.props.battle.rules && this.props.battle.rules.hasOwnProperty('melee')) {
@@ -147,7 +151,7 @@ var MeleeCalcView = React.createClass({
             return rules.modifiers['attack'];
         }
         return rules.modifiers['defend'];
-    }
+    }    
 });
 
 module.exports = MeleeCalcView;

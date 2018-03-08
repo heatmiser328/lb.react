@@ -24,8 +24,8 @@ var ScenarioNavMenuItem = React.createClass({
                     backgroundColor: '#eaeaea',
                     borderRadius: 3,
                 }}>
-                    <Text style={{fontSize: Style.Font.medium(),textAlign: 'left',marginLeft: 10,marginTop: 2}}>{this.props.scenario.name}</Text>
-                    <Text style={{fontSize: Style.Font.smallmedium(),textAlign: 'left',marginLeft: 10,marginTop: 2}}>
+                    <Text style={{fontSize: Style.Font.mediumlarge(),textAlign: 'left',marginLeft: 10,marginTop: 2}}>{this.props.scenario.name}</Text>
+                    <Text style={{fontSize: Style.Font.medium(),textAlign: 'left',marginLeft: 10,marginTop: 2}}>
                         {startdt.format("MMM DD, YYYY HH:mm")}{' - '}{enddt.format("HH:mm")}
                     </Text>
                 </View>

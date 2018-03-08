@@ -77,13 +77,13 @@ var FireAttackerDetailView = React.createClass({
         return (
             <View style={{flex:1}}>
                 <View style={{flex:1, flexDirection: 'row', justifyContent: 'center', alignItems: 'flex-start'}}>
-                    <View style={{flex: 1, alignItems: 'center', marginTop:15}} onLayout={this.onLayout}>
+                    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center', margin: 10}} onLayout={this.onLayout}>
                         <IconButton image={Icons['equal']} height={iconSize} width={iconSize} resizeMode='stretch' onPress={this.onSet} />
                     </View>
-                    <View style={{flex: 2, alignSelf: 'stretch', justifyContent: 'flex-start'}}>
-                        <SpinNumeric value={this.state.value} min={0} max={100} onChanged={this.onValueChanged} />
+                    <View style={{flex: 4, alignSelf: 'stretch', justifyContent: 'flex-start'}}>
+                        <SpinNumeric fontSize={Style.Font.large()} value={this.state.value} min={0} max={100} onChanged={this.onValueChanged} />
                     </View>
-                    <View style={{flex: 1, alignItems: 'center', marginTop: 15}}>
+                    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center', margin: 10}}>
                         <IconButton image={Icons['add']} height={iconSize} width={iconSize} resizeMode='stretch' onPress={this.onAdd} />
                     </View>
                 </View>

@@ -115,7 +115,7 @@ var FireView = React.createClass({
                         />                        
                     </View>
                     <View style={{flex: 0.35, flexDirection: 'row', justifyContent: 'center', alignItems:'center'}}>
-                        <Text style={{fontSize: Style.Font.medium()}}>Cannister</Text>
+                        <Text style={{fontSize: Style.Font.mediumlarge()}}>Cannister</Text>
                         <Switch value={this.state.cannister} onValueChange={this.onCannisterChanged} />
                     </View>                    
                 </View>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, Image } from 'react-native';
-import {SpinNumeric,MultiSelectList} from 'react-native-nub';
+import {SpinNumeric,MultiSelectList,Style} from 'react-native-nub';
 import {DiceRoll} from 'react-native-dice';
 import QuickValuesView from '../common/quickValuesView';
 import DiceModifiersView from '../common/diceModifiersView';
@@ -78,39 +78,41 @@ var ChargeStandView = React.createClass({
         let iconsize = (Math.min(this.state.height, this.state.width) * 0.9) || 16;
         return (
             <View style={{flex: 1}}>
-                <View style={{flex: 1, marginTop: 5, backgroundColor: 'whitesmoke'}}>
-                    <View style={{flex: .75, flexDirection: 'row'}}>
-                        <View style={{flex:2, justifyContent: 'center', alignItems:'center'}} onLayout={this.onLayout}>
+                <View style={{flex: 1, backgroundColor: 'whitesmoke'}}>
+                    <View style={{flex: 3, marginTop: 2, flexDirection: 'row'}}>
+                        <View style={{flex:3, justifyContent: 'center', alignItems:'center'}} onLayout={this.onLayout}>
                             {/*<Text>{this.state.results}</Text>*/}
                             <Image style={{height: iconsize, width: iconsize, resizeMode: 'stretch'}} source={Icons[this.state.results]} />
                         </View>
-                        <View style={{flex:1}}>
+                        <View style={{flex:2}}>
                             <DiceRoll dice={this.dice} values={[this.state.die1,this.state.die2]}
                                 onRoll={this.onDiceRoll} onDie={this.onDieChanged}/>
                         </View>
                     </View>
-                    <View style={{flex: 1, backgroundColor: 'whitesmoke'}}>
+                    <View style={{flex: 4, backgroundColor: 'whitesmoke'}}>
                         <DiceModifiersView onChange={this.onDiceModifierChanged} />
                     </View>
                 </View>
                 <View style={{flex:3, flexDirection:'row'}}>
                     <View style={{flex:3, justifyContent: 'flex-start'}}>
                         <View style={{flex:1, marginLeft: 5}}>
-                            <SpinNumeric label={'Morale'} value={this.state.morale} values={Base6.values} integer={true} onChanged={this.onMoraleChanged} />
+                            <SpinNumeric labelFontSize={Style.Font.mediumlarge()} fontSize={Style.Font.large()} label={'Morale'} value={this.state.morale} values={Base6.values} integer={true} onChanged={this.onMoraleChanged} />
                         </View>
                         <View style={{flex: 1}}>
-                            <QuickValuesView values={[16,26,36,46,56]} onChanged={this.onMoraleChanged}/>
+                            <QuickValuesView values={[16,26,36,46,56]} fit={true} onChanged={this.onMoraleChanged}/>
                         </View>
                         <View style={{flex:1, marginLeft: 5}}>
-                            <SpinNumeric label={'Leader'} value={this.state.leader} integer={true} onChanged={this.onLeaderChanged} />
+                            <SpinNumeric labelFontSize={Style.Font.mediumlarge()} fontSize={Style.Font.large()} label={'Leader'} value={this.state.leader} integer={true} onChanged={this.onLeaderChanged} />
                         </View>
                         <View style={{flex: 1}}>
-                            <QuickValuesView values={[-3,0,3,6,12]} onChanged={this.onLeaderChanged}/>
+                            <QuickValuesView values={[-3,0,3,6,12]} fit={true} onChanged={this.onLeaderChanged}/>
                         </View>
                         <View style={{flex:3}} />
                     </View>
                     <View style={{flex:2}}>
                         <MultiSelectList title={'Modifiers'}
+                            labelFontSize={Style.Font.mediumlarge()} 
+                            itemFontSize={Style.Font.mediumlarge()}                        
                             items={this.modifiers().map((m) => {return {name: m.name, selected: this.state.mods[m.name]};})}
                             onChanged={this.onModChanged}/>
                     </View>

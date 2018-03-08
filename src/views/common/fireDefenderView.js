@@ -7,9 +7,9 @@ var FireDefenderView = React.createClass({
         let DetailView = this.props.detailView || View;
         return (
             <View style={{flex:1}}>
-                <Text style={{fontSize: Style.Font.medium(),fontWeight: 'bold',backgroundColor: 'silver', textAlign: 'center'}}>Defender</Text>
+                <Text style={{fontSize: Style.Font.mediumlarge(),fontWeight: 'bold',backgroundColor: 'silver', textAlign: 'center'}}>Defender</Text>
                 <View style={{flex: 1}}>
-                    <SpinNumeric value={this.props.value} min={0} onChanged={this.props.onChanged} />
+                    <SpinNumeric fontSize={Style.Font.xlarge()} value={this.props.value} min={0} onChanged={this.props.onChanged} />
                 </View>
                 <View style={{flex: 3}}>
                     <DetailView battle={this.props.battle} onSet={this.props.onChanged} onChanged={this.props.onChanged}/>                

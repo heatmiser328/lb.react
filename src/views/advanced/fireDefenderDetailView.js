@@ -1,6 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
-import {SpinNumeric,RadioButtonGroup} from 'react-native-nub';
+import {SpinNumeric,RadioButtonGroup,Style} from 'react-native-nub';
 
 var FireDefenderDetailView = React.createClass({
     getInitialState() {
@@ -38,14 +38,14 @@ var FireDefenderDetailView = React.createClass({
             <View style={{flex: 1}}>
                 <View style={{flex:2, flexDirection: 'row', justifyContent: 'center', alignItems: 'flex-start'}}>
                     <View style={{flex:4}}>
-                        <RadioButtonGroup title={'Terrain'} direction={'vertical'}
-                            buttons={this.terrains().map((t) => {return {label:t,value:t};})}
+                        <RadioButtonGroup title={'Terrain'} labelFontSize={Style.Font.mediumlarge()} direction={'vertical'}
+                            buttons={this.terrains().map((t) => ({label:t,value:t, fontSize: Style.Font.mediumlarge()}))}
                             state={this.state.terrain}
                             onSelected={this.onTerrainChanged}/>
                     </View>
                     <View style={{flex:3}}>
-                        <RadioButtonGroup title={'Formation'} direction={'vertical'}
-                            buttons={this.formations(this.state.terrain).map((f) => {return {label:f,value:f};})}
+                        <RadioButtonGroup title={'Formation'} labelFontSize={Style.Font.mediumlarge()} direction={'vertical'}
+                            buttons={this.formations(this.state.terrain).map((f) => ({label:f,value:f, fontSize: Style.Font.mediumlarge()}))}
                             state={this.state.formation}
                             onSelected={this.onFormationChanged}/>
                     </View>

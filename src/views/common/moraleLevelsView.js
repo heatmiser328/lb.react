@@ -29,7 +29,7 @@ var MoraleLevelView = React.createClass({
         }
     },    
     render() {    
-        let iconsize = 40;//(Math.min(this.state.height, this.state.width) * 0.75) || 16;    
+        let iconsize = Style.Scaling.scale(40);//(Math.min(this.state.height, this.state.width) * 0.75) || 16;    
         let curlevel = this.currentLevel(this.props.level);
 
         return (
@@ -38,7 +38,7 @@ var MoraleLevelView = React.createClass({
                     <Image style={{width: iconsize,height: iconsize,resizeMode: 'contain'}} source={Icons[this.props.level.image]}/>
                 </View>
                 <View style={{flex:3, justifyContent:'center'}}>
-                    <Text style={{fontSize:Style.Font.medium(),fontWeight:'bold',textAlign:'left'}}>{this.props.level.name}</Text>
+                    <Text style={{fontSize:Style.Font.mediumlarge(),fontWeight:'bold',textAlign:'left'}}>{this.props.level.name}</Text>
                 </View>         
                 <View style={{flex:1, justifyContent:'center'}}>
                     <Text style={{fontSize:Style.Font.medium(),fontWeight:'bold',textAlign:'left'}}>{curlevel.level.toString()}</Text>
@@ -47,7 +47,7 @@ var MoraleLevelView = React.createClass({
                     <Text style={{fontSize:Style.Font.medium(),fontWeight:'bold',textAlign:'center'}}>{'('+curlevel.mod.toString()+')'}</Text>
                 </View>                                        
                 <View style={{flex:3, justifyContent:'center'}}>
-                    <SpinSelect value={curlevel.desc} 
+                    <SpinSelect value={curlevel.desc} fontSize={Style.Font.mediumlarge()}
                         onPrev={() =>this.props.onPress && this.props.onPress(this.props.level.formation, curlevel.level-1)} 
                         onNext={() =>this.props.onPress && this.props.onPress(this.props.level.formation, curlevel.level+1)} 
                     />
@@ -86,11 +86,11 @@ var MoraleLevelsView = React.createClass({
         let levels = this.levels(selected);
         return (
             <View style={{flex:1}}>
-                <Text style={{fontSize: Style.Font.medium(),fontWeight: 'bold',backgroundColor: 'silver', textAlign: 'center'}}>Levels</Text>
+                <Text style={{fontSize: Style.Font.mediumlarge(),fontWeight: 'bold',backgroundColor: 'silver', textAlign: 'center'}}>Levels</Text>
                 <View style={{flex:1}}>
                 <SelectableHeader items={badges}  selected={selected} onSelected={this.onSelectArmy} />
                 </View>
-                <View style={{flex:3}}>
+                <View style={{flex:6}}>
                 <ScrollView contentContainerStyle={{marginLeft:5, marginRight:5}}
                     automaticallyAdjustContentInsets={false}
                     scrollEventThrottle={200}>

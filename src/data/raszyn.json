@@ -46,7 +46,7 @@
 					"Line": {"label":"x2","density":4,"factor":2},
 					"Square": {"label":"x3","density":10,"factor":3},
 					"General": {"label":"Printed","density":10,"factor":1}
-				},
+				}
 			}
 		},
 		"defense": {
@@ -116,8 +116,7 @@
 					"Allied horse": { "low": 2, "high": 6},
 					"Austrian foot": { "low": 5, "high": 6},
 					"Austrian position": { "low": 6, "high": 6},
-					"Austrian horse": { "low": 5, "high": 6},
-
+					"Austrian horse": { "low": 5, "high": 6}
 				},
 				"modifiers": [
 					{"name": "Arty Leader", "mod": 1},
@@ -147,7 +146,11 @@
 		    {"name": "Routed", "type": "defend", "attmod": 6, "defmod": -6},
 		    {"name": "Assaulting up a slope", "type": "attack", "attmod": -3, "defmod": 3},
 		    {"name": "Assaulting across a stream", "type": "attack", "attmod": -3, "defmod": 3},
-		    {"name": "Casualty due to defensive fire", "type": "attack", "attmod": -3, "defmod": 0}
+		    {"name": "Casualty due to defensive fire", "type": "attack", "attmod": -3, "defmod": 0},
+			{"name": "50% Losses", "type": "attack", "attmod": -6, "defmod": -6},
+			{"name": "Morale Level 1 (-3)", "type": "attack", "attmod": -3, "defmod": -3},
+			{"name": "Morale Level 2 (-6)", "type": "attack", "attmod": -6, "defmod": -6},
+			{"name": "Morale Level 3 (-9)", "type": "attack", "attmod": -9, "defmod": -9}
 		]
 	},
 	"charge": {
@@ -163,7 +166,11 @@
 				{"name": "Across stream", "mod": 6},
 				{"name": "Lancers", "mod": -6},
 				{"name": "Heavy", "mod": -3},
-				{"name": "Battalion Masse", "mod": 4}
+				{"name": "50% Losses", "mod": -6},
+				{"name": "Battalion Masse", "mod": 4},
+				{"name": "Morale Level 1 (-3)", "mod": -3},
+                {"name": "Morale Level 2 (-6)", "mod": -6},
+                {"name": "Morale Level 3 (-9)", "mod": -9}
 			]
 		},
 		"carre": {
@@ -184,7 +191,7 @@
 							{"low": 43, "high": 56, "result": "Disorder"},
 							{"low": 61, "high": 66, "result": "Rout"}
 						],
-						"2": [
+						"1": [
 							{"low": 11, "high": 33, "result": "Carre"},
 							{"low": 34, "high": 46, "result": "Disorder"},
 							{"low": 51, "high": 66, "result": "Rout"}
@@ -208,7 +215,7 @@
 							{"low": 44, "high": 46, "result": "Disorder"},
 							{"low": 51, "high": 66, "result": "Rout"}
 						],
-						"2": [
+						"1": [
 							{"low": 11, "high": 35, "result": "Carre"},
 							{"low": 36, "high": 43, "result": "Disorder"},
 							{"low": 44, "high": 66, "result": "Rout"}

@@ -47,7 +47,7 @@ var TurnView = React.createClass({
                     <Image style={{width: iconwidth,height: iconheight,resizeMode: 'contain'}} source={Icons[this.props.logo]}/>
                 </View>
                 <View style={{flex: 4}}>
-                    <SpinSelect value={this.props.turn} onPrev={this.onPrevTurn} onNext={this.onNextTurn} />                    
+                    <SpinSelect fontSize={Style.Font.fontScale(20)} value={this.props.turn} onPrev={this.onPrevTurn} onNext={this.onNextTurn} />                    
                 </View>
                 <View style={{flex: 1, marginLeft: 2}}>
                     <TurnPlayerView />

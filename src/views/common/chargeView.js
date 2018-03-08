@@ -25,7 +25,7 @@ var ChargeView = React.createClass({
                 <ScrollableTabView
                     ref="tab"
                     style={{backgroundColor: '#fff'}}
-                    tabBarTextStyle={{fontSize: Style.Font.medium()}}
+                    tabBarTextStyle={{fontSize: Style.Font.mediumlarge()}}
                     onChangeTab={this.onChangeTab}
                     initialPage={this.state.page}>
                     <ChargeStandView tabLabel="Stand" battle={this.props.battle} />

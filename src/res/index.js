@@ -39,6 +39,8 @@ module.exports = {
 	"Carre": require('./square.png'),
 	"Disorder": require('./disorder.png'),
 	"Rout": require('./rout.png'),
+	"ride": require('./cavalry-ride.png'),
+	"recall": require('./cavalry-recall.png'),
 
 	"wounded": require('./ambulance.png'),
 	"mortal": require('./tombstone.png'),

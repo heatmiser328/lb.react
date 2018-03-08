@@ -15,7 +15,7 @@ var BattleView = React.createClass({
     },    
     render() {        
         return (
-            <View style={{flex: 1, marginTop: Style.Scaling.scale(44),backgroundColor: 'rgba(0,0,0,0.01)'}}>            
+            <View style={{flex: 1, marginTop: Style.Scaling.titleBarHeight,backgroundColor: 'rgba(0,0,0,0.01)'}}>            
                 {this.renderBattleView()}
             </View>
         );

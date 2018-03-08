@@ -134,7 +134,7 @@ var MeleeView = React.createClass({
                     </View>
                 </View>
                 <View style={{flex: 3.25}}>
-                    <MeleeCalcView side={'attack'} battle={this.props.battle} onSet={this.onSetMelee} onAdd={this.onAddMelee} />
+                    <MeleeCalcView side={'attack'} battle={this.props.battle} onSet={this.onSetMelee}  onAdd={this.onAddMelee} />
                 </View>
               </View>
           </View>

@@ -93,9 +93,9 @@ var AssaultView = React.createClass({
         return (
             <View style={{flex: 1}}>
                 <View style={{flex: 1, marginTop: 5, backgroundColor: 'whitesmoke'}}>
-                    <View style={{flex: .75, flexDirection: 'row'}}>
+                    <View style={{flex: 1, flexDirection: 'row'}}>
                         <View style={{flex:2, alignItems: 'center', justifyContent: 'center'}}>
-                            <RadioButtonGroup buttons={[{label: 'Defender', value: 1},{label: 'Attacker', value: 0}]} state={this.state.mode} onSelected={this.onModeChanged} />
+                            <RadioButtonGroup buttons={[{label: 'Defender', value: 1, fontSize: Style.Font.mediumlarge()},{label: 'Attacker', value: 0, fontSize: Style.Font.mediumlarge()}]} state={this.state.mode} onSelected={this.onModeChanged} />
                         </View>
                         <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}} onLayout={this.onLayout}>
                             <Image style={{height: iconSize, width: iconSize, resizeMode: 'stretch'}} source={icon} />
@@ -105,28 +105,32 @@ var AssaultView = React.createClass({
                                 onRoll={this.onDiceRoll} onDie={this.onDieChanged}/>
                         </View>
                     </View>
-                    <View style={{flex: .75}}>
+                    <View style={{flex: 1}}>
                         <DiceModifiersView onChange={this.onDiceModifierChanged} />
                     </View>
-                </View>
+                </View>                
                 <View style={{flex:1, flexDirection: 'row'}}>
                     <View style={{flex:1, borderRightWidth:1,borderRightColor:'gray'}}>
-                        <Text style={{fontSize: Style.Font.medium(), backgroundColor:'silver', alignSelf:'stretch', textAlign:'center'}}>Morale</Text>
-                        <SpinNumeric value={this.state.morale} values={Base6.values} integer={true} onChanged={this.onMoraleChanged} />
-                        <QuickValuesView values={[16,26,36,46,56]} onChanged={this.onMoraleChanged}/>
+                        <Text style={{fontSize: Style.Font.mediumlarge(), backgroundColor:'silver', alignSelf:'stretch', textAlign:'center'}}>Morale</Text>
+                        <SpinNumeric fontSize={Style.Font.large()} value={this.state.morale} values={Base6.values} integer={true} onChanged={this.onMoraleChanged} />
+                        <QuickValuesView values={[16,26,36,46,56]} fit={true} onChanged={this.onMoraleChanged}/>
                     </View>
                     <View style={{flex:1}}>
-                        <Text style={{fontSize: Style.Font.medium(), backgroundColor:'silver', alignSelf:'stretch', textAlign:'center'}}>Leader</Text>
-                        <SpinNumeric value={this.state.leader} integer={true} onChanged={this.onLeaderChanged} />
-                        <QuickValuesView values={[-3,0,3,6,12]} onChanged={this.onLeaderChanged}/>
+                        <Text style={{fontSize: Style.Font.mediumlarge(), backgroundColor:'silver', alignSelf:'stretch', textAlign:'center'}}>Leader</Text>
+                        <SpinNumeric fontSize={Style.Font.large()} value={this.state.leader} integer={true} onChanged={this.onLeaderChanged} />
+                        <QuickValuesView values={[-3,0,3,6,12]} fit={true} onChanged={this.onLeaderChanged}/>
                     </View>                    
                 </View>
                 <View style={{flex:2.5, flexDirection: 'row'}}>
                     <View style={{flex:2}}>
-                        <RadioButtonGroup title={'Odds'} direction={'vertical'} buttons={this.odds().map((o) => {return {label:o.name,value:o.name};})} state={this.state.odds} onSelected={this.onOddsChanged} />
+                        <RadioButtonGroup title={'Odds'} labelFontSize={Style.Font.mediumlarge()} direction={'vertical'} 
+                            buttons={this.odds().map((o) => ({label:o.name,value:o.name,fontSize: Style.Font.mediumlarge()}))} 
+                            state={this.state.odds} onSelected={this.onOddsChanged} />
                     </View>
                     <View style={{flex: 3}}>
                         <MultiSelectList title={'Modifiers'}
+                            labelFontSize={Style.Font.mediumlarge()} 
+                            itemFontSize={Style.Font.mediumlarge()}
                             items={this.modifiers().map((m) => {return {name: m.name, selected: this.state.mods[m.name]};})}
                             onChanged={this.onModChanged} />
                     </View>

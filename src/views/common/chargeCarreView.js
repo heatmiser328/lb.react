@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, Image } from 'react-native';
-import {SpinNumeric,MultiSelectList,RadioButtonGroup} from 'react-native-nub';
+import {SpinNumeric,MultiSelectList,RadioButtonGroup,Style} from 'react-native-nub';
 import {DiceRoll} from 'react-native-dice';
 import QuickValuesView from '../common/quickValuesView';
 import DiceModifiersView from '../common/diceModifiersView';
@@ -86,18 +86,18 @@ var ChargeCarreView = React.createClass({
         let iconsize = (Math.min(this.state.height, this.state.width) * 0.9) || 16;
         return (
             <View style={{flex: 1}}>
-                <View style={{flex:1, marginTop: 5, backgroundColor: 'whitesmoke'}}>
-                    <View style={{flex: .75, flexDirection: 'row'}}>
-                        <View style={{flex:2, justifyContent: 'center', alignItems:'center'}} onLayout={this.onLayout}>
+                <View style={{flex:1, backgroundColor: 'whitesmoke'}}>
+                    <View style={{flex: 3, marginTop: 2, flexDirection: 'row'}}>
+                        <View style={{flex:3, justifyContent: 'center', alignItems:'center'}} onLayout={this.onLayout}>
                             {/*<Text>{this.state.results}</Text>*/}
                             <Image style={{height: iconsize, width: iconsize, resizeMode: 'stretch'}} source={Icons[this.state.results]} />
                         </View>
-                        <View style={{flex:1}}>
+                        <View style={{flex:2}}>
                             <DiceRoll dice={this.dice} values={[this.state.die1,this.state.die2]}
                                 onRoll={this.onDiceRoll} onDie={this.onDieChanged}/>
                         </View>
                     </View>
-                    <View style={{flex: 1}}>
+                    <View style={{flex: 4}}>
                         <DiceModifiersView onChange={this.onDiceModifierChanged} />
                     </View>
                 </View>
@@ -106,20 +106,20 @@ var ChargeCarreView = React.createClass({
                     <View style={{flex:4, justifyContent: 'flex-start', borderRightWidth: 1, borderRightColor: 'gray'}}>
                         <View style={{flex: 1, flexDirection: 'row'}}>
                             <View style={{flex:1}}>
-                                <RadioButtonGroup title={'Nationality'} direction={'vertical'}
+                                <RadioButtonGroup title={'Nationality'} labelFontSize={Style.Font.mediumlarge()} direction={'vertical'}
                                     buttons={this.nationalities().map((n) => {return {label:n,value:n};})}
                                     state={this.state.nationality}
                                     onSelected={this.onNationalityChanged}/>
                             </View>
                             <View style={{flex:1}}>
-                                <RadioButtonGroup title={'Formation'} direction={'vertical'}
-                                    buttons={this.formations(this.state.nationality).map((f) => {return {label:f,value:f};})}
+                                <RadioButtonGroup title={'Formation'} labelFontSize={Style.Font.mediumlarge()} direction={'vertical'}
+                                    buttons={this.formations(this.state.nationality).map((f) => ({label:f,value:f, fontSize: Style.Font.mediumlarge()}))}
                                     state={this.state.formation}
                                     onSelected={this.onFormationChanged}/>
                             </View>
                             <View style={{flex:1}}>
-                                <RadioButtonGroup title={'Distance'} direction={'vertical'}
-                                    buttons={['4','3','2','1'].map((d) => {return {label:d,value:d};})}
+                                <RadioButtonGroup title={'Distance'} labelFontSize={Style.Font.mediumlarge()} direction={'vertical'}
+                                    buttons={['4','3','2','1'].map((d) => ({label:d,value:d, fontSize: Style.Font.mediumlarge()}))}
                                     state={this.state.distance}
                                     onSelected={this.onDistanceChanged}/>
                             </View>
@@ -128,7 +128,9 @@ var ChargeCarreView = React.createClass({
                     {/*modifiers*/}
                     <View style={{flex:2}}>
                         <MultiSelectList title={'Modifiers'}
-                            items={this.modifiers().map((m) => {return {name: m.name, selected: this.state.mods[m.name]};})}
+                            labelFontSize={Style.Font.mediumlarge()} 
+                            itemFontSize={Style.Font.mediumlarge()}                        
+                            items={this.modifiers().map((m) => ({name: m.name, selected: this.state.mods[m.name]}))}
                             onChanged={this.onModChanged}/>
                     </View>
                 </View>

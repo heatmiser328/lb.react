@@ -22,7 +22,7 @@ var BattleView = React.createClass({
                 <TurnView logo={this.props.battle.image} />                
                 <ScrollableTabView
                     style={{backgroundColor: '#fff'}}
-                    tabBarTextStyle={{fontSize: Style.Font.smallmedium()}}                
+                    tabBarTextStyle={{fontSize: Style.Font.mediumlarge()}}                
                     initialPage={this.props.initialPage}                    
                 >
                     <ManeuverView tabLabel="Maneuver" battle={this.props.battle} />

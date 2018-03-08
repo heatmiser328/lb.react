@@ -32,7 +32,7 @@ var VictoryLevel = React.createClass({
         return (
             <View style={{flex:1, flexDirection: 'row', justifyContent:'center',alignItems:'center'}} onLayout={this.onLayout}>
                 <Image style={{width: iconsize,height: iconsize,resizeMode: 'contain'}} source={Icons[this.props.side]}/>
-                <Text style={{fontSize:Style.Font.medium(),fontWeight:'bold',textAlign:'center', marginLeft: Style.Padding.pad(20)}}>{this.props.level}</Text>
+                <Text style={{fontSize:Style.Font.mediumlarge(),fontWeight:'bold',textAlign:'center', marginLeft: Style.Padding.pad(20)}}>{this.props.level}</Text>
             </View>            
         );
     }
@@ -62,9 +62,13 @@ var VictoryPoints = React.createClass({
     render() {
         let iconsize = (Math.min(this.state.height, this.state.width) * 0.9) || 16;        
         return (
-            <View style={{flex:1,flexDirection:'row'}} onLayout={this.onLayout}>
-                <Image style={{width: iconsize,height: iconsize,resizeMode: 'contain'}} source={Icons[this.props.side]}/>
-                <SpinNumeric value={this.props.value} min={0} onChanged={this.props.onChanged} />
+            <View style={{flex:1,flexDirection:'row', justifyContent:'center',alignItems:'center', margin:10}} onLayout={this.onLayout}>
+                <View style={{flex:1,justifyContent:'center',alignItems:'center'}}>
+                    <Image style={{width: iconsize,height: iconsize,resizeMode: 'contain'}} source={Icons[this.props.side]}/>
+                </View>
+                <View style={{flex:4,justifyContent:'center',alignItems:'center'}}>
+                    <SpinNumeric fontSize={Style.Font.large()} value={this.props.value} min={0} onChanged={this.props.onChanged} />
+                </View>
             </View>
         );
     }

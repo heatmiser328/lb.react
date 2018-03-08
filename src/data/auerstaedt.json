@@ -97,7 +97,11 @@
 		    {"name": "Routed", "type": "defend", "attmod": 6, "defmod": -6},
 		    {"name": "Assaulting up a slope", "type": "attack", "attmod": -3, "defmod": 0},
 		    {"name": "Assaulting across a stream", "type": "attack", "attmod": -3, "defmod": 3},
-		    {"name": "Casualty due to defensive fire", "type": "attack", "attmod": -3, "defmod": 0}
+			{"name": "Casualty due to defensive fire", "type": "attack", "attmod": -3, "defmod": 0},
+			{"name": "50% Losses", "type": "attack", "attmod": -6, "defmod": -6},
+			{"name": "Morale Level 1 (-3)", "type": "attack", "attmod": -3, "defmod": -3},
+			{"name": "Morale Level 2 (-6)", "type": "attack", "attmod": -6, "defmod": -6},
+			{"name": "Morale Level 3 (-9)", "type": "attack", "attmod": -9, "defmod": -9}
 		]
 	},
 	"charge": {
@@ -112,7 +116,11 @@
 				{"name": "Carre", "mod": 12},
 				{"name": "Across stream", "mod": 6},
 				{"name": "Lancers", "mod": -6},
-				{"name": "Heavy", "mod": -3}
+				{"name": "Heavy", "mod": -3},
+				{"name": "50% Losses", "mod": -6},
+				{"name": "Morale Level 1 (-3)", "mod": -3},
+                {"name": "Morale Level 2 (-6)", "mod": -6},
+                {"name": "Morale Level 3 (-9)", "mod": -9}
 			]
 		},
 		"carre": {
@@ -220,7 +228,10 @@
 			{"name": "50% Losses", "mod": -6},
 			{"name": "Road Col", "mod": -6},
 			{"name": "Force March", "mod": -3},			
-			{"name": "Prussian Not in Line/Sk/Sq", "mod": -12}
+			{"name": "Prussian Not in Line/Sk/Sq", "mod": -12},
+			{"name": "Morale Level 1 (-3)", "mod": -3},
+			{"name": "Morale Level 2 (-6)", "mod": -6},
+			{"name": "Morale Level 3 (-9)", "mod": -9}
 		]		
 	}
 }

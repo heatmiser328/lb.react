@@ -17,9 +17,9 @@ var ConfigurationView = React.createClass({
     },    
     render() {
         return (
-            <View style={{flex: 1, marginTop: Style.Scaling.scale(44)}}>
+            <View style={{flex: 1, marginTop: Style.Scaling.titleBarHeight}}>
                 {/* Enable/Disable sounds? */}
-                <Text style={{fontSize: Style.Font.medium(),fontWeight: 'bold',backgroundColor: 'silver', textAlign: 'center'}}>Rule Set</Text>
+                <Text style={{fontSize: Style.Font.large(),fontWeight: 'bold',backgroundColor: 'silver', textAlign: 'center'}}>Rule Set</Text>
                 <RadioButtonGroup direction={'vertical'}
                     buttons={this.rulesets}
                     state={this.props.ruleset}
