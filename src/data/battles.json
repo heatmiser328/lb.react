@@ -1,5 +1,95 @@
 [
 	{
+	    "id": 1,
+	    "name": "La Bataille d' Halle",
+	    "publisher": "Marshal Enterprises",
+	    "image": "halle",
+		"sides": ["French", "Prussian"],
+	    "scenarios": [
+	        {
+	            "id": 2,
+	            "name": "Largely Historical",
+	            "start": {
+	                "year": 1806,
+	                "month": 10,
+	                "day": 17,
+	                "hour": 9,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1806,
+	                "month": 10,
+	                "day": 17,
+	                "hour": 16,
+	                "minute": 0
+	            },
+				"victory": [
+					{"side": "French", "level": "Decisive", "conditions": "Drive the Prussians from the field prior to 1:00 PM, with only the use of DuPont’s Division; the light cavalry brigade; and associated batteries. Additionally, the French must exit 25 increments off the map edge towards is the Prussian Line of Communications"},
+					{"side": "French", "level": "Tactical", "conditions": "Drive the Prussians from the field prior to 2:00 PM. Additionally you must exit 25 increments off the map edge that is the Prussian line of communications"},
+					{"side": "French", "level": "Marginal", "conditions": "Drive the Prussians from the field prior to 4:00 PM (historical). Additionally, you must exit 20 increments off the map edge that is the Prussian Line of Communications"},
+					{"side": "", "level": "Draw", "conditions": "Prussians inflict at least 10 increments of casualties on the French; and do not permit the French to exit any combat formation off of the map, toward your line of communications, prior to 1:00 PM"},
+					{"side": "Prussian", "level": "Marginal", "conditions": "Prussians inflict more casualties on the French than they suffer; and do not permit the French to exit any combat formation off of the map, towards the Prussian line of communications, prior to 3:00 PM"},
+					{"side": "Prussian", "level": "Tactical", "conditions": "Prussians inflict 6 more increments of casualties on the French than they suffer; and do not permit the French to exit any combat formation off of the map, towards the Prussian line of communications"},
+					{"side": "Prussian", "level": " Decisive", "conditions": "Prussians inflict 12 more increments of casualties on the French than they suffer; and do not permit the French to exit any combat formation off of the map, towards the Prussian line of communications"}
+				]
+	        },
+	        {
+	            "id": 3,
+	            "name": "Before the Saale",
+	            "start": {
+	                "year": 1806,
+	                "month": 10,
+	                "day": 17,
+	                "hour": 9,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1806,
+	                "month": 10,
+	                "day": 17,
+	                "hour": 16,
+	                "minute": 0
+	            },
+				"victory": [
+					{"side": "French", "level": "Decisive", "conditions": "Drive the Prussians from the field prior to 1:00 PM, with only the use of DuPont’s Division; the light cavalry brigade; and associated batteries. Additionally, the French must exit 25 increments off the map edge towards is the Prussian Line of Communications"},
+					{"side": "French", "level": "Tactical", "conditions": "Drive the Prussians from the field prior to 2:00 PM. Additionally you must exit 25 increments off the map edge that is the Prussian line of communications"},
+					{"side": "French", "level": "Marginal", "conditions": "Drive the Prussians from the field prior to 4:00 PM (historical). Additionally, you must exit 20 increments off the map edge that is the Prussian Line of Communications"},
+					{"side": "", "level": "Draw", "conditions": "Prussians inflict at least 10 increments of casualties on the French; and do not permit the French to exit any combat formation off of the map, toward your line of communications, prior to 1:00 PM"},
+					{"side": "Prussian", "level": "Marginal", "conditions": "Prussians inflict more casualties on the French than they suffer; and do not permit the French to exit any combat formation off of the map, towards the Prussian line of communications, prior to 3:00 PM"},
+					{"side": "Prussian", "level": "Tactical", "conditions": "Prussians inflict 6 more increments of casualties on the French than they suffer; and do not permit the French to exit any combat formation off of the map, towards the Prussian line of communications"},
+					{"side": "Prussian", "level": "Decisive", "conditions": "Prussians inflict 12 more increments of casualties on the French than they suffer; and do not permit the French to exit any combat formation off of the map, towards the Prussian line of communications"}
+				]				
+	        },
+	        {
+	            "id": 4,
+	            "name": "Revision of the Engaged Forces",
+	            "start": {
+	                "year": 1806,
+	                "month": 10,
+	                "day": 17,
+	                "hour": 9,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1806,
+	                "month": 10,
+	                "day": 17,
+	                "hour": 16,
+	                "minute": 0
+	            },
+				"victory": [
+					{"side": "French", "level": "Decisive", "conditions": "Place the Prussians on Level Two and exit 30 increments, using only Dupont and Grouchy Divisions, off the road that is designated the line of communications before 2:00 PM"},
+					{"side": "French", "level": "Tactical", "conditions": "Place Prussians on Level One and exit 30 steps off the road that is designated as the line of communications before 3:00 PM"},
+					{"side": "French", "level": "Marginal", "conditions": "Exit 25 steps from the field off the road that is designated as the line of communications prior to 4:00 PM"},
+					{"side": "", "level": "Draw", "conditions": "Prussians inflict at least 25 increments of casualties on the French"},
+					{"side": "Prussian", "level": "Marginal", "conditions": "Prussians inflict 12 more increments loss on the French, than they suffer"},
+					{"side": "Prussian", "level": "Tactical", "conditions": "Prussians inflict 18 more increments loss on the French, than they suffer"},
+					{"side": "Prussian", "level": "Decisive", "conditions": "Prussians inflict 24 more increments loss on the French than they suffer"}
+				]				
+	        }
+	    ]
+	},
+	{
 	    "id": 5,
 	    "name": "La Bataille de Raszyn",
 	    "publisher": "Marshal Enterprises",
@@ -1258,7 +1348,7 @@
 					{"side": "AustrianRussian", "level": "Marginal", "conditions": "Exit 60 increments off the Southern Map Edge or hold Augezd"},
 					{"side": "AustrianRussian", "level": "Tactical", "conditions": "Exit 75 increments off the Southern Map Edge"},
 					{"side": "AustrianRussian", "level": "Decisive", "conditions": "Exit 75 increments off the Eastern Map Edge"}
-				]
+				]								
 	        },
 	        {
 	            "id": 100310,
@@ -1285,7 +1375,7 @@
 					{"side": "AustrianRussian", "low": 7, "high": 8, "level": "Marginal"},
 					{"side": "AustrianRussian", "low": 5, "high": 6, "level": "Substantial"},
 					{"side": "AustrianRussian", "low": -99, "high": 4, "level": "Decisive"}
-				]
+				]				
 	        }			
 	    ]
 	},
@@ -1313,7 +1403,16 @@
 	                "day": 10,
 	                "hour": 13,
 	                "minute": 0
-	            }
+				},
+				"victory": [
+					{"side": "Prussian", "low": -99, "high": -20, "level": "Decisive"},
+					{"side": "Prussian", "low": -19, "high": -15, "level": "Substantial"},
+					{"side": "Prussian", "low": -14, "high": -10, "level": "Marginal"},									
+					{"side": "", "low": -9, "high": -5, "level": "Draw"},
+					{"side": "French", "low": -4, "high": 5, "level": "Marginal"},
+					{"side": "French", "low": 6, "high": 15, "level": "Substantial"},					
+					{"side": "French", "low": 16, "high": 99, "level": "Decisive"}
+				]
 	        },
 	        {
 	            "id": 10042,
@@ -1331,11 +1430,20 @@
 	                "day": 14,
 	                "hour": 15,
 	                "minute": 40
-	            }
+	            },
+				"victory": [
+					{"side": "French", "low": 25, "high": 99, "level": "Decisive"},
+					{"side": "French", "low": 15, "high": 24, "level": "Substantial"},
+					{"side": "French", "low": 5, "high": 14, "level": "Marginal"},
+					{"side": "", "low": 0, "high": 4, "level": "Draw"},
+					{"side": "Prussian", "low": -7, "high": -1, "level": "Marginal"},
+					{"side": "Prussian", "low": -15, "high": -8, "level": "Substantial"},
+					{"side": "Prussian", "low": -99, "high": -16, "level": "Decisive"}
+				]	            
 	        },
 	        {
 	            "id": 10043,
-	            "name": "Jena - Alternative",
+	            "name": "Jena - Alternative: Stand and Fight",
 	            "start": {
 	                "year": 1806,
 	                "month": 10,
@@ -1349,10 +1457,46 @@
 	                "day": 14,
 	                "hour": 17,
 	                "minute": 0
-	            }
+	            },
+				"victory": [
+					{"side": "French", "low": 25, "high": 99, "level": "Decisive"},
+					{"side": "French", "low": 15, "high": 24, "level": "Substantial"},
+					{"side": "French", "low": 5, "high": 14, "level": "Marginal"},
+					{"side": "", "low": 0, "high": 4, "level": "Draw"},
+					{"side": "Prussian", "low": -7, "high": -1, "level": "Marginal"},
+					{"side": "Prussian", "low": -15, "high": -8, "level": "Substantial"},
+					{"side": "Prussian", "low": -99, "high": -16, "level": "Decisive"}
+				]				
 	        },
 	        {
-	            "id": 10043,
+	            "id": 10044,
+	            "name": "Jena - Alternative: Delaying Action",
+	            "start": {
+	                "year": 1806,
+	                "month": 10,
+	                "day": 14,
+	                "hour": 8,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1806,
+	                "month": 10,
+	                "day": 14,
+	                "hour": 17,
+	                "minute": 0
+	            },
+				"victory": [
+					{"side": "French", "low": 25, "high": 99, "level": "Decisive"},
+					{"side": "French", "low": 15, "high": 24, "level": "Substantial"},
+					{"side": "French", "low": 6, "high": 14, "level": "Marginal"},
+					{"side": "", "low": 0, "high": 6, "level": "Draw"},
+					{"side": "Prussian", "low": -8, "high": -1, "level": "Marginal"},
+					{"side": "Prussian", "low": -17, "high": -9, "level": "Substantial"},
+					{"side": "Prussian", "low": -99, "high": -18, "level": "Decisive"}
+				]				
+	        },
+	        {
+	            "id": 10045,
 	            "name": "Hassenhausen",
 	            "start": {
 	                "year": 1806,
@@ -1367,11 +1511,20 @@
 	                "day": 14,
 	                "hour": 15,
 	                "minute": 0
-	            }
+	            },
+				"victory": [
+					{"side": "French", "level": "Decisive", "conditions": "Place 4 Coalition divisions on Level 2 by end of game"},
+					{"side": "French", "level": "Tactical", "conditions": "Place 3 Coalition divisions on Level 2 by end of game"},
+					{"side": "French", "level": "Marginal", "conditions": "Place 2 Coalition divisions on Level 2 by end of game"},
+					{"side": "", "level": "Draw", "conditions": "No other victory conditions are met"},
+					{"side": "Prussian", "level": "Marginal", "conditions": "Place units in every hex of Hassenhausen and Poppel by end of game"},
+					{"side": "Prussian", "level": "Tactical", "conditions": "Place units in every hex of Hassenhausen at any time and exit 50 increments off eastern map OR place III Corps on Level 1"},
+					{"side": "Prussian", "level": "Decisive", "conditions": "Exit 70 increments off eastern map OR place III Corps on Level 2"}
+				]								
 	        },
 
 	        {
-	            "id": 10044,
+	            "id": 10046,
 	            "name": "Halle - Largely Historical",
 	            "start": {
 	                "year": 1806,
@@ -1398,7 +1551,7 @@
 				]
 	        },
 	        {
-	            "id": 10045,
+	            "id": 10047,
 	            "name": "Halle - Before the Saale",
 	            "start": {
 	                "year": 1806,
@@ -1425,7 +1578,7 @@
 				]				
 	        },
 	        {
-	            "id": 10046,
+	            "id": 10048,
 	            "name": "Halle - Revision of the Engaged Forces",
 	            "start": {
 	                "year": 1806,
@@ -1455,6 +1608,253 @@
 	},
 	
 	{
+	    "id": 1005,
+	    "name": "La Bataille de Deutsch-Wagram",
+	    "publisher": "Marshal Enterprises",
+	    "image": "wagram",
+		"sides": ["French", "Austrian"],
+	    "scenarios": [
+	        {
+	            "id": 10051,
+	            "name": "Oudinot Attacks Baumersdorf",
+	            "start": {
+	                "year": 1809,
+	                "month": 7,
+	                "day": 5,
+	                "hour": 18,
+	                "minute": 20
+	            },
+	            "end": {
+	                "year": 1809,
+	                "month": 7,
+	                "day": 5,
+	                "hour": 22,
+	                "minute": 0
+				},
+				"victory": [
+					{"side": "French", "level": "Decisive", "conditions": "Hold 4 hexes of Baumersdorf and have 15 increments across the Russbach at the end of the 22:00 turn"},
+					{"side": "French", "level": "Substantial", "conditions": "Hold 2 hexes of Baumersdorf and have 10 increments at the end of the 22:00 turn"},
+					{"side": "", "level": "Draw", "conditions": "No other French or Austrian Victory"},
+					{"side": "Austrian", "level": "Substantial", "conditions": "Hold 2 hexes of Baumersdorf at the end of the 22:00 turn"},
+					{"side": "Austrian", "level": "Decisive", "conditions": "Hold 4 hexes of Baumersdorf and no French units across the Russbach at the end of the 22:00 turn"}
+				]
+	        },
+	        {
+	            "id": 10052,
+	            "name": "Macdonald crosses the Russbach",
+	            "start": {
+	                "year": 1809,
+	                "month": 7,
+	                "day": 5,
+	                "hour": 18,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1809,
+	                "month": 7,
+	                "day": 5,
+	                "hour": 21,
+	                "minute": 40
+	            },
+				"victory": [
+					{"side": "French", "level": "Decisive", "conditions": "Place 30 increments on the Aus. side of the Russbach at end of 21:40 turn"},
+					{"side": "French", "level": "Substantial", "conditions": "Place 20 increments on the Aus. side of the Russbach at end of 21:40 turn"},
+					{"side": "", "level": "Draw", "conditions": "No other French or Austrian Victory"},
+					{"side": "Austrian", "level": "Substantial", "conditions": "No more than 15 increments on the Aus. side of the Russbach at end of 21:40 turn"},
+					{"side": "Austrian", "level": "Decisive", "conditions": "No French units on the Aus. Side of the Russbach at the end of the 21:40 turn"}
+				]	            
+	        },
+	        {
+	            "id": 10053,
+	            "name": "Marshal Bernadotte Storms Wagram",
+	            "start": {
+	                "year": 1809,
+	                "month": 7,
+	                "day": 5,
+	                "hour": 18,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1809,
+	                "month": 7,
+	                "day": 5,
+	                "hour": 22,
+	                "minute": 40
+	            },
+				"victory": [
+					{"side": "French", "level": "Decisive", "conditions": "Hold all hexes of Wagram and Aderklaa by the end of the game"},
+					{"side": "French", "level": "Substantial", "conditions": "Hold any 5 hexes of Wagram and all hexes of Aderklaa by the end of the game"},
+					{"side": "", "level": "Draw", "conditions": "No other French or Austrian Victory"},
+					{"side": "Austrian", "level": "Substantial", "conditions": "Hold 4 hexes of Wagram and Aderklaa by the end of the game"},
+					{"side": "Austrian", "level": "Decisive", "conditions": "Hold all hexes of Aderklaa and Wagram by the end"}
+				]				
+	        },
+	        {
+	            "id": 10054,
+	            "name": "Macdonald's Hollow Column",
+	            "start": {
+	                "year": 1809,
+	                "month": 7,
+	                "day": 6,
+	                "hour": 10,
+	                "minute": 20
+	            },
+	            "end": {
+	                "year": 1809,
+	                "month": 7,
+	                "day": 6,
+	                "hour": 15,
+	                "minute": 0
+	            },
+				"victory": [
+					{"side": "French", "level": "Decisive", "conditions": "Hold Süssenbrunn, Breitenlee and Aderklaa. Place III Austrian Korps on morale level two by 15:00"},
+					{"side": "French", "level": "Substantial", "conditions": "Hold Süssenbrunn and Breitenlee or Aderklaa. Place III Austrian Korps morale level one by 15:00"},
+					{"side": "French", "level": "Marginal", "conditions": "Hold Süssenbrunn and Aderklaa. Place one III Austrian Korps morale level one by 15:00"},
+					{"side": "", "level": "Draw", "conditions": "No other victory condition is achieved"},
+					{"side": "Austrian", "level": "Marginal", "conditions": "Hold Süssenbrunn or Aderklaa. Place one III Austrian Korps morale level one by 15:00"},
+					{"side": "Austrian", "level": "Substantial", "conditions": "Hold Süssenbrunn and Breitenlee or Aderklaa. Place the Army of Italy on morale level one by 15:00"},
+					{"side": "Austrian", "level": "Decisive", "conditions": "Hold Süssenbrunn, Breitenlee and Aderklaa. Place the Army of Italy on morale level one by 15:00"}				
+				]				
+	        },
+	        {
+	            "id": 10055,
+	            "name": "Davout Turns the Markgrafneusiedl",
+	            "start": {
+	                "year": 1809,
+	                "month": 7,
+	                "day": 6,
+	                "hour": 7,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1809,
+	                "month": 7,
+	                "day": 6,
+	                "hour": 13,
+	                "minute": 0
+	            },
+				"victory": [
+					{"side": "French", "level": "Decisive", "conditions": "Place Rosenberg's and Nordmann's Korps on Morale Level Two"},
+					{"side": "French", "level": "Substantial", "conditions": "Place Rosenberg's and Nordmann's Korps one each on Morale Levels One and Two"},
+					{"side": "French", "level": "Marginal", "conditions": "Place Nordmann and Rosenberg's Korps on Morale Level One"},
+					{"side": "", "level": "Draw", "conditions": "Neither side is on a Morale Level"},
+					{"side": "Austrian", "level": "Marginal", "conditions": "Davout III Corp's loses 35 increments or Davout is wounded/killed"},
+					{"side": "Austrian", "level": "Substantial", "conditions": "Davout's III Corps on Morale Level One"},
+					{"side": "Austrian", "level": "Decisive", "conditions": "Davout's III Corps on Level Two"}
+				]								
+	        },
+
+	        {
+	            "id": 10056,
+	            "name": "Johann's Surprise Arrival",
+	            "start": {
+	                "year": 1809,
+	                "month": 7,
+	                "day": 6,
+	                "hour": 12,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1809,
+	                "month": 7,
+	                "day": 6,
+	                "hour": 15,
+	                "minute": 20
+	            },
+				"victory": [
+					{"side": "French", "level": "Decisive", "conditions": "Place Armee v. Inner Oster. On morale level two"},
+					{"side": "French", "level": "Substantial", "conditions": "Place Armee v. Inner Oster. On morale level one"},
+					{"side": "", "level": "Draw", "conditions": "No other condition met"},
+					{"side": "Austrian", "level": "Substantial", "conditions": "Place 50 infantrie increments in the victory zone"},
+					{"side": "Austrian", "level": "Decisive", "conditions": "Place 75 infantrie increments in the victory zone"}
+				]
+	        },
+	        {
+	            "id": 10057,
+	            "name": "Historical Battle w/ DTTB Map",
+	            "start": {
+	                "year": 1809,
+	                "month": 7,
+	                "day": 6,
+	                "hour": 7,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1809,
+	                "month": 7,
+	                "day": 6,
+	                "hour": 16,
+	                "minute": 0
+	            },
+				"victory": [
+					{"side": "French", "level": "Decisive", "conditions": "Capture and hold at the end of the game four of the Austrian village / towns selected by the Austrians.. Put two Austrian Korps on Level Two at any time"},
+					{"side": "French", "level": "Substantial", "conditions": "Capture and hold at the end of the game four of the Austrian village / towns. Put one Austrian Korps on Level One and one on Level Two at the end of the game"},
+					{"side": "French", "level": "Marginal", "conditions": "Capture and hold at the end of the game three of the Austrian victory village / towns. Put one Austrian Korps on Level One at the end of the game"},
+					{"side": "", "level": "Draw", "conditions": "None of the other victory conditions are met."},
+					{"side": "Austrian", "level": "Marginal", "conditions": "Hold at the end of the game, one of the Austrian victory village / towns. Put two French Corps on Morale Level one at any time"},
+					{"side": "Austrian", "level": "Substantial", "conditions": "Hold at the end of the game, any two of the Austrian victory villages / towns. Put three French Corps on Morale Level one at the any time"},
+					{"side": "Austrian", "level": "Decisive", "conditions": "1. Kill or Capture Napoleon. 2. Hold all three of the Austrian victory villages/towns at the end of the game: . Put three French Corps on Morale Level one at the same time"}
+				]				
+	        },
+	        {
+	            "id": 10058,
+	            "name": "Historical Battle with Aspern-Essling Maps",
+	            "start": {
+	                "year": 1809,
+	                "month": 7,
+	                "day": 6,
+	                "hour": 9,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1809,
+	                "month": 7,
+	                "day": 6,
+	                "hour": 16,
+	                "minute": 0
+	            },
+				"victory": [
+					{"side": "French", "level": "Decisive", "conditions": "Capture and hold at the end of the game four of the Austrian village / towns selected by the Austrians.. Put two Austrian Korps on Level Two at any time"},
+					{"side": "French", "level": "Substantial", "conditions": "Capture and hold at the end of the game four of the Austrian village / towns. Put one Austrian Korps on Level One and one on Level Two at the end of the game"},
+					{"side": "French", "level": "Marginal", "conditions": "Capture and hold at the end of the game three of the Austrian victory village / towns. Put one Austrian Korps on Level One at the end of the game"},
+					{"side": "", "level": "Draw", "conditions": "None of the other victory conditions are met."},
+					{"side": "Austrian", "level": "Marginal", "conditions": "Hold at the end of the game, one of the Austrian victory village / towns. Put two French Corps on Morale Level one at any time"},
+					{"side": "Austrian", "level": "Substantial", "conditions": "Hold at the end of the game, any two of the Austrian victory villages / towns. Put three French Corps on Morale Level one at the any time"},
+					{"side": "Austrian", "level": "Decisive", "conditions": "1. Kill or Capture Napoleon. 2. Hold all three of the Austrian victory villages/towns at the end of the game: . Put three French Corps on Morale Level one at the same time"}				
+				]				
+	        },
+	        {
+	            "id": 10059,
+	            "name": "Drive to the Bridges II",
+	            "start": {
+	                "year": 1809,
+	                "month": 7,
+	                "day": 6,
+	                "hour": 9,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1809,
+	                "month": 7,
+	                "day": 6,
+	                "hour": 16,
+	                "minute": 0
+	            },
+				"victory": [
+					{"side": "French", "low": -99, "high": 0, "level": "Decisive"},
+					{"side": "French", "low": 1, "high": 2, "level": "Substantial"},
+					{"side": "French", "low": 3, "high": 3, "level": "Marginal"},					
+					{"side": "Prussian", "low": 4, "high": 5, "level": "Marginal"},
+					{"side": "Prussian", "low": 6, "high": 9, "level": "Substantial"},
+					{"side": "Prussian", "low": 10, "high": 99, "level": "Decisive"}
+				]				
+	        }
+			
+	    ]
+	},
+
+	
+	{
 	    "id": 31,
 	    "name": "La Bataille de Vauchamps",
 	    "publisher": "ATO",
@@ -1477,18 +1877,7 @@
 	                "day": 14,
 	                "hour": 11,
 	                "minute": 40
-	            },
-				"victory": [
-					{"side": "French", "level": "Automatic", "conditions": "All Prussian units eliminated"},
-					{"side": "French", "level": "Decisive", "conditions": "No Prussian units in Vauchamps or La Boularderie by 11:00am"},
-					{"side": "French", "level": "Substantial", "conditions": "No Prussian units in Vauchamps or La Boularderie by 11:20am"},
-					{"side": "French", "level": "Marginal", "conditions": "No Prussian units in Vauchamps or La Boularderie at end of game"},
-					{"side": "", "level": "Draw", "conditions": "Neither side achieves a victory level or both achieve same level"},
-					{"side": "PrussianRussian", "level": "Marginal", "conditions": "Have 1 unit in both Vauchamps and La Boularderie at end of 11:20am OR 1 unit in La Boularderie with no French adjacent by end of game"},
-					{"side": "PrussianRussian", "level": "Substantial", "conditions": "Have 1 unit in both Vauchamps and La Boularderie at end of 11:40am"},
-					{"side": "PrussianRussian", "level": "Decisive", "conditions": "Have 1 unit in both Vauchamps and La Boularderie at end of game"},
-					{"side": "PrussianRussian", "level": "Automatic", "conditions": "All French VI Corps units eliminated"}
-				]
+	            }
 	        },
 	        {
 	            "id": 33,
@@ -1506,18 +1895,7 @@
 	                "day": 14,
 	                "hour": 15,
 	                "minute": 40
-	            },
-				"victory": [
-					{"side": "French", "level": "Automatic", "conditions": "Both Coalition commands are at Morale Level 3 AND Bluecher is captured or killed"},
-					{"side": "French", "level": "Decisive", "conditions": "French units but no Coalition units in Vauchamps or La Boularderie by 1:00pm"},
-					{"side": "French", "level": "Substantial", "conditions": "French units but no Coalition units in Vauchamps, La Boularderie, or Fromentieres by 2:00pm"},
-					{"side": "French", "level": "Marginal", "conditions": "French units but no Coalition units in Vauchamps, La Boularderie, Fromentieres, or Champaubert by 3:40pm"},
-					{"side": "", "level": "Draw", "conditions": "Neither side achieves a victory level or both achieve same level"},
-					{"side": "PrussianRussian", "level": "Marginal", "conditions": "No French units in Vauchamps at the end of the 11:00am turn"},
-					{"side": "PrussianRussian", "level": "Substantial", "conditions": "No French units in Vauchamps at the end of the 12:00pm turn"},
-					{"side": "PrussianRussian", "level": "Decisive", "conditions": "No French units in Vauchamps at the end of the 1:00pm turn"},
-					{"side": "PrussianRussian", "level": "Automatic", "conditions": "Napolean is captured or killed"}
-				]				
+	            }
 	        },
 	        {
 	            "id": 34,
@@ -1535,18 +1913,7 @@
 	                "day": 14,
 	                "hour": 15,
 	                "minute": 40
-	            },
-				"victory": [
-					{"side": "French", "level": "Automatic", "conditions": "Both Coalition commands are at Morale Level 3 AND Bluecher is captured or killed"},
-					{"side": "French", "level": "Decisive", "conditions": "French units but no Coalition units in Vauchamps or La Boularderie by 1:00pm"},
-					{"side": "French", "level": "Substantial", "conditions": "French units but no Coalition units in Vauchamps, La Boularderie, or Fromentieres by 2:00pm"},
-					{"side": "French", "level": "Marginal", "conditions": "French units but no Coalition units in Vauchamps, La Boularderie, Fromentieres, or Champaubert by 3:40pm"},
-					{"side": "", "level": "Draw", "conditions": "Neither side achieves a victory level or both achieve same level"},
-					{"side": "PrussianRussian", "level": "Marginal", "conditions": "No French units in Vauchamps at the end of the 11:00am turn"},
-					{"side": "PrussianRussian", "level": "Substantial", "conditions": "No French units in Vauchamps at the end of the 12:00pm turn"},
-					{"side": "PrussianRussian", "level": "Decisive", "conditions": "No French units in Vauchamps at the end of the 1:00pm turn"},
-					{"side": "PrussianRussian", "level": "Automatic", "conditions": "Napolean is captured or killed"}
-				]				
+	            }
 	        }
 	    ]
 	},
@@ -1968,14 +2335,22 @@
 	                "day": 16,
 	                "hour": 22,
 	                "minute": 20
-	            }
+	            },
+				"victory": [
+					{"side": "French", "level": "Decisive", "conditions": "No Prussian Infantry in good order west or north of the old Roman road, with at least elements of French cavalry in Marbais, Marbijoux, and Tilly at end of game. Or put 2 Prussian corps on Level 3 and kill/capture Bluecher"},
+					{"side": "French", "level": "Overwhelming", "conditions": "Place 1 Prussian corps on Level 3 and 1 other Prussian corps at least on Level 2, and control Aux Trois Barretes and Au Venerable at end of game"},
+					{"side": "French", "level": "Victory", "conditions": ""},
+					{"side": "Prussian", "level": "Victory", "conditions": ""},
+					{"side": "Prussian", "level": "Overwhelming ", "conditions": ""},
+					{"side": "Prussian", "level": "Decisive ", "conditions": ""}
+				]				
 	        }
 	    ]
 	},
 	{
 	    "id": 57,
 	    "name": "La Bataille des Quatre Bras",
-	    "publisher": "Clash of Arms",
+	    "publisher": "Clash of Arms",				  
 	    "image": "quatrebras",
 		"sides": ["French", "British"],
 	    "scenarios": [
@@ -2017,6 +2392,35 @@
 	        }
 	    ]
 	},
+
+	{
+	    "id": 59,
+	    "name": "La Bataille de Ligny et Quatre Bras",
+	    "publisher": "Clash of Arms",
+	    "image": "ligny-quatrebras",
+		"sides": ["French", "AngloPrussian"],
+	    "scenarios": [
+	        {
+	            "id": 153,
+	            "name": "The Combined Battle",
+	            "start": {
+	                "year": 1815,
+	                "month": 6,
+	                "day": 16,
+	                "hour": 11,
+	                "minute": 20
+	            },
+	            "end": {
+	                "year": 1815,
+	                "month": 6,
+	                "day": 16,
+	                "hour": 22,
+	                "minute": 20
+	            }
+	        }
+	    ]
+	},
+	
 	{
 	    "id": 60,
 	    "name": "La Bataille de Mont St. Jean",
@@ -2026,7 +2430,7 @@
 	    "scenarios": [
 	        {
 	            "id": 61,
-	            "name": "Chateuu Goumont",
+	            "name": "Chateau Goumont",
 	            "start": {
 	                "year": 1815,
 	                "month": 6,
@@ -2337,8 +2741,17 @@
 	                "day": 2,
 	                "hour": 20,
 	                "minute": 40
-	            }
-	        }
+	            },
+				"victory": [
+					{"side": "French", "level": "Decisive", "conditions": "Put 3 Allied Lines on Morale Level 3 and do not have more than 1 French Corps on Morale Level 3 by the end of the last turn"},
+					{"side": "French", "level": "Overwhelming", "conditions": "Put 2 Allied Lines on Morale Level 3 and do not have more than 1 French Corps on Morale Level 3 by the end of the last turn"},
+					{"side": "French", "level": "Marginal", "conditions": "Put 1 Allied Line on Morale Level 3 and do not have more than 1 French Corps on Morale Level 3 by the end of the last turn"},
+					{"side": "", "level": "Draw", "conditions": "If both sides can claim a level of victory"},
+					{"side": "PrussianRussian", "level": "Marginal", "conditions": "At the end of the last turn hold both Goerschens"},
+					{"side": "PrussianRussian", "level": "Overwhelming", "conditions": "At the end of the last turn hold both Goerschens and Kaja, and place a French Corps on Morale Level 3"},
+					{"side": "PrussianRussian", "level": "Decisive", "conditions": "At the end of the last turn hold Luetzen, Starsiedel, Meuchen, Kaja, and both Goerschens, or, place 2 French Corps on Morale Level 3"}
+				]
+	        }		
 	    ]
 	},
 	{
