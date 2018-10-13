@@ -1,7 +1,8 @@
 import React from 'react';
 import { View, ScrollView, Text, Image } from 'react-native';
 import { connect } from 'react-redux';
-import {Style,IconButton} from 'react-native-nub';
+import {IconButton} from 'react-native-nub';
+import Style from '../../services/style';
 import Icons from '../../res';
 import ManeuverUnit from './maneuverUnit';
 import {resetMUCup,addMUToCup,removeMUFromCup,drawMUFromCup} from '../../actions/current';
@@ -25,20 +26,23 @@ var ManeuverView = React.createClass({
     },
     render() {                  
         let mu = this.props.mu || {};        
+        let btnsize = Style.Scaling.scale(88);
+        let curmusize = Style.Scaling.scale(96);
+        let addmusize = Style.Scaling.scale(72);
         return (
             <View style={{flex: 1}}>
                 {/*top*/}
                 <View style={{flex:2, flexDirection: 'row'}}>
                     <View style={{flex:2}}>
-                        <Text style={{fontSize: Style.Font.medium(),fontWeight: 'bold',backgroundColor: 'silver', textAlign: 'center'}}>Current</Text>                        
+                        <Text style={{fontSize: Style.Font.large(),fontWeight: 'bold',backgroundColor: 'silver', textAlign: 'center'}}>Current</Text>                        
                         <View style={{flex:1, justifyContent: 'center', alignItems:'center'}}>
-                            <ManeuverUnit item={mu} size={88} />
+                            <ManeuverUnit item={mu} size={curmusize} />
                         </View>
                     </View>   
                 </View>
                 {/*bottom*/}
                 <View style={{flex:6}}>
-                    <Text style={{fontSize: Style.Font.medium(),fontWeight: 'bold',backgroundColor: 'silver', textAlign: 'center'}}>Available</Text>
+                    <Text style={{fontSize: Style.Font.large(),fontWeight: 'bold',backgroundColor: 'silver', textAlign: 'center'}}>Available</Text>
                     <View style={{flex:1, flexDirection: 'row'}}>                    
                         {/*left*/}
                         <View style={{flex:1}}>                        
@@ -47,7 +51,7 @@ var ManeuverView = React.createClass({
                                 scrollEventThrottle={200}>
                                 {this.sides().map((p,i) => 
                                     <View key={i} style={{paddingBottom: 5, justifyContent: 'center'}}>
-                                        <ManeuverUnit item={{image: p}} size={64} onPress={this.onAdd(p)} />                                        
+                                        <ManeuverUnit item={{image: p}} size={addmusize} onPress={this.onAdd(p)} />                                        
                                     </View>
                                 )}
                             </ScrollView>                        
@@ -55,10 +59,10 @@ var ManeuverView = React.createClass({
                         {/*center*/}
                         <View style={{flex:1, justifyContent: 'center', alignItems: 'center'}}>
                             <View style={{flex: 1, justifyContent: 'center', alignItems:'center'}}>
-                                <IconButton image={Icons.draw} height={64} width={64} resizeMode='stretch' onPress={this.onDraw} />                            
+                                <IconButton image={Icons.draw} height={btnsize} width={btnsize} resizeMode='stretch' onPress={this.onDraw} />                            
                             </View>
                             <View style={{flex: 1, justifyContent: 'center', alignItems:'center'}}>
-                                <IconButton image={Icons.resetcup} height={64} width={64} resizeMode='stretch' onPress={this.onReset} />                        
+                                <IconButton image={Icons.resetcup} height={btnsize} width={btnsize} resizeMode='stretch' onPress={this.onReset} />                        
                             </View>                        
                         </View>                        
                         {/*right*/}
@@ -71,14 +75,14 @@ var ManeuverView = React.createClass({
                             }}>                        
                                 <View style={{flex:1, flexDirection:'row', flexWrap: 'wrap', 
                                         justifyContent:'space-around', alignItems:'flex-start', 
-                                        marginTop: Style.Scaling.scale(70), 
-                                        marginBottom: Style.Scaling.scale(30), 
-                                        marginLeft: Style.Scaling.scale(30), 
-                                        marginRight: Style.Scaling.scale(30)
+                                        marginTop: Style.Scaling.scale(115), 
+                                        marginBottom: Style.Scaling.scale(40), 
+                                        marginLeft: Style.Scaling.scale(40), 
+                                        marginRight: Style.Scaling.scale(40)
                                     }}
                                 >                            
                                     {this.props.cup.map((item,i) => 
-                                        <ManeuverUnit key={i} item={item} size={32} onPress={this.onRemove(item)} />
+                                        <ManeuverUnit key={i} item={item} size={Style.Scaling.scale(48)} onPress={this.onRemove(item)} />
                                     )}
                                 </View>
                             </Image>                        

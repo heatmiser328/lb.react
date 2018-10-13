@@ -1,9 +1,10 @@
 import React from 'react';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
-import {Style,SpinSelect} from 'react-native-nub';
+import {SpinSelect} from 'react-native-nub';
 import ManeuverUnit from './maneuverUnit';
 import Icons from '../../res';
+import Style from '../../services/style';
 import {prevTurn,nextTurn,prevPhase,nextPhase,prevSubPhase,nextSubPhase} from '../../actions/current';
 import getGame from '../../selectors/game';
 import getTurn from '../../selectors/turn';
@@ -61,7 +62,7 @@ var TurnView = React.createClass({
         let iconheight = this.state.height || 88;
         let mu = this.props.mu || {};        
         return (
-            <View style={{flexDirection: 'row', alignItems:'center', height: Style.Scaling.scale(75), marginLeft: 5, marginRight: 5}}>
+            <View style={{flexDirection: 'row', alignItems:'center', height: Style.Scaling.scale(95), marginLeft: 5, marginRight: 5}}>
                 <View style={{flex: 1, justifyContent:'center', marginRight: 2}} onLayout={this.onLayout}>
                     <Image style={{width: iconwidth,height: iconheight,resizeMode: 'contain'}} source={Icons[this.props.logo]}/>
                 </View>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, TouchableOpacity, Text, Image } from 'react-native';
-import {Style} from 'react-native-nub';
+import Style from '../../services/style';
 import Icons from '../../res';
 
 var ManeuverUnit = React.createClass({
@@ -37,13 +37,13 @@ var ManeuverUnit = React.createClass({
                     flex: 1,
                     justifyContent: 'center',
                     alignItems: 'center',
-                    width: null,
-                    height: null,
+                    width: width,
+                    height: height,
                     backgroundColor: 'transparent'
                 }}>
                     {this.props.item.number
                     ? <Image source={Icons[this.props.item.number.toString()]} resizeMode={'stretch'} 
-                            style={{width: (width*0.75), height: (height*0.75)}} />
+                            style={{width: (width*0.6), height: (height*0.6)}} />
                     : null                       
                     }
                 </Image>

@@ -1,10 +1,10 @@
 import React from 'react';
 import { View } from 'react-native';
 import ScrollableTabView from 'react-native-scrollable-tab-view';
-import {Style} from 'react-native-nub';
 import ChargeStandView from './chargeStandView';
 import ChargeCarreView from './chargeCarreView';
 import ChargeRecallView from './chargeRecallView';
+import Style from '../../services/style';
 
 var ChargeView = React.createClass({
     getInitialState() {

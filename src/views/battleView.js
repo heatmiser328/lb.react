@@ -1,7 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
 import { connect } from 'react-redux';
-import {Style} from 'react-native-nub';
+import Style from '../services/style';
 import BasicView from './basic/battleView';
 import PremierView from './premier/battleView';
 import FifthEdView from './fifth/battleView';

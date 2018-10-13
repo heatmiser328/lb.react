@@ -1,6 +1,6 @@
 import React from 'react';
 import { View,TouchableOpacity,Text } from 'react-native';
-import {Style} from 'react-native-nub';
+import Style from '../../services/style';
 
 var DiceModifiersView = React.createClass({
     getInitialState() {

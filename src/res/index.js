@@ -17,8 +17,8 @@ module.exports = {
     "leader": require('./leader.png'),
     "artillery": require('./artillery.png'),
 	
-	"add": require('./addico.png'),
-	"equal": require('./equalico.png'),
+	"add": require('./add.png'),
+	"equal": require('./equal.png'),
 
 	"NE": require('./no-effect.png'),
 	"1": require('./1.png'),
@@ -88,6 +88,7 @@ module.exports = {
 	"schoengrabern": require("./schoengrabern.png"),
 	"austerlitz": require("./austerlitz.png"),
 	"prusse": require("./prusse.png"),	
+	"wagram": require("./wagram.png"),	
 	"vauchamps": require("./vauchamps.jpg"),
 	"auerstaedt": require("./auerstaedt.jpg"),
 	"eylau": require("./eylau.jpg"),

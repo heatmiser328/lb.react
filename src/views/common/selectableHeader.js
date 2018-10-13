@@ -1,7 +1,8 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, Image } from 'react-native';
-import {Style,IconButton} from 'react-native-nub';
+import {IconButton} from 'react-native-nub';
 import Icons from '../../res';
+import Style from '../../services/style';
 
 var BadgeView = React.createClass({
     getInitialState() {

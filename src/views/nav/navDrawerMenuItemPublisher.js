@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, TouchableOpacity, Text, Image, ListView } from 'react-native';
-import {Arrow,Style} from 'react-native-nub';
+import {Arrow} from 'react-native-nub';
+import Style from '../../services/style';
 import BattleNavMenuItem from './navDrawerMenuItemBattle';
 
 var PublisherNavMenuItem = React.createClass({

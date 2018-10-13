@@ -27,14 +27,6 @@ const AboutView = (props) => {
                 ]
             }}            
             dependencies={[
-                {description: 'react-redux, react-native-router-flux, react-native-drawer, react-native-scrollable-tab-view, react-native-sound, redux-persist, moment', url: ''}
-            ]}
-        />
-    );
-}
-
-/*
-            dependencies={[
                 {description: 'react-redux', url: 'https://github.com/reactjs/react-redux'},
                 {description: 'react-native-router-flux', url: 'https://github.com/aksonov/react-native-router-flux'},
                 {description: 'react-native-drawer', url: 'https://github.com/root-two/react-native-drawer'},
@@ -42,6 +34,14 @@ const AboutView = (props) => {
                 {description: 'react-native-sound', url: ''},                
                 {description: 'redux-persist', url: ''},
                 {description: 'moment', url: ''}
+            ]}            
+        />
+    );
+}
+
+/*
+            dependencies={[
+                {description: 'react-redux, react-native-router-flux, react-native-drawer, react-native-scrollable-tab-view, react-native-sound, redux-persist, moment', url: ''}
             ]}
 
 */

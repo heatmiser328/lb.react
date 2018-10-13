@@ -21,7 +21,8 @@ var rules = {
     "aspern_essling": require('../data/aspern_essling.json'),
     "schoengrabern": require('../data/schoengrabern.json'),
     "austerlitz": require('../data/austerlitz.json'),
-    "prusse": require('../data/prusse.json')
+    "prusse": require('../data/prusse.json'),
+    "wagram": require('../data/wagram.json')
 };
 
 

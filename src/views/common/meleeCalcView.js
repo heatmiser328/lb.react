@@ -1,7 +1,8 @@
 import React from 'react';
 import { View, Text, Switch } from 'react-native';
-import {SpinNumeric,MultiSelectList,RadioButtonGroup,IconButton,Style} from 'react-native-nub';
+import {SpinNumeric,MultiSelectList,RadioButtonGroup,IconButton} from 'react-native-nub';
 import Icons from '../../res';
+import Style from '../../services/style';
 
 var MeleeCalcView = React.createClass({
     getInitialState() {
@@ -122,7 +123,7 @@ var MeleeCalcView = React.createClass({
                     </View>
                     <View style={{flex: 1}}>
                         <MultiSelectList
-                            itemFontSize={Style.Font.mediumlarge()}
+                            itemFontSize={Style.Font.large()}
                             items={this.modifiers().map((m) => ({name: m.name, selected: this.state.mods[m.name]}))}
                             onChanged={this.onModChanged}/>
                     </View>

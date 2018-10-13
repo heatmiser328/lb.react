@@ -1,7 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
 import ScrollableTabView from 'react-native-scrollable-tab-view';
-import {Style} from 'react-native-nub';
 import TurnView from './turnView';
 import FireView from '../common/fireView';
 import FireAttackerDetailView from './fireAttackerDetailView';
@@ -9,6 +8,7 @@ import FireDefenderDetailView from './fireDefenderDetailView';
 import MeleeView from '../common/meleeView';
 import MoraleView from '../common/moraleView';
 import GeneralView from '../common/generalView';
+import Style from '../../services/style';
 
 var BattleView = React.createClass({
     render() {        

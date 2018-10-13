@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, TouchableOpacity, Text, Image, ListView } from 'react-native';
-import {Arrow,Style} from 'react-native-nub';
+import {Arrow} from 'react-native-nub';
+import Style from '../../services/style';
 import ScenarioNavMenuItem from './navDrawerMenuItemScenario';
 
 var BattleNavMenuItem = React.createClass({
@@ -36,7 +37,7 @@ var BattleNavMenuItem = React.createClass({
                             }} source={this.props.icons[battle.image]} />
                             <View style={{flex: 1}}>
                                 <Text style={{fontSize: Style.Font.large(),textAlign: 'center',margin: 10}}>{battle.name}</Text>
-                                <Text style={{fontSize: Style.Font.medium(),textAlign: 'center',margin: 10,color: 'blue'}}>{battle.publisher}</Text>
+                                <Text style={{fontSize: Style.Font.mediumlarge(),textAlign: 'center',margin: 10,color: 'blue'}}>{battle.publisher}</Text>
                             </View>
                         </View>                                        
                     </TouchableOpacity>

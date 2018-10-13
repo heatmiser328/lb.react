@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { View, Text, Image } from 'react-native';
-import {Style} from 'react-native-nub';
 import Icons from '../../res';
 import LeaderLoss from '../../services/leaderloss';
+import Style from '../../services/style';
 
 var CombatResultsLeaderLossView = React.createClass({
     getInitialState() {

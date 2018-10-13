@@ -1607,7 +1607,253 @@
 	    ]
 	},
 	
+	{
+	    "id": 1005,
+	    "name": "La Bataille de Deutsch-Wagram",
+	    "publisher": "Marshal Enterprises",
+	    "image": "wagram",
+		"sides": ["French", "Austrian"],
+	    "scenarios": [
+	        {
+	            "id": 10051,
+	            "name": "Oudinot Attacks Baumersdorf",
+	            "start": {
+	                "year": 1809,
+	                "month": 7,
+	                "day": 5,
+	                "hour": 18,
+	                "minute": 20
+	            },
+	            "end": {
+	                "year": 1809,
+	                "month": 7,
+	                "day": 5,
+	                "hour": 22,
+	                "minute": 0
+				},
+				"victory": [
+					{"side": "French", "level": "Decisive", "conditions": "Hold 4 hexes of Baumersdorf and have 15 increments across the Russbach at the end of the 22:00 turn"},
+					{"side": "French", "level": "Substantial", "conditions": "Hold 2 hexes of Baumersdorf and have 10 increments at the end of the 22:00 turn"},
+					{"side": "", "level": "Draw", "conditions": "No other French or Austrian Victory"},
+					{"side": "Austrian", "level": "Substantial", "conditions": "Hold 2 hexes of Baumersdorf at the end of the 22:00 turn"},
+					{"side": "Austrian", "level": "Decisive", "conditions": "Hold 4 hexes of Baumersdorf and no French units across the Russbach at the end of the 22:00 turn"}
+				]
+	        },
+	        {
+	            "id": 10052,
+	            "name": "Macdonald crosses the Russbach",
+	            "start": {
+	                "year": 1809,
+	                "month": 7,
+	                "day": 5,
+	                "hour": 18,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1809,
+	                "month": 7,
+	                "day": 5,
+	                "hour": 21,
+	                "minute": 40
+	            },
+				"victory": [
+					{"side": "French", "level": "Decisive", "conditions": "Place 30 increments on the Aus. side of the Russbach at end of 21:40 turn"},
+					{"side": "French", "level": "Substantial", "conditions": "Place 20 increments on the Aus. side of the Russbach at end of 21:40 turn"},
+					{"side": "", "level": "Draw", "conditions": "No other French or Austrian Victory"},
+					{"side": "Austrian", "level": "Substantial", "conditions": "No more than 15 increments on the Aus. side of the Russbach at end of 21:40 turn"},
+					{"side": "Austrian", "level": "Decisive", "conditions": "No French units on the Aus. Side of the Russbach at the end of the 21:40 turn"}
+				]	            
+	        },
+	        {
+	            "id": 10053,
+	            "name": "Marshal Bernadotte Storms Wagram",
+	            "start": {
+	                "year": 1809,
+	                "month": 7,
+	                "day": 5,
+	                "hour": 18,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1809,
+	                "month": 7,
+	                "day": 5,
+	                "hour": 22,
+	                "minute": 40
+	            },
+				"victory": [
+					{"side": "French", "level": "Decisive", "conditions": "Hold all hexes of Wagram and Aderklaa by the end of the game"},
+					{"side": "French", "level": "Substantial", "conditions": "Hold any 5 hexes of Wagram and all hexes of Aderklaa by the end of the game"},
+					{"side": "", "level": "Draw", "conditions": "No other French or Austrian Victory"},
+					{"side": "Austrian", "level": "Substantial", "conditions": "Hold 4 hexes of Wagram and Aderklaa by the end of the game"},
+					{"side": "Austrian", "level": "Decisive", "conditions": "Hold all hexes of Aderklaa and Wagram by the end"}
+				]				
+	        },
+	        {
+	            "id": 10054,
+	            "name": "Macdonald's Hollow Column",
+	            "start": {
+	                "year": 1809,
+	                "month": 7,
+	                "day": 6,
+	                "hour": 10,
+	                "minute": 20
+	            },
+	            "end": {
+	                "year": 1809,
+	                "month": 7,
+	                "day": 6,
+	                "hour": 15,
+	                "minute": 0
+	            },
+				"victory": [
+					{"side": "French", "level": "Decisive", "conditions": "Hold Süssenbrunn, Breitenlee and Aderklaa. Place III Austrian Korps on morale level two by 15:00"},
+					{"side": "French", "level": "Substantial", "conditions": "Hold Süssenbrunn and Breitenlee or Aderklaa. Place III Austrian Korps morale level one by 15:00"},
+					{"side": "French", "level": "Marginal", "conditions": "Hold Süssenbrunn and Aderklaa. Place one III Austrian Korps morale level one by 15:00"},
+					{"side": "", "level": "Draw", "conditions": "No other victory condition is achieved"},
+					{"side": "Austrian", "level": "Marginal", "conditions": "Hold Süssenbrunn or Aderklaa. Place one III Austrian Korps morale level one by 15:00"},
+					{"side": "Austrian", "level": "Substantial", "conditions": "Hold Süssenbrunn and Breitenlee or Aderklaa. Place the Army of Italy on morale level one by 15:00"},
+					{"side": "Austrian", "level": "Decisive", "conditions": "Hold Süssenbrunn, Breitenlee and Aderklaa. Place the Army of Italy on morale level one by 15:00"}				
+				]				
+	        },
+	        {
+	            "id": 10055,
+	            "name": "Davout Turns the Markgrafneusiedl",
+	            "start": {
+	                "year": 1809,
+	                "month": 7,
+	                "day": 6,
+	                "hour": 7,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1809,
+	                "month": 7,
+	                "day": 6,
+	                "hour": 13,
+	                "minute": 0
+	            },
+				"victory": [
+					{"side": "French", "level": "Decisive", "conditions": "Place Rosenberg's and Nordmann's Korps on Morale Level Two"},
+					{"side": "French", "level": "Substantial", "conditions": "Place Rosenberg's and Nordmann's Korps one each on Morale Levels One and Two"},
+					{"side": "French", "level": "Marginal", "conditions": "Place Nordmann and Rosenberg's Korps on Morale Level One"},
+					{"side": "", "level": "Draw", "conditions": "Neither side is on a Morale Level"},
+					{"side": "Austrian", "level": "Marginal", "conditions": "Davout III Corp's loses 35 increments or Davout is wounded/killed"},
+					{"side": "Austrian", "level": "Substantial", "conditions": "Davout's III Corps on Morale Level One"},
+					{"side": "Austrian", "level": "Decisive", "conditions": "Davout's III Corps on Level Two"}
+				]								
+	        },
 
+	        {
+	            "id": 10056,
+	            "name": "Johann's Surprise Arrival",
+	            "start": {
+	                "year": 1809,
+	                "month": 7,
+	                "day": 6,
+	                "hour": 12,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1809,
+	                "month": 7,
+	                "day": 6,
+	                "hour": 15,
+	                "minute": 20
+	            },
+				"victory": [
+					{"side": "French", "level": "Decisive", "conditions": "Place Armee v. Inner Oster. On morale level two"},
+					{"side": "French", "level": "Substantial", "conditions": "Place Armee v. Inner Oster. On morale level one"},
+					{"side": "", "level": "Draw", "conditions": "No other condition met"},
+					{"side": "Austrian", "level": "Substantial", "conditions": "Place 50 infantrie increments in the victory zone"},
+					{"side": "Austrian", "level": "Decisive", "conditions": "Place 75 infantrie increments in the victory zone"}
+				]
+	        },
+	        {
+	            "id": 10057,
+	            "name": "Historical Battle w/ DTTB Map",
+	            "start": {
+	                "year": 1809,
+	                "month": 7,
+	                "day": 6,
+	                "hour": 7,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1809,
+	                "month": 7,
+	                "day": 6,
+	                "hour": 16,
+	                "minute": 0
+	            },
+				"victory": [
+					{"side": "French", "level": "Decisive", "conditions": "Capture and hold at the end of the game four of the Austrian village / towns selected by the Austrians.. Put two Austrian Korps on Level Two at any time"},
+					{"side": "French", "level": "Substantial", "conditions": "Capture and hold at the end of the game four of the Austrian village / towns. Put one Austrian Korps on Level One and one on Level Two at the end of the game"},
+					{"side": "French", "level": "Marginal", "conditions": "Capture and hold at the end of the game three of the Austrian victory village / towns. Put one Austrian Korps on Level One at the end of the game"},
+					{"side": "", "level": "Draw", "conditions": "None of the other victory conditions are met."},
+					{"side": "Austrian", "level": "Marginal", "conditions": "Hold at the end of the game, one of the Austrian victory village / towns. Put two French Corps on Morale Level one at any time"},
+					{"side": "Austrian", "level": "Substantial", "conditions": "Hold at the end of the game, any two of the Austrian victory villages / towns. Put three French Corps on Morale Level one at the any time"},
+					{"side": "Austrian", "level": "Decisive", "conditions": "1. Kill or Capture Napoleon. 2. Hold all three of the Austrian victory villages/towns at the end of the game: . Put three French Corps on Morale Level one at the same time"}
+				]				
+	        },
+	        {
+	            "id": 10058,
+	            "name": "Historical Battle with Aspern-Essling Maps",
+	            "start": {
+	                "year": 1809,
+	                "month": 7,
+	                "day": 6,
+	                "hour": 9,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1809,
+	                "month": 7,
+	                "day": 6,
+	                "hour": 16,
+	                "minute": 0
+	            },
+				"victory": [
+					{"side": "French", "level": "Decisive", "conditions": "Capture and hold at the end of the game four of the Austrian village / towns selected by the Austrians.. Put two Austrian Korps on Level Two at any time"},
+					{"side": "French", "level": "Substantial", "conditions": "Capture and hold at the end of the game four of the Austrian village / towns. Put one Austrian Korps on Level One and one on Level Two at the end of the game"},
+					{"side": "French", "level": "Marginal", "conditions": "Capture and hold at the end of the game three of the Austrian victory village / towns. Put one Austrian Korps on Level One at the end of the game"},
+					{"side": "", "level": "Draw", "conditions": "None of the other victory conditions are met."},
+					{"side": "Austrian", "level": "Marginal", "conditions": "Hold at the end of the game, one of the Austrian victory village / towns. Put two French Corps on Morale Level one at any time"},
+					{"side": "Austrian", "level": "Substantial", "conditions": "Hold at the end of the game, any two of the Austrian victory villages / towns. Put three French Corps on Morale Level one at the any time"},
+					{"side": "Austrian", "level": "Decisive", "conditions": "1. Kill or Capture Napoleon. 2. Hold all three of the Austrian victory villages/towns at the end of the game: . Put three French Corps on Morale Level one at the same time"}				
+				]				
+	        },
+	        {
+	            "id": 10059,
+	            "name": "Drive to the Bridges II",
+	            "start": {
+	                "year": 1809,
+	                "month": 7,
+	                "day": 6,
+	                "hour": 9,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1809,
+	                "month": 7,
+	                "day": 6,
+	                "hour": 16,
+	                "minute": 0
+	            },
+				"victory": [
+					{"side": "French", "low": -99, "high": 0, "level": "Decisive"},
+					{"side": "French", "low": 1, "high": 2, "level": "Substantial"},
+					{"side": "French", "low": 3, "high": 3, "level": "Marginal"},					
+					{"side": "Prussian", "low": 4, "high": 5, "level": "Marginal"},
+					{"side": "Prussian", "low": 6, "high": 9, "level": "Substantial"},
+					{"side": "Prussian", "low": 10, "high": 99, "level": "Decisive"}
+				]				
+	        }
+			
+	    ]
+	},
+
+	
 	{
 	    "id": 31,
 	    "name": "La Bataille de Vauchamps",

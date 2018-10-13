@@ -1,7 +1,8 @@
 import React from 'react';
 import { View, Text, Image } from 'react-native';
 import { connect } from 'react-redux';
-import {SpinNumeric,Style} from 'react-native-nub';
+import {SpinNumeric} from 'react-native-nub';
+import Style from '../../services/style';
 import Icons from '../../res';
 import {setVictory} from '../../actions/current';
 import getVictory from '../../selectors/victory';

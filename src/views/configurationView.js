@@ -1,16 +1,17 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { View, Text, Switch } from 'react-native';
-import {RadioButtonGroup,Style} from 'react-native-nub';
+import {RadioButtonGroup} from 'react-native-nub';
+import Style from '../services/style';
 import {setRuleSet} from '../actions/current';
 
 var ConfigurationView = React.createClass({
     rulesets: [
-        {label:'Premier',value:1, disabled: false},
-        {label:'5th Edition',value:5, disabled: false},
-        {label:'Regulations XXX',value:3, disabled: true},
-        {label:'Marie-Louise',value:4, disabled: true},
-        {label:'Basic',value:0, disabled: false}
+        {label:'Premier',value:1, disabled: false, fontSize: Style.Size.ListItem},
+        {label:'5th Edition',value:5, disabled: false, fontSize: Style.Size.ListItem},
+        {label:'Regulations XXX',value:3, disabled: true, fontSize: Style.Size.ListItem},
+        {label:'Marie-Louise',value:4, disabled: true, fontSize: Style.Size.ListItem},
+        {label:'Basic',value:0, disabled: false, fontSize: Style.Size.ListItem}
     ],
     onRulesChanged(v) {
         this.props.setRuleSet(v);        

@@ -1,12 +1,13 @@
 import React from 'react';
 import { View, Text, Image } from 'react-native';
-import {SpinNumeric,RadioButtonGroup,MultiSelectList,SelectList,Style} from 'react-native-nub';
+import {SpinNumeric,RadioButtonGroup,MultiSelectList,SelectList} from 'react-native-nub';
 import {DiceRoll} from 'react-native-dice';
 import QuickValuesView from '../common/quickValuesView';
 import DiceModifiersView from '../common/diceModifiersView';
 import Icons from '../../res';
 import Base6 from '../../services/base6';
 import Morale from '../../services/morale';
+import Style from '../../services/style';
 
 var AssaultView = React.createClass({
     dice: [
@@ -95,7 +96,10 @@ var AssaultView = React.createClass({
                 <View style={{flex: 1, marginTop: 5, backgroundColor: 'whitesmoke'}}>
                     <View style={{flex: 1, flexDirection: 'row'}}>
                         <View style={{flex:2, alignItems: 'center', justifyContent: 'center'}}>
-                            <RadioButtonGroup buttons={[{label: 'Defender', value: 1, fontSize: Style.Font.mediumlarge()},{label: 'Attacker', value: 0, fontSize: Style.Font.mediumlarge()}]} state={this.state.mode} onSelected={this.onModeChanged} />
+                            <RadioButtonGroup buttons={[
+                                {label: 'Defender', value: 1, fontSize: Style.Font.large()},
+                                {label: 'Attacker', value: 0, fontSize: Style.Font.large()}]} 
+                                state={this.state.mode} onSelected={this.onModeChanged} />
                         </View>
                         <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}} onLayout={this.onLayout}>
                             <Image style={{height: iconSize, width: iconSize, resizeMode: 'stretch'}} source={icon} />
@@ -123,15 +127,15 @@ var AssaultView = React.createClass({
                 </View>
                 <View style={{flex:2.5, flexDirection: 'row'}}>
                     <View style={{flex:2}}>
-                        <RadioButtonGroup title={'Odds'} labelFontSize={Style.Font.mediumlarge()} direction={'vertical'} 
-                            buttons={this.odds().map((o) => ({label:o.name,value:o.name,fontSize: Style.Font.mediumlarge()}))} 
+                        <RadioButtonGroup title={'Odds'} labelFontSize={Style.Size.Label} direction={'vertical'} 
+                            buttons={this.odds().map((o) => ({label:o.name,value:o.name,fontSize: Style.Size.ListItem}))} 
                             state={this.state.odds} onSelected={this.onOddsChanged} />
                     </View>
                     <View style={{flex: 3}}>
                         <MultiSelectList title={'Modifiers'}
-                            labelFontSize={Style.Font.mediumlarge()} 
-                            itemFontSize={Style.Font.mediumlarge()}
-                            items={this.modifiers().map((m) => {return {name: m.name, selected: this.state.mods[m.name]};})}
+                            labelFontSize={Style.Size.Label} 
+                            itemFontSize={Style.Size.ListItem}
+                            items={this.modifiers().map((m) => ({name: m.name, selected: this.state.mods[m.name]}))}
                             onChanged={this.onModChanged} />
                     </View>
                 </View>

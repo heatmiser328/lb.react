@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, TouchableOpacity, Text } from 'react-native';
-import {Style} from 'react-native-nub';
+import Style from '../../services/style';
 import moment from 'moment';
 
 var ScenarioNavMenuItem = React.createClass({

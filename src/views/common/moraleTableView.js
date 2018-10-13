@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, Image, ScrollView } from 'react-native';
-import {Style} from 'react-native-nub';
+import Style from '../../services/style';
 import Morale from '../../services/morale';
 import Icons from '../../res';
 

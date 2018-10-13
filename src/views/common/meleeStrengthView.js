@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import {SpinNumeric, Style} from 'react-native-nub';
+import {SpinNumeric} from 'react-native-nub';
+import Style from '../../services/style';
 
 var MeleeStrengthView = React.createClass({
     render() {

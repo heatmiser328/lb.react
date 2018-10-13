@@ -1,12 +1,13 @@
 import React from 'react';
 import { View, Text, Image } from 'react-native';
-import {SpinNumeric,MultiSelectList,Style} from 'react-native-nub';
+import {SpinNumeric,MultiSelectList} from 'react-native-nub';
 import {DiceRoll} from 'react-native-dice';
 import QuickValuesView from '../common/quickValuesView';
 import DiceModifiersView from '../common/diceModifiersView';
 import Icons from '../../res';
 import Morale from '../../services/morale';
 import Base6 from '../../services/base6';
+import Style from '../../services/style';
 
 var ChargeStandView = React.createClass({
     dice: [
@@ -96,13 +97,13 @@ var ChargeStandView = React.createClass({
                 <View style={{flex:3, flexDirection:'row'}}>
                     <View style={{flex:3, justifyContent: 'flex-start'}}>
                         <View style={{flex:1, marginLeft: 5}}>
-                            <SpinNumeric labelFontSize={Style.Font.mediumlarge()} fontSize={Style.Font.large()} label={'Morale'} value={this.state.morale} values={Base6.values} integer={true} onChanged={this.onMoraleChanged} />
+                            <SpinNumeric labelFontSize={Style.Size.Label} fontSize={Style.Font.large()} label={'Morale'} value={this.state.morale} values={Base6.values} integer={true} onChanged={this.onMoraleChanged} />
                         </View>
                         <View style={{flex: 1}}>
                             <QuickValuesView values={[16,26,36,46,56]} fit={true} onChanged={this.onMoraleChanged}/>
                         </View>
                         <View style={{flex:1, marginLeft: 5}}>
-                            <SpinNumeric labelFontSize={Style.Font.mediumlarge()} fontSize={Style.Font.large()} label={'Leader'} value={this.state.leader} integer={true} onChanged={this.onLeaderChanged} />
+                            <SpinNumeric labelFontSize={Style.Size.Label} fontSize={Style.Font.large()} label={'Leader'} value={this.state.leader} integer={true} onChanged={this.onLeaderChanged} />
                         </View>
                         <View style={{flex: 1}}>
                             <QuickValuesView values={[-3,0,3,6,12]} fit={true} onChanged={this.onLeaderChanged}/>
@@ -111,9 +112,9 @@ var ChargeStandView = React.createClass({
                     </View>
                     <View style={{flex:2}}>
                         <MultiSelectList title={'Modifiers'}
-                            labelFontSize={Style.Font.mediumlarge()} 
-                            itemFontSize={Style.Font.mediumlarge()}                        
-                            items={this.modifiers().map((m) => {return {name: m.name, selected: this.state.mods[m.name]};})}
+                            labelFontSize={Style.Size.Label} 
+                            itemFontSize={Style.Size.ListItem}                        
+                            items={this.modifiers().map((m) => ({name: m.name, selected: this.state.mods[m.name]}))}
                             onChanged={this.onModChanged}/>
                     </View>
                 </View>

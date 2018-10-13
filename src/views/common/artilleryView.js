@@ -1,8 +1,9 @@
 import React from 'react';
 import { View, Text, Image } from 'react-native';
 import { connect } from 'react-redux';
-import {RadioButtonGroup,MultiSelectList,Style} from 'react-native-nub';
+import {RadioButtonGroup,MultiSelectList} from 'react-native-nub';
 import {DiceRoll} from 'react-native-dice';
+import Style from '../../services/style';
 import getRules from '../../selectors/rules';
 
 var ArtilleryView = React.createClass({
@@ -47,15 +48,15 @@ var ArtilleryView = React.createClass({
                 <View style={{flex:1, flexDirection:'row'}}>
                     <View style={{flex:9, flexDirection:'row'}}>
                         <View style={{flex:3}}>
-                            <RadioButtonGroup title={'Type'} labelFontSize={Style.Font.mediumlarge()} direction={'vertical'}
-                                buttons={this.types().map((t) => ({label:t,value:t,fontSize: Style.Font.mediumlarge()}))}
+                            <RadioButtonGroup title={'Type'} labelFontSize={Style.Size.Label} direction={'vertical'}
+                                buttons={this.types().map((t) => ({label:t,value:t,fontSize: Style.Size.ListItem}))}
                                 state={this.state.type}
                                 onSelected={this.onTypeChanged}/>
                         </View>
                         <View style={{flex:2}}>
                             <MultiSelectList title={'Modifiers'}
-                                labelFontSize={Style.Font.mediumlarge()} 
-                                itemFontSize={Style.Font.mediumlarge()}                            
+                                labelFontSize={Style.Size.Label} 
+                                itemFontSize={Style.Size.ListItem}
                                 items={this.modifiers().map((m) => ( {name: m.name, selected: this.state.mods[m.name]}))}
                                 onChanged={this.onModChanged}/>
                         </View>

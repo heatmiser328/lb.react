@@ -1,7 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
 import ScrollableTabView from 'react-native-scrollable-tab-view';
-import {Style} from 'react-native-nub';
+import Style from '../../services/style';
 import TurnView from './turnView';
 import ChargeView from '../common/chargeView';
 import FireView from '../common/fireView';

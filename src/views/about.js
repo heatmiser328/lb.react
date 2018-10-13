@@ -2,7 +2,7 @@
 import React from 'react';
 import { View, Text, Image, ScrollView, TouchableNativeFeedback, Linking } from 'react-native';
 //import {Font} from '../services/style';
-import {Style} from 'react-native-nub';
+import Style from '../services/style';
 
 var About = React.createClass({
     getInitialState() {
@@ -26,8 +26,11 @@ var About = React.createClass({
         }
     },
     render() {
-        let height = (this.state.height*(this.props.scale||.8)) || 96;
-        let width = (this.state.width*(this.props.scale||.8)) || 96;
+        //let height = (this.state.height*(this.props.scale||.8)) || 96;
+        //let width = (this.state.width*(this.props.scale||.8)) || 96;
+        let size = Math.min(this.state.height,this.state.width);
+        let height = (size*(this.props.scale||.8)) || 96;
+        let width = (size*(this.props.scale||.8)) || 96;
 
         return (
             <View style={{
@@ -50,8 +53,8 @@ var About = React.createClass({
                     </View>
                     <View style={{flex:2}}>
                         <Text style={{fontSize: Style.Font.large(),fontWeight: 'bold',marginLeft: 15}}>{this.props.title}</Text>
-                        <Text style={{fontSize: Style.Scaling.fontScale(14),marginLeft: 15}}>{'Version: ' + this.props.version}</Text>
-                        <Text style={{fontSize: Style.Scaling.fontScale(14),marginLeft: 15}}>{'Release: ' + this.props.releasedate}</Text>
+                        <Text style={{fontSize: Style.Scaling.fontScale(15),marginLeft: 15}}>{'Version: ' + this.props.version}</Text>
+                        <Text style={{fontSize: Style.Scaling.fontScale(15),marginLeft: 15}}>{'Release: ' + this.props.releasedate}</Text>
                     </View>
                 </View>
                 <View style={{flex: .75}}>
@@ -79,8 +82,7 @@ var About = React.createClass({
                 }
                 <View style={{flex: 1}}>
                     <Text style={{fontSize: Style.Font.mediumlarge(),fontWeight:'bold'}}>{'Built with React Native and these helpful modules'}</Text>
-                    <ScrollView
-                        ref={view => this._scrollView = view}
+                    <ScrollView                        
                         automaticallyAdjustContentInsets={false}
                         scrollEventThrottle={200}>
                         {this.props.dependencies.map((d,i) =>
@@ -116,7 +118,7 @@ var OpenURLButton = React.createClass({
             */}
             
               <View style={{padding: 5,marginBottom:2, backgroundColor:'#3B5998',borderColor: 'black',borderWidth: 1,borderRadius:5}}>
-                  <Text style={{fontSize: Style.Font.medium(), color: 'white'}}>{this.props.label}</Text>
+                  <Text style={{fontSize: Style.Font.mediumlarge(), color: 'white'}}>{this.props.label}</Text>
               </View>            
           </TouchableNativeFeedback>
       );

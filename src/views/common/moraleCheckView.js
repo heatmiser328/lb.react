@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Image, ScrollView } from 'react-native';
-import {SpinNumeric,MultiSelectList,Style} from 'react-native-nub';
+import {SpinNumeric,MultiSelectList} from 'react-native-nub';
 import {DiceRoll} from 'react-native-dice';
 import DiceModifiersView from './diceModifiersView';
 import QuickValuesView from './quickValuesView';
@@ -9,6 +9,7 @@ import MoraleLevelsView from './moraleLevelsView';
 import Base6 from '../../services/base6';
 import Morale from '../../services/morale';
 import Icons from '../../res';
+import Style from '../../services/style';
 
 var MoraleCheckView = React.createClass({
     dice: [
@@ -109,8 +110,8 @@ var MoraleCheckView = React.createClass({
                         </View>                        
                         <View style={{flex:4}}>
                             <MultiSelectList title={'Modifiers'}
-                                labelFontSize={Style.Font.mediumlarge()}
-                                itemFontSize={Style.Font.mediumlarge()}                                
+                                labelFontSize={Style.Size.Label}
+                                itemFontSize={Style.Size.ListItem}                                
                                 items={this.modifiers().map((m) => ({name: m.name, selected: this.state.mods[m.name]}))}
                                 onChanged={this.onModChanged}/>                        
                         </View>

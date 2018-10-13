@@ -1,6 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
-import {SpinNumeric,RadioButtonGroup,Style} from 'react-native-nub';
+import {SpinNumeric,RadioButtonGroup} from 'react-native-nub';
+import Style from '../../services/style';
 
 var FireDefenderDetailView = React.createClass({
     getInitialState() {
@@ -38,8 +39,8 @@ var FireDefenderDetailView = React.createClass({
             <View style={{flex: 1}}>
                 <View style={{flex:2, flexDirection: 'row', justifyContent: 'center', alignItems: 'flex-start'}}>
                     <View style={{flex:4}}>
-                        <RadioButtonGroup title={'Terrain'} labelFontSize={Style.Font.mediumlarge()} direction={'vertical'}
-                            buttons={this.terrains().map((t) => ({label:t,value:t, fontSize: Style.Font.mediumlarge()}))}
+                        <RadioButtonGroup title={'Terrain'} labelFontSize={Style.Size.Label} direction={'vertical'}
+                            buttons={this.terrains().map((t) => ({label:t,value:t, fontSize: Style.Size.ListItem}))}
                             state={this.state.terrain}
                             onSelected={this.onTerrainChanged}/>
                     </View>

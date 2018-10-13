@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, Switch } from 'react-native';
-import {Style} from 'react-native-nub';
 import QuickValuesView from '../common/quickValuesView';
+import Style from '../../services/style';
 
 var FireAttackerBasicAddView = React.createClass({
     getInitialState() {
@@ -56,7 +56,7 @@ var FireAttackerBasicAddView = React.createClass({
                                 //marginRight: i < 3 ? 5 : 10,
                                 //height: 32
                             }}>
-                                <Text style={{fontSize: Style.Font.medium()}}>{v}</Text>
+                                <Text style={{fontSize: Style.Size.Label}}>{v}</Text>
                                 <Switch value={this.state.mods[v]} onValueChange={this.onModifier(v)} />
                             </View>
                         );

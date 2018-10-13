@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, ScrollView } from 'react-native';
-import {Style} from 'react-native-nub';
+import Style from '../../services/style';
 
 var CombatResultsTableView = React.createClass({
     getInitialState() {

@@ -1,6 +1,6 @@
 let defaultInfo = {
-    version: '1.8.12',
-    releasedate: new Date(2018,2,6,18,0,0)//new Date()
+    version: '1.8.14',
+    releasedate: new Date(2018,9,13,8,32,0)//new Date()
 };
 
 module.exports = (state = defaultInfo, action) => {

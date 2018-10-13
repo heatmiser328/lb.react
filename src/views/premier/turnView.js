@@ -1,8 +1,9 @@
 import React from 'react';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
-import {Style,SpinSelect} from 'react-native-nub';
+import {SpinSelect} from 'react-native-nub';
 import TurnPlayerView from '../common/turnPlayerView';
+import Style from '../../services/style';
 import Icons from '../../res';
 import {prevTurn,nextTurn,prevPhase,nextPhase} from '../../actions/current';
 import getGame from '../../selectors/game';

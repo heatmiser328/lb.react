@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, Picker } from 'react-native';
-import {Style} from 'react-native-nub';
+import Style from '../../services/style';
 
 var OddsView = React.createClass({
     render() {
@@ -8,6 +8,7 @@ var OddsView = React.createClass({
             <View style={{flex:1, justifyContent: 'center'}}>
                 <Text style={{fontSize: Style.Font.mediumlarge(),fontWeight: 'bold',backgroundColor: 'silver', textAlign: 'center'}}>Odds</Text>
                 <Picker style={{flex: 1, justifyContent:'center', alignItems:'center'}}
+                    itemStyle={{fontSize:Style.Font.large()}}
                     selectedValue={this.props.value}
                     onValueChange={this.props.onChanged}
                 >

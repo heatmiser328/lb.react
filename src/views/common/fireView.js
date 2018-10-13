@@ -1,7 +1,6 @@
 import React from 'react';
 import { View, Text, Switch } from 'react-native';
 import { connect } from 'react-redux';
-import {Style} from 'react-native-nub';
 import {DiceRoll} from 'react-native-dice';
 import FireAttackerView from './fireAttackerView';
 import FireDefenderView from './fireDefenderView';
@@ -9,6 +8,7 @@ import DiceModifiersView from './diceModifiersView';
 import CombatResultsView from './combatResultsView';
 import Fire from '../../services/fire';
 import Base6 from '../../services/base6';
+import Style from '../../services/style';
 
 var FireView = React.createClass({
     dice: [

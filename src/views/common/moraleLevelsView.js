@@ -1,11 +1,11 @@
 import React from 'react';
 import { View, ScrollView, Text, Image, TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
-import {Style,SpinSelect} from 'react-native-nub';
+import {SpinSelect} from 'react-native-nub';
 import SelectableHeader from './selectableHeader';
 import Icons from '../../res';
 import {setMoraleLevel} from '../../actions/current';
-
+import Style from '../../services/style';
 
 var MoraleLevelView = React.createClass({
     getInitialState() {

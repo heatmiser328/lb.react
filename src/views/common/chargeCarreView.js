@@ -1,12 +1,13 @@
 import React from 'react';
 import { View, Text, Image } from 'react-native';
-import {SpinNumeric,MultiSelectList,RadioButtonGroup,Style} from 'react-native-nub';
+import {SpinNumeric,MultiSelectList,RadioButtonGroup} from 'react-native-nub';
 import {DiceRoll} from 'react-native-dice';
 import QuickValuesView from '../common/quickValuesView';
 import DiceModifiersView from '../common/diceModifiersView';
 import Icons from '../../res';
 import Morale from '../../services/morale';
 import Base6 from '../../services/base6';
+import Style from '../../services/style';
 
 var ChargeCarreView = React.createClass({
     dice: [
@@ -106,20 +107,20 @@ var ChargeCarreView = React.createClass({
                     <View style={{flex:4, justifyContent: 'flex-start', borderRightWidth: 1, borderRightColor: 'gray'}}>
                         <View style={{flex: 1, flexDirection: 'row'}}>
                             <View style={{flex:1}}>
-                                <RadioButtonGroup title={'Nationality'} labelFontSize={Style.Font.mediumlarge()} direction={'vertical'}
-                                    buttons={this.nationalities().map((n) => {return {label:n,value:n};})}
+                                <RadioButtonGroup title={'Nationality'} labelFontSize={Style.Size.Label} direction={'vertical'}
+                                    buttons={this.nationalities().map((n) => ({label:n,value:n, fontSize: Style.Size.ListItem}))}
                                     state={this.state.nationality}
                                     onSelected={this.onNationalityChanged}/>
                             </View>
                             <View style={{flex:1}}>
-                                <RadioButtonGroup title={'Formation'} labelFontSize={Style.Font.mediumlarge()} direction={'vertical'}
-                                    buttons={this.formations(this.state.nationality).map((f) => ({label:f,value:f, fontSize: Style.Font.mediumlarge()}))}
+                                <RadioButtonGroup title={'Formation'} labelFontSize={Style.Size.Label} direction={'vertical'}
+                                    buttons={this.formations(this.state.nationality).map((f) => ({label:f,value:f, fontSize: Style.Size.ListItem}))}
                                     state={this.state.formation}
                                     onSelected={this.onFormationChanged}/>
                             </View>
                             <View style={{flex:1}}>
-                                <RadioButtonGroup title={'Distance'} labelFontSize={Style.Font.mediumlarge()} direction={'vertical'}
-                                    buttons={['4','3','2','1'].map((d) => ({label:d,value:d, fontSize: Style.Font.mediumlarge()}))}
+                                <RadioButtonGroup title={'Distance'} labelFontSize={Style.Size.Label} direction={'vertical'}
+                                    buttons={['4','3','2','1'].map((d) => ({label:d,value:d, fontSize: Style.Size.ListItem}))}
                                     state={this.state.distance}
                                     onSelected={this.onDistanceChanged}/>
                             </View>
@@ -128,8 +129,8 @@ var ChargeCarreView = React.createClass({
                     {/*modifiers*/}
                     <View style={{flex:2}}>
                         <MultiSelectList title={'Modifiers'}
-                            labelFontSize={Style.Font.mediumlarge()} 
-                            itemFontSize={Style.Font.mediumlarge()}                        
+                            labelFontSize={Style.Size.Label} 
+                            itemFontSize={Style.Size.ListItem}                        
                             items={this.modifiers().map((m) => ({name: m.name, selected: this.state.mods[m.name]}))}
                             onChanged={this.onModChanged}/>
                     </View>

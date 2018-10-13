@@ -1,7 +1,8 @@
 import React from 'react';
 import { View, Text, Switch } from 'react-native';
-import {SpinNumeric,SelectList,IconButton,Style} from 'react-native-nub';
+import {SpinNumeric,SelectList,IconButton} from 'react-native-nub';
 import QuickValuesView from '../common/quickValuesView';
+import Style from '../../services/style';
 import Icons from '../../res';
 
 var FireAttackerDetailView = React.createClass({
@@ -91,7 +92,7 @@ var FireAttackerDetailView = React.createClass({
                     {['1/3','1/2','2/3','3/2'].map((v, i) => {
                         return (
                             <View key={i} style={{flex: 1,flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
-                                <Text style={{fontSize: Style.Font.medium()}}>{v}</Text>
+                                <Text style={{fontSize: Style.Size.Label}}>{v}</Text>
                                 <Switch value={this.state.mods[v]} onValueChange={this.onModifier(v)} />
                             </View>
                         );
