@@ -340,5 +340,238 @@
                 {"name": "Heavy Cav in Line", "mod": 0.5}
 			]
 		}
-	}
+	},
+	
+	
+	"morale": {
+		"levels": [
+			{
+				"image": "French",
+				"army": "french",
+				"formation": "frimpgd2",
+				"name": "2e Garde",
+				"levels": [
+					{"level": 0, "desc": "<2 battalions lost/routed", "mod": 0},
+					{"level": 1, "desc": "2 battalions lost/routed", "mod": 0},
+					{"level": 2, "desc": "3 battalions lost/routed", "mod": -3},
+					{"level": 3, "desc": "4 battalions lost/routed", "mod": -6}
+				]
+			},			
+			{
+				"image": "French",
+				"army": "french",
+				"formation": "frimpgd1",
+				"name": "1ere Garde",
+				"levels": [
+					{"level": 0, "desc": "<2 battalions lost/routed", "mod": 0},
+					{"level": 1, "desc": "2 battalions lost/routed", "mod": 0},
+					{"level": 2, "desc": "3-4 battalions lost/routed", "mod": -3},
+					{"level": 3, "desc": "5 battalions lost/routed", "mod": -6}
+				]
+			},
+			{
+				"image": "French",
+				"army": "french",
+				"formation": "fr2corps",
+				"name": "II Corps",
+				"levels": [
+					{"level": 0, "desc": "<9 battalions lost/routed", "mod": 0},
+					{"level": 1, "desc": "10-19 battalions lost/routed", "mod": -3},
+					{"level": 2, "desc": "20-28 battalions lost/routed", "mod": -6},
+					{"level": 3, "desc": "29+ battalions lost/routed", "mod": -9}
+				]
+			},
+			{
+				"image": "French",
+				"army": "french",
+				"formation": "fr3corps",
+				"name": "III Corps",
+				"levels": [
+				]
+			},
+			{
+				"image": "French",
+				"army": "french",
+				"formation": "fr4corps",
+				"name": "IV Corps",
+				"levels": [
+					{"level": 0, "desc": "<8 battalions lost/routed", "mod": 0},
+					{"level": 1, "desc": "8-16 battalions lost/routed", "mod": -3},
+					{"level": 2, "desc": "16-25 battalions lost/routed", "mod": -6},
+					{"level": 3, "desc": "26+ battalions lost/routed", "mod": -9}
+				]
+			},
+			{
+				"image": "French",
+				"army": "french",
+				"formation": "f5corps",
+				"name": "V Corps",
+				"levels": [
+					{"level": 0, "desc": "<5 battalions lost/routed", "mod": 0},
+					{"level": 1, "desc": "5-8 battalions lost/routed", "mod": -3},
+					{"level": 2, "desc": "9-13 battalions lost/routed", "mod": -6},
+					{"level": 3, "desc": "14+ battalions lost/routed", "mod": -9}
+				]
+			},
+			
+			{
+				"image": "French",
+				"army": "french",
+				"formation": "fr6corps",
+				"name": "VI Corps",
+				"levels": [
+					{"level": 0, "desc": "<6 battalions lost/routed", "mod": 0},
+					{"level": 1, "desc": "6-11 battalions lost/routed", "mod": -3},
+					{"level": 2, "desc": "12-18 battalions lost/routed", "mod": -6},
+					{"level": 3, "desc": "19+ battalions lost/routed", "mod": -9}
+				]
+			},
+			{
+				"image": "French",
+				"army": "french",
+				"formation": "fr7corps",
+				"name": "VII Corps",
+				"levels": [
+					{"level": 0, "desc": "<2 battalions lost/routed", "mod": 0},
+					{"level": 1, "desc": "2-3 battalions lost/routed", "mod": -3},
+					{"level": 2, "desc": "4-5 battalions lost/routed", "mod": -6},
+					{"level": 3, "desc": "6+ battalions lost/routed", "mod": -9}
+				]
+			},
+			{
+				"image": "French",
+				"army": "french",
+				"formation": "fr9corps",
+				"name": "IX Corps",
+				"levels": [
+					{"level": 0, "desc": "<4 battalions lost/routed", "mod": 0},
+					{"level": 1, "desc": "4-7 battalions lost/routed", "mod": -3},
+					{"level": 2, "desc": "8-11 battalions lost/routed", "mod": -6},
+					{"level": 3, "desc": "12+ battalions lost/routed", "mod": -9}
+				]
+			},			
+			{
+				"image": "French",
+				"army": "french",
+				"formation": "fr11corps",
+				"name": "XI Corps",
+				"levels": [
+					{"level": 0, "desc": "<3 battalions lost/routed", "mod": 0},
+					{"level": 1, "desc": "3-4 battalions lost/routed", "mod": -3},
+					{"level": 2, "desc": "5-7 battalions lost/routed", "mod": -6},
+					{"level": 3, "desc": "8+ battalions lost/routed", "mod": -9}
+				]
+			},			
+			
+			{
+				"image": "Austrian",
+				"army": "austrian",
+				"formation": "auag",
+				"name": "Avant Garde",
+				"levels": [
+					{"level": 0, "desc": "<4 battalions lost/routed", "mod": 0},
+					{"level": 1, "desc": "4-8 battalions lost/routed", "mod": -3},
+					{"level": 2, "desc": "8-12 battalions lost/routed", "mod": -6},
+					{"level": 3, "desc": "13+ battalions lost/routed", "mod": -9}
+				]
+			},
+			{
+				"image": "Austrian",
+				"army": "austrian",
+				"formation": "au1korps",
+				"name": "I Korps",
+				"levels": [
+					{"level": 0, "desc": "<5 battalions lost/routed", "mod": 0},
+					{"level": 1, "desc": "5-8 battalions lost/routed", "mod": -3},
+					{"level": 2, "desc": "9-13 battalions lost/routed", "mod": -6},
+					{"level": 3, "desc": "14+ battalions lost/routed", "mod": -9}
+				]
+			},
+			{
+				"image": "Austrian",
+				"army": "austrian",
+				"formation": "au2korps",
+				"name": "II Korps",
+				"levels": [
+					{"level": 0, "desc": "<5 battalions lost/routed", "mod": 0},
+					{"level": 1, "desc": "5-9 battalions lost/routed", "mod": -3},
+					{"level": 2, "desc": "10-14 battalions lost/routed", "mod": -6},
+					{"level": 3, "desc": "15+ battalions lost/routed", "mod": -9}
+				]
+			},
+			{
+				"image": "Austrian",
+				"army": "austrian",
+				"formation": "au3korps",
+				"name": "III Korps",
+				"levels": [
+					{"level": 0, "desc": "<4 battalions lost/routed", "mod": 0},
+					{"level": 1, "desc": "4-8 battalions lost/routed", "mod": -3},
+					{"level": 2, "desc": "8-12 battalions lost/routed", "mod": -6},
+					{"level": 3, "desc": "13+ battalions lost/routed", "mod": -9}
+				]
+			},		
+			{
+				"image": "Austrian",
+				"army": "austrian",
+				"formation": "au4korps",
+				"name": "IV Korps",
+				"levels": [
+					{"level": 0, "desc": "<5 battalions lost/routed", "mod": 0},
+					{"level": 1, "desc": "5-9 battalions lost/routed", "mod": -3},
+					{"level": 2, "desc": "10-14 battalions lost/routed", "mod": -6},
+					{"level": 3, "desc": "15+ battalions lost/routed", "mod": -9}
+				]
+			},
+			{
+				"image": "Austrian",
+				"army": "austrian",
+				"formation": "au6korps",
+				"name": "VI Korps",
+				"levels": [
+					{"level": 0, "desc": "<5 battalions lost/routed", "mod": 0},
+					{"level": 1, "desc": "5-10 battalions lost/routed", "mod": -3},
+					{"level": 2, "desc": "11-15 battalions lost/routed", "mod": -6},
+					{"level": 3, "desc": "16+ battalions lost/routed", "mod": -9}
+				]
+			},
+			{
+				"image": "Austrian",
+				"army": "austrian",
+				"formation": "augrendiv",
+				"name": "Grenadier Division",
+				"levels": [
+					{"level": 0, "desc": "<2 battalions lost/routed", "mod": 0},
+					{"level": 1, "desc": "2-3 battalions lost/routed", "mod": -2},
+					{"level": 2, "desc": "4-5 battalions lost/routed", "mod": -4},
+					{"level": 3, "desc": "6+ battalions lost/routed", "mod": -6}				
+				]
+			},
+			{
+				"image": "Austrian",
+				"army": "austrian",
+				"formation": "auiagrendiv",
+				"name": "I-A Grenadier Division",
+				"levels": [
+					{"level": 0, "desc": "<2 battalions lost/routed", "mod": 0},
+					{"level": 1, "desc": "2-3 battalions lost/routed", "mod": -2},
+					{"level": 2, "desc": "4-5 battalions lost/routed", "mod": -4},
+					{"level": 3, "desc": "6+ battalions lost/routed", "mod": -6}				
+				]
+			},			
+			{
+				"image": "Austrian",
+				"army": "austrian",
+				"formation": "auia1korps",
+				"name": "I-A I Korps",
+				"levels": [
+					{"level": 0, "desc": "<4 battalions lost/routed", "mod": 0},
+					{"level": 1, "desc": "4-7 battalions lost/routed", "mod": -3},
+					{"level": 2, "desc": "8-12 battalions lost/routed", "mod": -6},
+					{"level": 3, "desc": "13+ battalions lost/routed", "mod": -9}
+				]
+			}			
+		]		
+	}		
+	
 }
