@@ -169,7 +169,7 @@
 				{"name": "Carre", "mod": 6},
 				{"name": "Across slope", "mod": 3},
 				{"name": "Lancers", "mod": -6},
-				{"name": "Heavy", "mod": -3},				
+				{"name": "Heavy", "mod": -3}
 			]
 		},
 		"carre": {
@@ -318,10 +318,11 @@
 				{"name": "Heavy vs Light", "mod": 2},
 				{"name": "Tired", "mod": 0.5},
 				{"name": "Exhausted", "mod": 0.333},
-				{"name": "Preserve Readiness", "mod": 0.333},
+				{"name": "Preserve Readiness", "mod": 0.333},				
 				{"name": "Cav vs Carre", "mod": 0.5},
 				{"name": "Inf vs Carre", "mod": 1.5},
 				{"name": "Across stream", "mod": 0.666},
+				{"name": "Cav w/o Recall", "mod": 0.5},
 				{"name": "Lancers in Line", "mod": 2},
                 {"name": "Cav in General", "mod": 0.333},
 				{"name": "Cav in Skirmish", "mod": 0.5},

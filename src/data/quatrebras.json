@@ -308,7 +308,8 @@
 				{"name": "Preserve Readiness", "mod": 0.333},
 				{"name": "Cav vs Carre", "mod": 0.3},
 				{"name": "Inf vs Carre", "mod": 1.5},
-				{"name": "Cav in General", "mod": 0.333}
+				{"name": "Cav in General", "mod": 0.333},
+				{"name": "Cav w/o Recall", "mod": 0.5}
 			],
 			"defend": [
 				{"name": "Skirmish order", "mod": 0.5},

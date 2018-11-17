@@ -268,7 +268,8 @@
 				{"name": "Inf vs Carre", "mod": 1.5},
 				{"name": "Across stream", "mod": 0.666},
 				{"name": "Lancers in Line", "mod": 2},
-				{"name": "Cav in General", "mod": 0.333}
+				{"name": "Cav in General", "mod": 0.333},
+				{"name": "Cav w/o Recall", "mod": 0.5}
 			],
 			"defend": [
 				{"name": "Skirmish order", "mod": 0.5},
