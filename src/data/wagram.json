@@ -148,7 +148,8 @@
 		    {"name": "In Line", "type": "defend", "attmod": 0, "defmod": -3},
 		    {"name": "In Carre", "type": "defend", "attmod": 0, "defmod": 6},
 		    {"name": "Disordered", "type": "defend", "attmod": 0, "defmod": -3},
-		    {"name": "Routed", "type": "defend", "attmod": 0, "defmod": -6},
+			{"name": "Routed", "type": "defend", "attmod": 0, "defmod": -6},
+			{"name": "50% losses", "type": "defend", "attmod": -6, "defmod": -6},
 		    {"name": "Assaulting up a slope", "type": "attack", "attmod": -2, "defmod": 2},			
 		    {"name": "Assaulting across a stream", "type": "attack", "attmod": -6, "defmod": 6},
 			{"name": "Assaulting across Russbach", "type": "attack", "attmod": -12, "defmod": 12},
@@ -166,6 +167,7 @@
 				{"name": "In Skirmish", "mod": -12},
 				{"name": "In Line", "mod": 3},
 				{"name": "Disorder", "mod": -6},				
+				{"name": "50% losses", "mod": -6},
 				{"name": "Carre", "mod": 6},
 				{"name": "Across slope", "mod": 3},
 				{"name": "Lancers", "mod": -6},
@@ -329,14 +331,14 @@
                 {"name": "Heavy Cav in Line", "mod": 0.5}
 			],
 			"defend": [
-				{"name": "Skirmish order", "mod": 0.5},
-                {"name": "Road march", "mod": 0.25},
-				{"name": "Disordered", "mod": 0.5},
-				{"name": "Routed", "mod": 0.333},
+				{"name": "Skirmish", "mod": 0.5},
+				{"name": "Road march", "mod": 0.25},				
+				{"name": "Disorder", "mod": 0.5},
+				{"name": "Routed", "mod": 0.333},				
 				{"name": "Cav Routed", "mod": 0.25},
-				{"name": "Tired", "mod": 0.5},
-				{"name": "Exhausted", "mod": 0.333},
-                {"name": "Preserve Readiness", "mod": 0.333},
+				{"name": "Cav Tired", "mod": 0.5},
+				{"name": "Cav Exhausted", "mod": 0.333},
+                {"name": "Cav Preserve Readiness", "mod": 0.333},
                 {"name": "Cav in General", "mod": 0.333},
                 {"name": "Heavy Cav in Line", "mod": 0.5}
 			]
@@ -349,18 +351,6 @@
 			{
 				"image": "French",
 				"army": "french",
-				"formation": "frimpgd2",
-				"name": "2e Garde",
-				"levels": [
-					{"level": 0, "desc": "<2 battalions lost/routed", "mod": 0},
-					{"level": 1, "desc": "2 battalions lost/routed", "mod": 0},
-					{"level": 2, "desc": "3 battalions lost/routed", "mod": -3},
-					{"level": 3, "desc": "4 battalions lost/routed", "mod": -6}
-				]
-			},			
-			{
-				"image": "French",
-				"army": "french",
 				"formation": "frimpgd1",
 				"name": "1ere Garde",
 				"levels": [
@@ -370,6 +360,18 @@
 					{"level": 3, "desc": "5 battalions lost/routed", "mod": -6}
 				]
 			},
+			{
+				"image": "French",
+				"army": "french",
+				"formation": "frimpgd2",
+				"name": "2e Garde",
+				"levels": [
+					{"level": 0, "desc": "<2 battalions lost/routed", "mod": 0},
+					{"level": 1, "desc": "2 battalions lost/routed", "mod": 0},
+					{"level": 2, "desc": "3 battalions lost/routed", "mod": -3},
+					{"level": 3, "desc": "4 battalions lost/routed", "mod": -6}
+				]
+			},			
 			{
 				"image": "French",
 				"army": "french",
@@ -388,6 +390,10 @@
 				"formation": "fr3corps",
 				"name": "III Corps",
 				"levels": [
+					{"level": 0, "desc": "<11 battalions lost/routed", "mod": 0},
+					{"level": 1, "desc": "11-21 battalions lost/routed", "mod": -3},
+					{"level": 2, "desc": "21-31 battalions lost/routed", "mod": -6},
+					{"level": 3, "desc": "32+ battalions lost/routed", "mod": -9}
 				]
 			},
 			{
