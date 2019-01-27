@@ -545,8 +545,20 @@
 			{
 				"image": "Austrian",
 				"army": "austrian",
-				"formation": "augrendiv",
-				"name": "Grenadier Division",
+				"formation": "augren1div",
+				"name": "1 Grenadier Division",
+				"levels": [
+					{"level": 0, "desc": "<2 battalions lost/routed", "mod": 0},
+					{"level": 1, "desc": "2-3 battalions lost/routed", "mod": -2},
+					{"level": 2, "desc": "4-5 battalions lost/routed", "mod": -4},
+					{"level": 3, "desc": "6+ battalions lost/routed", "mod": -6}				
+				]
+			},
+			{
+				"image": "Austrian",
+				"army": "austrian",
+				"formation": "augren2div",
+				"name": "2 Grenadier Division",
 				"levels": [
 					{"level": 0, "desc": "<2 battalions lost/routed", "mod": 0},
 					{"level": 1, "desc": "2-3 battalions lost/routed", "mod": -2},
