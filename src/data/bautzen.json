@@ -1,0 +1,654 @@
+{
+	"fire": {
+		"attack": {
+		},
+		"defense": {
+			"terrain": {
+				"Clear": {
+					"Col": {"label":"6","value":6},
+					"Line": {"label":"9","value":9},
+					"Carre": {"label":"4","value":4},
+					"Gen": {"label":"","value":0},
+					"Skirm": {"label":"12","value":12},
+					"D/PgD": {"label":"14","value":14},
+					"Arty": {"label":"6/8","value":8}					
+				},
+                "Swamp": {
+					"Col": {"label":"","value":0},
+					"Line": {"label":"","value":0},
+					"Carre": {"label":"","value":0},
+					"Gen": {"label":"","value":0},
+					"Skirm": {"label":"12","value":12},
+					"D/PgD": {"label":"14","value":14},
+					"Arty": {"label":"","value":0}
+				},
+                "Woods": {
+					"Col": {"label":"","value":0},
+					"Line": {"label":"","value":0},
+					"Carre": {"label":"","value":0},
+					"Gen": {"label":"10","value":10},
+					"Skirm": {"label":"12","value":12},
+					"D/PgD": {"label":"16","value":16},
+					"Arty": {"label":"","value":0}
+				},
+                "Pathway": {
+					"Col": {"label":"","value":0},
+					"Line": {"label":"","value":0},
+					"Carre": {"label":"","value":0},
+					"Gen": {"label":"10","value":10},
+					"Skirm": {"label":"12","value":12},
+					"D/PgD": {"label":"16","value":16},
+					"Arty": {"label":"","value":0}
+				},
+                "Garden": {
+					"Col": {"label":"","value":0},
+					"Line": {"label":"","value":0},
+					"Carre": {"label":"","value":0},
+					"Gen": {"label":"10","value":10},
+					"Skirm": {"label":"12","value":12},
+					"D/PgD": {"label":"16","value":16},
+					"Arty": {"label":"6/8","value":8}
+				},
+                "Hamlet": {
+					"Col": {"label":"","value":0},
+					"Line": {"label":"","value":0},
+					"Carre": {"label":"","value":0},
+					"Gen": {"label":"10","value":10},
+					"Skirm": {"label":"12","value":12},
+					"D/PgD": {"label":"16","value":16},
+					"Arty": {"label":"6/8","value":8}
+				},
+                "Village": {
+					"Col": {"label":"","value":0},
+					"Line": {"label":"","value":0},
+					"Carre": {"label":"","value":0},
+					"Gen": {"label":"10","value":10},
+					"Skirm": {"label":"14","value":14},
+					"D/PgD": {"label":"16","value":16},
+					"Arty": {"label":"7/9","value":9}
+				},
+                "Town": {
+					"Col": {"label":"","value":0},
+					"Line": {"label":"","value":0},
+					"Carre": {"label":"","value":0},
+					"Gen": {"label":"12","value":12},
+					"Skirm": {"label":"14","value":14},
+					"D/PgD": {"label":"16","value":16},
+					"Arty": {"label":"8/10","value":10}
+				},
+                "Earthwork": {
+					"Col": {"label":"","value":0},
+					"Line": {"label":"","value":0},
+					"Carre": {"label":"","value":0},
+					"Gen": {"label":"16","value":10},
+					"Skirm": {"label":"","value":0},
+					"D/PgD": {"label":"16","value":16},
+					"Arty": {"label":"10/12","value":12}
+				},
+                "Entrenchment": {
+					"Col": {"label":"","value":0},
+					"Line": {"label":"12","value":12},
+					"Carre": {"label":"","value":0},
+					"Gen": {"label":"13","value":13},
+					"Skirm": {"label":"15","value":15},
+					"D/PgD": {"label":"6","value":6},
+					"Arty": {"label":"","value":0}
+				},
+                "Schieβscharte": {
+					"Col": {"label":"","value":0},
+					"Line": {"label":"","value":0},
+					"Carre": {"label":"","value":0},
+					"Gen": {"label":"11","value":11},
+					"Skirm": {"label":"","value":0},
+					"D/PgD": {"label":"","value":0},
+					"Arty": {"label":"","value":0}
+				}				
+			}
+		
+		},
+		"artillery": {
+			"limber": {
+				"table": {
+					"French a Pied": { "low": 4, "high": 6},
+                    "French a Cheval": { "low": 2, "high": 6},
+                    "French Guard": { "low": 1, "high": 6},
+                    "French Allied a Pied": { "low": 4, "high": 6},
+					"French Allied a Cheval": { "low": 3, "high": 6},
+				
+					"Prussian Fuss": { "low": 5, "high": 6},
+					"Prussian Reitende": { "low": 4, "high": 6},
+					"Russian Position": { "low": 6, "high": 6},
+					"Russian Light": { "low": 5, "high": 6},
+					"Russian Horse": { "low": 4, "high": 6},
+					"Russian Guard": { "low": 5, "high": 6}
+				},
+				"modifiers": [
+					{"name": "Arty Leader", "mod": 1},
+					{"name": "French Marechal", "mod": 2},
+                    {"name": "Ost-Tolstoi", "mod": 2},
+                    {"name": "Gorschakov", "mod": 2},
+					{"name": "Langeron", "mod": 2},
+					{"name": "Miloradovitch", "mod": 2},
+					{"name": "Gneisenau", "mod": 2},
+					
+                    {"name": "Napoleon", "mod": 3},
+					{"name": "Devaux", "mod": 3},
+					{"name": "Drouot", "mod": 3},
+					{"name": "Lauriston", "mod": 3},
+					{"name": "Marmont", "mod": 3},
+					{"name": "Jachwill", "mod": 3}					
+				]			
+			}
+		}
+	},
+	"assault": {
+		"odds": [
+		    {"name": "1/2", "attmod": -6, "defmod": 6},
+			{"name": "1/1", "attmod": -3, "defmod": 3},
+		    {"name": "2/1", "attmod": 0, "defmod": 0},
+		    {"name": "3/1", "attmod": 3, "defmod": -3},
+		    {"name": "4/1", "attmod": 6, "defmod": -6},
+		    {"name": "5/1+", "attmod": 9, "defmod": -9}
+		],
+		"modifiers": [
+		    {"name": "Assaulted in flank", "type": "defend", "attmod": 12, "defmod": -12},
+		    {"name": "Assaulted in rear", "type": "defend", "attmod": 6, "defmod": -6},
+		    {"name": "In skirmish order", "type": "defend", "attmod": 99, "defmod": -6},
+		    {"name": "In Line", "type": "defend", "attmod": 0, "defmod": -3},
+		    {"name": "In Carre", "type": "defend", "attmod": 0, "defmod": 6},
+		    {"name": "Disordered", "type": "defend", "attmod": 0, "defmod": -3},
+		    {"name": "Routed", "type": "defend", "attmod": 0, "defmod": -6},
+			{"name": "50% losses", "type": "defend", "attmod": -6, "defmod": -6},
+		    {"name": "Assaulting up a slope", "type": "attack", "attmod": -2, "defmod": 2},
+		    {"name": "Assaulting across a stream", "type": "attack", "attmod": -6, "defmod": 6},
+			{"name": "Assaulting across Spree", "type": "attack", "attmod": -12, "defmod": 12},
+		    {"name": "Casualty due to defensive fire", "type": "attack", "attmod": -3, "defmod": 0},
+            {"name": "Attacker Casualty (15-16)", "type": "attack", "attmod": -6, "defmod": 0},
+            {"name": "Attacker Casualty (13-14)", "type": "attack", "attmod": -9, "defmod": 0},
+            {"name": "Attacker Casualty (11-12)", "type": "attack", "attmod": -12, "defmod": 0}			
+		]
+	},
+	"charge": {
+		"stand": {
+			"modifiers": [
+				{"name": "Charged in flank", "mod": -12},
+				{"name": "Charged in rear", "mod": -6},
+				{"name": "In Skirmish", "mod": -12},
+				{"name": "In Line", "mod": 3},
+				{"name": "Disorder", "mod": -6},			
+				{"name": "50% losses", "mod": -6},				
+				{"name": "Carre", "mod": 6},				
+				{"name": "Lancers", "mod": -6},
+				{"name": "Heavy", "mod": -3},
+				{"name": "Across slope", "mod": 3}
+			]
+		},
+		"carre": {
+			"table": {
+				"French": {
+					"Column": {
+						"4": [
+							{"low": 11, "high": 62, "result": "Carre"},
+                            {"low": 63, "high": 66, "result": "Disorder"}
+						],
+                        "3": [
+							{"low": 11, "high": 56, "result": "Carre"},
+                            {"low": 61, "high": 66, "result": "Disorder"}
+						],
+                        "2": [
+							{"low": 11, "high": 33, "result": "Carre"},
+                            {"low": 34, "high": 54, "result": "Disorder"},
+                            {"low": 55, "high": 66, "result": "Rout"}
+						],
+                        "1": [
+							{"low": 11, "high": 21, "result": "Carre"},
+                            {"low": 22, "high": 51, "result": "Disorder"},
+                            {"low": 52, "high": 66, "result": "Rout"}
+						]
+					},
+                    "Line": {
+						"4": [
+							{"low": 11, "high": 53, "result": "Carre"},
+                            {"low": 54, "high": 65, "result": "Disorder"},
+							{"low": 66, "high": 66, "result": "Rout"}
+						],
+                        "3": [
+							{"low": 11, "high": 36, "result": "Carre"},
+                            {"low": 41, "high": 54, "result": "Disorder"},
+                            {"low": 55, "high": 66, "result": "Rout"}
+						],
+                        "2": [
+							{"low": 11, "high": 22, "result": "Carre"},
+                            {"low": 23, "high": 52, "result": "Disorder"},
+                            {"low": 53, "high": 66, "result": "Rout"}
+						],
+                        "1": [
+							{"low": 11, "high": 15, "result": "Carre"},
+                            {"low": 16, "high": 44, "result": "Disorder"},
+                            {"low": 45, "high": 66, "result": "Rout"}
+						]
+					}
+				},
+                "French Allies": {
+					"Column": {
+						"4": [
+                            {"low": 11, "high": 52, "result": "Carre"},
+                            {"low": 53, "high": 61, "result": "Disorder"},
+							{"low": 62, "high": 66, "result": "Rout"}							
+						],
+                        "3": [
+                            {"low": 11, "high": 46, "result": "Carre"},
+                            {"low": 51, "high": 55, "result": "Disorder"},
+                            {"low": 56, "high": 66, "result": "Rout"}
+						],
+                        "2": [
+							{"low": 11, "high": 34, "result": "Carre"},
+                            {"low": 35, "high": 52, "result": "Disorder"},
+                            {"low": 53, "high": 66, "result": "Rout"}
+						],
+                        "1": [
+							{"low": 11, "high": 22, "result": "Carre"},
+                            {"low": 23, "high": 45, "result": "Disorder"},
+                            {"low": 46, "high": 66, "result": "Rout"}
+						]
+					},
+                    "Line": {
+						"4": [
+                            {"low": 11, "high": 52, "result": "Carre"},
+                            {"low": 53, "high": 61, "result": "Disorder"},
+							{"low": 62, "high": 66, "result": "Rout"}							
+						],
+                        "3": [
+                            {"low": 11, "high": 46, "result": "Carre"},
+                            {"low": 51, "high": 55, "result": "Disorder"},
+                            {"low": 56, "high": 66, "result": "Rout"}
+						],
+                        "2": [
+							{"low": 11, "high": 34, "result": "Carre"},
+                            {"low": 35, "high": 52, "result": "Disorder"},
+                            {"low": 53, "high": 66, "result": "Rout"}
+						],
+                        "1": [
+							{"low": 11, "high": 22, "result": "Carre"},
+                            {"low": 23, "high": 45, "result": "Disorder"},
+                            {"low": 46, "high": 66, "result": "Rout"}
+						]					
+					}
+				},
+			
+				"Russians": {
+					"Column": {
+						"4": [
+							{"low": 11, "high": 52, "result": "Carre"},
+							{"low": 53, "high": 65, "result": "Disorder"},
+							{"low": 66, "high": 66, "result": "Rout"}
+						],
+						"3": [
+							{"low": 11, "high": 41, "result": "Carre"},
+							{"low": 42, "high": 56, "result": "Disorder"},
+							{"low": 61, "high": 66, "result": "Rout"}
+						],
+						"2": [
+							{"low": 11, "high": 26, "result": "Carre"},
+							{"low": 31, "high": 46, "result": "Disorder"},
+							{"low": 51, "high": 66, "result": "Rout"}
+						],
+						"1": [
+							{"low": 11, "high": 15, "result": "Carre"},
+							{"low": 16, "high": 36, "result": "Disorder"},
+							{"low": 41, "high": 66, "result": "Rout"}
+						]
+					},
+					"Line": {
+						"4": [
+							{"low": 11, "high": 64, "result": "Carre"},
+							{"low": 65, "high": 65, "result": "Disorder"},
+							{"low": 66, "high": 66, "result": "Rout"}							
+						],
+						"3": [
+							{"low": 11, "high": 62, "result": "Carre"},
+							{"low": 63, "high": 64, "result": "Disorder"},
+							{"low": 65, "high": 66, "result": "Rout"}							
+						],
+						"2": [
+							{"low": 11, "high": 32, "result": "Carre"},
+							{"low": 33, "high": 55, "result": "Disorder"},
+							{"low": 56, "high": 66, "result": "Rout"}
+						],
+						"1": [
+							{"low": 11, "high": 31, "result": "Carre"},
+							{"low": 32, "high": 45, "result": "Disorder"},
+							{"low": 46, "high": 66, "result": "Rout"}
+						]
+					}
+				},
+			
+				"Prussians": {
+					"Column": {
+						"4": [
+							{"low": 11, "high": 63, "result": "Carre"},
+							{"low": 64, "high": 65, "result": "Disorder"},
+							{"low": 66, "high": 66, "result": "Rout"}
+						],
+						"3": [
+							{"low": 11, "high": 45, "result": "Carre"},
+							{"low": 46, "high": 55, "result": "Disorder"},
+							{"low": 56, "high": 66, "result": "Rout"}
+						],
+						"2": [
+							{"low": 11, "high": 35, "result": "Carre"},
+							{"low": 36, "high": 55, "result": "Disorder"},
+							{"low": 56, "high": 66, "result": "Rout"}
+						],
+						"1": [
+							{"low": 11, "high": 25, "result": "Carre"},
+							{"low": 26, "high": 45, "result": "Disorder"},
+							{"low": 46, "high": 66, "result": "Rout"}
+						]
+					},
+					"Line": {
+						"4": [
+							{"low": 11, "high": 64, "result": "Carre"},
+							{"low": 65, "high": 65, "result": "Disorder"},
+							{"low": 66, "high": 66, "result": "Rout"}
+						],
+						"3": [
+							{"low": 11, "high": 52, "result": "Carre"},
+							{"low": 53, "high": 61, "result": "Disorder"},
+							{"low": 62, "high": 66, "result": "Rout"}
+						],
+						"2": [
+							{"low": 11, "high": 32, "result": "Carre"},
+							{"low": 33, "high": 53, "result": "Disorder"},
+							{"low": 54, "high": 66, "result": "Rout"}
+						],
+						"1": [
+							{"low": 11, "high": 22, "result": "Carre"},
+							{"low": 23, "high": 44, "result": "Disorder"},
+							{"low": 45, "high": 66, "result": "Rout"}
+						]
+					}
+				}			
+			},
+			"modifiers": [
+				{"name": "Leader", "mod": -6},
+				{"name": "French Vieille Guard", "mod": -9},
+				{"name": "French 1ere Guard", "mod": -4},
+				{"name": "French 2e Guard", "mod": -2},
+				{"name": "French Jeune Guard", "mod": -3},
+				{"name": "Russian Grenadier", "mod": -3},
+				{"name": "Russian Guard", "mod": -6},
+				{"name": "Prussian Grenadier", "mod": -3},
+				{"name": "Prussian Guard", "mod": -3},
+				{"name": "Prussian Normal", "mod": -3},
+				{"name": "Prussian Jaeger", "mod": 2},
+				{"name": "Prussian Schuetzen", "mod": 2},
+				{"name": "Light Cav", "mod": 3},
+				{"name": "Lancers", "mod": 6},
+				{"name": "Morale Level", "mod": 3}
+			]
+		},
+		"recall": {
+			"table": {
+				"French": { "low": 2, "high": 6},
+				"French Guard": { "low": 2, "high": 6},
+				"Saxon": { "low": 2, "high": 6},				
+				"Rheinbund": { "low": 4, "high": 6},
+				"Italienne": { "low": 4, "high": 6},				
+				"Russian Light": { "low": 3, "high": 6},
+				"Russian Heavy": { "low": 4, "high": 6},
+				"Russian Guard": { "low": 4, "high": 6},
+				"Russian Cossacks": { "low": 5, "high": 6},								
+				"Prussian Light": { "low": 2, "high": 6},
+				"Prussian Hussars": { "low": 2, "high": 6},
+				"Prussian Heavy": { "low": 3, "high": 6}				
+			},
+			"modifiers": [
+				{"name": "Cav Leader", "mod": 1}
+			]
+		}
+	},
+	"melee": {
+		"modifiers": {
+			"attack": [
+				{"name": "Assault in flank", "mod": 2},
+				{"name": "Assault in rear", "mod": 1.5},
+				{"name": "Skirmish order", "mod": 0.5},
+				{"name": "Disordered", "mod": 0.5},
+				{"name": "Charge 3 straight", "mod": 2},
+				{"name": "Heavy vs Light", "mod": 2},
+				{"name": "Tired", "mod": 0.5},
+				{"name": "Exhausted", "mod": 0.333},
+				{"name": "Preserve Readiness", "mod": 0.333},
+				{"name": "Cav vs Carre", "mod": 0.5},
+				{"name": "Inf vs Carre", "mod": 1.5},
+				{"name": "Cav w/o Recall", "mod": 0.5},
+				{"name": "Across stream", "mod": 0.666},
+				{"name": "Lancers in Line", "mod": 2},
+				{"name": "Cav in General", "mod": 0.333}
+			],
+			"defend": [
+				{"name": "Skirmish order", "mod": 0.5},
+				{"name": "Disordered", "mod": 0.5},
+				{"name": "Routed", "mod": 0.333},
+				{"name": "Cav Routed", "mod": 0.25},
+				{"name": "Tired", "mod": 0.5},
+				{"name": "Exhausted", "mod": 0.333},
+				{"name": "Preserve Readiness", "mod": 0.333},
+				{"name": "Cav in General", "mod": 0.333}
+			]
+		}
+	},
+	"morale": {
+		"levels": [
+			{
+				"image": "French",
+				"army": "french",
+				"formation": "frimpgd1",
+				"name": "Vielle Garde",
+				"levels": [
+					{"level": 0, "desc": "<2 battalions lost/routed", "mod": 0},
+					{"level": 1, "desc": "2-3 battalions lost/routed", "mod": 0},
+					{"level": 2, "desc": "4-5 battalions lost/routed", "mod": -3},
+					{"level": 3, "desc": "6+ battalions lost/routed", "mod": -6}
+				]
+			},
+			{
+				"image": "French",
+				"army": "french",
+				"formation": "frimpgd2",
+				"name": "Jeune Garde",
+				"levels": [
+					{"level": 0, "desc": "<5 battalions lost/routed", "mod": 0},
+					{"level": 1, "desc": "5-9 battalions lost/routed", "mod": 0},
+					{"level": 2, "desc": "10-14 battalions lost/routed", "mod": -3},
+					{"level": 3, "desc": "15+ battalions lost/routed", "mod": -6}
+				]
+			},						
+			{
+				"image": "French",
+				"army": "french",
+				"formation": "fr3corps",
+				"name": "III Corps",
+				"levels": [
+					{"level": 0, "desc": "<14 battalions lost/routed", "mod": 0},
+					{"level": 1, "desc": "14-26 battalions lost/routed", "mod": -3},
+					{"level": 2, "desc": "27-39 battalions lost/routed", "mod": -6},
+					{"level": 3, "desc": "40+ battalions lost/routed", "mod": -9}
+				]
+			},
+			{
+				"image": "French",
+				"army": "french",
+				"formation": "fr4corps",
+				"name": "IV Corps",
+				"levels": [
+					{"level": 0, "desc": "<7 battalions lost/routed", "mod": 0},
+					{"level": 1, "desc": "7-12 battalions lost/routed", "mod": -3},
+					{"level": 2, "desc": "13-20 battalions lost/routed", "mod": -6},
+					{"level": 3, "desc": "21+ battalions lost/routed", "mod": -9}
+				]
+			},
+			{
+				"image": "French",
+				"army": "french",
+				"formation": "f5corps",
+				"name": "V Corps",
+				"levels": [
+					{"level": 0, "desc": "<7 battalions lost/routed", "mod": 0},
+					{"level": 1, "desc": "7-13 battalions lost/routed", "mod": -3},
+					{"level": 2, "desc": "14-20 battalions lost/routed", "mod": -6},
+					{"level": 3, "desc": "21+ battalions lost/routed", "mod": -9}
+				]
+			},
+			
+			{
+				"image": "French",
+				"army": "french",
+				"formation": "fr6corps",
+				"name": "VI Corps",
+				"levels": [
+					{"level": 0, "desc": "<9 battalions lost/routed", "mod": 0},
+					{"level": 1, "desc": "9-16 battalions lost/routed", "mod": -3},
+					{"level": 2, "desc": "17-25 battalions lost/routed", "mod": -6},
+					{"level": 3, "desc": "26+ battalions lost/routed", "mod": -9}
+				]
+			},
+			{
+				"image": "French",
+				"army": "french",
+				"formation": "fr7corps",
+				"name": "VII Corps",
+				"levels": [
+					{"level": 0, "desc": "<2 battalions lost/routed", "mod": 0},
+					{"level": 1, "desc": "2-3 battalions lost/routed", "mod": -3},
+					{"level": 2, "desc": "4-6 battalions lost/routed", "mod": -6},
+					{"level": 3, "desc": "7+ battalions lost/routed", "mod": -9}
+				]
+			},
+			{
+				"image": "French",
+				"army": "french",
+				"formation": "fr11corps",
+				"name": "XI Corps",
+				"levels": [
+					{"level": 0, "desc": "<6 battalions lost/routed", "mod": 0},
+					{"level": 1, "desc": "6-11 battalions lost/routed", "mod": -3},
+					{"level": 2, "desc": "12-17 battalions lost/routed", "mod": -6},
+					{"level": 3, "desc": "18+ battalions lost/routed", "mod": -9}
+				]
+			},			
+			{
+				"image": "French",
+				"army": "french",
+				"formation": "fr12corps",
+				"name": "XII Corps",
+				"levels": [
+					{"level": 0, "desc": "<6 battalions lost/routed", "mod": 0},
+					{"level": 1, "desc": "6-12 battalions lost/routed", "mod": -3},
+					{"level": 2, "desc": "13-18 battalions lost/routed", "mod": -6},
+					{"level": 3, "desc": "19+ battalions lost/routed", "mod": -9}
+				]
+			},			
+			
+			{
+				"image": "Russian",
+				"army": "russian",
+				"formation": "rumiloradovich",
+				"name": "Miloradovich",
+				"levels": [
+					{"level": 0, "desc": "<2 battalions lost/routed", "mod": 0},
+					{"level": 1, "desc": "2-3 battalions lost/routed", "mod": -3},
+					{"level": 2, "desc": "4-5 battalions lost/routed", "mod": -6},
+					{"level": 3, "desc": "6+ battalions lost/routed", "mod": -9}
+				]
+			},
+			{
+				"image": "Russian",
+				"army": "russian",
+				"formation": "rugorschakov",
+				"name": "Gorschakov",
+				"levels": [
+					{"level": 0, "desc": "<5 battalions lost/routed", "mod": 0},
+					{"level": 1, "desc": "5-9 battalions lost/routed", "mod": -3},
+					{"level": 2, "desc": "10-14 battalions lost/routed", "mod": -6},
+					{"level": 3, "desc": "15+ battalions lost/routed", "mod": -9}
+				]
+			},
+			{
+				"image": "Russian",
+				"army": "russian",
+				"formation": "rudetolly",
+				"name": "De Tolly",
+				"levels": [
+					{"level": 0, "desc": "<4 battalions lost/routed", "mod": 0},
+					{"level": 1, "desc": "4-8 battalions lost/routed", "mod": -3},
+					{"level": 2, "desc": "9-12 battalions lost/routed", "mod": -6},
+					{"level": 3, "desc": "13+ battalions lost/routed", "mod": -9}
+				]
+			},			
+			{
+				"image": "Russian",
+				"army": "russian",
+				"formation": "rugren",
+				"name": "1st et 2nd Grenadier",
+				"levels": [
+					{"level": 0, "desc": "<5 battalions lost/routed", "mod": 0},
+					{"level": 1, "desc": "5-9 battalions lost/routed", "mod": -3},
+					{"level": 2, "desc": "10-14 battalions lost/routed", "mod": -6},
+					{"level": 3, "desc": "15+ battalions lost/routed", "mod": -9}
+				]
+			},
+			{
+				"image": "Russian",
+				"army": "russian",
+				"formation": "ruguard",
+				"name": "1st et 2nd Guard Division",
+				"levels": [
+					{"level": 0, "desc": "<4 battalions lost/routed", "mod": 0},
+					{"level": 1, "desc": "4-7 battalions lost/routed", "mod": -3},
+					{"level": 2, "desc": "8-11 battalions lost/routed", "mod": -6},
+					{"level": 3, "desc": "12+ battalions lost/routed", "mod": -9}
+				]
+			},
+							
+			{
+				"image": "Prussian",
+				"army": "prussian",
+				"formation": "pr1korps",
+				"name": "I Korps",
+				"levels": [
+					{"level": 0, "desc": "<3 battalions lost/routed", "mod": 0},
+					{"level": 1, "desc": "3-7 battalions lost/routed", "mod": -3},
+					{"level": 2, "desc": "6-9 battalions lost/routed", "mod": -6},
+					{"level": 3, "desc": "10+ battalions lost/routed", "mod": -9}
+				]
+			},
+			{
+				"image": "Prussian",
+				"army": "prussian",
+				"formation": "pr2korps",
+				"name": "II Korps",
+				"levels": [
+					{"level": 0, "desc": "<3 battalions lost/routed", "mod": 0},
+					{"level": 1, "desc": "3-4 battalions lost/routed", "mod": -3},
+					{"level": 2, "desc": "5-7 battalions lost/routed", "mod": -6},
+					{"level": 3, "desc": "8+ battalions lost/routed", "mod": -9}
+				]
+			},
+			{
+				"image": "Prussian",
+				"army": "prussian",
+				"formation": "prreskorps",
+				"name": "Reserve",
+				"levels": [
+					{"level": 0, "desc": "<2 battalions lost/routed", "mod": 0},
+					{"level": 1, "desc": "2-3 battalions lost/routed", "mod": -3},
+					{"level": 2, "desc": "4-5 battalions lost/routed", "mod": -6},
+					{"level": 3, "desc": "6+ battalions lost/routed", "mod": -9}
+				]
+			}			
+		]		
+	
+	}
+}

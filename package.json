@@ -1,6 +1,6 @@
 {
   "name": "lb",
-  "version": "1.8.20",
+  "version": "1.8.21",
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
@@ -12,8 +12,8 @@
     "install-dbg": "adb -d install -r android/app/build/outputs/apk/lb-debug-1.9.apk",
     "install-stg": "adb -d install -r android/app/build/outputs/apk/lb-releaseStaging-1.9.apk",    
     "install-rel": "adb -d install -r android/app/build/outputs/apk/lb-release-1.9.apk",
-    "push": "code-push release-react LaBatailleAssistant android --description v1.8.20",
-    "promote": "code-push promote LaBatailleAssistant Staging Production --description v1.8.20 --mandatory",    
+    "push": "code-push release-react LaBatailleAssistant android --description v1.8.21",
+    "promote": "code-push promote LaBatailleAssistant Staging Production --description v1.8.21 --mandatory",    
     "bridge": "adb reverse tcp:8081 tcp:8081",
     "emulate-s3": "%ANDROID_HOME%/tools/emulator.exe -avd Galaxy_SIII",
     "emulate-nexus7": "%ANDROID_HOME%/tools/emulator.exe -avd Nexus_7",    
