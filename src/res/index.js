@@ -66,6 +66,7 @@ module.exports = {
 	"austerlitz": require("./austerlitz.png"),
 	"prusse": require("./prusse.png"),	
 	"wagram": require("./wagram.png"),	
+	"bautzen": require("./bautzen.png"),	
 	"vauchamps": require("./vauchamps.jpg"),
 	"auerstaedt": require("./auerstaedt.jpg"),
 	"eylau": require("./eylau.jpg"),

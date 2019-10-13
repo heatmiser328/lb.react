@@ -1803,7 +1803,7 @@
 	                "year": 1809,
 	                "month": 7,
 	                "day": 6,
-	                "hour": 9,
+	                "hour": 7,
 	                "minute": 0
 	            },
 	            "end": {
@@ -1844,15 +1844,400 @@
 					{"side": "French", "low": -99, "high": 0, "level": "Decisive"},
 					{"side": "French", "low": 1, "high": 2, "level": "Substantial"},
 					{"side": "French", "low": 3, "high": 3, "level": "Marginal"},					
-					{"side": "Prussian", "low": 4, "high": 5, "level": "Marginal"},
-					{"side": "Prussian", "low": 6, "high": 9, "level": "Substantial"},
-					{"side": "Prussian", "low": 10, "high": 99, "level": "Decisive"}
+					{"side": "Austrian", "low": 4, "high": 5, "level": "Marginal"},
+					{"side": "Austrian", "low": 6, "high": 9, "level": "Substantial"},
+					{"side": "Austrian", "low": 10, "high": 99, "level": "Decisive"}
+				]				
+	        },
+	        {
+	            "id": 10060,
+	            "name": "Drive to the Bridges III",
+	            "start": {
+	                "year": 1809,
+	                "month": 7,
+	                "day": 6,
+	                "hour": 7,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1809,
+	                "month": 7,
+	                "day": 6,
+	                "hour": 17,
+	                "minute": 0
+	            },
+				"victory": [
+					{"side": "French", "low": -99, "high": 0, "level": "Decisive"},
+					{"side": "French", "low": 1, "high": 2, "level": "Substantial"},
+					{"side": "French", "low": 3, "high": 3, "level": "Marginal"},					
+					{"side": "Austrian", "low": 4, "high": 5, "level": "Marginal"},
+					{"side": "Austrian", "low": 6, "high": 9, "level": "Substantial"},
+					{"side": "Austrian", "low": 10, "high": 99, "level": "Decisive"}
 				]				
 	        }
 			
 	    ]
 	},
 
+	{
+		"id": 1006,
+		"name": "La Battaille de Bautzen 1813",
+		"publisher": "Marshal Enterprises",
+		"image": "bautzen",
+		"sides": ["French", "PrussianRussian"],
+		"scenarios": [
+			{
+				"id": 10061,
+				"name": "The Grand Battle at Bautzen",
+				"start": {
+					"year": 1813,
+					"month": 5,
+					"day": 21,
+					"hour": 9,
+					"minute": 40
+				},
+				"end": {
+					"year": 1813,
+					"month": 5,
+					"day": 21,
+					"hour": 16,
+					"minute": 0
+				},
+				"victory": [
+					{
+						"side": "French",
+						"level": "Decisive",
+						"conditions": "No Russian Heavy Artillery get within six hexes of Wanitz and either road from there to the eastern edge must be free of enemy Zone d’influence."
+					}, {
+						"side": "French",
+						"level": "Substantial",
+						"conditions": "2-1 Russian Heavy Batteries get within six hexes of Waditz and either road from there to the eastern edge must be free of enemy Zone d’influence."
+					}, {
+						"side": "French",
+						"level": "Marginal",
+						"conditions": "4-3 Russian Heavy Batteries get within six hexes of Waditz and either road from there to the eastern edge must be free of enemy Zone d’influence."
+					}, {
+						"side": "",
+						"level": "Draw",
+						"conditions": "6-5 Russian Heavy Batteries get within six hexes of Waditz and either road from there to the eastern edge must be free of enemy Zone d’influence."
+					}, {
+						"side": "Coalition",
+						"level": "Marginal",
+						"conditions": "9-7 Russian Heavy Batteries get within six hexes of Waditz and either road from there to the eastern edge must be free of enemy Zone d’influence."
+					}, {
+						"side": "Coalition",
+						"level": "Substantial",
+						"conditions": "12-10 Russian Heavy Batteries get within six hexes of Waditz and either road from there to the eastern edge must be free of enemy Zone d’influence."
+					}, {
+						"side": "Coalition",
+						"level": "Decisive",
+						"conditions": "15 -13 Russian Heavy Batteries get within six hexes of Waditz and either road from there to the eastern edge must be free of enemy Zone d’influence."
+					}
+				]
+			},
+			
+			{
+				"id": 10062,
+				"name": "Ney's Advance",
+				"start": {
+					"year": 1813,
+					"month": 5,
+					"day": 21,
+					"hour": 6,
+					"minute": 0
+				},
+				"end": {
+					"year": 1813,
+					"month": 5,
+					"day": 21,
+					"hour": 9,
+					"minute": 20
+				},
+				"victory": [
+					{
+						"side": "French",
+						"level": "Decisive",
+						"conditions": "Positions must be occupied by the French and held to the end of the scenario: Brosa, Malschwitz, Gottemelda, Gleina, Windmill"
+					}, {
+						"side": "French",
+						"level": "Substantial",
+						"conditions": "Positions must be occupied by the French and held to the end of the scenario: Brosa, Malschwitz, Gottemelda, Gleina"
+					}, {
+						"side": "French",
+						"level": "Marginal",
+						"conditions": "Positions must be occupied by the French and held to the end of the scenario: Brosa, Gottemelda, Gleina"
+					}, {
+						"side": "",
+						"level": "Draw",
+						"conditions": "Positions must be occupied by the French and held to the end of the scenario: Brosa, Gottemelda"
+					}, {
+						"side": "Coalition",
+						"level": "Marginal",
+						"conditions": "Positions must be occupied by the French and held to the end of the scenario: Brosa or Malschwitz OR III on Level one"
+					}, {
+						"side": "Coalition",
+						"level": "Substantial",
+						"conditions": "Positions must be occupied by the French and held to the end of the scenario: Brosa"
+					}, {
+						"side": "Coalition",
+						"level": "Decisive",
+						"conditions": "None of the above cities captured or III on Level Two"
+					}
+				]
+			},
+			
+			{
+				"id": 10063,
+				"name": "La Bataille de Königswartha et Weissig 1813",
+				"start": {
+					"year": 1813,
+					"month": 5,
+					"day": 19,
+					"hour": 13,
+					"minute": 0
+				},
+				"end": {
+					"year": 1813,
+					"month": 5,
+					"day": 19,
+					"hour": 17,
+					"minute": 0
+				},
+				"victory": [
+					{
+						"side": "French",
+						"level": "Decisive",
+						"conditions": "Hold all hexes of Königswartha and Caminau until the end of the game / Capture and hold both hexes of Weissig and the Eichberg and place Yorck's Korps on a Morale Level"
+					}, {
+						"side": "French",
+						"level": "Substantial",
+						"conditions": "Hold one hex of Königswartha and all hexes of Caminau until the end of the game / Capture and hold one hex of Weissig and the Eichberg and place Yorck's Korps on a Morale Level"
+					}, {
+						"side": "French",
+						"level": "Marginal",
+						"conditions": "Inflict 15 increment losses on the Russians / Place Yorck's Korps on a Morale Level"
+					}, {
+						"side": "",
+						"level": "Draw",
+						"conditions": "Any other results than those listed"
+					}, {
+						"side": "Coalition",
+						"level": "Marginal",
+						"conditions": "Eliminate 10 increments of enemy infantry / Place V Corps on a Morale Level"
+					}, {
+						"side": "Coalition",
+						"level": "Substantial",
+						"conditions": "Eliminate 20 increments of enemy infantry and one battery / Hold one hex of Weissig and the Eichberg and place V Corps on a Morale Level"
+					}, {
+						"side": "Coalition",
+						"level": "Decisive",
+						"conditions": "Capture all the hexes of Königswartha and Caminau hold until the end of the game / Capture and hold both hexes of Weissig and the Eichberg and Place V Corps on a Morale Level"
+					}
+				]
+			},
+					
+			{
+				"id": 10064,
+				"name": "La Bataille de Königswartha 1813",
+				"start": {
+					"year": 1813,
+					"month": 5,
+					"day": 19,
+					"hour": 13,
+					"minute": 0
+				},
+				"end": {
+					"year": 1813,
+					"month": 5,
+					"day": 19,
+					"hour": 16,
+					"minute": 20
+				},
+				"victory": [
+					{
+						"side": "French",
+						"level": "Decisive",
+						"conditions": "Hold all hexes of Königswartha and Caminau until the end of the game"
+					}, {
+						"side": "French",
+						"level": "Substantial",
+						"conditions": "Hold one hex of Königswartha and all hexes of Caminau until the end of the game"
+					}, {
+						"side": "French",
+						"level": "Marginal",
+						"conditions": "Inflict 15 increment losses on the Russians"
+					}, {
+						"side": "",
+						"level": "Draw",
+						"conditions": "Any other results than those listed"
+					}, {
+						"side": "Coalition",
+						"level": "Marginal",
+						"conditions": "Eliminate 10 increments of enemy infantry"
+					}, {
+						"side": "Coalition",
+						"level": "Substantial",
+						"conditions": "Eliminate 20 increments of enemy infantry and one battery"
+					}, {
+						"side": "Coalition",
+						"level": "Decisive",
+						"conditions": "Capture all the hexes of Königswartha and Caminau hold until the end of the game"
+					}
+				]
+			},
+			
+			{
+				"id": 10065,
+				"name": "La Bataille de Weissig 1813",
+				"start": {
+					"year": 1813,
+					"month": 5,
+					"day": 19,
+					"hour": 13,
+					"minute": 0
+				},
+				"end": {
+					"year": 1813,
+					"month": 5,
+					"day": 19,
+					"hour": 17,
+					"minute": 0
+				},
+				"victory": [
+					{
+						"side": "French",
+						"level": "Decisive",
+						"conditions": "Capture and hold both hexes of Weissig and the Eichberg and place Yorck's Korps on a Morale Level"
+					}, {
+						"side": "French",
+						"level": "Substantial",
+						"conditions": "Capture and hold one hex of Weissig and the Eichberg and place Yorck's Korps on a Morale Level"
+					}, {
+						"side": "French",
+						"level": "Marginal",
+						"conditions": "Place Yorck's Korps on a Morale Level"
+					}, {
+						"side": "",
+						"level": "Draw",
+						"conditions": "Any other results than those listed"
+					}, {
+						"side": "Coalition",
+						"level": "Marginal",
+						"conditions": "Place V Corps on a Morale Level"
+					}, {
+						"side": "Coalition",
+						"level": "Substantial",
+						"conditions": "Hold one hex of Weissig and the Eichberg and place V Corps on a Morale Level"
+					}, {
+						"side": "Coalition",
+						"level": "Decisive",
+						"conditions": "Capture and hold both hexes of Weissig and the Eichberg and Place V Corps on a Morale Level"
+					}
+				]
+			},		
+			
+			{
+				"id": 10066,
+				"name": "The Guard Attacks",
+				"start": {
+					"year": 1813,
+					"month": 5,
+					"day": 21,
+					"hour": 13,
+					"minute": 0
+				},
+				"end": {
+					"year": 1813,
+					"month": 5,
+					"day": 21,
+					"hour": 16,
+					"minute": 20
+				},
+				"victory": [
+					{
+						"side": "French",
+						"level": "Decisive",
+						"conditions": "Positions must be occupied by the French and held to the end of the scenario: Waditz, Baschütz, Kubschütz, Canitz. - Christ. and Kumschultz"
+					}, {
+						"side": "French",
+						"level": "Substantial",
+						"conditions": "Positions must be occupied by the French and held to the end of the scenario: Baschütz, Kubschütz, Canitz. - Christ. and Kumschultz"
+					}, {
+						"side": "French",
+						"level": "Marginal",
+						"conditions": "Positions must be occupied by the French and held to the end of the scenario: Baschütz, Kubschütz, and Canitz. - Christ."
+					}, {
+						"side": "",
+						"level": "Draw",
+						"conditions": "Positions must be occupied by the French and held to the end of the scenario: Baschütz and Canitz. - Christ."
+					}, {
+						"side": "Coalition",
+						"level": "Marginal",
+						"conditions": "Positions must be occupied by the French and held to the end of the scenario: Baschütz"
+					}, {
+						"side": "Coalition",
+						"level": "Substantial",
+						"conditions": "None of the above"
+					}, {
+						"side": "Coalition",
+						"level": "Decisive",
+						"conditions": "None of the above"
+					}
+				]
+			},
+			
+			{
+				"id": 10067,
+				"name": "Oudinot’s Offensive Stalls",
+				"start": {
+					"year": 1813,
+					"month": 5,
+					"day": 21,
+					"hour": 6,
+					"minute": 0
+				},
+				"end": {
+					"year": 1813,
+					"month": 5,
+					"day": 21,
+					"hour": 9,
+					"minute": 20
+				},
+				"victory": [
+					{
+						"side": "French",
+						"level": "Decisive",
+						"conditions": "Positions must be occupied by the French and held to the end of the scenario: Reichen, Mehlteur, Bielitz, Gros-kunitz, Panitz, Daranitz and Rabnitz"
+					}, {
+						"side": "French",
+						"level": "Substantial",
+						"conditions": "Positions must be occupied by the French and held to the end of the scenario: Reichen, Bielitz, Panitz, Daranitz and Rabnitz"
+					}, {
+						"side": "French",
+						"level": "Marginal",
+						"conditions": "Positions must be occupied by the French and held to the end of the scenario: Reichen, Bielitz and Rabnitz"
+					}, {
+						"side": "",
+						"level": "Draw",
+						"conditions": "Positions must be occupied by the French and held to the end of the scenario: Reichen and Rabnitz"
+					}, {
+						"side": "Coalition",
+						"level": "Marginal",
+						"conditions": "Positions must be occupied by the French and held to the end of the scenario: Reichen or Rabnitz"
+					}, {
+						"side": "Coalition",
+						"level": "Substantial",
+						"conditions": "XI Corps on at least Morale Level One, at any time or XII Corps on at least Morale Level One, at any time"
+					}, {
+						"side": "Coalition",
+						"level": "Decisive",
+						"conditions": "XI and XII Corps on at least Morale Level One, at any time"
+					}
+				]
+			}		
+			
+		]
+	},	
 	
 	{
 	    "id": 31,
