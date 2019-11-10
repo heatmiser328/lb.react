@@ -17,7 +17,7 @@ var FireAttackerView = React.createClass({
                     <View style={{flex:1}}/>
                 </View>
                 <View style={{flex: 3}}>
-                    <DetailView value={this.props.value} onSet={this.props.onChanged} onAdd={this.props.onAdd} />
+                    <DetailView value={this.props.value} battle={this.props.battle} onSet={this.props.onChanged} onAdd={this.props.onAdd} />
                 </View>
             </View>
         );

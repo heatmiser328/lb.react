@@ -46,7 +46,7 @@ var ArtilleryView = React.createClass({
             <View style={{flex:1}}>
                 <Text style={{fontSize: Style.Font.mediumlarge(),fontWeight: 'bold',backgroundColor: 'silver', textAlign: 'center'}}>Artillery Limber</Text>
                 <View style={{flex:1, flexDirection:'row'}}>
-                    <View style={{flex:9, flexDirection:'row'}}>
+                    <View style={{flex:7, flexDirection:'row'}}>
                         <View style={{flex:3}}>
                             <RadioButtonGroup title={'Type'} labelFontSize={Style.Size.Label} direction={'vertical'}
                                 buttons={this.types().map((t) => ({label:t,value:t,fontSize: Style.Size.ListItem}))}
@@ -61,7 +61,7 @@ var ArtilleryView = React.createClass({
                                 onChanged={this.onModChanged}/>
                         </View>
                     </View>
-                    <View style={{flex:5, backgroundColor: 'whitesmoke', alignItems:'center', justifyContent: 'flex-end'}}>
+                    <View style={{flex:3, backgroundColor: 'whitesmoke', alignItems:'center', justifyContent: 'flex-end'}}>
                         <View style={{flex:.5}} />
                         <View style={{flex:1, alignItems:'center'}}>
                             <Text style={{fontSize: Style.Font.large(), fontWeight: 'bold'}}>{this.state.results}</Text>

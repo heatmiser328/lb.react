@@ -1921,15 +1921,15 @@
 						"level": "Draw",
 						"conditions": "6-5 Russian Heavy Batteries get within six hexes of Waditz and either road from there to the eastern edge must be free of enemy Zone d’influence."
 					}, {
-						"side": "Coalition",
+						"side": "PrussianRussian",
 						"level": "Marginal",
 						"conditions": "9-7 Russian Heavy Batteries get within six hexes of Waditz and either road from there to the eastern edge must be free of enemy Zone d’influence."
 					}, {
-						"side": "Coalition",
+						"side": "PrussianRussian",
 						"level": "Substantial",
 						"conditions": "12-10 Russian Heavy Batteries get within six hexes of Waditz and either road from there to the eastern edge must be free of enemy Zone d’influence."
 					}, {
-						"side": "Coalition",
+						"side": "PrussianRussian",
 						"level": "Decisive",
 						"conditions": "15 -13 Russian Heavy Batteries get within six hexes of Waditz and either road from there to the eastern edge must be free of enemy Zone d’influence."
 					}
@@ -1971,15 +1971,15 @@
 						"level": "Draw",
 						"conditions": "Positions must be occupied by the French and held to the end of the scenario: Brosa, Gottemelda"
 					}, {
-						"side": "Coalition",
+						"side": "PrussianRussian",
 						"level": "Marginal",
 						"conditions": "Positions must be occupied by the French and held to the end of the scenario: Brosa or Malschwitz OR III on Level one"
 					}, {
-						"side": "Coalition",
+						"side": "PrussianRussian",
 						"level": "Substantial",
 						"conditions": "Positions must be occupied by the French and held to the end of the scenario: Brosa"
 					}, {
-						"side": "Coalition",
+						"side": "PrussianRussian",
 						"level": "Decisive",
 						"conditions": "None of the above cities captured or III on Level Two"
 					}
@@ -2021,15 +2021,15 @@
 						"level": "Draw",
 						"conditions": "Any other results than those listed"
 					}, {
-						"side": "Coalition",
+						"side": "PrussianRussian",
 						"level": "Marginal",
 						"conditions": "Eliminate 10 increments of enemy infantry / Place V Corps on a Morale Level"
 					}, {
-						"side": "Coalition",
+						"side": "PrussianRussian",
 						"level": "Substantial",
 						"conditions": "Eliminate 20 increments of enemy infantry and one battery / Hold one hex of Weissig and the Eichberg and place V Corps on a Morale Level"
 					}, {
-						"side": "Coalition",
+						"side": "PrussianRussian",
 						"level": "Decisive",
 						"conditions": "Capture all the hexes of Königswartha and Caminau hold until the end of the game / Capture and hold both hexes of Weissig and the Eichberg and Place V Corps on a Morale Level"
 					}
@@ -2071,15 +2071,15 @@
 						"level": "Draw",
 						"conditions": "Any other results than those listed"
 					}, {
-						"side": "Coalition",
+						"side": "PrussianRussian",
 						"level": "Marginal",
 						"conditions": "Eliminate 10 increments of enemy infantry"
 					}, {
-						"side": "Coalition",
+						"side": "PrussianRussian",
 						"level": "Substantial",
 						"conditions": "Eliminate 20 increments of enemy infantry and one battery"
 					}, {
-						"side": "Coalition",
+						"side": "PrussianRussian",
 						"level": "Decisive",
 						"conditions": "Capture all the hexes of Königswartha and Caminau hold until the end of the game"
 					}
@@ -2121,15 +2121,15 @@
 						"level": "Draw",
 						"conditions": "Any other results than those listed"
 					}, {
-						"side": "Coalition",
+						"side": "PrussianRussian",
 						"level": "Marginal",
 						"conditions": "Place V Corps on a Morale Level"
 					}, {
-						"side": "Coalition",
+						"side": "PrussianRussian",
 						"level": "Substantial",
 						"conditions": "Hold one hex of Weissig and the Eichberg and place V Corps on a Morale Level"
 					}, {
-						"side": "Coalition",
+						"side": "PrussianRussian",
 						"level": "Decisive",
 						"conditions": "Capture and hold both hexes of Weissig and the Eichberg and Place V Corps on a Morale Level"
 					}
@@ -2171,15 +2171,15 @@
 						"level": "Draw",
 						"conditions": "Positions must be occupied by the French and held to the end of the scenario: Baschütz and Canitz. - Christ."
 					}, {
-						"side": "Coalition",
+						"side": "PrussianRussian",
 						"level": "Marginal",
 						"conditions": "Positions must be occupied by the French and held to the end of the scenario: Baschütz"
 					}, {
-						"side": "Coalition",
+						"side": "PrussianRussian",
 						"level": "Substantial",
 						"conditions": "None of the above"
 					}, {
-						"side": "Coalition",
+						"side": "PrussianRussian",
 						"level": "Decisive",
 						"conditions": "None of the above"
 					}
@@ -2221,15 +2221,15 @@
 						"level": "Draw",
 						"conditions": "Positions must be occupied by the French and held to the end of the scenario: Reichen and Rabnitz"
 					}, {
-						"side": "Coalition",
+						"side": "PrussianRussian",
 						"level": "Marginal",
 						"conditions": "Positions must be occupied by the French and held to the end of the scenario: Reichen or Rabnitz"
 					}, {
-						"side": "Coalition",
+						"side": "PrussianRussian",
 						"level": "Substantial",
 						"conditions": "XI Corps on at least Morale Level One, at any time or XII Corps on at least Morale Level One, at any time"
 					}, {
-						"side": "Coalition",
+						"side": "PrussianRussian",
 						"level": "Decisive",
 						"conditions": "XI and XII Corps on at least Morale Level One, at any time"
 					}

@@ -1,6 +1,201 @@
 {
 	"fire": {
 		"attack": {
+			"French": {
+				"Ligne": {
+					"Column": {"label":"Printed","density":5,"factor":1},
+                    "Line": {"label":"x3","density":4,"factor":3},
+                    "Carre": {"label":"x3","density":8,"factor":3},
+                    "General": {"label":"Printed","density":5,"factor":1}
+				},
+                "Legere": {
+					"Column": {"label":"Printed","density":5,"factor":1},
+                    "Line": {"label":"x3","density":4,"factor":3},
+                    "Carre": {"label":"x3","density":8,"factor":3},
+                    "General": {"label":"Printed","density":5,"factor":1},
+                    "Skirmish": {"label":"x3","density":3,"factor":3}
+				},
+                "Marin": {
+					"Column": {"label":"Printed","density":5,"factor":1},
+                    "Line": {"label":"x3","density":4,"factor":3},
+                    "Carre": {"label":"x3","density":8,"factor":3},
+                    "General": {"label":"Printed","density":5,"factor":1}
+				},
+                "Gd Nat": {
+					"Column": {"label":"Printed","density":5,"factor":1},
+                    "Line": {"label":"x2","density":4,"factor":2},
+                    "Carre": {"label":"x2","density":4,"factor":2},
+                    "General": {"label":"Printed","density":5,"factor":1}
+				},
+                "Gd Nat Lt": {
+					"Column": {"label":"Printed","density":5,"factor":1},
+                    "Line": {"label":"x2","density":4,"factor":2},
+                    "Carre": {"label":"x2","density":4,"factor":2},
+					"General": {"label":"Printed","density":5,"factor":1},
+					"Skirmish": {"label":"x2","density":3,"factor":2}					
+				},
+				"Prov. Ligne": {
+					"Column": {"label":"Printed","density":5,"factor":1},
+                    "General": {"label":"Printed","density":5,"factor":1}
+				},
+                "Prov. Legere": {
+					"Column": {"label":"Printed","density":5,"factor":1},
+                    "General": {"label":"Printed","density":5,"factor":1},
+                    "Skirmish": {"label":"x2","density":3,"factor":2}
+				},
+                "Jeune Garde T/V": {
+					"Column": {"label":"Printed","density":8,"factor":1},
+                    "Line": {"label":"x3","density":4,"factor":3},
+                    "Carre": {"label":"x3","density":8,"factor":3},
+                    "General": {"label":"Printed","density":8,"factor":1},
+                    "Skirmish": {"label":"x3","density":3,"factor":3}
+				},
+                "Fusilier G/C": {
+					"Column": {"label":"Printed","density":8,"factor":1},
+                    "Line": {"label":"x4","density":4,"factor":4},
+                    "Carre": {"label":"x4","density":8,"factor":4},
+                    "General": {"label":"Printed","density":8,"factor":1},
+                    "Skirmish": {"label":"x3","density":3,"factor":3}
+				},
+                "Vielle Garde G/C": {
+					"Column": {"label":"Printed","density":8,"factor":1},
+                    "Line": {"label":"x5","density":4,"factor":5},
+                    "Carre": {"label":"x5","density":8,"factor":5},
+                    "General": {"label":"Printed","density":8,"factor":1},
+                    "Skirmish": {"label":"x5","density":3,"factor":5}
+				},
+
+                "Italien": {
+					"Column": {"label":"Printed","density":5,"factor":1},
+                    "Line": {"label":"x2","density":4,"factor":2},
+                    "Carre": {"label":"x2","density":5,"factor":2},
+                    "General": {"label":"Printed","density":5,"factor":1},
+                    "Skirmish": {"label":"x2","density":3,"factor":2}
+				},
+                "Rheinbund": {
+					"Column": {"label":"Printed","density":6,"factor":1},
+                    "Line": {"label":"x2","density":4,"factor":2},
+                    "Carre": {"label":"x2","density":6,"factor":2},
+                    "General": {"label":"Printed","density":6,"factor":1},
+                    "Skirmish": {"label":"x2","density":3,"factor":2}
+				},
+                "Foreign": {
+					"Column": {"label":"Printed","density":6,"factor":1},
+                    "Line": {"label":"x2","density":4,"factor":2},
+                    "Carre": {"label":"x2","density":6,"factor":2},
+                    "General": {"label":"Printed","density":6,"factor":1},
+                    "Skirmish": {"label":"x2","density":3,"factor":2}
+				},
+                "Velites": {
+					"Column": {"label":"Printed","density":6,"factor":1},
+                    "Line": {"label":"x3","density":4,"factor":3},
+                    "Carre": {"label":"x3","density":6,"factor":3},
+                    "General": {"label":"Printed","density":6,"factor":1}
+				}
+			},
+
+            "Russian": {
+                "Grenadier": {
+					"Column": {"label":"Printed","density":5,"factor":1},
+                    "Line": {"label":"x3","density":4,"factor":3},
+                    "Carre": {"label":"x3","density":4,"factor":3},
+                    "General": {"label":"Printed","density":5,"factor":1}
+				},
+                "Jaeger": {
+					"Column": {"label":"Printed","density":5,"factor":1},
+                    "Line": {"label":"x3","density":4,"factor":3},
+                    "Carre": {"label":"x3","density":4,"factor":3},
+                    "General": {"label":"Printed","density":5,"factor":1},
+                    "Skirmish": {"label":"x3","density":3,"factor":3}
+				},
+                "Guard": {
+					"Column": {"label":"Printed","density":5,"factor":1},
+					"Line": {"label":"x3","density":4,"factor":3},
+                    "Carre": {"label":"x3","density":4,"factor":3},
+                    "General": {"label":"Printed","density":5,"factor":1}
+				},
+                "Gd Jaeger": {
+					"Column": {"label":"Printed","density":5,"factor":1},
+					"Line": {"label":"x4","density":4,"factor":4},
+                    "Carre": {"label":"x5","density":4,"factor":5},
+                    "General": {"label":"Printed","density":5,"factor":1},
+                    "Skirmish": {"label":"x4","density":3,"factor":4}
+				},
+                "Infantrie": {
+					"Column": {"label":"Printed","density":5,"factor":1},
+					"Line": {"label":"x2","density":4,"factor":2},
+                    "Carre": {"label":"x2","density":4,"factor":2},
+                    "General": {"label":"Printed","density":5,"factor":1}
+				}
+			},
+            "Prussian": {
+                "Infantrie": {
+					"Column": {"label":"Printed","density":6,"factor":1},
+					"Line": {"label":"x3","density":4,"factor":3},
+                    "Carre": {"label":"x3","density":6,"factor":3},
+                    "General": {"label":"Printed","density":6,"factor":1}
+				},
+                "Jaeger": {
+					"Column": {"label":"Printed","density":5,"factor":1},
+                    "Line": {"label":"x3","density":4,"factor":3},
+                    "Carre": {"label":"x3","density":5,"factor":3},
+                    "General": {"label":"Printed","density":5,"factor":1},
+                    "Skirmish": {"label":"x5*","density":3,"factor":5}
+				},
+                "Grenadier": {
+					"Column": {"label":"Printed","density":5,"factor":1},
+                    "Line": {"label":"x3","density":4,"factor":3},
+                    "Carre": {"label":"x4","density":4,"factor":4},
+                    "General": {"label":"Printed","density":5,"factor":1}
+				},
+                "Fusilier": {
+					"Column": {"label":"Printed","density":5,"factor":1},
+                    "Line": {"label":"x3","density":4,"factor":3},
+                    "Carre": {"label":"x3","density":5,"factor":3},
+                    "General": {"label":"Printed","density":5,"factor":1},
+                    "Skirmish": {"label":"x4","density":3,"factor":4}
+				},
+                "Normal": {
+					"Column": {"label":"Printed","density":5,"factor":1},
+                    "Line": {"label":"x4","density":4,"factor":4},
+                    "Carre": {"label":"x3","density":4,"factor":3},
+                    "General": {"label":"Printed","density":5,"factor":1}
+				},
+
+                "Guard": {
+					"Column": {"label":"Printed","density":5,"factor":1},
+					"Line": {"label":"x3","density":4,"factor":3},
+                    "Carre": {"label":"x3","density":4,"factor":3},
+                    "General": {"label":"Printed","density":5,"factor":1}
+				},
+                "Fus Gd": {
+					"Column": {"label":"Printed","density":5,"factor":1},
+                    "Line": {"label":"x4","density":4,"factor":4},
+                    "Carre": {"label":"x4","density":5,"factor":4},
+                    "General": {"label":"Printed","density":5,"factor":1},
+                    "Skirmish": {"label":"x4","density":3,"factor":4}
+				},
+                "Schuetzen": {
+					"Column": {"label":"Printed","density":5,"factor":1},
+                    "Line": {"label":"x3","density":4,"factor":3},
+                    "Carre": {"label":"x2","density":5,"factor":2},
+                    "General": {"label":"Printed","density":5,"factor":1},
+                    "Skirmish": {"label":"x4*","density":3,"factor":4}
+				},
+                "Gd Jaeger": {
+					"Column": {"label":"Printed","density":5,"factor":1},
+					"Line": {"label":"x4","density":4,"factor":4},
+                    "Carre": {"label":"x2","density":4,"factor":2},
+                    "General": {"label":"Printed","density":5,"factor":1},
+                    "Skirmish": {"label":"x5*","density":3,"factor":5}
+				},
+                "Reserve": {
+					"Column": {"label":"Printed","density":5,"factor":1},
+					"Line": {"label":"x2","density":4,"factor":2},
+                    "Carre": {"label":"x2","density":4,"factor":2},
+                    "General": {"label":"Printed","density":5,"factor":1}
+				}
+            }
 		},
 		"defense": {
 			"terrain": {
@@ -648,7 +843,29 @@
 					{"level": 3, "desc": "6+ battalions lost/routed", "mod": -9}
 				]
 			}			
-		]		
-	
-	}
+		]			
+	},
+	"movement": {
+		"terrain": {
+			"Clear": { "img": "terrain_clear", "Inf": "1", "Cav": "1", "Art": "1" },			
+			"Hamlet": { "img": "terrain_hamlet", "Inf": "3", "Cav": "3", "Art": "3" },
+			"Village": { "img": "terrain_village", "Inf": "3", "Cav": "3", "Art": "3" },
+			"Town": { "img": "terrain_town", "Inf": "3", "Cav": "3", "Art": "3" },
+			"Earthworks": { "img": "terrain_earthworks", "Inf": "5", "Cav": "NA", "Art": "NA" },
+			"Carp Ponds": { "img": "terrain_carpponds", "Inf": "NA", "Cav": "NA", "Art": "NA" },
+			"Entrenchments": { "img": "terrain_entrenchments", "Inf": "5", "Cav": "NA", "Art": "NA" },
+			"Swamp": { "img": "terrain_swamp", "Inf": "4", "Cav": "NA", "Art": "NA" },
+			"Woods": { "img": "terrain_woods", "Inf": "4", "Cav": "5", "Art": "NA" },
+			"Garden": { "img": "terrain_garden", "Inf": "2", "Cav": "2", "Art": "4" },
+			"Slope": { "img": "terrain_slope", "Inf": "+2", "Cav": "+3", "Art": "+4" },
+			"Road": { "img": "terrain_road", "Inf": "1/2", "Cav": "1/2", "Art": "1/2" },
+			"Bridge (Spree)": { "img": "terrain_bridge", "Inf": "3", "Cav": "3", "Art": "3" },
+			"Streams": { "img": "terrain_streams", "Inf": "+3", "Cav": "+5", "Art": "+4" },
+			"Bridge (Stream)": { "img": "terrain_bridge", "Inf": "+2", "Cav": "+4", "Art": "+2" },
+			"Ford": { "img": "terrain_ford", "Inf": "+4", "Cav": "+9", "Art": "NA" },
+			"Spree": { "img": "terrain_spree", "Inf": "+5", "Cav": "+10", "Art": "NA" },
+			"Woods Pathway": { "img": "terrain_woodspathway", "Inf": "3", "Cav": "+3", "Art": "NA" },
+			"Schiessscharte": { "img": "terrain_schiessscharte", "Inf": "4", "Cav": "NA", "Art": "NA" }			
+		}		
+	}	
 }
