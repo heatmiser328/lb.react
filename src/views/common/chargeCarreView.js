@@ -85,6 +85,7 @@ var ChargeCarreView = React.createClass({
     },
     render() {
         let iconsize = (Math.min(this.state.height, this.state.width) * 0.9) || 16;
+        let table = this.rules().table[this.state.nationality][this.state.formation][this.state.distance] || [];
         return (
             <View style={{flex: 1}}>
                 <View style={{flex:1, backgroundColor: 'whitesmoke'}}>
@@ -124,6 +125,21 @@ var ChargeCarreView = React.createClass({
                                     state={this.state.distance}
                                     onSelected={this.onDistanceChanged}/>
                             </View>
+                        </View>
+                        <View style={{flex:2, justifyContent: 'flex-start'}}>
+                            {table.map((x,i) => 
+                                <View key={i} style={{flexDirection: 'row', justifyContent: 'flex-start', paddingTop:5}}>
+                                    <View style={{flex:1, alignItems:'center',justifyContent:'center'}}>
+                                        <Image style={{height: iconsize, width: iconsize, resizeMode: 'stretch'}} source={Icons[x.result]} />
+                                    </View>
+                                    <View style={{flex:1, alignItems:'center',justifyContent:'center'}}>
+                                        <Text style={{fontSize: Style.Font.large(), fontWeight: 'bold', textAlign: 'center'}}>{x.low}</Text>
+                                    </View>
+                                    <View style={{flex:1, alignItems:'center',justifyContent:'center'}}>
+                                        <Text style={{fontSize: Style.Font.large(), fontWeight: 'bold', textAlign: 'center'}}>{x.high}</Text>
+                                    </View>
+                                </View>
+                            )}
                         </View>
                     </View>
                     {/*modifiers*/}
