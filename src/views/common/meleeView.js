@@ -1,13 +1,16 @@
 import React from 'react';
 import { View, Text } from 'react-native';
+import ScrollableTabView from 'react-native-scrollable-tab-view';
 import {DiceRoll} from 'react-native-dice';
 import MeleeStrengthView from './meleeStrengthView';
+import MeleeResultsView from './meleeResultsView';
 import OddsView from './oddsView';
 import CombatResultsView from './combatResultsView';
 import DiceModifiersView from './diceModifiersView';
 import MeleeCalcView from './meleeCalcView';
 import Melee from '../../services/melee';
 import Base6 from '../../services/base6';
+import Style from '../../services/style';
 
 var MeleeView = React.createClass({
     dice: [
@@ -21,6 +24,7 @@ var MeleeView = React.createClass({
     ],
     getInitialState() {
         return {
+            initialPage: 0,
             attack: '0',
             defend: '0',
             odds: Melee.defaultOdds,
@@ -122,6 +126,49 @@ var MeleeView = React.createClass({
                 </View>              
               </View>
               <View style={{flex:1.25}}>
+                  {this.props.battle.rules && this.props.battle.rules.melee && this.props.battle.rules.melee.results
+                        ? <ScrollableTabView
+                                style={{backgroundColor: '#fff'}}
+                                tabBarTextStyle={{fontSize: Style.Font.mediumlarge()}}                
+                                initialPage={this.state.initialPage}                    
+                            >
+                                <View style={{flex:1}} tabLabel="Resolve">
+                                    <View style={{flex: 1, flexDirection: 'row'}}>
+                                        <View style={{flex: 2}}>
+                                            <MeleeStrengthView label={'Attacker'} value={this.state.attack} onChanged={this.onAttackerChanged} />
+                                        </View>
+                                        <View style={{flex: 1}}>
+                                            <OddsView odds={Melee.odds} value={this.state.odds} onChanged={this.onOddsChanged} />
+                                        </View>
+                                        <View style={{flex: 2}}>
+                                            <MeleeStrengthView label={'Defender'} value={this.state.defend} onChanged={this.onDefenderChanged} />
+                                        </View>
+                                    </View>                
+                                    <View style={{flex: 3.25}}>
+                                        <MeleeCalcView side={'attack'} battle={this.props.battle} onSet={this.onSetMelee}  onAdd={this.onAddMelee} />                                    
+                                    </View>
+                                </View>
+                                <MeleeResultsView tabLabel="Results" battle={this.props.battle} />
+                            </ScrollableTabView>                
+                        : <View style={{flex:1}} >
+                            <View style={{flex: 1, flexDirection: 'row'}}>
+                                <View style={{flex: 2}}>
+                                    <MeleeStrengthView label={'Attacker'} value={this.state.attack} onChanged={this.onAttackerChanged} />
+                                </View>
+                                <View style={{flex: 1}}>
+                                    <OddsView odds={Melee.odds} value={this.state.odds} onChanged={this.onOddsChanged} />
+                                </View>
+                                <View style={{flex: 2}}>
+                                    <MeleeStrengthView label={'Defender'} value={this.state.defend} onChanged={this.onDefenderChanged} />
+                                </View>
+                            </View>                
+                            <View style={{flex: 3.25}}>
+                                <MeleeCalcView side={'attack'} battle={this.props.battle} onSet={this.onSetMelee}  onAdd={this.onAddMelee} />                                    
+                            </View>
+                        </View>
+                  }                    
+
+                {/*
                 <View style={{flex: 1, flexDirection: 'row'}}>
                     <View style={{flex: 2}}>
                         <MeleeStrengthView label={'Attacker'} value={this.state.attack} onChanged={this.onAttackerChanged} />
@@ -132,10 +179,21 @@ var MeleeView = React.createClass({
                     <View style={{flex: 2}}>
                         <MeleeStrengthView label={'Defender'} value={this.state.defend} onChanged={this.onDefenderChanged} />
                     </View>
-                </View>
+                </View>                
                 <View style={{flex: 3.25}}>
-                    <MeleeCalcView side={'attack'} battle={this.props.battle} onSet={this.onSetMelee}  onAdd={this.onAddMelee} />
+                    {this.props.battle.rules && this.props.battle.rules.melee && this.props.battle.rules.melee.results
+                        ? <ScrollableTabView
+                                style={{backgroundColor: '#fff'}}
+                                tabBarTextStyle={{fontSize: Style.Font.mediumlarge()}}                
+                                initialPage={this.state.initialPage}                    
+                            >
+                                <MeleeCalcView tabLabel="Calculate" side={'attack'} battle={this.props.battle} onSet={this.onSetMelee}  onAdd={this.onAddMelee} />
+                                <MeleeResultsView tabLabel="Results" battle={this.props.battle} />
+                            </ScrollableTabView>                
+                        : <MeleeCalcView tabLabel="Calculate" side={'attack'} battle={this.props.battle} onSet={this.onSetMelee}  onAdd={this.onAddMelee} />
+                    }                    
                 </View>
+                */}
               </View>
           </View>
         );

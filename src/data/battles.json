@@ -2234,7 +2234,58 @@
 						"conditions": "XI and XII Corps on at least Morale Level One, at any time"
 					}
 				]
-			}		
+			},
+
+			{
+				"id": 10068,
+				"name": "Grand Battle - Early Start",
+				"start": {
+					"year": 1813,
+					"month": 5,
+					"day": 21,
+					"hour": 6,
+					"minute": 0
+				},
+				"end": {
+					"year": 1813,
+					"month": 5,
+					"day": 21,
+					"hour": 16,
+					"minute": 0
+				},
+				"victory": [
+					{
+						"side": "French",
+						"level": "Decisive",
+						"conditions": "No Russian Heavy Artillery get within six hexes of Wanitz and either road from there to the eastern edge must be free of enemy Zone d’influence."
+					}, {
+						"side": "French",
+						"level": "Substantial",
+						"conditions": "2-1 Russian Heavy Batteries get within six hexes of Waditz and either road from there to the eastern edge must be free of enemy Zone d’influence."
+					}, {
+						"side": "French",
+						"level": "Marginal",
+						"conditions": "4-3 Russian Heavy Batteries get within six hexes of Waditz and either road from there to the eastern edge must be free of enemy Zone d’influence."
+					}, {
+						"side": "",
+						"level": "Draw",
+						"conditions": "6-5 Russian Heavy Batteries get within six hexes of Waditz and either road from there to the eastern edge must be free of enemy Zone d’influence."
+					}, {
+						"side": "PrussianRussian",
+						"level": "Marginal",
+						"conditions": "9-7 Russian Heavy Batteries get within six hexes of Waditz and either road from there to the eastern edge must be free of enemy Zone d’influence."
+					}, {
+						"side": "PrussianRussian",
+						"level": "Substantial",
+						"conditions": "12-10 Russian Heavy Batteries get within six hexes of Waditz and either road from there to the eastern edge must be free of enemy Zone d’influence."
+					}, {
+						"side": "PrussianRussian",
+						"level": "Decisive",
+						"conditions": "15 -13 Russian Heavy Batteries get within six hexes of Waditz and either road from there to the eastern edge must be free of enemy Zone d’influence."
+					}
+				]
+			},
+
 			
 		]
 	},	

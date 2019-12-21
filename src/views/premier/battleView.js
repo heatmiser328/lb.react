@@ -7,7 +7,7 @@ import ChargeView from '../common/chargeView';
 import MovementView from '../common/movementView';
 import FireView from '../common/fireView';
 import FireAttackerDetailView from '../advanced/fireAttackerDetailView2';
-import FireDefenderDetailView from '../advanced/fireDefenderDetailView';
+import FireDefenderDetailView from '../advanced/fireDefenderDetailView2';
 import AssaultView from '../common/assaultView';
 import MeleeView from '../common/meleeView';
 import MoraleView from '../common/moraleView';
@@ -26,7 +26,7 @@ var BattleView = React.createClass({
                     initialPage={this.props.initialPage}                    
                 >
                     <ChargeView tabLabel="Charge" battle={this.props.battle} />
-                    {this.props.battle.rules && this.props.battle.rules.movement ? <MovementView tabLabel="Move" battle={this.props.battle} /> : null}
+                    {this.props.battle.rules && this.props.battle.rules.maneuver && this.props.battle.rules.maneuver.terrain ? <MovementView tabLabel="Move" battle={this.props.battle} /> : null}
                     <FireView tabLabel="Fire" battle={this.props.battle} attsize={3}
                         attackerDetail={FireAttackerDetailView} 
                         defenderDetail={FireDefenderDetailView} />
@@ -35,7 +35,7 @@ var BattleView = React.createClass({
                     <MoraleView tabLabel="Morale" battle={this.props.battle} />
                     <GeneralView tabLabel="General" battle={this.props.battle}>
                         <View style={{flex:8}}>
-                            {!this.props.battle.rules || !this.props.battle.rules.movement ? <ArtilleryView /> : null}
+                            {!this.props.battle.rules || !this.props.battle.rules.maneuver || !this.props.battle.rules.maneuver.terrain ? <ArtilleryView /> : null}
                         </View>                        
                     </GeneralView>
                     {this.props.battle.victory ? <VictoryView tabLabel="Victory" battle={this.props.battle} /> : null}
