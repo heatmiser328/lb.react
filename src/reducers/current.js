@@ -92,7 +92,7 @@ module.exports = (state = defaultState, action) => {
         let player = state.player;
         let turn = state.turn;
 		if (phase < 0) {
-			phase = action.value - 1;
+			phase = action.value.maxphases - 1;
             if (action.value.changeplayer) {
                 if (player == 0) {
                     turn = prevTurn(state.turn);

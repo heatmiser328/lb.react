@@ -52,7 +52,7 @@ export const nextTurn = () => (dispatch,getState) => {
 
 export const prevPhase = () => (dispatch,getState) => {    
     const {current} = getState();
-    dispatch({type: types.PREV_PHASE, value: Phases.count(current.ruleset)});
+    dispatch({type: types.PREV_PHASE, value: {maxphases: Phases.count(current.ruleset), changeplayer: (current.ruleset!=5)}});
 }
 export const nextPhase = () => (dispatch,getState) => {    
     const {current} = getState();
