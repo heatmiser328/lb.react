@@ -2291,6 +2291,53 @@
 	},	
 	
 	{
+		"id": 1007,
+		"name": "La Battaille de Hagelberg 1813",
+		"publisher": "Marshal Enterprises",
+		"image": "hagelberg",
+		"sides": ["French", "PrussianRussian"],
+		"scenarios": [
+			{
+				"id": 10061,
+				"name": "Main Battle",
+				"start": {
+					"year": 1813,
+					"month": 8,
+					"day": 27,
+					"hour": 6,
+					"minute": 0
+				},
+				"end": {
+					"year": 1813,
+					"month": 8,
+					"day": 27,
+					"hour": 11,
+					"minute": 0
+				},
+				"victory": [
+					{
+						"side": "French",
+						"level": "Substantial",
+						"conditions": "Hold one hex of Hagelberg and two full hexes of Klein Glien"
+					}, {
+						"side": "French",
+						"level": "Marginal",
+						"conditions": "Hold the two full hexes of Klein Glien"
+					}, {
+						"side": "PrussianRussian",
+						"level": "Marginal",
+						"conditions": "Hold all hexes of Lubnitz and Hagelberg"
+					}, {
+						"side": "PrussianRussian",
+						"level": "Substantial",
+						"conditions": "Hold all hexes of Lubnitz, Hagelberg and two full hexes of Klein Glien"
+					}
+				]
+			}			
+		]
+	},	
+		
+	{
 	    "id": 31,
 	    "name": "La Bataille de Vauchamps",
 	    "publisher": "ATO",

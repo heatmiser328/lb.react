@@ -1,0 +1,515 @@
+{	
+	"fire": {
+		"attack": {
+			"French": {
+				"Ligne": {
+					"Column": {"label":"Printed","density":6,"factor":1},
+                    "Line": {"label":"x2","density":4,"factor":2},
+                    "Carre": {"label":"x2","density":8,"factor":2},
+                    "General": {"label":"Printed","density":6,"factor":1}
+				},
+                "Legere": {
+					"Column": {"label":"Printed","density":6,"factor":1},
+                    "Line": {"label":"x2","density":4,"factor":2},
+                    "Carre": {"label":"x2","density":6,"factor":2},
+                    "General": {"label":"Printed","density":6,"factor":1},
+                    "Skirmish": {"label":"x2","density":3,"factor":2}
+				},
+                "Saxon Jager": {
+					"Column": {"label":"Printed","density":5,"factor":1},
+                    "Line": {"label":"x2","density":3,"factor":2},
+                    "Carre": {"label":"x2","density":3,"factor":2},
+                    "General": {"label":"Printed","density":5,"factor":1},
+                    "Skirmish": {"label":"x2","density":3,"factor":2}
+				},
+                "Saxon Line": {
+					"Column": {"label":"Printed","density":6,"factor":1},
+                    "Line": {"label":"x2","density":4,"factor":2},
+                    "Carre": {"label":"x2","density":5,"factor":2},
+                    "General": {"label":"Printed","density":6,"factor":1}
+				},
+                "Westphalian": {
+					"Column": {"label":"Printed","density":5,"factor":1},
+                    "Line": {"label":"x2","density":4,"factor":2},
+                    "Carre": {"label":"x2","density":4,"factor":2},
+                    "General": {"label":"Printed","density":5,"factor":1}
+				}
+			},
+			
+            "Prussian": {
+                "Landwehr": {
+					"Column": {"label":"Printed","density":4,"factor":1},
+                    "Carre": {"label":"x2","density":6,"factor":2},
+                    "General": {"label":"Printed","density":4,"factor":1},
+                    "Skirmish": {"label":"x2","density":3,"factor":2}
+				},
+                "Reserve": {
+					"Column": {"label":"Printed","density":6,"factor":1},
+					"Line": {"label":"x3","density":4,"factor":3},
+                    "Carre": {"label":"x2","density":4,"factor":2},
+                    "General": {"label":"Printed","density":6,"factor":1}
+				},
+                "Fusilier": {
+					"Column": {"label":"Printed","density":6,"factor":1},
+                    "Line": {"label":"x3","density":4,"factor":3},
+                    "Carre": {"label":"x3","density":6,"factor":3},
+                    "General": {"label":"Printed","density":5,"factor":1},
+                    "Skirmish": {"label":"x4","density":3,"factor":4}
+				},
+                "Elbe": {
+					"Column": {"label":"Printed","density":7,"factor":1},
+                    "Line": {"label":"x3","density":4,"factor":3},
+                    "Carre": {"label":"x3","density":6,"factor":3},
+                    "General": {"label":"Printed","density":7,"factor":1},
+                    "Skirmish": {"label":"x3","density":3,"factor":3}
+				}
+            }
+		},
+		"defense": {
+			"terrain": {
+				"Clear": {
+					"Col": {"label":"6","value":6},
+					"Line": {"label":"9","value":9},
+					"Carre": {"label":"4","value":4},
+					"Gen": {"label":"","value":0},
+					"Skirm": {"label":"12","value":12},
+					"D/PgD": {"label":"14","value":14},
+					"Arty": {"label":"6/8","value":8}					
+				},
+                "Woods": {
+					"Col": {"label":"","value":0},
+					"Line": {"label":"","value":0},
+					"Carre": {"label":"","value":0},
+					"Gen": {"label":"10","value":10},
+					"Skirm": {"label":"12","value":12},
+					"D/PgD": {"label":"16","value":16},
+					"Arty": {"label":"","value":0}
+				},
+                "Garden": {
+					"Col": {"label":"","value":0},
+					"Line": {"label":"","value":0},
+					"Carre": {"label":"","value":0},
+					"Gen": {"label":"10","value":10},
+					"Skirm": {"label":"12","value":12},
+					"D/PgD": {"label":"16","value":16},
+					"Arty": {"label":"6/8","value":8}
+				},
+                "Garden Wall": {
+					"Col": {"label":"","value":0},
+					"Line": {"label":"","value":0},
+					"Carre": {"label":"","value":0},
+					"Gen": {"label":"14","value":14},
+					"Skirm": {"label":"","value":0},
+					"D/PgD": {"label":"","value":0},
+					"Arty": {"label":"","value":0}
+				},
+                "Hamlet": {
+					"Col": {"label":"","value":0},
+					"Line": {"label":"","value":0},
+					"Carre": {"label":"","value":0},
+					"Gen": {"label":"10","value":10},
+					"Skirm": {"label":"12","value":12},
+					"D/PgD": {"label":"16","value":16},
+					"Arty": {"label":"6/8","value":8}
+				},
+                "Village": {
+					"Col": {"label":"","value":0},
+					"Line": {"label":"","value":0},
+					"Carre": {"label":"","value":0},
+					"Gen": {"label":"10","value":10},
+					"Skirm": {"label":"14","value":14},
+					"D/PgD": {"label":"16","value":16},
+					"Arty": {"label":"7/9","value":9}
+				}				
+			}		
+		},
+		"artillery": {
+			"limber": {
+				"table": {
+					"French a Pied": { "low": 4, "high": 6},
+					"Russian Light": { "low": 5, "high": 6}
+				},
+				"modifiers": [
+					{"name": "Arty Leader", "mod": 1}				
+				]			
+			}
+		}
+	},
+	"assault": {
+		"odds": [
+		    {"name": "1/2", "attmod": -6, "defmod": 6},
+			{"name": "1/1", "attmod": -3, "defmod": 3},
+		    {"name": "2/1", "attmod": 0, "defmod": 0},
+		    {"name": "3/1", "attmod": 3, "defmod": -3},
+		    {"name": "4/1", "attmod": 6, "defmod": -6},
+		    {"name": "5/1+", "attmod": 9, "defmod": -9}
+		],
+		"modifiers": [
+		    {"name": "Assaulted in flank", "type": "defend", "attmod": 0, "defmod": -12},
+		    {"name": "Assaulted in rear", "type": "defend", "attmod": 0, "defmod": -6},
+		    {"name": "In skirmish order", "type": "defend", "attmod": 99, "defmod": -6},
+		    {"name": "In Line", "type": "defend", "attmod": 0, "defmod": -3},
+		    {"name": "In Carre", "type": "defend", "attmod": 0, "defmod": 6},
+		    {"name": "Disordered", "type": "defend", "attmod": 0, "defmod": -3},
+		    {"name": "Routed", "type": "defend", "attmod": 0, "defmod": -6},
+			{"name": "50% losses", "type": "defend", "attmod": -6, "defmod": -6},
+		    {"name": "Assaulting up a slope", "type": "attack", "attmod": -2, "defmod": 2},
+		    {"name": "Casualty due to defensive fire", "type": "attack", "attmod": -3, "defmod": 0}	
+		]
+	},
+	"charge": {
+		"stand": {
+			"modifiers": [
+				{"name": "Charged in flank", "mod": -12},
+				{"name": "Charged in rear", "mod": -6},
+				{"name": "In Skirmish", "mod": -12},
+				{"name": "In Line", "mod": 3},
+				{"name": "Disorder", "mod": -6},			
+				{"name": "50% losses", "mod": -6},				
+				{"name": "Carre", "mod": 6},				
+				{"name": "Lancers", "mod": -6},				
+				{"name": "Across slope", "mod": 3}
+			]
+		},
+		"carre": {
+			"table": {
+				"French": {
+					"Column": {
+						"4": [
+							{"low": 11, "high": 62, "result": "Carre"},
+                            {"low": 63, "high": 66, "result": "Disorder"}
+						],
+                        "3": [
+							{"low": 11, "high": 56, "result": "Carre"},
+                            {"low": 61, "high": 66, "result": "Disorder"}
+						],
+                        "2": [
+							{"low": 11, "high": 33, "result": "Carre"},
+                            {"low": 34, "high": 54, "result": "Disorder"},
+                            {"low": 55, "high": 66, "result": "Rout"}
+						],
+                        "1": [
+							{"low": 11, "high": 21, "result": "Carre"},
+                            {"low": 22, "high": 51, "result": "Disorder"},
+                            {"low": 52, "high": 66, "result": "Rout"}
+						]
+					},
+                    "Line": {
+						"4": [
+							{"low": 11, "high": 53, "result": "Carre"},
+                            {"low": 54, "high": 65, "result": "Disorder"},
+							{"low": 66, "high": 66, "result": "Rout"}
+						],
+                        "3": [
+							{"low": 11, "high": 36, "result": "Carre"},
+                            {"low": 41, "high": 54, "result": "Disorder"},
+                            {"low": 55, "high": 66, "result": "Rout"}
+						],
+                        "2": [
+							{"low": 11, "high": 22, "result": "Carre"},
+                            {"low": 23, "high": 52, "result": "Disorder"},
+                            {"low": 53, "high": 66, "result": "Rout"}
+						],
+                        "1": [
+							{"low": 11, "high": 15, "result": "Carre"},
+                            {"low": 16, "high": 44, "result": "Disorder"},
+                            {"low": 45, "high": 66, "result": "Rout"}
+						]
+					}
+				},
+                "Rheinbund": {
+					"Column": {
+						"4": [
+                            {"low": 11, "high": 52, "result": "Carre"},
+                            {"low": 53, "high": 61, "result": "Disorder"},
+							{"low": 62, "high": 66, "result": "Rout"}							
+						],
+                        "3": [
+                            {"low": 11, "high": 46, "result": "Carre"},
+                            {"low": 51, "high": 55, "result": "Disorder"},
+                            {"low": 56, "high": 66, "result": "Rout"}
+						],
+                        "2": [
+							{"low": 11, "high": 35, "result": "Carre"},
+                            {"low": 36, "high": 52, "result": "Disorder"},
+                            {"low": 53, "high": 66, "result": "Rout"}
+						],
+                        "1": [
+							{"low": 11, "high": 22, "result": "Carre"},
+                            {"low": 23, "high": 45, "result": "Disorder"},
+                            {"low": 46, "high": 66, "result": "Rout"}
+						]
+					},
+                    "Line": {
+						"4": [
+                            {"low": 11, "high": 52, "result": "Carre"},
+                            {"low": 53, "high": 61, "result": "Disorder"},
+							{"low": 62, "high": 66, "result": "Rout"}							
+						],
+                        "3": [
+                            {"low": 11, "high": 46, "result": "Carre"},
+                            {"low": 51, "high": 55, "result": "Disorder"},
+                            {"low": 56, "high": 66, "result": "Rout"}
+						],
+                        "2": [
+							{"low": 11, "high": 35, "result": "Carre"},
+                            {"low": 36, "high": 52, "result": "Disorder"},
+                            {"low": 53, "high": 66, "result": "Rout"}
+						],
+                        "1": [
+							{"low": 11, "high": 22, "result": "Carre"},
+                            {"low": 23, "high": 45, "result": "Disorder"},
+                            {"low": 46, "high": 66, "result": "Rout"}
+						]
+					}
+				},
+						
+				"Prussian": {
+					"Column": {
+						"4": [
+							{"low": 11, "high": 63, "result": "Carre"},
+							{"low": 64, "high": 65, "result": "Disorder"},
+							{"low": 66, "high": 66, "result": "Rout"}
+						],
+						"3": [
+							{"low": 11, "high": 45, "result": "Carre"},
+							{"low": 46, "high": 55, "result": "Disorder"},
+							{"low": 56, "high": 66, "result": "Rout"}
+						],
+						"2": [
+							{"low": 11, "high": 35, "result": "Carre"},
+							{"low": 36, "high": 55, "result": "Disorder"},
+							{"low": 56, "high": 66, "result": "Rout"}
+						],
+						"1": [
+							{"low": 11, "high": 25, "result": "Carre"},
+							{"low": 26, "high": 45, "result": "Disorder"},
+							{"low": 46, "high": 66, "result": "Rout"}
+						]
+					},
+					"Line": {
+						"4": [
+							{"low": 11, "high": 64, "result": "Carre"},
+							{"low": 65, "high": 65, "result": "Disorder"},
+							{"low": 66, "high": 66, "result": "Rout"}
+						],
+						"3": [
+							{"low": 11, "high": 52, "result": "Carre"},
+							{"low": 53, "high": 61, "result": "Disorder"},
+							{"low": 62, "high": 66, "result": "Rout"}
+						],
+						"2": [
+							{"low": 11, "high": 32, "result": "Carre"},
+							{"low": 33, "high": 53, "result": "Disorder"},
+							{"low": 54, "high": 66, "result": "Rout"}
+						],
+						"1": [
+							{"low": 11, "high": 22, "result": "Carre"},
+							{"low": 23, "high": 44, "result": "Disorder"},
+							{"low": 45, "high": 66, "result": "Rout"}
+						]
+					}
+				}
+			},
+			"modifiers": [
+				{"name": "Leader", "mod": -6},
+				{"name": "Light Cav", "mod": 3},
+				{"name": "Lancers", "mod": 6},
+				{"name": "Morale Level", "mod": 3}
+			]
+		},
+		"recall": {
+			"table": {
+				"French": { "low": 2, "high": 6},
+				"Prussian Landwehr": { "low": 5, "high": 6},
+				"Russian Cossacks": { "low": 5, "high": 6}				
+			},
+			"modifiers": [
+				{"name": "Cav Leader", "mod": 1}
+			]
+		}
+	},
+	"melee": {
+		"modifiers": {
+			"attack": [
+				{"name": "Assault in flank", "mod": 2},
+				{"name": "Assault in rear", "mod": 1.5},
+				{"name": "Skirmish order", "mod": 0.5},
+				{"name": "Disordered", "mod": 0.5},
+				{"name": "Charge 3 straight", "mod": 2},				
+				{"name": "Tired", "mod": 0.5},
+				{"name": "Exhausted", "mod": 0.333},
+				{"name": "Preserve Readiness", "mod": 0.333},
+				{"name": "Cav vs Carre", "mod": 0.5},
+				{"name": "Inf vs Carre", "mod": 1.5},
+				{"name": "Cav w/o Recall", "mod": 0.5},
+				{"name": "Lancers in Line", "mod": 2},
+				{"name": "Cav in General", "mod": 0.333}
+			],
+			"defend": [
+				{"name": "Skirmish order", "mod": 0.5},
+				{"name": "Disordered", "mod": 0.5},
+				{"name": "Routed", "mod": 0.333},
+				{"name": "Cav Routed", "mod": 0.25},
+				{"name": "Tired", "mod": 0.5},
+				{"name": "Exhausted", "mod": 0.333},
+				{"name": "Preserve Readiness", "mod": 0.333},
+				{"name": "Cav in General", "mod": 0.333}
+			]
+		},
+		"results": {
+			"matrix": {
+				"Infantrie": {
+					"Good": {
+						"AR": "0",
+						"AD": "1",
+						"Blank": "2",
+						"DD": "3",
+						"DR": "4"
+					},
+					"Disordered": {
+						"AR": "0",
+						"AD": "1",
+						"Blank": "2",
+						"DD": "4",
+						"DR": "4"						
+					},
+					"Routed": {
+						"AR": "0",
+						"AD": "1",
+						"Blank": "2",
+						"DD": "4",
+						"DR": "5"
+						
+					},
+					"Carre": {
+						"AR": "0",
+						"AD": "6",
+						"Blank": "7",
+						"DD": "8",
+						"DR": "9"						
+					}
+				},
+				"Cavalrie": {
+					"Good": {
+						"AR": "0",
+						"AD": "10",
+						"Blank": "11",
+						"DD": "13",
+						"DR": "13"
+					},
+					"Routed": {
+						"AR": "0",
+						"AD": "14",
+						"Blank": "15",
+						"DD": "16",
+						"DR": "5"						
+					}
+				},
+				"Limb Art": {
+					"Good": {
+						"AR": "0",
+						"Blank": "17",
+						"DD": "18",
+						"DR": "19"
+					},
+					"Disordered": {
+						"AR": "0",
+						"Blank": "17",
+						"DD": "18",
+						"DR": "19"						
+					},
+					"Routed": {
+						"AR": "0",
+						"Blank": "19",
+						"DD": "19",
+						"DR": "20"						
+					}
+				},
+				"Unlimb Art": {
+					"Good": {
+						"AR": "0",
+						"Blank": "17",
+						"DD": "21",
+						"DR": "20"
+					},
+					"Disordered": {
+						"AR": "0",
+						"Blank": "17",
+						"DD": "22",
+						"DR": "20"						
+					}
+				}	
+			},
+			"index": {
+				"0": "All Attacking formations rout (PGD) retreat ten hexes away from enemy and lose 1 increment for each enemy Zd'I exited",
+				"1": "All Attacking Infantry Disorders and retreats 3 hexes, losing 1 increment for each enemy zone of influence exited.\r\nAll Attacking Cavalry retreats 3 hexes, losing 1 increment for each enemy zone exited and checks morale minus 3 to the die",
+				"2": "All Attackers and Defenders retreat 1 hex",
+				"3": "All Defending Infantry Disorders and retreats 3 hexes, losing 1 increment for each enemy zone of influence exited.",
+				"4": "All Defenders Rout, retreat their full movement allowance and lose 1 increment for each enemy zone of influence exited.",
+				"5": "All Defenders Surrender",
+				"6": "All Attackers disorder and retreat 3 hexes",
+				"7": "All Defenders check morale plus 6 to the die roll, if failed the Carre adopts a column in place, Attacker cavalry retreats 2 hex",
+				"8": "Carre disorders in place, becomes a column and loses 1 increment. (cav in good order does not cause rout)",
+				"9": "Carre routs and loses 2 increments for each enemy zone of influence exited during rout movement.",
+				"10": "All Attacker Cavalry are Routed and retreat their full movement losing 1 increment for every enemy zone of influence exited.",
+				"11": "All Attackers and Defenders retreat 1 hex, all attackers check morale minus 3",
+				"12": "All Defenders retreat 3 hexes and checks morale minus 6, a failed morale check is a rout",
+				"13": "All Defenders rout and retreat their full movement losing an increment for every enemy zone of influence exited.",
+				"14": "All Attacker, Infantry disorders, retreats 3 hexes, Cavalry routs and retreats their full movement, all attackers lose 1 increm",
+				"15": "All Defending Cavalry retreats 6 hexes, losing 1 increment for each enemy zone of influence exited",
+				"16": "All Defending Cavalry retreats their full movement, losing 2 increment for each enemy zone of influence exited",
+				"17": "No Effect",
+				"18": "Battery is Disordered, retreats 3 hexes",
+				"19": "Batteries retreat their full movement and are routed losing 1 increment",
+				"20": "Batteries are eliminated",
+				"21": "Batteries are Disordered in place",
+				"22": "Batteries lose 1 increment and remain disordered"				
+			}
+		}
+	},
+	"morale": {
+		"fire": {
+			"French": {
+				"Ligne": "Every even",
+				"Legere": "Every even",
+				"Rheinbund": "Every odd",
+				"Cavalrie": "Every",
+				"Artillerie": "Every"
+			},
+			"Prussian": {
+				"Infantrie": "Every odd",				
+				"Kavalrie": "Every",
+				"Artillerie": "Every"
+			},
+			"Russian": {
+				"Kavalrie": "Every"
+			}
+		}
+	},
+	"maneuver": {
+		"sides": [
+			"French",
+			"Russian",
+			"Prussian"
+		],
+		"terrain": {
+			"Clear": { "img": "terrain_clear", "Inf": "1", "Cav": "1", "Art": "1" },			
+			"Hamlet": { "img": "terrain_hamlet", "Inf": "3 (2 Rd)", "Cav": "3 (2 Rd)", "Art": "3 (2 Rd)" },
+			"Village": { "img": "terrain_village", "Inf": "3 (2 Rd)", "Cav": "3 (2 Rd)", "Art": "3 (2 Rd)" },
+			"Woods": { "img": "terrain_woods", "Inf": "4", "Cav": "5", "Art": "NA" },
+			"Garden": { "img": "terrain_garden", "Inf": "2", "Cav": "2", "Art": "4" },
+			"Garden Wall": { "img": "terrain_wall", "Inf": "2", "Cav": "NA", "Art": "NA" },
+			"Slope": { "img": "terrain_slope", "Inf": "+2", "Cav": "+3", "Art": "+4" },
+			"Road": { "img": "terrain_road", "Inf": "1/2", "Cav": "1/2", "Art": "1/2" },
+		},
+		"stacking": {
+			"Clear": { "img": "terrain_clear", "Inf": "1 Rgt/18 Inc", "Cav": "18 Inc", "Art": "6 Inc", "Cmb": "12 Inf/1 Art" },			
+			"Hamlet": { "img": "terrain_hamlet", "Inf": "1 Btn/6 Inc", "Cav": "1 Rgt", "Art": "4 Inc", "Cmb": "1 Inf Btn/1 Art" },
+			"Village": { "img": "terrain_village", "Inf": "1 Btn/6 Inc", "Cav": "1 Rgt", "Art": "4 Inc", "Cmb": "1 Inf Btn/1 Art" },
+			"Woods": { "img": "terrain_woods", "Inf": "1 Btn", "Cav": "1 Rgt", "Art": "NA", "Cmb": "NA" },
+			"Garden": { "img": "terrain_garden", "Inf": "1 Btn/6 Inc", "Cav": "1 Rgt", "Art": "4 Inc", "Cmb": "1 Inf Btn/1 Art" },			
+			"Road": { "img": "terrain_road", "Inf": "4 Rd", "Cav": "4 Rd", "Art": "4 Rd", "Cmb": "NA" }
+		}
+	}	
+}

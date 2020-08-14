@@ -23,7 +23,8 @@ var rules = {
     "austerlitz": require('../data/austerlitz.json'),
     "prusse": require('../data/prusse.json'),
     "wagram": require('../data/wagram.json'),
-	"bautzen": require('../data/bautzen.json')
+    "bautzen": require('../data/bautzen.json'),
+    "hagelberg": require('../data/hagelberg.json')
 };
 
 

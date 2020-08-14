@@ -93,6 +93,7 @@ module.exports = {
 	"terrain_spree": require('./terrain_spree.png'),
 	"terrain_woodspathway": require('./terrain_woodspathway.png'),
 	"terrain_schiessscharte": require('./terrain_schiessscharte.png'),
+	"terrain_wall": require('./terrain_wall.png'),
 
 	"Clash of Arms": require('./coa-logo.png'),
 	//"Marshal Enterprises": require('./me-logo.png'),
@@ -109,6 +110,7 @@ module.exports = {
 	"prusse": require("./prusse.png"),	
 	"wagram": require("./wagram.png"),	
 	"bautzen": require("./bautzen.png"),	
+	"hagelberg": require("./hagelberg.png"),	
 	"vauchamps": require("./vauchamps.jpg"),
 	"auerstaedt": require("./auerstaedt.jpg"),
 	"eylau": require("./eylau.jpg"),
