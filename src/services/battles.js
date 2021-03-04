@@ -17,6 +17,7 @@ var rules = {
     "raszyn": require('../data/raszyn.json'),    
     "leipzig": require('../data/leipzig.json'),
     "friedland": require('../data/friedland.json'),
+    "danzig": require('../data/danzig.json'),
     "neumarkt": require('../data/neumarkt.json'),
     "aspern_essling": require('../data/aspern_essling.json'),
     "schoengrabern": require('../data/schoengrabern.json'),
@@ -24,7 +25,8 @@ var rules = {
     "prusse": require('../data/prusse.json'),
     "wagram": require('../data/wagram.json'),
     "bautzen": require('../data/bautzen.json'),
-    "hagelberg": require('../data/hagelberg.json')
+    "hagelberg": require('../data/hagelberg.json'),
+    "wartenburg": require('../data/wartenburg.json')
 };
 
 

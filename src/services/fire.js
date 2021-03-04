@@ -56,7 +56,7 @@ function resolve(o, dice, defincr) {
             }
             break;
         case 4:		//1-1
-            if (dice >= 51) {
+            if (dice >= 52) {
                 result = "1";
             }
             break;

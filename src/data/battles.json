@@ -731,6 +731,44 @@
 	        }
 	    ]
 	},
+	{
+	    "id": 1009,
+	    "name": "Le Siege de Danzig 1807",
+	    "publisher": "Marshal Enterprises",
+	    "image": "danzig",
+		"sides": ["French", "PrussianRussian"],
+	    "scenarios": [
+	        {
+	            "id": 10091,
+	            "name": "The Relief Attempt",
+	            "start": {
+	                "year": 1807,
+	                "month": 5,
+	                "day": 17,
+	                "hour": 5,
+	                "minute": 0
+	            },
+	            "end": {
+	                "year": 1807,
+	                "month": 5,
+	                "day": 17,
+	                "hour": 14,
+	                "minute": 0
+	            },				
+				"victory": [
+					{"side": "French", "level": "Marginal", "conditions": "Siege ends May 10"},					
+					{"side": "", "level": "Draw", "conditions": "Siege ends May 17 (+1 week)"},
+					{"side": "PrussianRussian", "level": "Marginal", "conditions": "Siege ends May 24 (+2 weeks)"},
+					{"side": "PrussianRussian", "level": "Substantial", "conditions": "Siege ends May 31 (+3 weeks)"},
+					{"side": "PrussianRussian", "level": "Decisive", "conditions": "Siege ends June 7 (+4 weeks)"},
+					{"side": "PrussianRussian", "level": "+2 weeks", "conditions": "10 to 15 increments of Infantry exit to Danzig"},
+					{"side": "PrussianRussian", "level": "+3 weeks", "conditions": "16 to 25 increments of Infantry exit to Danzig"},
+					{"side": "PrussianRussian", "level": "+4 weeks", "conditions": "26+ increments of Infantry exit to Danzig"},
+					{"side": "PrussianRussian", "level": "+1 week", "conditions": "Dauntless exits to Danzig"}				
+				]				
+	        }
+	    ]
+	},
 
   {
 	"id": 901,
@@ -2298,7 +2336,7 @@
 		"sides": ["French", "PrussianRussian"],
 		"scenarios": [
 			{
-				"id": 10061,
+				"id": 10071,
 				"name": "Main Battle",
 				"start": {
 					"year": 1813,
@@ -3416,5 +3454,116 @@
 	            }
 	        }
 	    ]
-	}
+	},
+	
+  {
+	"id": 1008,
+	"name": "Das Treffen bei Wartenburg",
+	"publisher": "Me!",
+	"image": "wartenburg",
+	"sides": ["Prussian","French"],
+	"scenarios": [
+	  {
+		"id": 10081,
+		"name": "Largely Historical",
+		"start": {
+		  "year": 1813,
+		  "month": 10,
+		  "day": 3,
+		  "hour": 11,
+		  "minute": 0
+		},
+		"end": {
+		  "year": 1813,
+		  "month": 10,
+		  "day": 3,
+		  "hour": 16,
+		  "minute": 0
+		},
+		"victory": [		
+			{"side": "French", "level": "Substantial", "conditions": "Hold all hexes of Wartenburg and Bleddin"},
+			{"side": "French", "level": "Marginal", "conditions": "Hold any hex of Wartenburg and place I Corps on Morale Level I"},
+			{"side": "", "level": "Draw", "conditions": "Neither or both sides can claim victory"},
+			{"side": "Prussian", "level": "Marginal", "conditions": "Hold all hexes of Bleddin and place 2 IV Corps divisions on Morale Level I"},
+			{"side": "Prussian", "level": "Substantial", "conditions": "Hold all hexes of Wartenburg and Bleddin and place 2 IV Corps divisions on Morale Level I"}
+		]				
+	  },
+	  {
+		"id": 10082,
+		"name": "The Attack on Wartenburg",
+		"start": {
+		  "year": 1813,
+		  "month": 10,
+		  "day": 3,
+		  "hour": 13,
+		  "minute": 0
+		},
+		"end": {
+		  "year": 1813,
+		  "month": 10,
+		  "day": 3,
+		  "hour": 16,
+		  "minute": 0
+		},
+		"victory": [		
+			{"side": "French", "level": "Substantial", "conditions": "Hold all hexes of Wartenburg and Bleddin"},
+			{"side": "French", "level": "Marginal", "conditions": "Hold any hex of Wartenburg and place I Corps on Morale Level I"},
+			{"side": "", "level": "Draw", "conditions": "Neither or both sides can claim victory"},
+			{"side": "Prussian", "level": "Marginal", "conditions": "Hold all hexes of Bleddin and place 2 IV Corps divisions on Morale Level I"},
+			{"side": "Prussian", "level": "Substantial", "conditions": "Hold all hexes of Wartenburg and Bleddin and place 2 IV Corps divisions on Morale Level I"}
+		]				
+	  },
+	  {
+		"id": 10083,
+		"name": "Bertrand has an Epiphany",
+		"start": {
+		  "year": 1813,
+		  "month": 10,
+		  "day": 3,
+		  "hour": 11,
+		  "minute": 0
+		},
+		"end": {
+		  "year": 1813,
+		  "month": 10,
+		  "day": 3,
+		  "hour": 16,
+		  "minute": 0
+		},
+		"victory": [		
+			{"side": "French", "level": "Substantial", "conditions": "Hold all hexes of Wartenburg and Bleddin"},
+			{"side": "French", "level": "Marginal", "conditions": "Hold any hex of Wartenburg and place I Corps on Morale Level I"},
+			{"side": "", "level": "Draw", "conditions": "Neither or both sides can claim victory"},
+			{"side": "Prussian", "level": "Marginal", "conditions": "Hold all hexes of Bleddin and place 2 IV Corps divisions on Morale Level I"},
+			{"side": "Prussian", "level": "Substantial", "conditions": "Hold all hexes of Wartenburg and Bleddin and place 2 IV Corps divisions on Morale Level I"}
+		]				
+	  },
+	  {
+		"id": 10084,
+		"name": "Avant Garde Vorwärts!",
+		"start": {
+		  "year": 1813,
+		  "month": 10,
+		  "day": 3,
+		  "hour": 7,
+		  "minute": 0
+		},
+		"end": {
+		  "year": 1813,
+		  "month": 10,
+		  "day": 3,
+		  "hour": 16,
+		  "minute": 0
+		},
+		"victory": [		
+			{"side": "French", "level": "Substantial", "conditions": "Hold all hexes of Wartenburg and Bleddin"},
+			{"side": "French", "level": "Marginal", "conditions": "Hold any hex of Wartenburg and place I Corps on Morale Level I"},
+			{"side": "", "level": "Draw", "conditions": "Neither or both sides can claim victory"},
+			{"side": "Prussian", "level": "Marginal", "conditions": "Hold all hexes of Bleddin and place 2 IV Corps divisions on Morale Level I"},
+			{"side": "Prussian", "level": "Substantial", "conditions": "Hold all hexes of Wartenburg and Bleddin and place 2 IV Corps divisions on Morale Level I"}
+		]				
+	  }	  
+	]
+  }
+	
 ]

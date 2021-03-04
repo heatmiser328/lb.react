@@ -95,6 +95,36 @@ module.exports = {
 	"terrain_schiessscharte": require('./terrain_schiessscharte.png'),
 	"terrain_wall": require('./terrain_wall.png'),
 
+	"terrain_redoubt": require('./terrain_redoubt.png'),
+	
+	"terrain_woods2": require('./terrain_woods2.png'),
+	"terrain_forest": require('./terrain_forest.png'),
+	"terrain_orchard": require('./terrain_orchard.png'),
+	"terrain_marsh": require('./terrain_marsh.png'),
+	"terrain_road2": require('./terrain_road2.png'),
+	"terrain_road_marsh": require('./terrain_road_marsh.png'),
+	"terrain_bridge_river": require('./terrain_bridge_river.png'),
+	"terrain_bridge_stream": require('./terrain_bridge_stream.png'),
+	"terrain_landdamm": require('./terrain_landdamm.png'),
+	"terrain_hamlet2": require('./terrain_hamlet2.png'),
+	"terrain_village2": require('./terrain_village2.png'),
+
+	
+	"terrain_woods3": require('./terrain_woods3.png'),
+	"terrain_forest2": require('./terrain_forest2.png'),
+	"terrain_orchard2": require('./terrain_orchard2.png'),
+	"terrain_swamp2": require('./terrain_swamp2.png'),
+	"terrain_marsh": require('./terrain_marsh.png'),
+	"terrain_road2": require('./terrain_road2.png'),
+	"terrain_road_marsh2": require('./terrain_road_marsh2.png'),
+	"terrain_bridge_river2": require('./terrain_bridge_river2.png'),
+	"terrain_bridge_stream2": require('./terrain_bridge_stream2.png'),
+	"terrain_landdamm": require('./terrain_landdamm.png'),	
+	"terrain_lane": require('./terrain_lane.png'),
+	"terrain_village3": require('./terrain_village3.png'),
+	"terrain_garden2": require('./terrain_garden2.png'),
+	"terrain_slope2": require('./terrain_slope2.png'),
+
 	"Clash of Arms": require('./coa-logo.png'),
 	//"Marshal Enterprises": require('./me-logo.png'),
 	"ATO": require('./ato-logo.png'),
@@ -103,6 +133,7 @@ module.exports = {
 	"raszyn": require("./raszyn.jpg"),
 	"leipzig": require("./leipzig.jpg"),
 	"friedland": require("./friedland.jpg"),
+	"danzig": require("./danzig.jpg"),
 	"aspern_essling": require("./aspern_essling.jpg"),
 	"neumarkt": require("./neumarkt.jpg"),
 	"schoengrabern": require("./schoengrabern.png"),
@@ -124,5 +155,6 @@ module.exports = {
 	"corunna": require("./corunna.jpg"),
 	"luetzen": require("./luetzen.jpg"),
 	"orthez": require("./orthez.jpg"),
-	"moscowa": require("./moscowa.jpg")
+	"moscowa": require("./moscowa.jpg"),
+	"wartenburg": require("./wartenburg.png")
 };
